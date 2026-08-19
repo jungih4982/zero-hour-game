@@ -1,6 +1,6 @@
 // components/TypewriterText.tsx
 import React, { useState, useEffect } from 'react';
-import { Text, TextStyle, TouchableWithoutFeedback } from 'react-native';
+import { Text, TextStyle, Pressable } from 'react-native';
 
 interface TypewriterTextProps {
   text: string;
@@ -25,8 +25,9 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 
     const timer = setInterval(() => {
       if (index < text.length) {
-        setDisplayedText((prev) => prev + text.charAt(index));
         index++;
+        // ⭐️ 핵심 해결: 이전 글자에 더하지 않고, 원본 텍스트(text)에서 직접 잘라옵니다. (글자 씹힘 완벽 방지)
+        setDisplayedText(text.slice(0, index));
       } else {
         clearInterval(timer);
         setIsCompleted(true);
@@ -46,11 +47,11 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   };
 
   return (
-    <TouchableWithoutFeedback onPress={handleSkip}>
+    <Pressable onPress={handleSkip}>
       <Text style={style}>
         {displayedText}
         {!isCompleted && <Text style={{ color: '#00E5FF' }}> ▍</Text>}
       </Text>
-    </TouchableWithoutFeedback>
+    </Pressable>
   );
 };
