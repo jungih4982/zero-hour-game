@@ -48,6 +48,7 @@ export default function App() {
   const nodes = SCENARIO_NODES || {};
   const currentNode: ScenarioNode = nodes[currentNodeId] || nodes['NODE_PROLOGUE_INTRO'] || FALLBACK_NODE;
   const currentChoices: Choice[] = currentNode.choices || [];
+  const investigationSpots = currentNode.investigationSpots || []; // ⭐️ 스팟 데이터 뽑아오기
   const isInsane = (store?.sanity ?? 100) <= 30;
 
   const dialogues = currentNode.scriptText.split('\n\n').filter((t) => t.trim() !== '');
@@ -61,7 +62,10 @@ export default function App() {
     !currentChoices[0].requiredItem && 
     !currentChoices[0].triggerDeathId;
 
-  // ⭐️ [버그 원인 제거] 여기서 쓰던 딜레이 걸리던 useEffect 지워버림! 
+  useEffect(() => {
+    setIsTextComplete(false);
+    setForceComplete(false);
+  }, [dialogueIdx, currentNodeId]);
 
   useEffect(() => {
     async function loadBGM() {
@@ -113,7 +117,6 @@ export default function App() {
         store.triggerDeath(choice.triggerDeathId!, choice.deathCause!, choice.deathTrait!);
         setCurrentNodeId('NODE_PROLOGUE_INTRO');
         setDialogueIdx(0);
-        // ⭐️ 죽어서 리셋될 때 텍스트 상태 즉시 초기화
         setIsTextComplete(false);
         setForceComplete(false);
         setSystemLog('루프 리셋: 차가운 로비 입구에서 거친 숨을 몰아쉬며 다시 눈을 떴습니다.');
@@ -135,7 +138,6 @@ export default function App() {
         store.visitLocation?.(blackoutNode.locationName);
         setCurrentNodeId('NODE_0000_BLACKOUT_EVENT');
         setDialogueIdx(0);
-        // ⭐️ 정전 강제 이동 시 텍스트 상태 즉시 초기화
         setIsTextComplete(false);
         setForceComplete(false);
         setSystemLog('🚨 코드 블랙 발령: 방호복 경비대가 로비로 난입합니다!');
@@ -148,7 +150,6 @@ export default function App() {
       store.visitLocation?.(nextNode.locationName);
       setCurrentNodeId(choice.nextNodeId);
       setDialogueIdx(0);
-      // ⭐️ 정상 맵 이동 시 텍스트 상태 즉시 초기화 (버그 원천 차단!)
       setIsTextComplete(false);
       setForceComplete(false);
     }
@@ -156,7 +157,7 @@ export default function App() {
 
   const handleTapDialogue = async () => {
     const now = Date.now();
-    if (now - lastTapTime.current < 250) return; // 0.25초 연타 방지
+    if (now - lastTapTime.current < 250) return; 
     lastTapTime.current = now;
 
     if (!isBgmPlaying && bgmSound) {
@@ -165,15 +166,13 @@ export default function App() {
     }
 
     if (!isTextComplete) {
-      setForceComplete(true); // 타이핑 스킵
+      setForceComplete(true);
     } else {
       if (!isEndOfDialogue) {
         setDialogueIdx((prev) => prev + 1);
-        // ⭐️ 다음 대사로 넘어갈 때 상태 즉시 초기화 (버그 원천 차단!)
         setIsTextComplete(false);
         setForceComplete(false);
       } else if (isSingleSimpleChoice) {
-        // 단일 선택지는 대화창 터치만으로 쾌적하게 이동
         handleSelectChoice(currentChoices[0]);
       }
     }
@@ -201,7 +200,24 @@ export default function App() {
       </View>
 
       <Animated.View style={[styles.mainStage, { transform: [{ translateX: shakeAnim }] }]}>
-        <VisualStage speaker={currentNode.speakerName} bgTheme={currentNode.bgTheme} locationName={currentNode.locationName} />
+        
+        {/* ⭐️ 조사 스팟 Props 넘겨주기 */}
+        <VisualStage 
+          speaker={currentNode.speakerName} 
+          bgTheme={currentNode.bgTheme} 
+          locationName={currentNode.locationName} 
+          spots={investigationSpots}
+          onSpotClick={(nextNodeId) => {
+            // 화면의 기믹 스팟을 누르면 즉시 해당 노드로 씬 전환!
+            if (nodes[nextNodeId]) {
+              store.visitLocation?.(nodes[nextNodeId].locationName);
+              setCurrentNodeId(nextNodeId);
+              setDialogueIdx(0);
+              setIsTextComplete(false);
+              setForceComplete(false);
+            }
+          }}
+        />
         
         <View style={styles.floatingMenu}>
           <TouchableOpacity style={styles.iconWrapper} onPress={() => setIsMapOpen(true)}>
@@ -218,9 +234,9 @@ export default function App() {
           </TouchableOpacity>
         </View>
 
-        {isEndOfDialogue && isTextComplete && !isSingleSimpleChoice && (
+        {isEndOfDialogue && isTextComplete && !isSingleSimpleChoice && currentChoices.length > 0 && (
           <View style={styles.choicesOverlay}>
-            <ScrollView style={styles.choicesScroll} contentContainerStyle={styles.choicesContent}>
+            <ScrollView style={styles.choicesScroll} contentContainerStyle={styles.choicesContent} showsVerticalScrollIndicator={false}>
               {systemLog ? (
                 <View style={styles.logBox}><Text style={styles.logText}>{systemLog}</Text></View>
               ) : null}
@@ -267,8 +283,10 @@ export default function App() {
             <Text style={styles.tapToContinue}>▼ 터치해서 계속...</Text>
           ) : isSingleSimpleChoice ? (
             <Text style={[styles.tapToContinue, { color: '#68D391', fontSize: 13 }]}>▼ {currentChoices[0].text}</Text>
+          ) : investigationSpots.length > 0 ? (
+            <Text style={[styles.tapToContinue, { color: '#00E5FF' }]}>🔍 화면에서 단서를 직접 조사하세요</Text>
           ) : (
-            <Text style={[styles.tapToContinue, { color: '#F6E05E' }]}>▲ 위 화면에서 행동을 선택하세요</Text>
+            <Text style={[styles.tapToContinue, { color: '#F6E05E' }]}>▲ 위에서 행동을 선택하세요</Text>
           )}
         </TouchableOpacity>
       </Animated.View>
@@ -311,24 +329,24 @@ const styles = StyleSheet.create({
   iconEmoji: { fontSize: 18 },
   iconLabel: { color: '#E2E8F0', fontSize: 10, marginTop: 4, fontWeight: 'bold', textShadowColor: '#000', textShadowOffset: { width: 1, height: 1 }, textShadowRadius: 2 },
 
-  choicesOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 180, justifyContent: 'center', alignItems: 'center', padding: 20, zIndex: 40 },
-  choicesScroll: { width: '100%', maxWidth: 500, maxHeight: '80%' },
-  choicesContent: { paddingBottom: 20 },
+  choicesOverlay: { position: 'absolute', left: 0, right: 0, bottom: 180, justifyContent: 'flex-end', alignItems: 'center', paddingHorizontal: 20, maxHeight: '60%', zIndex: 40 },
+  choicesScroll: { width: '100%', maxWidth: 500 },
+  choicesContent: { paddingBottom: 10, flexGrow: 1, justifyContent: 'flex-end' },
   
   logBox: { backgroundColor: 'rgba(13, 17, 23, 0.9)', padding: 12, borderRadius: 6, borderLeftWidth: 3, borderLeftColor: '#00E5FF', marginBottom: 16 },
   logText: { color: '#A0AEC0', fontSize: 13, lineHeight: 18 },
   
-  choiceBtn: { backgroundColor: 'rgba(21, 26, 35, 0.9)', padding: 16, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: '#2D3748' },
+  choiceBtn: { backgroundColor: 'rgba(21, 26, 35, 0.95)', padding: 16, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: '#2D3748' },
   choiceText: { color: '#F7FAFC', fontSize: 14, lineHeight: 22, fontWeight: '500', textAlign: 'center' },
   lockedBtn: { backgroundColor: 'rgba(13, 17, 23, 0.6)', borderColor: '#1E2535' },
   lockedText: { color: '#4A5568', fontSize: 13, textAlign: 'center' },
-  dangerBtn: { backgroundColor: 'rgba(38, 18, 20, 0.9)', borderColor: '#742A2A' },
+  dangerBtn: { backgroundColor: 'rgba(38, 18, 20, 0.95)', borderColor: '#742A2A' },
   dangerText: { color: '#FEB2B2' },
-  clueBtn: { backgroundColor: 'rgba(15, 35, 40, 0.9)', borderColor: '#00A3C4' },
+  clueBtn: { backgroundColor: 'rgba(15, 35, 40, 0.95)', borderColor: '#00A3C4' },
   clueText: { color: '#76E4F7', fontWeight: 'bold' },
-  itemBtn: { backgroundColor: 'rgba(43, 35, 19, 0.9)', borderColor: '#D69E2E' },
+  itemBtn: { backgroundColor: 'rgba(43, 35, 19, 0.95)', borderColor: '#D69E2E' },
   itemText: { color: '#F6E05E', fontWeight: 'bold' },
-  endingBtn: { backgroundColor: 'rgba(45, 55, 72, 0.9)', borderColor: '#ECC94B', borderWidth: 2 },
+  endingBtn: { backgroundColor: 'rgba(45, 55, 72, 0.95)', borderColor: '#ECC94B', borderWidth: 2 },
   endingText: { color: '#ECC94B', fontWeight: 'bold' },
 
   vnDialogBox: { position: 'absolute', bottom: 16, left: 16, right: 16, backgroundColor: 'rgba(10, 14, 23, 0.85)', borderWidth: 1, borderColor: '#2D3748', borderRadius: 12, padding: 20, minHeight: 150, zIndex: 60, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.5, shadowRadius: 10 },

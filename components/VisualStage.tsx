@@ -1,16 +1,17 @@
 // components/VisualStage.tsx
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
+import { InvestigationSpot } from '../data/scenarioNodes';
 
 interface VisualStageProps {
   speaker: string;
   locationName: string;
   bgTheme?: 'LOBBY' | 'DARK_LOBBY' | 'LINEN' | 'DESK' | 'BLACKOUT';
-  isTabletSplit?: boolean;
+  spots?: InvestigationSpot[]; // ⭐️ 전달받은 조사 스팟 배열
+  onSpotClick?: (nextNodeId: string) => void; // ⭐️ 터치했을 때 실행될 함수
 }
 
-export const VisualStage: React.FC<VisualStageProps> = ({ speaker, locationName, bgTheme }) => {
-  // 테마별 배경색 설정 (나중엔 진짜 배경 이미지로 교체하면 됨)
+export const VisualStage: React.FC<VisualStageProps> = ({ speaker, locationName, bgTheme, spots = [], onSpotClick }) => {
   const getThemeColor = () => {
     switch (bgTheme) {
       case 'BLACKOUT': return '#050000';
@@ -22,20 +23,27 @@ export const VisualStage: React.FC<VisualStageProps> = ({ speaker, locationName,
     }
   };
 
+  // ⭐️ 스팟 반짝거림(Pulsing) 애니메이션 효과
+  const pulseAnim = useRef(new Animated.Value(0.5)).current;
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, { toValue: 1, duration: 1000, useNativeDriver: true }),
+        Animated.timing(pulseAnim, { toValue: 0.5, duration: 1000, useNativeDriver: true }),
+      ])
+    ).start();
+  }, []);
+
   return (
     <View style={[styles.container, { backgroundColor: getThemeColor() }]}>
-      {/* 현재 장소 표시 (호텔 더스크 감성) */}
       <View style={styles.locationBadge}>
         <Text style={styles.locationText}>📍 {locationName}</Text>
       </View>
 
-      {/* 캐릭터 실루엣 렌더링 (미연시 연출 핵심!) */}
       <View style={styles.characterContainer}>
         {speaker.includes('독백') ? (
-          // 독백일 때는 1인칭 시점이므로 빈 공간 연출
           <View style={styles.monologueEffect} />
         ) : (
-          // NPC 대화일 때는 중앙에 거대한 캐릭터 실루엣 배치
           <View style={styles.spritePlaceholder}>
             <Text style={styles.spriteIcon}>
               {speaker.includes('유진') ? '👩‍⚕️' : speaker.includes('세아') ? '👧' : speaker.includes('카밀라') ? '🃏' : '👤'}
@@ -44,55 +52,73 @@ export const VisualStage: React.FC<VisualStageProps> = ({ speaker, locationName,
         )}
       </View>
 
-      {/* 비주얼 노벨 특유의 하단 어두운 그라데이션 (대화창 가독성 확보) */}
+      {/* ⭐️ 조사 스팟 렌더링 (화면 위에 떠다니게 배치) */}
+      {spots.map((spot) => (
+        <TouchableOpacity 
+          key={spot.id} 
+          style={[styles.investigationSpot, { left: `${spot.x}%`, top: `${spot.y}%` }]}
+          onPress={() => onSpotClick && onSpotClick(spot.nextNodeId)}
+        >
+          <Animated.View style={[styles.spotGlow, { transform: [{ scale: pulseAnim }], opacity: pulseAnim }]} />
+          <View style={styles.spotInner}>
+            <Text style={styles.spotIcon}>{spot.icon}</Text>
+            <Text style={styles.spotLabel}>{spot.label}</Text>
+          </View>
+        </TouchableOpacity>
+      ))}
+
       <View style={styles.bottomVignette} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject, // ⭐️ 전체 화면 꽉 채우기
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  locationBadge: {
-    position: 'absolute',
-    top: 24,
-    left: 20,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-    borderLeftWidth: 3,
-    borderColor: '#63B3ED',
-  },
+  container: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center' },
+  locationBadge: { position: 'absolute', top: 24, left: 20, backgroundColor: 'rgba(0,0,0,0.6)', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 4, borderLeftWidth: 3, borderColor: '#63B3ED', zIndex: 10 },
   locationText: { color: '#E2E8F0', fontSize: 14, fontWeight: 'bold', letterSpacing: 1 },
-  
-  characterContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    paddingBottom: 160, // 하단 대화창 공간 비워두기
-  },
-  spritePlaceholder: {
-    width: 250,
-    height: 400,
-    backgroundColor: 'rgba(255,255,255,0.03)',
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.1)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  characterContainer: { flex: 1, justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 160 },
+  spritePlaceholder: { width: 250, height: 400, backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)', justifyContent: 'center', alignItems: 'center' },
   spriteIcon: { fontSize: 120, opacity: 0.8 },
   monologueEffect: { flex: 1 },
-  
-  bottomVignette: {
+  bottomVignette: { position: 'absolute', bottom: 0, width: '100%', height: 250, backgroundColor: 'rgba(0,0,0,0.7)', pointerEvents: 'none' },
+
+  // ⭐️ 스팟 스타일
+  investigationSpot: {
     position: 'absolute',
-    bottom: 0,
-    width: '100%',
-    height: 250,
-    backgroundColor: 'rgba(0,0,0,0.7)', // 대화창 뒤를 어둡게 눌러줌
-  }
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 20,
+  },
+  spotInner: {
+    width: 44,
+    height: 44,
+    backgroundColor: 'rgba(10, 14, 23, 0.8)',
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: '#00E5FF',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  spotGlow: {
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(0, 229, 255, 0.3)',
+  },
+  spotIcon: { fontSize: 18 },
+  spotLabel: {
+    position: 'absolute',
+    bottom: -20,
+    width: 80,
+    textAlign: 'center',
+    color: '#00E5FF',
+    fontSize: 11,
+    fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
+  },
 });

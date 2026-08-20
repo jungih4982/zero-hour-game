@@ -18,6 +18,16 @@ export interface Choice {
   endingTitle?: string;
 }
 
+// ⭐️ 새로운 기믹: 화면 터치 조사 스팟!
+export interface InvestigationSpot {
+  id: string;
+  x: number; // 화면 X 좌표 (%)
+  y: number; // 화면 Y 좌표 (%)
+  icon: string; // 돋보기, 핏자국 등 이모지
+  label: string;
+  nextNodeId: string; // 누르면 이동할 노드
+}
+
 export interface ScenarioNode {
   nodeId: string;
   timeSlot: string;
@@ -25,14 +35,12 @@ export interface ScenarioNode {
   speakerName: string;
   scriptText: string;
   choices: Choice[];
+  investigationSpots?: InvestigationSpot[]; // ⭐️ 조사 스팟 배열 추가
   bgTheme?: 'LOBBY' | 'DARK_LOBBY' | 'LINEN' | 'DESK' | 'BLACKOUT';
   isTimeTransitionNode?: boolean;
 }
 
 export const SCENARIO_NODES: Record<string, ScenarioNode> = {
-  // ==========================================
-  // [22:00] 딥 미스터리 프롤로그: 고립
-  // ==========================================
   NODE_PROLOGUE_INTRO: {
     nodeId: 'NODE_PROLOGUE_INTRO',
     timeSlot: '22:00',
@@ -53,11 +61,13 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '주인공 (독백)',
     bgTheme: 'LOBBY',
     scriptText:
-      '안내 데스크에는 아무도 없다. 반쯤 깨진 형광등이 신경질적으로 점멸하며 대리석 바닥에 기괴한 그림자를 드리울 뿐이다.\n\n어디선가 일정한 간격으로 물방울이 떨어지는 소리가 들린다. 툭, 툭...\n\n아니, 저건 물이 아니다. 접수처 데스크 아래쪽 대리석 바닥에 검붉은 액체가 웅덩이처럼 고여 있다.',
-    choices: [
-      { text: '[탐색] 핏자국을 따라 안내 데스크 안쪽을 뒤져본다. (AP 0)', costAp: 0, nextNodeId: 'NODE_1F_DESK_INVESTIGATE' },
-      { text: '[탐색] 로비 구석, 어둠이 깔린 대기실 소파 쪽을 살펴본다. (AP 0)', costAp: 0, nextNodeId: 'NODE_1F_WAITING_AREA' },
-    ],
+      '안내 데스크에는 아무도 없다. 반쯤 깨진 형광등이 신경질적으로 점멸하며 대리석 바닥에 기괴한 그림자를 드리울 뿐이다.\n\n어디선가 일정한 간격으로 물방울이 떨어지는 소리가 들린다. 툭, 툭...\n\n(화면에서 수상한 곳을 직접 터치해서 조사하세요)',
+    choices: [], // ⭐️ 하단 선택지 없앰! 무조건 화면을 눌러서 찾아야 함!
+    investigationSpots: [
+      // ⭐️ 바닥 핏자국 & 어두운 소파 스팟 배치
+      { id: 'spot_blood', x: 65, y: 75, icon: '🩸', label: '바닥의 핏자국', nextNodeId: 'NODE_1F_DESK_INVESTIGATE' },
+      { id: 'spot_sofa', x: 20, y: 55, icon: '🛋️', label: '어두운 소파', nextNodeId: 'NODE_1F_WAITING_AREA' }
+    ]
   },
 
   NODE_1F_WAITING_AREA: {
@@ -86,9 +96,6 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     ],
   },
 
-  // ==========================================
-  // [22:00] 로비 허브: 수간호사 유진과의 조우
-  // ==========================================
   NODE_1F_YUJIN_APPEARANCE: {
     nodeId: 'NODE_1F_YUJIN_APPEARANCE',
     timeSlot: '22:00',
@@ -156,9 +163,6 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     ],
   },
 
-  // ==========================================
-  // [22:00] 로비 허브: 본격적인 자유 탐색
-  // ==========================================
   NODE_1F_LOBBY_HUB: {
     nodeId: 'NODE_1F_LOBBY_HUB',
     timeSlot: '22:00',
@@ -214,9 +218,6 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     ],
   },
 
-  // ==========================================
-  // [00:00] 제로 아워 발발 (AP 0 강제 컷신)
-  // ==========================================
   NODE_0000_BLACKOUT_EVENT: {
     nodeId: 'NODE_0000_BLACKOUT_EVENT',
     timeSlot: '00:00',
