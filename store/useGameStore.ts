@@ -20,30 +20,35 @@ export interface GameState {
   deathRecords: DeathRecord[];
   unlockedTraits: string[];
 
-  // 휘발성 데이터 (사망 시 22:00 로비로 초기화)
+  // 휘발성 데이터 (사망 시 초기화)
   currentTime: string;
   currentLocation: string;
   apRemaining: number;
   sanity: number;
   chips: number;
   inventory: string[];
+  visitedLocations: string[]; // ⭐️ 방문한 맵 구역 기록 (지도 해금용)
 
   // 액션 함수
   setJob: (job: JobType) => void;
   consumeAp: (amount: number) => void;
   reduceSanity: (amount: number) => void;
   unlockClue: (clueId: string) => void;
+  addItem: (item: string) => void;
+  removeItem: (item: string) => void;
+  visitLocation: (location: string) => void; // ⭐️ 지도 갱신 함수
   triggerDeath: (deathId: string, cause: string, traitId: string) => void;
   resetLoop: () => void;
 }
 
 const INITIAL_VOLATILE = {
   currentTime: '22:00',
-  currentLocation: '1F 지상 로비',
+  currentLocation: '1F 지상 로비 입구',
   apRemaining: 2,
   sanity: 100,
   chips: 2,
   inventory: ['여동생의 사진'],
+  visitedLocations: ['1F 지상 로비 입구'], // ⭐️ 초기 맵 시작 지점
 };
 
 export const useGameStore = create<GameState>()(
@@ -75,20 +80,32 @@ export const useGameStore = create<GameState>()(
         }
       },
 
+      addItem: (item: string) => {
+        const currentInv = get().inventory;
+        if (!currentInv.includes(item)) {
+          set({ inventory: [...currentInv, item] });
+        }
+      },
+
+      removeItem: (item: string) => {
+        set({ inventory: get().inventory.filter((i) => i !== item) });
+      },
+
+      // ⭐️ 새로운 방에 들어갈 때마다 배열에 추가
+      visitLocation: (location: string) => {
+        const current = get().visitedLocations;
+        if (!current.includes(location)) {
+          set({ visitedLocations: [...current, location] });
+        }
+      },
+
       triggerDeath: (deathId: string, cause: string, traitId: string) => {
         const { loopCount, deathRecords, unlockedTraits } = get();
         const isNew = !deathRecords.some((d) => d.deathId === deathId);
-
-        const updatedTraits =
-          isNew && traitId && !unlockedTraits.includes(traitId)
-            ? [...unlockedTraits, traitId]
-            : unlockedTraits;
+        const updatedTraits = isNew && traitId && !unlockedTraits.includes(traitId) ? [...unlockedTraits, traitId] : unlockedTraits;
 
         set({
-          deathRecords: [
-            ...deathRecords,
-            { loopCount, deathId, cause, unlockedTrait: traitId },
-          ],
+          deathRecords: [...deathRecords, { loopCount, deathId, cause, unlockedTrait: traitId }],
           unlockedTraits: updatedTraits,
         });
 
@@ -115,5 +132,3 @@ export const useGameStore = create<GameState>()(
     }
   )
 );
-
-export default useGameStore;

@@ -1,12 +1,13 @@
 // components/TypewriterText.tsx
-import React, { useState, useEffect } from 'react';
-import { Text, TextStyle, Pressable } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { Text, TextStyle } from 'react-native';
 
 interface TypewriterTextProps {
   text: string;
   speed?: number;
   style?: TextStyle;
   onComplete?: () => void;
+  forceComplete?: boolean; 
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
@@ -14,44 +15,54 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   speed = 22,
   style,
   onComplete,
+  forceComplete = false,
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isCompleted, setIsCompleted] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  
+  // ⭐️ 최신 onComplete 함수를 잃어버리지 않게 꽉 잡아두는 역할 (진행 불가 버그 해결!)
+  const onCompleteRef = useRef(onComplete);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     setDisplayedText('');
     setIsCompleted(false);
     let index = 0;
 
-    const timer = setInterval(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+
+    timerRef.current = setInterval(() => {
       if (index < text.length) {
         index++;
-        // ⭐️ 핵심 해결: 이전 글자에 더하지 않고, 원본 텍스트(text)에서 직접 잘라옵니다. (글자 씹힘 완벽 방지)
         setDisplayedText(text.slice(0, index));
       } else {
-        clearInterval(timer);
+        if (timerRef.current) clearInterval(timerRef.current);
         setIsCompleted(true);
-        if (onComplete) onComplete();
+        if (onCompleteRef.current) onCompleteRef.current(); // 신호 발사!
       }
     }, speed);
 
-    return () => clearInterval(timer);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, [text, speed]);
 
-  const handleSkip = () => {
-    if (!isCompleted) {
+  useEffect(() => {
+    if (forceComplete && !isCompleted) {
+      if (timerRef.current) clearInterval(timerRef.current);
       setDisplayedText(text);
       setIsCompleted(true);
-      if (onComplete) onComplete();
+      if (onCompleteRef.current) onCompleteRef.current(); // 신호 발사!
     }
-  };
+  }, [forceComplete, text, isCompleted]);
 
   return (
-    <Pressable onPress={handleSkip}>
-      <Text style={style}>
-        {displayedText}
-        {!isCompleted && <Text style={{ color: '#00E5FF' }}> ▍</Text>}
-      </Text>
-    </Pressable>
+    <Text style={style}>
+      {displayedText}
+      {!isCompleted && <Text style={{ color: '#00E5FF' }}> ▍</Text>}
+    </Text>
   );
 };

@@ -1,17 +1,7 @@
 // App.tsx
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
-  Alert,
-  useWindowDimensions,
-  Platform,
-} from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, StatusBar, ScrollView, Alert, Platform, Vibration, Animated } from 'react-native';
+import { Audio } from 'expo-av';
 import { useGameStore } from './store/useGameStore';
 import { SCENARIO_NODES, Choice, ScenarioNode } from './data/scenarioNodes';
 import { VisualStage } from './components/VisualStage';
@@ -19,86 +9,123 @@ import { TypewriterText } from './components/TypewriterText';
 import { CasinoModal } from './components/CasinoModal';
 import { DeathLogModal } from './components/DeathLogModal';
 import { JobSelectModal } from './components/JobSelectModal';
+import { InventoryModal } from './components/InventoryModal';
+import { MapModal } from './components/MapModal';
 
 const FALLBACK_NODE: ScenarioNode = {
   nodeId: 'NODE_FALLBACK',
   timeSlot: '22:00',
-  locationName: '1F 지상 로비',
+  locationName: '1F 지상 로비 입구',
   speakerName: '시스템',
   scriptText: '데이터를 불러오는 중입니다...',
   choices: [],
 };
 
-const distortText = (text: string) => {
-  return text.replace(/[가-힣]/g, (char) => (Math.random() < 0.2 ? '§#@' : char));
-};
+const distortText = (text: string) => text.replace(/[가-힣]/g, (char) => (Math.random() < 0.2 ? '§#@' : char));
 
 export default function App() {
-  const { width } = useWindowDimensions();
-  const isTablet = width >= 768;
-
   const store = useGameStore();
 
   const [currentNodeId, setCurrentNodeId] = useState<string>('NODE_PROLOGUE_INTRO');
   const [systemLog, setSystemLog] = useState<string>('폭설로 진입로가 무너져 고립되었습니다.');
-  
-  // ⭐️ 핵심: 대화 쪼개기용 상태 (현재 몇 번째 대사를 보고 있는지)
   const [dialogueIdx, setDialogueIdx] = useState<number>(0);
 
-  // 모달 상태
-  const [isCasinoOpen, setIsCasinoOpen] = useState<boolean>(false);
-  const [isDeathLogOpen, setIsDeathLogOpen] = useState<boolean>(false);
-  const [isJobSelectOpen, setIsJobSelectOpen] = useState<boolean>(false);
+  // 텍스트 출력 상태 관리
+  const [isTextComplete, setIsTextComplete] = useState<boolean>(false);
+  const [forceComplete, setForceComplete] = useState<boolean>(false);
+
+  // 모달 상태 관리
+  const [isCasinoOpen, setIsCasinoOpen] = useState(false);
+  const [isDeathLogOpen, setIsDeathLogOpen] = useState(false);
+  const [isJobSelectOpen, setIsJobSelectOpen] = useState(false);
+  const [isInvOpen, setIsInvOpen] = useState(false);
+  const [isMapOpen, setIsMapOpen] = useState(false);
+
+  // 브금 및 애니메이션 (연타 방지 변수 포함)
+  const [bgmSound, setBgmSound] = useState<Audio.Sound>();
+  const [isBgmPlaying, setIsBgmPlaying] = useState(false);
+  
+  const lastTapTime = useRef<number>(0); // ⭐️ 연타 방지용 쿨다운 시간 기록
+  const shakeAnim = useRef(new Animated.Value(0)).current;
 
   const nodes = SCENARIO_NODES || {};
-  const currentNode: ScenarioNode =
-    nodes[currentNodeId] || nodes['NODE_PROLOGUE_INTRO'] || FALLBACK_NODE;
+  const currentNode: ScenarioNode = nodes[currentNodeId] || nodes['NODE_PROLOGUE_INTRO'] || FALLBACK_NODE;
   const currentChoices: Choice[] = currentNode.choices || [];
-
   const isInsane = (store?.sanity ?? 100) <= 30;
 
-  // ⭐️ 대사를 두 줄 바꿈(\n\n) 기준으로 배열로 쪼갬
   const dialogues = currentNode.scriptText.split('\n\n').filter((t) => t.trim() !== '');
   const isEndOfDialogue = dialogueIdx >= dialogues.length - 1;
+
+  // 단일 무료 선택지(외길)인지 체크
+  const isSingleSimpleChoice = 
+    currentChoices.length === 1 && 
+    currentChoices[0].costAp === 0 && 
+    !currentChoices[0].requiredJob && 
+    !currentChoices[0].requiredClue && 
+    !currentChoices[0].requiredItem && 
+    !currentChoices[0].triggerDeathId;
+
+  // 장면(노드)이 바뀌거나 대사가 넘어갈 때 텍스트 상태 초기화
+  useEffect(() => {
+    setIsTextComplete(false);
+    setForceComplete(false);
+  }, [dialogueIdx, currentNodeId]);
+
+  // 브금 로딩 (에러 방지용 더미 데이터)
+  useEffect(() => {
+    async function loadBGM() {
+      try {
+        const { sound } = await Audio.Sound.createAsync(
+          { uri: 'data:audio/mp3;base64,' },
+          { isLooping: true, volume: 0.3 }
+        );
+        setBgmSound(sound);
+      } catch (error) {}
+    }
+    loadBGM();
+    return () => { bgmSound?.unloadAsync(); };
+  }, []);
+
+  // 화면 흔들림 이펙트
+  const triggerShakeEffect = () => {
+    if (Platform.OS !== 'web') Vibration.vibrate(400); 
+    Animated.sequence([
+      Animated.timing(shakeAnim, { toValue: 15, duration: 40, useNativeDriver: false }),
+      Animated.timing(shakeAnim, { toValue: -15, duration: 40, useNativeDriver: false }),
+      Animated.timing(shakeAnim, { toValue: 15, duration: 40, useNativeDriver: false }),
+      Animated.timing(shakeAnim, { toValue: 0, duration: 40, useNativeDriver: false })
+    ]).start();
+  };
 
   const showAlert = (title: string, message: string, onConfirm?: () => void) => {
     if (Platform.OS === 'web') {
       window.alert(`${title}\n\n${message}`);
       if (onConfirm) onConfirm();
-    } else {
-      Alert.alert(title, message, [{ text: '확인', onPress: onConfirm }]);
-    }
+    } else { Alert.alert(title, message, [{ text: '확인', onPress: onConfirm }]); }
   };
 
-  // ⭐️ 대화창 탭할 때 다음 대사로 넘기기
-  const handleTapDialogue = () => {
-    if (!isEndOfDialogue) {
-      setDialogueIdx((prev) => prev + 1);
-    }
-  };
-
+  // 선택지 클릭 처리
   const handleSelectChoice = (choice: Choice) => {
     if (choice.costAp > 0 && store.apRemaining < choice.costAp) {
-      setSystemLog('⚠️ 행동력(AP)이 부족합니다!');
-      return;
+      setSystemLog('⚠️ 행동력(AP)이 부족합니다!'); return;
     }
-
     if (choice.unlockClue) {
       store.unlockClue(choice.unlockClue);
       setSystemLog(`💡 중요 단서 습득: [${choice.unlockClue}]`);
     }
+    if (choice.unlockItem) {
+      store.addItem(choice.unlockItem);
+      setSystemLog(`🎒 아이템 획득: [${choice.unlockItem}]`);
+    }
 
     if (choice.triggerDeathId && choice.deathCause && choice.deathTrait) {
-      showAlert(
-        '💀 루프 사망',
-        `사망 원인: ${choice.deathCause}\n영구 패시브 [${choice.deathTrait}] 해금!`,
-        () => {
-          store.triggerDeath(choice.triggerDeathId!, choice.deathCause!, choice.deathTrait!);
-          setCurrentNodeId('NODE_1F_LOBBY_START');
-          setDialogueIdx(0); // ⭐️ 씬 넘어갈 때 대화 인덱스 초기화
-          setSystemLog('루프 리셋: 차가운 로비 소파에서 심장 박동과 함께 다시 눈을 떴습니다.');
-        }
-      );
+      triggerShakeEffect();
+      showAlert('💀 루프 사망', `사망 원인: ${choice.deathCause}\n영구 패시브 [${choice.deathTrait}] 해금!`, () => {
+        store.triggerDeath(choice.triggerDeathId!, choice.deathCause!, choice.deathTrait!);
+        setCurrentNodeId('NODE_PROLOGUE_INTRO');
+        setDialogueIdx(0);
+        setSystemLog('루프 리셋: 차가운 로비 입구에서 거친 숨을 몰아쉬며 다시 눈을 떴습니다.');
+      });
       return;
     }
 
@@ -109,22 +136,49 @@ export default function App() {
     }
 
     if (currentNode.timeSlot === '22:00' && nextAp === 0) {
-      showAlert(
-        '⚠️ 00:00 제로 아워 발발',
-        'AP가 모두 소진되었습니다! 괘종시계가 12번 울리며 병원 전체가 암전에 빠집니다!',
-        () => {
-          useGameStore.setState({ apRemaining: 2 });
-          setCurrentNodeId('NODE_0000_BLACKOUT_EVENT');
-          setDialogueIdx(0);
-          setSystemLog('🚨 코드 블랙 발령: 방호복 경비대가 로비로 난입합니다!');
-        }
-      );
+      triggerShakeEffect();
+      showAlert('⚠️ 00:00 제로 아워 발발', 'AP가 모두 소진되었습니다! 괘종시계가 12번 울리며 병원 전체가 암전에 빠집니다!', () => {
+        useGameStore.setState({ apRemaining: 2 });
+        const blackoutNode = nodes['NODE_0000_BLACKOUT_EVENT'];
+        store.visitLocation?.(blackoutNode.locationName);
+        setCurrentNodeId('NODE_0000_BLACKOUT_EVENT');
+        setDialogueIdx(0);
+        setSystemLog('🚨 코드 블랙 발령: 방호복 경비대가 로비로 난입합니다!');
+      });
       return;
     }
 
     if (choice.nextNodeId && nodes[choice.nextNodeId]) {
+      const nextNode = nodes[choice.nextNodeId];
+      store.visitLocation?.(nextNode.locationName); // 지도 해금 기록
       setCurrentNodeId(choice.nextNodeId);
-      setDialogueIdx(0); // ⭐️ 새로운 노드로 갈 때 첫 대사부터 시작
+      setDialogueIdx(0);
+    }
+  };
+
+  // ⭐️ 터치 로직 (연타 방지 쿨다운 적용 완벽본)
+  const handleTapDialogue = async () => {
+    // 0.3초(300ms) 이내의 중복 터치 무시
+    const now = Date.now();
+    if (now - lastTapTime.current < 300) return; 
+    lastTapTime.current = now;
+
+    if (!isBgmPlaying && bgmSound) {
+      try { await bgmSound.playAsync(); } catch (error) {}
+      setIsBgmPlaying(true);
+    }
+
+    if (!isTextComplete) {
+      // 대사 타이핑 중이면 즉시 전체 표시
+      setForceComplete(true);
+    } else {
+      // 대사가 완료된 상태면
+      if (!isEndOfDialogue) {
+        setDialogueIdx((prev) => prev + 1);
+      } else if (isSingleSimpleChoice) {
+        // 단일 선택지면 대화창 터치만으로 씬 전환!
+        handleSelectChoice(currentChoices[0]);
+      }
     }
   };
 
@@ -135,305 +189,153 @@ export default function App() {
     <SafeAreaView style={[styles.safeArea, isInsane && styles.insaneSafeArea]}>
       <StatusBar barStyle="light-content" />
 
-      {/* 상단 HUD (고정) */}
+      {/* 상단 HUD */}
       <View style={[styles.hudContainer, isInsane && styles.insaneHud]}>
         <TouchableOpacity onPress={() => setIsJobSelectOpen(true)}>
           <Text style={styles.hudHighlight}>LOOP #{store?.loopCount ?? 1}</Text>
-          <Text style={styles.hudSubText}>직업: {store?.selectedJob} ▾</Text>
+          <Text style={styles.hudSubText}>{store?.selectedJob} ▾</Text>
         </TouchableOpacity>
         <View style={styles.hudCenter}>
-          <Text style={styles.hudText}>TIME: {currentNode.timeSlot}</Text>
-          <Text style={[styles.hudText, store.apRemaining === 0 && styles.apZeroText]}>
-            AP: {store?.apRemaining ?? 0}/2
-          </Text>
+          <Text style={styles.hudText}>{currentNode.timeSlot}</Text>
+          <Text style={[styles.hudText, store.apRemaining === 0 && styles.apZeroText]}>AP: {store?.apRemaining ?? 0}/2</Text>
         </View>
         <View style={styles.hudRight}>
-          <Text style={[styles.hudSanity, isInsane && styles.sanityWarning]}>
-            SANITY: {store?.sanity ?? 100}%
-          </Text>
-          <Text style={styles.hudSubText}>CHIPS: {store?.chips ?? 0}개</Text>
+          <Text style={[styles.hudSanity, isInsane && styles.sanityWarning]}>SANITY: {store?.sanity ?? 100}%</Text>
         </View>
       </View>
 
-      <View style={[styles.mainLayout, isTablet && styles.tabletSplitLayout]}>
-        {/* 상단 비주얼 영역 (70% 비율 차지) */}
-        <View style={styles.visualSection}>
-          <VisualStage
-            speaker={currentNode.speakerName}
-            isTabletSplit={isTablet}
-            bgTheme={currentNode.bgTheme}
-            locationName={currentNode.locationName}
-          />
+      <Animated.View style={[styles.mainStage, { transform: [{ translateX: shakeAnim }] }]}>
+        <VisualStage speaker={currentNode.speakerName} bgTheme={currentNode.bgTheme} locationName={currentNode.locationName} />
+        
+        {/* 우측 상단 플로팅 메뉴 */}
+        <View style={styles.floatingMenu}>
+          <TouchableOpacity style={styles.iconWrapper} onPress={() => setIsMapOpen(true)}>
+            <View style={styles.iconCircle}><Text style={styles.iconEmoji}>🗺️</Text></View>
+            <Text style={styles.iconLabel}>지도</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconWrapper} onPress={() => setIsInvOpen(true)}>
+            <View style={styles.iconCircle}><Text style={styles.iconEmoji}>🎒</Text></View>
+            <Text style={styles.iconLabel}>가방</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconWrapper} onPress={() => setIsDeathLogOpen(true)}>
+            <View style={styles.iconCircle}><Text style={styles.iconEmoji}>📖</Text></View>
+            <Text style={styles.iconLabel}>도감</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* 하단 내러티브 및 조작 패널 (30% 비율 차지) */}
-        <View style={[styles.controlPanel, isTablet && styles.tabletControlPanel]}>
-          
-          {/* ⭐️ 대화창 영역 (항상 고정) */}
-          <TouchableOpacity 
-            style={[styles.dialogBox, isInsane && styles.insaneDialogBox]} 
-            activeOpacity={0.8} 
-            onPress={handleTapDialogue}
-          >
-            <View style={styles.speakerTag}>
-              <Text style={styles.speakerName}>[{currentNode.speakerName}]</Text>
-            </View>
-
-            <TypewriterText
-              key={`${currentNode.nodeId}_${dialogueIdx}_${isInsane ? 'insane' : 'normal'}`}
-              text={displayText}
-              speed={15} // 텍스트 타이핑 속도 조금 더 쾌적하게 올림
-              style={styles.scriptText}
-            />
-
-            {!isEndOfDialogue && (
-              <Text style={styles.tapToContinue}>▼ 화면을 터치해서 다음으로...</Text>
-            )}
-          </TouchableOpacity>
-
-          {/* ⭐️ 대사를 끝까지 다 봐야만 선택지와 도감 버튼이 나타남! */}
-          {isEndOfDialogue && (
-            <ScrollView style={styles.scrollArea} contentContainerStyle={styles.scrollContent}>
+        {/* ⭐️ 외길 진행이 아닐 때만 화면 중앙에 선택지 팝업 노출 */}
+        {isEndOfDialogue && isTextComplete && !isSingleSimpleChoice && (
+          <View style={styles.choicesOverlay}>
+            <ScrollView style={styles.choicesScroll} contentContainerStyle={styles.choicesContent}>
               {systemLog ? (
-                <View style={styles.logBox}>
-                  <Text style={styles.logText}>{systemLog}</Text>
-                </View>
+                <View style={styles.logBox}><Text style={styles.logText}>{systemLog}</Text></View>
               ) : null}
 
-              {/* 퀵 메뉴 */}
-              <View style={styles.quickBar}>
-                <TouchableOpacity style={styles.quickButton} onPress={() => setIsDeathLogOpen(true)}>
-                  <Text style={styles.quickButtonText}>📖 사망 도감</Text>
-                </TouchableOpacity>
-                {currentNode.nodeId === 'NODE_B1_CASINO_HUB' && (
-                  <TouchableOpacity style={[styles.quickButton, {borderColor: '#E53E3E'}]} onPress={() => setIsCasinoOpen(true)}>
-                    <Text style={[styles.quickButtonText, {color: '#FEB2B2'}]}>🎰 도박 시작</Text>
-                  </TouchableOpacity>
-                )}
-              </View>
-
-              {/* 환각 선택지 */}
-              {isInsane && (
-                <TouchableOpacity
-                  style={[styles.choiceButton, styles.hallucinationButton]}
-                  onPress={() => {
-                    showAlert('환각', '벽을 긁어대다 손톱이 부러졌습니다. 정신력이 더 깎입니다.');
-                    store.reduceSanity(10);
-                  }}
-                >
-                  <Text style={styles.hallucinationText}>
-                    👁️ [환각] 벽 뒤에서 지우의 목소리가 들린다... 벽을 긁어낸다!
-                  </Text>
-                </TouchableOpacity>
-              )}
-
-              {/* 시나리오 선택지 */}
               {currentChoices.map((choice, index) => {
                 const userClues = store?.metaClues || [];
-                const isJobLocked = !!(choice.requiredJob && choice.requiredJob !== store?.selectedJob);
-                const isClueLocked = !!(choice.requiredClue && !userClues.includes(choice.requiredClue));
-                const isLocked = isJobLocked || isClueLocked;
+                const userItems = store?.inventory || [];
+                const isLocked = !!((choice.requiredJob && choice.requiredJob !== store?.selectedJob) || (choice.requiredClue && !userClues.includes(choice.requiredClue)) || (choice.requiredItem && !userItems.includes(choice.requiredItem)));
 
                 if (isLocked) {
                   return (
-                    <View key={index} style={[styles.choiceButton, styles.lockedButton]}>
-                      <Text style={styles.lockedChoiceText}>
-                        🔒 {choice.requiredClue ? '[루프 지식 필요] ???' : `[${choice.requiredJob} 전용] ???`}
-                      </Text>
+                    <View key={index} style={[styles.choiceBtn, styles.lockedBtn]}>
+                      <Text style={styles.lockedText}>🔒 {choice.requiredClue ? '[단서 필요]' : choice.requiredItem ? '[아이템 필요]' : '[특정 직업 전용]'}</Text>
                     </View>
                   );
                 }
 
                 const isDanger = !!choice.triggerDeathId;
-
                 return (
-                  <TouchableOpacity
-                    key={index}
-                    style={[
-                      styles.choiceButton,
-                      isDanger && styles.dangerButton,
-                      choice.requiredClue && styles.loopClueButton,
-                      choice.isEnding && styles.endingButton, // 엔딩 분기 특수 색상
-                    ]}
-                    onPress={() => handleSelectChoice(choice)}
-                  >
-                    <Text
-                      style={[
-                        styles.choiceText,
-                        isDanger && styles.dangerChoiceText,
-                        choice.requiredClue && styles.loopClueText,
-                        choice.isEnding && styles.endingText,
-                      ]}
-                    >
-                      {choice.text}
-                    </Text>
+                  <TouchableOpacity key={index} style={[styles.choiceBtn, isDanger && styles.dangerBtn, choice.requiredClue && styles.clueBtn, choice.requiredItem && styles.itemBtn, choice.isEnding && styles.endingBtn]} onPress={() => handleSelectChoice(choice)}>
+                    <Text style={[styles.choiceText, isDanger && styles.dangerText, choice.requiredClue && styles.clueText, choice.requiredItem && styles.itemText, choice.isEnding && styles.endingText]}>{choice.text}</Text>
                   </TouchableOpacity>
                 );
               })}
             </ScrollView>
-          )}
+          </View>
+        )}
 
-          {/* 모달 3종 */}
-          <CasinoModal
-            visible={isCasinoOpen}
-            onClose={() => setIsCasinoOpen(false)}
-            onDie={(cause, trait) => {
-              store.triggerDeath('DEATH_04', cause, trait);
-              setCurrentNodeId('NODE_1F_LOBBY_START');
-              setDialogueIdx(0);
-              setSystemLog('루프 리셋: 도박장에서 살해당해 22:00 로비로 되돌아왔습니다.');
-            }}
+        {/* 하단 고정 대화창 */}
+        <TouchableOpacity style={[styles.vnDialogBox, isInsane && styles.insaneDialogBox]} activeOpacity={1} onPress={handleTapDialogue}>
+          <View style={styles.vnSpeakerTag}>
+            <Text style={styles.vnSpeakerText}>{currentNode.speakerName}</Text>
+          </View>
+          
+          <TypewriterText 
+            key={`${currentNode.nodeId}_${dialogueIdx}_${isInsane ? 'insane' : 'normal'}`} 
+            text={displayText} 
+            speed={15} 
+            style={styles.vnScriptText} 
+            forceComplete={forceComplete}
+            onComplete={() => setIsTextComplete(true)}
           />
-          <DeathLogModal visible={isDeathLogOpen} onClose={() => setIsDeathLogOpen(false)} />
-          <JobSelectModal visible={isJobSelectOpen} onClose={() => setIsJobSelectOpen(false)} />
-        </View>
-      </View>
+          
+          {/* 하단 터치 안내 텍스트 분기 */}
+          {(!isTextComplete || !isEndOfDialogue) ? (
+            <Text style={styles.tapToContinue}>▼ 터치해서 계속...</Text>
+          ) : isSingleSimpleChoice ? (
+            <Text style={[styles.tapToContinue, { color: '#68D391', fontSize: 13 }]}>▼ {currentChoices[0].text}</Text>
+          ) : (
+            <Text style={[styles.tapToContinue, { color: '#F6E05E' }]}>▲ 위 화면에서 행동을 선택하세요</Text>
+          )}
+        </TouchableOpacity>
+      </Animated.View>
+
+      <MapModal visible={isMapOpen} onClose={() => setIsMapOpen(false)} currentLocationName={currentNode.locationName} />
+      <CasinoModal visible={isCasinoOpen} onClose={() => setIsCasinoOpen(false)} onDie={(cause, trait) => { triggerShakeEffect(); store.triggerDeath('DEATH_04', cause, trait); setCurrentNodeId('NODE_PROLOGUE_INTRO'); setDialogueIdx(0); }} />
+      <DeathLogModal visible={isDeathLogOpen} onClose={() => setIsDeathLogOpen(false)} />
+      <JobSelectModal visible={isJobSelectOpen} onClose={() => setIsJobSelectOpen(false)} />
+      <InventoryModal visible={isInvOpen} onClose={() => setIsInvOpen(false)} /> 
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#050709',
-    ...(Platform.OS === 'web' ? { height: '100vh' as any } : {}),
-  },
-  insaneSafeArea: {
-    backgroundColor: '#1A080A',
-  },
-  hudContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#0B0D12',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderColor: '#1E2638',
-    zIndex: 10,
-  },
-  insaneHud: {
-    borderColor: '#E53E3E',
-    backgroundColor: '#2B0E12',
-  },
+  safeArea: { flex: 1, backgroundColor: '#050709', ...(Platform.OS === 'web' ? { height: '100vh' as any } : {}) },
+  insaneSafeArea: { backgroundColor: '#1A080A' },
+  hudContainer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#050709', paddingHorizontal: 16, paddingVertical: 10, borderBottomWidth: 1, borderColor: '#1E2638', zIndex: 100 },
+  insaneHud: { borderColor: '#E53E3E', backgroundColor: '#1A080A' },
   hudHighlight: { color: '#00E5FF', fontWeight: 'bold', fontSize: 13 },
   hudSubText: { color: '#90CDF4', fontSize: 11, marginTop: 2, fontWeight: 'bold' },
   hudCenter: { alignItems: 'center' },
   hudRight: { alignItems: 'flex-end' },
-  hudText: { color: '#E2E8F0', fontSize: 13, fontWeight: '600' },
-  apZeroText: { color: '#FF4D4D', fontWeight: 'bold' },
-  hudSanity: { color: '#68D391', fontWeight: 'bold', fontSize: 14 },
+  hudText: { color: '#E2E8F0', fontSize: 13, fontWeight: 'bold' },
+  apZeroText: { color: '#FF4D4D' },
+  hudSanity: { color: '#68D391', fontWeight: 'bold', fontSize: 13 },
   sanityWarning: { color: '#FF4D4D' },
   
-  // ⭐️ 레이아웃 대격변
-  mainLayout: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  tabletSplitLayout: {
-    flexDirection: 'row',
-  },
-  visualSection: {
-    flex: 5.5, // 씬 비율 확대
-    backgroundColor: '#050709',
-  },
-  controlPanel: {
-    flex: 4.5,
-    backgroundColor: '#0A0C10',
-    borderTopWidth: 2,
-    borderColor: '#1E2638',
-    justifyContent: 'flex-start',
-  },
-  tabletControlPanel: {
-    flex: 1,
-    borderLeftWidth: 2,
-    borderTopWidth: 0,
-    borderColor: '#1E2638',
-  },
-
-  // ⭐️ 정통 비주얼 노벨 대화창 스타일
-  dialogBox: {
-    padding: 16,
-    backgroundColor: '#0A0E17',
-    minHeight: 140,
-    borderBottomWidth: 1,
-    borderColor: '#1E2638',
-  },
-  insaneDialogBox: {
-    backgroundColor: '#260F14',
-    borderColor: '#E53E3E',
-  },
-  speakerTag: {
-    alignSelf: 'flex-start',
-    marginBottom: 6,
-  },
-  speakerName: { color: '#63B3ED', fontSize: 15, fontWeight: 'bold' },
-  scriptText: { color: '#EDF2F7', fontSize: 15, lineHeight: 24 },
-  tapToContinue: {
-    color: '#718096',
-    fontSize: 12,
-    alignSelf: 'flex-end',
-    marginTop: 12,
-    fontWeight: 'bold',
-  },
-
-  scrollArea: {
-    flex: 1,
-  },
-  scrollContent: {
-    padding: 16,
-    paddingBottom: 40,
-  },
-  logBox: {
-    backgroundColor: '#0D1117',
-    padding: 10,
-    borderRadius: 6,
-    borderLeftWidth: 3,
-    borderLeftColor: '#00E5FF',
-    marginBottom: 12,
-  },
-  logText: { color: '#A0AEC0', fontSize: 13, lineHeight: 18 },
-  quickBar: {
-    flexDirection: 'row',
-    gap: 8,
-    marginBottom: 12,
-  },
-  quickButton: {
-    flex: 1,
-    backgroundColor: '#11151E',
-    padding: 12,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: '#1C2333',
-    alignItems: 'center',
-  },
-  quickButtonText: { color: '#90CDF4', fontSize: 12, fontWeight: 'bold' },
-  hallucinationButton: {
-    backgroundColor: '#4A0D17',
-    borderColor: '#FF2A4D',
-    borderWidth: 2,
-    marginBottom: 8,
-    padding: 14,
-    borderRadius: 8,
-  },
-  hallucinationText: { color: '#FFA8B8', fontWeight: 'bold', fontSize: 13 },
-  choiceButton: {
-    backgroundColor: '#151A23',
-    padding: 14,
-    borderRadius: 8,
-    marginBottom: 8,
-    borderWidth: 1,
-    borderColor: '#2D3748',
-  },
-  choiceText: { color: '#F7FAFC', fontSize: 14, lineHeight: 20, fontWeight: '500' },
-  lockedButton: { backgroundColor: '#0D1117', borderColor: '#1E2535', opacity: 0.5 },
-  lockedChoiceText: { color: '#4A5568', fontSize: 13 },
-  dangerButton: { backgroundColor: '#261214', borderColor: '#742A2A' },
-  dangerChoiceText: { color: '#FEB2B2' },
-  loopClueButton: { backgroundColor: '#0F2328', borderColor: '#00A3C4' },
-  loopClueText: { color: '#76E4F7', fontWeight: 'bold' },
+  mainStage: { flex: 1, position: 'relative', overflow: 'hidden' },
   
-  // 엔딩 전용 화려한 버튼
-  endingButton: { backgroundColor: '#2D3748', borderColor: '#ECC94B', borderWidth: 2 },
-  endingText: { color: '#ECC94B', fontWeight: 'bold', textAlign: 'center' },
+  floatingMenu: { position: 'absolute', top: 20, right: 16, alignItems: 'center', gap: 16, zIndex: 50 },
+  iconWrapper: { alignItems: 'center' },
+  iconCircle: { width: 42, height: 42, borderRadius: 21, backgroundColor: 'rgba(5, 7, 9, 0.7)', borderWidth: 1, borderColor: '#2D3748', justifyContent: 'center', alignItems: 'center' },
+  iconEmoji: { fontSize: 18 },
+  iconLabel: { color: '#E2E8F0', fontSize: 10, marginTop: 4, fontWeight: 'bold', textShadowColor: '#000', textShadowOffset: { width: 1, height: 1 }, textShadowRadius: 2 },
+
+  choicesOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 180, justifyContent: 'center', alignItems: 'center', padding: 20, zIndex: 40 },
+  choicesScroll: { width: '100%', maxWidth: 500, maxHeight: '80%' },
+  choicesContent: { paddingBottom: 20 },
+  
+  logBox: { backgroundColor: 'rgba(13, 17, 23, 0.9)', padding: 12, borderRadius: 6, borderLeftWidth: 3, borderLeftColor: '#00E5FF', marginBottom: 16 },
+  logText: { color: '#A0AEC0', fontSize: 13, lineHeight: 18 },
+  
+  choiceBtn: { backgroundColor: 'rgba(21, 26, 35, 0.9)', padding: 16, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: '#2D3748' },
+  choiceText: { color: '#F7FAFC', fontSize: 14, lineHeight: 22, fontWeight: '500', textAlign: 'center' },
+  lockedBtn: { backgroundColor: 'rgba(13, 17, 23, 0.6)', borderColor: '#1E2535' },
+  lockedText: { color: '#4A5568', fontSize: 13, textAlign: 'center' },
+  dangerBtn: { backgroundColor: 'rgba(38, 18, 20, 0.9)', borderColor: '#742A2A' },
+  dangerText: { color: '#FEB2B2' },
+  clueBtn: { backgroundColor: 'rgba(15, 35, 40, 0.9)', borderColor: '#00A3C4' },
+  clueText: { color: '#76E4F7', fontWeight: 'bold' },
+  itemBtn: { backgroundColor: 'rgba(43, 35, 19, 0.9)', borderColor: '#D69E2E' },
+  itemText: { color: '#F6E05E', fontWeight: 'bold' },
+  endingBtn: { backgroundColor: 'rgba(45, 55, 72, 0.9)', borderColor: '#ECC94B', borderWidth: 2 },
+  endingText: { color: '#ECC94B', fontWeight: 'bold' },
+
+  vnDialogBox: { position: 'absolute', bottom: 16, left: 16, right: 16, backgroundColor: 'rgba(10, 14, 23, 0.85)', borderWidth: 1, borderColor: '#2D3748', borderRadius: 12, padding: 20, minHeight: 150, zIndex: 60, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.5, shadowRadius: 10 },
+  insaneDialogBox: { backgroundColor: 'rgba(38, 15, 20, 0.85)', borderColor: '#E53E3E' },
+  vnSpeakerTag: { position: 'absolute', top: -14, left: 16, backgroundColor: '#1A365D', paddingHorizontal: 12, paddingVertical: 4, borderRadius: 16, borderWidth: 1, borderColor: '#2B6CB0' },
+  vnSpeakerText: { color: '#90CDF4', fontSize: 13, fontWeight: 'bold' },
+  vnScriptText: { color: '#EDF2F7', fontSize: 15, lineHeight: 26, marginTop: 10 },
+  tapToContinue: { position: 'absolute', bottom: 12, right: 16, color: '#718096', fontSize: 11, fontWeight: 'bold' },
 });

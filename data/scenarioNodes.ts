@@ -8,6 +8,8 @@ export interface Choice {
   requiredJob?: JobType;
   requiredClue?: string;
   unlockClue?: string;
+  requiredItem?: string; 
+  unlockItem?: string;   
   triggerDeathId?: string;
   deathCause?: string;
   deathTrait?: string;
@@ -24,11 +26,12 @@ export interface ScenarioNode {
   scriptText: string;
   choices: Choice[];
   bgTheme?: 'LOBBY' | 'DARK_LOBBY' | 'LINEN' | 'DESK' | 'BLACKOUT';
+  isTimeTransitionNode?: boolean;
 }
 
 export const SCENARIO_NODES: Record<string, ScenarioNode> = {
   // ==========================================
-  // [22:00] 오프닝: 폭설 속 백야 요양원 진입
+  // [22:00] 딥 미스터리 프롤로그: 고립
   // ==========================================
   NODE_PROLOGUE_INTRO: {
     nodeId: 'NODE_PROLOGUE_INTRO',
@@ -37,59 +40,67 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '주인공 (독백)',
     bgTheme: 'LOBBY',
     scriptText:
-      '창문을 거세게 두드리는 산속 눈보라 소리.\n\n가벼운 수면장애로 입원했던 여동생 지우와 연락이 끊긴 지 벌써 3주째다.\n\n지우를 찾기 위해 차를 몰고 이곳까지 올라왔지만, 방금 전 일어난 산사태로 유일한 퇴로마저 완전히 무너져 내렸다.\n\n이제 날이 밝을 때까지, 이 기괴하고 음산한 요양원에 고립되었다.',
+      '어젯밤, 요양원에 입원한 동생 지우에게서 기괴하게 끊긴 문자가 도착했다.\n\n[오빠, 여긴 병원이 아니... 도와ㅈ...]\n\n그 불길한 한 줄에 미친 듯이 차를 몰아 눈보라 치는 산길을 올랐다.\n\n요양원 정문에 도착해 차에서 내린 바로 그 순간, 등 뒤에서 고막을 찢는 굉음과 함께 거대한 산사태가 쏟아져 내렸다. 유일한 진입로가 완전히 끊겨버렸다.\n\n퇴로를 잃은 채 홀린 듯 무거운 유리문을 밀고 들어서자, 숨이 턱 막힐 듯 짙은 포르말린 냄새가 코를 찔렀다.\n\n텅 빈 로비. 소름 끼치는 적막. 이곳은 병원이 아니다. 거대한 영안실이다.',
     choices: [
-      {
-        text: '접수처 데스크의 수간호사에게 다가간다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
+      { text: '불길한 예감을 억누르며, 텅 빈 1층 로비 안쪽으로 발걸음을 옮긴다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_EMPTY' },
+    ],
+  },
+
+  NODE_1F_LOBBY_EMPTY: {
+    nodeId: 'NODE_1F_LOBBY_EMPTY',
+    timeSlot: '22:00',
+    locationName: '1F 텅 빈 로비',
+    speakerName: '주인공 (독백)',
+    bgTheme: 'LOBBY',
+    scriptText:
+      '안내 데스크에는 아무도 없다. 반쯤 깨진 형광등이 신경질적으로 점멸하며 대리석 바닥에 기괴한 그림자를 드리울 뿐이다.\n\n어디선가 일정한 간격으로 물방울이 떨어지는 소리가 들린다. 툭, 툭...\n\n아니, 저건 물이 아니다. 접수처 데스크 아래쪽 대리석 바닥에 검붉은 액체가 웅덩이처럼 고여 있다.',
+    choices: [
+      { text: '[탐색] 핏자국을 따라 안내 데스크 안쪽을 뒤져본다. (AP 0)', costAp: 0, nextNodeId: 'NODE_1F_DESK_INVESTIGATE' },
+      { text: '[탐색] 로비 구석, 어둠이 깔린 대기실 소파 쪽을 살펴본다. (AP 0)', costAp: 0, nextNodeId: 'NODE_1F_WAITING_AREA' },
+    ],
+  },
+
+  NODE_1F_WAITING_AREA: {
+    nodeId: 'NODE_1F_WAITING_AREA',
+    timeSlot: '22:00',
+    locationName: '1F 대기실 소파',
+    speakerName: '주인공 (독백)',
+    bgTheme: 'LOBBY',
+    scriptText:
+      '가죽이 다 벗겨진 소파 위에 누군가 다급하게 흘리고 간 듯한 크레파스 그림이 떨어져 있다.\n\n검은색으로만 마구 칠해진 종이 한가운데, 붉은 눈을 가진 하얀 옷의 사람들이 누군가를 지하로 끌고 가는 기괴한 묘사.\n\n그림 모서리에 삐뚤빼뚤한 글씨가 적혀 있다.\n[밤 12시가 되면 천사들이 사냥을 시작해]\n\n등줄기를 타고 서늘한 소름이 돋아난다.',
+    choices: [
+      { text: '그림을 챙겨 들고 다시 접수처 데스크로 돌아간다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_EMPTY' },
+    ],
+  },
+
+  NODE_1F_DESK_INVESTIGATE: {
+    nodeId: 'NODE_1F_DESK_INVESTIGATE',
+    timeSlot: '22:00',
+    locationName: '1F 접수처 데스크',
+    speakerName: '주인공 (독백)',
+    bgTheme: 'DESK',
+    scriptText:
+      '데스크 안쪽은 누군가 난장판을 벌인 듯 서류가 흩뿌려져 있다.\n\n바닥에 고인 핏자국 옆, 다급하게 찢겨 나간 흔적이 있는 [야간 병동 근무 일지]를 발견했다.\n\n“...지우의 이름이 없다. 어제 자로 모든 환자 명단이 검은 매직으로 지워져 있어.”\n\n그때, 등 뒤에서 서늘한 구둣발 소리가 들려왔다.',
+    choices: [
+      { text: '숨을 죽이고 천천히 뒤를 돌아본다.', costAp: 0, nextNodeId: 'NODE_1F_YUJIN_APPEARANCE' },
     ],
   },
 
   // ==========================================
-  // [22:00] 로비 허브: 수간호사 유진과의 대치
+  // [22:00] 로비 허브: 수간호사 유진과의 조우
   // ==========================================
-  NODE_1F_LOBBY_START: {
-    nodeId: 'NODE_1F_LOBBY_START',
+  NODE_1F_YUJIN_APPEARANCE: {
+    nodeId: 'NODE_1F_YUJIN_APPEARANCE',
     timeSlot: '22:00',
     locationName: '1F 접수처 데스크',
     speakerName: '수간호사 유진',
     bgTheme: 'LOBBY',
     scriptText:
-      '“...강지우 환자분 말씀이십니까?”\n\n수간호사 유진이 반무테 안경을 치켜올리며, 조작된 듯한 서류 한 장을 차갑게 내민다.\n\n“해당 환자는 지난달 15일 자진 퇴원 처리되었습니다. 폭설로 도로가 끊겼으니, 날이 밝을 때까지 로비 소파에서 조용히 대기하십시오.”',
+      '“이런 시간에, 어떻게 들어오신 겁니까?”\n\n어둠 속에서 걸어 나온 여자는 무표정했다. 빳빳하게 다려진 수간호사 가운을 입었지만, 구두 밑창에 묻은 붉은 얼룩이 내 시선을 사로잡았다.\n\n“...강지우 환자의 보호자분이시군요. 안타깝지만, 해당 환자는 어제 오전 자진 퇴원하셨습니다.”\n\n그녀가 내민 서류에는 잉크조차 마르지 않은 조잡한 위조의 흔적이 역력했다.',
     choices: [
-      {
-        text: '[기자 특화] 서류 조작 흔적을 지적하며 원무과 PC를 기습 조사한다. (AP 0)',
-        requiredJob: 'JOURNALIST',
-        costAp: 0,
-        unlockClue: 'CLUE_BLACKOUT_TIME_0000',
-        nextNodeId: 'NODE_1F_DESK_HACK',
-      },
-      {
-        text: '[루프 지식] “00시 정전 프로토콜... 지우를 B3 이카루스로 옮기려는 거죠?” (AP 1)',
-        requiredClue: 'CLUE_BLACKOUT_TIME_0000',
-        costAp: 1,
-        nextNodeId: 'NODE_1F_YUJIN_SHOCKED',
-      },
-      {
-        text: '복도 끝 린넨실 환풍구에서 들려오는 이상한 긁는 소리를 확인한다. (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_1F_LINEN_ROOM',
-      },
-      {
-        text: '로비 소파에 앉아 유진의 동태를 살피며 시간을 보낸다. (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_1F_WAIT_SOFA',
-      },
-      {
-        text: '[충동적 행동] 잠긴 유리창을 깨고 바깥 절벽 눈보라 속으로 뛰어내린다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-        triggerDeathId: 'DEATH_01',
-        deathCause: '절벽 추락사',
-        deathTrait: '야간 시야',
-      },
+      { text: '[기자 특화] 일지와 서류의 잉크가 마르지 않은 점을 짚어 압박한다. (AP 0)', requiredJob: 'JOURNALIST', costAp: 0, unlockClue: 'CLUE_BLACKOUT_TIME_0000', nextNodeId: 'NODE_1F_DESK_HACK' },
+      { text: '[루프 지식] “00시 정전 프로토콜... 환자들을 이카루스로 빼돌린 거 알아.” (AP 1)', requiredClue: 'CLUE_BLACKOUT_TIME_0000', costAp: 1, nextNodeId: 'NODE_1F_YUJIN_SHOCKED' },
+      { text: '말없이 그녀의 구두에 묻은 핏자국을 노려본다. (AP 1)', costAp: 1, nextNodeId: 'NODE_1F_YUJIN_CONFRONT' },
     ],
   },
 
@@ -100,13 +111,22 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '주인공 (독백)',
     bgTheme: 'DESK',
     scriptText:
-      '유진이 자리를 비운 틈을 타 데스크 서류함을 샅샅이 뒤졌다.\n\n깊숙한 곳에서 붉은색 극비 도장이 찍힌 지우의 진짜 진료 차트가 나왔다.\n\n[피험체 코드 #09: 강지우 / 00:00 코드 블랙 발령 시 B3 심층 연구동으로 강제 이관]\n\n자정이 되면 병원 전체가 정전된다. 그 혼란을 이용하는 게 지우를 빼돌릴 유일한 기회다!',
+      '거짓말을 추궁하자 그녀의 눈동자가 기이하게 흔들렸다. 유진이 무전 호출을 받기 위해 잠시 자리를 비운 사이, 찢겨 나간 일지의 뒷장을 빛에 비춰보았다.\n\n볼펜 자국으로 깊게 눌려 남은 글씨가 떠오른다.\n[피험체 코드 #09 강지우 / 00:00 코드 블랙 발령. B3 심층 연구동 이관 예정]\n\n자정. 병원의 불이 꺼지는 순간, 놈들이 지우를 옮긴다. 그 혼란만이 유일한 기회다.',
     choices: [
-      {
-        text: '차트를 덮고 아무 일 없었다는 듯 로비로 돌아간다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
+      { text: '알아낸 진실을 가슴에 품고, 데스크 밖으로 물러난다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
+    ],
+  },
+
+  NODE_1F_YUJIN_CONFRONT: {
+    nodeId: 'NODE_1F_YUJIN_CONFRONT',
+    timeSlot: '22:00',
+    locationName: '1F 접수처 데스크',
+    speakerName: '수간호사 유진',
+    bgTheme: 'LOBBY',
+    scriptText:
+      '내 시선을 알아챈 그녀가 구두를 뒤로 슬쩍 숨긴다. 짙은 포르말린 냄새 사이로 비릿한 혈향이 확고해졌다.\n\n“폭설로 도로가 끊겼으니, 날이 밝을 때까지 소파에서 대기하십시오. 그 이상의 배회는... 당신의 안전을 보장할 수 없습니다.”\n\n경고인지 협박인지 모를 말을 남긴 채, 유진은 복도 끝 어둠 속으로 사라졌다.',
+    choices: [
+      { text: '본격적으로 1층을 탐색하기 위해 몸을 움직인다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
     ],
   },
 
@@ -117,19 +137,9 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '수간호사 유진',
     bgTheme: 'LOBBY',
     scriptText:
-      '“...당신, 대체 그걸 어떻게 아는 거지?”\n\n유진의 차분하던 눈동자가 심하게 흔들린다. 차트를 쥔 손끝이 잘게 떨리고 있다.\n\n“00시 정전 프로토콜은 본사 보안팀과 병원장님만 아는 극비 사항인데... 대체 당신 정체가 뭡니까?”',
+      '“...당신, 대체 그걸 어떻게 아는 거지?”\n\n얼음장 같던 유진의 표정이 일순간 산산조각 났다. 차트를 꽉 쥔 그녀의 손마디가 하얗게 질려 사시나무 떨듯 진동한다.\n\n“00시 정전 프로토콜은... 본사 극비 보안 사항인데. 대체 정체가 뭡니까?”',
     choices: [
-      {
-        text: '“동생을 살리러 왔습니다. 날 도우면 당신 동생의 신변도 보장하죠.” (AP 0)',
-        costAp: 0,
-        unlockClue: 'CLUE_LINEN_MASTER_KEY',
-        nextNodeId: 'NODE_1F_YUJIN_ALLIANCE',
-      },
-      {
-        text: '경고만 남긴 채 돌아선다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
+      { text: '“내 목적은 동생뿐이야. 날 도우면 당신의 신변도 보장하지.” (AP 0)', costAp: 0, unlockItem: '린넨실 마스터키', nextNodeId: 'NODE_1F_YUJIN_ALLIANCE' },
     ],
   },
 
@@ -140,36 +150,54 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '수간호사 유진',
     bgTheme: 'LOBBY',
     scriptText:
-      '“...좋아요. 린넨실 환풍구 뒤에 B1 지하 관리구역으로 통하는 비상 사다리가 있어요.\n\n이 마스터키를 받으세요. 하지만 자정이 되면 방호복으로 무장한 경비대가 로비로 난입할 테니 조심해야 해요.”\n\n[단서: 린넨실 마스터키 획득]',
+      '“...미친 짓이지만, 나도 이 지옥에 신물이 나던 참이었어.\n\n린넨실 환풍구를 뜯어내면 B1 지하로 직행하는 녹슨 사다리가 나와. 이 마스터키를 챙겨요.\n\n하지만 명심해. 자정이 되는 순간, 방호복을 입은 사냥개들이 로비로 쏟아져 들어올 거야.”\n\n[아이템 획득: 차갑게 식은 린넨실 마스터키]',
     choices: [
-      {
-        text: '열쇠를 챙기고 린넨실로 향한다. (AP 0)',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LINEN_ROOM',
-      },
+      { text: '마스터키를 챙겨 린넨실이 있는 복도로 향한다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
+    ],
+  },
+
+  // ==========================================
+  // [22:00] 로비 허브: 본격적인 자유 탐색
+  // ==========================================
+  NODE_1F_LOBBY_HUB: {
+    nodeId: 'NODE_1F_LOBBY_HUB',
+    timeSlot: '22:00',
+    locationName: '1F 메인 복도',
+    speakerName: '주인공 (독백)',
+    bgTheme: 'LOBBY',
+    scriptText:
+      '정적만 감도는 1층 복도. 천장의 형광등이 고장 난 벌레처럼 웅웅거리며 깜빡인다.\n\n오른쪽은 악취가 새어 나오는 [린넨실], 정면은 굳게 닫힌 [메인 엘리베이터], 왼쪽은 [대기실 소파]다.\n\n시간이 얼마 없다. 자정이 되기 전에 단서를 찾아 지하로 내려갈 방법을 찾아야 한다.',
+    choices: [
+      { text: '어둠이 깔린 린넨실 문을 조심스럽게 열어본다. (AP 1)', costAp: 1, nextNodeId: 'NODE_1F_LINEN_ROOM' },
+      { text: '메인 엘리베이터의 버튼을 눌러본다. (AP 1)', costAp: 1, nextNodeId: 'NODE_1F_ELEVATOR' },
+      { text: '대기실 소파에 앉아 놈들의 동태를 살피며 시간을 보낸다. (AP 1)', costAp: 1, nextNodeId: 'NODE_1F_WAIT_SOFA' },
+    ],
+  },
+
+  NODE_1F_ELEVATOR: {
+    nodeId: 'NODE_1F_ELEVATOR',
+    timeSlot: '22:00',
+    locationName: '1F 메인 엘리베이터',
+    speakerName: '주인공 (독백)',
+    bgTheme: 'LOBBY',
+    scriptText:
+      '엘리베이터 호출 버튼을 눌렀지만, 둔탁한 기계음만 날 뿐 반응이 없다.\n\n버튼 틈새로 끈적한 피가 말라붙어 있고, 패널 위에는 [B1, B2, B3 접근 금지 - 원장 승인 필요]라는 살벌한 경고문이 붙어 있다.\n\n이곳으로는 지하로 내려갈 수 없다. 다른 통로를 찾아야만 한다.',
+    choices: [
+      { text: '발길을 돌려 메인 복도로 돌아간다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
     ],
   },
 
   NODE_1F_LINEN_ROOM: {
     nodeId: 'NODE_1F_LINEN_ROOM',
     timeSlot: '22:00',
-    locationName: '1F 린넨실 환풍구',
+    locationName: '1F 린넨실',
     speakerName: '의문의 소녀 세아',
     bgTheme: 'LINEN',
     scriptText:
-      '어두컴컴한 린넨실 구석, 헐렁한 환자복을 입은 연보라빛 머리의 소녀가 웅크린 채 손톱으로 벽을 긁고 있다.\n\n“쉿... 째깍, 째깍... 시계가 열두 번 울리면 하얀 옷을 입은 사신들이 총을 들고 내려와...\n\n불이 꺼지면 도망쳐야 해...”',
+      '문을 열자 퀴퀴한 곰팡이 냄새가 진동한다.\n\n그리고 구석의 대형 환풍구 앞... 피딱지가 눌어붙은 환자복을 걸친 소녀가 웅크린 채 다 닳은 손톱으로 쇠창살을 벅벅 긁어대고 있다.\n\n“쉿... 째깍, 째깍... 열두 번의 종이 울리면, 하얀 옷을 입은 사신들이 총을 들고 데리러 와...\n불이 꺼지면... 숨도 쉬지 말고 쥐구멍으로 도망쳐야 해...”',
     choices: [
-      {
-        text: '세아를 달래며 지하 보일러실로 가는 지름길을 묻는다. (AP 0)',
-        costAp: 0,
-        unlockClue: 'CLUE_B1_SECRET_DOOR',
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
-      {
-        text: '소녀를 자극하지 않고 조용히 빠져나온다. (AP 0)',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
+      { text: '[아이템 사용] 마스터키로 환풍구를 열고 지하로 가는 지름길을 확보한다. (AP 0)', requiredItem: '린넨실 마스터키', costAp: 0, unlockClue: 'CLUE_B1_SECRET_DOOR', nextNodeId: 'NODE_1F_LOBBY_HUB' },
+      { text: '기괴한 광경에 소름이 끼쳐 조용히 방문을 닫고 나온다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
     ],
   },
 
@@ -180,13 +208,9 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     speakerName: '주인공 (독백)',
     bgTheme: 'LOBBY',
     scriptText:
-      '소파에 깊숙이 파묻혀 벽시계를 응시한다. 째깍거리는 초침 소리가 유난히 날카롭게 귓가를 때린다.\n\n병원 직원들은 극도로 긴장한 표정으로 암호 같은 무전을 주고받고 있다.\n\n자정이 점점 다가온다.',
+      '낡은 가죽 소파에 몸을 파묻은 채 거대한 벽시계를 응시한다. 째깍, 째깍. 초침 소리가 고막을 날카롭게 찢는다.\n\n직원들의 움직임이 기계처럼 바빠지고, 무전기를 타고 알 수 없는 암호들이 쉴 새 없이 흘러나온다.\n\n폭풍 전야의 소름 끼치는 정적. 자정이 다가오고 있다.',
     choices: [
-      {
-        text: '다시 일어나 탐색을 시작한다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-      },
+      { text: '자리에서 일어나 다시 탐색을 시도한다.', costAp: 0, nextNodeId: 'NODE_1F_LOBBY_HUB' },
     ],
   },
 
@@ -199,54 +223,25 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     locationName: '1F 로비 ➔ 정전 발발',
     speakerName: '시스템 경보',
     bgTheme: 'BLACKOUT',
+    isTimeTransitionNode: true,
     scriptText:
-      '─── 콰아아앙!!\n\n자정을 알리는 12번째 괘종시계 소리와 함께, 병원 전체의 전력이 일제히 차단되었다!\n\n칠흑 같은 어둠 속에서 붉은 비상등이 비명을 지르듯 점멸하고 요란한 사이렌이 울려 퍼진다.\n\n[경고: 코드 블랙 발령. B구역 격리 차단 및 소거조 투입]\n\n무거운 전투화를 신은 무장 경비대원들이 로비 정문을 부수며 난입하기 시작한다!',
+      '─── 콰아아앙!!\n\n자정을 알리는 열두 번째 괘종시계 소리와 함께, 고막을 찢는 파열음이 울리며 병원 전체의 전력이 일제히 증발했다!\n\n칠흑 같은 어둠 속, 핏빛 비상등만이 섬뜩하게 점멸하며 발광하기 시작한다.\n\n[경고: 코드 블랙 발령. B구역 격리 차단 및 소거조 투입]\n\n철컥. 샷건 장전 소리. 육중한 전투화를 신은 방호복 경비대원들이 유리를 박살 내며 로비로 쏟아져 들어온다!',
     choices: [
-      {
-        text: '[루프 지식] 세아가 알려준 B1 보일러실 비밀 통로로 몸을 날린다! (AP 0)',
-        requiredClue: 'CLUE_B1_SECRET_DOOR',
-        costAp: 0,
-        nextNodeId: 'NODE_B1_BOILER_ROOM',
-      },
-      {
-        text: '어둠 속에서 비상구 유도등을 따라 필사적으로 달린다! (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_B1_BOILER_ROOM',
-      },
-      {
-        text: '[위험] 경비대 순찰조를 향해 소리치며 정면으로 저항한다.',
-        costAp: 0,
-        nextNodeId: 'NODE_1F_LOBBY_START',
-        triggerDeathId: 'DEATH_02',
-        deathCause: '테이저건 심장 마비사',
-        deathTrait: '전기 내성',
-      },
+      { text: '[루프 지식] 린넨실 환풍구 뒤 비밀 통로로 짐승처럼 몸을 던진다! (AP 0)', requiredClue: 'CLUE_B1_SECRET_DOOR', costAp: 0, nextNodeId: 'NODE_B1_BOILER_ROOM' },
+      { text: '어둠 속 희미한 비상구 유도등만을 의지한 채 필사적으로 질주한다! (AP 1)', costAp: 1, nextNodeId: 'NODE_B1_BOILER_ROOM' },
+      { text: '[위험] 이성을 잃고 경비대 순찰조를 향해 정면으로 달려든다.', costAp: 0, nextNodeId: 'NODE_0000_BLACKOUT_EVENT', triggerDeathId: 'DEATH_02', deathCause: '테이저건 심장 마비사', deathTrait: '전기 내성' },
     ],
   },
 
-  // ==========================================
-  // [00:30~01:00] B1 관리구역 & 지하 카지노
-  // ==========================================
   NODE_B1_BOILER_ROOM: {
     nodeId: 'NODE_B1_BOILER_ROOM',
     timeSlot: '00:30',
     locationName: 'B1 보일러실 지하통로',
     speakerName: '주인공 (독백)',
     bgTheme: 'DARK_LOBBY',
-    scriptText:
-      '간신히 로비의 경비대를 따돌리고 어두운 지하 관리구역으로 숨어들었다.\n\n증기 파이프가 쉭쉭거리며 뜨거운 김을 뿜어내는 통로 끝, 붉은 네온사인이 희미하게 번지는 철문 너머로 쿵짝거리는 재즈 음악과 칩 부딪히는 소리가 새어나온다.',
+    scriptText: '간신히 로비의 경비대를 따돌리고 지하로 굴러떨어졌다. 증기 파이프 너머로 네온사인이 일렁이는 카지노 철문이 보인다.',
     choices: [
-      {
-        text: '불빛이 새어나오는 카지노 비밀문으로 향한다. (AP 0)',
-        costAp: 0,
-        nextNodeId: 'NODE_B1_CASINO_HUB',
-      },
-      {
-        text: '[B2 직통 키카드] B2 특수 격리병동 철문을 열고 직통 진입한다. (AP 1)',
-        requiredClue: 'CLUE_B2_KEYCARD',
-        costAp: 1,
-        nextNodeId: 'NODE_B2_QUARANTINE_START',
-      },
+      { text: '어둠을 틈타 카지노 비밀문으로 진입한다. (AP 0)', costAp: 0, nextNodeId: 'NODE_B1_CASINO_HUB' },
     ],
   },
 
@@ -256,199 +251,11 @@ export const SCENARIO_NODES: Record<string, ScenarioNode> = {
     locationName: 'B1 비밀 카지노',
     speakerName: '딜러 카밀라',
     bgTheme: 'DARK_LOBBY',
-    scriptText:
-      '“어머, 위층에서 총소리가 요란하게 나더니 웬 재미있는 손님이 굴러들어왔네?”\n\n버건디빛 머리를 쓸어넘기며 붉은 조끼를 입은 여성이 카지노 칩을 손가락 사이로 능숙하게 굴린다.\n\n“경비대한테 넘겨지기 전에, 나와 목숨을 건 베팅 한 판 어때? 이기면 B2 구역 키카드를 줄게.”',
+    scriptText: '“경비대한테 목이 물어뜯기기 전에, 나와 영혼을 건 베팅 한 판 어때? 이기면 밑으로 내려갈 B2 키카드를 줄게.”',
     choices: [
-      {
-        text: '[카밀라 거래] “B2 키카드를 주면 내 차 열쇠와 바깥 정보를 넘기지.” (AP 0)',
-        costAp: 0,
-        unlockClue: 'CLUE_B2_KEYCARD',
-        nextNodeId: 'NODE_ENDING_02_DEAL',
-      },
-      {
-        text: 'B2 특수 격리병동 입구로 발걸음을 옮긴다. (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_B2_QUARANTINE_START',
-      },
-    ],
-  },
-
-  // ==========================================
-  // [02:00~03:00] B2 특수 격리병동
-  // ==========================================
-  NODE_B2_QUARANTINE_START: {
-    nodeId: 'NODE_B2_QUARANTINE_START',
-    timeSlot: '02:00',
-    locationName: 'B2 특수 격리병동',
-    speakerName: '의문의 소녀 세아',
-    bgTheme: 'DARK_LOBBY',
-    scriptText:
-      '코를 찌르는 푸른 신경가스가 바닥에 독무처럼 자욱하게 깔려 있다.\n\n유리 캡슐 안에 갇힌 세아가 창백한 손으로 유리를 두드리며 울먹인다.\n\n“오빠... 가스가 차오르고 있어... 날 여기서 꺼내줘, 아니면 나랑 같이 붉은 바다로 가자...”',
-    choices: [
-      {
-        text: '[연구원 특화] 화학 지식으로 가스 밸브를 역분사시켜 정화한다. (AP 0)',
-        requiredJob: 'RESEARCHER',
-        costAp: 0,
-        nextNodeId: 'NODE_B3_LAB_ENTRANCE',
-      },
-      {
-        text: '[위험] 환기 밸브를 맨손으로 힘껏 돌리려 시도한다. (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_B2_QUARANTINE_START',
-        triggerDeathId: 'DEATH_03',
-        deathCause: '신경가스 질식사',
-        deathTrait: '독극물 감지',
-      },
-      {
-        text: '세아를 가둔 캡슐을 파괴하고 B3 심층 연구동으로 함께 내려간다. (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_B3_LAB_ENTRANCE',
-      },
-      {
-        text: '[정신력 파탄] “그래... 세아야, 그냥 모든 걸 포기하고 같이 쉬자...”',
-        costAp: 0,
-        nextNodeId: 'NODE_ENDING_05_ASSIMILATION',
-      },
-    ],
-  },
-
-  // ==========================================
-  // [03:30~04:00] B3 심층 연구동 & 최종 분기
-  // ==========================================
-  NODE_B3_LAB_ENTRANCE: {
-    nodeId: 'NODE_B3_LAB_ENTRANCE',
-    timeSlot: '03:30',
-    locationName: 'B3 이카루스 핵심 연구실',
-    speakerName: '주인공 (독백)',
-    bgTheme: 'BLACKOUT',
-    scriptText:
-      '수많은 생체 실험관이 늘어선 기괴한 안개 속, 뇌파 측정 장치를 달고 의식을 잃은 지우가 매달려 있다!\n\n벽면 메인 모니터에는 [04:00 병원 전체 소각 프로토콜 대기 중]이라는 붉은 카운트다운이 째깍거린다.\n\n원장실 중앙 제어 컴퓨터가 바로 눈앞에 있다.',
-    choices: [
-      {
-        text: '[기자/암호 해독] 원장실 마스터 비밀번호로 컴퓨터를 해킹해 비리를 폭로한다! (AP 0)',
-        requiredClue: 'CLUE_DIRECTOR_SAFE_CODE',
-        costAp: 0,
-        nextNodeId: 'NODE_ENDING_03_EXPOSE',
-      },
-      {
-        text: '지우를 구출하고 비상 발전기를 과부하 시켜 요양원을 폭파 탈출한다! (AP 1)',
-        costAp: 1,
-        nextNodeId: 'NODE_ENDING_04_TRUE_ESCAPE',
-      },
-      {
-        text: '지우 앞에서 주저하며 04:00 제한시간을 넘겨버린다.',
-        costAp: 0,
-        nextNodeId: 'NODE_B3_LAB_ENTRANCE',
-        triggerDeathId: 'DEATH_05',
-        deathCause: '소각로 화형사',
-        deathTrait: '위기 질주',
-      },
-    ],
-  },
-
-  // ==========================================
-  // 🏆 5대 멀티 엔딩 노드
-  // ==========================================
-
-  // [ENDING 01] 영원한 방관자
-  NODE_ENDING_01_TIMEOVER: {
-    nodeId: 'NODE_ENDING_01_TIMEOVER',
-    timeSlot: '04:00',
-    locationName: '백야 요양원 전체 소각',
-    speakerName: '시스템',
-    bgTheme: 'BLACKOUT',
-    scriptText:
-      '─── 콰아아앙!!\n\n04:00 제한시간 초과. 천장 환기구에서 빨간 화염이 폭포수처럼 쏟아져 내린다.\n\n아무것도 결정하지 못한 채, 진실도, 지우도, 그리고 당신 자신도 고통스러운 잿더미 속으로 소멸했다.\n\n[ENDING 01: 영원한 방관자]',
-    choices: [
-      {
-        text: '🔄 소파에서 다시 눈을 뜬다 (루프 리셋)',
-        costAp: 0,
-        nextNodeId: 'NODE_PROLOGUE_INTRO',
-        isEnding: true,
-        endingTitle: 'ENDING 01: 영원한 방관자',
-      },
-    ],
-  },
-
-  // [ENDING 02] 거짓된 안식
-  NODE_ENDING_02_DEAL: {
-    nodeId: 'NODE_ENDING_02_DEAL',
-    timeSlot: '01:30',
-    locationName: '산속 산사태 도로',
-    speakerName: '딜러 카밀라',
-    bgTheme: 'DARK_LOBBY',
-    scriptText:
-      '카밀라와의 거래를 통해 지하의 비밀을 뒤로 한 채, 혼자 비상탈출로로 빠져나왔다.\n\n눈보라 속 차 안에서 백미러로 불타오르는 병원을 바라본다. 동생 지우를 버렸다는 지독한 죄책감이 평생 당신의 목을 죄어올 것이다.\n\n[ENDING 02: 거짓된 안식]',
-    choices: [
-      {
-        text: '🔄 참회하며 다시 차를 돌린다 (루프 리셋)',
-        costAp: 0,
-        nextNodeId: 'NODE_PROLOGUE_INTRO',
-        isEnding: true,
-        endingTitle: 'ENDING 02: 거짓된 안식',
-      },
-    ],
-  },
-
-  // [ENDING 03] 진실의 폭로
-  NODE_ENDING_03_EXPOSE: {
-    nodeId: 'NODE_ENDING_03_EXPOSE',
-    timeSlot: '03:50',
-    locationName: 'B3 원무과 서버실',
-    speakerName: '주인공 (독백)',
-    bgTheme: 'DESK',
-    scriptText:
-      '딸깍!\n\n이카루스 프로젝트의 참혹한 생체 실험 데이터와 위조 차트가 전 세계 주요 언론사로 일제히 송출되었다.\n\n경보음이 어지럽게 울려 퍼지는 가운데, 당신은 겨우 의식을 차린 지우를 들쳐업고 당당히 정문을 향해 걸어 나간다.\n\n[ENDING 03: 진실의 폭로]',
-    choices: [
-      {
-        text: '🎉 다른 직업과 루트로 도전하기 (루프 리셋)',
-        costAp: 0,
-        nextNodeId: 'NODE_PROLOGUE_INTRO',
-        isEnding: true,
-        endingTitle: 'ENDING 03: 진실의 폭로',
-      },
-    ],
-  },
-
-  // [ENDING 04] 이카루스의 낙하 (TRUE ENDING)
-  NODE_ENDING_04_TRUE_ESCAPE: {
-    nodeId: 'NODE_ENDING_04_TRUE_ESCAPE',
-    timeSlot: '04:00',
-    locationName: '백야 요양원 외곽',
-    speakerName: '주인공 & 지우',
-    bgTheme: 'LOBBY',
-    scriptText:
-      '콰콰콰쾅─!!\n\n과부하된 비상 발전기가 연쇄 폭발을 일으키며 끔찍했던 백야 요양원이 흔적도 없이 산산조각 난다.\n\n자욱한 연기와 어둠이 걷히고 새벽빛이 동틀 무렵, 의식을 되찾은 지우가 당신의 손을 꼭 쥔다.\n\n“오빠... 이제 집에 가자.”\n\n[ENDING 04: 이카루스의 낙하 (TRUE ENDING)]',
-    choices: [
-      {
-        text: '🏆 진 엔딩 클리어! (처음으로 돌아가기)',
-        costAp: 0,
-        nextNodeId: 'NODE_PROLOGUE_INTRO',
-        isEnding: true,
-        endingTitle: 'ENDING 04: 이카루스의 낙하',
-      },
-    ],
-  },
-
-  // [ENDING 05] 심연과의 동화
-  NODE_ENDING_05_ASSIMILATION: {
-    nodeId: 'NODE_ENDING_05_ASSIMILATION',
-    timeSlot: '02:30',
-    locationName: 'B2 붉은 신경가스 캡슐',
-    speakerName: '의문의 소녀 세아',
-    bgTheme: 'BLACKOUT',
-    scriptText:
-      '이성의 끈이 완전히 끊어지고, 환각과 푸른 안개 속으로 몸을 던졌다.\n\n세아가 기괴하지만 아름다운 미소를 지으며 당신의 목을 부드럽게 감싸 안는다.\n\n“잘 왔어... 이제 아무것도 아파할 필요 없어... 영원히 나와 하나가 되는 거야...”\n\n[ENDING 05: 심연과의 동화]',
-    choices: [
-      {
-        text: '🔄 악몽에서 깨어난다 (루프 리셋)',
-        costAp: 0,
-        nextNodeId: 'NODE_PROLOGUE_INTRO',
-        isEnding: true,
-        endingTitle: 'ENDING 05: 심연과의 동화',
-      },
-    ],
-  },
+      { text: '보일러실로 돌아간다.', costAp: 0, nextNodeId: 'NODE_B1_BOILER_ROOM' }
+    ]
+  }
 };
 
 export default SCENARIO_NODES;

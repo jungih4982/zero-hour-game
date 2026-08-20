@@ -3,155 +3,96 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 interface VisualStageProps {
-  speaker?: string;
-  isTabletSplit?: boolean;
+  speaker: string;
+  locationName: string;
   bgTheme?: 'LOBBY' | 'DARK_LOBBY' | 'LINEN' | 'DESK' | 'BLACKOUT';
-  locationName?: string;
+  isTabletSplit?: boolean;
 }
 
-export const VisualStage: React.FC<VisualStageProps> = ({
-  speaker,
-  isTabletSplit,
-  bgTheme = 'LOBBY',
-  locationName = '1F 지상 로비',
-}) => {
-  const getSpeakerStyle = (name?: string) => {
-    switch (name) {
-      case '수간호사 유진':
-        return { tagColor: '#00E5FF', role: '수간호사 (26세)', emoji: '👩‍⚕️' };
-      case '의문의 소녀 세아':
-        return { tagColor: '#B794F4', role: '피험체 환자 (19세)', emoji: '🥀' };
-      case '딜러 카밀라':
-        return { tagColor: '#FF4D4D', role: '카지노 딜러 (27세)', emoji: '🃏' };
-      default:
-        return { tagColor: '#718096', role: '독백 / 시스템', emoji: '👤' };
-    }
-  };
-
-  const getThemeBgColor = () => {
+export const VisualStage: React.FC<VisualStageProps> = ({ speaker, locationName, bgTheme }) => {
+  // 테마별 배경색 설정 (나중엔 진짜 배경 이미지로 교체하면 됨)
+  const getThemeColor = () => {
     switch (bgTheme) {
-      case 'BLACKOUT':
-        return '#1A0508'; // 정전 붉은 비상등
-      case 'DESK':
-        return '#0B1320'; // 원무과 푸른 조명
-      case 'LINEN':
-        return '#120E1C'; // 린넨실 보랏빛 음영
-      case 'DARK_LOBBY':
-        return '#080C14'; // 지하 관리구역 암흑
-      default:
-        return '#0A0E17'; // 기본 로비
+      case 'BLACKOUT': return '#050000';
+      case 'DARK_LOBBY': return '#0A1118';
+      case 'LINEN': return '#12140D';
+      case 'DESK': return '#1A1820';
+      case 'LOBBY':
+      default: return '#141821';
     }
   };
-
-  const speakerInfo = getSpeakerStyle(speaker);
-  const isNarrator = !speaker || speaker.includes('주인공') || speaker.includes('시스템');
 
   return (
-    <View style={[styles.container, isTabletSplit && styles.tabletContainer]}>
-      {/* 배경 레이어 */}
-      <View style={[styles.backgroundLayer, { backgroundColor: getThemeBgColor() }]}>
-        <View style={[styles.vignetteOverlay, bgTheme === 'BLACKOUT' && styles.blackoutOverlay]} />
-        <Text style={styles.locationTag}>📍 {locationName}</Text>
-        {bgTheme === 'BLACKOUT' && (
-          <Text style={styles.emergencyTag}>🚨 EMERGENCY BLACKOUT</Text>
+    <View style={[styles.container, { backgroundColor: getThemeColor() }]}>
+      {/* 현재 장소 표시 (호텔 더스크 감성) */}
+      <View style={styles.locationBadge}>
+        <Text style={styles.locationText}>📍 {locationName}</Text>
+      </View>
+
+      {/* 캐릭터 실루엣 렌더링 (미연시 연출 핵심!) */}
+      <View style={styles.characterContainer}>
+        {speaker.includes('독백') ? (
+          // 독백일 때는 1인칭 시점이므로 빈 공간 연출
+          <View style={styles.monologueEffect} />
+        ) : (
+          // NPC 대화일 때는 중앙에 거대한 캐릭터 실루엣 배치
+          <View style={styles.spritePlaceholder}>
+            <Text style={styles.spriteIcon}>
+              {speaker.includes('유진') ? '👩‍⚕️' : speaker.includes('세아') ? '👧' : speaker.includes('카밀라') ? '🃏' : '👤'}
+            </Text>
+          </View>
         )}
       </View>
 
-      {/* 캐릭터 스탠딩 */}
-      {!isNarrator && (
-        <View style={styles.characterContainer}>
-          <View style={[styles.spritePlaceholder, { borderColor: speakerInfo.tagColor }]}>
-            <Text style={styles.spriteEmoji}>{speakerInfo.emoji}</Text>
-            <Text style={[styles.spriteName, { color: speakerInfo.tagColor }]}>
-              {speaker}
-            </Text>
-            <Text style={styles.spriteRole}>{speakerInfo.role}</Text>
-          </View>
-        </View>
-      )}
+      {/* 비주얼 노벨 특유의 하단 어두운 그라데이션 (대화창 가독성 확보) */}
+      <View style={styles.bottomVignette} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 240,
-    backgroundColor: '#050709',
-    position: 'relative',
-    overflow: 'hidden',
-    borderBottomWidth: 2,
-    borderColor: '#1E2638',
-  },
-  tabletContainer: {
-    height: '100%',
-    flex: 1.2,
-    borderBottomWidth: 0,
-    borderRightWidth: 2,
-    borderColor: '#1E2638',
-  },
-  backgroundLayer: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-start',
-    padding: 16,
-  },
-  vignetteOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  blackoutOverlay: {
-    backgroundColor: 'rgba(180, 0, 0, 0.25)',
-  },
-  locationTag: {
-    color: '#ECC94B',
-    fontSize: 12,
-    fontWeight: 'bold',
-    backgroundColor: 'rgba(10, 15, 24, 0.85)',
-    alignSelf: 'flex-start',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#2D3748',
-  },
-  emergencyTag: {
-    color: '#FF4D4D',
-    fontSize: 11,
-    fontWeight: 'bold',
-    marginTop: 6,
-    letterSpacing: 1.5,
-  },
-  characterContainer: {
-    position: 'absolute',
-    bottom: 12,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-  },
-  spritePlaceholder: {
-    width: 150,
-    height: 180,
-    backgroundColor: 'rgba(18, 22, 31, 0.9)',
-    borderWidth: 2,
-    borderRadius: 12,
+    ...StyleSheet.absoluteFillObject, // ⭐️ 전체 화면 꽉 채우기
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.8,
-    shadowRadius: 10,
-    elevation: 8,
   },
-  spriteEmoji: {
-    fontSize: 44,
-    marginBottom: 6,
+  locationBadge: {
+    position: 'absolute',
+    top: 24,
+    left: 20,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    borderLeftWidth: 3,
+    borderColor: '#63B3ED',
   },
-  spriteName: {
-    fontSize: 15,
-    fontWeight: 'bold',
+  locationText: { color: '#E2E8F0', fontSize: 14, fontWeight: 'bold', letterSpacing: 1 },
+  
+  characterContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 160, // 하단 대화창 공간 비워두기
   },
-  spriteRole: {
-    fontSize: 11,
-    color: '#A0AEC0',
-    marginTop: 2,
+  spritePlaceholder: {
+    width: 250,
+    height: 400,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  spriteIcon: { fontSize: 120, opacity: 0.8 },
+  monologueEffect: { flex: 1 },
+  
+  bottomVignette: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    height: 250,
+    backgroundColor: 'rgba(0,0,0,0.7)', // 대화창 뒤를 어둡게 눌러줌
+  }
 });
