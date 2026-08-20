@@ -30,22 +30,19 @@ export default function App() {
   const [systemLog, setSystemLog] = useState<string>('폭설로 진입로가 무너져 고립되었습니다.');
   const [dialogueIdx, setDialogueIdx] = useState<number>(0);
 
-  // 텍스트 출력 상태 관리
   const [isTextComplete, setIsTextComplete] = useState<boolean>(false);
   const [forceComplete, setForceComplete] = useState<boolean>(false);
 
-  // 모달 상태 관리
   const [isCasinoOpen, setIsCasinoOpen] = useState(false);
   const [isDeathLogOpen, setIsDeathLogOpen] = useState(false);
   const [isJobSelectOpen, setIsJobSelectOpen] = useState(false);
   const [isInvOpen, setIsInvOpen] = useState(false);
   const [isMapOpen, setIsMapOpen] = useState(false);
 
-  // 브금 및 애니메이션 (연타 방지 변수 포함)
   const [bgmSound, setBgmSound] = useState<Audio.Sound>();
   const [isBgmPlaying, setIsBgmPlaying] = useState(false);
   
-  const lastTapTime = useRef<number>(0); // ⭐️ 연타 방지용 쿨다운 시간 기록
+  const lastTapTime = useRef<number>(0);
   const shakeAnim = useRef(new Animated.Value(0)).current;
 
   const nodes = SCENARIO_NODES || {};
@@ -56,7 +53,6 @@ export default function App() {
   const dialogues = currentNode.scriptText.split('\n\n').filter((t) => t.trim() !== '');
   const isEndOfDialogue = dialogueIdx >= dialogues.length - 1;
 
-  // 단일 무료 선택지(외길)인지 체크
   const isSingleSimpleChoice = 
     currentChoices.length === 1 && 
     currentChoices[0].costAp === 0 && 
@@ -65,13 +61,8 @@ export default function App() {
     !currentChoices[0].requiredItem && 
     !currentChoices[0].triggerDeathId;
 
-  // 장면(노드)이 바뀌거나 대사가 넘어갈 때 텍스트 상태 초기화
-  useEffect(() => {
-    setIsTextComplete(false);
-    setForceComplete(false);
-  }, [dialogueIdx, currentNodeId]);
+  // ⭐️ [버그 원인 제거] 여기서 쓰던 딜레이 걸리던 useEffect 지워버림! 
 
-  // 브금 로딩 (에러 방지용 더미 데이터)
   useEffect(() => {
     async function loadBGM() {
       try {
@@ -86,7 +77,6 @@ export default function App() {
     return () => { bgmSound?.unloadAsync(); };
   }, []);
 
-  // 화면 흔들림 이펙트
   const triggerShakeEffect = () => {
     if (Platform.OS !== 'web') Vibration.vibrate(400); 
     Animated.sequence([
@@ -104,7 +94,6 @@ export default function App() {
     } else { Alert.alert(title, message, [{ text: '확인', onPress: onConfirm }]); }
   };
 
-  // 선택지 클릭 처리
   const handleSelectChoice = (choice: Choice) => {
     if (choice.costAp > 0 && store.apRemaining < choice.costAp) {
       setSystemLog('⚠️ 행동력(AP)이 부족합니다!'); return;
@@ -124,6 +113,9 @@ export default function App() {
         store.triggerDeath(choice.triggerDeathId!, choice.deathCause!, choice.deathTrait!);
         setCurrentNodeId('NODE_PROLOGUE_INTRO');
         setDialogueIdx(0);
+        // ⭐️ 죽어서 리셋될 때 텍스트 상태 즉시 초기화
+        setIsTextComplete(false);
+        setForceComplete(false);
         setSystemLog('루프 리셋: 차가운 로비 입구에서 거친 숨을 몰아쉬며 다시 눈을 떴습니다.');
       });
       return;
@@ -143,6 +135,9 @@ export default function App() {
         store.visitLocation?.(blackoutNode.locationName);
         setCurrentNodeId('NODE_0000_BLACKOUT_EVENT');
         setDialogueIdx(0);
+        // ⭐️ 정전 강제 이동 시 텍스트 상태 즉시 초기화
+        setIsTextComplete(false);
+        setForceComplete(false);
         setSystemLog('🚨 코드 블랙 발령: 방호복 경비대가 로비로 난입합니다!');
       });
       return;
@@ -150,17 +145,18 @@ export default function App() {
 
     if (choice.nextNodeId && nodes[choice.nextNodeId]) {
       const nextNode = nodes[choice.nextNodeId];
-      store.visitLocation?.(nextNode.locationName); // 지도 해금 기록
+      store.visitLocation?.(nextNode.locationName);
       setCurrentNodeId(choice.nextNodeId);
       setDialogueIdx(0);
+      // ⭐️ 정상 맵 이동 시 텍스트 상태 즉시 초기화 (버그 원천 차단!)
+      setIsTextComplete(false);
+      setForceComplete(false);
     }
   };
 
-  // ⭐️ 터치 로직 (연타 방지 쿨다운 적용 완벽본)
   const handleTapDialogue = async () => {
-    // 0.3초(300ms) 이내의 중복 터치 무시
     const now = Date.now();
-    if (now - lastTapTime.current < 300) return; 
+    if (now - lastTapTime.current < 250) return; // 0.25초 연타 방지
     lastTapTime.current = now;
 
     if (!isBgmPlaying && bgmSound) {
@@ -169,14 +165,15 @@ export default function App() {
     }
 
     if (!isTextComplete) {
-      // 대사 타이핑 중이면 즉시 전체 표시
-      setForceComplete(true);
+      setForceComplete(true); // 타이핑 스킵
     } else {
-      // 대사가 완료된 상태면
       if (!isEndOfDialogue) {
         setDialogueIdx((prev) => prev + 1);
+        // ⭐️ 다음 대사로 넘어갈 때 상태 즉시 초기화 (버그 원천 차단!)
+        setIsTextComplete(false);
+        setForceComplete(false);
       } else if (isSingleSimpleChoice) {
-        // 단일 선택지면 대화창 터치만으로 씬 전환!
+        // 단일 선택지는 대화창 터치만으로 쾌적하게 이동
         handleSelectChoice(currentChoices[0]);
       }
     }
@@ -189,7 +186,6 @@ export default function App() {
     <SafeAreaView style={[styles.safeArea, isInsane && styles.insaneSafeArea]}>
       <StatusBar barStyle="light-content" />
 
-      {/* 상단 HUD */}
       <View style={[styles.hudContainer, isInsane && styles.insaneHud]}>
         <TouchableOpacity onPress={() => setIsJobSelectOpen(true)}>
           <Text style={styles.hudHighlight}>LOOP #{store?.loopCount ?? 1}</Text>
@@ -207,7 +203,6 @@ export default function App() {
       <Animated.View style={[styles.mainStage, { transform: [{ translateX: shakeAnim }] }]}>
         <VisualStage speaker={currentNode.speakerName} bgTheme={currentNode.bgTheme} locationName={currentNode.locationName} />
         
-        {/* 우측 상단 플로팅 메뉴 */}
         <View style={styles.floatingMenu}>
           <TouchableOpacity style={styles.iconWrapper} onPress={() => setIsMapOpen(true)}>
             <View style={styles.iconCircle}><Text style={styles.iconEmoji}>🗺️</Text></View>
@@ -223,7 +218,6 @@ export default function App() {
           </TouchableOpacity>
         </View>
 
-        {/* ⭐️ 외길 진행이 아닐 때만 화면 중앙에 선택지 팝업 노출 */}
         {isEndOfDialogue && isTextComplete && !isSingleSimpleChoice && (
           <View style={styles.choicesOverlay}>
             <ScrollView style={styles.choicesScroll} contentContainerStyle={styles.choicesContent}>
@@ -255,7 +249,6 @@ export default function App() {
           </View>
         )}
 
-        {/* 하단 고정 대화창 */}
         <TouchableOpacity style={[styles.vnDialogBox, isInsane && styles.insaneDialogBox]} activeOpacity={1} onPress={handleTapDialogue}>
           <View style={styles.vnSpeakerTag}>
             <Text style={styles.vnSpeakerText}>{currentNode.speakerName}</Text>
@@ -270,7 +263,6 @@ export default function App() {
             onComplete={() => setIsTextComplete(true)}
           />
           
-          {/* 하단 터치 안내 텍스트 분기 */}
           {(!isTextComplete || !isEndOfDialogue) ? (
             <Text style={styles.tapToContinue}>▼ 터치해서 계속...</Text>
           ) : isSingleSimpleChoice ? (
@@ -282,7 +274,14 @@ export default function App() {
       </Animated.View>
 
       <MapModal visible={isMapOpen} onClose={() => setIsMapOpen(false)} currentLocationName={currentNode.locationName} />
-      <CasinoModal visible={isCasinoOpen} onClose={() => setIsCasinoOpen(false)} onDie={(cause, trait) => { triggerShakeEffect(); store.triggerDeath('DEATH_04', cause, trait); setCurrentNodeId('NODE_PROLOGUE_INTRO'); setDialogueIdx(0); }} />
+      <CasinoModal visible={isCasinoOpen} onClose={() => setIsCasinoOpen(false)} onDie={(cause, trait) => { 
+        triggerShakeEffect(); 
+        store.triggerDeath('DEATH_04', cause, trait); 
+        setCurrentNodeId('NODE_PROLOGUE_INTRO'); 
+        setDialogueIdx(0); 
+        setIsTextComplete(false);
+        setForceComplete(false);
+      }} />
       <DeathLogModal visible={isDeathLogOpen} onClose={() => setIsDeathLogOpen(false)} />
       <JobSelectModal visible={isJobSelectOpen} onClose={() => setIsJobSelectOpen(false)} />
       <InventoryModal visible={isInvOpen} onClose={() => setIsInvOpen(false)} /> 
