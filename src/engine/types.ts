@@ -6,6 +6,7 @@ export type LocationId = string & { readonly __brand: 'LocationId' };
 export type ClueId = string & { readonly __brand: 'ClueId' };
 export type DeductionId = string & { readonly __brand: 'DeductionId' };
 export type MemoryId = string & { readonly __brand: 'MemoryId' };
+export type ItemId = string & { readonly __brand: 'ItemId' };
 
 export type NarrativeScene = {
   id: SceneId;
@@ -25,10 +26,15 @@ export type NarrativeChoice = {
 };
 
 export type ChoiceCondition =
+  | { type: 'hasMemory'; memoryId: MemoryId }
   | { type: 'hasClue'; clueId: ClueId }
   | { type: 'lacksClue'; clueId: ClueId }
+  | { type: 'hasItem'; itemId: ItemId }
   | { type: 'hasDeduction'; deductionId: DeductionId }
   | { type: 'minimumLoopCount'; count: number }
+  | { type: 'maximumLoopCount'; count: number }
+  | { type: 'timeBefore'; time: GameTime }
+  | { type: 'timeAfter'; time: GameTime }
   | { type: 'timeRange'; start: GameTime; end: GameTime }
   | { type: 'knowsPreviousDeath'; deathId: string }
   | { type: 'knowsDeathIntel'; memoryId: MemoryId }
@@ -37,6 +43,8 @@ export type ChoiceCondition =
 export type NarrativeEffect =
   | { type: 'gainClue'; clueId: ClueId }
   | { type: 'gainMemory'; memory: MemoryRecord }
+  | { type: 'gainItem'; itemId: ItemId }
+  | { type: 'removeItem'; itemId: ItemId }
   | { type: 'gainDeathIntel'; intel: DeathIntel }
   | { type: 'advanceTime'; minutes: number }
   | { type: 'moveLocation'; locationId: LocationId }
@@ -93,6 +101,12 @@ export type LoopVolatileState = {
   currentSceneId: SceneId;
   currentLocationId: LocationId;
   visitedSceneIds: readonly SceneId[];
+  itemIds: readonly ItemId[];
   flags: Readonly<Record<string, boolean | number | string>>;
   deathId?: string;
+};
+
+export type NarrativeEngineState = {
+  persistent: LoopPersistentState;
+  volatile: LoopVolatileState;
 };
