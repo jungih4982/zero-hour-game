@@ -1,4 +1,5 @@
 import type {
+  ClueId,
   DeathIntel,
   LocationId,
   MemoryId,
@@ -12,9 +13,26 @@ export const SCENE_CH00_YUJIN_FIRST = 'SCENE_CH00_YUJIN_FIRST' as SceneId;
 export const SCENE_CH00_YUJIN_DENIAL = 'SCENE_CH00_YUJIN_DENIAL' as SceneId;
 export const SCENE_CH00_MESSAGE = 'SCENE_CH00_MESSAGE' as SceneId;
 export const SCENE_CH00_FIRST_ANOMALY = 'SCENE_CH00_FIRST_ANOMALY' as SceneId;
+export const SCENE_CH01_LOBBY_DECISION = 'SCENE_CH01_LOBBY_DECISION' as SceneId;
+export const SCENE_CH01_RECORDS_RESULT = 'SCENE_CH01_RECORDS_RESULT' as SceneId;
+export const SCENE_CH01_RECORDS_INTERRUPTED = 'SCENE_CH01_RECORDS_INTERRUPTED' as SceneId;
+export const SCENE_CH01_WEST_WARD_RESULT = 'SCENE_CH01_WEST_WARD_RESULT' as SceneId;
+export const SCENE_CH01_WEST_WARD_RETURN = 'SCENE_CH01_WEST_WARD_RETURN' as SceneId;
+export const SCENE_CH01_WATCH_YUJIN = 'SCENE_CH01_WATCH_YUJIN' as SceneId;
+export const SCENE_CH01_YUJIN_CALL = 'SCENE_CH01_YUJIN_CALL' as SceneId;
+export const SCENE_CH01_CALL_BELL_2252 = 'SCENE_CH01_CALL_BELL_2252' as SceneId;
+export const SCENE_CH01_BELL_CHECK_RESULT = 'SCENE_CH01_BELL_CHECK_RESULT' as SceneId;
+export const SCENE_CH01_BELL_TELL_YUJIN = 'SCENE_CH01_BELL_TELL_YUJIN' as SceneId;
+export const SCENE_CH01_BELL_CLUE_RESPONSE = 'SCENE_CH01_BELL_CLUE_RESPONSE' as SceneId;
+export const SCENE_CH01_SUBJECT_SIX_2312 = 'SCENE_CH01_SUBJECT_SIX_2312' as SceneId;
 export const SCENE_BLACKOUT_0000 = 'SCENE_BLACKOUT_0000' as SceneId;
 export const SCENE_FIRST_DEATH = 'SCENE_FIRST_DEATH' as SceneId;
 export const LOCATION_1F_LOBBY = '1F_LOBBY' as LocationId;
+export const LOCATION_1F_WEST_WARD = '1F_WEST_WARD' as LocationId;
+export const LOCATION_1F_STAFF_ELEVATOR = '1F_STAFF_ELEVATOR' as LocationId;
+export const CLUE_PATIENT_S06 = 'CLUE_PATIENT_S06' as ClueId;
+export const CLUE_ROOM_302_OCCUPIED = 'CLUE_ROOM_302_OCCUPIED' as ClueId;
+export const CLUE_YUJIN_CALL = 'CLUE_YUJIN_CALL' as ClueId;
 export const MEMORY_BLACKOUT_0000 = 'MEMORY_BLACKOUT_0000' as MemoryId;
 export const FIRST_DEATH_ID = 'DEATH_BLACKOUT_SECURITY';
 
@@ -214,7 +232,319 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
         text: '돌아오는 유진을 기다린다.',
         kind: 'standard',
         effects: [
-          { type: 'advanceTime', minutes: 108 },
+          { type: 'advanceTime', minutes: 6 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_LOBBY_DECISION },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_LOBBY_DECISION]: {
+    id: SCENE_CH01_LOBBY_DECISION,
+    locationId: LOCATION_1F_LOBBY,
+    title: '22:18 — 어디부터 볼 것인가',
+    body: `유진은 아직 돌아오지 않았다.
+
+접수대 안쪽에는 원무과 단말기가 켜져 있다. 서쪽 복도 위 표지판에는 '병동 301–308'이 적혀 있다.
+
+직원 구역으로 이어지는 문은 완전히 닫히지 않았다.`,
+    choices: [
+      {
+        id: 'INVESTIGATE_RECORDS',
+        text: '원무과 단말기를 확인한다.',
+        kind: 'standard',
+        effects: [
+          { type: 'gainClue', clueId: CLUE_PATIENT_S06 },
+          { type: 'advanceTime', minutes: 9 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_RECORDS_RESULT },
+        ],
+      },
+      {
+        id: 'INVESTIGATE_WEST_WARD',
+        text: '서쪽 병동으로 가본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'gainClue', clueId: CLUE_ROOM_302_OCCUPIED },
+          { type: 'advanceTime', minutes: 9 },
+          { type: 'moveLocation', locationId: LOCATION_1F_WEST_WARD },
+          { type: 'jumpScene', sceneId: SCENE_CH01_WEST_WARD_RESULT },
+        ],
+      },
+      {
+        id: 'WATCH_YUJIN',
+        text: '유진을 지켜본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 9 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_WATCH_YUJIN },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_RECORDS_RESULT]: {
+    id: SCENE_CH01_RECORDS_RESULT,
+    locationId: LOCATION_1F_LOBBY,
+    title: '22:27 — 삭제된 환자',
+    body: `검색창에 서윤의 이름을 입력했다. 결과는 없다.
+
+생년월일로 다시 찾자 환자 기록 하나가 나타났다. 이름 칸은 비어 있다.
+
+환자 ID: S-06
+
+상태: 관리자 권한으로 삭제됨
+
+S-06이 누구인지는 확인할 수 없다.`,
+    choices: [
+      {
+        id: 'KEEP_CHECKING_RECORDS',
+        text: '삭제 기록을 더 확인한다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 13 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_RECORDS_INTERRUPTED },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_RECORDS_INTERRUPTED]: {
+    id: SCENE_CH01_RECORDS_INTERRUPTED,
+    locationId: LOCATION_1F_LOBBY,
+    title: '22:40 — 직원용 단말기',
+    body: `접수대 안쪽 문이 열렸다. 유진이 돌아왔다.
+
+화면을 본 유진이 단말기 전원 버튼을 눌렀다.
+
+"직원용입니다."
+
+"삭제된 환자 기록이 있던데요."
+
+"보신 내용은 잊어 주세요."`,
+    choices: [
+      {
+        id: 'WAIT_AFTER_RECORDS',
+        text: '단말기에서 물러난다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 12 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_CALL_BELL_2252 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_WEST_WARD_RESULT]: {
+    id: SCENE_CH01_WEST_WARD_RESULT,
+    locationId: LOCATION_1F_WEST_WARD,
+    title: '22:27 — 302호',
+    body: `서쪽 병동에는 소독약 냄새가 남아 있다. 병실 문은 닫혀 있고 간호 스테이션은 비어 있다.
+
+302호 앞에서 호출등이 짧게 켜졌다.
+
+문에는 '공실' 표지가 붙어 있다. 문 아래로 얇은 빛이 새어 나온다.
+
+손잡이는 움직이지 않는다.`,
+    choices: [
+      {
+        id: 'TRY_ROOM_302_AGAIN',
+        text: '302호 문을 다시 확인한다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 13 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_WEST_WARD_RETURN },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_WEST_WARD_RETURN]: {
+    id: SCENE_CH01_WEST_WARD_RETURN,
+    locationId: LOCATION_1F_WEST_WARD,
+    title: '22:40 — 닫힌 문',
+    body: `문 안쪽에서 바퀴가 구르는 소리가 났다. 문 가까이에서 멈췄다.
+
+다시 손잡이를 잡았다. 잠긴 상태는 그대로다.
+
+간호 스테이션 전화기는 연결음 없이 한 번 울리고 멎었다.`,
+    choices: [
+      {
+        id: 'RETURN_FROM_WEST_WARD',
+        text: '로비로 돌아간다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 12 },
+          { type: 'moveLocation', locationId: LOCATION_1F_LOBBY },
+          { type: 'jumpScene', sceneId: SCENE_CH01_CALL_BELL_2252 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_WATCH_YUJIN]: {
+    id: SCENE_CH01_WATCH_YUJIN,
+    locationId: LOCATION_1F_LOBBY,
+    title: '22:27 — 카운터 건너편',
+    body: `접수대 건너편 의자에 앉았다.
+
+유진은 기록지를 정리했다. 세 번 접은 종이를 주머니에 넣고 22시 34분에 자리에서 일어났다.
+
+약제실과 반대 방향이었다.`,
+    choices: [
+      {
+        id: 'FOLLOW_YUJIN',
+        text: '거리를 두고 따라간다.',
+        kind: 'standard',
+        effects: [
+          { type: 'gainClue', clueId: CLUE_YUJIN_CALL },
+          { type: 'advanceTime', minutes: 7 },
+          { type: 'moveLocation', locationId: LOCATION_1F_STAFF_ELEVATOR },
+          { type: 'jumpScene', sceneId: SCENE_CH01_YUJIN_CALL },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_YUJIN_CALL]: {
+    id: SCENE_CH01_YUJIN_CALL,
+    locationId: LOCATION_1F_STAFF_ELEVATOR,
+    title: '22:34 — 직원 전용 엘리베이터',
+    body: `직원 전용 엘리베이터 앞에서 유진이 통화하고 있었다.
+
+"아니요. 아직 모릅니다."
+
+유진은 상대의 말을 들었다.
+
+"제가 처리하겠습니다."
+
+통화를 끝낸 유진이 돌아봤다. 휴대전화를 주머니에 넣었다.
+
+"여긴 직원 구역입니다."`,
+    choices: [
+      {
+        id: 'RETURN_AFTER_YUJIN_CALL',
+        text: '로비로 돌아간다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 18 },
+          { type: 'moveLocation', locationId: LOCATION_1F_LOBBY },
+          { type: 'jumpScene', sceneId: SCENE_CH01_CALL_BELL_2252 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_CALL_BELL_2252]: {
+    id: SCENE_CH01_CALL_BELL_2252,
+    locationId: LOCATION_1F_LOBBY,
+    title: '22:52 — 호출벨',
+    body: `호출벨이 울린다.
+
+서쪽 병동 표시등 하나가 붉게 깜박인다.`,
+    choices: [
+      {
+        id: 'CHECK_CALL_BELL',
+        text: '호출벨을 확인하러 간다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 13 },
+          { type: 'moveLocation', locationId: LOCATION_1F_WEST_WARD },
+          { type: 'jumpScene', sceneId: SCENE_CH01_BELL_CHECK_RESULT },
+        ],
+      },
+      {
+        id: 'TELL_YUJIN_ABOUT_BELL',
+        text: '유진에게 알린다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 13 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_BELL_TELL_YUJIN },
+        ],
+      },
+      {
+        id: 'IDENTIFY_ROOM_302',
+        text: '[단서: ROOM_302_OCCUPIED] 302호가 공실이라는 건 이미 확인했다.',
+        kind: 'standard',
+        conditions: [{ type: 'hasClue', clueId: CLUE_ROOM_302_OCCUPIED }],
+        effects: [
+          { type: 'advanceTime', minutes: 13 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_BELL_CLUE_RESPONSE },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_BELL_CHECK_RESULT]: {
+    id: SCENE_CH01_BELL_CHECK_RESULT,
+    locationId: LOCATION_1F_WEST_WARD,
+    title: '23:05 — 응답 없음',
+    body: `302호 호출등은 켜져 있다. 문은 여전히 잠겨 있다.
+
+두 번 노크했다. 안에서 대답은 없다.`,
+    choices: [
+      {
+        id: 'WAIT_FOR_FIXED_EVENT_AFTER_CHECK',
+        text: '호출등을 지켜본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 7 },
+          { type: 'moveLocation', locationId: LOCATION_1F_LOBBY },
+          { type: 'jumpScene', sceneId: SCENE_CH01_SUBJECT_SIX_2312 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_BELL_TELL_YUJIN]: {
+    id: SCENE_CH01_BELL_TELL_YUJIN,
+    locationId: LOCATION_1F_LOBBY,
+    title: '23:05 — 유진의 대답',
+    body: `"제가 확인하겠습니다. 로비에 계세요."
+
+유진은 302호라는 말을 듣기 전에 서쪽 병동을 봤다.`,
+    choices: [
+      {
+        id: 'WAIT_FOR_FIXED_EVENT_AFTER_TELLING',
+        text: '표시등을 지켜본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 7 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_SUBJECT_SIX_2312 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_BELL_CLUE_RESPONSE]: {
+    id: SCENE_CH01_BELL_CLUE_RESPONSE,
+    locationId: LOCATION_1F_LOBBY,
+    title: '23:05 — 302호',
+    body: `"302호죠. 공실 표지도 확인했습니다."
+
+유진이 호출 표시판을 확인했다.
+
+"로비에 계세요."
+
+같은 말이지만 이번에는 대답이 늦었다.`,
+    choices: [
+      {
+        id: 'WAIT_FOR_FIXED_EVENT_AFTER_CLUE',
+        text: '유진이 가는 방향을 본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 7 },
+          { type: 'jumpScene', sceneId: SCENE_CH01_SUBJECT_SIX_2312 },
+        ],
+      },
+    ],
+  },
+  [SCENE_CH01_SUBJECT_SIX_2312]: {
+    id: SCENE_CH01_SUBJECT_SIX_2312,
+    locationId: LOCATION_1F_LOBBY,
+    title: '23:12 — 응답 확인',
+    body: `302호 호출이 갑자기 멈춘다.
+
+천장 스피커가 켜졌다. 짧은 노이즈 뒤로 기계적인 영어 음성이 흘러나온다.
+
+Subject Six, response confirmed.
+
+방송은 바로 끊긴다.`,
+    choices: [
+      {
+        id: 'CONTINUE_TO_ZERO_HOUR',
+        text: '방송이 끊긴 스피커를 올려다본다.',
+        kind: 'standard',
+        effects: [
+          { type: 'advanceTime', minutes: 48 },
           { type: 'jumpScene', sceneId: SCENE_BLACKOUT_0000 },
         ],
       },
