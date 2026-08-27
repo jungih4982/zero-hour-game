@@ -2,8 +2,12 @@ import {
   FIRST_DEATH_ID,
   LOCATION_1F_LOBBY,
   MEMORY_BLACKOUT_0000,
+  SCENE_CH00_ENTRANCE,
+  SCENE_CH00_FIRST_ANOMALY,
+  SCENE_CH00_MESSAGE,
+  SCENE_CH00_YUJIN_DENIAL,
+  SCENE_CH00_YUJIN_FIRST,
   SCENE_FIRST_DEATH,
-  SCENE_LOBBY_2200,
   prologueScenes,
 } from '../content/prologue';
 import { getAvailableChoices } from './choices';
@@ -11,10 +15,22 @@ import { applyEffects } from './effects';
 import { LOOP_START_TIME, resetLoop } from './loop';
 import type { ItemId, NarrativeEngineState } from './types';
 
-function assert(condition: boolean, message: string): void {
+function assert(condition: boolean, message: string): asserts condition {
   if (!condition) {
     throw new Error(`Prologue simulation failed: ${message}`);
   }
+}
+
+function choose(
+  state: NarrativeEngineState,
+  choiceId: string,
+): NarrativeEngineState {
+  const scene = prologueScenes[state.volatile.currentSceneId];
+  const choice = getAvailableChoices(scene, state).find(
+    (candidate) => candidate.id === choiceId,
+  );
+  assert(choice !== undefined, `${choiceId} must be available`);
+  return applyEffects(state, choice.effects);
 }
 
 export type PrologueSimulationResult = {
@@ -37,7 +53,7 @@ export function runPrologueSimulation(): PrologueSimulationResult {
     },
     volatile: {
       time: LOOP_START_TIME,
-      currentSceneId: SCENE_LOBBY_2200,
+      currentSceneId: SCENE_CH00_ENTRANCE,
       currentLocationId: LOCATION_1F_LOBBY,
       visitedSceneIds: [],
       itemIds: ['TEMPORARY_KEY' as ItemId],
@@ -45,20 +61,31 @@ export function runPrologueSimulation(): PrologueSimulationResult {
     },
   };
 
-  const lobby = prologueScenes[SCENE_LOBBY_2200];
-  const loop1Choices = getAvailableChoices(lobby, initialState);
+  const atYujinLoop1 = choose(initialState, 'APPROACH_RECEPTION');
+  const yujinScene = prologueScenes[SCENE_CH00_YUJIN_FIRST];
+  const loop1Choices = getAvailableChoices(yujinScene, atYujinLoop1);
   assert(
     !loop1Choices.some((choice) => choice.kind === 'foreknowledge'),
     'Loop 1 must not expose the Foreknowledge choice',
   );
 
-  const afterLobbyChoice = applyEffects(initialState, loop1Choices[0].effects);
-  const blackoutScene = prologueScenes[afterLobbyChoice.volatile.currentSceneId];
-  const blackoutChoices = getAvailableChoices(blackoutScene, afterLobbyChoice);
-  const atDeathScene = applyEffects(
-    afterLobbyChoice,
-    blackoutChoices[0].effects,
+  const atDenial = choose(atYujinLoop1, 'NAME_SEOYUN');
+  assert(
+    atDenial.volatile.currentSceneId === SCENE_CH00_YUJIN_DENIAL,
+    'the route must reach Yujin denial',
   );
+  const atMessage = choose(atDenial, 'SHOW_SEOYUN_MESSAGE');
+  assert(
+    atMessage.volatile.currentSceneId === SCENE_CH00_MESSAGE,
+    'the route must reach Seo-yoon message',
+  );
+  const atAnomaly = choose(atMessage, 'CHECK_SCHEDULED_TIME');
+  assert(
+    atAnomaly.volatile.currentSceneId === SCENE_CH00_FIRST_ANOMALY,
+    'the route must reach the first anomaly',
+  );
+  const atBlackout = choose(atAnomaly, 'WAIT_FOR_YUJIN');
+  const atDeathScene = choose(atBlackout, 'MOVE_IN_DARKNESS');
   assert(
     atDeathScene.volatile.currentSceneId === SCENE_FIRST_DEATH,
     'the Loop 1 route must reach the first death scene',
@@ -81,7 +108,7 @@ export function runPrologueSimulation(): PrologueSimulationResult {
 
   const loop2State = resetLoop(
     afterDeath,
-    SCENE_LOBBY_2200,
+    SCENE_CH00_ENTRANCE,
     LOCATION_1F_LOBBY,
   );
   assert(loop2State.persistent.loopCount === 2, 'reset must start Loop 2');
@@ -93,7 +120,8 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   );
   assert(loop2State.volatile.time === LOOP_START_TIME, 'time must reset to 22:00');
 
-  const loop2Choices = getAvailableChoices(lobby, loop2State);
+  const atYujinLoop2 = choose(loop2State, 'APPROACH_RECEPTION');
+  const loop2Choices = getAvailableChoices(yujinScene, atYujinLoop2);
   assert(
     loop2Choices.some((choice) => choice.kind === 'foreknowledge'),
     'Loop 2 must expose the Foreknowledge choice',

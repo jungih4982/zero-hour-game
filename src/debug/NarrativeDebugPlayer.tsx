@@ -11,7 +11,7 @@ import {
 import {
   FIRST_DEATH_ID,
   LOCATION_1F_LOBBY,
-  SCENE_LOBBY_2200,
+  SCENE_CH00_ENTRANCE,
   prologueScenes,
 } from '../content/prologue';
 import {
@@ -39,7 +39,7 @@ function createInitialState(): NarrativeEngineState {
     },
     volatile: {
       time: LOOP_START_TIME,
-      currentSceneId: SCENE_LOBBY_2200,
+      currentSceneId: SCENE_CH00_ENTRANCE,
       currentLocationId: LOCATION_1F_LOBBY,
       visitedSceneIds: [],
       itemIds: [],
@@ -75,7 +75,7 @@ export function NarrativeDebugPlayer() {
 
   const returnToLoopStart = () => {
     setState((currentState) =>
-      resetLoop(currentState, SCENE_LOBBY_2200, LOCATION_1F_LOBBY),
+      resetLoop(currentState, SCENE_CH00_ENTRANCE, LOCATION_1F_LOBBY),
     );
   };
 
