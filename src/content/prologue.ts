@@ -224,7 +224,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
     id: SCENE_BLACKOUT_0000,
     locationId: LOCATION_1F_LOBBY,
     title: '00:00 — 정전',
-    body: '조명이 꺼지고, 첫 루프의 플레이어는 무엇이 오는지 모른다.',
+    body: '조명이 꺼졌다. 무엇이 오는지는 알 수 없었다.',
     choices: [
       {
         id: 'MOVE_IN_DARKNESS',
