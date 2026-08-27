@@ -30,10 +30,6 @@ function addDeathIntel(
       ...state.persistent,
       clueIds,
       deathIntel,
-      knownDeathIds: appendUnique(
-        state.persistent.knownDeathIds,
-        intel.deathId,
-      ),
     },
   };
 }
@@ -114,15 +110,27 @@ export function applyEffect(
             },
           };
     case 'triggerDeath': {
+      const alreadyRecorded = state.persistent.deathRecords.some(
+        (record) =>
+          record.deathId === effect.deathId &&
+          record.loopCount === state.persistent.loopCount,
+      );
       const deadState: NarrativeEngineState = {
         ...state,
         volatile: { ...state.volatile, deathId: effect.deathId },
         persistent: {
           ...state.persistent,
-          knownDeathIds: appendUnique(
-            state.persistent.knownDeathIds,
-            effect.deathId,
-          ),
+          deathRecords: alreadyRecorded
+            ? state.persistent.deathRecords
+            : [
+                ...state.persistent.deathRecords,
+                {
+                  deathId: effect.deathId,
+                  loopCount: state.persistent.loopCount,
+                  time: state.volatile.time,
+                  sceneId: state.volatile.currentSceneId,
+                },
+              ],
         },
       };
       return effect.intel ? addDeathIntel(deadState, effect.intel) : deadState;

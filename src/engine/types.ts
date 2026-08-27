@@ -84,6 +84,13 @@ export type MemoryRecord = {
   relatedClueIds?: readonly ClueId[];
 };
 
+export type DeathRecord = {
+  deathId: string;
+  loopCount: number;
+  time: GameTime;
+  sceneId: SceneId;
+};
+
 /** Knowledge and progression retained when a loop resets. */
 export type LoopPersistentState = {
   loopCount: number;
@@ -91,7 +98,7 @@ export type LoopPersistentState = {
   deductionIds: readonly DeductionId[];
   memories: readonly MemoryRecord[];
   deathIntel: readonly DeathIntel[];
-  knownDeathIds: readonly string[];
+  deathRecords: readonly DeathRecord[];
   flags: Readonly<Record<string, boolean | number | string>>;
 };
 

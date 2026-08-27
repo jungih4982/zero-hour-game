@@ -32,7 +32,9 @@ export function evaluateCondition(
         state.volatile.time <= condition.end
       );
     case 'knowsPreviousDeath':
-      return state.persistent.knownDeathIds.includes(condition.deathId);
+      return state.persistent.deathRecords.some(
+        (record) => record.deathId === condition.deathId,
+      );
     case 'knowsDeathIntel':
       return state.persistent.deathIntel.some(
         (intel) => intel.memoryId === condition.memoryId,
