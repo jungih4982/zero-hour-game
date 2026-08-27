@@ -11,6 +11,7 @@ import { DeathLogModal } from './components/DeathLogModal';
 import { JobSelectModal } from './components/JobSelectModal';
 import { InventoryModal } from './components/InventoryModal';
 import { MapModal } from './components/MapModal';
+import { NarrativeDebugPlayer } from './src/debug/NarrativeDebugPlayer';
 
 const FALLBACK_NODE: ScenarioNode = {
   nodeId: 'NODE_FALLBACK',
@@ -23,7 +24,7 @@ const FALLBACK_NODE: ScenarioNode = {
 
 const distortText = (text: string) => text.replace(/[가-힣]/g, (char) => (Math.random() < 0.2 ? '§#@' : char));
 
-export default function App() {
+export function LegacyApp() {
   const store = useGameStore();
 
   const [currentNodeId, setCurrentNodeId] = useState<string>('NODE_PROLOGUE_INTRO');
@@ -306,6 +307,8 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+export default NarrativeDebugPlayer;
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#050709', ...(Platform.OS === 'web' ? { height: '100vh' as any } : {}) },
