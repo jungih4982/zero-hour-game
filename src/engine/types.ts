@@ -82,6 +82,24 @@ export type MemoryRecord = {
   acquiredOnLoop: number;
   sourceSceneId?: SceneId;
   relatedClueIds?: readonly ClueId[];
+  payoff?: KnowledgePayoff;
+};
+
+export type KnowledgePayoff = {
+  predictsEvent: string;
+  usableFrom?: GameTime;
+  usableUntil?: GameTime;
+  changes: readonly (
+    | 'timeSaved'
+    | 'riskAvoided'
+    | 'routeUnlocked'
+    | 'eventPreempted'
+    | 'npcBehaviorChanged'
+    | 'informationCombined'
+  )[];
+  timeSavedMinutes?: number;
+  avoidsRisk?: string;
+  unlocksLocationId?: LocationId;
 };
 
 export type DeathRecord = {

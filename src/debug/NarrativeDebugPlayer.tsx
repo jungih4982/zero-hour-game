@@ -92,6 +92,11 @@ export function NarrativeDebugPlayer() {
             LOCATION {state.volatile.currentLocationId}
           </Text>
           <Text style={styles.sceneId}>SCENE {state.volatile.currentSceneId}</Text>
+          <Text style={styles.sceneId}>
+            CLUES {state.persistent.clueIds.length > 0
+              ? state.persistent.clueIds.join(', ')
+              : 'NONE'}
+          </Text>
         </View>
 
         <View style={styles.scenePanel}>
