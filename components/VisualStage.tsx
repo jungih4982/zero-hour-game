@@ -11,14 +11,14 @@ interface VisualStageProps {
   onSpotClick?: (nextNodeId: string) => void;
 }
 
-// ⭐️ 테마별 배경 이미지 맵 (현재 생성된 bg_lobby 외에는 기본 fallback 제공)
+// ⭐️ 테마별 배경 이미지 맵 (현재 생성된 로비 배경 외에는 기본 fallback 제공)
 const BACKGROUND_IMAGES: Record<string, any> = {
-  LOBBY: require('../assets/backgrounds/bg_lobby.png'),
+  LOBBY: require('../assets/backgrounds/1f/BG_1F_Lobby_v01.png'),
   // 차후 생성할 이미지들 (이미지가 없을 경우 로비 배경 또는 배경색 fallback)
-  DESK: require('../assets/backgrounds/bg_lobby.png'),
-  LINEN: require('../assets/backgrounds/bg_lobby.png'),
-  DARK_LOBBY: require('../assets/backgrounds/bg_lobby.png'),
-  BLACKOUT: require('../assets/backgrounds/bg_lobby.png'),
+  DESK: require('../assets/backgrounds/1f/BG_1F_Lobby_v01.png'),
+  LINEN: require('../assets/backgrounds/1f/BG_1F_Lobby_v01.png'),
+  DARK_LOBBY: require('../assets/backgrounds/1f/BG_1F_Lobby_v01.png'),
+  BLACKOUT: require('../assets/backgrounds/1f/BG_1F_Lobby_v01.png'),
 };
 
 export const VisualStage: React.FC<VisualStageProps> = ({ 
