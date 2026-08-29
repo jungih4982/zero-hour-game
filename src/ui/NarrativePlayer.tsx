@@ -6,7 +6,6 @@ import {
   type ImageSourcePropType,
   Platform,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -14,6 +13,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   BookOpen,
   ChevronRight,
@@ -464,7 +464,10 @@ function CharacterSprite({
 
 export function NarrativePlayer() {
   const { width, height } = useWindowDimensions();
-  const layout = getGameLayout(width, height);
+  const insets = useSafeAreaInsets();
+  const viewportWidth = Math.max(1, width - insets.left - insets.right);
+  const viewportHeight = Math.max(1, height - insets.top - insets.bottom);
+  const layout = getGameLayout(viewportWidth, viewportHeight);
   const [showMemory, setShowMemory] = useState(false);
   const [instantText, setInstantText] = useState(false);
   const [textComplete, setTextComplete] = useState(false);
@@ -509,7 +512,7 @@ export function NarrativePlayer() {
   }, [scene.id]);
 
   useEffect(() => {
-    setTextComplete(false);
+    setTextComplete(instantText);
     setForceComplete(instantText);
   }, [scene.id, currentBeatIndex]);
 
@@ -552,16 +555,15 @@ export function NarrativePlayer() {
   const location =
     locationNames[engineState.volatile.currentLocationId] ??
     engineState.volatile.currentLocationId;
-  const duoDialogWidth = Math.min(width - layout.horizontalGutter * 2, width * 0.74);
+  const duoDialogWidth = Math.min(
+    viewportWidth - layout.horizontalGutter * 2,
+    viewportWidth * 0.74,
+  );
   const duoDialogHeight = Math.min(
     layout.dialogMaxHeight,
-    Math.max(240, height * 0.31),
+    Math.max(240, viewportHeight * 0.31),
   );
-  const activeDialogHeight = duoDialogueLayout
-    ? duoDialogHeight
-    : layout.dialogMaxHeight;
-  const choiceHeight = Math.min(230, activeDialogHeight * 0.34);
-  const duoWidthLimit = (width - layout.horizontalGutter * 3) / 2;
+  const duoWidthLimit = (viewportWidth - layout.horizontalGutter * 3) / 2;
   const stagedSpriteWidth = twoCharacterBeat
     ? Math.min(
         layout.spriteWidth * (layout.overlayDialogue ? 0.88 : 0.82),
@@ -570,7 +572,7 @@ export function NarrativePlayer() {
     : layout.spriteWidth;
   const stagedSpriteHeight = stagedSpriteWidth * 1.5;
   const characterStageAnchors = getCharacterStageAnchors({
-    viewportWidth: width,
+    viewportWidth,
     horizontalGutter: layout.horizontalGutter,
     spriteWidth: stagedSpriteWidth,
     characterCount: stagedCharacters.length,
@@ -578,7 +580,7 @@ export function NarrativePlayer() {
   });
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView edges={['top', 'right', 'bottom', 'left']} style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
       <View style={styles.root}>
         <View
@@ -680,7 +682,7 @@ export function NarrativePlayer() {
                 ? {
                     top: 86,
                     right: layout.horizontalGutter,
-                    width: Math.min(380, width * 0.34),
+                    width: Math.min(380, viewportWidth * 0.34),
                   }
                 : {
                     top: 72,
@@ -722,7 +724,7 @@ export function NarrativePlayer() {
               ? duoDialogueLayout
                 ? {
                     position: 'absolute',
-                    left: (width - duoDialogWidth) / 2,
+                    left: (viewportWidth - duoDialogWidth) / 2,
                     bottom: layout.horizontalGutter,
                     width: duoDialogWidth,
                     height: duoDialogHeight,
@@ -823,86 +825,80 @@ export function NarrativePlayer() {
                 >
                   <ChevronRight color="#b8c6d5" size={17} strokeWidth={1.8} />
                 </Pressable>
-              ) : null}
-            </ScrollView>
-
-            {sceneReady && isDead ? (
-              <View style={styles.actionDock}>
-                <View style={styles.deathBlock}>
-                  <Text style={styles.deathEyebrow}>멈춘 초침</Text>
-                  <Text style={styles.deathTitle}>마지막 순간을 기억했다</Text>
-                  <Text style={styles.deathDescription}>
-                    {engineState.persistent.deathIntel.find(
-                      (intel) => intel.deathId === engineState.volatile.deathId,
-                    )?.description ?? '열린 문과 멈춘 초침만 남았다.'}
-                  </Text>
-                  <Pressable
-                    accessibilityRole="button"
-                    onPress={() => {
-                      setBeatIndex(0);
-                      setTextComplete(false);
-                      beginNextLoop();
-                    }}
-                    style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
-                  >
-                    <Text style={styles.primaryButtonText}>첫 통화로 돌아간다</Text>
-                    <ChevronRight color="#10151c" size={18} strokeWidth={2.2} />
-                  </Pressable>
-                </View>
-              </View>
-            ) : sceneReady ? (
-              <ScrollView
-                style={[styles.choiceScroll, { maxHeight: choiceHeight }]}
-                contentContainerStyle={styles.choiceList}
-                showsVerticalScrollIndicator={choices.length > 3}
-              >
-                {choices.map((choice, index) => {
-                  const foreknowledge = choice.kind === 'foreknowledge';
-                  const visibleChoiceText = choice.text.replace('[기억] ', '');
-                  return (
+              ) : isDead ? (
+                <View style={styles.actionDock}>
+                  <View style={styles.deathBlock}>
+                    <Text style={styles.deathEyebrow}>멈춘 초침</Text>
+                    <Text style={styles.deathTitle}>마지막 순간을 기억했다</Text>
+                    <Text style={styles.deathDescription}>
+                      {engineState.persistent.deathIntel.find(
+                        (intel) => intel.deathId === engineState.volatile.deathId,
+                      )?.description ?? '열린 문과 멈춘 초침만 남았다.'}
+                    </Text>
                     <Pressable
                       accessibilityRole="button"
-                      accessibilityLabel={visibleChoiceText}
-                      key={choice.id}
                       onPress={() => {
                         setBeatIndex(0);
                         setTextComplete(false);
-                        selectChoice(choice.id);
+                        beginNextLoop();
                       }}
-                      style={({ pressed }) => [
-                        styles.choiceButton,
-                        foreknowledge && styles.foreknowledgeButton,
-                        pressed && styles.choiceButtonPressed,
-                      ]}
+                      style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
                     >
-                      <View style={[styles.choiceNumber, foreknowledge && styles.choiceNumberMemory]}>
-                        <Text style={[styles.choiceIndex, foreknowledge && styles.foreknowledgeText]}>
-                          {foreknowledge ? '◈' : String(index + 1).padStart(2, '0')}
-                        </Text>
-                      </View>
-                      <Text style={[styles.choiceText, foreknowledge && styles.foreknowledgeText]}>
-                        {visibleChoiceText}
-                      </Text>
-                      <ChevronRight
-                        color={foreknowledge ? '#b79ee9' : '#708195'}
-                        size={17}
-                        strokeWidth={1.7}
-                      />
+                      <Text style={styles.primaryButtonText}>첫 통화로 돌아간다</Text>
+                      <ChevronRight color="#10151c" size={18} strokeWidth={2.2} />
                     </Pressable>
-                  );
-                })}
-                {isComplete ? (
-                  <Pressable
-                    accessibilityRole="button"
-                    onPress={confirmRestart}
-                    style={({ pressed }) => [styles.endingButton, pressed && styles.pressed]}
-                  >
-                    <RotateCcw color="#afbac7" size={15} />
-                    <Text style={styles.endingButtonText}>첫 통화부터 다시</Text>
-                  </Pressable>
-                ) : null}
-              </ScrollView>
-            ) : null}
+                  </View>
+                </View>
+              ) : (
+                <View style={styles.choiceList}>
+                  {choices.map((choice, index) => {
+                    const foreknowledge = choice.kind === 'foreknowledge';
+                    const visibleChoiceText = choice.text.replace('[기억] ', '');
+                    return (
+                      <Pressable
+                        accessibilityRole="button"
+                        accessibilityLabel={visibleChoiceText}
+                        key={choice.id}
+                        onPress={() => {
+                          setBeatIndex(0);
+                          setTextComplete(false);
+                          selectChoice(choice.id);
+                        }}
+                        style={({ pressed }) => [
+                          styles.choiceButton,
+                          foreknowledge && styles.foreknowledgeButton,
+                          pressed && styles.choiceButtonPressed,
+                        ]}
+                      >
+                        <View style={[styles.choiceNumber, foreknowledge && styles.choiceNumberMemory]}>
+                          <Text style={[styles.choiceIndex, foreknowledge && styles.foreknowledgeText]}>
+                            {foreknowledge ? '◈' : String(index + 1).padStart(2, '0')}
+                          </Text>
+                        </View>
+                        <Text style={[styles.choiceText, foreknowledge && styles.foreknowledgeText]}>
+                          {visibleChoiceText}
+                        </Text>
+                        <ChevronRight
+                          color={foreknowledge ? '#b79ee9' : '#708195'}
+                          size={17}
+                          strokeWidth={1.7}
+                        />
+                      </Pressable>
+                    );
+                  })}
+                  {isComplete ? (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={confirmRestart}
+                      style={({ pressed }) => [styles.endingButton, pressed && styles.pressed]}
+                    >
+                      <RotateCcw color="#afbac7" size={15} />
+                      <Text style={styles.endingButtonText}>첫 통화부터 다시</Text>
+                    </Pressable>
+                  ) : null}
+                </View>
+              )}
+            </ScrollView>
           </View>
         </View>
       </View>
@@ -1131,8 +1127,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(15, 23, 33, 0.58)',
   },
   beatAdvancePressed: { opacity: 0.72, transform: [{ scale: 0.995 }] },
-  choiceScroll: { flexShrink: 0, borderTopWidth: 1, borderTopColor: 'rgba(128, 145, 165, 0.18)' },
-  choiceList: { gap: 8, paddingHorizontal: 16, paddingTop: 12, paddingBottom: 16 },
+  choiceList: {
+    gap: 8,
+    marginTop: 18,
+    paddingTop: 12,
+    paddingBottom: 4,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(128, 145, 165, 0.18)',
+  },
   choiceButton: {
     minHeight: 52,
     paddingHorizontal: 11,
@@ -1159,8 +1161,14 @@ const styles = StyleSheet.create({
   choiceIndex: { color: '#8292a4', fontSize: 8, fontWeight: '900' },
   choiceText: { color: '#e8edf2', fontSize: 13, lineHeight: 20, flex: 1, fontWeight: '600' },
   foreknowledgeText: { color: '#d2c0f5' },
-  actionDock: { paddingHorizontal: 16, paddingBottom: 16, borderTopWidth: 1, borderTopColor: 'rgba(146, 54, 69, 0.28)' },
-  deathBlock: { paddingTop: 14 },
+  actionDock: {
+    marginTop: 18,
+    paddingTop: 14,
+    paddingBottom: 4,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(146, 54, 69, 0.28)',
+  },
+  deathBlock: {},
   deathEyebrow: { color: '#d65b6d', fontSize: 7, fontWeight: '900', letterSpacing: 1.8 },
   deathTitle: { color: '#fae9ec', fontSize: 19, fontWeight: '700', marginTop: 6 },
   deathDescription: { color: '#c6aeb2', fontSize: 11, lineHeight: 17, marginTop: 6 },
