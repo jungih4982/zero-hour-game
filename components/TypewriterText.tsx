@@ -1,11 +1,11 @@
 // components/TypewriterText.tsx
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, TextStyle } from 'react-native';
+import { Text, type StyleProp, type TextStyle } from 'react-native';
 
 interface TypewriterTextProps {
   text: string;
   speed?: number;
-  style?: TextStyle;
+  style?: StyleProp<TextStyle>;
   onComplete?: () => void;
   forceComplete?: boolean; 
 }
@@ -62,7 +62,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   return (
     <Text style={style}>
       {displayedText}
-      {!isCompleted && <Text style={{ color: '#00E5FF' }}> ▍</Text>}
+      {!isCompleted && <Text style={{ color: '#8ea8c2' }}> ▍</Text>}
     </Text>
   );
 };

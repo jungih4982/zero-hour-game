@@ -1,0 +1,16 @@
+{
+  "assetId": "ZERO_HOUR_AppIcon_v01",
+  "generator": "OpenAI ImageGen",
+  "generatedAt": "2026-08-29",
+  "source": "../midjourney/inbox/ZERO_HOUR_AppIcon_fcc0a305_0_2.png",
+  "outputFile": "ZERO_HOUR_AppIcon_midnight-locked_v01.png",
+  "productionFile": "../../app/ZERO_HOUR_AppIcon_v01.png",
+  "editIntent": "Preserve the selected icon composition and material finish while making all three clock hands point exactly to midnight.",
+  "derivedFiles": [
+    "../../app/icon.png",
+    "../../app/adaptive-icon.png",
+    "../../app/splash-icon.png",
+    "../../app/favicon.png"
+  ],
+  "status": "integrated"
+}

@@ -1,0 +1,13 @@
+{
+  "assetId": "CHAR_Sea_Wary_Full_v01",
+  "generator": "OpenAI ImageGen reference-guided generation",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/sea/master/CHAR_Sea_FullbodyMaster_v02.png"
+  ],
+  "productionFile": "../../characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "wary",
+  "selectionReason": "Preserves Sea's glasses, bob, patient uniform and full-body silhouette while providing a true transparent dialogue layer."
+}

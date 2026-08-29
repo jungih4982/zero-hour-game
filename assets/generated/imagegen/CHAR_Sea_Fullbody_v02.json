@@ -1,0 +1,12 @@
+{
+  "assetId": "CHAR_Sea_FullbodyMaster_v02",
+  "generator": "OpenAI ImageGen reference-guided generation",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/sea/master/CHAR_Sea_FullbodyMaster_v01.png",
+    "../../uniforms/patient/UNI_Patient_Master_v01.png"
+  ],
+  "productionFile": "../../characters/sea/master/CHAR_Sea_FullbodyMaster_v02.png",
+  "status": "integrated",
+  "selectionReason": "Preserves Sea's thin round glasses, messy black bob, wary expression, striped patient uniform, and slender adult proportions in a true head-to-slippers full body."
+}

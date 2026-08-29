@@ -1,0 +1,14 @@
+{
+  "assetId": "CHAR_Seoyun_Phone_Frightened_Bust_v01",
+  "generator": "OpenAI ImageGen reference-guided expression variant with local alpha extraction",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/seoyun/master/CHAR_Seoyun_FaceMaster_v01.png",
+    "../../characters/seoyun/sprites/CHAR_Seoyun_Phone_Tense_Bust_v02.png"
+  ],
+  "productionFile": "../../characters/seoyun/sprites/CHAR_Seoyun_Phone_Frightened_Bust_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "frightened-urgency",
+  "selectionReason": "Used when Seoyun's warning or unexpected foreknowledge breaks through her restraint."
+}

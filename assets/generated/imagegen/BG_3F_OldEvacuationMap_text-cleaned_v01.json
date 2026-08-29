@@ -1,0 +1,10 @@
+{
+  "assetId": "BG_3F_OldEvacuationMap_v01",
+  "generator": "OpenAI ImageGen",
+  "generatedAt": "2026-08-29",
+  "source": "../midjourney/inbox/BG_3F_OldEvacuationMap_5928ea87_0_3.png",
+  "outputFile": "BG_3F_OldEvacuationMap_text-cleaned_v01.png",
+  "productionFile": "../../backgrounds/3f/BG_3F_OldEvacuationMap_v01.png",
+  "editIntent": "Preserve the Midjourney composition and hospital lighting while removing fake lettering, leaving only a clean 302 label and the anomalous passage required by the canonical scenario.",
+  "status": "approved"
+}

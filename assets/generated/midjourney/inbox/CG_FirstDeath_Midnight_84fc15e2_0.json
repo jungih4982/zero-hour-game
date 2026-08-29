@@ -1,0 +1,21 @@
+{
+  "assetId": "CG_FirstDeath_Midnight_v01",
+  "generator": "Midjourney",
+  "jobId": "84fc15e2-34ca-42cb-8230-86069f60bb88",
+  "parentJobId": "707b2339-1ab8-4835-a074-96029bf655ee",
+  "candidateIndex": 0,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "CG_FirstDeath_Midnight_84fc15e2_0.png",
+  "productionFile": "../../../backgrounds/special/CG_FirstDeath_Midnight_v01.png",
+  "prompt": "Edit this exact image while preserving the camera, architecture, slightly open hinged fire door, electronic lock, foreground hand, wristwatch position, and composition. Turn off every ceiling fixture, corridor light, door light, and the red exit sign so none of them emits light. The entire hospital is in a true total power failure. Make the corridor almost black, revealed only by an extremely faint cold blue snow reflection from far off-frame; keep just enough edge detail to read the open door and the cracked analog watch with both hands aligned at midnight. Do not add or reveal any person, attacker, face, body, weapon, blood, text, sign glow, supernatural light, or new object. Physically plausible darkness, restrained clinical noir. --ar 16:9 --style raw --stylize 35",
+  "references": [
+    "Midjourney job 707b2339-1ab8-4835-a074-96029bf655ee candidate 3",
+    "Established ZERO HOUR hospital visual language via https://s.mj.run/oMCwaAC2Z4E"
+  ],
+  "status": "approved-after-edit",
+  "selectionReason": "The open hinged door, foreground hand, and cracked watch read clearly while no attacker, weapon, exact fall, or death method is established.",
+  "manualEdits": [
+    "Removed the remaining fluorescent light emission with an OpenAI ImageGen edit",
+    "Locked the overlapping hour and minute hands to 12:00 without changing the scene composition"
+  ]
+}

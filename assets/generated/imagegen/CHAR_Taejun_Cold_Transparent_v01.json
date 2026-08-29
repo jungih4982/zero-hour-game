@@ -1,0 +1,14 @@
+{
+  "assetId": "CHAR_Taejun_Cold_Full_v01",
+  "generator": "OpenAI ImageGen reference-guided expression variant with local alpha extraction",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/taejun/master/CHAR_Taejun_FullbodyMaster_v02.png",
+    "../../characters/taejun/master/CHAR_Taejun_FaceMaster_v01.png"
+  ],
+  "productionFile": "../../characters/taejun/sprites/CHAR_Taejun_Cold_Full_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "cold-rejection",
+  "selectionReason": "Subtle narrowed-eye and set-jaw variant for Taejun's Loop 2 rejection scene."
+}

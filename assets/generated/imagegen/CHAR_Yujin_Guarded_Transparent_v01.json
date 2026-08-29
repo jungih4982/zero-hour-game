@@ -1,0 +1,13 @@
+{
+  "assetId": "CHAR_Yujin_Guarded_Full_v01",
+  "generator": "OpenAI ImageGen reference-guided generation",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/yujin/master/CHAR_Yujin_FullbodyMaster_v02.png"
+  ],
+  "productionFile": "../../characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "guarded",
+  "selectionReason": "Neutral professional tension for Yujin's first search and denial scenes."
+}

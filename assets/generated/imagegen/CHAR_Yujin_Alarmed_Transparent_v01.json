@@ -1,0 +1,13 @@
+{
+  "assetId": "CHAR_Yujin_Alarmed_Full_v01",
+  "generator": "OpenAI ImageGen reference-guided expression variant with local alpha extraction",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/yujin/master/CHAR_Yujin_FullbodyMaster_v02.png"
+  ],
+  "productionFile": "../../characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "alarmed-controlled",
+  "selectionReason": "A restrained widened-eye and parted-lip reaction used when Yujin hears foreknowledge she should not know."
+}

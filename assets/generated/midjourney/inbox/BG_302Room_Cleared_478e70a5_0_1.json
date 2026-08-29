@@ -1,0 +1,19 @@
+{
+  "assetId": "BG_302Room_Cleared_v01",
+  "generator": "Midjourney",
+  "jobId": "478e70a5-b4f8-43ec-b247-682b09e6cfbf",
+  "parentJobId": "3391d1ad-19ed-4a79-9b54-2fe4d96082f5",
+  "candidateIndex": 1,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_302Room_Cleared_478e70a5_0_1.jpeg",
+  "productionFile": "../../../backgrounds/3f/BG_302Room_Cleared_v01.png",
+  "prompt": "Edit this exact image while preserving the camera position, lens, framing, room architecture, bed position, bedside cabinet, privacy curtain, wall light, color palette, and night lighting. Show the very same room only a few minutes later after staff reset it: make the white duvet perfectly smooth and neatly tucked with no body-weight depression; remove the water cup completely; remove the IV pole, IV tube, gauze, and the single slipper completely. Keep the floor and cabinet clean and empty. Preserve clear visibility into the dark gap beneath the bed, especially behind the wall-side rear wheel, as the safe hidden place where a small phone could later be found, but do not show any phone. The room should feel unnaturally orderly and empty. Do not add people, text, room numbers, labels, blood, restraints, or new objects.",
+  "references": [
+    "Midjourney job 3391d1ad-19ed-4a79-9b54-2fe4d96082f5 candidate 3"
+  ],
+  "status": "integrated",
+  "selectionReason": "The matched angle makes the abrupt cleanup readable at a glance while keeping the wall-side under-bed gap available for the second-phone reveal without showing the phone early.",
+  "manualEdits": [
+    "Converted from original JPEG to PNG without compositional edits"
+  ]
+}

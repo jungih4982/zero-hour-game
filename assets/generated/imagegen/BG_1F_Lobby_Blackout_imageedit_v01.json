@@ -1,0 +1,12 @@
+{
+  "assetId": "BG_1F_Lobby_Blackout_v01",
+  "generator": "OpenAI ImageGen edit",
+  "generatedAt": "2026-08-29",
+  "source": "../../backgrounds/1f/BG_1F_Lobby_v01.png",
+  "productionFile": "../../backgrounds/1f/BG_1F_Lobby_Blackout_v01.png",
+  "status": "approved-not-integrated",
+  "manualEdits": [
+    "Normal lighting removed while preserving the established lobby layout",
+    "Cold exterior and weak emergency spill retained for mobile readability"
+  ]
+}

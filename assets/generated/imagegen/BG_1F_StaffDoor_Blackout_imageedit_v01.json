@@ -1,0 +1,12 @@
+{
+  "assetId": "BG_1F_StaffDoor_Blackout_v01",
+  "generator": "OpenAI ImageGen edit",
+  "generatedAt": "2026-08-29",
+  "source": "../../backgrounds/1f/BG_1F_StaffDoor_Normal_v01.png",
+  "productionFile": "../../backgrounds/1f/BG_1F_StaffDoor_Blackout_v01.png",
+  "status": "integrated",
+  "manualEdits": [
+    "Normal fluorescent lighting removed",
+    "Door, push bar, access reader, red LED, and left stairwell preserved"
+  ]
+}

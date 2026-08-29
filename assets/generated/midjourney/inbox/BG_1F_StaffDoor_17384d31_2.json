@@ -1,0 +1,19 @@
+{
+  "assetId": "BG_1F_StaffDoor_Normal_v01",
+  "generator": "Midjourney",
+  "jobId": "17384d31-0723-4266-8585-c7b47d7bf0ce",
+  "candidateIndex": 2,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_1F_StaffDoor_17384d31_2.jpeg",
+  "productionFile": "../../../backgrounds/1f/BG_1F_StaffDoor_Normal_v01.png",
+  "prompt": "Staff only service entrance, first floor lobby of a grounded modern private hospital in South Korea, late at night before a blackout. Human eye level camera, slight three quarter angle facing the door. One heavy pale blue gray fire rated service door in a clean recessed wall, simple horizontal push bar, realistic electronic access lock, red locked status LED beside the frame, small wall mounted emergency evacuation diagram with abstract unreadable shapes, narrow hint of stairwell beyond a return wall. Cool fluorescent ceiling light, polished hospital vinyl floor. Cinematic Korean webtoon and Japanese visual novel background style, clinical noir, restrained blue gray palette, crisp shapes, quiet tension. Full door, lock, handle, and diagram centered in the safe zone; generous wall space on both sides for portrait, tablet, and widescreen crops; unobstructed lower third for dialogue. No people, no open door, no horror props, no readable text, no logos, no watermark. --ar 16:9 --raw --stylize 70",
+  "references": [
+    "Midjourney style reference selected from the established ZERO HOUR hospital background set"
+  ],
+  "status": "approved",
+  "selectionReason": "Single closed staff-only door, push bar, access lock, stair hint, and center safe zone all survive responsive crops. The in-game term is fixed as 복도 끝 직원용 문.",
+  "manualEdits": [
+    "Converted from original JPEG to PNG without compositional edits",
+    "Production filename normalized to StaffDoor so the rejected Korean wording cannot leak into UI copy"
+  ]
+}

@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "zero-hour-game",
+    "name": "ZERO HOUR",
     "slug": "zero-hour-game",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/app/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/app/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#07111b"
     },
     "ios": {
       "supportsTablet": true
@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/app/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#07111b"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false

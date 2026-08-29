@@ -1,0 +1,13 @@
+{
+  "assetId": "CHAR_Taejun_FullbodyMaster_v02",
+  "generator": "OpenAI ImageGen reference-guided correction",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/taejun/master/CHAR_Taejun_FaceMaster_v01.png",
+    "../../characters/taejun/refs/CHAR_Taejun_BodyRef_v01.png.png",
+    "../../uniforms/security/UNI_Security_Master_v01.png"
+  ],
+  "productionFile": "../../characters/taejun/master/CHAR_Taejun_FullbodyMaster_v02.png",
+  "status": "approved-master",
+  "selectionReason": "Restores the face-master age and angularity, places the single scar on anatomical right/viewer left, and removes police-like epaulettes from the hospital security uniform."
+}

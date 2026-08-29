@@ -1,0 +1,18 @@
+{
+  "assetId": "BG_302Room_Normal_v01",
+  "generator": "Midjourney",
+  "jobId": "3391d1ad-19ed-4a79-9b54-2fe4d96082f5",
+  "candidateIndex": 3,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_302Room_Normal_3391d1ad_0_3.jpeg",
+  "productionFile": "../../../backgrounds/3f/BG_302Room_Normal_v01.png",
+  "prompt": "Interior of an enclosed contemporary Korean private inpatient room at night. Camera stands just inside the doorway, looking inward; hallway fully behind camera, not visible. Four finished walls, normal ceiling, no exposed pipes, no corridor, no other doors. One empty adjustable bed at a slight three quarter angle, clear space beneath it, one bedside cabinet. Signs of recent occupation: body weight depression on one side of white duvet, IV pole beside bed with disconnected tube wrapped in fresh white gauze, clear water cup with faint fingerprint condensation on cabinet, exactly one hospital slipper under the bed pointing toward the doorway. Privacy curtain partly open. No person, no phone, no readable text, no blood, no restraints. Clinical noir, semi realistic Korean webtoon and Japanese visual novel background style, restrained blue gray fluorescent night lighting, crisp shapes, centered bed, dark uncluttered lower third, generous side crop room for mobile. --ar 16:9 --style raw --stylize 55",
+  "references": [
+    "Established ZERO HOUR hospital visual language via https://s.mj.run/GFfdCWkOp0E"
+  ],
+  "status": "integrated",
+  "selectionReason": "The enclosed room preserves the canonical occupied-room contradiction: disturbed bedding, IV setup, water cup, and one slipper remain legible while the bed and its underside survive center-biased mobile crops.",
+  "manualEdits": [
+    "Converted from original JPEG to PNG without compositional edits"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "assetId": "CHAR_Yujin_FullbodyMaster_v02",
+  "generator": "OpenAI ImageGen reference-guided generation",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/yujin/master/CHAR_Yujin_FullbodyMaster_v01.png",
+    "../../uniforms/nurse/UNI_Nurse_Master_v01.png"
+  ],
+  "productionFile": "../../characters/yujin/master/CHAR_Yujin_FullbodyMaster_v02.png",
+  "status": "integrated",
+  "selectionReason": "Preserves Yujin's tied black hair, restrained expression, mature face, and blue-gray scrubs while providing a true head-to-shoes full body."
+}

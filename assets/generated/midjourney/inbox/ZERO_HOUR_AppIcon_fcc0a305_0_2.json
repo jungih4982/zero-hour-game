@@ -1,0 +1,16 @@
+{
+  "assetId": "ZERO_HOUR_AppIcon_v01",
+  "generator": "Midjourney",
+  "jobId": "fcc0a305-a72e-4344-a489-b2124cd5de7f",
+  "candidateIndex": 2,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "ZERO_HOUR_AppIcon_fcc0a305_0_2.png",
+  "productionFile": "../../../app/ZERO_HOUR_AppIcon_v01.png",
+  "prompt": "Premium full-bleed square mobile game app icon artwork for a Korean psychological time-loop thriller. Extreme close-up of one old analog wristwatch face, centered and filling most of the square, dark blue-gray enamel and brushed gunmetal rim, cracked glass with one elegant diagonal fracture. Both hour and minute hands overlap precisely at 12:00, forming a single sharp vertical white-silver line; tiny stopped second hand also points upward. In the curved glass reflection, only a very subtle dark modern hospital corridor and a slightly open heavy door are suggested, almost abstract. One restrained dim red access-control dot near the outer edge, otherwise cold clinical blue-black palette, deep blacks, high contrast, sophisticated clinical noir, semi-realistic Korean webtoon and Japanese visual novel key-art finish, crisp silhouette readable at 48 pixels, premium finished game identity. No text, no letters, no title, no random numerals, no logo, no watermark, no hands or wrist, no blood, no face, no person, no weapon, no supernatural glow, no outer white border, no rounded-corner mockup, no phone screen presentation. --ar 1:1 --style raw --stylize 90",
+  "status": "approved-after-edit",
+  "selectionReason": "The round cracked watch remains recognizable at favicon scale, carries the hospital reflection without literal exposition, and does not rely on text or a platform-specific mask.",
+  "manualEdits": [
+    "Locked hour, minute, and second hands to 12:00 with an OpenAI ImageGen edit",
+    "Derived standard, adaptive-safe, splash, and favicon variants from the same master"
+  ]
+}

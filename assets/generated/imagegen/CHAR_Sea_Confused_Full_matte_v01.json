@@ -1,0 +1,15 @@
+{
+  "assetId": "CHAR_Sea_Confused_Full_v01",
+  "generator": "OpenAI ImageGen",
+  "generatedAt": "2026-08-29",
+  "source": "../../characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
+  "outputFile": "CHAR_Sea_Confused_Full_matte_v01.png",
+  "productionFile": "../../characters/sea/sprites/CHAR_Sea_Confused_Full_v01.png",
+  "editIntent": "Preserve Yoon Sea's locked face, glasses, bob haircut, full-body proportions, pajamas, and slippers while changing only the acting to restrained confusion and memory mismatch.",
+  "postProcess": [
+    "Foreground extracted with scripts/extract-character-with-vision.swift",
+    "Vision mask contracted to remove the baked transparency-grid fringe",
+    "Verified 1024x1536 RGBA output with a complete head-to-toe silhouette"
+  ],
+  "status": "integrated"
+}

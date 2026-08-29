@@ -1,0 +1,18 @@
+{
+  "assetId": "BG_B1_OperationsCorridor_Blackout_v01",
+  "generator": "Midjourney",
+  "jobId": "b8480f95-3f67-49f1-9669-1f5fe97f74d2",
+  "candidateIndex": 2,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_B1_OperationsCorridor_b8480f95_2.jpeg",
+  "productionFile": "../../../backgrounds/b1/BG_B1_OperationsCorridor_Blackout_v01.png",
+  "prompt": "Underground hospital operations corridor, basement level one of a modern private hospital in South Korea, immediately after a midnight blackout. Low ceiling, exposed orderly utility pipes, folded linen transport carts along one wall, locked supply room doors, wall mounted access log terminal with abstract unreadable glow, stairwell door near foreground, deep vanishing point corridor. Emergency lighting only: restrained green exit light, weak cold spill from stairwell. Believable maintenance architecture, ordinary hospital infrastructure. Cinematic Korean webtoon and Japanese visual novel background style, clinical noir, restrained blue gray and desaturated green palette, crisp readable shapes, physically plausible darkness, quiet tension. Main corridor and stairwell door within central 50% safe zone; generous side space for portrait, phone, tablet, foldable, and widescreen crops; unobstructed lower third for dialogue UI. No people, no horror props, no blood, no lab, no readable text, no logos, no watermark. --ar 16:9 --raw --stylize 70",
+  "references": [
+    "Midjourney style reference selected from BG_1F_StaffDoor_Normal_v01"
+  ],
+  "status": "integrated",
+  "selectionReason": "The corridor reads as ordinary hospital operations infrastructure, maintains a central vanishing point, and leaves both the foreground door and carts visible after responsive cropping.",
+  "manualEdits": [
+    "Converted from original JPEG to PNG without compositional edits"
+  ]
+}

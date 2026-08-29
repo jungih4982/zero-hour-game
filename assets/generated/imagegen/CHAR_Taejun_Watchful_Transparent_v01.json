@@ -1,0 +1,14 @@
+{
+  "assetId": "CHAR_Taejun_Watchful_Full_v01",
+  "generator": "OpenAI ImageGen reference-guided correction with local alpha extraction",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/taejun/master/CHAR_Taejun_FullbodyMaster_v02.png",
+    "../../characters/taejun/master/CHAR_Taejun_FaceMaster_v01.png"
+  ],
+  "productionFile": "../../characters/taejun/sprites/CHAR_Taejun_Watchful_Full_v01.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "watchful",
+  "selectionReason": "Neutral unreadable stance for Taejun's first appearance; scar remains on anatomical right/viewer left."
+}

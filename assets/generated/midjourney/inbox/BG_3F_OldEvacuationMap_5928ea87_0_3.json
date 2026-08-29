@@ -1,0 +1,19 @@
+{
+  "assetId": "BG_3F_OldEvacuationMap_v01",
+  "generator": "Midjourney",
+  "jobId": "5928ea87-d74a-4eee-bbe0-47531c488b3f",
+  "candidateIndex": 3,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_3F_OldEvacuationMap_5928ea87_0_3.png",
+  "productionFile": "../../../backgrounds/3f/BG_3F_OldEvacuationMap_v01.png",
+  "prompt": "Close-up cinematic clue background in a contemporary Korean hospital third-floor elevator waiting alcove at night. An older fire evacuation plan is mounted flat on the wall beside the elevator under a slightly worn clear acrylic cover. Camera straight-on at human eye level so the schematic is large, centered, and readable as a floor plan. The diagram shows the current-location marker, the patient-room corridor ending at room 302, and one narrow unlabelled passage drawn directly behind that end room, continuing to the rear of the nurse station; the hidden passage is the only spatial anomaly. Slightly aged print compared with the clean modern wall, small old production date area at the bottom, restrained realistic paper wear. Keep any lettering minimal and clean; only the numeral 302 may be readable, all other text abstract or omitted. No people, no hands, no blood, no supernatural effects, no logos, no watermark. Clinical noir, semi-realistic Korean webtoon and Japanese visual novel clue CG, restrained blue-gray fluorescent night lighting, crisp realistic materials, mobile-safe central composition, uncluttered lower third. --ar 16:9 --style raw --stylize 45",
+  "references": [
+    "Established ZERO HOUR hospital visual language via https://s.mj.run/GFfdCWkOp0E"
+  ],
+  "status": "approved-after-edit",
+  "selectionReason": "The centered plan, readable 302 marker, and single anomalous passage remain legible on narrow crops while the surrounding alcove establishes a grounded hospital location.",
+  "manualEdits": [
+    "Removed generated pseudo-Korean and random microtext with an OpenAI ImageGen edit",
+    "Reduced the 302 marker to a natural room-label scale and preserved the unlabelled passage behind it"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-08-29",
+  "verticalSlice": {
+    "integrated": [
+      "backgrounds/exterior/BG_Hospital_Exterior_Arrival_v01.png",
+      "backgrounds/1f/BG_1F_Lobby_v01.png",
+      "backgrounds/1f/BG_1F_StaffDoor_Normal_v01.png",
+      "backgrounds/1f/BG_1F_StaffDoor_Blackout_v01.png",
+      "backgrounds/b1/BG_B1_OperationsCorridor_Blackout_v01.png",
+      "backgrounds/3f/BG_3F_Corridor_Normal_v01.png",
+      "backgrounds/3f/BG_3F_Corridor_Blackout_v01.png",
+      "backgrounds/3f/BG_302Room_Normal_v01.png",
+      "backgrounds/3f/BG_302Room_Cleared_v01.png",
+      "backgrounds/special/CG_FirstDeath_Midnight_v01.png",
+      "characters/seoyun/sprites/CHAR_Seoyun_Phone_Tense_Bust_v02.png",
+      "characters/seoyun/sprites/CHAR_Seoyun_Phone_Frightened_Bust_v01.png",
+      "characters/seoyun/sprites/CHAR_Seoyun_Phone_Guarded_Bust_v01.png",
+      "characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png",
+      "characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v01.png",
+      "characters/taejun/sprites/CHAR_Taejun_Watchful_Full_v01.png",
+      "characters/taejun/sprites/CHAR_Taejun_Cold_Full_v01.png",
+      "characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
+      "characters/sea/sprites/CHAR_Sea_Confused_Full_v01.png",
+      "app/ZERO_HOUR_AppIcon_v01.png",
+      "app/icon.png",
+      "app/adaptive-icon.png",
+      "app/splash-icon.png",
+      "app/favicon.png"
+    ],
+    "approvedNotIntegrated": [
+      "backgrounds/1f/BG_1F_WestElevator_Normal_v01.png",
+      "backgrounds/1f/BG_1F_Lobby_Blackout_v01.png",
+      "backgrounds/3f/BG_3F_OldEvacuationMap_v01.png",
+      "characters/yujin/master/CHAR_Yujin_FullbodyMaster_v02.png",
+      "characters/taejun/master/CHAR_Taejun_FullbodyMaster_v02.png",
+      "characters/sea/master/CHAR_Sea_FullbodyMaster_v02.png"
+    ],
+    "reviewCandidates": [
+      "characters/taejun/master/CHAR_Taejun_FullbodyMaster_v01.png"
+    ],
+    "conceptOnly": [
+      "generated/concepts/BG_B1_TwoBedRoom_Concept_v01.png"
+    ],
+    "missing": []
+  },
+  "notes": [
+    "Minseo and Taejun reference files currently include user-authored uncommitted changes and must be preserved.",
+    "Dialogue characters are transparent scene layers rather than framed character cards. On wide screens the active speaker stands on the left and dialogue occupies the right; portrait screens stack scene above dialogue.",
+    "Narration and protagonist beats intentionally show no character sprite. Character art appears only for the speaking named character.",
+    "Single-character portrait layouts center the speaker. Explicit two-character scenes use left/right staging with a short cross-fade: the speaker is lit and the listener remains visibly dimmed.",
+    "Ordinary dialogue does not repeat the scene subtitle under the speaker name; scene titles are reserved for title and ending reveals.",
+    "Seoyun has three integrated phone-call expressions; Yujin, Taejun, and Sea each have two integrated states. Sea shifts from wary to quietly confused while choosing her words about the corridor.",
+    "Taejun fullbody v01 is retained as a review candidate only. Fullbody v02 and its transparent sprites restore the face-master scar to anatomical right/viewer left and remove epaulettes.",
+    "Key irreversible moments should use dedicated background-integrated hero CGs; ordinary dialogue should keep responsive transparent sprites so mobile framing remains controllable.",
+    "The first-death hero CG is integrated and exposes only the confirmed open door and midnight-stopped cracked watch; the attacker and death method remain visually unresolved.",
+    "Room 302 uses a matched two-state background pair: recently occupied before the reset, then unnaturally cleared before the wall-side phone discovery.",
+    "The old evacuation-map clue is a 3F waiting-alcove close-up. Only 302 is readable; generated pseudo-text was removed and the anomalous passage remains schematic and unlabelled.",
+    "The placeholder app grids and Expo favicon were replaced with a cracked midnight-watch identity. Standard, adaptive, splash, and 48px favicon variants are derived from the same locked artwork.",
+    "The user-facing location term is 복도 끝 직원용 문; the rejected Korean wording must not be reintroduced.",
+    "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06."
+  ]
+}

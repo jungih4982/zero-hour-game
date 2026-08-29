@@ -1,0 +1,13 @@
+{
+  "assetId": "CG_FirstDeath_Midnight_v01",
+  "generator": "OpenAI ImageGen edit",
+  "generatedAt": "2026-08-29",
+  "source": "../midjourney/inbox/CG_FirstDeath_Midnight_84fc15e2_0.png",
+  "productionFile": "../../backgrounds/special/CG_FirstDeath_Midnight_v01.png",
+  "status": "integrated",
+  "manualEdits": [
+    "All fluorescent and exit-sign emission removed while preserving the Midjourney composition",
+    "Cracked analog watch hands overlapped at exactly 12:00",
+    "No person, attacker, weapon, injury, or death method introduced"
+  ]
+}

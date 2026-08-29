@@ -1,0 +1,14 @@
+{
+  "assetId": "CHAR_Seoyun_Phone_Tense_Bust_v02",
+  "generator": "OpenAI ImageGen reference-guided sprite with local alpha defringe",
+  "generatedAt": "2026-08-29",
+  "references": [
+    "../../characters/seoyun/master/CHAR_Seoyun_FaceMaster_v01.png",
+    "../../characters/seoyun/sprites/CHAR_Seoyun_Phone_Tense_Bust_v01.png"
+  ],
+  "productionFile": "../../characters/seoyun/sprites/CHAR_Seoyun_Phone_Tense_Bust_v02.png",
+  "status": "integrated",
+  "alphaChannelVerified": true,
+  "expression": "restrained-tension",
+  "selectionReason": "Default phone-call portrait; v02 removes the pale edge matte while preserving the approved identity and crop."
+}

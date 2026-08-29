@@ -1,0 +1,14 @@
+{
+  "assetId": "BG_B1_TwoBedRoom_Concept_v01",
+  "generator": "Midjourney with OpenAI ImageGen cleanup",
+  "midjourneyJobId": "198868b9-a80c-4fe6-83fd-4002680da353",
+  "candidateIndex": 2,
+  "generatedAt": "2026-08-29",
+  "source": "../midjourney/inbox/BG_B1_ObservationRoom06_198868b9_2.jpeg",
+  "conceptFile": "../concepts/BG_B1_TwoBedRoom_Concept_v01.png",
+  "status": "concept-only-noncanonical",
+  "manualEdits": [
+    "Removed the wall clock because its visible hands created a false story-time clue",
+    "Renamed and isolated from production because the canonical source does not establish an Observation Room 06"
+  ]
+}

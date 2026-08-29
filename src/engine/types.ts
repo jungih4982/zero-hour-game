@@ -1,4 +1,4 @@
-/** Minute offset from the start of a loop (22:00). */
+/** Internal minute offset from the loop anchor; exact story clock is intentionally not exposed. */
 export type GameTime = number & { readonly __brand: 'GameTime' };
 
 export type SceneId = string & { readonly __brand: 'SceneId' };

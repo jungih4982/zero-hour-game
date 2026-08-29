@@ -1,0 +1,18 @@
+{
+  "assetId": "BG_1F_WestElevator_Normal_v01",
+  "generator": "Midjourney",
+  "jobId": "4793a422-19b5-417b-b47a-8ba062fa3349",
+  "candidateIndex": 3,
+  "generatedAt": "2026-08-29",
+  "sourceFile": "BG_1F_WestElevator_4793a422_3.jpeg",
+  "productionFile": "../../../backgrounds/1f/BG_1F_WestElevator_Normal_v01.png",
+  "prompt": "West wing elevator alcove, first floor, modern private hospital in South Korea, late at night. Human eye level camera. Brushed stainless steel double elevator doors centered in a shallow blue gray wall recess, small red basement direction indicator glowing above doors, realistic emergency intercom panel, narrow clinical corridor fading into restrained darkness on the right, simple waiting bench and wall corner on the left, polished vinyl floor with subtle reflections, cool fluorescent ceiling lights, quiet unease of an ordinary empty space. Cinematic Korean webtoon and Japanese visual novel background art style, clinical noir, restrained blue gray palette, crisp architectural shapes, realistic modern Korean hospital proportions. Elevator and indicator fully readable in central 40% safe zone; generous wall and corridor space on both sides for mobile, tablet, and widescreen cropping; clean lower third negative space for dialogue UI. No people, horror props, blood, gore, supernatural elements, readable text, logos, or watermarks. --ar 16:9 --raw --stylize 70",
+  "references": [
+    "Midjourney style reference selected from the established ZERO HOUR hospital background set"
+  ],
+  "status": "approved-with-note",
+  "selectionReason": "The elevator, bench, and side corridor remain readable across center and side crops. The red indicator reads as an upward arrow rather than a basement marker, so it must not carry a plot-critical floor-number clue.",
+  "manualEdits": [
+    "Converted from original JPEG to PNG without compositional edits"
+  ]
+}
