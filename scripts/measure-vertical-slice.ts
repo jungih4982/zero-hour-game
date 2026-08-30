@@ -7,6 +7,8 @@ import {
 } from '../src/content/prologue';
 import { LOOP_START_TIME, applyEffects, getAvailableChoices, resetLoop } from '../src/engine';
 import type { NarrativeEngineState } from '../src/engine';
+import { DEDUCTION_BLACKOUT_ROUTE } from '../src/gameplay/deductions';
+import { investigationFlag, sceneInvestigations } from '../src/gameplay/investigation';
 
 const loop1Choices = [
   'KEEP_SEOYUN_TALKING',
@@ -87,7 +89,28 @@ recordCurrentScene();
 loop1Choices.forEach(choose);
 state = resetLoop(state, SCENE_LOOP2_RESET_AWAKENING, LOCATION_CAR);
 recordCurrentScene();
-loop2Choices.forEach(choose);
+loop2Choices.forEach((choiceId) => {
+  if (choiceId === 'GO_TO_STAFF_DOOR_AFTER_BACKFIRE') {
+    state = applyEffects(state, [
+      { type: 'gainDeduction', deductionId: DEDUCTION_BLACKOUT_ROUTE },
+    ]);
+  }
+  if (choiceId === 'ASK_SEA_ABOUT_SEOYUN') {
+    const investigation = sceneInvestigations[state.volatile.currentSceneId];
+    const hotspot = investigation?.hotspots.find((entry) => entry.id === 'linen-room');
+    if (!hotspot) throw new Error('Missing B1 linen room hotspot');
+    state = applyEffects(state, [
+      ...hotspot.effects,
+      {
+        type: 'setFlag',
+        flag: investigationFlag(state.volatile.currentSceneId, hotspot.id),
+        value: true,
+        scope: 'loop',
+      },
+    ]);
+  }
+  choose(choiceId);
+});
 
 const visibleCharacters = traversedBodies.join('').replace(/\s/g, '').length;
 const sceneCount = traversedBodies.length;

@@ -13,7 +13,12 @@
     "test:beats": "tsx scripts/test-dialogue-beats.ts",
     "test:duration": "tsx scripts/measure-vertical-slice.ts",
     "test:layout": "tsx scripts/test-responsive-layout.ts",
-    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:narrative && npm run test:duration && npm run test:layout"
+    "test:input": "tsx scripts/test-narrative-input.ts",
+    "test:investigation": "tsx scripts/test-investigation.ts",
+    "test:deductions": "tsx scripts/test-deductions.ts",
+    "test:death-memory": "tsx scripts/test-death-memory.ts",
+    "test:choice-presentation": "tsx scripts/test-choice-presentation.ts",
+    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",

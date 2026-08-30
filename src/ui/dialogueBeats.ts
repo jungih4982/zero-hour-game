@@ -169,8 +169,7 @@ export const sceneParagraphSpeakers: Readonly<
     'narrator',
   ),
   [SCENE_LOOP2_OPERATIONS_CORRIDOR]: beats(
-    'narrator', 'narrator', 'narrator', 'narrator', 'sea', 'narrator', 'sea',
-    'narrator',
+    'narrator', 'narrator', 'narrator', 'narrator', 'narrator',
   ),
   [SCENE_LOOP2_SEA_FIRST_MEETING]: beats(
     'player', 'narrator', 'sea', 'player', 'sea', 'narrator', 'sea', 'player',

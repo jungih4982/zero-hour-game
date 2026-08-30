@@ -7,7 +7,8 @@ interface TypewriterTextProps {
   speed?: number;
   style?: StyleProp<TextStyle>;
   onComplete?: () => void;
-  forceComplete?: boolean; 
+  completionRequest?: number;
+  forceComplete?: boolean;
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
@@ -15,14 +16,17 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   speed = 22,
   style,
   onComplete,
+  completionRequest = 0,
   forceComplete = false,
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isCompleted, setIsCompleted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  
-  // ⭐️ 최신 onComplete 함수를 잃어버리지 않게 꽉 잡아두는 역할 (진행 불가 버그 해결!)
+  const completedRef = useRef(false);
+  const initialCompletionRequestRef = useRef(completionRequest);
+  const initialForceCompleteRef = useRef(forceComplete);
   const onCompleteRef = useRef(onComplete);
+
   useEffect(() => {
     onCompleteRef.current = onComplete;
   }, [onComplete]);
@@ -30,6 +34,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   useEffect(() => {
     setDisplayedText('');
     setIsCompleted(false);
+    completedRef.current = false;
     let index = 0;
 
     if (timerRef.current) clearInterval(timerRef.current);
@@ -40,8 +45,10 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
         setDisplayedText(text.slice(0, index));
       } else {
         if (timerRef.current) clearInterval(timerRef.current);
+        if (completedRef.current) return;
+        completedRef.current = true;
         setIsCompleted(true);
-        if (onCompleteRef.current) onCompleteRef.current(); // 신호 발사!
+        onCompleteRef.current?.();
       }
     }, speed);
 
@@ -51,13 +58,18 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   }, [text, speed]);
 
   useEffect(() => {
-    if (forceComplete && !isCompleted) {
+    if (
+      (completionRequest !== initialCompletionRequestRef.current
+        || (forceComplete && !initialForceCompleteRef.current))
+      && !completedRef.current
+    ) {
       if (timerRef.current) clearInterval(timerRef.current);
+      completedRef.current = true;
       setDisplayedText(text);
       setIsCompleted(true);
-      if (onCompleteRef.current) onCompleteRef.current(); // 신호 발사!
+      onCompleteRef.current?.();
     }
-  }, [forceComplete, text, isCompleted]);
+  }, [completionRequest, forceComplete, text]);
 
   return (
     <Text style={style}>

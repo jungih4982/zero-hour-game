@@ -1,4 +1,8 @@
-import { getCharacterStageAnchors, getGameLayout } from '../src/ui/layout';
+import {
+  getCharacterStageAnchors,
+  getCoverPlacement,
+  getGameLayout,
+} from '../src/ui/layout';
 
 const devices = [
   { name: 'compact phone', width: 360, height: 740, expected: 'phone' },
@@ -63,6 +67,25 @@ for (const device of devices) {
   ) {
     throw new Error(`${device.name}: two-character stage must use left/right anchors`);
   }
+}
+
+const portraitCover = getCoverPlacement({
+  viewportWidth: 390,
+  viewportHeight: 844,
+  imageWidth: 1456,
+  imageHeight: 816,
+  focalX: 0.64,
+  focalY: 0.54,
+  zoom: 1.08,
+});
+if (portraitCover.width < 390 || portraitCover.height < 844) {
+  throw new Error('portrait background must cover the fullscreen stage');
+}
+if (portraitCover.left >= 0) {
+  throw new Error('portrait focal point must shift the landscape asset crop');
+}
+if (portraitCover.top >= 0) {
+  throw new Error('portrait zoom must allow vertical focal positioning');
 }
 
 console.log(

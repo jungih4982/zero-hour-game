@@ -1,0 +1,80 @@
+import {
+  CLUE_302_OCCUPIED,
+  CLUE_FIRST_PHONE,
+  ITEM_FIRST_PHONE_PHOTO,
+  LOCATION_ROOM_302,
+  SCENE_LOOP2_PHONE_PARADOX,
+  SCENE_LOOP2_YUJIN_MINIMAL,
+  prologueScenes,
+  resetWatchMemory,
+} from '../src/content/prologue';
+import {
+  applyEffects,
+  getAvailableChoices,
+  type GameTime,
+  type NarrativeEngineState,
+} from '../src/engine';
+import {
+  DEDUCTION_PHONE_DUPLICATION,
+  canFormDeduction,
+  phoneDuplicationDeduction,
+} from '../src/gameplay/deductions';
+
+function assert(condition: unknown, message: string): asserts condition {
+  if (!condition) throw new Error(message);
+}
+
+const state: NarrativeEngineState = {
+  persistent: {
+    loopCount: 2,
+    clueIds: [CLUE_302_OCCUPIED, CLUE_FIRST_PHONE],
+    deductionIds: [],
+    memories: [resetWatchMemory],
+    deathIntel: [],
+    deathRecords: [],
+    flags: {},
+  },
+  volatile: {
+    time: 36 as GameTime,
+    currentSceneId: SCENE_LOOP2_PHONE_PARADOX,
+    currentLocationId: LOCATION_ROOM_302,
+    visitedSceneIds: [SCENE_LOOP2_PHONE_PARADOX],
+    itemIds: [],
+    flags: {},
+  },
+};
+
+assert(
+  canFormDeduction(state, phoneDuplicationDeduction),
+  '302호 흔적, 첫 번째 전화, 루프 기억을 확보하면 전화 중복 추론이 가능해야 합니다.',
+);
+
+const scene = prologueScenes[SCENE_LOOP2_PHONE_PARADOX];
+assert(
+  !getAvailableChoices(scene, state).some((choice) => choice.id === 'DOCUMENT_PHONE_PARADOX'),
+  '추론을 완성하기 전에는 증거 기록 선택지가 노출되면 안 됩니다.',
+);
+
+const deducedState = applyEffects(state, [
+  { type: 'gainDeduction', deductionId: DEDUCTION_PHONE_DUPLICATION },
+]);
+const deductionChoice = getAvailableChoices(scene, deducedState).find(
+  (choice) => choice.id === 'DOCUMENT_PHONE_PARADOX',
+);
+assert(deductionChoice, '완성한 추론은 전화 증거 기록 선택지를 열어야 합니다.');
+
+const afterChoice = applyEffects(deducedState, deductionChoice.effects);
+assert(
+  afterChoice.volatile.currentSceneId === SCENE_LOOP2_YUJIN_MINIMAL,
+  '추론 선택지는 불필요한 대치를 피하는 기존 장면으로 합류해야 합니다.',
+);
+assert(
+  afterChoice.volatile.time === (38 as GameTime),
+  '추론 선택지는 일반 대응보다 짧은 2분만 사용해야 합니다.',
+);
+assert(
+  afterChoice.volatile.itemIds.includes(ITEM_FIRST_PHONE_PHOTO),
+  '추론 선택지는 첫 번째 전화 사진을 증거로 남겨야 합니다.',
+);
+
+console.log('Phone duplication deduction and evidence route passed.');

@@ -21,6 +21,11 @@ import {
 } from '../content/prologue';
 import { getAvailableChoices } from './choices';
 import { applyEffects } from './effects';
+import { DEDUCTION_BLACKOUT_ROUTE } from '../gameplay/deductions';
+import {
+  investigationFlag,
+  sceneInvestigations,
+} from '../gameplay/investigation';
 import { LOOP_START_TIME, resetLoop } from './loop';
 import type { NarrativeEngineState } from './types';
 
@@ -124,6 +129,9 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   state = choose(state, 'REVEAL_EXACT_FOREKNOWLEDGE');
   const yujinForeknowledgeBackfires = state.volatile.flags[FLAG_YUJIN_WARY] === true;
   assert(yujinForeknowledgeBackfires, 'revealing exact future knowledge must make Yujin wary');
+  state = applyEffects(state, [
+    { type: 'gainDeduction', deductionId: DEDUCTION_BLACKOUT_ROUTE },
+  ]);
 
   const loop2Route = [
     'GO_TO_STAFF_DOOR_AFTER_BACKFIRE',
@@ -139,6 +147,20 @@ export function runPrologueSimulation(): PrologueSimulationResult {
 
   let b1RouteUnlocked = false;
   for (const choiceId of loop2Route) {
+    if (choiceId === 'ASK_SEA_ABOUT_SEOYUN') {
+      const investigation = sceneInvestigations[state.volatile.currentSceneId];
+      const hotspot = investigation?.hotspots.find((entry) => entry.id === 'linen-room');
+      assert(hotspot !== undefined, 'B1 linen room hotspot must exist');
+      state = applyEffects(state, [
+        ...hotspot.effects,
+        {
+          type: 'setFlag',
+          flag: investigationFlag(state.volatile.currentSceneId, hotspot.id),
+          value: true,
+          scope: 'loop',
+        },
+      ]);
+    }
     state = choose(state, choiceId);
     if (choiceId === 'ENTER_B1') {
       b1RouteUnlocked = state.volatile.currentLocationId === LOCATION_B1_OPERATIONS_CORRIDOR;

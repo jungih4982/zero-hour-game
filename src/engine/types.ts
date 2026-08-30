@@ -42,6 +42,7 @@ export type ChoiceCondition =
 
 export type NarrativeEffect =
   | { type: 'gainClue'; clueId: ClueId }
+  | { type: 'gainDeduction'; deductionId: DeductionId }
   | { type: 'gainMemory'; memory: MemoryRecord }
   | { type: 'gainItem'; itemId: ItemId }
   | { type: 'removeItem'; itemId: ItemId }

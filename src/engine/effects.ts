@@ -48,6 +48,17 @@ export function applyEffect(
           clueIds: appendUnique(state.persistent.clueIds, effect.clueId),
         },
       };
+    case 'gainDeduction':
+      return {
+        ...state,
+        persistent: {
+          ...state.persistent,
+          deductionIds: appendUnique(
+            state.persistent.deductionIds,
+            effect.deductionId,
+          ),
+        },
+      };
     case 'gainMemory':
       return state.persistent.memories.some(
         (memory) => memory.id === effect.memory.id,

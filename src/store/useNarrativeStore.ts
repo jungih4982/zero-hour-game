@@ -14,7 +14,14 @@ import {
   getAvailableChoices,
   resetLoop,
 } from '../engine';
-import type { LocationId, NarrativeEngineState, SceneId } from '../engine';
+import type { DeductionId, LocationId, NarrativeEngineState, SceneId } from '../engine';
+import { canFormDeduction, deductions } from '../gameplay/deductions';
+import {
+  canInspectHotspot,
+  investigationFlag,
+  isHotspotInspected,
+  sceneInvestigations,
+} from '../gameplay/investigation';
 
 const SAVE_VERSION = 4;
 
@@ -100,6 +107,8 @@ function appendVisited(
 type NarrativeStore = {
   engineState: NarrativeEngineState;
   selectChoice: (choiceId: string) => void;
+  formDeduction: (deductionId: DeductionId) => void;
+  inspectHotspot: (hotspotId: string) => void;
   beginNextLoop: () => void;
   restartStory: () => void;
 };
@@ -146,6 +155,46 @@ export const useNarrativeStore = create<NarrativeStore>()(
           const afterEntry = applyEffects(afterChoice, nextScene.onEnter ?? []);
           return {
             engineState: appendVisited(afterEntry, nextScene.id),
+          };
+        }),
+      formDeduction: (deductionId) =>
+        set(({ engineState }) => {
+          const definition = deductions.find((entry) => entry.id === deductionId);
+          if (
+            !definition
+            || engineState.persistent.deductionIds.includes(deductionId)
+            || !canFormDeduction(engineState, definition)
+          ) {
+            return { engineState };
+          }
+          return {
+            engineState: applyEffects(engineState, [
+              { type: 'gainDeduction', deductionId },
+            ]),
+          };
+        }),
+      inspectHotspot: (hotspotId) =>
+        set(({ engineState }) => {
+          const sceneId = engineState.volatile.currentSceneId;
+          const investigation = sceneInvestigations[sceneId];
+          const hotspot = investigation?.hotspots.find((entry) => entry.id === hotspotId);
+          if (
+            !hotspot
+            || isHotspotInspected(engineState, sceneId, hotspotId)
+            || !canInspectHotspot(engineState, investigation, hotspot)
+          ) {
+            return { engineState };
+          }
+          return {
+            engineState: applyEffects(engineState, [
+              ...hotspot.effects,
+              {
+                type: 'setFlag',
+                flag: investigationFlag(sceneId, hotspotId),
+                value: true,
+                scope: 'loop',
+              },
+            ]),
           };
         }),
       beginNextLoop: () =>

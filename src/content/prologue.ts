@@ -3,6 +3,7 @@ import type {
   ClueId,
   DeathIntel,
   GameTime,
+  ItemId,
   LocationId,
   MemoryId,
   MemoryRecord,
@@ -11,6 +12,14 @@ import type {
   NarrativeScene,
   SceneId,
 } from '../engine/types';
+import {
+  DEDUCTION_BLACKOUT_ROUTE,
+  DEDUCTION_PHONE_DUPLICATION,
+} from '../gameplay/deductions';
+import {
+  B1_LINEN_ROOM_FOUND_FLAG,
+  CLUE_B1_TRANSFER_TRACKS,
+} from '../gameplay/investigation';
 
 export const SCENE_CH00_ENTRANCE = 'SCENE_ACT0_DRIVE' as SceneId;
 export const SCENE_ACT0_WATCH_CALL = 'SCENE_ACT0_WATCH_CALL' as SceneId;
@@ -64,6 +73,7 @@ export const CLUE_WRISTBAND_DOB = 'CLUE_WRISTBAND_DOB' as ClueId;
 export const CLUE_FIRST_PHONE = 'CLUE_FIRST_PHONE' as ClueId;
 export const CLUE_SECOND_PHONE = 'CLUE_SECOND_PHONE' as ClueId;
 export const CLUE_SEA_KNOWS = 'CLUE_SEA_KNOWS' as ClueId;
+export const ITEM_FIRST_PHONE_PHOTO = 'ITEM_FIRST_PHONE_PHOTO' as ItemId;
 
 export const FLAG_YUJIN_WARY = 'FLAG_YUJIN_WARY';
 export const FLAG_FIRST_DEATH_AVOIDED = 'FLAG_FIRST_DEATH_AVOIDED';
@@ -102,7 +112,7 @@ function to(
 }
 
 const knowsBlackout: readonly ChoiceCondition[] = [
-  { type: 'hasMemory', memoryId: MEMORY_BLACKOUT_0000 },
+  { type: 'hasDeduction', deductionId: DEDUCTION_BLACKOUT_ROUTE },
 ];
 
 export const blackoutMemory: MemoryRecord = {
@@ -914,6 +924,13 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 
 유진의 시선이 내 휴대전화와 봉투 안의 휴대전화 사이를 오갔다.`,
     choices: [
+      to('DOCUMENT_PHONE_PARADOX', '[추론] 같은 흠집과 두 통화 화면을 한 장에 남긴다.', SCENE_LOOP2_YUJIN_MINIMAL, 2, {
+        kind: 'foreknowledge',
+        conditions: [
+          { type: 'hasDeduction', deductionId: DEDUCTION_PHONE_DUPLICATION },
+        ],
+        effects: [{ type: 'gainItem', itemId: ITEM_FIRST_PHONE_PHOTO }],
+      }),
       to('REVEAL_EXACT_FOREKNOWLEDGE', '[기억] 유진이 부정할 말과 자정 정전을 정확히 말한다.', SCENE_LOOP2_YUJIN_FOREKNOWLEDGE, 4, {
         kind: 'foreknowledge',
         conditions: [
@@ -980,6 +997,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
         kind: 'foreknowledge',
         conditions: knowsBlackout,
         locationId: LOCATION_1F_STAFF_DOOR,
+        effects: [{ type: 'gainItem', itemId: ITEM_FIRST_PHONE_PHOTO }],
       }),
     ],
   },
@@ -1048,16 +1066,16 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 
 휴대전화는 통화 불가였다. 메시지 전송 표시도 멈춰 있었다.
 
-복도 중간에서 여자 목소리가 들렸다.
+복도 중간에서 무언가 끌리는 소리가 났다.
 
-"오빠—"
-
-발걸음을 멈췄다.
-
-"아니, 잠깐만요."
-
-열린 린넨실 문 안에 환자복을 입은 여자가 서 있었다. 처음 보는 얼굴이었다.`,
-    choices: [to('ASK_SEA_ABOUT_SEOYUN', '서윤을 아는지 묻는다.', SCENE_LOOP2_SEA_FIRST_MEETING, 4)],
+멀리서 손전등 빛이 한 번 복도를 훑고 사라졌다. 누군가 돌아오기 전에 움직여야 했다.`,
+    choices: [
+      to('ASK_SEA_ABOUT_SEOYUN', '린넨실 안의 여자에게 서윤을 아는지 묻는다.', SCENE_LOOP2_SEA_FIRST_MEETING, 4, {
+        conditions: [
+          { type: 'flagEquals', flag: B1_LINEN_ROOM_FOUND_FLAG, value: true },
+        ],
+      }),
+    ],
   },
 
   [SCENE_LOOP2_SEA_FIRST_MEETING]: {
@@ -1086,6 +1104,13 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 
 "거기 누구예요?"`,
     choices: [
+      to('USE_B1_TRANSFER_ROUTE', '카트 바퀴 자국이 이어지는 반대편 계단으로 빠져나간다.', SCENE_LOOP2_SEOYUN_RECHECK, 2, {
+        conditions: [
+          { type: 'hasClue', clueId: CLUE_B1_TRANSFER_TRACKS },
+        ],
+        locationId: LOCATION_1F_LOBBY,
+        effects: [{ type: 'gainClue', clueId: CLUE_SEA_KNOWS }],
+      }),
       to('FACE_TAEJUN_IN_B1', '도망치지 않고 빛 쪽을 본다.', SCENE_LOOP2_TAEJUN_REJECTION, 3, {
         effects: [{ type: 'gainClue', clueId: CLUE_SEA_KNOWS }],
       }),

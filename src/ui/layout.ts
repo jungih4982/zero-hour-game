@@ -13,10 +13,54 @@ export type GameLayout = {
 
 export type CharacterStageAnchor = { left: number } | { right: number };
 
+export type CoverPlacement = {
+  width: number;
+  height: number;
+  left: number;
+  top: number;
+};
+
 const clamp = (value: number, minimum: number, maximum: number) =>
   Math.min(maximum, Math.max(minimum, value));
 
 const FULL_BODY_SPRITE_ASPECT = 1.5;
+
+export function getCoverPlacement({
+  viewportWidth,
+  viewportHeight,
+  imageWidth,
+  imageHeight,
+  focalX = 0.5,
+  focalY = 0.5,
+  zoom = 1,
+}: {
+  viewportWidth: number;
+  viewportHeight: number;
+  imageWidth: number;
+  imageHeight: number;
+  focalX?: number;
+  focalY?: number;
+  zoom?: number;
+}): CoverPlacement {
+  const imageAspect = imageWidth / Math.max(imageHeight, 1);
+  const viewportAspect = viewportWidth / Math.max(viewportHeight, 1);
+  const coverWidth = viewportAspect > imageAspect
+    ? viewportWidth
+    : viewportHeight * imageAspect;
+  const coverHeight = viewportAspect > imageAspect
+    ? viewportWidth / imageAspect
+    : viewportHeight;
+  const safeZoom = Math.max(1, zoom);
+  const width = coverWidth * safeZoom;
+  const height = coverHeight * safeZoom;
+
+  return {
+    width,
+    height,
+    left: -(width - viewportWidth) * clamp(focalX, 0, 1),
+    top: -(height - viewportHeight) * clamp(focalY, 0, 1),
+  };
+}
 
 export function getCharacterStageAnchors({
   viewportWidth,
