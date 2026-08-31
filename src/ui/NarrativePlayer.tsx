@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
+  BrainCircuit,
   Check,
   ChevronRight,
   MapPinned,
@@ -74,6 +75,7 @@ import {
   getChoicePresentation,
   type ChoiceOutcomeCue,
 } from '../gameplay/choicePresentation';
+import { canFormDeduction, deductions } from '../gameplay/deductions';
 import {
   getCharacterStageAnchors,
   getCoverPlacement,
@@ -762,6 +764,9 @@ export function NarrativePlayer() {
   const fieldRecordCount = engineState.persistent.clueIds.length
     + engineState.volatile.itemIds.length
     + engineState.persistent.memories.length;
+  const availableDeductionCount = deductions.filter((deduction) =>
+    !engineState.persistent.deductionIds.includes(deduction.id)
+      && canFormDeduction(engineState, deduction)).length;
   const fieldKitAvailable = engineState.volatile.visitedSceneIds.length > 1;
   const sceneReady = inputState.phase === 'ready' && isLastBeat;
   const inspectedHotspots = investigation?.hotspots.filter((hotspot) =>
@@ -1017,17 +1022,30 @@ export function NarrativePlayer() {
               {fieldKitAvailable && !isDead ? (
                 <Pressable
                   accessibilityRole="button"
-                  accessibilityLabel="현장 기록 열기"
+                  accessibilityLabel={availableDeductionCount > 0 ? '새 추론 확인' : '현장 기록 열기'}
                   onPress={() => setShowFieldKit(true)}
                   style={({ pressed }) => [
                     styles.toolButton,
+                    availableDeductionCount > 0 && styles.toolButtonActive,
                     pressed && styles.pressed,
                   ]}
                 >
-                  <MapPinned color="#b9c6d3" size={15} strokeWidth={1.7} />
-                  <Text style={styles.toolLabel}>현장 기록</Text>
-                  <Text style={styles.toolText}>
-                    {fieldRecordCount}
+                  {availableDeductionCount > 0 ? (
+                    <BrainCircuit color="#d8c9ff" size={15} strokeWidth={1.8} />
+                  ) : (
+                    <MapPinned color="#b9c6d3" size={15} strokeWidth={1.7} />
+                  )}
+                  <Text style={[
+                    styles.toolLabel,
+                    availableDeductionCount > 0 && styles.toolTextActive,
+                  ]}>
+                    {availableDeductionCount > 0 ? '추론 가능' : '현장 기록'}
+                  </Text>
+                  <Text style={[
+                    styles.toolText,
+                    availableDeductionCount > 0 && styles.toolTextActive,
+                  ]}>
+                    {availableDeductionCount || fieldRecordCount}
                   </Text>
                 </Pressable>
               ) : null}
@@ -1336,6 +1354,7 @@ export function NarrativePlayer() {
             state={engineState}
             visitedLocationIds={visitedLocationIds}
             onClose={() => setShowFieldKit(false)}
+            initialTab={availableDeductionCount > 0 ? 'deduction' : 'map'}
             topInset={insets.top}
             bottomInset={insets.bottom}
             onFormDeduction={formDeduction}

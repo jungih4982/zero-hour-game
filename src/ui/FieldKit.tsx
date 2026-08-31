@@ -26,7 +26,7 @@ import {
   isCorrectDeductionConnection,
 } from '../gameplay/deductions';
 
-type FieldKitTab = 'map' | 'evidence' | 'deduction' | 'items';
+export type FieldKitTab = 'map' | 'evidence' | 'deduction' | 'items';
 
 type LocationEntry = {
   id: LocationId;
@@ -87,6 +87,7 @@ export function FieldKit({
   topInset,
   bottomInset,
   onFormDeduction,
+  initialTab = 'map',
 }: {
   state: NarrativeEngineState;
   visitedLocationIds: readonly LocationId[];
@@ -94,8 +95,9 @@ export function FieldKit({
   topInset: number;
   bottomInset: number;
   onFormDeduction: (deductionId: DeductionId) => void;
+  initialTab?: FieldKitTab;
 }) {
-  const [activeTab, setActiveTab] = useState<FieldKitTab>('map');
+  const [activeTab, setActiveTab] = useState<FieldKitTab>(initialTab);
   const [selectedLocationId, setSelectedLocationId] = useState(
     state.volatile.currentLocationId,
   );
