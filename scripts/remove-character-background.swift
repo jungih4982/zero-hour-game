@@ -122,7 +122,9 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
   // which leaves the pale fringe enclosed and unreachable by the edge flood.
   // A short distance field removes only neutral fringe close to transparency;
   // enclosed light details such as eyes remain far outside this radius.
-  let maxFringeDistance = 96
+  // Keep this deliberately narrow: it is an edge decontamination pass, not a
+  // second subject mask. A broad radius erases pale clothing highlights.
+  let maxFringeDistance = 4
   var distance = [Int16](repeating: -1, count: width * height)
   var distanceQueue: [Int] = []
   distanceQueue.reserveCapacity(width * height)

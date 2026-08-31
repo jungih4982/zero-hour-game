@@ -114,7 +114,7 @@ const characterSprites = {
   seoyunPhoneFrightened: require('../../assets/characters/seoyun/sprites/CHAR_Seoyun_Phone_Frightened_Bust_v01.png'),
   seoyunPhoneGuarded: require('../../assets/characters/seoyun/sprites/CHAR_Seoyun_Phone_Guarded_Bust_v01.png'),
   yujinGuarded: require('../../assets/characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png'),
-  yujinAlarmed: require('../../assets/characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v02.png'),
+  yujinAlarmed: require('../../assets/characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v03.png'),
   taejunWatchful: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Watchful_Bust_v02.png'),
   taejunCold: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Cold_Bust_v02.png'),
   seaWary: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
