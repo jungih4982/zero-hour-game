@@ -17,6 +17,7 @@ import {
 import {
   DEDUCTION_PHONE_DUPLICATION,
   canFormDeduction,
+  isCorrectDeductionConnection,
   phoneDuplicationDeduction,
 } from '../src/gameplay/deductions';
 
@@ -47,6 +48,20 @@ const state: NarrativeEngineState = {
 assert(
   canFormDeduction(state, phoneDuplicationDeduction),
   '302호 흔적, 첫 번째 전화, 루프 기억을 확보하면 전화 중복 추론이 가능해야 합니다.',
+);
+assert(
+  !isCorrectDeductionConnection(phoneDuplicationDeduction, [
+    CLUE_FIRST_PHONE,
+    resetWatchMemory.id,
+  ]),
+  '관련 있어 보이는 기억이라도 핵심 302호 모순을 대신할 수 없어야 합니다.',
+);
+assert(
+  isCorrectDeductionConnection(phoneDuplicationDeduction, [
+    CLUE_FIRST_PHONE,
+    CLUE_302_OCCUPIED,
+  ]),
+  '플레이어가 두 핵심 기록을 직접 고르면 추론이 완성되어야 합니다.',
 );
 
 const scene = prologueScenes[SCENE_LOOP2_PHONE_PARADOX];

@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import {
   BrainCircuit,
+  LockKeyhole,
   MapPinned,
   NotebookTabs,
   PackageOpen,
@@ -22,6 +23,7 @@ import type {
 import {
   canFormDeduction,
   deductions,
+  isCorrectDeductionConnection,
 } from '../gameplay/deductions';
 
 type FieldKitTab = 'map' | 'evidence' | 'deduction' | 'items';
@@ -97,12 +99,41 @@ export function FieldKit({
   const [selectedLocationId, setSelectedLocationId] = useState(
     state.volatile.currentLocationId,
   );
+  const [selectedDeductionFacts, setSelectedDeductionFacts] = useState<
+    Readonly<Record<string, readonly string[]>>
+  >({});
+  const [failedDeductionId, setFailedDeductionId] = useState<string>();
   const visitedLocations = useMemo(
     () => locations.filter((location) => visitedLocationIds.includes(location.id)),
     [visitedLocationIds],
   );
   const selectedLocation = locations.find((location) => location.id === selectedLocationId)
     ?? locations.find((location) => location.id === state.volatile.currentLocationId);
+  const deductionRecords = useMemo(() => [
+    ...state.persistent.clueIds.map((clueId) => ({
+      id: clueId as string,
+      title: clueCopy[clueId]?.title ?? '확인되지 않은 단서',
+      tone: 'evidence' as const,
+    })),
+    ...state.persistent.memories.map((memory) => ({
+      id: memory.id as string,
+      title: memory.title,
+      tone: 'memory' as const,
+    })),
+  ], [state.persistent.clueIds, state.persistent.memories]);
+
+  const toggleDeductionFact = (deductionId: string, sourceId: string) => {
+    setFailedDeductionId(undefined);
+    setSelectedDeductionFacts((current) => {
+      const selected = current[deductionId] ?? [];
+      const next = selected.includes(sourceId)
+        ? selected.filter((id) => id !== sourceId)
+        : selected.length >= 2
+          ? [sourceId]
+          : [...selected, sourceId];
+      return { ...current, [deductionId]: next };
+    });
+  };
 
   return (
     <View style={styles.layer}>
@@ -279,48 +310,124 @@ export function FieldKit({
               {deductions.map((deduction) => {
                 const formed = state.persistent.deductionIds.includes(deduction.id);
                 const available = canFormDeduction(state, deduction);
+                const selectedFacts = selectedDeductionFacts[deduction.id] ?? [];
+                const requiredCount = deduction.requiredClueIds.length
+                  + deduction.requiredMemoryIds.length;
+                const acquiredRequiredCount = deduction.requiredClueIds.filter((id) =>
+                  state.persistent.clueIds.includes(id)).length
+                  + deduction.requiredMemoryIds.filter((id) =>
+                    state.persistent.memories.some((memory) => memory.id === id)).length;
                 return (
                   <View key={deduction.id} style={styles.deductionCard}>
-                    <Text style={styles.deductionTitle}>{deduction.title}</Text>
-                    <Text style={styles.deductionDescription}>{deduction.description}</Text>
-                    <View style={styles.deductionNodes}>
-                      {deduction.facts.map((fact, index) => (
-                        <React.Fragment key={`${deduction.id}:${fact.label}`}>
-                          {index > 0 ? <View style={styles.connectionLine} /> : null}
-                          <View style={[
-                            styles.factNode,
-                            fact.tone === 'memory' && styles.memoryFactNode,
-                          ]}>
-                            <Text style={[
-                              styles.factLabel,
-                              fact.tone === 'memory' && styles.memoryFactLabel,
-                            ]}>{fact.label}</Text>
-                            <Text style={styles.factText}>{fact.text}</Text>
-                          </View>
-                        </React.Fragment>
-                      ))}
-                    </View>
+                    <Text style={styles.deductionTitle}>
+                      {formed ? deduction.title : available ? '미완성 추론' : '잠긴 추론'}
+                    </Text>
+                    <Text style={styles.deductionDescription}>
+                      {formed
+                        ? deduction.description
+                        : available
+                          ? deduction.prompt
+                          : `연결할 기록 ${acquiredRequiredCount}/${requiredCount}`}
+                    </Text>
                     {formed ? (
-                      <View style={styles.conclusion}>
-                        <Text style={styles.conclusionLabel}>확신</Text>
-                        <Text style={styles.conclusionText}>{deduction.conclusion}</Text>
-                      </View>
-                    ) : (
-                      <Pressable
-                        accessibilityRole="button"
-                        disabled={!available}
-                        onPress={() => onFormDeduction(deduction.id)}
-                        style={({ pressed }) => [
-                          styles.deduceButton,
-                          !available && styles.deduceButtonDisabled,
-                          pressed && styles.pressed,
-                        ]}
-                      >
-                        <BrainCircuit color="#111720" size={17} strokeWidth={2} />
-                        <Text style={styles.deduceButtonText}>
-                          {available ? '두 사실을 연결한다' : '아직 사실이 부족하다'}
+                      <>
+                        <View style={styles.deductionNodes}>
+                          {deduction.facts.map((fact, index) => (
+                            <React.Fragment key={`${deduction.id}:${fact.label}`}>
+                              {index > 0 ? <View style={styles.connectionLine} /> : null}
+                              <View style={[
+                                styles.factNode,
+                                fact.tone === 'memory' && styles.memoryFactNode,
+                              ]}>
+                                <Text style={[
+                                  styles.factLabel,
+                                  fact.tone === 'memory' && styles.memoryFactLabel,
+                                ]}>{fact.label}</Text>
+                                <Text style={styles.factText}>{fact.text}</Text>
+                              </View>
+                            </React.Fragment>
+                          ))}
+                        </View>
+                        <View style={styles.conclusion}>
+                          <Text style={styles.conclusionLabel}>확신</Text>
+                          <Text style={styles.conclusionText}>{deduction.conclusion}</Text>
+                        </View>
+                      </>
+                    ) : available ? (
+                      <>
+                        <View style={styles.deductionInstruction}>
+                          <Text style={styles.deductionInstructionText}>연결할 기록 두 개를 고른다.</Text>
+                          <Text style={styles.deductionSelectionCount}>{selectedFacts.length}/2</Text>
+                        </View>
+                        <View style={styles.deductionRecordGrid}>
+                          {deductionRecords.map((record) => {
+                            const selected = selectedFacts.includes(record.id);
+                            return (
+                              <Pressable
+                                accessibilityRole="button"
+                                accessibilityState={{ selected }}
+                                key={`${deduction.id}:${record.id}`}
+                                onPress={() => toggleDeductionFact(deduction.id, record.id)}
+                                style={({ pressed }) => [
+                                  styles.deductionRecord,
+                                  record.tone === 'memory' && styles.deductionMemoryRecord,
+                                  selected && styles.deductionRecordSelected,
+                                  pressed && styles.pressed,
+                                ]}
+                              >
+                                <Text style={[
+                                  styles.deductionRecordMark,
+                                  record.tone === 'memory' && styles.deductionMemoryMark,
+                                ]}>
+                                  {selected ? '✓' : record.tone === 'memory' ? '◈' : '·'}
+                                </Text>
+                                <Text style={[
+                                  styles.deductionRecordText,
+                                  selected && styles.deductionRecordTextSelected,
+                                ]}>
+                                  {record.title}
+                                </Text>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                        {failedDeductionId === deduction.id ? (
+                          <Text style={styles.deductionMistake}>
+                            이 둘만으로는 다음 행동을 확신할 수 없다.
+                          </Text>
+                        ) : null}
+                        <Pressable
+                          accessibilityRole="button"
+                          disabled={selectedFacts.length !== 2}
+                          onPress={() => {
+                            if (isCorrectDeductionConnection(deduction, selectedFacts)) {
+                              setFailedDeductionId(undefined);
+                              onFormDeduction(deduction.id);
+                            } else {
+                              setFailedDeductionId(deduction.id);
+                              setSelectedDeductionFacts((current) => ({
+                                ...current,
+                                [deduction.id]: [],
+                              }));
+                            }
+                          }}
+                          style={({ pressed }) => [
+                            styles.deduceButton,
+                            selectedFacts.length !== 2 && styles.deduceButtonDisabled,
+                            pressed && styles.pressed,
+                          ]}
+                        >
+                          <BrainCircuit color="#111720" size={17} strokeWidth={2} />
+                          <Text style={styles.deduceButtonText}>연결을 확인한다</Text>
+                        </Pressable>
+                      </>
+                      ) : (
+                      <View style={styles.deductionLocked}>
+                        <LockKeyhole color="#526170" size={15} strokeWidth={1.8} />
+                        <Text style={styles.deductionLockedText}>
+                          확보한 기록 사이에 아직 연결 고리가 없다.
                         </Text>
-                      </Pressable>
+                      </View>
                     )}
                   </View>
                 );
@@ -405,6 +512,20 @@ const styles = StyleSheet.create({
   memoryFactLabel: { color: '#a388d0' },
   factText: { color: '#d4dce4', fontSize: 11, lineHeight: 17, fontWeight: '700', marginTop: 5 },
   connectionLine: { width: 18, height: 1, backgroundColor: 'rgba(177, 153, 220, 0.5)' },
+  deductionInstruction: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 9 },
+  deductionInstructionText: { color: '#aeb7c2', fontSize: 10, fontWeight: '700' },
+  deductionSelectionCount: { color: '#a98bd7', fontSize: 10, fontWeight: '900' },
+  deductionRecordGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 7 },
+  deductionRecord: { width: '48.8%', minHeight: 54, paddingHorizontal: 10, paddingVertical: 9, borderRadius: 9, flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: 'rgba(101, 127, 151, 0.08)', borderWidth: 1, borderColor: 'rgba(118, 143, 166, 0.16)' },
+  deductionMemoryRecord: { backgroundColor: 'rgba(128, 96, 179, 0.1)', borderColor: 'rgba(151, 119, 202, 0.2)' },
+  deductionRecordSelected: { backgroundColor: 'rgba(156, 128, 207, 0.22)', borderColor: 'rgba(196, 171, 236, 0.62)' },
+  deductionRecordMark: { width: 13, color: '#71869a', fontSize: 11, fontWeight: '900' },
+  deductionMemoryMark: { color: '#a88bd6' },
+  deductionRecordText: { flex: 1, color: '#aeb9c5', fontSize: 10, lineHeight: 14, fontWeight: '700' },
+  deductionRecordTextSelected: { color: '#f0eafa' },
+  deductionMistake: { color: '#c98a80', fontSize: 10, lineHeight: 16, marginTop: 10 },
+  deductionLocked: { minHeight: 52, paddingHorizontal: 12, borderRadius: 9, flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: 'rgba(92, 107, 122, 0.06)' },
+  deductionLockedText: { flex: 1, color: '#647281', fontSize: 10, lineHeight: 16 },
   conclusion: { marginTop: 14, padding: 14, borderRadius: 10, backgroundColor: 'rgba(164, 132, 219, 0.14)' },
   conclusionLabel: { color: '#ae91dc', fontSize: 8, fontWeight: '900', letterSpacing: 1 },
   conclusionText: { color: '#e1d7f2', fontSize: 12, lineHeight: 19, marginTop: 5 },
