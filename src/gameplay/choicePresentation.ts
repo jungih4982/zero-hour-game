@@ -117,6 +117,9 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
   ASK_SEA_ABOUT_SEOYUN: {
     meta: '조사 종료  ·  소리의 주인 확인',
   },
+  CHECK_WRISTBAND: {
+    meta: '조사 종료  ·  손목밴드 확인',
+  },
   RETURN_TO_302_FOR_SECOND_PHONE: {
     meta: '경비 이탈  ·  302호 재조사',
     outcome: {

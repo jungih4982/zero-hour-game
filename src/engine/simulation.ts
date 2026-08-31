@@ -96,7 +96,26 @@ export function runPrologueSimulation(): PrologueSimulationResult {
     'MOVE_TOWARD_UNLOCKED_DOOR',
   ] as const;
 
-  for (const choiceId of loop1Route) state = choose(state, choiceId);
+  for (const choiceId of loop1Route) {
+    if (choiceId === 'CHECK_WRISTBAND') {
+      const investigation = sceneInvestigations[state.volatile.currentSceneId];
+      assert(investigation !== undefined, '302 room investigation must exist');
+      for (const hotspotId of ['recent-use-traces', 'torn-wristband']) {
+        const hotspot = investigation.hotspots.find((entry) => entry.id === hotspotId);
+        assert(hotspot !== undefined, `302 ${hotspotId} hotspot must exist`);
+        state = applyEffects(state, [
+          ...hotspot.effects,
+          {
+            type: 'setFlag',
+            flag: investigationFlag(state.volatile.currentSceneId, hotspot.id),
+            value: true,
+            scope: 'loop',
+          },
+        ]);
+      }
+    }
+    state = choose(state, choiceId);
+  }
 
   assert(state.volatile.currentSceneId === SCENE_FIRST_DEATH, 'Loop 1 must end at the first death');
   assert(state.volatile.deathId === FIRST_DEATH_ID, 'the first death must be triggered');

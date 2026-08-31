@@ -9,6 +9,7 @@ export const CLUE_B1_UNMARKED_ROOMS = 'CLUE_B1_UNMARKED_ROOMS' as ClueId;
 export const CLUE_B1_TRANSFER_TRACKS = 'CLUE_B1_TRANSFER_TRACKS' as ClueId;
 
 export const B1_LINEN_ROOM_FOUND_FLAG = 'B1_LINEN_ROOM_FOUND';
+export const ROOM_302_WRISTBAND_FOUND_FLAG = 'ROOM_302_WRISTBAND_FOUND';
 
 export type InvestigationHotspot = {
   id: string;
@@ -24,8 +25,55 @@ export type InvestigationHotspot = {
 export type SceneInvestigation = {
   sceneId: SceneId;
   prompt: string;
+  hiddenDialogueBeatIndices?: readonly number[];
   optionalInspectionLimit?: number;
   hotspots: readonly InvestigationHotspot[];
+};
+
+const room302Investigation: SceneInvestigation = {
+  sceneId: 'SCENE_ACT2_ROOM_CONTRADICTION' as SceneId,
+  prompt: '유진이 재촉하는 동안 302호의 흔적을 직접 확인한다.',
+  hiddenDialogueBeatIndices: [1, 3, 6],
+  hotspots: [
+    {
+      id: 'recent-use-traces',
+      label: '남은 사용 흔적',
+      shortLabel: '흔적',
+      discovery: '하지만 사용하지 않은 방은 아니었다. 이불 한쪽이 몸의 무게만큼 꺼져 있었고, 수액 튜브 끝에는 새 거즈가 감겨 있었다. 물컵 바깥에는 손자국이 남아 있었다. 침대 밑 슬리퍼 한 짝은 복도 쪽을 향했다.',
+      x: 0.46,
+      y: 0.48,
+      effects: [
+        { type: 'gainClue', clueId: 'CLUE_302_OCCUPIED' as ClueId },
+        { type: 'advanceTime', minutes: 2 },
+      ],
+    },
+    {
+      id: 'missing-phone',
+      label: '진동이 끊긴 곳',
+      shortLabel: '전화',
+      discovery: '커튼 뒤와 서랍, 침대 아래를 확인했다. 전화는 보이지 않았다.',
+      x: 0.82,
+      y: 0.47,
+      effects: [{ type: 'advanceTime', minutes: 2 }],
+    },
+    {
+      id: 'torn-wristband',
+      label: '난간 아래의 흰 조각',
+      shortLabel: '조각',
+      discovery: '침대 난간 아래에서 찢어진 환자 손목밴드가 보였다. 이름이 있어야 할 부분은 뜯겨 있었고 병실 번호와 생년월일만 남아 있었다.',
+      x: 0.36,
+      y: 0.52,
+      effects: [
+        {
+          type: 'setFlag',
+          flag: ROOM_302_WRISTBAND_FOUND_FLAG,
+          value: true,
+          scope: 'loop',
+        },
+        { type: 'advanceTime', minutes: 2 },
+      ],
+    },
+  ],
 };
 
 const operationsCorridorInvestigation: SceneInvestigation = {
@@ -75,6 +123,7 @@ const operationsCorridorInvestigation: SceneInvestigation = {
 };
 
 export const sceneInvestigations: Readonly<Record<string, SceneInvestigation>> = {
+  [room302Investigation.sceneId]: room302Investigation,
   [operationsCorridorInvestigation.sceneId]: operationsCorridorInvestigation,
 };
 

@@ -705,7 +705,14 @@ export function NarrativePlayer() {
     [engineState.volatile.visitedSceneIds],
   );
   const choices = getAvailableChoices(scene, engineState);
-  const dialogueBeats = useMemo(() => getDialogueBeats(scene), [scene]);
+  const investigation = sceneInvestigations[scene.id];
+  const dialogueBeats = useMemo(() => {
+    const beats = getDialogueBeats(scene);
+    const hiddenIndices = investigation?.hiddenDialogueBeatIndices;
+    return hiddenIndices?.length
+      ? beats.filter((_, index) => !hiddenIndices.includes(index))
+      : beats;
+  }, [scene, investigation]);
   const currentBeatIndex = Math.min(beatIndex, dialogueBeats.length - 1);
   const currentBeat = dialogueBeats[currentBeatIndex];
   const inputEpoch = `${scene.id}:${currentBeatIndex}`;
@@ -715,11 +722,15 @@ export function NarrativePlayer() {
   const inputStateRef = useRef(inputState);
   inputStateRef.current = inputState;
   const currentSpeaker = speakerLabels[currentBeat.speaker];
+  const isLastBeat = currentBeatIndex === dialogueBeats.length - 1;
+  const investigationReady = Boolean(
+    investigation && inputState.phase === 'ready' && isLastBeat,
+  );
   const presentedCharacterSpeaker = getPresentedCharacterSpeaker(
     dialogueBeats,
     currentBeatIndex,
   );
-  const character = presentedCharacterSpeaker
+  const character = presentedCharacterSpeaker && !investigationReady
     ? getCharacter(scene, presentedCharacterSpeaker, currentBeatIndex)
     : undefined;
   const duoCast = duoSceneCasts[scene.id];
@@ -752,9 +763,7 @@ export function NarrativePlayer() {
     + engineState.volatile.itemIds.length
     + engineState.persistent.memories.length;
   const fieldKitAvailable = engineState.volatile.visitedSceneIds.length > 1;
-  const isLastBeat = currentBeatIndex === dialogueBeats.length - 1;
   const sceneReady = inputState.phase === 'ready' && isLastBeat;
-  const investigation = sceneInvestigations[scene.id];
   const inspectedHotspots = investigation?.hotspots.filter((hotspot) =>
     isHotspotInspected(engineState, scene.id, hotspot.id),
   ) ?? [];
@@ -1032,23 +1041,25 @@ export function NarrativePlayer() {
               contentContainerStyle={styles.storyContent}
               showsVerticalScrollIndicator={false}
             >
-              <TypewriterText
-                key={`${scene.id}:${currentBeatIndex}`}
-                text={currentBeat.text}
-                speed={14}
-                completionRequest={inputState.completionRequest}
-                onComplete={() => {
-                  commitInputEvent({
-                    type: 'typingComplete',
-                    epoch: inputEpoch,
-                    canAdvance: !isLastBeat,
-                  });
-                }}
-                style={[
-                  styles.bodyText,
-                  (isTitle || isComplete) && styles.endingBodyText,
-                ]}
-              />
+              {sceneReady && investigation ? null : (
+                <TypewriterText
+                  key={`${scene.id}:${currentBeatIndex}`}
+                  text={currentBeat.text}
+                  speed={14}
+                  completionRequest={inputState.completionRequest}
+                  onComplete={() => {
+                    commitInputEvent({
+                      type: 'typingComplete',
+                      epoch: inputEpoch,
+                      canAdvance: !isLastBeat,
+                    });
+                  }}
+                  style={[
+                    styles.bodyText,
+                    (isTitle || isComplete) && styles.endingBodyText,
+                  ]}
+                />
+              )}
               {!sceneReady ? (
                 inputState.phase === 'ready' ? (
                   <Text style={styles.advanceIndicator}>⌄</Text>

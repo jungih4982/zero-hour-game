@@ -86,7 +86,25 @@ function choose(choiceId: string) {
 }
 
 recordCurrentScene();
-loop1Choices.forEach(choose);
+loop1Choices.forEach((choiceId) => {
+  if (choiceId === 'CHECK_WRISTBAND') {
+    const investigation = sceneInvestigations[state.volatile.currentSceneId];
+    for (const hotspotId of ['recent-use-traces', 'torn-wristband']) {
+      const hotspot = investigation?.hotspots.find((entry) => entry.id === hotspotId);
+      if (!hotspot) throw new Error(`Missing 302 hotspot: ${hotspotId}`);
+      state = applyEffects(state, [
+        ...hotspot.effects,
+        {
+          type: 'setFlag',
+          flag: investigationFlag(state.volatile.currentSceneId, hotspot.id),
+          value: true,
+          scope: 'loop',
+        },
+      ]);
+    }
+  }
+  choose(choiceId);
+});
 state = resetLoop(state, SCENE_LOOP2_RESET_AWAKENING, LOCATION_CAR);
 recordCurrentScene();
 loop2Choices.forEach((choiceId) => {

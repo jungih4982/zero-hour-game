@@ -19,6 +19,7 @@ import {
 import {
   B1_LINEN_ROOM_FOUND_FLAG,
   CLUE_B1_TRANSFER_TRACKS,
+  ROOM_302_WRISTBAND_FOUND_FLAG,
 } from '../gameplay/investigation';
 
 export const SCENE_CH00_ENTRANCE = 'SCENE_ACT0_DRIVE' as SceneId;
@@ -560,7 +561,6 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
     choices: [
       to('ENTER_ROOM_302_LOOP1', '닫히기 전 문을 붙잡는다.', SCENE_ACT2_ROOM_CONTRADICTION, 5, {
         locationId: LOCATION_ROOM_302,
-        effects: [{ type: 'gainClue', clueId: CLUE_302_OCCUPIED }],
       }),
     ],
   },
@@ -582,7 +582,13 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 유진이 문밖에서 말했다. 아까 간호사는 이미 사라지고 없었다.
 
 침대 난간 아래에서 찢어진 환자 손목밴드가 보였다. 이름이 있어야 할 부분은 뜯겨 있었고 병실 번호와 생년월일만 남아 있었다.`,
-    choices: [to('CHECK_WRISTBAND', '손목밴드의 정보를 확인한다.', SCENE_ACT2_WRISTBAND, 3)],
+    choices: [to('CHECK_WRISTBAND', '손목밴드의 정보를 확인한다.', SCENE_ACT2_WRISTBAND, 3, {
+      conditions: [{
+        type: 'flagEquals',
+        flag: ROOM_302_WRISTBAND_FOUND_FLAG,
+        value: true,
+      }],
+    })],
   },
 
   [SCENE_ACT2_WRISTBAND]: {
