@@ -828,10 +828,12 @@ export function NarrativePlayer() {
   };
 
   const dialogueHeight = Math.min(
-    layout.mode === 'landscape' ? 350 : isDead ? 560 : 470,
+    layout.mode === 'landscape' ? 350 : isDead ? 560 : isComplete ? 580 : 470,
     Math.max(
-      layout.mode === 'landscape' ? 240 : isDead ? 410 : 310,
-      viewportHeight * (layout.mode === 'landscape' ? 0.5 : isDead ? 0.55 : 0.41),
+      layout.mode === 'landscape' ? 240 : isDead ? 410 : isComplete ? 420 : 310,
+      viewportHeight * (
+        layout.mode === 'landscape' ? 0.5 : isDead ? 0.55 : isComplete ? 0.56 : 0.41
+      ),
     ),
   );
   const dialogueSidePadding = Math.max(
@@ -1148,14 +1150,16 @@ export function NarrativePlayer() {
                 </View>
               ) : (
                 <View style={styles.choiceList}>
-                  <View style={styles.choiceHeading}>
-                    <Text style={styles.choiceEyebrow}>{investigation ? '현장 조사' : '다음 행동'}</Text>
-                    <Text style={styles.choiceHint}>
-                      {investigation
-                        ? `${inspectedHotspots.length}/${investigation.hotspots.length} 확인`
-                        : '선택한 행동은 되돌릴 수 없다'}
-                    </Text>
-                  </View>
+                  {!isComplete ? (
+                    <View style={styles.choiceHeading}>
+                      <Text style={styles.choiceEyebrow}>{investigation ? '현장 조사' : '다음 행동'}</Text>
+                      <Text style={styles.choiceHint}>
+                        {investigation
+                          ? `${inspectedHotspots.length}/${investigation.hotspots.length} 확인`
+                          : '선택한 행동은 되돌릴 수 없다'}
+                      </Text>
+                    </View>
+                  ) : null}
                   {investigation ? (
                     <View style={styles.investigationSummary}>
                       <Text style={styles.investigationPrompt}>{investigation.prompt}</Text>
@@ -1256,14 +1260,43 @@ export function NarrativePlayer() {
                     );
                   })}
                   {isComplete ? (
-                    <Pressable
-                      accessibilityRole="button"
-                      onPress={confirmRestart}
-                      style={({ pressed }) => [styles.endingButton, pressed && styles.pressed]}
-                    >
-                      <RotateCcw color="#afbac7" size={15} />
-                      <Text style={styles.endingButtonText}>첫 통화부터 다시</Text>
-                    </Pressable>
+                    <View style={styles.endingSummary}>
+                      <Text style={styles.endingEyebrow}>이번 밤에 확인한 것</Text>
+                      <Text style={styles.endingFinding}>
+                        서윤은 302호로 들어갔지만 나오지 않았다.
+                      </Text>
+                      <View style={styles.endingStats}>
+                        {[
+                          ['반복', engineState.persistent.loopCount],
+                          ['기억', engineState.persistent.memories.length],
+                          ['단서', engineState.persistent.clueIds.length],
+                          ['추론', engineState.persistent.deductionIds.length],
+                        ].map(([label, value]) => (
+                          <View key={label} style={styles.endingStat}>
+                            <Text style={styles.endingStatValue}>
+                              {String(value).padStart(2, '0')}
+                            </Text>
+                            <Text style={styles.endingStatLabel}>{label}</Text>
+                          </View>
+                        ))}
+                      </View>
+                      <Pressable
+                        accessibilityRole="button"
+                        onPress={() => setShowFieldKit(true)}
+                        style={({ pressed }) => [styles.endingRecordButton, pressed && styles.pressed]}
+                      >
+                        <MapPinned color="#e4eaf0" size={16} />
+                        <Text style={styles.endingRecordButtonText}>확보한 기록을 확인한다</Text>
+                      </Pressable>
+                      <Pressable
+                        accessibilityRole="button"
+                        onPress={confirmRestart}
+                        style={({ pressed }) => [styles.endingButton, pressed && styles.pressed]}
+                      >
+                        <RotateCcw color="#8996a4" size={14} />
+                        <Text style={styles.endingButtonText}>첫 통화로 돌아간다</Text>
+                      </Pressable>
+                    </View>
                   ) : null}
                 </View>
               )}
@@ -1710,10 +1743,37 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    borderWidth: 1,
-    borderColor: 'rgba(103, 123, 145, 0.7)',
-    marginTop: 4,
+    marginTop: 3,
   },
-  endingButtonText: { color: '#c5ced8', fontSize: 11, fontWeight: '700' },
+  endingButtonText: { color: '#8996a4', fontSize: 10, fontWeight: '700' },
+  endingSummary: {
+    marginTop: 7,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(127, 151, 174, 0.22)',
+  },
+  endingEyebrow: { color: '#8fa0b1', fontSize: 8, fontWeight: '900', letterSpacing: 1.2 },
+  endingFinding: { color: '#eef2f5', fontSize: 15, lineHeight: 22, fontWeight: '700', marginTop: 5 },
+  endingStats: {
+    minHeight: 54,
+    marginTop: 10,
+    flexDirection: 'row',
+    backgroundColor: 'rgba(90, 113, 135, 0.09)',
+  },
+  endingStat: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  endingStatValue: { color: '#e0e7ed', fontSize: 14, fontWeight: '800' },
+  endingStatLabel: { color: '#718091', fontSize: 8, fontWeight: '800', marginTop: 2 },
+  endingRecordButton: {
+    minHeight: 50,
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    borderLeftWidth: 2,
+    borderLeftColor: '#8fb1ca',
+    backgroundColor: 'rgba(117, 145, 170, 0.18)',
+  },
+  endingRecordButtonText: { color: '#e4eaf0', fontSize: 12, fontWeight: '900' },
   pressed: { opacity: 0.7 },
 });

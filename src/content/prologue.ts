@@ -74,6 +74,7 @@ export const CLUE_FIRST_PHONE = 'CLUE_FIRST_PHONE' as ClueId;
 export const CLUE_SECOND_PHONE = 'CLUE_SECOND_PHONE' as ClueId;
 export const CLUE_SEA_KNOWS = 'CLUE_SEA_KNOWS' as ClueId;
 export const ITEM_FIRST_PHONE_PHOTO = 'ITEM_FIRST_PHONE_PHOTO' as ItemId;
+export const ITEM_SECOND_PHONE = 'ITEM_SECOND_PHONE' as ItemId;
 
 export const FLAG_YUJIN_WARY = 'FLAG_YUJIN_WARY';
 export const FLAG_FIRST_DEATH_AVOIDED = 'FLAG_FIRST_DEATH_AVOIDED';
@@ -1254,7 +1255,10 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 문밖의 벨소리가 멈췄다. 손에 든 휴대전화는 계속 울리고 있었다.`,
     choices: [
       to('KEEP_SECOND_PHONE', '두 번째 전화를 챙기고 서윤의 다음 말을 기다린다.', SCENE_VERTICAL_SLICE_END, 2, {
-        effects: [{ type: 'gainClue', clueId: CLUE_SECOND_PHONE }],
+        effects: [
+          { type: 'gainClue', clueId: CLUE_SECOND_PHONE },
+          { type: 'gainItem', itemId: ITEM_SECOND_PHONE },
+        ],
       }),
     ],
   },

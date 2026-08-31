@@ -11,6 +11,7 @@ import {
   LOCATION_MOUNTAIN_ROAD,
   MEMORY_BLACKOUT_0000,
   MEMORY_RESET_WATCH,
+  ITEM_SECOND_PHONE,
   SCENE_CH00_ENTRANCE,
   SCENE_FIRST_DEATH,
   SCENE_LOOP2_PHONE_PARADOX,
@@ -174,6 +175,7 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   assert(b1RouteUnlocked, 'Loop 2 must use blackout knowledge to enter B1');
   assert(firstDeathAvoided, 'Loop 2 must use blackout knowledge without dying');
   assert(twoPhoneParadoxReached, 'Loop 2 must reach the two-phone contradiction');
+  assert(state.volatile.itemIds.includes(ITEM_SECOND_PHONE), 'the second phone must remain as carried evidence');
   assert(verticalSliceCompleted, 'the vertical slice must end after Seo-yoon acknowledges both phones');
   assert(
     prologueScenes[state.volatile.currentSceneId].locationId !== LOCATION_B1_OPERATIONS_CORRIDOR,

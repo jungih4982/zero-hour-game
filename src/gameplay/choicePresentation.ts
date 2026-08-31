@@ -117,6 +117,33 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
   ASK_SEA_ABOUT_SEOYUN: {
     meta: '조사 종료  ·  소리의 주인 확인',
   },
+  RETURN_TO_302_FOR_SECOND_PHONE: {
+    meta: '경비 이탈  ·  302호 재조사',
+    outcome: {
+      eyebrow: '재조사',
+      title: '첫 번째에 보지 못한 쪽을 확인한다',
+      detail: '서윤의 경고를 따라 사라진 병실로 돌아간다.',
+      tone: 'route',
+    },
+  },
+  CALL_BOTH_SEOYUN_PHONES: {
+    meta: '동시 통화 검증  ·  모순 확인',
+    outcome: {
+      eyebrow: '현장 검증',
+      title: '같은 전화가 동시에 울린다',
+      detail: '사진이 아니라 작동하는 두 기기를 대조한다.',
+      tone: 'evidence',
+    },
+  },
+  KEEP_SECOND_PHONE: {
+    meta: '증거물 확보  ·  다음 경고 대기',
+    outcome: {
+      eyebrow: '증거 확보',
+      title: '두 번째 휴대전화를 챙겼다',
+      detail: '이번에는 사라지기 전에 직접 가지고 나온다.',
+      tone: 'evidence',
+    },
+  },
 };
 
 export function getChoicePresentation(choice: NarrativeChoice): ChoicePresentation {

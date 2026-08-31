@@ -59,6 +59,7 @@ const clueCopy: Readonly<Record<string, { title: string; detail: string }>> = {
 
 const itemCopy: Readonly<Record<string, { title: string; detail: string }>> = {
   ITEM_FIRST_PHONE_PHOTO: { title: '봉투 속 전화 사진', detail: '오른쪽 아래의 흠집까지 서윤의 전화와 일치한다.' },
+  ITEM_SECOND_PHONE: { title: '침대 아래의 휴대전화', detail: '첫 번째 전화와 같은 흠집이 있고, 서윤에게 걸면 동시에 울린다.' },
   ITEM_WRISTBAND_PHOTO: { title: '손목밴드 사진', detail: '302호와 생년월일이 식별되도록 촬영했다.' },
 };
 
