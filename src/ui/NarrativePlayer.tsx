@@ -118,7 +118,7 @@ const characterSprites = {
   taejunWatchful: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Watchful_Bust_v02.png'),
   taejunCold: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Cold_Bust_v02.png'),
   seaWary: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
-  seaConfused: require('../../assets/characters/sea/sprites/CHAR_Sea_Confused_Full_v02.png'),
+  seaConfused: require('../../assets/characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png'),
 };
 
 type BackgroundFocalPoint = {
