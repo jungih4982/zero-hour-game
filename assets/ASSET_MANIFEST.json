@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-29",
+  "updatedAt": "2026-08-31",
   "verticalSlice": {
     "integrated": [
       "backgrounds/exterior/BG_Hospital_Exterior_Arrival_v01.png",
@@ -22,6 +22,7 @@
       "characters/taejun/sprites/CHAR_Taejun_Cold_Full_v01.png",
       "characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
       "characters/sea/sprites/CHAR_Sea_Confused_Full_v01.png",
+      "ui/ZH_UI_Mnemosyne_FieldBoard_v001.png",
       "app/ZERO_HOUR_AppIcon_v01.png",
       "app/icon.png",
       "app/adaptive-icon.png",
@@ -58,6 +59,7 @@
     "The old evacuation-map clue is a 3F waiting-alcove close-up. Only 302 is readable; generated pseudo-text was removed and the anomalous passage remains schematic and unlabelled.",
     "The placeholder app grids and Expo favicon were replaced with a cracked midnight-watch identity. Standard, adaptive, splash, and 48px favicon variants are derived from the same locked artwork.",
     "The user-facing location term is 복도 끝 직원용 문; the rejected Korean wording must not be reintroduced.",
-    "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06."
+    "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06.",
+    "The fullscreen field record uses a Midjourney-generated MNEMOSYNE evidence-board layer beneath real route, clue, deduction, and item controls; generated lettering is never used as interface copy."
   ]
 }
