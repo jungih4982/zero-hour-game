@@ -4,8 +4,8 @@
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "test:narrative": "tsx scripts/run-narrative-simulation.ts",
@@ -18,7 +18,10 @@
     "test:deductions": "tsx scripts/test-deductions.ts",
     "test:death-memory": "tsx scripts/test-death-memory.ts",
     "test:choice-presentation": "tsx scripts/test-choice-presentation.ts",
-    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation"
+    "test:characters": "tsx scripts/test-character-presentation.ts",
+    "test:onboarding": "tsx scripts/test-onboarding.ts",
+    "test:chapter3": "tsx scripts/verify-chapter3-source.ts && tsx scripts/test-chapter3.ts",
+    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:characters && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation && npm run test:onboarding && npm run test:chapter3"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",

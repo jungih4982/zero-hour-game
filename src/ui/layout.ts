@@ -20,10 +20,43 @@ export type CoverPlacement = {
   top: number;
 };
 
+export type TitleBackgroundMotion = {
+  scale: [number, number];
+  translateX: [number, number];
+};
+
 const clamp = (value: number, minimum: number, maximum: number) =>
   Math.min(maximum, Math.max(minimum, value));
 
 const FULL_BODY_SPRITE_ASPECT = 1.5;
+
+// Keep inspection targets outside the dialogue dock, including landscape's
+// right-hand panel. Coordinates describe the usable stage, not the whole screen.
+export function getInvestigationHotspotPosition({
+  x, y, viewportWidth, viewportHeight, dialogueHeight, dialogueWidth,
+  dialogueRight, sideDialogue, safeTop,
+}: {
+  x: number; y: number; viewportWidth: number; viewportHeight: number;
+  dialogueHeight: number; dialogueWidth: number; dialogueRight: number;
+  sideDialogue: boolean; safeTop: number;
+}): { left: number; top: number } {
+  const radius = 28;
+  const stageWidth = sideDialogue
+    ? viewportWidth - dialogueWidth - dialogueRight
+    : viewportWidth;
+  const stageBottom = sideDialogue ? viewportHeight - 24 : viewportHeight - dialogueHeight;
+  const stageTop = Math.max(100, safeTop + 72);
+  return {
+    left: 12 + clamp(x, 0, 1) * Math.max(0, stageWidth - radius * 2 - 24),
+    top: stageTop + clamp(y, 0, 1) * Math.max(0, stageBottom - stageTop - radius * 2 - 12),
+  };
+}
+
+export function getTitleBackgroundMotion(tabletLandscape: boolean): TitleBackgroundMotion {
+  return tabletLandscape
+    ? { scale: [1.035, 1.055], translateX: [0, -10] }
+    : { scale: [1.04, 1.055], translateX: [0, -5] };
+}
 
 export function getCoverPlacement({
   viewportWidth,
@@ -89,8 +122,11 @@ export function getCharacterStageAnchors({
  * verified without relying on a particular browser or simulator.
  */
 export function getGameLayout(width: number, height: number): GameLayout {
-  const desktop = width >= 1000 && height >= 620;
-  const landscape = !desktop && width / Math.max(height, 1) >= 1.35;
+  const aspectRatio = width / Math.max(height, 1);
+  // Large iPads report desktop-like logical widths in landscape. Requiring a
+  // wide desktop aspect keeps 11/13-inch iPads on the touch-first layout.
+  const desktop = width >= 1280 && height >= 720 && aspectRatio >= 1.5;
+  const landscape = !desktop && aspectRatio >= 1.25;
   const tablet = !desktop && !landscape && width >= 700;
   const mode: GameLayoutMode = desktop
     ? 'desktop'
@@ -103,8 +139,17 @@ export function getGameLayout(width: number, height: number): GameLayout {
 
   if (overlayDialogue) {
     const compact = mode === 'landscape';
-    const desiredSpriteWidth = clamp(width * (compact ? 0.27 : 0.32), 170, 470);
-    const maximumSpriteHeight = clamp(height * (compact ? 0.86 : 0.82), 250, 760);
+    const tabletLandscape = compact && height >= 700;
+    const desiredSpriteWidth = clamp(
+      width * (tabletLandscape ? 0.34 : compact ? 0.27 : 0.32),
+      170,
+      470,
+    );
+    const maximumSpriteHeight = clamp(
+      height * (tabletLandscape ? 0.91 : compact ? 0.86 : 0.82),
+      250,
+      820,
+    );
     const spriteWidth = Math.min(
       desiredSpriteWidth,
       maximumSpriteHeight / FULL_BODY_SPRITE_ASPECT,
@@ -113,8 +158,16 @@ export function getGameLayout(width: number, height: number): GameLayout {
       mode,
       overlayDialogue,
       stageHeight: height,
-      dialogWidth: clamp(width * (compact ? 0.58 : 0.56), 440, 820),
-      dialogMaxHeight: clamp(height * (compact ? 0.82 : 0.72), 300, 700),
+      dialogWidth: clamp(
+        width * (tabletLandscape ? 0.54 : compact ? 0.58 : 0.56),
+        tabletLandscape ? 560 : 440,
+        820,
+      ),
+      dialogMaxHeight: clamp(
+        height * (tabletLandscape ? 0.68 : compact ? 0.82 : 0.72),
+        tabletLandscape ? 420 : 300,
+        700,
+      ),
       horizontalGutter: clamp(width * 0.045, 24, 76),
       spriteWidth,
       spriteHeight: spriteWidth * FULL_BODY_SPRITE_ASPECT,

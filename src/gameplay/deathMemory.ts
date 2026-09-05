@@ -1,7 +1,10 @@
 export type DeathMemoryFragmentId =
   | 'blackout'
   | 'stopped-watch'
-  | 'unlocked-door';
+  | 'unlocked-door'
+  | 'sealed-door'
+  | 'air-stopped'
+  | 'hidden-stairs';
 
 export type DeathMemoryFragment = {
   id: DeathMemoryFragmentId;
@@ -29,6 +32,30 @@ export const firstDeathMemorySequence: readonly DeathMemoryFragmentId[] = [
   'unlocked-door',
 ];
 
+export const secondDeathMemoryFragments: readonly DeathMemoryFragment[] = [
+  { id: 'hidden-stairs', text: '이번에는 아래로 이어지는 계단 쪽이었다.' },
+  { id: 'sealed-door', text: '문이 닫혔다.' },
+  { id: 'air-stopped', text: '환기구로 들어오던 미약한 공기마저 끊겼다.' },
+];
+
+export const secondDeathMemorySequence: readonly DeathMemoryFragmentId[] = [
+  'sealed-door',
+  'air-stopped',
+  'hidden-stairs',
+];
+
+export function getDeathMemoryFragments(deathId: string | undefined): readonly DeathMemoryFragment[] {
+  return deathId === 'DEATH_0106_TRANSFER_SEAL'
+    ? secondDeathMemoryFragments
+    : firstDeathMemoryFragments;
+}
+
+export function getDeathMemorySequence(deathId: string | undefined): readonly DeathMemoryFragmentId[] {
+  return deathId === 'DEATH_0106_TRANSFER_SEAL'
+    ? secondDeathMemorySequence
+    : firstDeathMemorySequence;
+}
+
 export type DeathMemoryState = {
   acceptedIds: readonly DeathMemoryFragmentId[];
   mistakeId?: DeathMemoryFragmentId;
@@ -41,11 +68,12 @@ export function createDeathMemoryState(): DeathMemoryState {
 export function selectDeathMemoryFragment(
   state: DeathMemoryState,
   fragmentId: DeathMemoryFragmentId,
+  sequence: readonly DeathMemoryFragmentId[] = firstDeathMemorySequence,
 ): DeathMemoryState {
-  if (state.acceptedIds.length === firstDeathMemorySequence.length) return state;
+  if (state.acceptedIds.length === sequence.length) return state;
   if (state.acceptedIds.includes(fragmentId)) return state;
 
-  const expectedId = firstDeathMemorySequence[state.acceptedIds.length];
+  const expectedId = sequence[state.acceptedIds.length];
   if (fragmentId !== expectedId) {
     return { acceptedIds: [], mistakeId: fragmentId };
   }
@@ -55,6 +83,9 @@ export function selectDeathMemoryFragment(
   };
 }
 
-export function isDeathMemoryComplete(state: DeathMemoryState): boolean {
-  return state.acceptedIds.length === firstDeathMemorySequence.length;
+export function isDeathMemoryComplete(
+  state: DeathMemoryState,
+  sequence: readonly DeathMemoryFragmentId[] = firstDeathMemorySequence,
+): boolean {
+  return state.acceptedIds.length === sequence.length;
 }

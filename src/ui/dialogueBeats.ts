@@ -16,18 +16,27 @@ import {
   SCENE_CH00_YUJIN_FIRST,
   SCENE_FIRST_DEATH,
   SCENE_LOOP2_EARLY_ARRIVAL,
+  SCENE_LOOP2_06_CARD,
+  SCENE_LOOP2_CCTV_GAP,
   SCENE_LOOP2_FIRST_CALL_TEST,
+  SCENE_LOOP2_MESSAGE_TEST,
   SCENE_LOOP2_FIRST_PHONE,
   SCENE_LOOP2_OPERATIONS_CORRIDOR,
+  SCENE_LOOP2_OLD_MAP_SEARCH,
   SCENE_LOOP2_PHONE_PARADOX,
   SCENE_LOOP2_SEA_FIRST_MEETING,
   SCENE_LOOP2_SECOND_PHONE,
   SCENE_LOOP2_SEOYUN_RECHECK,
+  SCENE_LOOP2_SEOYUN_NEW_RULE,
+  SCENE_LOOP2_SEOYUN_UNCERTAIN,
+  SCENE_LOOP2_TAEJUN_MAP,
   SCENE_LOOP2_TAEJUN_REJECTION,
   SCENE_LOOP2_YUJIN_FOREKNOWLEDGE,
   SCENE_LOOP2_YUJIN_MINIMAL,
+  SCENE_CHAPTER02_END,
 } from '../content/prologue';
 import type { NarrativeScene } from '../engine';
+import { chapter3ParagraphSpeakers } from './chapter3Dialogue';
 
 export type SpeakerId =
   | 'narrator'
@@ -36,6 +45,7 @@ export type SpeakerId =
   | 'yujin'
   | 'taejun'
   | 'sea'
+  | 'minseo'
   | 'nurse'
   | 'unknown'
   | 'message'
@@ -56,6 +66,7 @@ export const speakerLabels: Readonly<
   yujin: { name: '한유진' },
   taejun: { name: '강태준' },
   sea: { name: '윤세아' },
+  minseo: { name: '차민서' },
   nurse: { name: '병동 간호사' },
   unknown: { name: '목소리' },
   message: { name: '서윤' },
@@ -71,6 +82,7 @@ const beats = (...speakers: SpeakerId[]) => speakers;
 export const sceneParagraphSpeakers: Readonly<
   Partial<Record<string, readonly SpeakerId[]>>
 > = {
+  ...chapter3ParagraphSpeakers,
   [SCENE_CH00_ENTRANCE]: beats(
     'narrator', 'narrator', 'player', 'seoyun', 'player', 'seoyun', 'player',
     'seoyun', 'player', 'narrator', 'seoyun', 'player', 'seoyun', 'player',
@@ -148,6 +160,11 @@ export const sceneParagraphSpeakers: Readonly<
     'narrator', 'player', 'narrator', 'seoyun', 'player', 'seoyun', 'narrator',
     'seoyun', 'player', 'narrator',
   ),
+  [SCENE_LOOP2_MESSAGE_TEST]: beats(
+    'player', 'seoyun', 'player', 'seoyun', 'narrator', 'message', 'narrator',
+    'player', 'seoyun', 'narrator', 'message', 'player', 'seoyun', 'narrator',
+    'seoyun', 'narrator',
+  ),
   [SCENE_LOOP2_EARLY_ARRIVAL]: beats(
     'narrator', 'narrator', 'nurse', 'narrator', 'narrator', 'nurse',
     'narrator', 'narrator', 'narrator', 'narrator',
@@ -187,6 +204,37 @@ export const sceneParagraphSpeakers: Readonly<
   [SCENE_LOOP2_SECOND_PHONE]: beats(
     'narrator', 'narrator', 'narrator', 'narrator', 'system', 'narrator',
     'seoyun', 'player', 'narrator', 'player', 'narrator', 'seoyun', 'narrator',
+    'narrator',
+  ),
+  [SCENE_LOOP2_CCTV_GAP]: beats(
+    'narrator', 'player', 'taejun', 'player', 'taejun', 'player', 'narrator',
+    'player', 'taejun', 'player', 'taejun', 'player', 'taejun', 'narrator',
+  ),
+  [SCENE_LOOP2_06_CARD]: beats(
+    'narrator', 'player', 'yujin', 'narrator', 'narrator', 'player', 'narrator',
+    'minseo', 'player', 'minseo', 'narrator',
+  ),
+  [SCENE_LOOP2_SEOYUN_UNCERTAIN]: beats(
+    'narrator', 'player', 'narrator', 'seoyun', 'player', 'narrator', 'seoyun',
+    'player', 'seoyun', 'player', 'seoyun', 'narrator', 'player', 'narrator',
+    'seoyun', 'seoyun', 'narrator', 'seoyun', 'player', 'seoyun', 'player',
+    'seoyun', 'narrator', 'player', 'seoyun', 'narrator', 'narrator', 'minseo',
+    'player', 'minseo', 'narrator', 'player', 'narrator',
+  ),
+  [SCENE_LOOP2_OLD_MAP_SEARCH]: beats(
+    'narrator', 'narrator', 'narrator', 'seoyun', 'narrator',
+  ),
+  [SCENE_LOOP2_TAEJUN_MAP]: beats(
+    'narrator', 'taejun', 'player', 'narrator', 'player', 'narrator', 'player',
+    'narrator', 'taejun', 'player', 'taejun', 'narrator', 'taejun', 'narrator',
+  ),
+  [SCENE_LOOP2_SEOYUN_NEW_RULE]: beats(
+    'narrator', 'seoyun', 'player', 'seoyun', 'player', 'seoyun', 'player',
+    'seoyun', 'player', 'seoyun', 'narrator', 'seoyun', 'player', 'narrator',
+    'seoyun', 'narrator', 'seoyun', 'player', 'seoyun', 'narrator',
+  ),
+  [SCENE_CHAPTER02_END]: beats(
+    'narrator', 'narrator', 'narrator', 'narrator', 'narrator', 'narrator',
     'narrator',
   ),
 };

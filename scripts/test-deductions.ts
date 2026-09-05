@@ -1,6 +1,10 @@
 import {
+  CLUE_06_CARD,
   CLUE_302_OCCUPIED,
+  CLUE_CCTV_GAP,
   CLUE_FIRST_PHONE,
+  CLUE_OLD_302_PASSAGE,
+  CLUE_WRISTBAND_DOB,
   ITEM_FIRST_PHONE_PHOTO,
   LOCATION_ROOM_302,
   SCENE_LOOP2_PHONE_PARADOX,
@@ -16,6 +20,8 @@ import {
 } from '../src/engine';
 import {
   DEDUCTION_PHONE_DUPLICATION,
+  hidden302RouteDeduction,
+  identity06Deduction,
   canFormDeduction,
   isCorrectDeductionConnection,
   phoneDuplicationDeduction,
@@ -92,4 +98,33 @@ assert(
   '추론 선택지는 첫 번째 전화 사진을 증거로 남겨야 합니다.',
 );
 
-console.log('Phone duplication deduction and evidence route passed.');
+const postSliceState: NarrativeEngineState = {
+  ...state,
+  persistent: {
+    ...state.persistent,
+    clueIds: [CLUE_WRISTBAND_DOB, CLUE_06_CARD, CLUE_CCTV_GAP, CLUE_OLD_302_PASSAGE],
+  },
+};
+
+assert(
+  canFormDeduction(postSliceState, identity06Deduction),
+  '손목밴드와 카드의 06을 확보하면 동일 분류 추론이 가능해야 합니다.',
+);
+assert(
+  isCorrectDeductionConnection(identity06Deduction, [CLUE_WRISTBAND_DOB, CLUE_06_CARD]),
+  '서로 다른 밤의 06 기록을 직접 골라야 동일 분류 추론이 완성되어야 합니다.',
+);
+assert(
+  canFormDeduction(postSliceState, hidden302RouteDeduction),
+  'CCTV 공백과 오래된 통로를 확보하면 302호 우회 동선 추론이 가능해야 합니다.',
+);
+assert(
+  !isCorrectDeductionConnection(hidden302RouteDeduction, [CLUE_CCTV_GAP, CLUE_06_CARD]),
+  '숫자 카드는 영상 공백과 숨은 통로의 연결을 대신할 수 없어야 합니다.',
+);
+assert(
+  isCorrectDeductionConnection(hidden302RouteDeduction, [CLUE_CCTV_GAP, CLUE_OLD_302_PASSAGE]),
+  'CCTV 공백과 오래된 안내도를 직접 골라야 숨은 동선 추론이 완성되어야 합니다.',
+);
+
+console.log('Phone duplication, 06 identity, and hidden-route deductions passed.');

@@ -13,12 +13,14 @@ import type {
   SceneId,
 } from '../engine/types';
 import {
+  DEDUCTION_302_HIDDEN_ROUTE,
   DEDUCTION_BLACKOUT_ROUTE,
   DEDUCTION_PHONE_DUPLICATION,
 } from '../gameplay/deductions';
 import {
   B1_LINEN_ROOM_FOUND_FLAG,
   CLUE_B1_TRANSFER_TRACKS,
+  OLD_MAP_PASSAGE_FOUND_FLAG,
   ROOM_302_WRISTBAND_FOUND_FLAG,
 } from '../gameplay/investigation';
 
@@ -42,6 +44,7 @@ export const SCENE_FIRST_DEATH = 'SCENE_FIRST_DEATH' as SceneId;
 export const SCENE_LOOP2_RESET_AWAKENING = 'SCENE_LOOP2_RESET_AWAKENING' as SceneId;
 export const SCENE_VERTICAL_SLICE_TITLE = 'SCENE_VERTICAL_SLICE_TITLE' as SceneId;
 export const SCENE_LOOP2_FIRST_CALL_TEST = 'SCENE_LOOP2_FIRST_CALL_TEST' as SceneId;
+export const SCENE_LOOP2_MESSAGE_TEST = 'SCENE_LOOP2_MESSAGE_TEST' as SceneId;
 export const SCENE_LOOP2_EARLY_ARRIVAL = 'SCENE_LOOP2_EARLY_ARRIVAL' as SceneId;
 export const SCENE_LOOP2_FIRST_PHONE = 'SCENE_LOOP2_FIRST_PHONE' as SceneId;
 export const SCENE_LOOP2_PHONE_PARADOX = 'SCENE_LOOP2_PHONE_PARADOX' as SceneId;
@@ -56,6 +59,13 @@ export const SCENE_LOOP2_SEOYUN_RECHECK = 'SCENE_LOOP2_SEOYUN_RECHECK' as SceneI
 export const SCENE_LOOP2_RETURN_302 = 'SCENE_LOOP2_RETURN_302' as SceneId;
 export const SCENE_LOOP2_SECOND_PHONE = 'SCENE_LOOP2_SECOND_PHONE' as SceneId;
 export const SCENE_VERTICAL_SLICE_END = 'SCENE_VERTICAL_SLICE_END' as SceneId;
+export const SCENE_LOOP2_CCTV_GAP = 'SCENE_LOOP2_CCTV_GAP' as SceneId;
+export const SCENE_LOOP2_06_CARD = 'SCENE_LOOP2_06_CARD' as SceneId;
+export const SCENE_LOOP2_SEOYUN_UNCERTAIN = 'SCENE_LOOP2_SEOYUN_UNCERTAIN' as SceneId;
+export const SCENE_LOOP2_OLD_MAP_SEARCH = 'SCENE_LOOP2_OLD_MAP_SEARCH' as SceneId;
+export const SCENE_LOOP2_TAEJUN_MAP = 'SCENE_LOOP2_TAEJUN_MAP' as SceneId;
+export const SCENE_LOOP2_SEOYUN_NEW_RULE = 'SCENE_LOOP2_SEOYUN_NEW_RULE' as SceneId;
+export const SCENE_CHAPTER02_END = 'SCENE_CHAPTER02_END' as SceneId;
 
 export const LOCATION_MOUNTAIN_ROAD = 'MOUNTAIN_ROAD' as LocationId;
 export const LOCATION_CAR = 'CAR' as LocationId;
@@ -67,6 +77,7 @@ export const LOCATION_1F_STAFF_DOOR = '1F_STAFF_DOOR' as LocationId;
 export const LOCATION_B1_OPERATIONS_CORRIDOR = 'B1_OPERATIONS_CORRIDOR' as LocationId;
 
 export const CLUE_WATCH_GIFT = 'CLUE_WATCH_GIFT' as ClueId;
+export const CLUE_CONTRADICTORY_MESSAGES = 'CLUE_CONTRADICTORY_MESSAGES' as ClueId;
 export const CLUE_YUJIN_KNOWN = 'CLUE_YUJIN_KNOWN' as ClueId;
 export const CLUE_B1_MAP = 'CLUE_B1_MAP' as ClueId;
 export const CLUE_302_OCCUPIED = 'CLUE_302_OCCUPIED' as ClueId;
@@ -74,11 +85,18 @@ export const CLUE_WRISTBAND_DOB = 'CLUE_WRISTBAND_DOB' as ClueId;
 export const CLUE_FIRST_PHONE = 'CLUE_FIRST_PHONE' as ClueId;
 export const CLUE_SECOND_PHONE = 'CLUE_SECOND_PHONE' as ClueId;
 export const CLUE_SEA_KNOWS = 'CLUE_SEA_KNOWS' as ClueId;
+export const CLUE_CCTV_GAP = 'CLUE_CCTV_GAP' as ClueId;
+export const CLUE_06_CARD = 'CLUE_06_CARD' as ClueId;
+export const CLUE_OLD_302_PASSAGE = 'CLUE_OLD_302_PASSAGE' as ClueId;
 export const ITEM_FIRST_PHONE_PHOTO = 'ITEM_FIRST_PHONE_PHOTO' as ItemId;
 export const ITEM_SECOND_PHONE = 'ITEM_SECOND_PHONE' as ItemId;
+export const ITEM_OLD_MAP_PHOTO = 'ITEM_OLD_MAP_PHOTO' as ItemId;
 
 export const FLAG_YUJIN_WARY = 'FLAG_YUJIN_WARY';
 export const FLAG_FIRST_DEATH_AVOIDED = 'FLAG_FIRST_DEATH_AVOIDED';
+export const FLAG_TAEJUN_SAW_PHONE = 'FLAG_TAEJUN_SAW_PHONE';
+export const FLAG_MINSEO_MEMORY_WARNING_KEPT = 'FLAG_MINSEO_MEMORY_WARNING_KEPT';
+export const FLAG_SEOYUN_MESSAGE_TESTED = 'FLAG_SEOYUN_MESSAGE_TESTED';
 export const MEMORY_BLACKOUT_0000 = 'MEMORY_BLACKOUT_0000' as MemoryId;
 export const MEMORY_RESET_WATCH = 'MEMORY_RESET_WATCH' as MemoryId;
 export const FIRST_DEATH_ID = 'DEATH_ZERO_HOUR_UNKNOWN';
@@ -260,7 +278,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 
 신호가 바뀌었다. 시계 이야기는 그것으로 끝났다.`,
     choices: [
-      to('ASK_ABOUT_OTHER_CALLS', '다른 전화가 무슨 뜻인지 묻는다.', SCENE_ACT0_MESSAGES, 5, {
+      to('ASK_ABOUT_OTHER_CALLS', '서윤이 보낸 주소를 확인하며 통화를 이어간다.', SCENE_ACT0_MESSAGES, 5, {
         effects: [{ type: 'gainClue', clueId: CLUE_WATCH_GIFT }],
       }),
     ],
@@ -297,7 +315,21 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 두 메시지는 같은 대화창에 붙어 있었다. 번호도 프로필 사진도 같았다.
 
 곧바로 전화를 걸었다. 몇 차례 연결음이 이어졌지만 서윤이는 받지 않았다.`,
-    choices: [to('CONTINUE_TO_BAEKYA', '차를 돌리지 않고 백야의료원으로 향한다.', SCENE_ACT0_LAST_CALL, 6)],
+    choices: [
+      to(
+        'PRESERVE_MESSAGE_SEQUENCE',
+        '안전한 곳에 잠시 차를 세우고 두 문자의 도착 순서를 저장한다.',
+        SCENE_ACT0_LAST_CALL,
+        8,
+        { effects: [{ type: 'gainClue', clueId: CLUE_CONTRADICTORY_MESSAGES }] },
+      ),
+      to(
+        'CONTINUE_TO_BAEKYA',
+        '통화 연결을 다시 시도하며 그대로 백야의료원으로 향한다.',
+        SCENE_ACT0_LAST_CALL,
+        6,
+      ),
+    ],
   },
 
   [SCENE_ACT0_LAST_CALL]: {
@@ -416,7 +448,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 병원 도착하면 내 이름부터 말해봐.
 
 근데 거기 있는 사람이 나 모른다고 하면, 그 말은 믿지 마.`,
-    choices: [to('WAIT_FOR_SEARCH_RESULT', '검색이 끝날 때까지 기다린다.', SCENE_ACT1_YUJIN_SEARCH, 4)],
+    choices: [to('WAIT_FOR_SEARCH_RESULT', '조회 결과를 믿지 않고 한 번 더 확인해 달라고 한다.', SCENE_ACT1_YUJIN_SEARCH, 4)],
   },
 
   [SCENE_ACT1_YUJIN_SEARCH]: {
@@ -448,7 +480,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 유진은 잠시 생각하다가 내선 전화를 들었다.
 
 "알겠습니다. 한번 확인해 볼게요."`,
-    choices: [to('QUESTION_THE_DENIAL', '직접 통화했다는 사실을 다시 말한다.', SCENE_CH00_YUJIN_DENIAL, 4)],
+    choices: [to('QUESTION_THE_DENIAL', '유진이 병동에 확인하는 동안 주변을 살핀다.', SCENE_CH00_YUJIN_DENIAL, 4)],
   },
 
   [SCENE_CH00_YUJIN_DENIAL]: {
@@ -835,11 +867,72 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 
 같은 밤인지 확인하려면 병원에 다시 가야 했다.`,
     choices: [
+      to(
+        'TEST_MESSAGE_ANOMALY',
+        '[기억] 아직 오지 않은 두 문자의 순서를 먼저 말한다.',
+        SCENE_LOOP2_MESSAGE_TEST,
+        11,
+        {
+          kind: 'foreknowledge',
+          conditions: [{ type: 'hasClue', clueId: CLUE_CONTRADICTORY_MESSAGES }],
+          effects: [{
+            type: 'setFlag',
+            flag: FLAG_SEOYUN_MESSAGE_TESTED,
+            value: true,
+            scope: 'loop',
+          }],
+        },
+      ),
       to('DO_NOT_EXPLAIN_LOOP_YET', '설명하지 않고 더 빨리 병원으로 향한다.', SCENE_LOOP2_EARLY_ARRIVAL, 8, {
         kind: 'foreknowledge',
         conditions: [{ type: 'hasMemory', memoryId: MEMORY_RESET_WATCH }],
         locationId: LOCATION_HOSPITAL_EXTERIOR,
       }),
+    ],
+  },
+
+  [SCENE_LOOP2_MESSAGE_TEST]: {
+    id: SCENE_LOOP2_MESSAGE_TEST,
+    locationId: LOCATION_CAR,
+    title: '아직 보내지 않은 문자',
+    body: `"잠깐만. 조금 뒤에 네 번호로 문자가 두 개 올 거야. 먼저 '그냥 오지 마. 집에 가.' 그다음에는 '방금 문자 무시해. 내가 보낸 거 아니야.'"
+
+"오빠, 무슨 소리야?"
+
+"둘 중 어느 게 네가 보낸 건지만 말해 줘."
+
+"나 지금 아무것도 안 보냈어."
+
+말이 끝나자 알림이 떴다.
+
+그냥 오지 마. 집에 가.
+
+서윤이의 숨소리가 멎었다.
+
+"지금 왔어. 첫 번째 문자."
+
+"…내가 아니야."
+
+곧 두 번째 알림이 같은 대화창에 붙었다.
+
+방금 문자 무시해. 내가 보낸 거 아니야.
+
+"두 번째는?"
+
+"그건 내가 쓰려던 말이야. 아직 보내지도 않았는데."
+
+통화 너머에서 서윤이가 짧게 숨을 삼켰다.
+
+"오빠. 지금부터 내가 하는 말도 바로 믿지 마."
+
+예측은 맞았다. 대신 누가 서윤의 말을 먼저 보내는지는 더 알 수 없게 됐다.`,
+    choices: [
+      to(
+        'LEAVE_AFTER_MESSAGE_TEST',
+        '확인된 모순을 기록하고 백야의료원으로 향한다.',
+        SCENE_LOOP2_EARLY_ARRIVAL,
+        0,
+      ),
     ],
   },
 
@@ -1290,6 +1383,303 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
 하지만 나오는 모습은 찍히지 않았다.
 
 그리고 서윤이가 마지막으로 남긴 경고의 이유는 아직 듣지 못했다.`,
+    choices: [
+      to('ASK_TAEJUN_ABOUT_CCTV', '보안실에서 돌아온 태준에게 CCTV의 빈 구간을 묻는다.', SCENE_LOOP2_CCTV_GAP, 3, {
+        locationId: LOCATION_1F_LOBBY,
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_CCTV_GAP]: {
+    id: SCENE_LOOP2_CCTV_GAP,
+    locationId: LOCATION_1F_LOBBY,
+    title: '사라진 1분',
+    body: `얼마 뒤 태준이 보안실 쪽에서 돌아왔다. 바로 앞을 막아섰다.
+
+"서윤이가 찍혔다면서요."
+
+"네."
+
+"302호에서 나온 뒤 영상은 정말 없습니까?"
+
+"제가 확인한 영상에는 없습니다."
+
+"그럼 방 안에 있었거나, 카메라에 안 찍히고 나갈 방법이 있었다는 얘기잖아요. 영상 자체에는 이상한 거 없었습니까?"
+
+태준의 대답이 아주 조금 늦었다.
+
+"있었네요."
+
+"잠깐 비는 구간이 있습니다."
+
+"얼마나요?"
+
+"1분 정도요."
+
+"정전 때문입니까?"
+
+"아니요. 저런 식으로 끊기는 일은 거의 없어요."
+
+태준은 더 설명하지 않았다. 친절한 조사 파트너가 아니라, 아직 병원 보안팀 직원이었다.`,
+    choices: [
+      to('SHOW_SECOND_PHONE_TO_TAEJUN', '[증거] 똑같은 두 번째 휴대전화를 보여준다.', SCENE_LOOP2_06_CARD, 2, {
+        kind: 'evidence',
+        conditions: [{ type: 'hasItem', itemId: ITEM_SECOND_PHONE }],
+        effects: [
+          { type: 'gainClue', clueId: CLUE_CCTV_GAP },
+          { type: 'setFlag', flag: FLAG_TAEJUN_SAW_PHONE, value: true, scope: 'loop' },
+        ],
+      }),
+      to('PRESS_TAEJUN_ON_CCTV_GAP', '끊긴 1분의 원인부터 확인해 달라고 요구한다.', SCENE_LOOP2_06_CARD, 4, {
+        effects: [{ type: 'gainClue', clueId: CLUE_CCTV_GAP }],
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_06_CARD]: {
+    id: SCENE_LOOP2_06_CARD,
+    locationId: LOCATION_1F_LOBBY,
+    title: '06',
+    body: `태준이 대화를 끝내고 보안실로 돌아가려던 순간, 엘리베이터 문이 열렸다. 유진과 처음 보는 의사가 함께 내렸다. 유진의 손에는 작은 투명 봉투가 들려 있었다.
+
+"뭐 찾으셨어요?"
+
+"몇 가지 확인할 게 생겼어요."
+
+봉투 안에는 병원 로고가 찍힌 플라스틱 카드가 들어 있었다. 짧은 숫자 하나만 또렷했다.
+
+06
+
+"302호에서 나온 겁니까?"
+
+유진이 바로 대답하지 않았다. 옆에 선 의사가 대신 말했다.
+
+"네. 방 안에서 발견됐어요. 차민서입니다."
+
+"무슨 카드인데요?"
+
+"아직 모르겠습니다. 확실하지 않은 걸 먼저 말씀드릴 수는 없으니까요."
+
+카드의 06을 다시 봤다. 첫 번째 밤, 찢어진 손목밴드 끝에도 같은 숫자가 남아 있었다.`,
+    choices: [
+      to('COMPARE_06_WITH_WRISTBAND', '[기억] 첫 번째 밤에 본 손목밴드의 06과 대조한다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 2, {
+        kind: 'foreknowledge',
+        conditions: [{ type: 'hasClue', clueId: CLUE_WRISTBAND_DOB }],
+        effects: [{ type: 'gainClue', clueId: CLUE_06_CARD }],
+      }),
+      to('ASK_WHERE_06_CARD_WAS_FOUND', '카드가 발견된 정확한 위치만 묻는다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 4, {
+        effects: [{ type: 'gainClue', clueId: CLUE_06_CARD }],
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_SEOYUN_UNCERTAIN]: {
+    id: SCENE_LOOP2_SEOYUN_UNCERTAIN,
+    locationId: LOCATION_1F_LOBBY,
+    title: '서윤이가 몰랐던 것',
+    body: `유진과 민서에게 화면이 보이지 않게 휴대전화를 몸 쪽으로 돌렸다.
+
+06이라는 숫자 알아?
+
+한동안 답이 없었다. 잠시 뒤 읽음 표시가 떴다.
+
+어디서 봤어?
+
+302호. 카드에 적혀 있었어.
+
+이번에는 답이 바로 오지 않았다.
+
+카드? 무슨 카드?
+
+네가 다시 확인해 보라고 했잖아.
+
+난 그거 말한 거 아니야.
+
+그럼 뭘 말한 건데.
+
+잠깐만. 그 카드 정확히 어디서 나왔어?
+
+유진에게 위치만 물었다. 침대 옆 틈에 떨어져 있었다는 답이 돌아왔다.
+
+침대 옆.
+
+오래 지나서야 서윤이의 답장이 왔다.
+
+그건 거기 있으면 안 돼. 내가 알던 거랑 달라.
+
+나도 헷갈려.
+
+곧바로 전화를 걸었다. 눈앞의 두 휴대전화가 동시에 진동했다. 서윤이는 받지 않았다. 다시 걸자 이번에는 연결됐다.
+
+"나도 내가 기억하는 게 다 맞는 줄 알았어. 근데 지금 오빠가 말하는 거랑 안 맞는 게 있어. 내가 기억하는 302호에는 그 카드가 없었어."
+
+"너도 모르는 게 있는 거야?"
+
+"당연히 있지. 나도 지금 무서워. 오빠는 내가 여기서 다 보고 있는 줄 알아?"
+
+"그럼 뭘 다시 보라는 거였는데."
+
+"혹시 302호 벽 쪽에 뭐 이상한 거 없었어?"
+
+통화 너머에서 둔탁한 소리가 났다.
+
+"서윤아?"
+
+"잠깐. 이건 왜 여기 있어?"
+
+통화가 끊겼다. 다시 걸어도 연결되지 않았다. 메시지도 전송 대기 상태로 남았다.
+
+휴대전화만 보고 있자 민서가 다가왔다.
+
+"연락 안 돼요?"
+
+"네."
+
+"마지막으로 뭐라고 하던가요?"
+
+차민서는 오빠가 뭘 기억하는지 알면 안 돼. 서윤이의 경고가 떠올랐다.
+
+"제가 필요한 건 말씀드리겠습니다."
+
+민서는 내가 경계하는 걸 눈치챘지만 억지로 더 묻지 않았다. 둘은 아직 같은 편이 아니었다.`,
+    choices: [
+      to('KEEP_MINSEO_WARNING_PRIVATE', '마지막 통화 내용은 숨기고 직접 302호의 벽을 확인한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 3, {
+        locationId: LOCATION_3F_CORRIDOR,
+        effects: [{ type: 'setFlag', flag: FLAG_MINSEO_MEMORY_WARNING_KEPT, value: true, scope: 'loop' }],
+      }),
+      to('TELL_MINSEO_ONLY_WALL_CLUE', '민서에게 302호 벽을 확인해야 한다는 말만 전한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 5, {
+        locationId: LOCATION_3F_CORRIDOR,
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_OLD_MAP_SEARCH]: {
+    id: SCENE_LOOP2_OLD_MAP_SEARCH,
+    locationId: LOCATION_3F_CORRIDOR,
+    title: '오래된 안내도',
+    body: `유진과 민서가 확인을 위해 안쪽으로 사라진 뒤 3층으로 올라왔다.
+
+병동 출입문은 잠겨 있었다. 억지로 열지 않고 엘리베이터 옆 대기 공간을 살폈다.
+
+서윤이가 마지막으로 물었던 말이 남아 있었다.
+
+혹시 302호 벽 쪽에 뭐 이상한 거 없었어?
+
+의자와 정수기 사이, 오래된 화재 대피 안내도가 눈에 들어왔다.`,
+    choices: [
+      to('LINK_CCTV_GAP_TO_OLD_PASSAGE', '[추론] CCTV가 비는 1분과 폐쇄된 통로를 연결한다.', SCENE_LOOP2_TAEJUN_MAP, 2, {
+        kind: 'foreknowledge',
+        conditions: [
+          { type: 'hasDeduction', deductionId: DEDUCTION_302_HIDDEN_ROUTE },
+          { type: 'flagEquals', flag: OLD_MAP_PASSAGE_FOUND_FLAG, value: true },
+        ],
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_TAEJUN_MAP]: {
+    id: SCENE_LOOP2_TAEJUN_MAP,
+    locationId: LOCATION_3F_CORRIDOR,
+    title: '현재에는 없는 길',
+    body: `안내도 사진과 CCTV가 끊긴 시간을 겹쳐 보던 중 엘리베이터 문이 열렸다. 태준이 내렸다. 눈이 마주치자 표정이 바로 굳었다.
+
+"제가 아까 뭐라고 말씀드렸죠?"
+
+"병동 안에는 안 들어갔습니다. 대신 이것만 보세요."
+
+방금 찍은 안내도 사진과 CCTV가 끊긴 시간을 함께 보여 줬다.
+
+"302호 뒤에 이 공간이 있습니다. 지금은 통로가 없다고 했고요."
+
+태준이 화면을 확대했다.
+
+"서윤이는 302호로 들어갔는데 나오는 모습은 없었습니다. 영상이 비는 1분 동안 저쪽으로 나간 건 아닙니까?"
+
+태준은 바로 대답하지 않았다. 실제 안내도 앞으로 가서 제작 연도까지 찍었다.
+
+"확인해 볼게요."
+
+"또 그 말이네요."
+
+"제가 지금 여기서 확실하지 않은 얘기를 할 수는 없잖아요."
+
+태준이 엘리베이터 버튼을 눌렀다.
+
+"일단 내려가세요. 저는 확인할 게 있습니다."
+
+명백하게 대화를 끝내려는 태도였다. 더 캐묻지 않고 엘리베이터에 탔다.`,
+    choices: [
+      to('SEND_OLD_MAP_TO_SEOYUN', '내려가는 동안 안내도 사진을 서윤에게 보낸다.', SCENE_LOOP2_SEOYUN_NEW_RULE, 2, {
+        locationId: LOCATION_1F_LOBBY,
+      }),
+    ],
+  },
+
+  [SCENE_LOOP2_SEOYUN_NEW_RULE]: {
+    id: SCENE_LOOP2_SEOYUN_NEW_RULE,
+    locationId: LOCATION_1F_LOBBY,
+    title: '서로 다른 302호',
+    body: `로비로 나온 지 잠시 뒤 휴대전화가 진동했다. 안내도 사진에 읽음 표시가 떠 있었다.
+
+이게 지금 병원에 있어? 아직도?
+
+3층 벽에 붙어 있어. 이게 네가 말한 거야?
+
+내가 기억하는 거랑 달라. 내가 봤던 안내도에는 저 통로가 없었어.
+
+그럼 네가 말한 건 뭐였는데.
+
+문. 302호 안에 있었어. 침대 뒤쪽.
+
+그 문 어디로 가는데.
+
+몰라.
+
+안 들어가 봤어?
+
+들어갔어. 들어가고 나서부터 기억이 이상해.
+
+곧바로 전화를 걸었다. 이번에는 서윤이가 받았다.
+
+"오빠."
+
+"너도 지금 모르는 거잖아."
+
+전화 너머가 조용해졌다.
+
+"응."
+
+서윤이가 모른다고 인정한 것은 처음이었다.
+
+"내가 아는 것도 이제 다 믿지 마."
+
+"그럼 뭘 믿으라는 건데."
+
+"오빠가 직접 본 거. 그리고 여러 번 확인한 거."
+
+통화가 끝난 뒤 안내도 사진과 두 휴대전화의 사진을 다시 열었다. 누구 한 사람의 말만으로 결론 내리지 않는다.`,
+    choices: [
+      to('ACCEPT_INDEPENDENT_SEARCH_RULE', '확인된 사실만 남기고 다음 동선을 정한다.', SCENE_CHAPTER02_END, 1),
+    ],
+  },
+
+  [SCENE_CHAPTER02_END]: {
+    id: SCENE_CHAPTER02_END,
+    locationId: LOCATION_1F_LOBBY,
+    title: '직접 본 것',
+    body: `서윤이를 찾는다는 목표는 바뀌지 않았다.
+
+확실한 것은 세 가지였다.
+
+서윤이는 302호로 들어갔다.
+
+CCTV에는 1분의 빈 구간이 있다.
+
+현재는 막힌 벽 뒤에, 오래된 안내도에는 통로가 남아 있다.
+
+이번에는 서윤이가 알려 주는 길을 따라가지 않는다.
+
+직접 찾는다.`,
     choices: [],
   },
 };

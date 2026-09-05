@@ -1,4 +1,4 @@
-import { prologueScenes } from '../src/content/prologue';
+import { storyScenes as prologueScenes } from '../src/content/story';
 import {
   getDialogueBeats,
   sceneParagraphSpeakers,

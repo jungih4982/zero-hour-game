@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "assetId": "BG_Title_Baekya_Rain_Portrait_v01",
+  "source": "midjourney",
+  "sourceJobId": "e93f6809-aef4-4eb9-9323-f2d3979c8e75",
+  "sourceIndex": 0,
+  "createdFor": "ZERO HOUR portrait title screen",
+  "promptIntent": "Frame Baekya Medical Center through rainy mountain forest with title-safe negative space, a readable entrance, and an uncluttered lower menu area.",
+  "composition": [
+    "Portrait 9:16 mobile key art",
+    "Hospital mass and cyan anomaly remain visible behind the title menu",
+    "Wet access road provides a slow-camera-motion depth cue",
+    "No generated interface text is used"
+  ],
+  "sha256": "914afbaedfc15c44bb38af7dcdd5ef23e850c4083f68fef1d4658d90de11f795"
+}

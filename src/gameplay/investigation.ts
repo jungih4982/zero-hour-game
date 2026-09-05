@@ -1,15 +1,18 @@
 import type {
   ClueId,
+  ItemId,
   NarrativeEffect,
   NarrativeEngineState,
   SceneId,
 } from '../engine';
+import { chapter3Investigations } from '../content/chapter3';
 
 export const CLUE_B1_UNMARKED_ROOMS = 'CLUE_B1_UNMARKED_ROOMS' as ClueId;
 export const CLUE_B1_TRANSFER_TRACKS = 'CLUE_B1_TRANSFER_TRACKS' as ClueId;
 
 export const B1_LINEN_ROOM_FOUND_FLAG = 'B1_LINEN_ROOM_FOUND';
 export const ROOM_302_WRISTBAND_FOUND_FLAG = 'ROOM_302_WRISTBAND_FOUND';
+export const OLD_MAP_PASSAGE_FOUND_FLAG = 'OLD_MAP_PASSAGE_FOUND';
 
 export type InvestigationHotspot = {
   id: string;
@@ -25,6 +28,7 @@ export type InvestigationHotspot = {
 export type SceneInvestigation = {
   sceneId: SceneId;
   prompt: string;
+  fitHotspotsToStage?: boolean;
   hiddenDialogueBeatIndices?: readonly number[];
   optionalInspectionLimit?: number;
   hotspots: readonly InvestigationHotspot[];
@@ -122,9 +126,50 @@ const operationsCorridorInvestigation: SceneInvestigation = {
   ],
 };
 
+const oldMapInvestigation: SceneInvestigation = {
+  sceneId: 'SCENE_LOOP2_OLD_MAP_SEARCH' as SceneId,
+  prompt: '태준이 올라오기 전에 현재 구조와 오래된 안내도를 대조한다.',
+  hotspots: [
+    {
+      id: 'map-date',
+      label: '안내도 제작 연도',
+      shortLabel: '연도',
+      discovery: '안내도는 현재 병동이 정비되기 전 제작됐다. 폐기되지 않은 채 대기 공간 벽에 남아 있다.',
+      x: 0.72,
+      y: 0.68,
+      effects: [{ type: 'advanceTime', minutes: 1 }],
+    },
+    {
+      id: 'room-302-outline',
+      label: '302호 뒤의 빈 공간',
+      shortLabel: '구조',
+      discovery: '302호 뒤쪽에 병실이 아닌 좁고 긴 공간이 표시돼 있다. 반대쪽 끝은 간호사실 뒤편과 이어진다.',
+      x: 0.55,
+      y: 0.44,
+      effects: [
+        { type: 'gainClue', clueId: 'CLUE_OLD_302_PASSAGE' as ClueId },
+        { type: 'gainItem', itemId: 'ITEM_OLD_MAP_PHOTO' as ItemId },
+        { type: 'setFlag', flag: OLD_MAP_PASSAGE_FOUND_FLAG, value: true, scope: 'loop' },
+        { type: 'advanceTime', minutes: 2 },
+      ],
+    },
+    {
+      id: 'current-wall',
+      label: '현재 병동의 막힌 벽',
+      shortLabel: '현재',
+      discovery: '출입문 유리 너머로 보이는 벽면에는 문도 복도도 없다. 안내도의 공간은 현재 구조에서 완전히 지워져 있다.',
+      x: 0.34,
+      y: 0.55,
+      effects: [{ type: 'advanceTime', minutes: 1 }],
+    },
+  ],
+};
+
 export const sceneInvestigations: Readonly<Record<string, SceneInvestigation>> = {
   [room302Investigation.sceneId]: room302Investigation,
   [operationsCorridorInvestigation.sceneId]: operationsCorridorInvestigation,
+  [oldMapInvestigation.sceneId]: oldMapInvestigation,
+  ...chapter3Investigations,
 };
 
 export function investigationFlag(sceneId: SceneId, hotspotId: string): string {
@@ -160,4 +205,12 @@ export function canInspectHotspot(
   const limit = investigation.optionalInspectionLimit;
   return limit === undefined
     || getUsedSearchOpportunities(state, investigation) < limit;
+}
+
+export function getAvailableInvestigationHotspots(
+  state: NarrativeEngineState,
+  investigation: SceneInvestigation,
+): readonly InvestigationHotspot[] {
+  return investigation.hotspots.filter((hotspot) =>
+    canInspectHotspot(state, investigation, hotspot));
 }

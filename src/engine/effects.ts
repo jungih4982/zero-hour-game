@@ -99,6 +99,11 @@ export function applyEffect(
           time: (state.volatile.time + effect.minutes) as GameTime,
         },
       };
+    case 'setTime':
+      return {
+        ...state,
+        volatile: { ...state.volatile, time: effect.time },
+      };
     case 'moveLocation':
       return {
         ...state,

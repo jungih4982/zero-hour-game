@@ -1,17 +1,25 @@
 import {
   CLUE_302_OCCUPIED,
+  CLUE_CCTV_GAP,
+  CLUE_OLD_302_PASSAGE,
+  ITEM_OLD_MAP_PHOTO,
   prologueScenes,
   SCENE_ACT2_ROOM_CONTRADICTION,
+  SCENE_LOOP2_OLD_MAP_SEARCH,
   SCENE_LOOP2_OPERATIONS_CORRIDOR,
   SCENE_LOOP2_SEA_FIRST_MEETING,
+  SCENE_LOOP2_TAEJUN_MAP,
 } from '../src/content/prologue';
 import { applyEffects, getAvailableChoices, LOOP_START_TIME } from '../src/engine';
 import type { NarrativeEngineState } from '../src/engine';
 import {
   canInspectHotspot,
+  getAvailableInvestigationHotspots,
   investigationFlag,
+  OLD_MAP_PASSAGE_FOUND_FLAG,
   sceneInvestigations,
 } from '../src/gameplay/investigation';
+import { DEDUCTION_302_HIDDEN_ROUTE } from '../src/gameplay/deductions';
 import { getDialogueBeats } from '../src/ui/dialogueBeats';
 
 function assert(condition: boolean, message: string): asserts condition {
@@ -75,6 +83,10 @@ assert(
   getAvailableChoices(prologueScenes[SCENE_ACT2_ROOM_CONTRADICTION], hastyRoomRoute).length === 0,
   'the wristband action must stay locked before it is found',
 );
+assert(
+  getAvailableInvestigationHotspots(hastyRoomRoute, roomInvestigation).length === 3,
+  'the investigation UI must initially direct the player to all three room traces',
+);
 hastyRoomRoute = inspect(hastyRoomRoute, roomInvestigation, 'torn-wristband');
 assert(
   getAvailableChoices(prologueScenes[SCENE_ACT2_ROOM_CONTRADICTION], hastyRoomRoute)
@@ -88,6 +100,10 @@ assert(
 
 let thoroughRoomRoute = createState(SCENE_ACT2_ROOM_CONTRADICTION);
 thoroughRoomRoute = inspect(thoroughRoomRoute, roomInvestigation, 'recent-use-traces');
+assert(
+  getAvailableInvestigationHotspots(thoroughRoomRoute, roomInvestigation).length === 2,
+  'finding one trace must keep guiding the player to the two remaining hotspots',
+);
 thoroughRoomRoute = inspect(thoroughRoomRoute, roomInvestigation, 'torn-wristband');
 assert(
   thoroughRoomRoute.persistent.clueIds.includes(CLUE_302_OCCUPIED),
@@ -112,7 +128,15 @@ assert(unmarkedRooms !== undefined && transferTracks !== undefined && linenRoom 
 let facilityRoute = inspect(state, investigation, 'unmarked-doors');
 assert(!canInspectHotspot(facilityRoute, investigation, transferTracks), 'one optional search must close the competing route clue');
 assert(canInspectHotspot(facilityRoute, investigation, linenRoom), 'the required linen-room discovery must remain available');
+assert(
+  getAvailableInvestigationHotspots(facilityRoute, investigation).map((hotspot) => hotspot.id).join(',') === 'linen-room',
+  'after spending the optional search, guidance must point only to the required discovery',
+);
 facilityRoute = inspect(facilityRoute, investigation, 'linen-room');
+assert(
+  getAvailableInvestigationHotspots(facilityRoute, investigation).length === 0,
+  'guidance must stop once no valid hotspot remains',
+);
 
 const facilityEnterSea = getAvailableChoices(
   prologueScenes[SCENE_LOOP2_OPERATIONS_CORRIDOR],
@@ -139,4 +163,34 @@ const seaChoices = getAvailableChoices(prologueScenes[SCENE_LOOP2_SEA_FIRST_MEET
 assert(seaChoices.some((choice) => choice.id === 'FACE_TAEJUN_IN_B1'), 'direct confrontation route must remain');
 assert(seaChoices.some((choice) => choice.id === 'USE_B1_TRANSFER_ROUTE'), 'transfer-track investigation must unlock the quiet escape route');
 
-console.log('302 active search and B1 investigation trade-off passed.');
+let oldMapState = createState(SCENE_LOOP2_OLD_MAP_SEARCH);
+const oldMapInvestigation = sceneInvestigations[SCENE_LOOP2_OLD_MAP_SEARCH];
+assert(oldMapInvestigation !== undefined, 'old 3F map investigation must exist');
+assert(
+  getAvailableChoices(prologueScenes[SCENE_LOOP2_OLD_MAP_SEARCH], oldMapState).length === 0,
+  'the hidden-route action must remain locked before the map is inspected and deduced',
+);
+oldMapState = inspect(oldMapState, oldMapInvestigation, 'room-302-outline');
+assert(oldMapState.persistent.clueIds.includes(CLUE_OLD_302_PASSAGE), 'the 302 outline must record the old passage clue');
+assert(oldMapState.volatile.itemIds.includes(ITEM_OLD_MAP_PHOTO), 'the 302 outline must leave a map photo in the inventory');
+assert(oldMapState.volatile.flags[OLD_MAP_PASSAGE_FOUND_FLAG] === true, 'the old passage discovery flag must be set');
+assert(
+  getAvailableChoices(prologueScenes[SCENE_LOOP2_OLD_MAP_SEARCH], oldMapState).length === 0,
+  'finding the passage alone must not skip the player deduction',
+);
+oldMapState = applyEffects(oldMapState, [
+  { type: 'gainClue', clueId: CLUE_CCTV_GAP },
+  { type: 'gainDeduction', deductionId: DEDUCTION_302_HIDDEN_ROUTE },
+]);
+const hiddenRouteChoice = getAvailableChoices(
+  prologueScenes[SCENE_LOOP2_OLD_MAP_SEARCH],
+  oldMapState,
+).find((choice) => choice.id === 'LINK_CCTV_GAP_TO_OLD_PASSAGE');
+assert(hiddenRouteChoice !== undefined, 'forming the hidden-route deduction must unlock the map action');
+oldMapState = applyEffects(oldMapState, hiddenRouteChoice.effects);
+assert(
+  oldMapState.volatile.currentSceneId === SCENE_LOOP2_TAEJUN_MAP,
+  'using the completed route deduction must continue to Taejun with the map evidence',
+);
+
+console.log('302 search, B1 trade-off, and old-map investigation passed.');

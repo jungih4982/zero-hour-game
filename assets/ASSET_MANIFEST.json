@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-02",
   "verticalSlice": {
     "integrated": [
       "backgrounds/exterior/BG_Hospital_Exterior_Arrival_v01.png",
@@ -13,15 +13,19 @@
       "backgrounds/3f/BG_302Room_Normal_v01.png",
       "backgrounds/3f/BG_302Room_Cleared_v01.png",
       "backgrounds/special/CG_FirstDeath_Midnight_v01.png",
+      "backgrounds/special/CG_06Card_Evidence_v01.png",
+      "backgrounds/title/BG_Title_Baekya_Rain_Portrait_v01.png",
       "characters/seoyun/sprites/CHAR_Seoyun_Phone_Tense_Bust_v02.png",
       "characters/seoyun/sprites/CHAR_Seoyun_Phone_Frightened_Bust_v01.png",
       "characters/seoyun/sprites/CHAR_Seoyun_Phone_Guarded_Bust_v01.png",
       "characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png",
-      "characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v01.png",
+      "characters/yujin/sprites/CHAR_Yujin_Alarmed_Full_v03.png",
       "characters/taejun/sprites/CHAR_Taejun_Watchful_Full_v01.png",
       "characters/taejun/sprites/CHAR_Taejun_Cold_Full_v01.png",
+      "characters/taejun/sprites/CHAR_Taejun_Confrontational_Full_v01.png",
       "characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
-      "characters/sea/sprites/CHAR_Sea_Confused_Full_v01.png",
+      "characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png",
+      "characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png",
       "ui/ZH_UI_Mnemosyne_FieldBoard_v001.png",
       "app/ZERO_HOUR_AppIcon_v01.png",
       "app/icon.png",
@@ -51,8 +55,9 @@
     "Narration and protagonist beats intentionally show no character sprite. Character art appears only for the speaking named character.",
     "Single-character portrait layouts center the speaker. Explicit two-character scenes use left/right staging with a short cross-fade: the speaker is lit and the listener remains visibly dimmed.",
     "Ordinary dialogue does not repeat the scene subtitle under the speaker name; scene titles are reserved for title and ending reveals.",
-    "Seoyun has three integrated phone-call expressions; Yujin, Taejun, and Sea each have two integrated states. Sea shifts from wary to quietly confused while choosing her words about the corridor.",
-    "Taejun fullbody v01 is retained as a review candidate only. Fullbody v02 and its transparent sprites restore the face-master scar to anatomical right/viewer left and remove epaulettes.",
+    "Seoyun has three face-locked phone-call renders used as four narrative states: calm and tense share the clean Tense_Bust_v02 source, then guarded and frightened take over as danger becomes explicit. The superseded Neutral_Bust_v01 is not integrated because its face and pale matte edge do not match the locked set.",
+    "Taejun uses one locked facial design across watchful, cold, and confrontational scene variants. The confrontational render adds a guarded radio-hand pose without changing his uniform or body proportion.",
+    "Taejun FullbodyMaster_v01 remains a review candidate only. FullbodyMaster_v02 remains the scar and anatomy reference for future expression variants.",
     "Key irreversible moments should use dedicated background-integrated hero CGs; ordinary dialogue should keep responsive transparent sprites so mobile framing remains controllable.",
     "The first-death hero CG is integrated and exposes only the confirmed open door and midnight-stopped cracked watch; the attacker and death method remain visually unresolved.",
     "Room 302 uses a matched two-state background pair: recently occupied before the reset, then unnaturally cleared before the wall-side phone discovery.",
@@ -60,6 +65,9 @@
     "The placeholder app grids and Expo favicon were replaced with a cracked midnight-watch identity. Standard, adaptive, splash, and 48px favicon variants are derived from the same locked artwork.",
     "The user-facing location term is 복도 끝 직원용 문; the rejected Korean wording must not be reintroduced.",
     "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06.",
-    "The fullscreen field record uses a Midjourney-generated MNEMOSYNE evidence-board layer beneath real route, clue, deduction, and item controls; generated lettering is never used as interface copy."
+    "The fullscreen field record uses a Midjourney-generated MNEMOSYNE evidence-board layer beneath real route, clue, deduction, and item controls; generated lettering is never used as interface copy.",
+    "Minseo's 06-card confrontation sprite was regenerated from her locked face and uniform references in a more cinematic semi-realistic render, then extracted from a chroma field for a clean transparent scene layer.",
+    "The 06-card evidence insert uses Midjourney scene lighting with a deterministic local number overlay, so the canonical clue remains exact rather than relying on generated lettering.",
+    "The title screen uses portrait-specific Baekya Medical Center key art with slow camera drift and restrained cyan luminance breathing; game title and menu text remain native UI."
   ]
 }

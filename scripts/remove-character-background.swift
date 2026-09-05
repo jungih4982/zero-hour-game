@@ -54,9 +54,9 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
   }
   context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
 
-  // Generated sprite masters use a pale neutral field or a baked pale
-  // transparency grid. Flooding only from the canvas edge preserves white
-  // details enclosed by the character, including eyes and ID badges.
+  // Generated sprite masters use either a pale neutral field, a baked pale
+  // transparency grid, or an explicit chroma-green field. Flooding only from
+  // the canvas edge preserves light and green details enclosed by the subject.
   func straightComponents(_ pixelIndex: Int) -> (red: Int, green: Int, blue: Int, alpha: Int) {
     let offset = pixelIndex * bytesPerPixel
     let alpha = Int(pixels[offset + 3])
@@ -82,9 +82,29 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
     return average >= 118 && brightest - darkest <= 52
   }
 
+  func isChromaGreen(_ pixelIndex: Int) -> Bool {
+    let components = straightComponents(pixelIndex)
+    guard components.alpha > 0 else { return false }
+    return components.green >= 145
+      && components.green - components.red >= 48
+      && components.green - components.blue >= 38
+  }
+
+  func isChromaFringe(_ pixelIndex: Int) -> Bool {
+    let components = straightComponents(pixelIndex)
+    guard components.alpha > 0 else { return false }
+    return components.green >= 92
+      && components.green - components.red >= 24
+      && components.green - components.blue >= 22
+  }
+
+  func isBackdropColor(_ pixelIndex: Int) -> Bool {
+    isPaleNeutral(pixelIndex) || isChromaGreen(pixelIndex)
+  }
+
   func isBackdrop(_ pixelIndex: Int) -> Bool {
     let alpha = Int(pixels[pixelIndex * bytesPerPixel + 3])
-    return alpha <= 56 || isPaleNeutral(pixelIndex)
+    return alpha <= 56 || isBackdropColor(pixelIndex)
   }
 
   var removed = [Bool](repeating: false, count: width * height)
@@ -116,6 +136,13 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
     if x + 1 < width { enqueue(index + 1) }
     if y > 0 { enqueue(index - width) }
     if y + 1 < height { enqueue(index + width) }
+  }
+
+  // Chroma green can be enclosed by loose hair or an arm and therefore remain
+  // unreachable by the edge flood. It is safe to remove globally because the
+  // generated character palette deliberately contains no saturated green.
+  for index in removed.indices where !removed[index] && isChromaGreen(index) {
+    removed[index] = true
   }
 
   // Some generated masters draw a dark outer ink line around a pale matte,
@@ -157,7 +184,7 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
     where !removed[index]
       && distance[index] > 0
       && distance[index] <= maxFringeDistance
-      && isPaleNeutral(index)
+      && (isBackdropColor(index) || isChromaFringe(index))
   {
     removed[index] = true
   }
@@ -168,6 +195,23 @@ private func extractCharacter(from inputPath: String, to outputPath: String) thr
     pixels[offset + 1] = 0
     pixels[offset + 2] = 0
     pixels[offset + 3] = 0
+  }
+
+  // Neutralize chroma spill that is blended into antialiased hair and clothing
+  // pixels. Removing those pixels entirely makes the silhouette look bitten;
+  // clamping only the excess green keeps the original edge coverage intact.
+  let maxSpillDistance = 8
+  for index in removed.indices
+    where !removed[index]
+      && distance[index] > 0
+      && distance[index] <= maxSpillDistance
+  {
+    let components = straightComponents(index)
+    let neutralGreen = max(components.red, components.blue)
+    guard components.green > neutralGreen + 6 else { continue }
+
+    let offset = index * bytesPerPixel
+    pixels[offset + 1] = UInt8(neutralGreen * components.alpha / 255)
   }
 
   // Feather one inner pixel at the matte boundary to avoid a hard cut.

@@ -1,11 +1,13 @@
 import {
   CLUE_302_OCCUPIED,
   CLUE_B1_MAP,
+  CLUE_CONTRADICTORY_MESSAGES,
   CLUE_FIRST_PHONE,
   CLUE_SECOND_PHONE,
   CLUE_WRISTBAND_DOB,
   FIRST_DEATH_ID,
   FLAG_FIRST_DEATH_AVOIDED,
+  FLAG_SEOYUN_MESSAGE_TESTED,
   FLAG_YUJIN_WARY,
   LOCATION_B1_OPERATIONS_CORRIDOR,
   LOCATION_MOUNTAIN_ROAD,
@@ -15,6 +17,7 @@ import {
   SCENE_CH00_ENTRANCE,
   SCENE_FIRST_DEATH,
   SCENE_LOOP2_PHONE_PARADOX,
+  SCENE_LOOP2_MESSAGE_TEST,
   SCENE_LOOP2_RESET_AWAKENING,
   SCENE_VERTICAL_SLICE_END,
   SCENE_VERTICAL_SLICE_TITLE,
@@ -80,7 +83,7 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   const loop1Route = [
     'KEEP_SEOYUN_TALKING',
     'ASK_ABOUT_OTHER_CALLS',
-    'CONTINUE_TO_BAEKYA',
+    'PRESERVE_MESSAGE_SEQUENCE',
     'ENTER_HOSPITAL_GROUNDS',
     'APPROACH_RECEPTION',
     'WAIT_FOR_SEARCH_RESULT',
@@ -120,6 +123,7 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   assert(state.volatile.currentSceneId === SCENE_FIRST_DEATH, 'Loop 1 must end at the first death');
   assert(state.volatile.deathId === FIRST_DEATH_ID, 'the first death must be triggered');
   assert(state.persistent.clueIds.includes(CLUE_B1_MAP), 'arrival must reveal the omitted B1 route');
+  assert(state.persistent.clueIds.includes(CLUE_CONTRADICTORY_MESSAGES), 'the contradictory message order must remain known');
   assert(state.persistent.clueIds.includes(CLUE_302_OCCUPIED), '302 must contradict Yujin');
   assert(state.persistent.clueIds.includes(CLUE_WRISTBAND_DOB), 'the wristband must match Seo-yoon DOB');
   assert(state.persistent.memories.some((memory) => memory.id === MEMORY_BLACKOUT_0000), 'blackout knowledge must persist');
@@ -137,6 +141,15 @@ export function runPrologueSimulation(): PrologueSimulationResult {
   assert(titleAppearsAfterReset, 'the title must appear after death and reset recognition');
 
   state = choose(state, 'CONTINUE_AFTER_TITLE');
+  const directArrival = choose(state, 'DO_NOT_EXPLAIN_LOOP_YET');
+  const messageTest = choose(state, 'TEST_MESSAGE_ANOMALY');
+  assert(messageTest.volatile.currentSceneId === SCENE_LOOP2_MESSAGE_TEST, 'remembered messages must unlock an active verification scene');
+  assert(messageTest.volatile.flags[FLAG_SEOYUN_MESSAGE_TESTED] === true, 'message verification must change the current loop');
+  const verifiedArrival = choose(messageTest, 'LEAVE_AFTER_MESSAGE_TEST');
+  assert(
+    verifiedArrival.volatile.time === directArrival.volatile.time + 3,
+    'confirming the message anomaly must cost three minutes against the direct route',
+  );
   state = choose(state, 'DO_NOT_EXPLAIN_LOOP_YET');
   state = choose(state, 'TAKE_FIRST_PHONE');
   state = choose(state, 'ANSWER_ON_OWN_PHONE');

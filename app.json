@@ -13,7 +13,8 @@
       "backgroundColor": "#07111b"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jungih4982.zerohourgame"
     },
     "android": {
       "package": "com.jungih4982.zerohourgame",

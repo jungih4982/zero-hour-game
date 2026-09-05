@@ -44,6 +44,15 @@ export function evaluateCondition(
         (state.volatile.flags[condition.flag] ??
           state.persistent.flags[condition.flag]) === condition.value
       );
+    case 'flagNotEquals':
+      return (
+        (state.volatile.flags[condition.flag] ??
+          state.persistent.flags[condition.flag]) !== condition.value
+      );
+    case 'minimumFlags':
+      return condition.flags.filter((flag) =>
+        (state.volatile.flags[flag] ?? state.persistent.flags[flag]) === true
+      ).length >= condition.count;
   }
 }
 

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "assetId": "CHAR_Minseo_Clinical_Full_v02",
+  "source": "midjourney",
+  "sourceJobId": "8a07523a-e289-4935-aa37-c58be25cc781",
+  "sourceIndex": 3,
+  "references": [
+    "../master/CHAR_Minseo_FaceMaster_v02.png.png",
+    "../master/CHAR_Minseo_FullbodyMaster_v01.png"
+  ],
+  "promptIntent": "Preserve Minseo's established face, long black hair, charcoal scrubs, and ivory coat while matching the cinematic semi-realistic mobile mystery-game rendering used by the integrated cast.",
+  "processing": [
+    "Generated on a uniform chroma-green field",
+    "Converted to a transparent PNG with scripts/remove-character-background.swift",
+    "Framed head-to-mid-thigh with top and shoulder safety margins"
+  ]
+}

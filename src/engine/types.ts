@@ -20,7 +20,7 @@ export type NarrativeScene = {
 export type NarrativeChoice = {
   id: string;
   text: string;
-  kind: 'standard' | 'foreknowledge';
+  kind: 'standard' | 'foreknowledge' | 'evidence';
   conditions?: readonly ChoiceCondition[];
   effects: readonly NarrativeEffect[];
 };
@@ -38,7 +38,9 @@ export type ChoiceCondition =
   | { type: 'timeRange'; start: GameTime; end: GameTime }
   | { type: 'knowsPreviousDeath'; deathId: string }
   | { type: 'knowsDeathIntel'; memoryId: MemoryId }
-  | { type: 'flagEquals'; flag: string; value: boolean | number | string };
+  | { type: 'flagEquals'; flag: string; value: boolean | number | string }
+  | { type: 'flagNotEquals'; flag: string; value: boolean | number | string }
+  | { type: 'minimumFlags'; flags: readonly string[]; count: number };
 
 export type NarrativeEffect =
   | { type: 'gainClue'; clueId: ClueId }
@@ -48,6 +50,7 @@ export type NarrativeEffect =
   | { type: 'removeItem'; itemId: ItemId }
   | { type: 'gainDeathIntel'; intel: DeathIntel }
   | { type: 'advanceTime'; minutes: number }
+  | { type: 'setTime'; time: GameTime }
   | { type: 'moveLocation'; locationId: LocationId }
   | {
       type: 'setFlag';

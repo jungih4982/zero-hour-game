@@ -1,0 +1,9 @@
+{
+  "asset": "CG_06Card_Evidence_v01.png",
+  "source": "Midjourney plus deterministic local lettering",
+  "jobId": "e18ff9ff-ac27-484a-8e5b-f691d6521ab4",
+  "index": 0,
+  "createdFor": "Loop 2 evidence reveal, the 06 card from room 302",
+  "prompt": "vertical portrait mobile mystery game evidence close-up, transparent sealed medical evidence pouch resting on a dark hospital reception counter at midnight, inside the pouch a small worn ivory patient access card with one large completely blank dark inset number plate, no lettering anywhere, cool cyan fluorescent edge light with one restrained emergency red reflection, clinical noir, Korean psychological mystery thriller, tactile realistic materials, unsettling institutional stillness, sharp focus on the card in the upper middle, generous uncluttered dark lower third for game dialogue, no hands, no people, no readable text, no symbols, no logo, no watermark --ar 9:16 --raw --stylize 85",
+  "postprocess": "The exact canonical number 06 was perspective-matched onto the blank card using scripts/overlay-evidence-number.swift."
+}

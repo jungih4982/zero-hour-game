@@ -2,12 +2,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import {
-  LOCATION_CAR,
   LOCATION_MOUNTAIN_ROAD,
   SCENE_CH00_ENTRANCE,
-  SCENE_LOOP2_RESET_AWAKENING,
-  prologueScenes,
 } from '../content/prologue';
+import { getLoopResetTarget, storyScenes } from '../content/story';
+import { chapter3QaVariant, createChapter3Checkpoint, isChapter3Qa } from '../debug/chapter3Checkpoint';
 import {
   LOOP_START_TIME,
   applyEffects,
@@ -69,6 +68,7 @@ function migrateVersion3OperationsNames(
 }
 
 export function createInitialNarrativeState(): NarrativeEngineState {
+  if (isChapter3Qa) return createChapter3Checkpoint();
   return {
     persistent: {
       loopCount: 1,
@@ -124,11 +124,11 @@ export function migrateNarrativeState(
   }
   if (storedVersion === 3) {
     const migrated = migrateVersion3OperationsNames(saved);
-    if (prologueScenes[migrated.volatile.currentSceneId]) return migrated;
+    if (storyScenes[migrated.volatile.currentSceneId]) return migrated;
   }
   if (
     storedVersion >= SAVE_VERSION &&
-    prologueScenes[saved.volatile.currentSceneId]
+    storyScenes[saved.volatile.currentSceneId]
   ) {
     return saved;
   }
@@ -144,14 +144,14 @@ export const useNarrativeStore = create<NarrativeStore>()(
       engineState: createInitialNarrativeState(),
       selectChoice: (choiceId) =>
         set(({ engineState }) => {
-          const scene = prologueScenes[engineState.volatile.currentSceneId];
+          const scene = storyScenes[engineState.volatile.currentSceneId];
           const choice = getAvailableChoices(scene, engineState).find(
             (candidate) => candidate.id === choiceId,
           );
           if (!choice || engineState.volatile.deathId) return { engineState };
 
           const afterChoice = applyEffects(engineState, choice.effects);
-          const nextScene = prologueScenes[afterChoice.volatile.currentSceneId];
+          const nextScene = storyScenes[afterChoice.volatile.currentSceneId];
           const afterEntry = applyEffects(afterChoice, nextScene.onEnter ?? []);
           return {
             engineState: appendVisited(afterEntry, nextScene.id),
@@ -198,16 +198,16 @@ export const useNarrativeStore = create<NarrativeStore>()(
           };
         }),
       beginNextLoop: () =>
-        set(({ engineState }) => ({
-          engineState: appendVisited(
-            resetLoop(engineState, SCENE_LOOP2_RESET_AWAKENING, LOCATION_CAR),
-            SCENE_LOOP2_RESET_AWAKENING,
-          ),
-        })),
+        set(({ engineState }) => {
+          const target = getLoopResetTarget(engineState);
+          const reset = resetLoop(engineState, target.sceneId, target.locationId);
+          const entered = applyEffects(reset, storyScenes[target.sceneId].onEnter ?? []);
+          return { engineState: appendVisited(entered, target.sceneId) };
+        }),
       restartStory: () => set({ engineState: createInitialNarrativeState() }),
     }),
     {
-      name: 'zero-hour-narrative-save',
+      name: isChapter3Qa ? `zero-hour-qa-ch3-${chapter3QaVariant}` : 'zero-hour-narrative-save',
       version: SAVE_VERSION,
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (store) => ({ engineState: store.engineState }),
