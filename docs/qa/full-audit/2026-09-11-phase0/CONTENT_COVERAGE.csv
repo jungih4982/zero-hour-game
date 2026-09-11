@@ -1,0 +1,11 @@
+﻿content,implementation,gui,source_and_automatic
+CH00/CH01 first night,Implemented,17 scene path traversed;16 individually observed,Original early detailed approval transcript unavailable; runtime and index checked
+Loop2 first intervention through B1,Implemented,11 scenes observed; stopped at B1 0/3,Normal UI; death avoided; deduction gate verified
+CH2 B1 onward and 4-111..152,Implemented with source differences,NOT_PLAYED,Current source read; normal simulation; F02 F03 F06
+CH3 Three Testimonies,Implemented,NOT_PLAYED,93 canonical lines +198 matrix routes PASS; current source read
+Loop3 reset and CH4 opening,2 CH4 opening nodes only,NOT_PLAYED,Normal simulation reached milestone end
+CH4 trust routes/B2/06/4:10,NOT_IMPLEMENTED,NOT_APPLICABLE,Full script read; absent from active story graph
+CH5 The Sixth Room,NOT_IMPLEMENTED,NOT_APPLICABLE,Full script read
+CH6 Nights Left Behind,NOT_IMPLEMENTED,NOT_APPLICABLE,Full script read
+CH7 Zero Hour and 3 endings,NOT_IMPLEMENTED,NOT_APPLICABLE,Full script read; F10 canon conflict
+Legacy app/scenario/store,Dormant reference,NOT_PLAYED,Entry/type/initial state inspected; not fully read or migrated

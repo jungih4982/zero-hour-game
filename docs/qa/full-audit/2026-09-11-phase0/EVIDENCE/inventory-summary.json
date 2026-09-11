@@ -1,0 +1,29 @@
+{
+  "sceneCount": 70,
+  "edgeCount": 90,
+  "choiceCount": 90,
+  "beats": 769,
+  "locations": [
+    "MOUNTAIN_ROAD",
+    "CAR",
+    "HOSPITAL_EXTERIOR",
+    "1F_LOBBY",
+    "3F_CORRIDOR",
+    "ROOM_302",
+    "1F_STAFF_DOOR",
+    "B1_OPERATIONS_CORRIDOR",
+    "B1_DOCUMENT_TRANSFER"
+  ],
+  "investigationScenes": 7,
+  "hotspots": 27,
+  "deductions": 5,
+  "missingTargets": [],
+  "structurallyReachable": 70,
+  "terminals": [
+    "SCENE_FIRST_DEATH",
+    "SCENE_CH3_DEATH_TAEJUN",
+    "SCENE_CH3_DEATH_YUJIN",
+    "SCENE_CH3_DEATH_SOLO",
+    "SCENE_CH4_MILESTONE_A_END"
+  ]
+}

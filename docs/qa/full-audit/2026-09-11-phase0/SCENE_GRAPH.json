@@ -1,0 +1,5428 @@
+{
+  "note": "Structural reachability only. Conditions are not proven by this graph.",
+  "scenes": [
+    {
+      "id": "SCENE_ACT0_DRIVE",
+      "title": "퇴근길",
+      "location": "MOUNTAIN_ROAD",
+      "beats": 23,
+      "body": "늦은 저녁. 비는 어느새 눈으로 바뀌어 있었다. 도로 위로 떨어진 눈은 금세 녹아 없어지고, 와이퍼는 앞유리에 맺힌 물기를 일정한 간격으로 걷어냈다.\n\n휴대전화가 울렸다. 차량 화면에 서윤의 이름이 떴다.\n\n\"응.\"\n\n\"뭐 해?\"\n\n\"운전 중.\"\n\n\"어디 가는데?\"\n\n\"집 가지.\"\n\n\"혼자?\"\n\n\"그럼 누구랑 가.\"\n\n서윤이가 웃었다.\n\n\"아니, 그냥 물어본 거지.\"\n\n\"뭔데. 너 용건 있을 때 꼭 이렇게 시작하잖아.\"\n\n\"동생이란 사람이 오빠한테 전화도 못 해?\"\n\n\"전화는 할 수 있지. 그래서 무슨 일인데.\"\n\n잠깐 말이 없었다.\n\n\"오늘 시간 좀 돼?\"\n\n\"지금 몇 신데. 뭐 부탁하려고.\"\n\n서윤이가 뜸을 들인 뒤 말했다.\n\n\"나 좀 데리러 와줄래?\"\n\n\"지금? 이 시간에?\"\n\n\"응. 미안.\"\n\n\"어딘데.\"\n\n\"주소 보낼게.\"",
+      "choices": [
+        {
+          "id": "KEEP_SEOYUN_TALKING",
+          "text": "목소리를 놓치지 않게 계속 말을 건다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "CAR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT0_WATCH_CALL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT0_WATCH_CALL",
+      "title": "백야의료원",
+      "location": "CAR",
+      "beats": 23,
+      "body": "메시지 알림이 떴지만 운전 중이라 바로 확인하지는 않았다.\n\n\"어디냐고.\"\n\n\"백야의료원.\"\n\n\"뭐? 잠깐. 네가 병원에 왜 있어?\"\n\n\"그게 좀 길어.\"\n\n\"어디 아파?\"\n\n\"아니.\"\n\n\"그럼 뭔데.\"\n\n\"오면 얘기할게.\"\n\n\"아니, 지금 얘기해.\"\n\n\"지금은 좀 그래.\"\n\n신호가 빨간불로 바뀌었다. 차가 멈춘 뒤에야 서윤이가 보낸 주소를 열었다. 도심에서 꽤 떨어진 산 쪽이었다. 예상 소요 시간은 50분이 넘었다.\n\n\"서윤아. 여기서 거의 한 시간인데?\"\n\n\"미안.\"\n\n\"엄마는 알아? 아버지는?\"\n\n\"몰라. 오빠만 와.\"\n\n한숨을 쉬며 손목시계를 확인했다. 오래된 아날로그 시계였다.\n\n\"근데 오빠. 그 시계 아직도 차?\"\n\n\"네가 사준 거잖아.\"\n\n\"몇 년 된 건데 그걸 아직 차고 다녀.\"\n\n\"시간 잘 맞아.\"\n\n\"촌스러워.\"\n\n신호가 바뀌었다. 시계 이야기는 그것으로 끝났다.",
+      "choices": [
+        {
+          "id": "ASK_ABOUT_OTHER_CALLS",
+          "text": "서윤이 보낸 주소를 확인하며 통화를 이어간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_WATCH_GIFT"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 5
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT0_MESSAGES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT0_MESSAGES",
+      "title": "서로 다른 문자",
+      "location": "CAR",
+      "beats": 14,
+      "body": "한동안 평범한 이야기가 이어졌다. 그러다 통화 상태가 나빠졌다. 서윤이의 목소리가 짧게 끊겼다가 돌아왔다.\n\n\"오빠. 혹시 나한테 다시 전화가 와도.\"\n\n대답을 기다렸다.\n\n\"내가 평소랑 다른 얘기 하면 바로 믿지는 마.\"\n\n\"무슨 얘기.\"\n\n\"그냥 혹시나 해서.\"\n\n\"서윤아. 너 지금 옆에 누구 있어?\"\n\n통화가 끊겼다.\n\n곧 메시지가 도착했다.\n\n그냥 오지 마. 집에 가.\n\n조금 전 통화가 떠올랐다. 답장을 쓰기도 전에 메시지가 하나 더 왔다.\n\n방금 문자 무시해. 내가 보낸 거 아니야.\n\n두 메시지는 같은 대화창에 붙어 있었다. 번호도 프로필 사진도 같았다.\n\n곧바로 전화를 걸었다. 몇 차례 연결음이 이어졌지만 서윤이는 받지 않았다.",
+      "choices": [
+        {
+          "id": "PRESERVE_MESSAGE_SEQUENCE",
+          "text": "안전한 곳에 잠시 차를 세우고 두 문자의 도착 순서를 저장한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_CONTRADICTORY_MESSAGES"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT0_LAST_CALL"
+            }
+          ]
+        },
+        {
+          "id": "CONTINUE_TO_BAEKYA",
+          "text": "통화 연결을 다시 시도하며 그대로 백야의료원으로 향한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 6
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT0_LAST_CALL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT0_LAST_CALL",
+      "title": "마지막 통화",
+      "location": "CAR",
+      "beats": 24,
+      "body": "목적지까지 10분도 남지 않았을 때 전화가 다시 걸려왔다.\n\n\"서윤아?\"\n\n바로 대답은 돌아오지 않았다. 전화기 너머로 무언가 부딪히는 소리가 작게 들렸다.\n\n\"여보세요?\"\n\n\"오빠. 지금 오고 있어?\"\n\n\"응. 거의 다 왔어. 근데 아까 문자 뭐야? 누가 네 폰 만졌어?\"\n\n서윤이는 대답하지 않았다.\n\n\"오빠, 일단 잘 들어. 병원 도착하면 내 이름부터 말해봐.\"\n\n\"당연히 그러지.\"\n\n\"근데 거기 있는 사람이 나 모른다고 하면…. 내가 여기 온 적도 없고, 그런 사람 없다고 하면…. 그 말은 믿지 마.\"\n\n\"그러니까 그게 무슨 말이냐고. 너 지금 옆에 누구 있어?\"\n\n\"아니.\"\n\n짧은 대답이었다.\n\n\"경찰 부를까?\"\n\n\"아직은 하지 마.\"\n\n\"왜?\"\n\n이번에도 답은 없었다.\n\n\"오빠. 열두 시가 되기 전에는 와.\"\n\n\"어디로.\"\n\n\"병원 안으로. 일단 들어와. 내가 다시 연락할게.\"\n\n\"서윤아. 너 지금 어디 있어?\"\n\n잡음이 커졌다.\n\n\"오빠, 전화가 끊겨도 일단—\"\n\n말이 끝나기 전에 통화가 끊겼다. 다시 전화를 걸어도 연결되지 않았다.",
+      "choices": [
+        {
+          "id": "ENTER_HOSPITAL_GROUNDS",
+          "text": "주차장으로 들어간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "HOSPITAL_EXTERIOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT0_ARRIVAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT0_ARRIVAL",
+      "title": "백야의료원",
+      "location": "HOSPITAL_EXTERIOR",
+      "beats": 9,
+      "body": "산길 끝에서 건물 불빛이 보이기 시작했다. 잠시 뒤 네비게이션 안내가 끝났다.\n\n목적지에 도착했습니다.\n\n도로 오른편으로 백야의료원 간판이 보였다. 건물은 산비탈을 따라 길게 자리 잡고 있었고 위층 몇 군데에는 아직 불이 켜져 있었다.\n\n주차장으로 들어서자 차단기가 자동으로 올라갔다. 늦은 시간이지만 주차장은 완전히 비어 있지 않았다. 승용차 몇 대가 건물 가까운 쪽에 세워져 있었고, 구석에는 병원 로고가 붙은 승합차도 한 대 보였다.\n\n출입구와 가까운 빈자리에 차를 세웠다. 시동을 끄자 라디오와 히터가 멎었다. 차 지붕을 두드리는 눈 소리가 또렷하게 들렸다.\n\n병원 입구로 다가가자 자동문이 열렸다. 밖보다 따뜻한 공기가 얼굴에 닿았다. TV에서 터지는 웃음소리 사이로 자판기 쪽의 낮은 기계음이 섞여 들렸다.\n\n접수처에 앉아 있던 여자가 인기척을 듣고 고개를 들었다. 머리를 단정하게 묶은 채 사원증을 목에 걸고 있었다.\n\n사원증 아래 적힌 이름이 눈에 들어왔다.\n\n한유진.",
+      "choices": [
+        {
+          "id": "APPROACH_RECEPTION",
+          "text": "접수처로 간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_B1_MAP"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_LOBBY"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT1_YUJIN_FIRST"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT1_YUJIN_FIRST",
+      "title": "한유진",
+      "location": "1F_LOBBY",
+      "beats": 13,
+      "body": "\"무슨 일로 오셨어요?\"\n\n\"사람을 찾으러 왔는데요.\"\n\n\"입원하신 분 찾으세요?\"\n\n\"제 동생입니다. 서윤이라고요.\"\n\n\"서윤 씨요? 생년월일 혹시 아세요?\"\n\n말해주자 유진은 모니터 쪽으로 몸을 돌렸다. 키보드로 몇 글자를 입력하고 화면을 확인한 뒤 다시 검색했다.\n\n그 과정은 특별히 수상하지 않았다.\n\n\"잠시만요.\"\n\n몇 초 뒤 유진이 고개를 들었다.\n\n\"지금 입원해 계신 분 중에는 안 나오는데요.\"\n\n오는 길에 서윤이가 했던 말이 떠올랐다.\n\n병원 도착하면 내 이름부터 말해봐.\n\n근데 거기 있는 사람이 나 모른다고 하면, 그 말은 믿지 마.",
+      "choices": [
+        {
+          "id": "WAIT_FOR_SEARCH_RESULT",
+          "text": "조회 결과를 믿지 않고 한 번 더 확인해 달라고 한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT1_YUJIN_SEARCH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT1_YUJIN_SEARCH",
+      "title": "조회 결과",
+      "location": "1F_LOBBY",
+      "beats": 13,
+      "body": "\"한 번만 더 봐주시겠어요?\"\n\n\"생년월일이 아까….\"\n\n다시 알려주었다. 유진은 한 번 더 확인했다.\n\n\"없습니다.\"\n\n이번에는 망설이지 않고 대답했다.\n\n\"아까 제 동생이 자기가 이 병원에 있다고 했습니다. 오는 길에도 계속 통화했고요.\"\n\n유진이 나를 바라봤다.\n\n\"이 병원에 있다고 직접 말씀하신 거예요?\"\n\n\"네. 주소도 동생이 보냈습니다.\"\n\n\"입원 환자가 아니면 잠깐 들렀을 수도 있어요. 그건 원무과 쪽에서 확인하셔야 하고요.\"\n\n\"그럼 병동에 한번 물어봐 주세요. 기록에는 없어도 누가 봤을 수도 있잖아요. 사진도 있습니다.\"\n\n유진은 잠시 생각하다가 내선 전화를 들었다.\n\n\"알겠습니다. 한번 확인해 볼게요.\"",
+      "choices": [
+        {
+          "id": "QUESTION_THE_DENIAL",
+          "text": "유진이 병동에 확인하는 동안 주변을 살핀다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT1_YUJIN_DENIAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT1_YUJIN_DENIAL",
+      "title": "없는 환자",
+      "location": "1F_LOBBY",
+      "beats": 11,
+      "body": "유진이 병동에 전화를 거는 동안 로비를 살폈다. 층별 안내에는 1층 원무과와 외래진료실, 2층 재활병동, 3층 입원병동, 4층 장기요양병동이 적혀 있었다.\n\n잠시 뒤 다른 간호사 한 명이 복도에서 나왔다. 내 휴대전화 화면에 떠 있던 서윤이 사진을 본 순간 걸음이 아주 조금 느려졌다.\n\n\"저기요. 혹시 이 사람 본 적 있어요?\"\n\n간호사는 사진을 봤다. 그리고 나보다 먼저 유진을 바라봤다.\n\n\"아뇨. 잘 모르겠습니다.\"\n\n간호사가 자리를 떠난 뒤 유진이 말했다.\n\n\"말씀드렸잖아요. 여기 계신 분이 아니라고요.\"\n\n\"저 사람은 사진도 제대로 안 봤는데요.\"\n\n그때 휴대전화가 진동했다. 서윤이였다.\n\n유진이라는 사람이야?\n\n서윤이에게 유진의 이름을 말한 적이 없었다.",
+      "choices": [
+        {
+          "id": "READ_SEOYUN_WARNING",
+          "text": "유진에게 보이지 않게 답장을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_YUJIN_KNOWN"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT1_YUJIN_WARNING"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT1_YUJIN_WARNING",
+      "title": "말하지 말 것",
+      "location": "1F_LOBBY",
+      "beats": 9,
+      "body": "답장을 쓰기도 전에 다음 문장이 나타났다.\n\n유진한테는 아무것도 더 말하지 마.\n\n\"연락이 왔습니까?\"\n\n유진이 물었다.\n\n\"아직 답이 없습니다.\"\n\n\"통화한 분이 맞다면 지금 위치를 보내 달라고 하세요. 병원 안이면 직원이 확인할 수 있습니다.\"\n\n서윤이에게 전화를 걸었다. 연결음이 울리는 순간, 위층 어딘가에서 아주 약한 진동음이 겹쳤다.\n\n유진도 소리를 들었는지 천장을 올려다봤다. 곧 모니터로 시선을 돌렸다.\n\n엘리베이터 표시가 3층에 멈춰 있었다.",
+      "choices": [
+        {
+          "id": "GO_TO_THIRD_FLOOR",
+          "text": "입원병동이 있는 3층으로 간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 6
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "3F_CORRIDOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT2_THIRD_FLOOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT2_THIRD_FLOOR",
+      "title": "3층 입원병동",
+      "location": "3F_CORRIDOR",
+      "beats": 9,
+      "body": "엘리베이터 문이 열리자 간호 스테이션의 전화벨과 텔레비전 소리가 먼저 들렸다. 병실 몇 곳에는 보호자가 남아 있었고 배식 카트가 벽 쪽에 세워져 있었다.\n\n서윤에게 다시 전화를 걸었다.\n\n연결음이 한 번 울렸다.\n\n복도 끝에서 진동음이 들렸다. 아주 짧게 울리고 멈췄다. 다시 걸자 같은 곳에서 같은 길이로 울렸다.\n\n301호를 지나 302호 앞에 섰다.\n\n문이 열리고 간호사 한 명이 나왔다. 문이 닫히기 전 안쪽 침대 끝과 수액대가 보였다.\n\n\"면회 시간 끝났습니다.\"\n\n\"방금 이 안에서 전화가 울렸습니다. 서윤이라는 사람을 찾고 있어요.\"\n\n간호사의 시선이 휴대전화에서 얼굴로 옮겨왔다.",
+      "choices": [
+        {
+          "id": "ASK_NURSE_ABOUT_302",
+          "text": "302호에 누가 있는지 묻는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT2_NURSE_AT_302"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT2_NURSE_AT_302",
+      "title": "302호",
+      "location": "3F_CORRIDOR",
+      "beats": 10,
+      "body": "\"환자분은 계세요. 그런데 신원은 말씀드릴 수 없습니다. 1층에서 보호자 확인 먼저 하셨어요?\"\n\n\"접수처에서는 빈 병실이라고 했습니다.\"\n\n\"제가 빈방이라고요?\"\n\n뒤에서 유진의 목소리가 들렸다. 계단으로 올라온 듯 숨이 조금 빨랐다.\n\n\"302호는 지금 비어 있습니다. 내려가시죠.\"\n\n간호사가 유진을 쳐다봤다.\n\n\"방금 처치하고 나온 환자는요?\"\n\n\"병실을 잘못 보셨어요.\"\n\n유진은 나를 보며 말했지만 대답은 간호사에게 하고 있었다.\n\n그때 302호 안에서 전화 진동이 다시 울렸다. 세 사람 모두 들었다.",
+      "choices": [
+        {
+          "id": "ENTER_ROOM_302_LOOP1",
+          "text": "닫히기 전 문을 붙잡는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 5
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "ROOM_302"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT2_ROOM_CONTRADICTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "title": "방금까지 누군가 있던 방",
+      "location": "ROOM_302",
+      "beats": 7,
+      "body": "침대는 비어 있었다.\n\n하지만 사용하지 않은 방은 아니었다. 이불 한쪽이 몸의 무게만큼 꺼져 있었고, 수액 튜브 끝에는 새 거즈가 감겨 있었다. 물컵 바깥에는 손자국이 남아 있었다. 침대 밑 슬리퍼 한 짝은 복도 쪽을 향했다.\n\n진동은 멈췄다.\n\n커튼 뒤와 서랍, 침대 아래를 확인했다. 전화는 보이지 않았다.\n\n\"나가세요.\"\n\n유진이 문밖에서 말했다. 아까 간호사는 이미 사라지고 없었다.\n\n침대 난간 아래에서 찢어진 환자 손목밴드가 보였다. 이름이 있어야 할 부분은 뜯겨 있었고 병실 번호와 생년월일만 남아 있었다.",
+      "investigation": {
+        "sceneId": "SCENE_ACT2_ROOM_CONTRADICTION",
+        "prompt": "유진이 재촉하는 동안 302호의 흔적을 직접 확인한다.",
+        "hiddenDialogueBeatIndices": [
+          1,
+          3,
+          6
+        ],
+        "hotspots": [
+          {
+            "id": "recent-use-traces",
+            "label": "남은 사용 흔적",
+            "shortLabel": "흔적",
+            "discovery": "하지만 사용하지 않은 방은 아니었다. 이불 한쪽이 몸의 무게만큼 꺼져 있었고, 수액 튜브 끝에는 새 거즈가 감겨 있었다. 물컵 바깥에는 손자국이 남아 있었다. 침대 밑 슬리퍼 한 짝은 복도 쪽을 향했다.",
+            "x": 0.46,
+            "y": 0.48,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_302_OCCUPIED"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "missing-phone",
+            "label": "진동이 끊긴 곳",
+            "shortLabel": "전화",
+            "discovery": "커튼 뒤와 서랍, 침대 아래를 확인했다. 전화는 보이지 않았다.",
+            "x": 0.82,
+            "y": 0.47,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "torn-wristband",
+            "label": "난간 아래의 흰 조각",
+            "shortLabel": "조각",
+            "discovery": "침대 난간 아래에서 찢어진 환자 손목밴드가 보였다. 이름이 있어야 할 부분은 뜯겨 있었고 병실 번호와 생년월일만 남아 있었다.",
+            "x": 0.36,
+            "y": 0.52,
+            "effects": [
+              {
+                "type": "setFlag",
+                "flag": "ROOM_302_WRISTBAND_FOUND",
+                "value": true,
+                "scope": "loop"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "CHECK_WRISTBAND",
+          "text": "손목밴드의 정보를 확인한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "ROOM_302_WRISTBAND_FOUND",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT2_WRISTBAND"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT2_WRISTBAND",
+      "title": "찢어진 이름",
+      "location": "ROOM_302",
+      "beats": 11,
+      "body": "병실 302.\n\n생년월일은 서윤과 같았다.\n\n이름은 첫 글자 일부만 남아 있었다. 성인지 이름인지도 알 수 없는 세로획 하나였다.\n\n유진이 손목밴드를 빼앗지는 않았다. 대신 문 쪽으로 비켜섰다.\n\n\"그걸 가져가시면 안 됩니다. 환자 물품이에요.\"\n\n\"빈방인데 누구 물품입니까?\"\n\n유진은 대답하지 않았다.\n\n휴대전화에 메시지가 왔다.\n\n오빠, 너 302호에 있었어?\n\n곧 한 줄이 더 나타났다.\n\n그 방에서 내 이름 봤어?",
+      "choices": [
+        {
+          "id": "LEAVE_WRISTBAND_AND_REPLY",
+          "text": "손목밴드를 제자리에 두고 방을 나온다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_WRISTBAND_DOB"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "3F_CORRIDOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT2_REMOTE_KNOWLEDGE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "title": "보고 있지 않은 사람",
+      "location": "3F_CORRIDOR",
+      "beats": 9,
+      "body": "어떻게 알았어?\n\n답장을 보냈다.\n\n표시되던 ‘읽음’이 사라졌다. 전화 버튼을 눌렀지만 연결되지 않았다.\n\n복도 유리창 밖은 완전히 눈으로 가려져 있었다. 간호 스테이션은 여전히 움직였지만 사람들은 필요 이상으로 서로를 보지 않았다.\n\n유진은 엘리베이터 앞에서 기다리고 있었다.\n\n\"경비가 오기 전에 내려가세요.\"\n\n\"지하에는 뭐가 있습니까?\"\n\n\"기계실하고 창고뿐입니다. 보호자가 갈 곳이 아니에요.\"\n\n지하를 묻기 전이었다.",
+      "choices": [
+        {
+          "id": "LOOK_FOR_EMPLOYEE_DOOR",
+          "text": "1층 피난 안내도와 직원용 문을 다시 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_STAFF_DOOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT3_MAP_AND_TAEJUN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "title": "복도 끝의 문",
+      "location": "1F_STAFF_DOOR",
+      "beats": 9,
+      "body": "피난 안내도의 아래쪽 계단은 1층 복도 끝에서 시작했다. 실제로는 ‘직원 외 출입금지’ 표지가 붙은 문이 막고 있었다.\n\n사원증 인식기에 붉은 불이 들어와 있었다. 손잡이는 움직이지 않았다.\n\n\"거기서 뭐 하십니까?\"\n\n경비복을 입은 남자가 다가왔다. 명찰에는 강태준. 오른쪽 관자놀이 위로 짧게 아문 흉터가 있었다.\n\n\"피난도를 봤습니다. 지하로 내려가는 계단이 있네요.\"\n\n\"직원 구역입니다. 로비로 가세요.\"\n\n\"서윤이라는 사람을 찾고 있습니다.\"\n\n태준의 표정은 변하지 않았다. 다만 무전을 잡은 손이 멈췄다.\n\n천장 조명이 한 번 어두워졌다 돌아왔다. 손목의 초침은 정상적으로 움직이고 있었다.",
+      "choices": [
+        {
+          "id": "STAY_UNTIL_BLACKOUT",
+          "text": "로비 쪽으로 물러나되 문이 보이는 곳에 남는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 9
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_ACT3_BLACKOUT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_ACT3_BLACKOUT",
+      "title": "00:00",
+      "location": "1F_STAFF_DOOR",
+      "beats": 9,
+      "body": "모든 불이 동시에 꺼졌다.\n\n발전기가 바로 들어오지 않았다. 로비 텔레비전과 접수 단말기, 비상 유도등까지 한꺼번에 죽었다.\n\n손목에서 작은 소리가 났다.\n\n초침이 열두 시를 가리킨 채 멈췄다.\n\n복도 끝에서 전자 잠금이 풀리는 소리가 났다.\n\n철컥.\n\n어둠 속에서 누군가 뛰었다. 로비 쪽인지 문 쪽인지 구분할 수 없었다. 태준의 목소리가 들렸고, 곧 다른 목소리가 겹쳤다.\n\n\"움직이지 마요.\"\n\n휴대전화 화면을 켰지만 신호도 시간도 표시되지 않았다.",
+      "choices": [
+        {
+          "id": "MOVE_TOWARD_UNLOCKED_DOOR",
+          "text": "잠금이 풀린 소리를 따라간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_FIRST_DEATH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_FIRST_DEATH",
+      "title": "첫 번째 죽음",
+      "location": "1F_STAFF_DOOR",
+      "onEnter": [
+        {
+          "type": "gainMemory",
+          "memory": {
+            "id": "MEMORY_BLACKOUT_0000",
+            "title": "자정에 열린 문",
+            "description": "정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.",
+            "acquiredOnLoop": 1,
+            "sourceSceneId": "SCENE_FIRST_DEATH",
+            "payoff": {
+              "predictsEvent": "자정 정전과 직원용 문 잠금 해제",
+              "usableFrom": 70,
+              "usableUntil": 120,
+              "changes": [
+                "riskAvoided",
+                "routeUnlocked",
+                "eventPreempted"
+              ],
+              "avoidsRisk": "DEATH_ZERO_HOUR_UNKNOWN",
+              "unlocksLocationId": "B1_OPERATIONS_CORRIDOR"
+            }
+          }
+        },
+        {
+          "type": "gainMemory",
+          "memory": {
+            "id": "MEMORY_RESET_WATCH",
+            "title": "돌아온 균열",
+            "description": "몸과 전화는 첫 통화 때로 돌아왔지만 아날로그 시계의 금은 그대로 남았다.",
+            "acquiredOnLoop": 1,
+            "sourceSceneId": "SCENE_LOOP2_RESET_AWAKENING",
+            "payoff": {
+              "predictsEvent": "서윤의 첫 통화가 같은 말과 같은 잡음으로 반복됨",
+              "changes": [
+                "informationCombined",
+                "timeSaved"
+              ],
+              "timeSavedMinutes": 8
+            }
+          }
+        },
+        {
+          "type": "triggerDeath",
+          "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+          "intel": {
+            "memoryId": "MEMORY_BLACKOUT_0000",
+            "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+            "title": "ZERO HOUR",
+            "description": "누가 어떻게 죽였는지는 보이지 않았다. 자정에 불이 꺼지고 직원용 문이 열린다는 사실만 남았다."
+          }
+        }
+      ],
+      "beats": 8,
+      "body": "세 걸음을 옮겼다.\n\n바닥의 방향이 갑자기 달라졌다. 계단을 밟은 것 같기도 했고 누군가 어깨를 민 것 같기도 했다.\n\n손을 뻗자 차가운 금속이 손바닥을 스쳤다. 바로 뒤에서 짧은 숨소리가 들렸다.\n\n\"그쪽 아니—\"\n\n문장은 끝나지 않았다.\n\n충격은 한 번뿐이었다. 통증보다 먼저 손목시계 유리가 깨지는 소리를 들었다.\n\n어둠 속에서 누군가 내 이름을 불렀다. 서윤과 같은 목소리였지만, 서윤이라고 확신하기에는 너무 가까웠다.\n\n마지막으로 기억한 것은 열린 문과 멈춘 초침이었다.",
+      "choices": []
+    },
+    {
+      "id": "SCENE_LOOP2_RESET_AWAKENING",
+      "title": "다시 차 안",
+      "location": "CAR",
+      "beats": 13,
+      "body": "휴대전화 진동음이 들렸다. 와이퍼가 앞유리를 훑었다.\n\n눈을 떴다.\n\n어두운 병원 복도도, 바닥에 쓰러진 자신의 몸도 없었다. 운전 중이던 차 안이었다.\n\n놀라 브레이크에서 발을 떼지 못하자 뒤에서 짧게 경적이 울렸다. 그제야 차가 도로 한가운데 있다는 걸 깨닫고 비상등을 켠 뒤 천천히 갓길로 차를 붙였다.\n\n휴대전화는 계속 울리고 있었다.\n\n서윤.\n\n전화를 받지 못한 채 몸부터 내려다봤다. 옷에도 흔적이 없었다. 손으로 목과 가슴을 만져봤지만 아픈 곳도 없었다.\n\n전화가 끊겼다. 차 안에는 비상등이 깜빡이는 소리만 남았다.\n\n손목시계를 확인했다. 유리 한쪽에 가느다란 금이 가 있었다.\n\n죽기 직전 바닥에서 봤던 것과 같았다.\n\n그 순간 휴대전화가 다시 울렸다.\n\n서윤.\n\n이번에는 한참 망설인 뒤 전화를 받았다.",
+      "choices": [
+        {
+          "id": "RECOGNIZE_RESET",
+          "text": "깨진 시계와 반복된 첫 문장을 확인한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_RESET_WATCH"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 1
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_VERTICAL_SLICE_TITLE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_VERTICAL_SLICE_TITLE",
+      "title": "ZERO HOUR",
+      "location": "CAR",
+      "beats": 4,
+      "body": "똑같은 시간.\n\n똑같은 전화.\n\n그리고 죽은 뒤에도 남아 있는 손목시계의 금.\n\n처음으로 돌아온 밤이 다시 시작되고 있었다.",
+      "choices": [
+        {
+          "id": "CONTINUE_AFTER_TITLE",
+          "text": "같은 통화를 다르게 시작한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_RESET_WATCH"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 1
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_FIRST_CALL_TEST"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "title": "두 번째 첫 통화",
+      "location": "CAR",
+      "beats": 24,
+      "body": "\"뭐 해?\"\n\n대답하지 못했다.\n\n\"여보세요? 오빠?\"\n\n같은 목소리였다.\n\n\"서윤아.\"\n\n\"응.\"\n\n\"너 지금 어디야?\"\n\n\"갑자기?\"\n\n\"어디냐고.\"\n\n평소보다 목소리에 힘이 들어갔다.\n\n\"오빠 왜 그래?\"\n\n\"일단 말해봐.\"\n\n잠깐 조용해졌다.\n\n\"나 지금….\"\n\n나도 모르게 먼저 말했다.\n\n\"백야의료원?\"\n\n통화 너머가 조용해졌다.\n\n\"…뭐?\"\n\n\"너 거기 있어?\"\n\n\"어떻게 알았어?\"\n\n대답하지 못했다. 손목시계의 금을 다시 봤다.\n\n\"오빠 진짜 괜찮아?\"\n\n\"잠깐만.\"\n\n같은 밤인지 확인하려면 병원에 다시 가야 했다.",
+      "choices": [
+        {
+          "id": "TEST_MESSAGE_ANOMALY",
+          "text": "[기억] 아직 오지 않은 두 문자의 순서를 먼저 말한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasClue",
+              "clueId": "CLUE_CONTRADICTORY_MESSAGES"
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "FLAG_SEOYUN_MESSAGE_TESTED",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 11
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_MESSAGE_TEST"
+            }
+          ]
+        },
+        {
+          "id": "DO_NOT_EXPLAIN_LOOP_YET",
+          "text": "설명하지 않고 더 빨리 병원으로 향한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_RESET_WATCH"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "HOSPITAL_EXTERIOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_EARLY_ARRIVAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_MESSAGE_TEST",
+      "title": "아직 보내지 않은 문자",
+      "location": "CAR",
+      "beats": 16,
+      "body": "\"잠깐만. 조금 뒤에 네 번호로 문자가 두 개 올 거야. 먼저 '그냥 오지 마. 집에 가.' 그다음에는 '방금 문자 무시해. 내가 보낸 거 아니야.'\"\n\n\"오빠, 무슨 소리야?\"\n\n\"둘 중 어느 게 네가 보낸 건지만 말해 줘.\"\n\n\"나 지금 아무것도 안 보냈어.\"\n\n말이 끝나자 알림이 떴다.\n\n그냥 오지 마. 집에 가.\n\n서윤이의 숨소리가 멎었다.\n\n\"지금 왔어. 첫 번째 문자.\"\n\n\"…내가 아니야.\"\n\n곧 두 번째 알림이 같은 대화창에 붙었다.\n\n방금 문자 무시해. 내가 보낸 거 아니야.\n\n\"두 번째는?\"\n\n\"그건 내가 쓰려던 말이야. 아직 보내지도 않았는데.\"\n\n통화 너머에서 서윤이가 짧게 숨을 삼켰다.\n\n\"오빠. 지금부터 내가 하는 말도 바로 믿지 마.\"\n\n예측은 맞았다. 대신 누가 서윤의 말을 먼저 보내는지는 더 알 수 없게 됐다.",
+      "choices": [
+        {
+          "id": "LEAVE_AFTER_MESSAGE_TEST",
+          "text": "확인된 모순을 기록하고 백야의료원으로 향한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_EARLY_ARRIVAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "title": "조금 이른 도착",
+      "location": "HOSPITAL_EXTERIOR",
+      "beats": 10,
+      "body": "첫 번째 밤보다 일찍 백야의료원에 도착했다.\n\n병원에 들어오기 전, 직원 한 명이 전화하는 소리를 들었다.\n\n\"302호요? 확인했어요. 아직 그대로예요.\"\n\n접수처에는 아직 유진이 없었다.\n\n망설이다 3층으로 올라갔다. 병동 출입문은 잠겨 있었다. 유리문 너머로 보이는 302호 문은 열려 있었고, 조금 전 통화하던 간호사가 병실 안에서 누군가와 이야기하고 있었다.\n\n\"조금만 기다리세요. 금방 끝나요.\"\n\n서윤이에게 전화를 걸었다.\n\n연결음이 시작되자 302호 안에서 휴대전화 진동음이 들렸다. 전화를 끊으면 진동도 멈췄고, 다시 걸면 다시 울렸다.\n\n잠시 뒤 간호사가 병실에서 나왔다. 한 손에는 투명한 지퍼백이 들려 있었다. 휴대전화와 지갑, 열쇠 몇 개가 들어 있는 환자 소지품 봉투였다.\n\n다시 통화 버튼을 누르자 봉투 안의 휴대전화 화면이 켜졌다.",
+      "choices": [
+        {
+          "id": "TAKE_FIRST_PHONE",
+          "text": "투명 봉투 속 휴대전화를 확인한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_RESET_WATCH"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "ROOM_302"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_FIRST_PHONE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_FIRST_PHONE",
+      "title": "첫 번째 휴대전화",
+      "location": "ROOM_302",
+      "beats": 11,
+      "body": "간호사가 카트를 밀고 움직이자 유리문 너머에서 봉투를 가리켰다.\n\n\"잠깐만요. 저 안의 핸드폰 좀 확인해 주실 수 있습니까?\"\n\n\"보호자 확인이 먼저예요.\"\n\n\"제 동생한테 전화를 걸면 저 핸드폰이 울립니다. 한 번만 다시 걸어보겠습니다.\"\n\n간호사가 난처한 표정을 지었지만 자리를 피하지는 않았다.\n\n서윤이에게 다시 전화를 걸었다.\n\n투명한 봉투 안의 휴대전화가 울렸다. 화면에는 발신자 이름이 떴다.\n\n오빠\n\n서윤이가 쓰던 모델, 같은 색상의 케이스, 오른쪽 아래의 작은 흠집까지 같았다.\n\n그런데 통화는 끊기지 않았다.\n\n잠시 뒤 내 휴대전화에서 서윤이의 목소리가 들렸다.",
+      "choices": [
+        {
+          "id": "ANSWER_ON_OWN_PHONE",
+          "text": "손에 든 전화는 그대로 둔 채 내 전화의 연결을 기다린다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_FIRST_PHONE"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_PHONE_PARADOX"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_PHONE_PARADOX",
+      "title": "한 통화, 두 곳",
+      "location": "ROOM_302",
+      "beats": 10,
+      "body": "\"오빠?\"\n\n서윤이의 목소리는 내 휴대전화에서 들렸다.\n\n눈앞의 봉투 안에서도 다른 휴대전화가 계속 울렸다. 화면에는 ‘오빠’가 떠 있었다.\n\n\"지금 어디야?\"\n\n\"아까 말했잖아. 병원 안이야. 오빠는 아직 오는 중이고.\"\n\n\"네 핸드폰이 지금 내 앞에 있어.\"\n\n\"무슨 소리야. 내 핸드폰 여기 있는데.\"\n\n투명한 봉투를 바라봤다. 눈앞의 기기가 서윤이 것이라면 지금 전화를 받은 상대는 누구인지 설명할 수 없었다.\n\n그때 뒤에서 유진이 다가왔다.\n\n유진의 시선이 내 휴대전화와 봉투 안의 휴대전화 사이를 오갔다.",
+      "choices": [
+        {
+          "id": "DOCUMENT_PHONE_PARADOX",
+          "text": "[추론] 같은 흠집과 두 통화 화면을 한 장에 남긴다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_PHONE_DUPLICATION"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_FIRST_PHONE_PHOTO"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_YUJIN_MINIMAL"
+            }
+          ]
+        },
+        {
+          "id": "REVEAL_EXACT_FOREKNOWLEDGE",
+          "text": "[기억] 유진이 부정할 말과 자정 정전을 정확히 말한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_BLACKOUT_0000"
+            },
+            {
+              "type": "hasClue",
+              "clueId": "CLUE_FIRST_PHONE"
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "FLAG_YUJIN_WARY",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE"
+            }
+          ]
+        },
+        {
+          "id": "TELL_YUJIN_ONLY_PHONE_FACT",
+          "text": "전화가 어디서 발견됐는지만 말한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_YUJIN_MINIMAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE",
+      "title": "너무 정확한 말",
+      "location": "ROOM_302",
+      "beats": 9,
+      "body": "\"서윤이는 기록에 없고, 이 방은 비어 있다고 하시겠죠. 개인정보 때문에 보여 줄 수 없다는 말도 하실 겁니다. 자정에는 불이 꺼지고 1층 복도 끝 직원용 문이 열립니다.\"\n\n유진의 얼굴에서 당황이 먼저 사라졌다.\n\n\"누가 알려 줬어요?\"\n\n\"한 번 겪었습니다.\"\n\n\"어디까지 들었습니까?\"\n\n유진은 더 이상 환자를 찾는 보호자에게 말하지 않았다. 내부 정보를 훔친 사람을 상대하듯 문을 등지고 섰다.\n\n\"전화 내려놓으세요. 경비 부르겠습니다.\"\n\n정확히 아는 것이 증명이 되지 않았다. 오히려 내가 알 수 없어야 할 것의 목록만 만들었다.\n\n복도 끝에서 태준의 무전 소리가 들렸다. 유진이 그쪽을 보는 순간 반대편 계단으로 나왔다.",
+      "choices": [
+        {
+          "id": "GO_TO_STAFF_DOOR_AFTER_BACKFIRE",
+          "text": "[기억] 설득을 포기하고 열릴 문으로 간다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_STAFF_DOOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_STAFF_DOOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "title": "필요한 만큼만",
+      "location": "ROOM_302",
+      "beats": 8,
+      "body": "\"이 전화는 봉투 안에 있었습니다. 지금 서윤과 통화 중인 전화는 따로 있고요.\"\n\n유진은 ‘서윤’이라는 이름보다 열려 있는 봉투를 오래 봤다.\n\n\"그 전화 내려놓으세요. 확인하겠습니다.\"\n\n\"누구에게요?\"\n\n\"제가 답할 수 있는 건 여기까지입니다.\"\n\n협조는 아니었다. 하지만 경비를 부르기 전에 봉투의 라벨을 떼어 주머니에 넣는 것을 봤다.\n\n첫 번째 전화는 다시 봉투에 넣고 사진만 남겼다. 내 휴대전화에서는 서윤의 통화가 이미 끊겨 있었다.\n\n설득할 시간보다 열릴 문에 먼저 도착하는 편이 중요했다.",
+      "choices": [
+        {
+          "id": "GO_TO_STAFF_DOOR_QUIETLY",
+          "text": "[기억] 자정 전에 직원용 문으로 간다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_FIRST_PHONE_PHOTO"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 8
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_STAFF_DOOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_STAFF_DOOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_STAFF_DOOR",
+      "title": "열릴 문 앞",
+      "location": "1F_STAFF_DOOR",
+      "beats": 8,
+      "body": "복도 끝 직원 외 출입금지 문에서 다섯 걸음 떨어져 섰다.\n\n첫 번째에는 문 가까이에서 태준과 마주쳤다. 이번에는 청소 카트 뒤쪽, 피난 안내도가 보이는 곳에 몸을 숨겼다.\n\n사원증 인식기의 붉은 불은 켜져 있었다. 아래로 이어지는 계단의 위치도 알고 있었다.\n\n휴대전화로 서윤에게 메시지를 보냈다.\n\n302호에서 네 전화를 찾았어. 지금 가진 전화로 답해.\n\n읽음 표시가 뜨지 않았다.\n\n손목시계의 금이 조명 아래에서 흰 선처럼 보였다. 초침이 열두 시에 가까워졌다.\n\n로비 쪽에서 태준이 유진에게 무언가 묻는 소리가 났다. 대답은 들리지 않았다.",
+      "choices": [
+        {
+          "id": "WAIT_FOR_KNOWN_BLACKOUT",
+          "text": "[기억] 전자 잠금이 풀리는 순간을 기다린다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 5
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_BLACKOUT_INTERVENTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "title": "00:00 — 선점",
+      "location": "1F_STAFF_DOOR",
+      "beats": 8,
+      "body": "불이 꺼지기 직전에 문 쪽으로 움직였다.\n\n암전.\n\n철컥.\n\n소리가 끝날 때 손잡이는 이미 손안에 있었다. 문을 당기고 안쪽으로 들어간 뒤 다시 닫았다.\n\n첫 번째에 들었던 발소리가 복도 반대편을 지나갔다. 누구의 것인지는 여전히 알 수 없었다.\n\n휴대전화 화면에는 시간이 표시됐지만 통신 신호가 사라졌다. 손목시계의 초침은 열두 시에서 멈췄다.\n\n이번에는 넘어지지 않았다.\n\n비상등이 뒤늦게 켜졌다. 계단은 아래로 한 층만 이어졌다.",
+      "choices": [
+        {
+          "id": "ENTER_B1",
+          "text": "지하 1층으로 내려간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "FLAG_FIRST_DEATH_AVOIDED",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "B1_OPERATIONS_CORRIDOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_OPERATIONS_CORRIDOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "title": "지하 1층",
+      "location": "B1_OPERATIONS_CORRIDOR",
+      "beats": 5,
+      "body": "계단 아래에는 창고와 기계실이 이어졌다. 배관, 린넨 카트, 잠긴 약품 보관함. 비밀 시설이라기보다 병원을 움직이는 데 필요한 것들을 숨겨 둔 층에 가까웠다.\n\n그런데 복도 폭에 비해 문이 너무 많았다. 일부 문에는 용도가 적혀 있었고 일부는 표찰을 떼어 낸 자국만 남아 있었다.\n\n휴대전화는 통화 불가였다. 메시지 전송 표시도 멈춰 있었다.\n\n복도 중간에서 무언가 끌리는 소리가 났다.\n\n멀리서 손전등 빛이 한 번 복도를 훑고 사라졌다. 누군가 돌아오기 전에 움직여야 했다.",
+      "investigation": {
+        "sceneId": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+        "prompt": "손전등 빛이 돌아오기 전에 복도를 살핀다.",
+        "optionalInspectionLimit": 1,
+        "hotspots": [
+          {
+            "id": "unmarked-doors",
+            "label": "표찰을 떼어 낸 문",
+            "shortLabel": "문",
+            "discovery": "떼어 낸 표찰 아래에 관찰창을 막은 나사 자국이 남아 있다.",
+            "x": 0.19,
+            "y": 0.39,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_B1_UNMARKED_ROOMS"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "linen-carts",
+            "label": "벽에 세워 둔 린넨 카트",
+            "shortLabel": "흔적",
+            "discovery": "젖은 바퀴 자국이 복도 끝이 아니라 열린 린넨실 쪽으로 꺾여 있다.",
+            "x": 0.27,
+            "y": 0.57,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_B1_TRANSFER_TRACKS"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "linen-room",
+            "label": "반쯤 열린 린넨실",
+            "shortLabel": "소리",
+            "discovery": "문 안에서 억눌린 숨소리가 들렸다. 환자복을 입은 여자가 숨어 있다.",
+            "x": 0.68,
+            "y": 0.43,
+            "effects": [
+              {
+                "type": "setFlag",
+                "flag": "B1_LINEN_ROOM_FOUND",
+                "value": true,
+                "scope": "loop"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "ASK_SEA_ABOUT_SEOYUN",
+          "text": "린넨실 안의 여자에게 서윤을 아는지 묻는다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "B1_LINEN_ROOM_FOUND",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEA_FIRST_MEETING"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "title": "윤세아",
+      "location": "B1_OPERATIONS_CORRIDOR",
+      "beats": 11,
+      "body": "\"서윤이라는 사람을 찾고 있습니다. 302호에 있었어요?\"\n\n여자는 대답 대신 깨진 손목시계를 봤다.\n\n\"이번에는 그쪽으로 가지 마요.\"\n\n\"어느 쪽이요?\"\n\n\"방금 내려온 계단 말고…\"\n\n말을 고르던 여자가 복도 끝을 봤다. 손목에는 환자 밴드를 오래 찼다가 뺀 듯한 자국이 남아 있었다.\n\n\"서윤 씨는 위에 있어요. 적어도 지금은.\"\n\n\"어떻게 압니까?\"\n\n\"전화가 두 번 울렸으니까.\"\n\n여자는 자신을 윤세아라고 말했다. 더 물으려는 순간 손전등 빛이 복도를 훑었다.\n\n\"거기 누구예요?\"",
+      "choices": [
+        {
+          "id": "USE_B1_TRANSFER_ROUTE",
+          "text": "카트 바퀴 자국이 이어지는 반대편 계단으로 빠져나간다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "hasClue",
+              "clueId": "CLUE_B1_TRANSFER_TRACKS"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_SEA_KNOWS"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_LOBBY"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEOYUN_RECHECK"
+            }
+          ]
+        },
+        {
+          "id": "FACE_TAEJUN_IN_B1",
+          "text": "도망치지 않고 빛 쪽을 본다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_SEA_KNOWS"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_TAEJUN_REJECTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "title": "침입자",
+      "location": "B1_OPERATIONS_CORRIDOR",
+      "beats": 11,
+      "body": "태준이었다.\n\n\"손 보이게 드세요.\"\n\n\"1층 문이 정전 때 열렸습니다.\"\n\n\"그래서 들어왔다는 겁니까?\"\n\n\"302호의 환자를 찾고 있습니다. 이 사람도—\"\n\n린넨실을 돌아봤다. 세아는 없었다. 안에는 접힌 시트와 빈 카트만 있었다.\n\n태준은 내 말을 믿지 않았다. 사원증을 인식기에 대며 계단 문을 열었다.\n\n\"위로 갑니다. 지금부터 질문은 경찰 앞에서 하세요.\"\n\n\"지하에 누가 있는지 모릅니까?\"\n\n\"모르는 사람이 들어와 있는 건 압니다.\"\n\n태준은 CCTV를 보여 주지도, 사정을 들어 주지도 않았다. 손전등을 내 등 뒤에 둔 채 먼저 계단을 오르게 했다.",
+      "choices": [
+        {
+          "id": "RETURN_UPSTAIRS_WITH_TAEJUN",
+          "text": "서윤을 찾기 위해 일단 위층으로 돌아간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 5
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_LOBBY"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEOYUN_RECHECK"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "title": "다시 302호로",
+      "location": "1F_LOBBY",
+      "beats": 19,
+      "body": "1층에 올라오자 휴대전화 신호가 돌아왔다. 보내지지 않던 메시지가 한꺼번에 전송됐다.\n\n서윤이에게서 전화가 왔다.\n\n\"오빠, 지금은 자세히 말 못 해.\"\n\n\"왜.\"\n\n\"302호 있지.\"\n\n\"응.\"\n\n\"거기 다시 한번 확인해 봐.\"\n\n\"뭘.\"\n\n서윤이가 바로 대답하지 않았다.\n\n\"아까는 못 본 게 있을 거야.\"\n\n\"그걸 네가 어떻게 알아.\"\n\n\"지금은 설명 못 해.\"\n\n\"서윤아.\"\n\n\"미안. 근데 한 번만 확인해 봐.\"\n\n\"너 내가 거기 들어갔던 것도 알고 있었어?\"\n\n통화 너머가 조용해졌다. 멀리서 누군가 서윤이를 부르는 듯한 소리가 들렸다.\n\n\"나중에 다시 전화할게.\"\n\n\"잠깐. 너 지금 누구랑—\"\n\n통화가 끊겼다.",
+      "choices": [
+        {
+          "id": "RETURN_TO_302_FOR_SECOND_PHONE",
+          "text": "태준이 유진과 이야기하는 틈에 3층으로 돌아간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 6
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "ROOM_302"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_RETURN_302"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_RETURN_302",
+      "title": "보지 못한 쪽",
+      "location": "ROOM_302",
+      "beats": 9,
+      "body": "302호 문은 닫혀 있었지만 잠기지는 않았다.\n\n투명 소지품 봉투는 사라져 있었다. 첫 번째 휴대전화도 함께 없어졌다. 침구는 정리되어 있었고 물컵과 수액대도 치워져 있었다. 몇 분 사이에 빈 병실처럼 바뀌어 있었다.\n\n서윤이가 말한 대로 아까 보지 못한 쪽을 확인했다.\n\n침대 아래에 손을 넣었다. 처음 확인했던 복도 쪽이 아니라 벽 쪽 바퀴 뒤를 더듬었다.\n\n손끝에 케이스 모서리가 닿았다.\n\n휴대전화를 꺼냈다.\n\n같은 모델. 같은 케이스. 오른쪽 아래에 난 작은 흠집까지 같았다.\n\n첫 번째 휴대전화의 사진과 번갈아 비교했다. 단순히 같은 제품이 아니었다.\n\n서윤이의 휴대전화가 한 대 더 있었다.",
+      "choices": [
+        {
+          "id": "CALL_BOTH_SEOYUN_PHONES",
+          "text": "찾은 전화와 통화 중인 전화가 동시에 존재하는지 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SECOND_PHONE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_SECOND_PHONE",
+      "title": "두 대",
+      "location": "ROOM_302",
+      "beats": 14,
+      "body": "서윤이에게 전화를 걸었다.\n\n손에 든 휴대전화가 울렸다.\n\n동시에 복도에서도 같은 벨소리가 울렸다. 유진이 가져간 첫 번째 휴대전화였다.\n\n두 화면에는 모두 같은 발신자가 떠 있었다.\n\n오빠\n\n그런데 내 휴대전화에서는 다른 곳에 있는 서윤이의 목소리가 들렸다.\n\n\"둘 다 켜져 있어?\"\n\n\"두 대 다. 네가 가진 것까지면 세 대야.\"\n\n잠깐 아무 말도 들리지 않았다.\n\n\"너 알고 있었어?\"\n\n서윤이가 아주 작게 말했다.\n\n\"하나만 있을 줄 알았어.\"\n\n그 말은 안다는 뜻이면서 동시에 예상이 틀렸다는 뜻이었다.\n\n문밖의 벨소리가 멈췄다. 손에 든 휴대전화는 계속 울리고 있었다.",
+      "choices": [
+        {
+          "id": "KEEP_SECOND_PHONE",
+          "text": "두 번째 전화를 챙기고 서윤의 다음 말을 기다린다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_SECOND_PHONE"
+            },
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_SECOND_PHONE"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_VERTICAL_SLICE_END"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_VERTICAL_SLICE_END",
+      "title": "나오지 않은 사람",
+      "location": "ROOM_302",
+      "beats": 9,
+      "body": "잠시 뒤 서윤이에게서 메시지가 왔다.\n\n차민서는 오빠가 뭘 기억하는지 알면 안 돼.\n\n곧바로 이유를 물었다.\n\n읽음 표시는 뜨지 않았다.\n\n1층에서는 병원 직원들이 302호와 CCTV를 다시 확인하기 시작했다. 그들과 같은 편이 된 것은 아니었다. 오히려 무단으로 제한 구역을 돌아다닌 외부인으로 더 강하게 경계받고 있었다.\n\n서윤이가 백야의료원에 왔다는 사실은 CCTV로 확인됐다.\n\n302호로 들어가는 모습도 남아 있었다.\n\n하지만 나오는 모습은 찍히지 않았다.\n\n그리고 서윤이가 마지막으로 남긴 경고의 이유는 아직 듣지 못했다.",
+      "choices": [
+        {
+          "id": "ASK_TAEJUN_ABOUT_CCTV",
+          "text": "보안실에서 돌아온 태준에게 CCTV의 빈 구간을 묻는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_LOBBY"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_CCTV_GAP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_CCTV_GAP",
+      "title": "사라진 1분",
+      "location": "1F_LOBBY",
+      "beats": 14,
+      "body": "얼마 뒤 태준이 보안실 쪽에서 돌아왔다. 바로 앞을 막아섰다.\n\n\"서윤이가 찍혔다면서요.\"\n\n\"네.\"\n\n\"302호에서 나온 뒤 영상은 정말 없습니까?\"\n\n\"제가 확인한 영상에는 없습니다.\"\n\n\"그럼 방 안에 있었거나, 카메라에 안 찍히고 나갈 방법이 있었다는 얘기잖아요. 영상 자체에는 이상한 거 없었습니까?\"\n\n태준의 대답이 아주 조금 늦었다.\n\n\"있었네요.\"\n\n\"잠깐 비는 구간이 있습니다.\"\n\n\"얼마나요?\"\n\n\"1분 정도요.\"\n\n\"정전 때문입니까?\"\n\n\"아니요. 저런 식으로 끊기는 일은 거의 없어요.\"\n\n태준은 더 설명하지 않았다. 친절한 조사 파트너가 아니라, 아직 병원 보안팀 직원이었다.",
+      "choices": [
+        {
+          "id": "SHOW_SECOND_PHONE_TO_TAEJUN",
+          "text": "[증거] 똑같은 두 번째 휴대전화를 보여준다.",
+          "kind": "evidence",
+          "conditions": [
+            {
+              "type": "hasItem",
+              "itemId": "ITEM_SECOND_PHONE"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_CCTV_GAP"
+            },
+            {
+              "type": "setFlag",
+              "flag": "FLAG_TAEJUN_SAW_PHONE",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_06_CARD"
+            }
+          ]
+        },
+        {
+          "id": "PRESS_TAEJUN_ON_CCTV_GAP",
+          "text": "끊긴 1분의 원인부터 확인해 달라고 요구한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_CCTV_GAP"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_06_CARD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_06_CARD",
+      "title": "06",
+      "location": "1F_LOBBY",
+      "beats": 11,
+      "body": "태준이 대화를 끝내고 보안실로 돌아가려던 순간, 엘리베이터 문이 열렸다. 유진과 처음 보는 의사가 함께 내렸다. 유진의 손에는 작은 투명 봉투가 들려 있었다.\n\n\"뭐 찾으셨어요?\"\n\n\"몇 가지 확인할 게 생겼어요.\"\n\n봉투 안에는 병원 로고가 찍힌 플라스틱 카드가 들어 있었다. 짧은 숫자 하나만 또렷했다.\n\n06\n\n\"302호에서 나온 겁니까?\"\n\n유진이 바로 대답하지 않았다. 옆에 선 의사가 대신 말했다.\n\n\"네. 방 안에서 발견됐어요. 차민서입니다.\"\n\n\"무슨 카드인데요?\"\n\n\"아직 모르겠습니다. 확실하지 않은 걸 먼저 말씀드릴 수는 없으니까요.\"\n\n카드의 06을 다시 봤다. 첫 번째 밤, 찢어진 손목밴드 끝에도 같은 숫자가 남아 있었다.",
+      "choices": [
+        {
+          "id": "COMPARE_06_WITH_WRISTBAND",
+          "text": "[기억] 첫 번째 밤에 본 손목밴드의 06과 대조한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasClue",
+              "clueId": "CLUE_WRISTBAND_DOB"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_06_CARD"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+            }
+          ]
+        },
+        {
+          "id": "ASK_WHERE_06_CARD_WAS_FOUND",
+          "text": "카드가 발견된 정확한 위치만 묻는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_06_CARD"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 4
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "title": "서윤이가 몰랐던 것",
+      "location": "1F_LOBBY",
+      "beats": 33,
+      "body": "유진과 민서에게 화면이 보이지 않게 휴대전화를 몸 쪽으로 돌렸다.\n\n06이라는 숫자 알아?\n\n한동안 답이 없었다. 잠시 뒤 읽음 표시가 떴다.\n\n어디서 봤어?\n\n302호. 카드에 적혀 있었어.\n\n이번에는 답이 바로 오지 않았다.\n\n카드? 무슨 카드?\n\n네가 다시 확인해 보라고 했잖아.\n\n난 그거 말한 거 아니야.\n\n그럼 뭘 말한 건데.\n\n잠깐만. 그 카드 정확히 어디서 나왔어?\n\n유진에게 위치만 물었다. 침대 옆 틈에 떨어져 있었다는 답이 돌아왔다.\n\n침대 옆.\n\n오래 지나서야 서윤이의 답장이 왔다.\n\n그건 거기 있으면 안 돼. 내가 알던 거랑 달라.\n\n나도 헷갈려.\n\n곧바로 전화를 걸었다. 눈앞의 두 휴대전화가 동시에 진동했다. 서윤이는 받지 않았다. 다시 걸자 이번에는 연결됐다.\n\n\"나도 내가 기억하는 게 다 맞는 줄 알았어. 근데 지금 오빠가 말하는 거랑 안 맞는 게 있어. 내가 기억하는 302호에는 그 카드가 없었어.\"\n\n\"너도 모르는 게 있는 거야?\"\n\n\"당연히 있지. 나도 지금 무서워. 오빠는 내가 여기서 다 보고 있는 줄 알아?\"\n\n\"그럼 뭘 다시 보라는 거였는데.\"\n\n\"혹시 302호 벽 쪽에 뭐 이상한 거 없었어?\"\n\n통화 너머에서 둔탁한 소리가 났다.\n\n\"서윤아?\"\n\n\"잠깐. 이건 왜 여기 있어?\"\n\n통화가 끊겼다. 다시 걸어도 연결되지 않았다. 메시지도 전송 대기 상태로 남았다.\n\n휴대전화만 보고 있자 민서가 다가왔다.\n\n\"연락 안 돼요?\"\n\n\"네.\"\n\n\"마지막으로 뭐라고 하던가요?\"\n\n차민서는 오빠가 뭘 기억하는지 알면 안 돼. 서윤이의 경고가 떠올랐다.\n\n\"제가 필요한 건 말씀드리겠습니다.\"\n\n민서는 내가 경계하는 걸 눈치챘지만 억지로 더 묻지 않았다. 둘은 아직 같은 편이 아니었다.",
+      "choices": [
+        {
+          "id": "KEEP_MINSEO_WARNING_PRIVATE",
+          "text": "마지막 통화 내용은 숨기고 직접 302호의 벽을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "FLAG_MINSEO_MEMORY_WARNING_KEPT",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "3F_CORRIDOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_OLD_MAP_SEARCH"
+            }
+          ]
+        },
+        {
+          "id": "TELL_MINSEO_ONLY_WALL_CLUE",
+          "text": "민서에게 302호 벽을 확인해야 한다는 말만 전한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 5
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "3F_CORRIDOR"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_OLD_MAP_SEARCH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "title": "오래된 안내도",
+      "location": "3F_CORRIDOR",
+      "beats": 5,
+      "body": "유진과 민서가 확인을 위해 안쪽으로 사라진 뒤 3층으로 올라왔다.\n\n병동 출입문은 잠겨 있었다. 억지로 열지 않고 엘리베이터 옆 대기 공간을 살폈다.\n\n서윤이가 마지막으로 물었던 말이 남아 있었다.\n\n혹시 302호 벽 쪽에 뭐 이상한 거 없었어?\n\n의자와 정수기 사이, 오래된 화재 대피 안내도가 눈에 들어왔다.",
+      "investigation": {
+        "sceneId": "SCENE_LOOP2_OLD_MAP_SEARCH",
+        "prompt": "태준이 올라오기 전에 현재 구조와 오래된 안내도를 대조한다.",
+        "hotspots": [
+          {
+            "id": "map-date",
+            "label": "안내도 제작 연도",
+            "shortLabel": "연도",
+            "discovery": "안내도는 현재 병동이 정비되기 전 제작됐다. 폐기되지 않은 채 대기 공간 벽에 남아 있다.",
+            "x": 0.72,
+            "y": 0.68,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 1
+              }
+            ]
+          },
+          {
+            "id": "room-302-outline",
+            "label": "302호 뒤의 빈 공간",
+            "shortLabel": "구조",
+            "discovery": "302호 뒤쪽에 병실이 아닌 좁고 긴 공간이 표시돼 있다. 반대쪽 끝은 간호사실 뒤편과 이어진다.",
+            "x": 0.55,
+            "y": 0.44,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_OLD_302_PASSAGE"
+              },
+              {
+                "type": "gainItem",
+                "itemId": "ITEM_OLD_MAP_PHOTO"
+              },
+              {
+                "type": "setFlag",
+                "flag": "OLD_MAP_PASSAGE_FOUND",
+                "value": true,
+                "scope": "loop"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "current-wall",
+            "label": "현재 병동의 막힌 벽",
+            "shortLabel": "현재",
+            "discovery": "출입문 유리 너머로 보이는 벽면에는 문도 복도도 없다. 안내도의 공간은 현재 구조에서 완전히 지워져 있다.",
+            "x": 0.34,
+            "y": 0.55,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 1
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+          "text": "[추론] CCTV가 비는 1분과 폐쇄된 통로를 연결한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_302_HIDDEN_ROUTE"
+            },
+            {
+              "type": "flagEquals",
+              "flag": "OLD_MAP_PASSAGE_FOUND",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_TAEJUN_MAP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_TAEJUN_MAP",
+      "title": "현재에는 없는 길",
+      "location": "3F_CORRIDOR",
+      "beats": 14,
+      "body": "안내도 사진과 CCTV가 끊긴 시간을 겹쳐 보던 중 엘리베이터 문이 열렸다. 태준이 내렸다. 눈이 마주치자 표정이 바로 굳었다.\n\n\"제가 아까 뭐라고 말씀드렸죠?\"\n\n\"병동 안에는 안 들어갔습니다. 대신 이것만 보세요.\"\n\n방금 찍은 안내도 사진과 CCTV가 끊긴 시간을 함께 보여 줬다.\n\n\"302호 뒤에 이 공간이 있습니다. 지금은 통로가 없다고 했고요.\"\n\n태준이 화면을 확대했다.\n\n\"서윤이는 302호로 들어갔는데 나오는 모습은 없었습니다. 영상이 비는 1분 동안 저쪽으로 나간 건 아닙니까?\"\n\n태준은 바로 대답하지 않았다. 실제 안내도 앞으로 가서 제작 연도까지 찍었다.\n\n\"확인해 볼게요.\"\n\n\"또 그 말이네요.\"\n\n\"제가 지금 여기서 확실하지 않은 얘기를 할 수는 없잖아요.\"\n\n태준이 엘리베이터 버튼을 눌렀다.\n\n\"일단 내려가세요. 저는 확인할 게 있습니다.\"\n\n명백하게 대화를 끝내려는 태도였다. 더 캐묻지 않고 엘리베이터에 탔다.",
+      "choices": [
+        {
+          "id": "SEND_OLD_MAP_TO_SEOYUN",
+          "text": "내려가는 동안 안내도 사진을 서윤에게 보낸다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "1F_LOBBY"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_LOOP2_SEOYUN_NEW_RULE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "title": "서로 다른 302호",
+      "location": "1F_LOBBY",
+      "beats": 20,
+      "body": "로비로 나온 지 잠시 뒤 휴대전화가 진동했다. 안내도 사진에 읽음 표시가 떠 있었다.\n\n이게 지금 병원에 있어? 아직도?\n\n3층 벽에 붙어 있어. 이게 네가 말한 거야?\n\n내가 기억하는 거랑 달라. 내가 봤던 안내도에는 저 통로가 없었어.\n\n그럼 네가 말한 건 뭐였는데.\n\n문. 302호 안에 있었어. 침대 뒤쪽.\n\n그 문 어디로 가는데.\n\n몰라.\n\n안 들어가 봤어?\n\n들어갔어. 들어가고 나서부터 기억이 이상해.\n\n곧바로 전화를 걸었다. 이번에는 서윤이가 받았다.\n\n\"오빠.\"\n\n\"너도 지금 모르는 거잖아.\"\n\n전화 너머가 조용해졌다.\n\n\"응.\"\n\n서윤이가 모른다고 인정한 것은 처음이었다.\n\n\"내가 아는 것도 이제 다 믿지 마.\"\n\n\"그럼 뭘 믿으라는 건데.\"\n\n\"오빠가 직접 본 거. 그리고 여러 번 확인한 거.\"\n\n통화가 끝난 뒤 안내도 사진과 두 휴대전화의 사진을 다시 열었다. 누구 한 사람의 말만으로 결론 내리지 않는다.",
+      "choices": [
+        {
+          "id": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+          "text": "확인된 사실만 남기고 다음 동선을 정한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 1
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CHAPTER02_END"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CHAPTER02_END",
+      "title": "직접 본 것",
+      "location": "1F_LOBBY",
+      "beats": 7,
+      "body": "서윤이를 찾는다는 목표는 바뀌지 않았다.\n\n확실한 것은 세 가지였다.\n\n서윤이는 302호로 들어갔다.\n\nCCTV에는 1분의 빈 구간이 있다.\n\n현재는 막힌 벽 뒤에, 오래된 안내도에는 통로가 남아 있다.\n\n이번에는 서윤이가 알려 주는 길을 따라가지 않는다.\n\n직접 찾는다.",
+      "choices": [
+        {
+          "id": "BEGIN_CHAPTER_3",
+          "text": "세 사람에게 같은 질문을 시작한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_BAND_REQUEST"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_BAND_REQUEST",
+      "title": "아직 가지고 있습니까",
+      "location": "1F_LOBBY",
+      "onEnter": [
+        {
+          "type": "setTime",
+          "time": 184
+        }
+      ],
+      "beats": 10,
+      "body": "엘리베이터 쪽에서 태준이 걸어왔다. 조금 전보다 걸음이 빨랐다.\n\n\"302호에서 가져오셨다는 손목밴드, 아직 가지고 계십니까?\"\n\n나는 주머니에 손을 넣지 않은 채 물었다.\n\n\"왜 찾으시는데요.\"\n\n\"확인할 게 생겼습니다.\"\n\n\"무슨 확인입니까.\"\n\n\"그 밴드가 언제, 어디서 나온 건지요.\"\n\n\"그건 이미 말씀드렸잖아요. 302호 침대 옆에서 찾았습니다.\"\n\n\"말씀하신 위치 말고, 물건 자체를 확인해야 합니다.\"\n\n태준은 손을 내밀지 않았다. 내가 먼저 꺼낼 때까지 기다렸다.",
+      "choices": [
+        {
+          "id": "CH3_BAND_TO_YUJIN",
+          "text": "사진을 남기고 유진에게 돌려준다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_WRISTBAND_PHOTO"
+            },
+            {
+              "type": "removeItem",
+              "itemId": "ITEM_WRISTBAND_ORIGINAL"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_BAND_OWNER",
+              "value": "yujin",
+              "scope": "loop"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_YUJIN_COOPERATING",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "setFlag",
+              "flag": "BAND_CUSTODY_YUJIN",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "TRUST_YUJIN_PROGRESS",
+              "value": 1,
+              "scope": "persistent"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_BAND_YUJIN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_BAND_SHOW_TAEJUN",
+          "text": "태준에게 확인시킨 뒤 돌려받는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_WRISTBAND_ORIGINAL"
+            },
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_WRISTBAND_PHOTO"
+            },
+            {
+              "type": "setFlag",
+              "flag": "BAND_CUSTODY_PLAYER",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "BAND_SECURITY_TIMESTAMP",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_BAND_OWNER",
+              "value": "player",
+              "scope": "loop"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_TAEJUN_COOPERATING",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "setFlag",
+              "flag": "TRUST_TAEJUN_PROGRESS",
+              "value": 1,
+              "scope": "persistent"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_BAND_TAEJUN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_BAND_KEEP_ORIGINAL",
+          "text": "사진만 보여 주고 원본은 보관한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_WRISTBAND_ORIGINAL"
+            },
+            {
+              "type": "gainItem",
+              "itemId": "ITEM_WRISTBAND_PHOTO"
+            },
+            {
+              "type": "setFlag",
+              "flag": "BAND_CUSTODY_PLAYER",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "TRUST_YUJIN_PROGRESS",
+              "value": -1,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_BAND_OWNER",
+              "value": "player",
+              "scope": "loop"
+            },
+            {
+              "type": "setFlag",
+              "flag": "CH3_YUJIN_WARY",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_BAND_PLAYER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_BAND_YUJIN",
+      "location": "1F_LOBBY",
+      "beats": 7,
+      "body": "나는 밴드를 꺼내 앞뒤를 다시 찍었다. 찢긴 끝과 생년월일, 302가 한 화면에 들어오게 했다.\n\n\"사진은 남기겠습니다.\"\n\n유진이 다가와 새 봉투를 열었다.\n\n\"제가 봉인해서 보관할게요. 확인하실 일이 생기면 제 앞에서 보시고요.\"\n\n\"없던 물건이 되지는 않게 해주세요.\"\n\n유진의 손이 잠깐 멈췄다.\n\n\"그러지 않겠습니다.\"",
+      "choices": [
+        {
+          "id": "CH3_ASK_SAME_QUESTION_Y",
+          "text": "세 사람에게 같은 질문을 한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_BAND_TAEJUN",
+      "location": "1F_LOBBY",
+      "beats": 7,
+      "body": "나는 밴드를 태준에게 건넸다.\n\n\"여기서 확인하세요. 가져가지는 마시고요.\"\n\n태준은 휴대용 카메라로 밴드와 현재 시각을 함께 찍었다. 찢긴 면을 보고 미간을 좁혔다.\n\n\"이 숫자, 처음부터 보셨습니까?\"\n\n\"끝부분만요. 06인지는 카드 보고 알았습니다.\"\n\n태준은 밴드를 돌려줬다.\n\n\"이제 적어도 언제부터 가지고 계셨는지는 남았습니다.\"",
+      "choices": [
+        {
+          "id": "CH3_ASK_SAME_QUESTION_T",
+          "text": "세 사람에게 같은 질문을 한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_BAND_PLAYER",
+      "location": "1F_LOBBY",
+      "beats": 8,
+      "body": "나는 밴드 대신 사진을 열었다.\n\n\"원본은 제가 가지고 있겠습니다.\"\n\n\"병실에서 가져오신 물건이에요.\"\n\n\"그러니까 지금은 못 드립니다.\"\n\n유진은 더 설득하지 않았다. 대신 내 손에 들린 휴대전화와 주머니를 차례로 봤다.\n\n\"잃어버리시면 안 됩니다.\"\n\n\"병원에서 잃어버린 걸 제가 찾은 겁니다.\"\n\n말하고 나서야 목소리에 힘이 들어간 걸 알았다.",
+      "choices": [
+        {
+          "id": "CH3_ASK_SAME_QUESTION_P",
+          "text": "세 사람에게 같은 질문을 한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_THREE_TESTIMONIES",
+      "title": "같은 질문",
+      "location": "1F_LOBBY",
+      "beats": 19,
+      "body": "유진, 태준, 민서는 가까이 서 있었지만 서로의 표정을 먼저 살폈다. 같은 병원 직원이라고 해서 같은 답을 가진 사람들은 아니었다.\n\n나는 오래된 안내도 사진을 열었다.\n\n\"세 분한테 같은 것만 묻겠습니다. 302호 뒤에 뭐가 있었습니까?\"\n\n\"지금 말씀하시는 건 예전 도면 얘기죠?\"\n\n\"예전이든 지금이든, 알고 있는 것만 말씀해 주세요.\"\n\n유진은 사진을 확대했다.\n\n\"제가 근무한 뒤로는 저쪽에 문이 없었어요. 병실 벽이었습니다.\"\n\n\"폐쇄 전 도면에는 통로가 있습니다.\"\n\n유진이 태준을 봤다.\n\n\"폐쇄 전이요?\"\n\n\"시설팀 보관본에서 확인했습니다.\"\n\n민서는 두 사람의 말이 끝난 뒤에야 입을 열었다.\n\n\"현재 구조에는 없어야 합니다.\"\n\n\"없습니까, 없어야 합니까.\"\n\n\"제가 확인한 준공 기록대로라면요.\"\n\n\"서윤이는 방 안에 문이 있었다고 했습니다.\"\n\n민서의 시선이 내 얼굴에서 휴대전화로 옮겨갔다.\n\n\"언제 봤다고 하던가요?\"\n\n\"그건 저도 모릅니다.\"",
+      "investigation": {
+        "sceneId": "SCENE_CH3_THREE_TESTIMONIES",
+        "prompt": "세 사람이 기준으로 삼은 시점을 각각 확인한다.",
+        "hotspots": [
+          {
+            "id": "yujin-testimony",
+            "label": "유진의 답",
+            "shortLabel": "유진",
+            "discovery": "근무를 시작한 뒤로 302호 뒤에는 문이 없었다. 현재 병동에서 직접 본 사실이다.",
+            "x": 0.26,
+            "y": 0.45,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_TESTIMONY_YUJIN"
+              }
+            ]
+          },
+          {
+            "id": "taejun-testimony",
+            "label": "태준의 답",
+            "shortLabel": "태준",
+            "discovery": "시설팀이 보관한 폐쇄 전 도면에는 통로가 있었다. 과거 기록을 기준으로 한 답이다.",
+            "x": 0.5,
+            "y": 0.38,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_TESTIMONY_TAEJUN"
+              }
+            ]
+          },
+          {
+            "id": "minseo-testimony",
+            "label": "민서의 답",
+            "shortLabel": "민서",
+            "discovery": "자신이 확인한 준공 기록대로라면 현재 구조에는 통로가 없어야 한다.",
+            "x": 0.74,
+            "y": 0.45,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_TESTIMONY_MINSEO"
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "CH3_USE_SPACE_DEDUCTION",
+          "text": "[추론] 세 답이 기준으로 삼는 시점을 연결한다.",
+          "kind": "evidence",
+          "conditions": [
+            {
+              "type": "hasDeduction",
+              "deductionId": "DEDUCTION_SPACE_NOT_ALIGNED"
+            }
+          ],
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 1
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MINSEO_QUESTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_MINSEO_QUESTION",
+      "title": "민서의 질문",
+      "location": "1F_LOBBY",
+      "beats": 13,
+      "body": "\"한 가지만 확인해도 될까요?\"\n\n\"뭡니까.\"\n\n\"오늘 넘어지거나 머리를 부딪친 적 있습니까?\"\n\n\"없습니다.\"\n\n\"기억이 끊긴 구간은요.\"\n\n나는 대답하지 않았다.\n\n\"어지럽거나, 방금 본 물건이 다른 자리에 있었던 것처럼 느껴진 적은요?\"\n\n\"왜 자꾸 제 상태를 묻습니까.\"\n\n\"지금 확인된 현상을 공간 문제라고 단정할 수 없으니까요.\"\n\n\"제가 잘못 봤다는 쪽부터 확인하시겠다는 겁니까?\"\n\n\"아니요. 잘못 봤다고 결론 내리지 않기 위해 묻는 겁니다.\"\n\n민서는 손목을 가리켰다.\n\n\"시계 좀 볼 수 있을까요?\"",
+      "choices": [
+        {
+          "id": "CH3_SHOW_WATCH_ONLY",
+          "text": "깨진 시계만 보여 준다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "MINSEO_SAW_WATCH",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MINSEO_WATCH"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DISCLOSE_FIRST_DEATH",
+          "text": "첫 죽음 뒤에도 금이 남았다고 말한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "MINSEO_PARTIAL_DISCLOSURE",
+              "value": true,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "TRUST_MINSEO_PROGRESS",
+              "value": 1,
+              "scope": "persistent"
+            },
+            {
+              "type": "setFlag",
+              "flag": "MINSEO_WARY",
+              "value": 1,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MINSEO_DEATH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_MINSEO_WATCH",
+      "location": "1F_LOBBY",
+      "beats": 6,
+      "body": "나는 시계를 풀지 않고 손목을 내밀었다.\n\n\"언제 깨졌습니까?\"\n\n\"기억나지 않습니다.\"\n\n\"그런데 계속 차고 계시네요.\"\n\n\"확실하게 달라진 게 이것뿐이라서요.\"\n\n민서는 금이 간 유리와 멈추지 않은 초침을 오래 봤다.",
+      "choices": [
+        {
+          "id": "CH3_FIND_MISSING_CARD_W",
+          "text": "06 카드가 든 봉투를 찾는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MISSING_CARD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_MINSEO_DEATH",
+      "location": "1F_LOBBY",
+      "beats": 9,
+      "body": "\"한 번 죽고 돌아왔을 때도 이 금만 남아 있었습니다.\"\n\n유진이 숨을 들이켰고 태준은 내가 농담하는지 확인하듯 쳐다봤다. 민서만 바로 표정을 바꾸지 않았다.\n\n\"돌아왔다는 건 어느 시점입니까?\"\n\n\"오후 9시 23분. 서윤이 전화가 왔을 때요.\"\n\n\"그 시각을 어떻게 확신하죠?\"\n\n\"같은 통화를 두 번 들었습니다.\"\n\n\"죽은 방식도 기억합니까?\"\n\n서윤의 경고가 떠올랐다. 차민서는 오빠가 뭘 기억하는지 알면 안 돼.\n\n\"지금 말씀드릴 건 여기까지입니다.\"",
+      "choices": [
+        {
+          "id": "CH3_FIND_MISSING_CARD_D",
+          "text": "06 카드가 든 봉투를 찾는다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 2
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MISSING_CARD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_MISSING_CARD",
+      "title": "사라진 06 카드",
+      "location": "1F_LOBBY",
+      "beats": 16,
+      "body": "나는 유진이 들고 있던 투명 봉투를 찾았다. 손에는 아무것도 없었다.\n\n\"아까 카드 어디 있습니까?\"\n\n\"확인하러 보냈어요.\"\n\n\"어디로요.\"\n\n\"원무과 쪽에서 먼저 확인하고, 보관 기록이 없으면 문서실로 내려갑니다.\"\n\n\"지하에도 문서실이 있습니까?\"\n\n태준이 먼저 답했다.\n\n\"B1에 이송실이 있습니다.\"\n\n\"누가 가져갔습니까?\"\n\n\"시설 지원 직원이요. 방금 내려갔습니다.\"\n\n나는 시계를 봤다. 휴대전화는 12시 36분, 손목시계는 12시 34분을 가리켰다.\n\n\"찾으러 내려가실 생각이면 하지 마세요.\"\n\n\"왜요.\"\n\n\"지금 B1은 정전 이후 점검 중입니다.\"\n\n\"그런데 카드는 내려보냈고요?\"\n\n유진의 표정이 굳었다. 자신도 그 순서가 이상하다는 걸 이제 알아챈 얼굴이었다.",
+      "choices": [
+        {
+          "id": "CH3_CALL_MISSING_WORKER",
+          "text": "카드를 가져간 직원을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 3
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_MISSING_WORKER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_MISSING_WORKER",
+      "title": "내려간 사람",
+      "location": "1F_LOBBY",
+      "beats": 11,
+      "body": "유진은 접수처 전화로 내선 번호를 눌렀다. 한참 신호가 갔지만 받지 않았다.\n\n\"이상하네.\"\n\n\"누가 내려갔다고 했습니까?\"\n\n\"김 기사님이요. 봉투 하나만 맡기면 된다고 해서.\"\n\n태준은 무전으로 이름을 불렀다. 대답 대신 잡음이 길게 이어졌다.\n\n\"제가 확인하고 오겠습니다.\"\n\n\"같이 가겠습니다.\"\n\n\"안 됩니다.\"\n\n\"그 카드와 손목밴드가 같은 건지 제가 봐야 합니다.\"\n\n\"지금은 사람부터 확인할 겁니다.\"\n\n그 말에는 반박할 수 없었다.",
+      "choices": [
+        {
+          "id": "CH3_ENTER_B1_WITH_TAEJUN",
+          "text": "두 번째 휴대전화 사진을 보여 주고 태준과 내려간다.",
+          "kind": "evidence",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "FLAG_TAEJUN_SAW_PHONE",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "CH3_COMPANION",
+              "value": "taejun",
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 10
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "B1_DOCUMENT_TRANSFER"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_APPROACH_TAEJUN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_ENTER_B1_WITH_YUJIN",
+          "text": "봉인한 손목밴드와 함께 유진과 내려간다.",
+          "kind": "evidence",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "BAND_CUSTODY_YUJIN",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "CH3_COMPANION",
+              "value": "yujin",
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 10
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "B1_DOCUMENT_TRANSFER"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_APPROACH_YUJIN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_ENTER_B1_SOLO",
+          "text": "화물 승강기의 카트 바퀴 자국을 따라 혼자 내려간다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagNotEquals",
+              "flag": "FLAG_TAEJUN_SAW_PHONE",
+              "value": true
+            },
+            {
+              "type": "flagNotEquals",
+              "flag": "BAND_CUSTODY_YUJIN",
+              "value": true
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "CH3_COMPANION",
+              "value": "solo",
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 6
+            },
+            {
+              "type": "moveLocation",
+              "locationId": "B1_DOCUMENT_TRANSFER"
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_APPROACH_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_APPROACH_TAEJUN",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 3,
+      "body": "\"제가 먼저 본 게 있습니다. 길을 찾는 데 도움이 될 수도 있어요.\"\n\n태준은 잠깐 망설인 뒤 조건을 붙였다.\n\n\"제 뒤에서 움직이세요. 제가 멈추라고 하면 바로 멈추고요.\"",
+      "choices": [
+        {
+          "id": "CH3_OPEN_TRANSFER_T",
+          "text": "태준의 뒤에서 문서 이송실로 간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_TRANSFER_TAEJUN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_APPROACH_YUJIN",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 3,
+      "body": "\"제가 같이 내려갈게요. 밴드도 제가 가지고 있고요.\"\n\n\"한 분만 오세요.\"\n\n유진은 봉인 봉투를 주머니에 넣었다.",
+      "choices": [
+        {
+          "id": "CH3_OPEN_TRANSFER_Y",
+          "text": "유진과 문서 이송실로 간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_TRANSFER_YUJIN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_APPROACH_SOLO",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 2,
+      "body": "태준이 먼저 내려간 뒤, 나는 B1에서 봤던 반대편 계단으로 향했다. 정전 때 열린 문은 다시 잠겨 있었지만 린넨 카트가 올라오는 화물 승강기는 점검 때문에 열려 있었다.\n\n누군가를 따라가는 대신, 카트 바퀴 자국을 따라 내려갔다.",
+      "choices": [
+        {
+          "id": "CH3_OPEN_TRANSFER_S",
+          "text": "발소리를 피해 문서 이송실로 간다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_TRANSFER_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_TRANSFER_TAEJUN",
+      "title": "문서 이송실",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 7,
+      "body": "B1의 공기는 위층보다 차가웠다. 복도 끝에 작은 방이 하나 있었고 문 위에는 '문서 이송'이라고 적혀 있었다.\n\n문은 반쯤 열려 있었다.\n\n안쪽 바닥에 투명 봉투가 떨어져 있었다. 06 카드가 봉투 밖으로 미끄러져 나와 있었다. 조금 전 내려왔다는 직원은 보이지 않았다.\n\n무전기 잡음이 벽 너머에서 들렸다.\n\n\"김 기사님. 들리시면 대답하세요.\"\n\n대답은 없었다.\n\n방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.",
+      "investigation": {
+        "sceneId": "SCENE_CH3_TRANSFER_TAEJUN",
+        "fitHotspotsToStage": true,
+        "prompt": "방 안의 물건과 설비를 두 가지 이상 직접 확인한다.",
+        "hotspots": [
+          {
+            "id": "card-06",
+            "label": "06 카드",
+            "shortLabel": "카드",
+            "discovery": "병원 로고 아래 바코드가 지워져 있다. 카드 자체에는 06만 남아 있다.",
+            "x": 0.35,
+            "y": 0.56,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_06_CARD"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "shelf-06",
+            "label": "06 선반",
+            "shortLabel": "선반",
+            "discovery": "라벨을 여러 번 떼고 붙인 자국이 남아 있다.",
+            "x": 0.8,
+            "y": 0.3,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "transfer-ledger",
+            "label": "이송 장부",
+            "shortLabel": "장부",
+            "discovery": "오늘 날짜의 반입 기록은 없지만, 서명이 눌린 다음 장에 흔적이 남아 있다.",
+            "x": 0.58,
+            "y": 0.85,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "sealed-vent",
+            "label": "멈춘 환기구",
+            "shortLabel": "환기",
+            "discovery": "바람이 들어오지 않고 낮은 모터음만 들린다.",
+            "x": 0.5,
+            "y": 0.05,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "opposite-wall",
+            "label": "맞은편 벽",
+            "shortLabel": "벽",
+            "discovery": "현재 도면에는 없는 계단 표지의 나사 자국이 남아 있다.",
+            "x": 0.1,
+            "y": 0.4,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "CH3_READ_LEDGER_T",
+          "text": "확인한 흔적을 장부와 대조한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "minimumFlags",
+              "flags": [
+                "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:card-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:shelf-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:transfer-ledger",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:sealed-vent",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:opposite-wall"
+              ],
+              "count": 2
+            }
+          ],
+          "effects": [
+            {
+              "type": "setTime",
+              "time": 223
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_0106_TAEJUN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_TRANSFER_YUJIN",
+      "title": "문서 이송실",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 7,
+      "body": "B1의 공기는 위층보다 차가웠다. 복도 끝에 작은 방이 하나 있었고 문 위에는 '문서 이송'이라고 적혀 있었다.\n\n문은 반쯤 열려 있었다.\n\n안쪽 바닥에 투명 봉투가 떨어져 있었다. 06 카드가 봉투 밖으로 미끄러져 나와 있었다. 조금 전 내려왔다는 직원은 보이지 않았다.\n\n무전기 잡음이 벽 너머에서 들렸다.\n\n\"김 기사님. 들리시면 대답하세요.\"\n\n대답은 없었다.\n\n방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.",
+      "investigation": {
+        "sceneId": "SCENE_CH3_TRANSFER_YUJIN",
+        "fitHotspotsToStage": true,
+        "prompt": "방 안의 물건과 설비를 두 가지 이상 직접 확인한다.",
+        "hotspots": [
+          {
+            "id": "card-06",
+            "label": "06 카드",
+            "shortLabel": "카드",
+            "discovery": "병원 로고 아래 바코드가 지워져 있다. 카드 자체에는 06만 남아 있다.",
+            "x": 0.35,
+            "y": 0.56,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_06_CARD"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "shelf-06",
+            "label": "06 선반",
+            "shortLabel": "선반",
+            "discovery": "라벨을 여러 번 떼고 붙인 자국이 남아 있다.",
+            "x": 0.8,
+            "y": 0.3,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "transfer-ledger",
+            "label": "이송 장부",
+            "shortLabel": "장부",
+            "discovery": "오늘 날짜의 반입 기록은 없지만, 서명이 눌린 다음 장에 흔적이 남아 있다.",
+            "x": 0.58,
+            "y": 0.85,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "sealed-vent",
+            "label": "멈춘 환기구",
+            "shortLabel": "환기",
+            "discovery": "바람이 들어오지 않고 낮은 모터음만 들린다.",
+            "x": 0.5,
+            "y": 0.05,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "opposite-wall",
+            "label": "맞은편 벽",
+            "shortLabel": "벽",
+            "discovery": "현재 도면에는 없는 계단 표지의 나사 자국이 남아 있다.",
+            "x": 0.1,
+            "y": 0.4,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "CH3_READ_LEDGER_Y",
+          "text": "확인한 흔적을 장부와 대조한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "minimumFlags",
+              "flags": [
+                "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:card-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:shelf-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:transfer-ledger",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:sealed-vent",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:opposite-wall"
+              ],
+              "count": 2
+            }
+          ],
+          "effects": [
+            {
+              "type": "setTime",
+              "time": 223
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_0106_YUJIN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_TRANSFER_SOLO",
+      "title": "문서 이송실",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 7,
+      "body": "B1의 공기는 위층보다 차가웠다. 복도 끝에 작은 방이 하나 있었고 문 위에는 '문서 이송'이라고 적혀 있었다.\n\n문은 반쯤 열려 있었다.\n\n안쪽 바닥에 투명 봉투가 떨어져 있었다. 06 카드가 봉투 밖으로 미끄러져 나와 있었다. 조금 전 내려왔다는 직원은 보이지 않았다.\n\n무전기 잡음이 벽 너머에서 들렸다.\n\n\"김 기사님. 들리시면 대답하세요.\"\n\n대답은 없었다.\n\n방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.",
+      "investigation": {
+        "sceneId": "SCENE_CH3_TRANSFER_SOLO",
+        "fitHotspotsToStage": true,
+        "prompt": "방 안의 물건과 설비를 두 가지 이상 직접 확인한다.",
+        "hotspots": [
+          {
+            "id": "card-06",
+            "label": "06 카드",
+            "shortLabel": "카드",
+            "discovery": "병원 로고 아래 바코드가 지워져 있다. 카드 자체에는 06만 남아 있다.",
+            "x": 0.35,
+            "y": 0.56,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "gainClue",
+                "clueId": "CLUE_06_CARD"
+              },
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "shelf-06",
+            "label": "06 선반",
+            "shortLabel": "선반",
+            "discovery": "라벨을 여러 번 떼고 붙인 자국이 남아 있다.",
+            "x": 0.8,
+            "y": 0.3,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "transfer-ledger",
+            "label": "이송 장부",
+            "shortLabel": "장부",
+            "discovery": "오늘 날짜의 반입 기록은 없지만, 서명이 눌린 다음 장에 흔적이 남아 있다.",
+            "x": 0.58,
+            "y": 0.85,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "sealed-vent",
+            "label": "멈춘 환기구",
+            "shortLabel": "환기",
+            "discovery": "바람이 들어오지 않고 낮은 모터음만 들린다.",
+            "x": 0.5,
+            "y": 0.05,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          },
+          {
+            "id": "opposite-wall",
+            "label": "맞은편 벽",
+            "shortLabel": "벽",
+            "discovery": "현재 도면에는 없는 계단 표지의 나사 자국이 남아 있다.",
+            "x": 0.1,
+            "y": 0.4,
+            "usesSearchOpportunity": true,
+            "effects": [
+              {
+                "type": "advanceTime",
+                "minutes": 2
+              }
+            ]
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "CH3_READ_LEDGER_S",
+          "text": "확인한 흔적을 장부와 대조한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "minimumFlags",
+              "flags": [
+                "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:card-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:shelf-06",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:transfer-ledger",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:sealed-vent",
+                "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:opposite-wall"
+              ],
+              "count": 2
+            }
+          ],
+          "effects": [
+            {
+              "type": "setTime",
+              "time": 223
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_0106_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_0106_TAEJUN",
+      "title": "눌린 글씨",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_LEDGER"
+        }
+      ],
+      "beats": 19,
+      "body": "빈 장부 위에 연필을 눕혀 문질렀다. 앞장에 적혔다가 뜯겨 나간 글씨가 희미하게 올라왔다.\n\n06 / 302 / 21:41 입실\n\n그 아래 서명은 끝부분만 남아 있었다.\n\n한…\n\n\"사진부터 찍으세요. 원본은 건드리지 말고.\"\n\n\"누가 뜯어갔는지 확인할 수 있습니까?\"\n\n\"여기 카메라는 복도만 봅니다. 대신 출입 기록은 남아야 해요.\"\n\n휴대전화 화면이 짧게 흔들렸다. 1시 06분.\n\n문 위의 표시등이 녹색에서 붉은색으로 바뀌었다.\n\n철컥.\n\n문이 닫혔다.\n\n나는 바로 손잡이를 당겼다. 움직이지 않았다.\n\n천장 안쪽에서 모터가 돌아가기 시작했다. 환기구로 들어오던 미약한 공기마저 끊겼다.\n\n문밖에서 손잡이를 당기는 소리가 들렸다.\n\n\"안에서 들립니까?\"\n\n\"문이 안 열립니다.\"\n\n스피커에서 낯선 안내음이 한 번 울렸다.\n\n보관 구역 소화 절차를 시작합니다.\n\n그런데 방 안에는 연기도 불도 없었다.",
+      "choices": [
+        {
+          "id": "CH3_LAST_CHECK_CARD_T",
+          "text": "06 카드를 판독기에 댄다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_CARD"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_RADIO_T",
+          "text": "무전 소리를 따라 벽을 두드린다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_RADIO"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_LABEL_T",
+          "text": "봉투 라벨을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_LABEL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_0106_YUJIN",
+      "title": "눌린 글씨",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_LEDGER"
+        }
+      ],
+      "beats": 21,
+      "body": "빈 장부 위에 연필을 눕혀 문질렀다. 앞장에 적혔다가 뜯겨 나간 글씨가 희미하게 올라왔다.\n\n06 / 302 / 21:41 입실\n\n그 아래 서명은 끝부분만 남아 있었다.\n\n한…\n\n\"제 서명 맞아요.\"\n\n\"기록이 없다면서요.\"\n\n\"전산에서 안 나왔어요. 제가 이걸 쓴 기억도 없습니다.\"\n\n유진은 변명하지 않고 장부를 다시 봤다.\n\n\"그런데 제 글씨예요.\"\n\n휴대전화 화면이 짧게 흔들렸다. 1시 06분.\n\n문 위의 표시등이 녹색에서 붉은색으로 바뀌었다.\n\n철컥.\n\n문이 닫혔다.\n\n나는 바로 손잡이를 당겼다. 움직이지 않았다.\n\n천장 안쪽에서 모터가 돌아가기 시작했다. 환기구로 들어오던 미약한 공기마저 끊겼다.\n\n문밖에서 손잡이를 당기는 소리가 들렸다.\n\n\"안에서 들립니까?\"\n\n\"문이 안 열립니다.\"\n\n스피커에서 낯선 안내음이 한 번 울렸다.\n\n보관 구역 소화 절차를 시작합니다.\n\n그런데 방 안에는 연기도 불도 없었다.",
+      "choices": [
+        {
+          "id": "CH3_LAST_CHECK_CARD_Y",
+          "text": "06 카드를 판독기에 댄다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_CARD"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_RADIO_Y",
+          "text": "무전 소리를 따라 벽을 두드린다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_RADIO"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_LABEL_Y",
+          "text": "봉투 라벨을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_LABEL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_0106_SOLO",
+      "title": "눌린 글씨",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_LEDGER"
+        }
+      ],
+      "beats": 15,
+      "body": "빈 장부 위에 연필을 눕혀 문질렀다. 앞장에 적혔다가 뜯겨 나간 글씨가 희미하게 올라왔다.\n\n06 / 302 / 21:41 입실\n\n그 아래 서명은 끝부분만 남아 있었다.\n\n한…\n\n복도에서 발소리가 가까워졌다. 나는 장부와 06 카드가 한 화면에 들어오게 찍었다.\n\n휴대전화 화면이 짧게 흔들렸다. 1시 06분.\n\n문 위의 표시등이 녹색에서 붉은색으로 바뀌었다.\n\n철컥.\n\n문이 닫혔다.\n\n나는 바로 손잡이를 당겼다. 움직이지 않았다.\n\n천장 안쪽에서 모터가 돌아가기 시작했다. 환기구로 들어오던 미약한 공기마저 끊겼다.\n\n복도 무전만 들렸다.\n\n스피커에서 낯선 안내음이 한 번 울렸다.\n\n보관 구역 소화 절차를 시작합니다.\n\n그런데 방 안에는 연기도 불도 없었다.",
+      "choices": [
+        {
+          "id": "CH3_LAST_CHECK_CARD_S",
+          "text": "06 카드를 판독기에 댄다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_CARD"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_RADIO_S",
+          "text": "무전 소리를 따라 벽을 두드린다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_RADIO"
+            }
+          ]
+        },
+        {
+          "id": "CH3_LAST_CHECK_LABEL_S",
+          "text": "봉투 라벨을 확인한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_LAST_LABEL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_LAST_CARD",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 2,
+      "body": "카드를 문 옆 검은 판에 댔다. 아무 반응도 없었다. 대신 맞은편 벽 안쪽에서 잠금 하나가 풀리는 소리가 났다.\n\n현재 도면에는 없는 방향이었다.",
+      "choices": [
+        {
+          "id": "CH3_DIE_AFTER_CARD_T",
+          "text": "잠금이 풀린 방향을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "taejun"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_CARD_READER"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_CARD_Y",
+          "text": "잠금이 풀린 방향을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "yujin"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_CARD_READER"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_YUJIN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_CARD_S",
+          "text": "잠금이 풀린 방향을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "solo"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_CARD_READER"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_LAST_RADIO",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_RADIO_RESPONSE"
+        }
+      ],
+      "beats": 3,
+      "body": "벽 너머에서 태준의 목소리가 들렸다.\n\n\"이쪽에 계단이 있습니다. 그런데 입구가 막혀 있어요.\"\n\n나는 소리가 가장 가까운 곳을 세 번 두드렸다. 반대편에서 같은 간격으로 세 번 돌아왔다.",
+      "choices": [
+        {
+          "id": "CH3_DIE_AFTER_RADIO_T",
+          "text": "맞은편 벽 뒤의 계단을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "taejun"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_HIDDEN_STAIR"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_RADIO_Y",
+          "text": "맞은편 벽 뒤의 계단을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "yujin"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_HIDDEN_STAIR"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_YUJIN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_RADIO_S",
+          "text": "맞은편 벽 뒤의 계단을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "solo"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_0106_HIDDEN_STAIR"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_LAST_LABEL",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "beats": 2,
+      "body": "숨이 가빠지는 동안 06 칸의 오래된 라벨을 떼었다. 아래에 다른 글씨가 남아 있었다.\n\n관찰실 06 / B2",
+      "choices": [
+        {
+          "id": "CH3_DIE_AFTER_LABEL_T",
+          "text": "06과 B2의 연결을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "taejun"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_06_B2_LABEL"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_LABEL_Y",
+          "text": "06과 B2의 연결을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "yujin"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_06_B2_LABEL"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_YUJIN"
+            }
+          ]
+        },
+        {
+          "id": "CH3_DIE_AFTER_LABEL_S",
+          "text": "06과 B2의 연결을 기억한다.",
+          "kind": "standard",
+          "conditions": [
+            {
+              "type": "flagEquals",
+              "flag": "CH3_COMPANION",
+              "value": "solo"
+            }
+          ],
+          "effects": [
+            {
+              "type": "gainClue",
+              "clueId": "CLUE_06_B2_LABEL"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH3_DEATH_SOLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH3_DEATH_TAEJUN",
+      "title": "두 번째 죽음",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "gainMemory",
+          "memory": {
+            "id": "MEMORY_0106_SEAL",
+            "title": "한 시 육 분의 밀폐",
+            "description": "오전 1시 06분에는 B1 문서 이송실 안에 있지 않는다. 맞은편 벽 뒤의 B2 우회 계단을 먼저 연다.",
+            "acquiredOnLoop": 2,
+            "sourceSceneId": "SCENE_CH3_DEATH_TAEJUN",
+            "relatedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ],
+            "payoff": {
+              "predictsEvent": "01:06 B1 문서 이송실 자동 밀폐",
+              "usableFrom": 210,
+              "usableUntil": 223,
+              "changes": [
+                "riskAvoided",
+                "routeUnlocked",
+                "eventPreempted",
+                "npcBehaviorChanged"
+              ],
+              "avoidsRisk": "DEATH_0106_TRANSFER_SEAL",
+              "unlocksLocationId": "B1_DOCUMENT_TRANSFER"
+            }
+          }
+        },
+        {
+          "type": "triggerDeath",
+          "deathId": "DEATH_0106_TRANSFER_SEAL",
+          "intel": {
+            "memoryId": "MEMORY_0106_SEAL",
+            "deathId": "DEATH_0106_TRANSFER_SEAL",
+            "title": "01:06",
+            "description": "B1 이송실이 밀폐되면 안에서 버틸 수 없다. 맞은편 벽 뒤에는 B2로 내려가는 우회 계단이 있다.",
+            "learnedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ]
+          }
+        }
+      ],
+      "beats": 9,
+      "body": "숨을 들이마셔도 가슴이 채워지지 않았다. 문을 두드리는 힘이 점점 약해졌다.\n\n문밖에서 목소리가 들렸다.\n\n\"잠깐만요. 반대쪽 계단으로 내려갑니다.\"\n\n나는 휴대전화 녹음을 켰다.\n\n\"한 시 육 분. 이송실 문 닫힘. 안에 있으면 안 돼.\"\n\n목소리가 제대로 들어갔는지 확인할 수 없었다.\n\n바닥에 누운 시야 끝에서 06 카드가 두 장으로 겹쳐 보였다. 하나는 봉투 옆에 있었고, 다른 하나는 닫힌 문 바깥에 떨어져 있었다.\n\n눈을 감기 전 마지막으로 들은 것은 잠금이 풀리는 소리였다.\n\n이번에는 아래로 이어지는 계단 쪽이었다.",
+      "choices": []
+    },
+    {
+      "id": "SCENE_CH3_DEATH_YUJIN",
+      "title": "두 번째 죽음",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "gainMemory",
+          "memory": {
+            "id": "MEMORY_0106_SEAL",
+            "title": "한 시 육 분의 밀폐",
+            "description": "오전 1시 06분에는 B1 문서 이송실 안에 있지 않는다. 맞은편 벽 뒤의 B2 우회 계단을 먼저 연다.",
+            "acquiredOnLoop": 2,
+            "sourceSceneId": "SCENE_CH3_DEATH_YUJIN",
+            "relatedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ],
+            "payoff": {
+              "predictsEvent": "01:06 B1 문서 이송실 자동 밀폐",
+              "usableFrom": 210,
+              "usableUntil": 223,
+              "changes": [
+                "riskAvoided",
+                "routeUnlocked",
+                "eventPreempted",
+                "npcBehaviorChanged"
+              ],
+              "avoidsRisk": "DEATH_0106_TRANSFER_SEAL",
+              "unlocksLocationId": "B1_DOCUMENT_TRANSFER"
+            }
+          }
+        },
+        {
+          "type": "triggerDeath",
+          "deathId": "DEATH_0106_TRANSFER_SEAL",
+          "intel": {
+            "memoryId": "MEMORY_0106_SEAL",
+            "deathId": "DEATH_0106_TRANSFER_SEAL",
+            "title": "01:06",
+            "description": "B1 이송실이 밀폐되면 안에서 버틸 수 없다. 맞은편 벽 뒤에는 B2로 내려가는 우회 계단이 있다.",
+            "learnedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ]
+          }
+        }
+      ],
+      "beats": 9,
+      "body": "숨을 들이마셔도 가슴이 채워지지 않았다. 문을 두드리는 힘이 점점 약해졌다.\n\n문밖에서 목소리가 들렸다.\n\n\"수동 밸브가 있을 거예요. 찾고 있어요.\"\n\n나는 휴대전화 녹음을 켰다.\n\n\"한 시 육 분. 이송실 문 닫힘. 안에 있으면 안 돼.\"\n\n목소리가 제대로 들어갔는지 확인할 수 없었다.\n\n바닥에 누운 시야 끝에서 06 카드가 두 장으로 겹쳐 보였다. 하나는 봉투 옆에 있었고, 다른 하나는 닫힌 문 바깥에 떨어져 있었다.\n\n눈을 감기 전 마지막으로 들은 것은 잠금이 풀리는 소리였다.\n\n이번에는 아래로 이어지는 계단 쪽이었다.",
+      "choices": []
+    },
+    {
+      "id": "SCENE_CH3_DEATH_SOLO",
+      "title": "두 번째 죽음",
+      "location": "B1_DOCUMENT_TRANSFER",
+      "onEnter": [
+        {
+          "type": "gainMemory",
+          "memory": {
+            "id": "MEMORY_0106_SEAL",
+            "title": "한 시 육 분의 밀폐",
+            "description": "오전 1시 06분에는 B1 문서 이송실 안에 있지 않는다. 맞은편 벽 뒤의 B2 우회 계단을 먼저 연다.",
+            "acquiredOnLoop": 2,
+            "sourceSceneId": "SCENE_CH3_DEATH_SOLO",
+            "relatedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ],
+            "payoff": {
+              "predictsEvent": "01:06 B1 문서 이송실 자동 밀폐",
+              "usableFrom": 210,
+              "usableUntil": 223,
+              "changes": [
+                "riskAvoided",
+                "routeUnlocked",
+                "eventPreempted",
+                "npcBehaviorChanged"
+              ],
+              "avoidsRisk": "DEATH_0106_TRANSFER_SEAL",
+              "unlocksLocationId": "B1_DOCUMENT_TRANSFER"
+            }
+          }
+        },
+        {
+          "type": "triggerDeath",
+          "deathId": "DEATH_0106_TRANSFER_SEAL",
+          "intel": {
+            "memoryId": "MEMORY_0106_SEAL",
+            "deathId": "DEATH_0106_TRANSFER_SEAL",
+            "title": "01:06",
+            "description": "B1 이송실이 밀폐되면 안에서 버틸 수 없다. 맞은편 벽 뒤에는 B2로 내려가는 우회 계단이 있다.",
+            "learnedClueIds": [
+              "CLUE_0106_HIDDEN_STAIR"
+            ]
+          }
+        }
+      ],
+      "beats": 9,
+      "body": "숨을 들이마셔도 가슴이 채워지지 않았다. 문을 두드리는 힘이 점점 약해졌다.\n\n문밖에서 목소리가 들렸다.\n\n무전기 너머로 태준이 누군가에게 \"B2 계단을 열어\"라고 말했다.\n\n나는 휴대전화 녹음을 켰다.\n\n\"한 시 육 분. 이송실 문 닫힘. 안에 있으면 안 돼.\"\n\n목소리가 제대로 들어갔는지 확인할 수 없었다.\n\n바닥에 누운 시야 끝에서 06 카드가 두 장으로 겹쳐 보였다. 하나는 봉투 옆에 있었고, 다른 하나는 닫힌 문 바깥에 떨어져 있었다.\n\n눈을 감기 전 마지막으로 들은 것은 잠금이 풀리는 소리였다.\n\n이번에는 아래로 이어지는 계단 쪽이었다.",
+      "choices": []
+    },
+    {
+      "id": "SCENE_CH3_RESET_2123",
+      "title": "오후 9시 23분",
+      "location": "CAR",
+      "beats": 9,
+      "body": "차 안에서 숨을 들이켰다.\n\n가슴이 아팠다. 공기는 들어오고 있었지만 몸은 한동안 그 사실을 믿지 못했다.\n\n전화가 울렸다.\n\n서윤.\n\n손목시계 유리의 금은 그대로였다. 금 한쪽 끝에 전에는 없던 흐린 자국이 하나 더 생겨 있었다.\n\n나는 전화를 받기 전에 음성 녹음 목록을 확인했다. 조금 전 남긴 파일은 없었다.\n\n대신 말은 기억났다.\n\n한 시 육 분. 이송실 안에 있으면 안 된다.\n\n그리고 그 맞은편 벽 뒤에는 아래로 내려가는 계단이 있다.",
+      "choices": [
+        {
+          "id": "USE_MEMORY_0106_SEAL",
+          "text": "[기억] 01:06 밀폐와 맞은편 계단을 먼저 말한다.",
+          "kind": "foreknowledge",
+          "conditions": [
+            {
+              "type": "hasMemory",
+              "memoryId": "MEMORY_0106_SEAL"
+            }
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "FLAG_0106_AVOIDANCE_PLANNED",
+              "value": true,
+              "scope": "loop"
+            },
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH4_OPENING"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH4_OPENING",
+      "title": "숨부터",
+      "location": "CAR",
+      "beats": 15,
+      "body": "전화를 받자 서윤이가 먼저 말했다.\n\n\"뭐 해?\"\n\n나는 대답하기 전에 창문을 조금 내렸다. 차가운 공기가 들어왔다. 숨이 막히지 않는다는 걸 확인하고 나서야 입을 열 수 있었다.\n\n\"서윤아. 네가 보내려는 문자 두 개, 둘 다 보내지 마.\"\n\n\"무슨 문자?\"\n\n\"그리고 지금부터 내가 묻는 것만 대답해. 너한테 화난 게 아니라 시간이 없어서 그래.\"\n\n\"…오빠 또 죽었어?\"\n\n와이퍼가 한 번 유리를 지나갔다.\n\n\"또라는 말부터 설명해.\"\n\n서윤은 잠시 아무 말도 하지 않았다.\n\n\"이번에는 어떻게.\"\n\n\"한 시 육 분. 지하 문서 이송실.\"\n\n서윤의 숨소리가 작아졌다.\n\n\"거긴 들어가면 안 돼.\"\n\n\"이제는 알아.\"",
+      "choices": [
+        {
+          "id": "CH4_SET_LOOP_GOAL",
+          "text": "이번 밤에 바꿀 일을 정리한다.",
+          "kind": "standard",
+          "effects": [
+            {
+              "type": "advanceTime",
+              "minutes": 0
+            },
+            {
+              "type": "jumpScene",
+              "sceneId": "SCENE_CH4_MILESTONE_A_END"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_CH4_MILESTONE_A_END",
+      "title": "이번 밤의 목표",
+      "location": "CAR",
+      "beats": 7,
+      "body": "이미 확인한 일을 다시 밟을 필요는 없었다.\n\n302호에는 서윤의 휴대전화가 나타난다.\n\n자정에는 복도 끝 직원용 문이 열린다.\n\nB1 이송실은 1시 06분에 밀폐된다.\n\n맞은편 벽 뒤에는 B2로 내려가는 계단이 있다.\n\n하지만 혼자 문을 찾는 것만으로는 부족했다. 문을 열 사람, 환자 기록을 확인할 사람, 겹친 공간을 기억하는 사람이 따로 있었다.\n\n이번에는 한 사람에게 먼저 증명하기로 했다.",
+      "choices": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "SCENE_ACT0_DRIVE",
+      "choice": "KEEP_SEOYUN_TALKING",
+      "text": "목소리를 놓치지 않게 계속 말을 건다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "CAR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT0_WATCH_CALL"
+        }
+      ],
+      "to": "SCENE_ACT0_WATCH_CALL"
+    },
+    {
+      "from": "SCENE_ACT0_WATCH_CALL",
+      "choice": "ASK_ABOUT_OTHER_CALLS",
+      "text": "서윤이 보낸 주소를 확인하며 통화를 이어간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_WATCH_GIFT"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 5
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT0_MESSAGES"
+        }
+      ],
+      "to": "SCENE_ACT0_MESSAGES"
+    },
+    {
+      "from": "SCENE_ACT0_MESSAGES",
+      "choice": "PRESERVE_MESSAGE_SEQUENCE",
+      "text": "안전한 곳에 잠시 차를 세우고 두 문자의 도착 순서를 저장한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_CONTRADICTORY_MESSAGES"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT0_LAST_CALL"
+        }
+      ],
+      "to": "SCENE_ACT0_LAST_CALL"
+    },
+    {
+      "from": "SCENE_ACT0_MESSAGES",
+      "choice": "CONTINUE_TO_BAEKYA",
+      "text": "통화 연결을 다시 시도하며 그대로 백야의료원으로 향한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 6
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT0_LAST_CALL"
+        }
+      ],
+      "to": "SCENE_ACT0_LAST_CALL"
+    },
+    {
+      "from": "SCENE_ACT0_LAST_CALL",
+      "choice": "ENTER_HOSPITAL_GROUNDS",
+      "text": "주차장으로 들어간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "HOSPITAL_EXTERIOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT0_ARRIVAL"
+        }
+      ],
+      "to": "SCENE_ACT0_ARRIVAL"
+    },
+    {
+      "from": "SCENE_ACT0_ARRIVAL",
+      "choice": "APPROACH_RECEPTION",
+      "text": "접수처로 간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_B1_MAP"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_LOBBY"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT1_YUJIN_FIRST"
+        }
+      ],
+      "to": "SCENE_ACT1_YUJIN_FIRST"
+    },
+    {
+      "from": "SCENE_ACT1_YUJIN_FIRST",
+      "choice": "WAIT_FOR_SEARCH_RESULT",
+      "text": "조회 결과를 믿지 않고 한 번 더 확인해 달라고 한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT1_YUJIN_SEARCH"
+        }
+      ],
+      "to": "SCENE_ACT1_YUJIN_SEARCH"
+    },
+    {
+      "from": "SCENE_ACT1_YUJIN_SEARCH",
+      "choice": "QUESTION_THE_DENIAL",
+      "text": "유진이 병동에 확인하는 동안 주변을 살핀다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT1_YUJIN_DENIAL"
+        }
+      ],
+      "to": "SCENE_ACT1_YUJIN_DENIAL"
+    },
+    {
+      "from": "SCENE_ACT1_YUJIN_DENIAL",
+      "choice": "READ_SEOYUN_WARNING",
+      "text": "유진에게 보이지 않게 답장을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_YUJIN_KNOWN"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT1_YUJIN_WARNING"
+        }
+      ],
+      "to": "SCENE_ACT1_YUJIN_WARNING"
+    },
+    {
+      "from": "SCENE_ACT1_YUJIN_WARNING",
+      "choice": "GO_TO_THIRD_FLOOR",
+      "text": "입원병동이 있는 3층으로 간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 6
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "3F_CORRIDOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT2_THIRD_FLOOR"
+        }
+      ],
+      "to": "SCENE_ACT2_THIRD_FLOOR"
+    },
+    {
+      "from": "SCENE_ACT2_THIRD_FLOOR",
+      "choice": "ASK_NURSE_ABOUT_302",
+      "text": "302호에 누가 있는지 묻는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT2_NURSE_AT_302"
+        }
+      ],
+      "to": "SCENE_ACT2_NURSE_AT_302"
+    },
+    {
+      "from": "SCENE_ACT2_NURSE_AT_302",
+      "choice": "ENTER_ROOM_302_LOOP1",
+      "text": "닫히기 전 문을 붙잡는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 5
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "ROOM_302"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT2_ROOM_CONTRADICTION"
+        }
+      ],
+      "to": "SCENE_ACT2_ROOM_CONTRADICTION"
+    },
+    {
+      "from": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "choice": "CHECK_WRISTBAND",
+      "text": "손목밴드의 정보를 확인한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "ROOM_302_WRISTBAND_FOUND",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT2_WRISTBAND"
+        }
+      ],
+      "to": "SCENE_ACT2_WRISTBAND"
+    },
+    {
+      "from": "SCENE_ACT2_WRISTBAND",
+      "choice": "LEAVE_WRISTBAND_AND_REPLY",
+      "text": "손목밴드를 제자리에 두고 방을 나온다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_WRISTBAND_DOB"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "3F_CORRIDOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT2_REMOTE_KNOWLEDGE"
+        }
+      ],
+      "to": "SCENE_ACT2_REMOTE_KNOWLEDGE"
+    },
+    {
+      "from": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "choice": "LOOK_FOR_EMPLOYEE_DOOR",
+      "text": "1층 피난 안내도와 직원용 문을 다시 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_STAFF_DOOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT3_MAP_AND_TAEJUN"
+        }
+      ],
+      "to": "SCENE_ACT3_MAP_AND_TAEJUN"
+    },
+    {
+      "from": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "choice": "STAY_UNTIL_BLACKOUT",
+      "text": "로비 쪽으로 물러나되 문이 보이는 곳에 남는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 9
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_ACT3_BLACKOUT"
+        }
+      ],
+      "to": "SCENE_ACT3_BLACKOUT"
+    },
+    {
+      "from": "SCENE_ACT3_BLACKOUT",
+      "choice": "MOVE_TOWARD_UNLOCKED_DOOR",
+      "text": "잠금이 풀린 소리를 따라간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_FIRST_DEATH"
+        }
+      ],
+      "to": "SCENE_FIRST_DEATH"
+    },
+    {
+      "from": "SCENE_LOOP2_RESET_AWAKENING",
+      "choice": "RECOGNIZE_RESET",
+      "text": "깨진 시계와 반복된 첫 문장을 확인한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_RESET_WATCH"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 1
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_VERTICAL_SLICE_TITLE"
+        }
+      ],
+      "to": "SCENE_VERTICAL_SLICE_TITLE"
+    },
+    {
+      "from": "SCENE_VERTICAL_SLICE_TITLE",
+      "choice": "CONTINUE_AFTER_TITLE",
+      "text": "같은 통화를 다르게 시작한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_RESET_WATCH"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 1
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_FIRST_CALL_TEST"
+        }
+      ],
+      "to": "SCENE_LOOP2_FIRST_CALL_TEST"
+    },
+    {
+      "from": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "choice": "TEST_MESSAGE_ANOMALY",
+      "text": "[기억] 아직 오지 않은 두 문자의 순서를 먼저 말한다.",
+      "conditions": [
+        {
+          "type": "hasClue",
+          "clueId": "CLUE_CONTRADICTORY_MESSAGES"
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "FLAG_SEOYUN_MESSAGE_TESTED",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 11
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_MESSAGE_TEST"
+        }
+      ],
+      "to": "SCENE_LOOP2_MESSAGE_TEST"
+    },
+    {
+      "from": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "choice": "DO_NOT_EXPLAIN_LOOP_YET",
+      "text": "설명하지 않고 더 빨리 병원으로 향한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_RESET_WATCH"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "HOSPITAL_EXTERIOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_EARLY_ARRIVAL"
+        }
+      ],
+      "to": "SCENE_LOOP2_EARLY_ARRIVAL"
+    },
+    {
+      "from": "SCENE_LOOP2_MESSAGE_TEST",
+      "choice": "LEAVE_AFTER_MESSAGE_TEST",
+      "text": "확인된 모순을 기록하고 백야의료원으로 향한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_EARLY_ARRIVAL"
+        }
+      ],
+      "to": "SCENE_LOOP2_EARLY_ARRIVAL"
+    },
+    {
+      "from": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "choice": "TAKE_FIRST_PHONE",
+      "text": "투명 봉투 속 휴대전화를 확인한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_RESET_WATCH"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "ROOM_302"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_FIRST_PHONE"
+        }
+      ],
+      "to": "SCENE_LOOP2_FIRST_PHONE"
+    },
+    {
+      "from": "SCENE_LOOP2_FIRST_PHONE",
+      "choice": "ANSWER_ON_OWN_PHONE",
+      "text": "손에 든 전화는 그대로 둔 채 내 전화의 연결을 기다린다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_FIRST_PHONE"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_PHONE_PARADOX"
+        }
+      ],
+      "to": "SCENE_LOOP2_PHONE_PARADOX"
+    },
+    {
+      "from": "SCENE_LOOP2_PHONE_PARADOX",
+      "choice": "DOCUMENT_PHONE_PARADOX",
+      "text": "[추론] 같은 흠집과 두 통화 화면을 한 장에 남긴다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_PHONE_DUPLICATION"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_FIRST_PHONE_PHOTO"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_YUJIN_MINIMAL"
+        }
+      ],
+      "to": "SCENE_LOOP2_YUJIN_MINIMAL"
+    },
+    {
+      "from": "SCENE_LOOP2_PHONE_PARADOX",
+      "choice": "REVEAL_EXACT_FOREKNOWLEDGE",
+      "text": "[기억] 유진이 부정할 말과 자정 정전을 정확히 말한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_BLACKOUT_0000"
+        },
+        {
+          "type": "hasClue",
+          "clueId": "CLUE_FIRST_PHONE"
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "FLAG_YUJIN_WARY",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE"
+        }
+      ],
+      "to": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE"
+    },
+    {
+      "from": "SCENE_LOOP2_PHONE_PARADOX",
+      "choice": "TELL_YUJIN_ONLY_PHONE_FACT",
+      "text": "전화가 어디서 발견됐는지만 말한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_YUJIN_MINIMAL"
+        }
+      ],
+      "to": "SCENE_LOOP2_YUJIN_MINIMAL"
+    },
+    {
+      "from": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE",
+      "choice": "GO_TO_STAFF_DOOR_AFTER_BACKFIRE",
+      "text": "[기억] 설득을 포기하고 열릴 문으로 간다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_STAFF_DOOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_STAFF_DOOR"
+        }
+      ],
+      "to": "SCENE_LOOP2_STAFF_DOOR"
+    },
+    {
+      "from": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "choice": "GO_TO_STAFF_DOOR_QUIETLY",
+      "text": "[기억] 자정 전에 직원용 문으로 간다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_FIRST_PHONE_PHOTO"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 8
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_STAFF_DOOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_STAFF_DOOR"
+        }
+      ],
+      "to": "SCENE_LOOP2_STAFF_DOOR"
+    },
+    {
+      "from": "SCENE_LOOP2_STAFF_DOOR",
+      "choice": "WAIT_FOR_KNOWN_BLACKOUT",
+      "text": "[기억] 전자 잠금이 풀리는 순간을 기다린다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_BLACKOUT_ROUTE"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 5
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_BLACKOUT_INTERVENTION"
+        }
+      ],
+      "to": "SCENE_LOOP2_BLACKOUT_INTERVENTION"
+    },
+    {
+      "from": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "choice": "ENTER_B1",
+      "text": "지하 1층으로 내려간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "FLAG_FIRST_DEATH_AVOIDED",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "B1_OPERATIONS_CORRIDOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_OPERATIONS_CORRIDOR"
+        }
+      ],
+      "to": "SCENE_LOOP2_OPERATIONS_CORRIDOR"
+    },
+    {
+      "from": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "choice": "ASK_SEA_ABOUT_SEOYUN",
+      "text": "린넨실 안의 여자에게 서윤을 아는지 묻는다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "B1_LINEN_ROOM_FOUND",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEA_FIRST_MEETING"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEA_FIRST_MEETING"
+    },
+    {
+      "from": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "choice": "USE_B1_TRANSFER_ROUTE",
+      "text": "카트 바퀴 자국이 이어지는 반대편 계단으로 빠져나간다.",
+      "conditions": [
+        {
+          "type": "hasClue",
+          "clueId": "CLUE_B1_TRANSFER_TRACKS"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_SEA_KNOWS"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_LOBBY"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEOYUN_RECHECK"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEOYUN_RECHECK"
+    },
+    {
+      "from": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "choice": "FACE_TAEJUN_IN_B1",
+      "text": "도망치지 않고 빛 쪽을 본다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_SEA_KNOWS"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_TAEJUN_REJECTION"
+        }
+      ],
+      "to": "SCENE_LOOP2_TAEJUN_REJECTION"
+    },
+    {
+      "from": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "choice": "RETURN_UPSTAIRS_WITH_TAEJUN",
+      "text": "서윤을 찾기 위해 일단 위층으로 돌아간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 5
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_LOBBY"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEOYUN_RECHECK"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEOYUN_RECHECK"
+    },
+    {
+      "from": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "choice": "RETURN_TO_302_FOR_SECOND_PHONE",
+      "text": "태준이 유진과 이야기하는 틈에 3층으로 돌아간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 6
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "ROOM_302"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_RETURN_302"
+        }
+      ],
+      "to": "SCENE_LOOP2_RETURN_302"
+    },
+    {
+      "from": "SCENE_LOOP2_RETURN_302",
+      "choice": "CALL_BOTH_SEOYUN_PHONES",
+      "text": "찾은 전화와 통화 중인 전화가 동시에 존재하는지 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SECOND_PHONE"
+        }
+      ],
+      "to": "SCENE_LOOP2_SECOND_PHONE"
+    },
+    {
+      "from": "SCENE_LOOP2_SECOND_PHONE",
+      "choice": "KEEP_SECOND_PHONE",
+      "text": "두 번째 전화를 챙기고 서윤의 다음 말을 기다린다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_SECOND_PHONE"
+        },
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_SECOND_PHONE"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_VERTICAL_SLICE_END"
+        }
+      ],
+      "to": "SCENE_VERTICAL_SLICE_END"
+    },
+    {
+      "from": "SCENE_VERTICAL_SLICE_END",
+      "choice": "ASK_TAEJUN_ABOUT_CCTV",
+      "text": "보안실에서 돌아온 태준에게 CCTV의 빈 구간을 묻는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_LOBBY"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_CCTV_GAP"
+        }
+      ],
+      "to": "SCENE_LOOP2_CCTV_GAP"
+    },
+    {
+      "from": "SCENE_LOOP2_CCTV_GAP",
+      "choice": "SHOW_SECOND_PHONE_TO_TAEJUN",
+      "text": "[증거] 똑같은 두 번째 휴대전화를 보여준다.",
+      "conditions": [
+        {
+          "type": "hasItem",
+          "itemId": "ITEM_SECOND_PHONE"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_CCTV_GAP"
+        },
+        {
+          "type": "setFlag",
+          "flag": "FLAG_TAEJUN_SAW_PHONE",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_06_CARD"
+        }
+      ],
+      "to": "SCENE_LOOP2_06_CARD"
+    },
+    {
+      "from": "SCENE_LOOP2_CCTV_GAP",
+      "choice": "PRESS_TAEJUN_ON_CCTV_GAP",
+      "text": "끊긴 1분의 원인부터 확인해 달라고 요구한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_CCTV_GAP"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_06_CARD"
+        }
+      ],
+      "to": "SCENE_LOOP2_06_CARD"
+    },
+    {
+      "from": "SCENE_LOOP2_06_CARD",
+      "choice": "COMPARE_06_WITH_WRISTBAND",
+      "text": "[기억] 첫 번째 밤에 본 손목밴드의 06과 대조한다.",
+      "conditions": [
+        {
+          "type": "hasClue",
+          "clueId": "CLUE_WRISTBAND_DOB"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_06_CARD"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+    },
+    {
+      "from": "SCENE_LOOP2_06_CARD",
+      "choice": "ASK_WHERE_06_CARD_WAS_FOUND",
+      "text": "카드가 발견된 정확한 위치만 묻는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_06_CARD"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 4
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEOYUN_UNCERTAIN"
+    },
+    {
+      "from": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "choice": "KEEP_MINSEO_WARNING_PRIVATE",
+      "text": "마지막 통화 내용은 숨기고 직접 302호의 벽을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "FLAG_MINSEO_MEMORY_WARNING_KEPT",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "3F_CORRIDOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_OLD_MAP_SEARCH"
+        }
+      ],
+      "to": "SCENE_LOOP2_OLD_MAP_SEARCH"
+    },
+    {
+      "from": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "choice": "TELL_MINSEO_ONLY_WALL_CLUE",
+      "text": "민서에게 302호 벽을 확인해야 한다는 말만 전한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 5
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "3F_CORRIDOR"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_OLD_MAP_SEARCH"
+        }
+      ],
+      "to": "SCENE_LOOP2_OLD_MAP_SEARCH"
+    },
+    {
+      "from": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "choice": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+      "text": "[추론] CCTV가 비는 1분과 폐쇄된 통로를 연결한다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_302_HIDDEN_ROUTE"
+        },
+        {
+          "type": "flagEquals",
+          "flag": "OLD_MAP_PASSAGE_FOUND",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_TAEJUN_MAP"
+        }
+      ],
+      "to": "SCENE_LOOP2_TAEJUN_MAP"
+    },
+    {
+      "from": "SCENE_LOOP2_TAEJUN_MAP",
+      "choice": "SEND_OLD_MAP_TO_SEOYUN",
+      "text": "내려가는 동안 안내도 사진을 서윤에게 보낸다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "1F_LOBBY"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_LOOP2_SEOYUN_NEW_RULE"
+        }
+      ],
+      "to": "SCENE_LOOP2_SEOYUN_NEW_RULE"
+    },
+    {
+      "from": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "choice": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+      "text": "확인된 사실만 남기고 다음 동선을 정한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 1
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CHAPTER02_END"
+        }
+      ],
+      "to": "SCENE_CHAPTER02_END"
+    },
+    {
+      "from": "SCENE_CHAPTER02_END",
+      "choice": "BEGIN_CHAPTER_3",
+      "text": "세 사람에게 같은 질문을 시작한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_BAND_REQUEST"
+        }
+      ],
+      "to": "SCENE_CH3_BAND_REQUEST"
+    },
+    {
+      "from": "SCENE_CH3_BAND_REQUEST",
+      "choice": "CH3_BAND_TO_YUJIN",
+      "text": "사진을 남기고 유진에게 돌려준다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_WRISTBAND_PHOTO"
+        },
+        {
+          "type": "removeItem",
+          "itemId": "ITEM_WRISTBAND_ORIGINAL"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_BAND_OWNER",
+          "value": "yujin",
+          "scope": "loop"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_YUJIN_COOPERATING",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "setFlag",
+          "flag": "BAND_CUSTODY_YUJIN",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "TRUST_YUJIN_PROGRESS",
+          "value": 1,
+          "scope": "persistent"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_BAND_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_BAND_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_BAND_REQUEST",
+      "choice": "CH3_BAND_SHOW_TAEJUN",
+      "text": "태준에게 확인시킨 뒤 돌려받는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_WRISTBAND_ORIGINAL"
+        },
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_WRISTBAND_PHOTO"
+        },
+        {
+          "type": "setFlag",
+          "flag": "BAND_CUSTODY_PLAYER",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "BAND_SECURITY_TIMESTAMP",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_BAND_OWNER",
+          "value": "player",
+          "scope": "loop"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_TAEJUN_COOPERATING",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "setFlag",
+          "flag": "TRUST_TAEJUN_PROGRESS",
+          "value": 1,
+          "scope": "persistent"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_BAND_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_BAND_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_BAND_REQUEST",
+      "choice": "CH3_BAND_KEEP_ORIGINAL",
+      "text": "사진만 보여 주고 원본은 보관한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_WRISTBAND_ORIGINAL"
+        },
+        {
+          "type": "gainItem",
+          "itemId": "ITEM_WRISTBAND_PHOTO"
+        },
+        {
+          "type": "setFlag",
+          "flag": "BAND_CUSTODY_PLAYER",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "TRUST_YUJIN_PROGRESS",
+          "value": -1,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_BAND_OWNER",
+          "value": "player",
+          "scope": "loop"
+        },
+        {
+          "type": "setFlag",
+          "flag": "CH3_YUJIN_WARY",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_BAND_PLAYER"
+        }
+      ],
+      "to": "SCENE_CH3_BAND_PLAYER"
+    },
+    {
+      "from": "SCENE_CH3_BAND_YUJIN",
+      "choice": "CH3_ASK_SAME_QUESTION_Y",
+      "text": "세 사람에게 같은 질문을 한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+        }
+      ],
+      "to": "SCENE_CH3_THREE_TESTIMONIES"
+    },
+    {
+      "from": "SCENE_CH3_BAND_TAEJUN",
+      "choice": "CH3_ASK_SAME_QUESTION_T",
+      "text": "세 사람에게 같은 질문을 한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+        }
+      ],
+      "to": "SCENE_CH3_THREE_TESTIMONIES"
+    },
+    {
+      "from": "SCENE_CH3_BAND_PLAYER",
+      "choice": "CH3_ASK_SAME_QUESTION_P",
+      "text": "세 사람에게 같은 질문을 한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_THREE_TESTIMONIES"
+        }
+      ],
+      "to": "SCENE_CH3_THREE_TESTIMONIES"
+    },
+    {
+      "from": "SCENE_CH3_THREE_TESTIMONIES",
+      "choice": "CH3_USE_SPACE_DEDUCTION",
+      "text": "[추론] 세 답이 기준으로 삼는 시점을 연결한다.",
+      "conditions": [
+        {
+          "type": "hasDeduction",
+          "deductionId": "DEDUCTION_SPACE_NOT_ALIGNED"
+        }
+      ],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 1
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MINSEO_QUESTION"
+        }
+      ],
+      "to": "SCENE_CH3_MINSEO_QUESTION"
+    },
+    {
+      "from": "SCENE_CH3_MINSEO_QUESTION",
+      "choice": "CH3_SHOW_WATCH_ONLY",
+      "text": "깨진 시계만 보여 준다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "MINSEO_SAW_WATCH",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MINSEO_WATCH"
+        }
+      ],
+      "to": "SCENE_CH3_MINSEO_WATCH"
+    },
+    {
+      "from": "SCENE_CH3_MINSEO_QUESTION",
+      "choice": "CH3_DISCLOSE_FIRST_DEATH",
+      "text": "첫 죽음 뒤에도 금이 남았다고 말한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "MINSEO_PARTIAL_DISCLOSURE",
+          "value": true,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "TRUST_MINSEO_PROGRESS",
+          "value": 1,
+          "scope": "persistent"
+        },
+        {
+          "type": "setFlag",
+          "flag": "MINSEO_WARY",
+          "value": 1,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MINSEO_DEATH"
+        }
+      ],
+      "to": "SCENE_CH3_MINSEO_DEATH"
+    },
+    {
+      "from": "SCENE_CH3_MINSEO_WATCH",
+      "choice": "CH3_FIND_MISSING_CARD_W",
+      "text": "06 카드가 든 봉투를 찾는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MISSING_CARD"
+        }
+      ],
+      "to": "SCENE_CH3_MISSING_CARD"
+    },
+    {
+      "from": "SCENE_CH3_MINSEO_DEATH",
+      "choice": "CH3_FIND_MISSING_CARD_D",
+      "text": "06 카드가 든 봉투를 찾는다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 2
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MISSING_CARD"
+        }
+      ],
+      "to": "SCENE_CH3_MISSING_CARD"
+    },
+    {
+      "from": "SCENE_CH3_MISSING_CARD",
+      "choice": "CH3_CALL_MISSING_WORKER",
+      "text": "카드를 가져간 직원을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 3
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_MISSING_WORKER"
+        }
+      ],
+      "to": "SCENE_CH3_MISSING_WORKER"
+    },
+    {
+      "from": "SCENE_CH3_MISSING_WORKER",
+      "choice": "CH3_ENTER_B1_WITH_TAEJUN",
+      "text": "두 번째 휴대전화 사진을 보여 주고 태준과 내려간다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "FLAG_TAEJUN_SAW_PHONE",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "CH3_COMPANION",
+          "value": "taejun",
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 10
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "B1_DOCUMENT_TRANSFER"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_APPROACH_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_APPROACH_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_MISSING_WORKER",
+      "choice": "CH3_ENTER_B1_WITH_YUJIN",
+      "text": "봉인한 손목밴드와 함께 유진과 내려간다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "BAND_CUSTODY_YUJIN",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "CH3_COMPANION",
+          "value": "yujin",
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 10
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "B1_DOCUMENT_TRANSFER"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_APPROACH_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_APPROACH_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_MISSING_WORKER",
+      "choice": "CH3_ENTER_B1_SOLO",
+      "text": "화물 승강기의 카트 바퀴 자국을 따라 혼자 내려간다.",
+      "conditions": [
+        {
+          "type": "flagNotEquals",
+          "flag": "FLAG_TAEJUN_SAW_PHONE",
+          "value": true
+        },
+        {
+          "type": "flagNotEquals",
+          "flag": "BAND_CUSTODY_YUJIN",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "CH3_COMPANION",
+          "value": "solo",
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 6
+        },
+        {
+          "type": "moveLocation",
+          "locationId": "B1_DOCUMENT_TRANSFER"
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_APPROACH_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_APPROACH_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_APPROACH_TAEJUN",
+      "choice": "CH3_OPEN_TRANSFER_T",
+      "text": "태준의 뒤에서 문서 이송실로 간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_TRANSFER_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_TRANSFER_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_APPROACH_YUJIN",
+      "choice": "CH3_OPEN_TRANSFER_Y",
+      "text": "유진과 문서 이송실로 간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_TRANSFER_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_TRANSFER_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_APPROACH_SOLO",
+      "choice": "CH3_OPEN_TRANSFER_S",
+      "text": "발소리를 피해 문서 이송실로 간다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_TRANSFER_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_TRANSFER_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_TRANSFER_TAEJUN",
+      "choice": "CH3_READ_LEDGER_T",
+      "text": "확인한 흔적을 장부와 대조한다.",
+      "conditions": [
+        {
+          "type": "minimumFlags",
+          "flags": [
+            "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:card-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:shelf-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:transfer-ledger",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:sealed-vent",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:opposite-wall"
+          ],
+          "count": 2
+        }
+      ],
+      "effects": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_0106_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_0106_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_TRANSFER_YUJIN",
+      "choice": "CH3_READ_LEDGER_Y",
+      "text": "확인한 흔적을 장부와 대조한다.",
+      "conditions": [
+        {
+          "type": "minimumFlags",
+          "flags": [
+            "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:card-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:shelf-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:transfer-ledger",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:sealed-vent",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_YUJIN:opposite-wall"
+          ],
+          "count": 2
+        }
+      ],
+      "effects": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_0106_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_0106_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_TRANSFER_SOLO",
+      "choice": "CH3_READ_LEDGER_S",
+      "text": "확인한 흔적을 장부와 대조한다.",
+      "conditions": [
+        {
+          "type": "minimumFlags",
+          "flags": [
+            "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:card-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:shelf-06",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:transfer-ledger",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:sealed-vent",
+            "INVESTIGATED:SCENE_CH3_TRANSFER_SOLO:opposite-wall"
+          ],
+          "count": 2
+        }
+      ],
+      "effects": [
+        {
+          "type": "setTime",
+          "time": 223
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_0106_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_0106_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_0106_TAEJUN",
+      "choice": "CH3_LAST_CHECK_CARD_T",
+      "text": "06 카드를 판독기에 댄다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_CARD"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_CARD"
+    },
+    {
+      "from": "SCENE_CH3_0106_TAEJUN",
+      "choice": "CH3_LAST_CHECK_RADIO_T",
+      "text": "무전 소리를 따라 벽을 두드린다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_RADIO"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_RADIO"
+    },
+    {
+      "from": "SCENE_CH3_0106_TAEJUN",
+      "choice": "CH3_LAST_CHECK_LABEL_T",
+      "text": "봉투 라벨을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_LABEL"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_LABEL"
+    },
+    {
+      "from": "SCENE_CH3_0106_YUJIN",
+      "choice": "CH3_LAST_CHECK_CARD_Y",
+      "text": "06 카드를 판독기에 댄다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_CARD"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_CARD"
+    },
+    {
+      "from": "SCENE_CH3_0106_YUJIN",
+      "choice": "CH3_LAST_CHECK_RADIO_Y",
+      "text": "무전 소리를 따라 벽을 두드린다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_RADIO"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_RADIO"
+    },
+    {
+      "from": "SCENE_CH3_0106_YUJIN",
+      "choice": "CH3_LAST_CHECK_LABEL_Y",
+      "text": "봉투 라벨을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_LABEL"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_LABEL"
+    },
+    {
+      "from": "SCENE_CH3_0106_SOLO",
+      "choice": "CH3_LAST_CHECK_CARD_S",
+      "text": "06 카드를 판독기에 댄다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_CARD"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_CARD"
+    },
+    {
+      "from": "SCENE_CH3_0106_SOLO",
+      "choice": "CH3_LAST_CHECK_RADIO_S",
+      "text": "무전 소리를 따라 벽을 두드린다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_RADIO"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_RADIO"
+    },
+    {
+      "from": "SCENE_CH3_0106_SOLO",
+      "choice": "CH3_LAST_CHECK_LABEL_S",
+      "text": "봉투 라벨을 확인한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_LAST_LABEL"
+        }
+      ],
+      "to": "SCENE_CH3_LAST_LABEL"
+    },
+    {
+      "from": "SCENE_CH3_LAST_CARD",
+      "choice": "CH3_DIE_AFTER_CARD_T",
+      "text": "잠금이 풀린 방향을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "taejun"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_CARD_READER"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_CARD",
+      "choice": "CH3_DIE_AFTER_CARD_Y",
+      "text": "잠금이 풀린 방향을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "yujin"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_CARD_READER"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_CARD",
+      "choice": "CH3_DIE_AFTER_CARD_S",
+      "text": "잠금이 풀린 방향을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "solo"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_CARD_READER"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_LAST_RADIO",
+      "choice": "CH3_DIE_AFTER_RADIO_T",
+      "text": "맞은편 벽 뒤의 계단을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "taejun"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_HIDDEN_STAIR"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_RADIO",
+      "choice": "CH3_DIE_AFTER_RADIO_Y",
+      "text": "맞은편 벽 뒤의 계단을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "yujin"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_HIDDEN_STAIR"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_RADIO",
+      "choice": "CH3_DIE_AFTER_RADIO_S",
+      "text": "맞은편 벽 뒤의 계단을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "solo"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_0106_HIDDEN_STAIR"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_LAST_LABEL",
+      "choice": "CH3_DIE_AFTER_LABEL_T",
+      "text": "06과 B2의 연결을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "taejun"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_06_B2_LABEL"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_TAEJUN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_TAEJUN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_LABEL",
+      "choice": "CH3_DIE_AFTER_LABEL_Y",
+      "text": "06과 B2의 연결을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "yujin"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_06_B2_LABEL"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_YUJIN"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_YUJIN"
+    },
+    {
+      "from": "SCENE_CH3_LAST_LABEL",
+      "choice": "CH3_DIE_AFTER_LABEL_S",
+      "text": "06과 B2의 연결을 기억한다.",
+      "conditions": [
+        {
+          "type": "flagEquals",
+          "flag": "CH3_COMPANION",
+          "value": "solo"
+        }
+      ],
+      "effects": [
+        {
+          "type": "gainClue",
+          "clueId": "CLUE_06_B2_LABEL"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH3_DEATH_SOLO"
+        }
+      ],
+      "to": "SCENE_CH3_DEATH_SOLO"
+    },
+    {
+      "from": "SCENE_CH3_RESET_2123",
+      "choice": "USE_MEMORY_0106_SEAL",
+      "text": "[기억] 01:06 밀폐와 맞은편 계단을 먼저 말한다.",
+      "conditions": [
+        {
+          "type": "hasMemory",
+          "memoryId": "MEMORY_0106_SEAL"
+        }
+      ],
+      "effects": [
+        {
+          "type": "setFlag",
+          "flag": "FLAG_0106_AVOIDANCE_PLANNED",
+          "value": true,
+          "scope": "loop"
+        },
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH4_OPENING"
+        }
+      ],
+      "to": "SCENE_CH4_OPENING"
+    },
+    {
+      "from": "SCENE_CH4_OPENING",
+      "choice": "CH4_SET_LOOP_GOAL",
+      "text": "이번 밤에 바꿀 일을 정리한다.",
+      "conditions": [],
+      "effects": [
+        {
+          "type": "advanceTime",
+          "minutes": 0
+        },
+        {
+          "type": "jumpScene",
+          "sceneId": "SCENE_CH4_MILESTONE_A_END"
+        }
+      ],
+      "to": "SCENE_CH4_MILESTONE_A_END"
+    }
+  ],
+  "structurallyUnreachable": []
+}

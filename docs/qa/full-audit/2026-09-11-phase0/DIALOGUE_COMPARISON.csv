@@ -1,0 +1,211 @@
+﻿source_scene,quoted_source_line,runtime_substring_presence_not_semantic_verdict
+SCENE 4-111 — 태준이 돌아온다,서윤이가 찍혔다면서요.,EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,네.,EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,저도 CCTV 영상 좀 볼 수 있습니까?,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,그건 어렵습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,제 동생이 찍혀 있는데도요?,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,그건 이해하는데요. 외부인한테 내부 CCTV를 바로 보여드릴 수는 없어요.,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,그럼 하나만 확인해 주세요.,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,302호에 들어간 다음에 나오는 모습은 정말 없는 겁니까?,NOT_EXACT_SUBSTRING
+SCENE 4-111 — 태준이 돌아온다,제가 확인한 영상에는 없습니다.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,그럼 계속 방 안에 있었다는 얘기잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,아니면 카메라에 안 찍히고 나갈 방법이 있거나.,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,그건 저도 확인 중입니다.,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,영상 자체에는 이상한 거 없었습니까?,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,있었네요.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,잠깐 비는 구간이 있습니다.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,얼마나요?,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,1분 정도요.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,정전 때문입니까?,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,아니요.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,그럼 왜 끊긴 겁니까?,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,그것까지는 아직 모릅니다.,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,원래 자주 그러고요?,NOT_EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,아뇨.,EXACT_SUBSTRING
+SCENE 4-112 — 주인공이 캐묻는다,저런 식으로 끊기는 일은 거의 없어요.,EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,그 1분 동안 서윤이가 나갔을 수도 있겠네요.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,가능성은 있죠.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,엘리베이터나 계단은요?,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,그쪽도 확인하고 있습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,없었습니까?,EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,보호자분.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,제가 확인할 수 있는 건 확인할 테니까 일단 여기 계세요.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,왜 말을 하다 마십니까.,NOT_EXACT_SUBSTRING
+SCENE 4-113 — 여기까지,내부 확인 중인 내용을 제가 전부 말씀드릴 수는 없어요.,NOT_EXACT_SUBSTRING
+SCENE 4-114 — 직원들끼리의 이야기,…302호 쪽은…,NOT_EXACT_SUBSTRING
+SCENE 4-114 — 직원들끼리의 이야기,…시설팀에서는 그런 기록이 없다고…,NOT_EXACT_SUBSTRING
+SCENE 4-115 — 302호에서 내려온 물건,뭐 찾으셨어요?,EXACT_SUBSTRING
+SCENE 4-115 — 302호에서 내려온 물건,몇 가지 확인할 게 생겼어요.,EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,그거 좀 볼 수 있습니까?,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,이건 안 됩니다.,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,302호에서 나온 거 아닙니까?,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,네. 방 안에서 발견됐어요.,EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,그럼 서윤이랑 관련된 물건일 수도 있잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,그래서 확인하려는 거예요.,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,무슨 카드인데요?,EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,아직 모르겠습니다.,EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,저 숫자는요?,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,그것도 확인해야 하고요.,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,확인해야 한다는 얘기만 계속 듣네요.,NOT_EXACT_SUBSTRING
+SCENE 4-116 — 보여달라고 한다,지금 제가 확실하지 않은 걸 말씀드릴 수는 없으니까요.,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,그건 어디서 가져오셨어요?,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,302호에서요.,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,그걸 가지고 나오셨어요?,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,네.,EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,주실래요?,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,잠깐만요.,EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,같은 숫자 아닙니까?,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,같아 보이네요.,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,무슨 뜻인데요?,NOT_EXACT_SUBSTRING
+SCENE 4-117 — 손목밴드,지금은 저도 확실하게 말씀드리기 어렵습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-118 — 서윤이에게 묻는다,뭐 하시려고요?,NOT_EXACT_SUBSTRING
+SCENE 4-118 — 서윤이에게 묻는다,서윤이한테 물어보려고요.,NOT_EXACT_SUBSTRING
+SCENE 4-119 — 예상하지 못한 반응,카드가 정확히 어디서 나왔습니까?,NOT_EXACT_SUBSTRING
+SCENE 4-119 — 예상하지 못한 반응,위치만 알려주세요.,NOT_EXACT_SUBSTRING
+SCENE 4-119 — 예상하지 못한 반응,침대 옆 틈에 떨어져 있었어요.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,오빠.,EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,방금 그게 무슨 말이야.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,…,EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,뭐가 헷갈린다는 건데.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,나도 내가 기억하는 게 다 맞는 줄 알았어.,EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,근데 지금 오빠가 말하는 거랑 안 맞는 게 있어.,EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,뭐가.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,그 카드.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,그게 왜.,NOT_EXACT_SUBSTRING
+SCENE 4-122 — 처음 듣는 대답,내가 기억하는 302호에는 그게 없었어.,NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,잠깐.,EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,너 지금까지 다 알고 있었던 거 아니야?,NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,"내가 어디 있는지 알고, 302호도 알고, 유진 씨도 알고, 차민서도 알고.",NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,…,EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,근데 너도 모르는 게 있는 거야?,NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,당연히 있지.,EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,나도 지금 무서워.,EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,오빠는 내가 여기서 다 보고 있는 줄 알아?,EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,그럼 어떻게 자꾸 알고 있는데.,NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,그걸 설명하려면…,NOT_EXACT_SUBSTRING
+SCENE 4-123 — 너도 모르는 거야?,또 지금은 안 된다고?,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,그러면 여기랑 다른 건가…,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,뭐가 다르다는 거야.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,아니야.,EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,서윤아.,EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,잠깐만 생각 좀 해볼게.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,너 지금 어디야.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,적어도 그것만 말해.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,말해도 오빠가 올 수 있는 데가 아니야.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,어디인데.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,서윤아?,EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,서윤아.,EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,…잠깐.,NOT_EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,이건 왜 여기 있어?,EXACT_SUBSTRING
+SCENE 4-124 — 서윤이도 당황한다,뭐가.,NOT_EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,연락 안 돼요?,EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,네.,EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,마지막으로 뭐라고 하던가요?,EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,그건 왜 물으십니까?,NOT_EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,서윤 씨 위치를 찾는 데 도움이 될 수도 있으니까요.,NOT_EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,제가 필요한 건 말씀드리겠습니다.,EXACT_SUBSTRING
+SCENE 4-126 — 병원 쪽에서는,알겠습니다.,EXACT_SUBSTRING
+SCENE 4-127 — 유진도 선을 긋는다,그리고 그건 저희한테 주셔야 해요.,NOT_EXACT_SUBSTRING
+SCENE 4-127 — 유진도 선을 긋는다,왜요.,NOT_EXACT_SUBSTRING
+SCENE 4-127 — 유진도 선을 긋는다,병실에서 가져오신 거잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-127 — 유진도 선을 긋는다,제 동생이랑 관련 있을 수도 있습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-127 — 유진도 선을 긋는다,"그래도 병원 물건일 수 있고, 다른 환자 개인정보가 들어 있을 수도 있어요.",NOT_EXACT_SUBSTRING
+SCENE 4-128 — 병원 내부에서는 다른 일이 진행된다,…302호…,NOT_EXACT_SUBSTRING
+SCENE 4-128 — 병원 내부에서는 다른 일이 진행된다,…상식적으로는 불가능합니다.,NOT_EXACT_SUBSTRING
+SCENE 4-129 — 더 이상 같은 편처럼 보이지 않는다,나도 헷갈려.,EXACT_SUBSTRING
+SCENE 4-129 — 더 이상 같은 편처럼 보이지 않는다,나도 내가 기억하는 게 다 맞는 줄 알았어.,EXACT_SUBSTRING
+SCENE 4-129 — 더 이상 같은 편처럼 보이지 않는다,서윤이가 알려준 곳을 찾아간다.,NOT_EXACT_SUBSTRING
+SCENE 4-129 — 더 이상 같은 편처럼 보이지 않는다,서윤이가 없어도 내가 찾아낸다.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,서윤이랑 연락이 끊겼습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,갑자기요?,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,통화하다가 끊겼어요. 그 뒤로 전화도 안 되고요.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,뭐라고 하던가요?,EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,별말 없었습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,302호 다시 확인하고 있는 거 맞죠?,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,네.,EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,언제까지 기다려야 합니까?,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,지금 확인 중이에요.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,아까부터 계속 확인 중이잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-130 — 기다릴 수가 없다,그래도 보호자분이 직접 병실을 돌아다니실 수는 없어요.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,영상 자체에는 이상한 점이 없었습니까?,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,잠깐 끊긴 부분이 있긴 합니다.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,그때 서윤이가 나간 건 아닙니까?,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,그건 아직 확인이 안 됐고요.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,다른 카메라는요?,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,계속 확인하고 있습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,그리고 한 가지 말씀드릴 게 있는데요.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,네.,EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,아까처럼 출입 제한 구역에 또 들어가시면 안 됩니다.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,한 번 더 그러시면 저도 그냥 넘어가기 어려워요.,NOT_EXACT_SUBSTRING
+SCENE 4-131 — 한 번 더 경고받는다,동생분 찾으시는 건 이해합니다. 그래도 다른 환자분들도 계시잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,저기요.,EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,아까 그 보호자분 맞으시죠?,NOT_EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,네.,EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,지금 여기 계시면 안 되는데요.,NOT_EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,병동 안에는 안 들어갔습니다.,EXACT_SUBSTRING
+SCENE 4-137 — 현재 구조와 맞지 않는다,그래도 아까 내려가시라고 말씀드린 걸로 알고 있는데요.,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,이거 하나만 물어봐도 됩니까?,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,302호 뒤에 있는 건 뭡니까?,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,어디요?,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,글쎄요.,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,직원 통로 같은 겁니까?,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,저쪽으로 통로 없는데요.,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,없다고요?,NOT_EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,네.,EXACT_SUBSTRING
+SCENE 4-138 — 질문 하나,이거 오래된 건가…,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,그럼 예전에는 있었던 겁니까?,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,저도 모르죠.,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,저 여기 근무한 지 오래 안 됐어요.,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,그리고 이제 내려가셔야 해요.,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,302호만 잠깐—,NOT_EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,안 됩니다.,EXACT_SUBSTRING
+SCENE 4-139 — 오래된 안내도,병동 안에는 못 들어가세요.,NOT_EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,제가 아까 뭐라고 말씀드렸죠?,EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,병동 안에는 안 들어갔습니다.,EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,그게 문제가 아니잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,계속 이러시면 병원 밖으로 모셔야 합니다.,NOT_EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,알겠습니다.,EXACT_SUBSTRING
+SCENE 4-140 — 태준에게 걸리다,대신 이것만 한번 봐주세요.,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,302호 뒤에 이 공간이 있습니다.,EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,간호사분은 지금 저런 통로가 없다고 하셨고요.,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,서윤이는 302호로 들어갔는데 나오는 모습은 없었다면서요.,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,혹시 저쪽으로 나간 건 아닙니까?,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,이거 언제 찍으신 거예요?,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,방금요. 여기 벽에 붙어 있습니다.,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,뭡니까?,NOT_EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,확인해 볼게요.,EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,또 그 말이네요.,EXACT_SUBSTRING
+SCENE 4-141 — 태준도 처음 보는 것,제가 지금 여기서 뭐라고 말씀드릴 수가 없잖아요.,NOT_EXACT_SUBSTRING
+SCENE 4-142 — 서로 갈 길,일단 내려가세요.,EXACT_SUBSTRING
+SCENE 4-142 — 서로 갈 길,태준 씨는요?,NOT_EXACT_SUBSTRING
+SCENE 4-142 — 서로 갈 길,저는 확인할 게 있습니다.,EXACT_SUBSTRING
+SCENE 4-142 — 서로 갈 길,저 통로요?,NOT_EXACT_SUBSTRING
+SCENE 4-142 — 서로 갈 길,내려가시죠.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,뭐가 그럴 리가 없다는 건데.,NOT_EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,오빠.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,응.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,정전 됐었지?,NOT_EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,응.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,다시 불 들어왔고?,NOT_EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,응.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,왜.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,…너무 오래됐어.,NOT_EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,뭐가.,NOT_EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,서윤아.,EXACT_SUBSTRING
+SCENE 4-149 — 서윤이가 처음으로 겁먹는다,오빠가 아직 거기 있는 게.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,무슨 말이야.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,내가 기억하는 거랑 또 달라.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,뭐가 다른데.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,원래는…,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,원래는 뭐.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,아니야.,EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,아니긴 뭐가 아니야.,NOT_EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,너도 지금 모르는 거잖아.,EXACT_SUBSTRING
+SCENE 4-150 — 이번에는 서윤이도 모른다,…응.,NOT_EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,오빠.,EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,응.,EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,내가 아는 것도 이제 다 믿지 마.,EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,그럼 뭘 믿으라는 건데.,EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,오빠가 직접 본 거.,EXACT_SUBSTRING
+SCENE 4-151 — 새로운 관계,그리고 여러 번 확인한 거.,EXACT_SUBSTRING
+SCENE 4-152 — 처음 생기는 원칙,"302호에서 처음 가져오셨다는 손목밴드, 아직 가지고 계십니까?",NOT_EXACT_SUBSTRING

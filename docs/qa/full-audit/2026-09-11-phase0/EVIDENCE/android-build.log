@@ -1,0 +1,19 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Settings file 'C:\Dev\zero-hour-game\android\settings.gradle' line: 21
+
+* What went wrong:
+Error resolving plugin [id: 'com.facebook.react.settings']
+> 25.0.3
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4s
+EXIT_CODE=1

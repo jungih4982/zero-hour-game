@@ -1,0 +1,6 @@
+Stopped audit Metro PID 22884 after verifying expo localhost port 8081 command line.
+adb -s emulator-5580 emu kill returned OK.
+Audit captures and isolated save export preserved; no existing save reset.
+Devices after cleanup:
+List of devices attached
+

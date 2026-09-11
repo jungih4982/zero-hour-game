@@ -1,0 +1,13 @@
+{
+  "timestamp_local": "2026-09-11T22:35:14.435510+09:00",
+  "root": "C:\\Dev\\zero-hour-game",
+  "head": "2f6e21a8eac8829bf216fdc177abb5b8b512304d",
+  "branch": "master",
+  "initial_tracked_files_hashed": 228,
+  "changed_original_tracked_files": [],
+  "staged_diff_files": [],
+  "unstaged_diff_files": [],
+  "new_untracked_outside_audit": [],
+  "pass": true,
+  "scope": "Tracked source/content/assets/config/dependencies only; ignored runtime build/cache artifacts are separate."
+}

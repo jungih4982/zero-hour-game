@@ -1,0 +1,981 @@
+{
+  "method": "Pure state simulation; normal conditions, available hotspots and deductions; NOT GUI play.",
+  "log": [
+    {
+      "scene": "SCENE_ACT0_DRIVE",
+      "loop": 1,
+      "time": "21:23",
+      "offset": 0,
+      "items": [],
+      "flags": {},
+      "choice": "KEEP_SEOYUN_TALKING",
+      "nextTime": 4
+    },
+    {
+      "scene": "SCENE_ACT0_WATCH_CALL",
+      "loop": 1,
+      "time": "21:27",
+      "offset": 4,
+      "items": [],
+      "flags": {},
+      "choice": "ASK_ABOUT_OTHER_CALLS",
+      "nextTime": 9
+    },
+    {
+      "scene": "SCENE_ACT0_MESSAGES",
+      "loop": 1,
+      "time": "21:32",
+      "offset": 9,
+      "items": [],
+      "flags": {},
+      "choice": "PRESERVE_MESSAGE_SEQUENCE",
+      "nextTime": 17
+    },
+    {
+      "scene": "SCENE_ACT0_LAST_CALL",
+      "loop": 1,
+      "time": "21:40",
+      "offset": 17,
+      "items": [],
+      "flags": {},
+      "choice": "ENTER_HOSPITAL_GROUNDS",
+      "nextTime": 25
+    },
+    {
+      "scene": "SCENE_ACT0_ARRIVAL",
+      "loop": 1,
+      "time": "21:48",
+      "offset": 25,
+      "items": [],
+      "flags": {},
+      "choice": "APPROACH_RECEPTION",
+      "nextTime": 28
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_FIRST",
+      "loop": 1,
+      "time": "21:51",
+      "offset": 28,
+      "items": [],
+      "flags": {},
+      "choice": "WAIT_FOR_SEARCH_RESULT",
+      "nextTime": 32
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_SEARCH",
+      "loop": 1,
+      "time": "21:55",
+      "offset": 32,
+      "items": [],
+      "flags": {},
+      "choice": "QUESTION_THE_DENIAL",
+      "nextTime": 36
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_DENIAL",
+      "loop": 1,
+      "time": "21:59",
+      "offset": 36,
+      "items": [],
+      "flags": {},
+      "choice": "READ_SEOYUN_WARNING",
+      "nextTime": 39
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_WARNING",
+      "loop": 1,
+      "time": "22:02",
+      "offset": 39,
+      "items": [],
+      "flags": {},
+      "choice": "GO_TO_THIRD_FLOOR",
+      "nextTime": 45
+    },
+    {
+      "scene": "SCENE_ACT2_THIRD_FLOOR",
+      "loop": 1,
+      "time": "22:08",
+      "offset": 45,
+      "items": [],
+      "flags": {},
+      "choice": "ASK_NURSE_ABOUT_302",
+      "nextTime": 49
+    },
+    {
+      "scene": "SCENE_ACT2_NURSE_AT_302",
+      "loop": 1,
+      "time": "22:12",
+      "offset": 49,
+      "items": [],
+      "flags": {},
+      "choice": "ENTER_ROOM_302_LOOP1",
+      "nextTime": 54
+    },
+    {
+      "scene": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "loop": 1,
+      "time": "22:17",
+      "offset": 54,
+      "items": [],
+      "flags": {},
+      "choice": "CHECK_WRISTBAND",
+      "nextTime": 63
+    },
+    {
+      "scene": "SCENE_ACT2_WRISTBAND",
+      "loop": 1,
+      "time": "22:26",
+      "offset": 63,
+      "items": [],
+      "flags": {
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+        "ROOM_302_WRISTBAND_FOUND": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+      },
+      "choice": "LEAVE_WRISTBAND_AND_REPLY",
+      "nextTime": 67
+    },
+    {
+      "scene": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "loop": 1,
+      "time": "22:30",
+      "offset": 67,
+      "items": [],
+      "flags": {
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+        "ROOM_302_WRISTBAND_FOUND": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+      },
+      "choice": "LOOK_FOR_EMPLOYEE_DOOR",
+      "nextTime": 75
+    },
+    {
+      "scene": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "loop": 1,
+      "time": "22:38",
+      "offset": 75,
+      "items": [],
+      "flags": {
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+        "ROOM_302_WRISTBAND_FOUND": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+      },
+      "choice": "STAY_UNTIL_BLACKOUT",
+      "nextTime": 84
+    },
+    {
+      "scene": "SCENE_ACT3_BLACKOUT",
+      "loop": 1,
+      "time": "22:47",
+      "offset": 84,
+      "items": [],
+      "flags": {
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+        "ROOM_302_WRISTBAND_FOUND": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+      },
+      "choice": "MOVE_TOWARD_UNLOCKED_DOOR",
+      "nextTime": 84
+    },
+    {
+      "scene": "SCENE_FIRST_DEATH",
+      "loop": 1,
+      "time": "22:47",
+      "offset": 84,
+      "items": [],
+      "flags": {
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+        "ROOM_302_WRISTBAND_FOUND": true,
+        "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+      }
+    },
+    {
+      "scene": "SCENE_LOOP2_RESET_AWAKENING",
+      "loop": 2,
+      "time": "21:23",
+      "offset": 0,
+      "items": [],
+      "flags": {},
+      "choice": "RECOGNIZE_RESET",
+      "nextTime": 1
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_TITLE",
+      "loop": 2,
+      "time": "21:24",
+      "offset": 1,
+      "items": [],
+      "flags": {},
+      "choice": "CONTINUE_AFTER_TITLE",
+      "nextTime": 2
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "loop": 2,
+      "time": "21:25",
+      "offset": 2,
+      "items": [],
+      "flags": {},
+      "choice": "DO_NOT_EXPLAIN_LOOP_YET",
+      "nextTime": 10
+    },
+    {
+      "scene": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "loop": 2,
+      "time": "21:33",
+      "offset": 10,
+      "items": [],
+      "flags": {},
+      "choice": "TAKE_FIRST_PHONE",
+      "nextTime": 14
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_PHONE",
+      "loop": 2,
+      "time": "21:37",
+      "offset": 14,
+      "items": [],
+      "flags": {},
+      "choice": "ANSWER_ON_OWN_PHONE",
+      "nextTime": 18
+    },
+    {
+      "scene": "SCENE_LOOP2_PHONE_PARADOX",
+      "loop": 2,
+      "time": "21:41",
+      "offset": 18,
+      "items": [],
+      "flags": {},
+      "choice": "TELL_YUJIN_ONLY_PHONE_FACT",
+      "nextTime": 22
+    },
+    {
+      "scene": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "loop": 2,
+      "time": "21:45",
+      "offset": 22,
+      "items": [],
+      "flags": {},
+      "choice": "GO_TO_STAFF_DOOR_QUIETLY",
+      "nextTime": 30
+    },
+    {
+      "scene": "SCENE_LOOP2_STAFF_DOOR",
+      "loop": 2,
+      "time": "21:53",
+      "offset": 30,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {},
+      "choice": "WAIT_FOR_KNOWN_BLACKOUT",
+      "nextTime": 35
+    },
+    {
+      "scene": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "loop": 2,
+      "time": "21:58",
+      "offset": 35,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {},
+      "choice": "ENTER_B1",
+      "nextTime": 37
+    },
+    {
+      "scene": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "loop": 2,
+      "time": "22:00",
+      "offset": 37,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true
+      },
+      "choice": "ASK_SEA_ABOUT_SEOYUN",
+      "nextTime": 45
+    },
+    {
+      "scene": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "loop": 2,
+      "time": "22:08",
+      "offset": 45,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "FACE_TAEJUN_IN_B1",
+      "nextTime": 48
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "loop": 2,
+      "time": "22:11",
+      "offset": 48,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "RETURN_UPSTAIRS_WITH_TAEJUN",
+      "nextTime": 53
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "loop": 2,
+      "time": "22:16",
+      "offset": 53,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "RETURN_TO_302_FOR_SECOND_PHONE",
+      "nextTime": 59
+    },
+    {
+      "scene": "SCENE_LOOP2_RETURN_302",
+      "loop": 2,
+      "time": "22:22",
+      "offset": 59,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "CALL_BOTH_SEOYUN_PHONES",
+      "nextTime": 63
+    },
+    {
+      "scene": "SCENE_LOOP2_SECOND_PHONE",
+      "loop": 2,
+      "time": "22:26",
+      "offset": 63,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "KEEP_SECOND_PHONE",
+      "nextTime": 65
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_END",
+      "loop": 2,
+      "time": "22:28",
+      "offset": 65,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "ASK_TAEJUN_ABOUT_CCTV",
+      "nextTime": 68
+    },
+    {
+      "scene": "SCENE_LOOP2_CCTV_GAP",
+      "loop": 2,
+      "time": "22:31",
+      "offset": 68,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true
+      },
+      "choice": "SHOW_SECOND_PHONE_TO_TAEJUN",
+      "nextTime": 70
+    },
+    {
+      "scene": "SCENE_LOOP2_06_CARD",
+      "loop": 2,
+      "time": "22:33",
+      "offset": 70,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true
+      },
+      "choice": "COMPARE_06_WITH_WRISTBAND",
+      "nextTime": 72
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "loop": 2,
+      "time": "22:35",
+      "offset": 72,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true
+      },
+      "choice": "KEEP_MINSEO_WARNING_PRIVATE",
+      "nextTime": 75
+    },
+    {
+      "scene": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "loop": 2,
+      "time": "22:38",
+      "offset": 75,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true
+      },
+      "choice": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+      "nextTime": 81
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_MAP",
+      "loop": 2,
+      "time": "22:44",
+      "offset": 81,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true
+      },
+      "choice": "SEND_OLD_MAP_TO_SEOYUN",
+      "nextTime": 83
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "loop": 2,
+      "time": "22:46",
+      "offset": 83,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true
+      },
+      "choice": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+      "nextTime": 84
+    },
+    {
+      "scene": "SCENE_CHAPTER02_END",
+      "loop": 2,
+      "time": "22:47",
+      "offset": 84,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true
+      },
+      "choice": "BEGIN_CHAPTER_3",
+      "nextTime": 184
+    },
+    {
+      "scene": "SCENE_CH3_BAND_REQUEST",
+      "loop": 2,
+      "time": "00:27",
+      "offset": 184,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true
+      },
+      "choice": "CH3_BAND_SHOW_TAEJUN",
+      "nextTime": 187
+    },
+    {
+      "scene": "SCENE_CH3_BAND_TAEJUN",
+      "loop": 2,
+      "time": "00:30",
+      "offset": 187,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true
+      },
+      "choice": "CH3_ASK_SAME_QUESTION_T",
+      "nextTime": 187
+    },
+    {
+      "scene": "SCENE_CH3_THREE_TESTIMONIES",
+      "loop": 2,
+      "time": "00:30",
+      "offset": 187,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true
+      },
+      "choice": "CH3_USE_SPACE_DEDUCTION",
+      "nextTime": 188
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_QUESTION",
+      "loop": 2,
+      "time": "00:31",
+      "offset": 188,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true
+      },
+      "choice": "CH3_SHOW_WATCH_ONLY",
+      "nextTime": 191
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_WATCH",
+      "loop": 2,
+      "time": "00:34",
+      "offset": 191,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true
+      },
+      "choice": "CH3_FIND_MISSING_CARD_W",
+      "nextTime": 193
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_CARD",
+      "loop": 2,
+      "time": "00:36",
+      "offset": 193,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true
+      },
+      "choice": "CH3_CALL_MISSING_WORKER",
+      "nextTime": 196
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_WORKER",
+      "loop": 2,
+      "time": "00:39",
+      "offset": 196,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true
+      },
+      "choice": "CH3_ENTER_B1_WITH_TAEJUN",
+      "nextTime": 206
+    },
+    {
+      "scene": "SCENE_CH3_APPROACH_TAEJUN",
+      "loop": 2,
+      "time": "00:49",
+      "offset": 206,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true,
+        "CH3_COMPANION": "taejun"
+      },
+      "choice": "CH3_OPEN_TRANSFER_T",
+      "nextTime": 206
+    },
+    {
+      "scene": "SCENE_CH3_TRANSFER_TAEJUN",
+      "loop": 2,
+      "time": "00:49",
+      "offset": 206,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true,
+        "CH3_COMPANION": "taejun"
+      },
+      "choice": "CH3_READ_LEDGER_T",
+      "nextTime": 223
+    },
+    {
+      "scene": "SCENE_CH3_0106_TAEJUN",
+      "loop": 2,
+      "time": "01:06",
+      "offset": 223,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true,
+        "CH3_COMPANION": "taejun",
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:card-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:shelf-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:transfer-ledger": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:sealed-vent": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:opposite-wall": true
+      },
+      "choice": "CH3_LAST_CHECK_CARD_T",
+      "nextTime": 223
+    },
+    {
+      "scene": "SCENE_CH3_LAST_CARD",
+      "loop": 2,
+      "time": "01:06",
+      "offset": 223,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true,
+        "CH3_COMPANION": "taejun",
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:card-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:shelf-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:transfer-ledger": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:sealed-vent": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:opposite-wall": true
+      },
+      "choice": "CH3_DIE_AFTER_CARD_T",
+      "nextTime": 223
+    },
+    {
+      "scene": "SCENE_CH3_DEATH_TAEJUN",
+      "loop": 2,
+      "time": "01:06",
+      "offset": 223,
+      "items": [
+        "ITEM_FIRST_PHONE_PHOTO",
+        "ITEM_SECOND_PHONE",
+        "ITEM_OLD_MAP_PHOTO",
+        "ITEM_WRISTBAND_ORIGINAL",
+        "ITEM_WRISTBAND_PHOTO"
+      ],
+      "flags": {
+        "FLAG_FIRST_DEATH_AVOIDED": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+        "B1_LINEN_ROOM_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+        "FLAG_TAEJUN_SAW_PHONE": true,
+        "FLAG_MINSEO_MEMORY_WARNING_KEPT": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:map-date": true,
+        "OLD_MAP_PASSAGE_FOUND": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:room-302-outline": true,
+        "INVESTIGATED:SCENE_LOOP2_OLD_MAP_SEARCH:current-wall": true,
+        "CH3_BAND_OWNER": "player",
+        "CH3_TAEJUN_COOPERATING": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:yujin-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:taejun-testimony": true,
+        "INVESTIGATED:SCENE_CH3_THREE_TESTIMONIES:minseo-testimony": true,
+        "CH3_COMPANION": "taejun",
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:card-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:shelf-06": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:transfer-ledger": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:sealed-vent": true,
+        "INVESTIGATED:SCENE_CH3_TRANSFER_TAEJUN:opposite-wall": true
+      }
+    },
+    {
+      "scene": "SCENE_CH3_RESET_2123",
+      "loop": 3,
+      "time": "21:23",
+      "offset": 0,
+      "items": [],
+      "flags": {},
+      "choice": "USE_MEMORY_0106_SEAL",
+      "nextTime": 0
+    },
+    {
+      "scene": "SCENE_CH4_OPENING",
+      "loop": 3,
+      "time": "21:23",
+      "offset": 0,
+      "items": [],
+      "flags": {
+        "FLAG_0106_AVOIDANCE_PLANNED": true
+      },
+      "choice": "CH4_SET_LOOP_GOAL",
+      "nextTime": 0
+    },
+    {
+      "scene": "SCENE_CH4_MILESTONE_A_END",
+      "loop": 3,
+      "time": "21:23",
+      "offset": 0,
+      "items": [],
+      "flags": {
+        "FLAG_0106_AVOIDANCE_PLANNED": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+INFO         | Android emulator version 37.1.11.0 (build_id 15917651) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath C:\Users\hjg\AppData\Local\Android\Sdk\system-images\android-35\google_apis_playstore_ps16k\x86_64\
+ERROR        | Invalid initial data image path: C:\Users\hjg\AppData\Local\Android\Sdk\system-images\android-35\google_apis_playstore_ps16k\x86_64\userdata.img
