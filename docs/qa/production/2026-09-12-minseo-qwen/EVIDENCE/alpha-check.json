@@ -1,0 +1,15 @@
+{
+  "size": [
+    896,
+    1344
+  ],
+  "mode": "RGBA",
+  "alphaMin": 0,
+  "alphaMax": 255,
+  "fullyTransparentPixels": 645938,
+  "opaqueOrNearOpaquePixels": 546423,
+  "rgbMaxDifferenceFromApprovedA": 0,
+  "faceAlphaMin": 254,
+  "lowerCoatAlphaMin": 254,
+  "backgroundCornerAlpha": 0
+}

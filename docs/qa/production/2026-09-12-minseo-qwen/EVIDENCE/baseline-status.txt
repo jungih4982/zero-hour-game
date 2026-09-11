@@ -1,0 +1,5 @@
+ M scripts/test-choice-presentation.ts
+ M src/gameplay/choicePresentation.ts
+ M src/ui/NarrativePlayer.tsx
+?? docs/qa/
+?? scripts/test-foreknowledge-history.ts

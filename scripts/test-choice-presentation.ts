@@ -1,4 +1,5 @@
 import { prologueScenes } from '../src/content/prologue';
+import './test-foreknowledge-history';
 import {
   getChoiceGroupPresentation,
   getChoicePresentation,

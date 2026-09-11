@@ -1,0 +1,8 @@
+2026-09-11T23:35:34.7474103+09:00
+"C:\Users\hjg\AppData\Local\fnm_multishells\2868_1789124398819\node.exe" node_modules/expo/bin/cli start --localhost --port 8081
+OK: killing emulator, bye bye
+
+OK
+
+
+Stopped only the verified batch Metro PID 33104 and isolated emulator-5580 after checkpoint export. Chrome review tabs remain open.

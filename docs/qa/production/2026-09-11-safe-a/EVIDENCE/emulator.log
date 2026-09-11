@@ -1,0 +1,3542 @@
+INFO         | Android emulator version 37.1.11.0 (build_id 15917651) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath C:\Users\hjg\AppData\Local\Android\Sdk\system-images\android-35\google_apis_playstore_ps16k\x86_64\
+INFO         | Increasing RAM size to 2560MB
+INFO         | IPv4 server found: 192.168.0.1
+INFO         | Ignore IPv6 address: f03b:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: f03b:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: f03b:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: e841:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: e841:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: e841:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: 684f:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: 684f:376f:b301:0:9036:376f:b301:0
+INFO         | Ignore IPv6 address: 684f:376f:b301:0:9036:376f:b301:0
+INFO         | Guest GLES Driver: Auto (ext controls)
+INFO         | emuglConfig_get_vulkan_hardware_gpu_support_info: Found physical GPU 'NVIDIA GeForce RTX 5080', type: VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU, apiVersion: 1.4.351, driverVersion: 616.64
+
+INFO         | emuglConfig_get_vulkan_hardware_gpu_support_info: Found physical GPU 'AMD Radeon(TM) Graphics', type: VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU, apiVersion: 1.4.315, driverVersion: 2.0.353
+
+INFO         | emuglConfig_init: vulkan_mode_selected:host gles_mode_selected:host
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasCompatibleHypervisor
+INFO         |      Ok: Hypervisor compatibility to run avd: `MAIN_ANDROID_API35` are met
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `MAIN_ANDROID_API35` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU requirements to run avd: `MAIN_ANDROID_API35` are passed
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `MAIN_ANDROID_API35` are met
+INFO         | Critical: Failed to load opengl32sw (지정된 모듈을 찾을 수 없습니다.) (:0, )
+INFO         | Warning: Software OpenGL failed. Falling back to system OpenGL. (:0, )
+INFO         | Storing crashdata in: C:\Users\hjg\AppData\Local\Temp\\AndroidEmulator\emu-crash-37.1.11.db, detection is enabled for process: 10888
+INFO         | Initializing gfxstream backend
+INFO         | startOpenglesRendererImpl: gpu info
+INFO         | GPU #1
+  Make: 10de
+  Model: NVIDIA GeForce RTX 5080
+  Device ID: 2c02
+
+INFO         | Disabling implicit Vulkan layers to avoid compatibility issues. Set VK_LOADER_LAYERS_DISABLE manually to disable this behavior.
+INFO         | SharedLibrary::open for [C:\Users\hjg\AppData\Local\Android\Sdk\emulator\qemu\windows-x86_64\lib64\vulkan\vulkan-1.dll]
+INFO         | SharedLibrary::open for [C:\Users\hjg\AppData\Local\Android\Sdk\emulator\lib64\vulkan\vulkan-1.dll]
+INFO         | Added library: C:\Users\hjg\AppData\Local\Android\Sdk\emulator\lib64\vulkan\vulkan-1.dll
+INFO         | Selecting Vulkan device: NVIDIA GeForce RTX 5080, Version: 1.4.351
+INFO         | Using Vulkan externalMemoryMode: OpaqueWin32 for VkEmulation
+INFO         | Initializing VkEmulation features:
+INFO         |     glInteropSupported: true
+INFO         |     useDeferredCommands: true
+INFO         |     createResourceWithRequirements: true
+INFO         |     useVulkanComposition: false
+INFO         |     useVulkanNativeSwapchain: false
+INFO         |     enable guestRenderDoc: false
+INFO         |     ASTC LDR emulation mode: Gpu
+INFO         |     enable ETC2 emulation: true
+INFO         |     enable Ycbcr emulation: false
+INFO         |     guestVulkanOnly: false
+INFO         |     useDedicatedAllocations: false
+INFO         |     guestVulkanMaxApiVersion: 1.3.0
+INFO         |     enableProtectedMemoryEmulation: false
+INFO         | Graphics Adapter Vendor Google (NVIDIA Corporation)
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (NVIDIA GeForce RTX 5080/PCIe/SSE2)
+INFO         | Graphics API Version OpenGL ES 3.0 (4.5.0 NVIDIA 616.64)
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_multiview_texture_multisample GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer 
+INFO         | Graphics Device Extensions N/A
+INFO         | Disabling sparse binding feature support
+INFO         | Sending adb public key [QAAAAE/ykT1RG3ye27vIbo1S34ycpE8fLFKYtVSkTV2WTc7hTuk97AuB0BPyBVEtUAZuq3Jckpz8yEAirSTiTmTzdzIr1CKIfXCTi8LGNfys+6qp4i57wBs6BByoLxmMle369ufcTCfYAEdsGV6l4AwXrCsBuAZaftCk7xBoBmoktFGTX+ZGL8Rv6H28yyUVXILMuW8O2bxWDDhiFd7ireHjnJCLi15ej3F1hsf5fawVYDzg4xtm7XjgBWQ5tmESoHfnbpZFptDqccJ/ljBe/N3TVbbONqt8PLu6MOp3AzAlt5ygvBc1ps6R3V/wo5PI+Cukrr27Q2sb4VIrXKB3z+9ZDUE8iTfF/ViM//oQTCHtHQ9ovJPs/bJ7Q60QDi/6z3wxE5QEwxhvcY/hA5bn2Y+tpgO51vF1YLOeRi6O5JktKbGKZEVPsnRderEziLr+ppuxYgYIb8iUZOccl2avmoOtLOfrow5BPq6aC3YtVPh6Wrpk+Xk0c21M6xWkVU/aJCoJj+1kjn0HEojFsPUHYyZ0FX/MsChBfSUEBgmRuLc5v0vhOBtVTnQ4wHTTbmbHscnjjX5eu3iNGCu7pqrJEwEUcaLvRfhyjywoFEU+BYTgNexIl/8bnL3HOBY0HpzyONuNSFrFe6hW+TrBoKR+fwXntzpGbiezVqkyiq1CckmxbWHQlhlOUQEAAQA= @unknown]
+INFO         | Userspace boot properties:
+INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+INFO         |   androidboot.dalvik.vm.heapsize=576m
+INFO         |   androidboot.debug.hwui.renderer=skiagl
+INFO         |   androidboot.debug.sf.nobootanimation=1
+INFO         |   androidboot.hardware=ranchu
+INFO         |   androidboot.hardware.gltransport=pipe
+INFO         |   androidboot.hardware.vulkan=ranchu
+INFO         |   androidboot.logcat=*:V
+INFO         |   androidboot.opengles.version=196609
+INFO         |   androidboot.qemu=1
+INFO         |   androidboot.qemu.adb.pubkey=QAAAAE/ykT1RG3ye27vIbo1S34ycpE8fLFKYtVSkTV2WTc7hTuk97AuB0BPyBVEtUAZuq3Jckpz8yEAirSTiTmTzdzIr1CKIfXCTi8LGNfys+6qp4i57wBs6BByoLxmMle369ufcTCfYAEdsGV6l4AwXrCsBuAZaftCk7xBoBmoktFGTX+ZGL8Rv6H28yyUVXILMuW8O2bxWDDhiFd7ireHjnJCLi15ej3F1hsf5fawVYDzg4xtm7XjgBWQ5tmESoHfnbpZFptDqccJ/ljBe/N3TVbbONqt8PLu6MOp3AzAlt5ygvBc1ps6R3V/wo5PI+Cukrr27Q2sb4VIrXKB3z+9ZDUE8iTfF/ViM//oQTCHtHQ9ovJPs/bJ7Q60QDi/6z3wxE5QEwxhvcY/hA5bn2Y+tpgO51vF1YLOeRi6O5JktKbGKZEVPsnRderEziLr+ppuxYgYIb8iUZOccl2avmoOtLOfrow5BPq6aC3YtVPh6Wrpk+Xk0c21M6xWkVU/aJCoJj+1kjn0HEojFsPUHYyZ0FX/MsChBfSUEBgmRuLc5v0vhOBtVTnQ4wHTTbmbHscnjjX5eu3iNGCu7pqrJEwEUcaLvRfhyjywoFEU+BYTgNexIl/8bnL3HOBY0HpzyONuNSFrFe6hW+TrBoKR+fwXntzpGbiezVqkyiq1CckmxbWHQlhlOUQEAAQA= @unknown
+INFO         |   androidboot.qemu.avd_name=MAIN_ANDROID_API35
+INFO         |   androidboot.qemu.camera_hq_edge_processing=0
+INFO         |   androidboot.qemu.camera_protocol_ver=1
+INFO         |   androidboot.qemu.cpuvulkan.version=4206592
+INFO         |   androidboot.qemu.gltransport.drawFlushInterval=800
+INFO         |   androidboot.qemu.gltransport.name=pipe
+INFO         |   androidboot.qemu.hwcodec.avcdec=2
+INFO         |   androidboot.qemu.hwcodec.hevcdec=2
+INFO         |   androidboot.qemu.hwcodec.vpxdec=2
+INFO         |   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+INFO         |   androidboot.qemu.skin=pixel_8
+INFO         |   androidboot.qemu.virtiowifi=1
+INFO         |   androidboot.qemu.vsync=60
+INFO         |   androidboot.serialno=EMULATOR37X1X11X0
+INFO         |   androidboot.vbmeta.digest=01174c0bd4911418dc616f6039ae13c795296b6818050fb2795794f11edfff69
+INFO         |   androidboot.vbmeta.hash_alg=sha256
+INFO         |   androidboot.vbmeta.size=6720
+INFO         |   androidboot.veritymode=enforcing
+WHPX on Windows 10.0.26200 detected.
+Windows Hypervisor Platform accelerator is operational
+INFO         | Monitoring duration of emulator setup.
+INFO         | Successfully initialized netsim WiFi
+INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
+INFO         | setDisplayActiveConfig: id:0, 1080x2400
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasCompatibleHypervisor
+INFO         |      Ok: Hypervisor compatibility to run avd: `MAIN_ANDROID_API35` are met
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `MAIN_ANDROID_API35` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU requirements to run avd: `MAIN_ANDROID_API35` are passed
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `MAIN_ANDROID_API35` are met
+WARNING      | getEnvironmentConfig: No environment config is provided
+INFO         | getEnvironmentConfig: Using default virtual scene mode for the environment.
+INFO         | getEnvironmentConfig: Using default configuration for mode mesh3d for the environment.
+INFO         | Initializing a scene with mode: mesh3d, argument: Toren1BD.obj
+USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_rgbcSensorValueWidget_valueChanged() (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_posture_valueChanged(int) (:0, )
+INFO         | TouchpadHolder: registering via hw_xr_led agent for instance=000001B428C02240
+INFO         | AVD supportsNativeGLES=1, supportsGuestAngle=1
+INFO         | Created extended window in 391.656ms
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell getprop sys.boot_completed ' failed: 'adb.exe: device offline'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell getprop sys.boot_completed ' failed: 'adb.exe: device offline'
+INFO         | Critical: UpdateLayeredWindowIndirect failed for ptDst=(220, 125), size=(375x26), dirty=(375x26 0, 0) (시스템에 부착된 장치가 작동하지 않습니다.) (:0, )
+INFO         | Boot completed in 39256 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb.exe: device 'emulator-5580' not found'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb.exe: device 'emulator-5580' not found'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb.exe: device offline'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell getprop sys.boot_completed ' failed: 'adb.exe: device offline'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb.exe: device offline'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb.exe: device 'emulator-5580' not found'
+INFO         | IPv4 server found: 192.168.0.1
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | IPv4 server found: 192.168.0.1
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | IPv4 server found: 192.168.0.1
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: f0c2:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: e8c8:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+INFO         | Ignore IPv6 address: 68d6:7a28:b401:0:90bd:7a28:b401:0
+ERROR        | Failed to find ColorBuffer: 280
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+      application/vnd.apple.pkpasses:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource:
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+      */*:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1 com.google.android.gms/.nearby.sharing.send.SendActivity filter c45d2c6
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        471168b com.google.android.gms/.nearby.sharing.ReceiveSurfaceActivity filter 3872368
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        d589067 com.google.android.gms/.nearby.sharing.receive.ReceiveActivity filter 15f0e14
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      text/plain:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application/octet-stream:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio:
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      application/vnd.apple.pkpass:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      vnd.android.cursor.item:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      text:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+
+  Wild MIME Types:
+      *:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1 com.google.android.gms/.nearby.sharing.send.SendActivity filter c45d2c6
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        471168b com.google.android.gms/.nearby.sharing.ReceiveSurfaceActivity filter 3872368
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        d589067 com.google.android.gms/.nearby.sharing.receive.ReceiveActivity filter 15f0e14
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Schemes:
+      walletable-resource:
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+      mobiledataplan:
+        5997324 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanSettingsActivity filter d754eaf
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{LITERAL: /startui}"
+        5997324 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanSettingsActivity filter 34602bc
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{PREFIX: /esim/}"
+        30ca245 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanDetailActivity filter 75226cb
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{LITERAL: /esimcarrieraccount}"
+      google-orchestration-gcore:
+        49bb0c2 com.google.android.gms/.wallet.redirect.FinishAndroidAppRedirectProxyActivity filter e318ed3
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "google-orchestration-gcore"
+          Authority: "return": -1
+      google.authzen:
+        cfa55b3 com.google.android.gms/.auth.authzen.AuthzenDeeplinkHandlerActivity filter 8253770
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "google.authzen"
+      growth:
+        9c0303f com.google.android.gms/.growth.featuredrops.activity.FeatureDropsActivity filter 693c655
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "growth"
+          Authority: "featuredrops": -1
+          AutoVerify=true
+      intent:
+        5289861 com.google.android.gms/.auth.uiflows.common.UnpackingRedirectActivity filter c8ef047
+          Action: "com.google.android.gms.ui.UNPACKING_REDIRECT"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "intent"
+          Authority: "com.google.android.gms.auth.uiflows.common": -1
+      policy:
+        de373ed com.google.android.gms/.kids.SettingsActivity filter cb02a70
+          Action: "android.settings.MANAGE_SUPERVISOR_RESTRICTED_SETTING"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "policy"
+          Path: "PatternMatcher{LITERAL: biometric}"
+      promote_smartlock_scheme:
+        137e9d9 com.google.android.gms/.trustlet.onbody.discovery.WebpageOnbodyPromotionActivity filter 4e4df9e
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "promote_smartlock_scheme"
+      comgoogleandroidgms:
+        e07bba8 com.google.android.gms/.dck.main.DckActivity filter 6846c1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "comgoogleandroidgms"
+          Authority: "dck": -1
+          Path: "PatternMatcher{GLOB: /home}"
+        c665b29 com.google.android.gms/.pay.main.PayImplicitIntentActivity filter 2117eae
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "comgoogleandroidgms"
+          Authority: "pay": -1
+          Path: "PatternMatcher{GLOB: /home}"
+        53c3466 com.google.android.gms/.tapandpay.settings.TapAndPaySettingsActivity filter 59ef054
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "comgoogleandroidgms"
+          Authority: "tapandpay": -1
+          Path: "PatternMatcher{GLOB: /settings}"
+      android.resource:
+        390c3fe com.google.android.gms/.appinvite.AppInviteActivity filter 2df45ac
+          Action: "com.google.android.gms.appinvite.ACTION_APP_INVITE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Scheme: "android.resource"
+          Scheme: "content"
+          Scheme: "file"
+      comgooglewallet:
+        ebf329f com.google.android.gms/.dck.entrypoint.EntryPointDckActivity filter 502b64a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.categ
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+      application/vnd.apple.pkpasses:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource:
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+      */*:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1 com.google.android.gms/.nearby.sharing.send.SendActivity filter c45d2c6
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        471168b com.google.android.gms/.nearby.sharing.ReceiveSurfaceActivity filter 3872368
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        d589067 com.google.android.gms/.nearby.sharing.receive.ReceiveActivity filter 15f0e14
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      text/plain:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application/octet-stream:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio:
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      application/vnd.apple.pkpass:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      vnd.android.cursor.item:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      text:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+
+  Wild MIME Types:
+      *:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1 com.google.android.gms/.nearby.sharing.send.SendActivity filter c45d2c6
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        471168b com.google.android.gms/.nearby.sharing.ReceiveSurfaceActivity filter 3872368
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        d589067 com.google.android.gms/.nearby.sharing.receive.ReceiveActivity filter 15f0e14
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Schemes:
+      walletable-resource:
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+      mobiledataplan:
+        5997324 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanSettingsActivity filter d754eaf
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{LITERAL: /startui}"
+        5997324 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanSettingsActivity filter 34602bc
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{PREFIX: /esim/}"
+        30ca245 com.google.android.gms/.mobiledataplan.ui.MobileDataPlanDetailActivity filter 75226cb
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mobiledataplan"
+          Authority: "mobiledataplan.gms.android.google.com": -1
+          Path: "PatternMatcher{LITERAL: /esimcarrieraccount}"
+      google-orchestration-gcore:
+        49bb0c2 com.google.android.gms/.wallet.redirect.FinishAndroidAppRedirectProxyActivity filter e318ed3
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "google-orchestration-gcore"
+          Authority: "return": -1
+      google.authzen:
+        cfa55b3 com.google.android.gms/.auth.authzen.AuthzenDeeplinkHandlerActivity filter 8253770
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "google.authzen"
+      growth:
+        9c0303f com.google.android.gms/.growth.featuredrops.activity.FeatureDropsActivity filter 693c655
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "growth"
+          Authority: "featuredrops": -1
+          AutoVerify=true
+      intent:
+        5289861 com.google.android.gms/.auth.uiflows.common.UnpackingRedirectActivity filter c8ef047
+          Action: "com.google.android.gms.ui.UNPACKING_REDIRECT"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "intent"
+          Authority: "com.google.android.gms.auth.uiflows.common": -1
+      policy:
+        de373ed com.google.android.gms/.kids.SettingsActivity filter cb02a70
+          Action: "android.settings.MANAGE_SUPERVISOR_RESTRICTED_SETTING"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "policy"
+          Path: "PatternMatcher{LITERAL: biometric}"
+      promote_smartlock_scheme:
+        137e9d9 com.google.android.gms/.trustlet.onbody.discovery.WebpageOnbodyPromotionActivity filter 4e4df9e
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "promote_smartlock_scheme"
+      comgoogleandroidgms:
+        e07bba8 com.google.android.gms/.dck.main.DckActivity filter 6846c1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "comgoogleandroidgms"
+          Authority: "dck": -1
+          Path: "PatternMatcher{GLOB: /home}"
+        c665b29 com.google.android.gms/.pay.main.PayImplicitIntentActivity filter 2117eae
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "comgoogleandroidgms"
+          Authority: "pay": -1
+          Path: "PatternMatcher{GLOB: /home}"
+        53c3466 com.google.android.gms/.tapandpay.settings.TapAndPaySettingsActivity filter 59ef054
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "comgoogleandroidgms"
+          Authority: "tapandpay": -1
+          Path: "PatternMatcher{GLOB: /settings}"
+      android.resource:
+        390c3fe com.google.android.gms/.appinvite.AppInviteActivity filter 2df45ac
+          Action: "com.google.android.gms.appinvite.ACTION_APP_INVITE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Scheme: "android.resource"
+          Scheme: "content"
+          Scheme: "file"
+      comgooglewallet:
+        ebf329f com.google.android.gms/.dck.entrypoint.EntryPointDckActivity filter 502b64a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.categ
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+      application/vnd.apple.pkpasses:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource:
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+      */*:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1 com.google.android.gms/.nearby.sharing.send.SendActivity filter c45d2c6
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        471168b com.google.android.gms/.nearby.sharing.ReceiveSurfaceActivity filter 3872368
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        d589067 com.google.android.gms/.nearby.sharing.receive.ReceiveActivity filter 15f0e14
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      text/plain:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application/octet-stream:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio:
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      application/vnd.apple.pkpass:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      vnd.android.cursor.item:
+        1ddb006 com.google.android.gms/.matchstick.call.ContactsVideoActionActivity filter 1a9f6c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        378e4f4 com.google.android.gms/.matchstick.call.ContactsPrivilegedVideoActionActivity filter 8f4041d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone"
+        494c692 com.google.android.gms/.matchstick.call.ContactsAudioActionActivity filter ec53863
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+        b95c60 com.google.android.gms/.matchstick.call.ContactsPrivilegedAudioActionActivity filter b51c519
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "vnd.android.cursor.item/com.google.android.gms.matchstick.phone.audio"
+      text:
+        1e71a07 com.google.android.gms/.plus.sharebox.ShareBoxActivity filter 1be6734
+          Action: "com.google.android.gms.plus.action.SHARE_GOOGLE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application:
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2f8bf3f com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter 7e8d00c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+        2cc6d55 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter f18a36a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource"
+
+  Wild MIME Types:
+      *:
+        412433 com.google.android.gms/.nearby.sharing.ShareSheetActivity filter 73623f0
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        19590a1'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: ''
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"'
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: ''
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: ''
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+ERROR        | Failed to find ColorBuffer: 389
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+ERROR        | Failed to find ColorBuffer: 442
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: ''
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | adb command 'C:\Users\hjg\AppData\Local\Android\Sdk\platform-tools\adb.exe -s emulator-5580 shell dumpsys package com.google.android.gms ' failed: 'Activity Resolver Table:
+  Full MIME Types:
+      image/avif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heic:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/heif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpeg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/webp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      application/vnd.apple.pkpasses:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      image/bmp:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/gif:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      image/jpg:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/png:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+      image/raw:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      */*:
+        961aeb1 com.google.android.gms/.gestureexchange.ui.IntentFulfillmentActivity filter fb77f96
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 6d8dec1
+          Action: "android.intent.action.SEND"
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        bfbb3a8 com.google.android.gms/.nearby.sharing.main.MainActivity filter 62c6254
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter e7e28f0
+          Action: "com.google.android.gms.RECEIVE_NEARBY"
+          Action: "com.google.android.gms.nearby.QUICK_SHARE"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        835fca2 com.google.android.gms/.nearby.sharing.migration.TransparentTrampolineActivity filter 21b40ee
+          Action: "com.google.android.gms.SHARE_NEARBY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+        c2dd825 com.google.android.gms/.nearby.sharing.unified.UnifiedActivity filter 8fe7dfa
+          Action: "com.google.android.gms.nearby.sharing.UNIFIED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.google.wallet.walletable-resource+image:
+        489bff1 com.google.android.gms/.pay.deeplink.AliasProcessWalletableResourceActivity filter c8857d6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+image"
+      image/jpeg_r:
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application/octet-stream:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/octet-stream"
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+      application/vnd.google.wallet.walletable-resource+barcode:
+        654ca57 com.google.android.gms/.pay.deeplink.AliasProcessWalletableBarcodeResourceActivity filter e0ad944
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "walletable-resource"
+          StaticType: "application/vnd.google.wallet.walletable-resource+barcode"
+      android/gestureexchange:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      application/vnd.apple.pkpass:
+        758917b com.google.android.gms/.pay.deeplink.AliasSavePkPassActivity filter d2b9b98
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/vnd.apple.pkpass"
+          StaticType: "application/vnd.apple.pkpasses"
+          StaticType: "application/octet-stream"
+
+  Base MIME Types:
+      android:
+        35020ca com.google.android.gms/.gestureexchange.ui.GestureExchangeActivity filter 7470d58
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "android/gestureexchange"
+      image:
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        7696a2d com.google.android.gms/.pay.deeplink.AliasProcessImageResourceActivity filter 20a1b62
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/bmp"
+          StaticType: "image/jpeg"
+          StaticType: "image/jpg"
+          StaticType: "image/png"
+          StaticType: "image/webp"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+        271b4f3 com.google.android.gms/.pay.deeplink.AliasProcessAdditionalMimeTypesActivity filter 67e45b0
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image/avif"
+          StaticType: "image/gif"
+          StaticType: "image/heic"
+          StaticType: "image/heif"
+          StaticType: "image/jpeg_r"
+          StaticType: "image/raw"
+      application:
+        62e8a67 com.google.android.gms/.credential.manager.credentialexchange.ExportCredentialsActivity filter 2a68014
+          Action: "androidx.identitycredentials.action.IMPORT_CREDENTIALS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "content"
+          StaticType: "application/oc
+WARNING      | Not saving state: RAM not mapped as shared
+INFO         | Wait for emulator (pid 10888) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+INFO         | Saving snapshot 'default_boot' using 1 ms
+INFO         | Wait for emulator (pid 10888) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+WARNING      | Emulator client has not yet been configured.. Call configure me first!
+INFO         | removeScene: scene=0x1b37813ea40
+INFO         | removeAll
+WARNING      | Netsim Wifi dns:///localhost:50112 is gone due to Stream removed (CANCELLED)

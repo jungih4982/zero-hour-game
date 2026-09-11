@@ -1,0 +1,4 @@
+108398:    minseoClinical: require(_dependencyMap[51], "../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png")
+245731:    minseo: require(_dependencyMap[24], "../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png")
+248349:    "name": "CHAR_Minseo_Clinical_ThreeQuarter_v03",
+248353:},2653,[131],"assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png");

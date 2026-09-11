@@ -1,0 +1,588 @@
+--------- beginning of main
+09-11 15:34:59.138 16057 16057 I 82.zerohourgame: Late-enabling -Xcheck:jni
+09-11 15:34:59.160 16057 16057 I 82.zerohourgame: Using CollectorTypeCMC GC.
+09-11 15:34:59.160 16057 16057 W 82.zerohourgame: Unexpected CPU variant for x86: x86_64.
+09-11 15:34:59.160 16057 16057 W 82.zerohourgame: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 15:34:59.165 16057 16057 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 15:34:59.185 16057 16057 D nativeloader: Load libstats_jni.so using APEX ns com_android_os_statsd for caller /apex/com.android.os.statsd/javalib/framework-statsd.jar: ok
+09-11 15:34:59.197 16057 16057 W ziparchive: Unable to open '/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.dm': No such file or directory
+09-11 15:34:59.197 16057 16057 W ziparchive: Unable to open '/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.dm': No such file or directory
+09-11 15:34:59.396 16057 16057 D nativeloader: Configuring clns-7 for other apk /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/lib/x86_64:/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.jungih4982.zerohourgame
+09-11 15:34:59.405 16057 16057 V GraphicsEnvironment: Currently set values for:
+09-11 15:34:59.406 16057 16057 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 15:34:59.406 16057 16057 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 15:34:59.406 16057 16057 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 15:34:59.406 16057 16057 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 15:34:59.588 16057 16057 W SoLoader: Initializing SoLoader: 0
+09-11 15:34:59.589 16057 16057 W SoLoader: Recording new base apk path: /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk
+09-11 15:34:59.589 16057 16057 W SoLoader: Previously recorded 0 base apk paths.
+09-11 15:34:59.592 16057 16057 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+09-11 15:34:59.592 16057 16057 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+09-11 15:34:59.592 16057 16057 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64]]
+09-11 15:34:59.629 16057 16057 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/lib/x86_64 flags = 0]]
+09-11 15:34:59.629 16057 16057 I SoLoader: init finish: 4 SO sources prepared
+09-11 15:34:59.629 16057 16057 W SoLoader: SoLoader initialized: 8
+09-11 15:34:59.652 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libc++_shared.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.655 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libjsi.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.658 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libfbjni.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.665 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libreactnative.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Entering merged library JNI_OnLoad.
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x72aaa5c16550
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x72aaa5e03c30
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x72aaa5e11780
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x72aaa5e761f0
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x72aaa605e400
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x72aaa60a8cb0
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x72aaa60b8ab0
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x72aaa60fe920
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x72aaa621d6a0
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x72aaa6235920
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x72aaa62448b0
+09-11 15:34:59.665 16057 16057 D jni_lib_merge: About to register 11 actual methods.
+09-11 15:34:59.671 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libreact_codegen_rnsvg.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Entering merged library JNI_OnLoad.
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x72aaa5c16550
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x72aaa5e03c30
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x72aaa5e11780
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x72aaa5e761f0
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x72aaa605e400
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x72aaa60a8cb0
+09-11 15:34:59.671 16057 16057 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x72aaa60b8ab0
+09-11 15:34:59.672 16057 16057 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x72aaa60fe920
+09-11 15:34:59.672 16057 16057 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x72aaa621d6a0
+09-11 15:34:59.672 16057 16057 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x72aaa6235920
+09-11 15:34:59.672 16057 16057 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x72aaa62448b0
+09-11 15:34:59.672 16057 16057 D jni_lib_merge: About to register 11 actual methods.
+09-11 15:34:59.674 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.677 16057 16057 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libappmodules.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:34:59.770 16057 16057 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+09-11 15:34:59.943 16057 16057 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Schedule
+09-11 15:34:59.943 16057 16057 W unknown:BridgelessReact: ReactHost{0}.attachSurface(surfaceId = 0)
+09-11 15:34:59.945 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+09-11 15:34:59.946 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Start
+09-11 15:34:59.946 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getJSBundleLoader()
+09-11 15:34:59.946 16057 16081 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning()
+09-11 15:34:59.962 16057 16082 D TrafficStats: tagSocket(101) with statsTag=0xffffffff, statsUid=-1
+09-11 15:34:59.962 16057 16083 D TrafficStats: tagSocket(99) with statsTag=0xffffffff, statsUid=-1
+09-11 15:34:59.971 16057 16057 W 82.zerohourgame: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+09-11 15:34:59.979 16057 16057 W unknown:BridgelessReact: ReactHost{0}.onHostResume(activity)
+09-11 15:34:59.979 16057 16057 W unknown:ReactNative: Packager connection already open, nooping.
+09-11 15:34:59.985 16057 16057 W HWUI    : Unknown dataspace 0
+09-11 15:35:00.013 16057 16073 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+09-11 15:35:00.013 16057 16073 I EGL_emulation: Opening libGLESv2_emulation.so
+09-11 15:35:00.020 16057 16073 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-11 15:35:00.020 16057 16073 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-11 15:35:00.060 16057 16073 I Gralloc4: mapper 4.x is not supported
+09-11 15:35:00.119 16057 16057 W unknown:BridgelessReact: ReactHost{0}.raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: Unhandled SoftException
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.kt:787)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException$default(ReactHostImpl.kt:779)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.onWindowFocusChange(ReactHostImpl.kt:589)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.ReactDelegate.onWindowFocusChanged(ReactDelegate.kt:217)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.ReactActivityDelegate.onWindowFocusChanged(ReactActivityDelegate.java:236)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invokeSuspend(ReactActivityDelegateWrapper.kt:353)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:8)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:4)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper$launchLifecycleScopeWithLock$1.invokeSuspend(ReactActivityDelegateWrapper.kt:485)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:367)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:30)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable$default(Cancellable.kt:25)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:110)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt.launch(Unknown Source:1)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source:1)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock(ReactActivityDelegateWrapper.kt:483)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock$default(ReactActivityDelegateWrapper.kt:479)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.onWindowFocusChanged(ReactActivityDelegateWrapper.kt:351)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.facebook.react.ReactActivity.onWindowFocusChanged(ReactActivity.java:158)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.jungih4982.zerohourgame.MainActivity.onWindowFocusChanged(MainActivity.kt:26)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at androidx.appcompat.view.WindowCallbackWrapper.onWindowFocusChanged(WindowCallbackWrapper.java:124)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.android.internal.policy.DecorView.onWindowFocusChanged(DecorView.java:1772)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.View.dispatchWindowFocusChanged(View.java:16743)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewGroup.dispatchWindowFocusChanged(ViewGroup.java:1505)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewRootImpl.dispatchFocusEvent(ViewRootImpl.java:4697)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewRootImpl.handleWindowFocusChanged(ViewRootImpl.java:4601)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewRootImpl.-$$Nest$mhandleWindowFocusChanged(Unknown Source:0)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessageImpl(ViewRootImpl.java:6773)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:6683)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.os.Looper.loopOnce(Looper.java:232)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.os.Looper.loop(Looper.java:317)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at java.lang.reflect.Method.invoke(Native Method)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+09-11 15:35:00.120 16057 16057 E unknown:ReactHost: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+09-11 15:35:00.177 16057 16062 I 82.zerohourgame: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+09-11 15:35:00.534 16057 16083 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning(): Async result = true
+09-11 15:35:00.534 16057 16081 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro()
+09-11 15:35:00.553 16057 16062 I 82.zerohourgame: Compiler allocated 4219KB to compile void android.widget.TextView.<init>(android.content.Context, android.util.AttributeSet, int, int)
+09-11 15:35:01.638 16057 16092 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.jungih4982.zerohourgame
+09-11 15:35:02.534 16057 16083 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro(): Creating BundleLoader
+09-11 15:35:02.535 16057 16057 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@30fde7
+09-11 15:35:02.537 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactContext(): Creating BridgelessReactContext
+09-11 15:35:02.542 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+09-11 15:35:02.562 16057 16100 D TrafficStats: tagSocket(129) with statsTag=0xffffffff, statsUid=-1
+09-11 15:35:02.572 16057 16081 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libhermes.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:35:02.572 16057 16081 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libhermestooling.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:35:02.572 16057 16081 D jni_lib_merge: Entering merged library JNI_OnLoad.
+09-11 15:35:02.572 16057 16081 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+09-11 15:35:02.572 16057 16081 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x72aaa316ece0
+09-11 15:35:02.573 16057 16081 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x72aaa31a1700
+09-11 15:35:02.573 16057 16081 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x72aaa31a3470
+09-11 15:35:02.573 16057 16081 D jni_lib_merge: About to register 3 actual methods.
+09-11 15:35:02.603 16057 16081 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libexpo-av.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!classes20.dex): ok
+09-11 15:35:02.722 16057 16081 I ExpoModulesCore: ✅ AppContext was initialized
+09-11 15:35:02.756 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+09-11 15:35:02.756 16057 16081 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Calling DevSupportManagerBase.onNewReactContextCreated(reactContext)
+09-11 15:35:02.760 16057 16057 W unknown:ReactNative: Packager connection already open, nooping.
+09-11 15:35:02.761 16057 16081 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Execute
+09-11 15:35:02.761 16057 16057 W unknown:BridgelessReact: ReactContext.onHostResume()
+09-11 15:35:02.769 16057 16057 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+09-11 15:35:02.928 16057 16099 I WebViewFactory: Loading com.google.android.webview version 124.0.6367.219 (code 636771938)
+--------- beginning of system
+09-11 15:35:02.930 16057 16099 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=66dd8b42 mResDir=null mSplitDirs=[] mOverlayDirs=[/product/overlay/EmulationPixel8/EmulationPixel8Overlay.apk,/product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk,/data/resource-cache/com.android.systemui-neutral-Aqch.frro,/data/resource-cache/com.android.systemui-accent-KOQA.frro,/data/resource-cache/com.android.systemui-dynamic-GbBV.frro] mLibDirs=[/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk,/data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.apk,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v35 mCompatInfo={420dpi always-compat} mLoaders=[]}
+09-11 15:35:02.932 16057 16099 W ziparchive: Unable to open '/data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.dm': No such file or directory
+09-11 15:35:02.932 16057 16099 W ziparchive: Unable to open '/data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.dm': No such file or directory
+09-11 15:35:02.932 16057 16099 W 82.zerohourgame: Entry not found
+09-11 15:35:02.933 16057 16099 D nativeloader: Configuring clns-8 for other apk /data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/lib/x86_64:/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+09-11 15:35:02.936 16057 16099 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+09-11 15:35:02.942 16057 16099 D nativeloader: Configuring clns-9 for other apk /data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/lib/x86_64:/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+09-11 15:35:02.962 16057 16098 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libexpo-modules-core.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:35:02.964 16057 16099 I cr_WVCFactoryProvider: Loaded version=124.0.6367.219 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+09-11 15:35:02.969 16057 16099 D nativeloader: Load /data/app/~~5yeD5e5Vki2IgZKAP3Xgrg==/com.google.android.trichromelibrary_636771938-YgFPgXWHMvKyMz1jzZ5ziQ==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using ns clns-9 from class loader (caller=/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk): ok
+09-11 15:35:02.971 16057 16099 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using ns clns-9 from class loader (caller=/data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk): ok
+09-11 15:35:02.974 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+09-11 15:35:02.975 16057 16109 E chromium: [0911/153502.975044:ERROR:variations_seed_loader.cc(37)] Seed missing signature.
+09-11 15:35:02.975 16057 16109 I chromium: [0911/153502.975460:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+09-11 15:35:02.981 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+09-11 15:35:02.981 16057 16099 I cr_LibraryLoader: Successfully loaded native library
+09-11 15:35:02.982 16057 16099 I cr_CachingUmaRecorder: Flushed 6 samples from 6 histograms, 0 samples were dropped.
+09-11 15:35:02.982 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+09-11 15:35:02.984 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+09-11 15:35:02.985 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+09-11 15:35:02.989 16057 16113 D TrafficStats: tagSocket(146) with statsTag=0xffffffff, statsUid=-1
+09-11 15:35:03.004 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$DefsViewManager
+09-11 15:35:03.005 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.VirtualViewManager$RenderableShadowNode
+09-11 15:35:03.007 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.debuggingoverlay.DebuggingOverlayManager
+09-11 15:35:03.009 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeMergeManager
+09-11 15:35:03.011 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+09-11 15:35:03.011 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
+09-11 15:35:03.013 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LinearGradientManager
+09-11 15:35:03.015 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeGaussianBlurManager
+09-11 15:35:03.017 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+09-11 15:35:03.017 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+09-11 15:35:03.020 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+09-11 15:35:03.024 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+09-11 15:35:03.024 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+09-11 15:35:03.026 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeColorMatrixManager
+09-11 15:35:03.028 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+09-11 15:35:03.031 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ClipPathViewManager
+09-11 15:35:03.034 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$SymbolManager
+09-11 15:35:03.036 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PatternManager
+09-11 15:35:03.038 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeBlendManager
+09-11 15:35:03.040 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+09-11 15:35:03.043 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.SvgViewManager
+09-11 15:35:03.046 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+09-11 15:35:03.047 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchShadowNode
+09-11 15:35:03.048 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$UseViewManager
+09-11 15:35:03.051 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$CircleViewManager
+09-11 15:35:03.053 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TSpanViewManager
+09-11 15:35:03.055 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FilterManager
+09-11 15:35:03.057 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MarkerManager
+09-11 15:35:03.060 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+09-11 15:35:03.062 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ForeignObjectManager
+09-11 15:35:03.064 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$EllipseViewManager
+09-11 15:35:03.066 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LineViewManager
+09-11 15:35:03.068 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+09-11 15:35:03.068 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+09-11 15:35:03.069 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeFloodManager
+09-11 15:35:03.071 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$GroupViewManager
+09-11 15:35:03.073 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextViewManager
+09-11 15:35:03.076 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ImageViewManager
+09-11 15:35:03.078 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeCompositeManager
+09-11 15:35:03.081 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+09-11 15:35:03.083 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RadialGradientManager
+09-11 15:35:03.085 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MaskManager
+09-11 15:35:03.087 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+09-11 15:35:03.089 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RectViewManager
+09-11 15:35:03.091 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextPathViewManager
+09-11 15:35:03.094 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+09-11 15:35:03.097 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeOffsetManager
+09-11 15:35:03.099 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PathViewManager
+09-11 15:35:03.102 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+09-11 15:35:03.103 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+09-11 15:35:03.104 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+09-11 15:35:03.106 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+09-11 15:35:03.107 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+09-11 15:35:03.107 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+09-11 15:35:03.110 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+09-11 15:35:03.111 16057 16098 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+09-11 15:35:03.137 16057 16098 E AVManager: Cannot install JSI bindings for AV module because JS context is not available
+09-11 15:35:03.139 16057 16098 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+09-11 15:35:03.151 16057 16098 I ExpoModulesCore: ✅ JSI interop was installed
+09-11 15:35:03.152 16057 16098 I ExpoModulesCore: ✅ Constants were exported
+09-11 15:35:03.177 16057 16114 D TrafficStats: tagSocket(147) with statsTag=0xffffffff, statsUid=-1
+09-11 15:35:03.617 16057 16098 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-11 15:35:03.661 16057 16116 D TrafficStats: tagSocket(150) with statsTag=0xffffffff, statsUid=-1
+09-11 15:35:03.731 16057 16057 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.RootViewManager
+09-11 15:35:03.871 16057 16057 W 82.zerohourgame: Accessing hidden field Landroid/widget/ScrollView;->mScroller:Landroid/widget/OverScroller; (unsupported, reflection, allowed)
+09-11 15:35:03.892 16057 16065 W 82.zerohourgame: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x1lGRSVZUUpJX9AAJGEC8w==/com.google.android.webview-A601HnPxu_Hn1Cq4CTP1mQ==/WebViewGoogle.apk' with 2 weak references
+09-11 15:35:03.895 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:03.897 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:03.968 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:03.993 16057 16118 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libimagepipeline.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:35:04.021 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:04.107 16057 16123 D nativeloader: Load /data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk!/lib/x86_64/libnative-filters.so using ns clns-7 from class loader (caller=/data/app/~~r4t0oHzShPtXnF1maAypbA==/com.jungih4982.zerohourgame-4TvfnAjp1urI0N3KpV0nxg==/base.apk): ok
+09-11 15:35:04.749 16057 16073 D EGL_emulation: app_time_stats: avg=94.76ms min=0.99ms max=3650.80ms count=43
+09-11 15:35:04.941 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:04.951 16057 16127 D ProfileInstaller: Installing profile for com.jungih4982.zerohourgame
+09-11 15:35:05.750 16057 16073 D EGL_emulation: app_time_stats: avg=1.25ms min=0.99ms max=3.60ms count=60
+09-11 15:35:06.767 16057 16073 D EGL_emulation: app_time_stats: avg=1.24ms min=1.00ms max=1.84ms count=61
+09-11 15:35:07.771 16057 16073 D EGL_emulation: app_time_stats: avg=1.25ms min=0.99ms max=1.77ms count=60
+09-11 15:35:08.783 16057 16073 D EGL_emulation: app_time_stats: avg=1.28ms min=1.08ms max=1.73ms count=61
+09-11 15:35:09.783 16057 16073 D EGL_emulation: app_time_stats: avg=1.26ms min=1.02ms max=1.63ms count=60
+09-11 15:35:10.800 16057 16073 D EGL_emulation: app_time_stats: avg=1.28ms min=1.04ms max=1.82ms count=61
+09-11 15:35:11.818 16057 16073 D EGL_emulation: app_time_stats: avg=1.22ms min=1.02ms max=1.74ms count=61
+09-11 15:35:12.833 16057 16073 D EGL_emulation: app_time_stats: avg=1.26ms min=1.06ms max=2.00ms count=61
+09-11 15:35:13.850 16057 16073 D EGL_emulation: app_time_stats: avg=1.31ms min=1.00ms max=2.00ms count=61
+09-11 15:35:14.866 16057 16073 D EGL_emulation: app_time_stats: avg=1.38ms min=0.98ms max=4.03ms count=61
+09-11 15:35:15.868 16057 16073 D EGL_emulation: app_time_stats: avg=1.33ms min=1.01ms max=1.95ms count=60
+09-11 15:35:16.883 16057 16073 D EGL_emulation: app_time_stats: avg=1.17ms min=1.00ms max=1.49ms count=61
+09-11 15:35:17.883 16057 16073 D EGL_emulation: app_time_stats: avg=1.35ms min=1.01ms max=2.01ms count=60
+09-11 15:35:18.900 16057 16073 D EGL_emulation: app_time_stats: avg=1.24ms min=1.00ms max=1.74ms count=61
+09-11 15:35:19.900 16057 16073 D EGL_emulation: app_time_stats: avg=1.19ms min=1.01ms max=1.50ms count=60
+09-11 15:35:20.901 16057 16073 D EGL_emulation: app_time_stats: avg=1.25ms min=1.04ms max=1.68ms count=60
+09-11 15:35:21.917 16057 16073 D EGL_emulation: app_time_stats: avg=1.28ms min=1.05ms max=1.72ms count=61
+09-11 15:35:22.933 16057 16073 D EGL_emulation: app_time_stats: avg=16.36ms min=12.58ms max=19.15ms count=60
+09-11 15:35:23.950 16057 16073 D EGL_emulation: app_time_stats: avg=16.37ms min=13.59ms max=19.83ms count=61
+09-11 15:35:24.966 16057 16073 D EGL_emulation: app_time_stats: avg=16.18ms min=13.88ms max=18.24ms count=61
+09-11 15:35:25.967 16057 16073 D EGL_emulation: app_time_stats: avg=16.23ms min=12.64ms max=20.22ms count=60
+09-11 15:35:26.981 16057 16073 D EGL_emulation: app_time_stats: avg=16.12ms min=11.64ms max=20.16ms count=61
+09-11 15:35:27.982 16057 16073 D EGL_emulation: app_time_stats: avg=16.05ms min=7.49ms max=21.92ms count=60
+09-11 15:35:28.983 16057 16073 D EGL_emulation: app_time_stats: avg=16.17ms min=14.47ms max=18.22ms count=60
+09-11 15:35:30.000 16057 16073 D EGL_emulation: app_time_stats: avg=16.28ms min=10.55ms max=19.90ms count=61
+09-11 15:35:31.016 16057 16073 D EGL_emulation: app_time_stats: avg=16.33ms min=11.46ms max=33.80ms count=60
+09-11 15:35:32.031 16057 16073 D EGL_emulation: app_time_stats: avg=16.10ms min=11.73ms max=18.52ms count=61
+09-11 15:35:33.049 16057 16073 D EGL_emulation: app_time_stats: avg=16.10ms min=9.49ms max=20.06ms count=61
+09-11 15:35:34.067 16057 16073 D EGL_emulation: app_time_stats: avg=16.27ms min=13.63ms max=19.98ms count=61
+09-11 15:35:35.067 16057 16073 D EGL_emulation: app_time_stats: avg=16.23ms min=14.43ms max=19.39ms count=60
+09-11 15:35:36.087 16057 16073 D EGL_emulation: app_time_stats: avg=16.28ms min=12.95ms max=20.77ms count=61
+09-11 15:35:37.100 16057 16073 D EGL_emulation: app_time_stats: avg=16.14ms min=11.84ms max=18.88ms count=61
+09-11 15:35:38.102 16057 16073 D EGL_emulation: app_time_stats: avg=5.28ms min=1.24ms max=32.31ms count=60
+09-11 15:35:39.104 16057 16073 D EGL_emulation: app_time_stats: avg=1.60ms min=1.14ms max=2.45ms count=60
+09-11 15:35:40.116 16057 16073 D EGL_emulation: app_time_stats: avg=3.83ms min=1.18ms max=21.12ms count=60
+09-11 15:35:41.117 16057 16073 D EGL_emulation: app_time_stats: avg=16.35ms min=12.50ms max=21.01ms count=60
+09-11 15:35:42.134 16057 16073 D EGL_emulation: app_time_stats: avg=15.65ms min=12.68ms max=18.85ms count=61
+09-11 15:35:43.149 16057 16073 D EGL_emulation: app_time_stats: avg=16.04ms min=12.52ms max=20.08ms count=61
+09-11 15:35:44.165 16057 16073 D EGL_emulation: app_time_stats: avg=16.22ms min=12.72ms max=19.23ms count=61
+09-11 15:35:45.166 16057 16073 D EGL_emulation: app_time_stats: avg=16.18ms min=5.35ms max=27.95ms count=60
+09-11 15:35:46.182 16057 16073 D EGL_emulation: app_time_stats: avg=15.91ms min=11.89ms max=21.06ms count=61
+09-11 15:35:47.198 16057 16073 D EGL_emulation: app_time_stats: avg=15.93ms min=12.22ms max=18.56ms count=61
+09-11 15:35:48.200 16057 16073 D EGL_emulation: app_time_stats: avg=15.97ms min=11.80ms max=20.26ms count=60
+09-11 15:35:48.700 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:57.399 16057 16073 D EGL_emulation: app_time_stats: avg=293.70ms min=1.27ms max=8662.57ms count=31
+09-11 15:35:57.428 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:57.451 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:57.817 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:58.401 16057 16073 D EGL_emulation: app_time_stats: avg=3.01ms min=1.04ms max=48.30ms count=59
+09-11 15:35:58.929 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:35:59.165 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.365 16057 16073 D EGL_emulation: app_time_stats: avg=219.80ms min=1.02ms max=7182.65ms count=34
+09-11 15:36:06.382 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.400 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.518 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.533 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.674 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.696 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.805 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.825 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.935 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:06.951 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.080 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.098 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.215 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.231 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.279 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.356 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.370 16057 16073 D EGL_emulation: app_time_stats: avg=24.37ms min=10.22ms max=137.39ms count=41
+09-11 15:36:07.376 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.502 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.521 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.634 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.656 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.769 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.788 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.929 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:07.944 16057 16155 D TrafficStats: tagSocket(5) with statsTag=0xffffffff, statsUid=-1
+09-11 15:36:07.958 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:08.098 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:08.238 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:08.271 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:08.304 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:08.383 16057 16073 D EGL_emulation: app_time_stats: avg=19.65ms min=6.96ms max=138.56ms count=51
+09-11 15:36:08.504 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:23.283 16057 16073 D EGL_emulation: app_time_stats: avg=931.06ms min=14.34ms max=14651.72ms count=16
+09-11 15:36:23.307 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:23.334 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:23.439 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:23.462 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:24.298 16057 16073 D EGL_emulation: app_time_stats: avg=16.65ms min=13.28ms max=32.71ms count=60
+09-11 15:36:25.299 16057 16073 D EGL_emulation: app_time_stats: avg=16.37ms min=11.61ms max=30.34ms count=59
+09-11 15:36:26.315 16057 16073 D EGL_emulation: app_time_stats: avg=16.00ms min=11.92ms max=18.81ms count=61
+09-11 15:36:27.315 16057 16073 D EGL_emulation: app_time_stats: avg=16.66ms min=12.53ms max=31.40ms count=59
+09-11 15:36:28.332 16057 16073 D EGL_emulation: app_time_stats: avg=16.09ms min=10.65ms max=20.30ms count=61
+09-11 15:36:29.333 16057 16073 D EGL_emulation: app_time_stats: avg=16.30ms min=11.80ms max=29.82ms count=59
+09-11 15:36:30.348 16057 16073 D EGL_emulation: app_time_stats: avg=16.11ms min=11.67ms max=31.56ms count=60
+09-11 15:36:31.348 16057 16073 D EGL_emulation: app_time_stats: avg=16.15ms min=11.49ms max=19.92ms count=60
+09-11 15:36:32.349 16057 16073 D EGL_emulation: app_time_stats: avg=16.23ms min=12.48ms max=32.08ms count=59
+09-11 15:36:33.365 16057 16073 D EGL_emulation: app_time_stats: avg=15.92ms min=13.12ms max=18.49ms count=61
+09-11 15:36:34.365 16057 16073 D EGL_emulation: app_time_stats: avg=16.29ms min=8.37ms max=32.24ms count=59
+09-11 15:36:35.366 16057 16073 D EGL_emulation: app_time_stats: avg=16.52ms min=12.44ms max=32.17ms count=59
+09-11 15:36:36.250 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:36:36.367 16057 16073 D EGL_emulation: app_time_stats: avg=16.15ms min=1.61ms max=68.35ms count=58
+09-11 15:36:37.382 16057 16073 D EGL_emulation: app_time_stats: avg=6.78ms min=1.50ms max=17.73ms count=60
+09-11 15:36:38.383 16057 16073 D EGL_emulation: app_time_stats: avg=16.61ms min=14.35ms max=19.09ms count=60
+09-11 15:36:39.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.83ms min=13.52ms max=32.57ms count=60
+09-11 15:36:40.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.56ms min=13.49ms max=18.58ms count=60
+09-11 15:36:41.400 16057 16073 D EGL_emulation: app_time_stats: avg=16.91ms min=14.79ms max=31.43ms count=59
+09-11 15:36:42.416 16057 16073 D EGL_emulation: app_time_stats: avg=16.86ms min=14.22ms max=33.29ms count=60
+09-11 15:36:43.416 16057 16073 D EGL_emulation: app_time_stats: avg=16.63ms min=14.15ms max=19.75ms count=60
+09-11 15:36:44.417 16057 16073 D EGL_emulation: app_time_stats: avg=16.84ms min=12.88ms max=32.97ms count=59
+09-11 15:36:45.433 16057 16073 D EGL_emulation: app_time_stats: avg=16.59ms min=14.61ms max=18.76ms count=61
+09-11 15:36:46.435 16057 16073 D EGL_emulation: app_time_stats: avg=10.16ms min=1.27ms max=43.69ms count=58
+09-11 15:36:47.451 16057 16073 D EGL_emulation: app_time_stats: avg=1.54ms min=1.29ms max=2.33ms count=61
+09-11 15:36:48.468 16057 16073 D EGL_emulation: app_time_stats: avg=1.54ms min=1.27ms max=2.07ms count=61
+09-11 15:36:49.468 16057 16073 D EGL_emulation: app_time_stats: avg=7.69ms min=1.24ms max=19.95ms count=59
+09-11 15:36:50.482 16057 16073 D EGL_emulation: app_time_stats: avg=16.45ms min=13.84ms max=20.45ms count=61
+09-11 15:36:51.482 16057 16073 D EGL_emulation: app_time_stats: avg=16.84ms min=13.30ms max=33.05ms count=59
+09-11 15:36:52.515 16057 16073 D EGL_emulation: app_time_stats: avg=16.76ms min=14.35ms max=32.64ms count=61
+09-11 15:36:53.515 16057 16073 D EGL_emulation: app_time_stats: avg=16.48ms min=14.78ms max=18.45ms count=60
+09-11 15:36:54.517 16057 16073 D EGL_emulation: app_time_stats: avg=16.88ms min=13.94ms max=32.49ms count=59
+09-11 15:36:55.532 16057 16073 D EGL_emulation: app_time_stats: avg=16.49ms min=13.74ms max=18.80ms count=61
+09-11 15:36:56.532 16057 16073 D EGL_emulation: app_time_stats: avg=16.78ms min=14.48ms max=32.94ms count=59
+09-11 15:36:57.532 16057 16073 D EGL_emulation: app_time_stats: avg=16.48ms min=13.71ms max=19.46ms count=60
+09-11 15:36:58.548 16057 16073 D EGL_emulation: app_time_stats: avg=16.82ms min=13.83ms max=32.64ms count=60
+09-11 15:36:59.549 16057 16073 D EGL_emulation: app_time_stats: avg=16.83ms min=14.18ms max=32.31ms count=59
+09-11 15:37:00.567 16057 16073 D EGL_emulation: app_time_stats: avg=16.58ms min=13.26ms max=18.77ms count=61
+09-11 15:37:01.582 16057 16073 D EGL_emulation: app_time_stats: avg=16.79ms min=9.38ms max=32.46ms count=60
+09-11 15:37:02.584 16057 16073 D EGL_emulation: app_time_stats: avg=16.57ms min=14.39ms max=19.07ms count=60
+09-11 15:37:03.598 16057 16073 D EGL_emulation: app_time_stats: avg=16.73ms min=12.73ms max=32.63ms count=60
+09-11 15:37:04.599 16057 16073 D EGL_emulation: app_time_stats: avg=16.78ms min=14.29ms max=31.40ms count=59
+09-11 15:37:05.617 16057 16073 D EGL_emulation: app_time_stats: avg=16.60ms min=12.66ms max=19.83ms count=61
+09-11 15:37:06.633 16057 16073 D EGL_emulation: app_time_stats: avg=16.81ms min=13.46ms max=32.58ms count=60
+09-11 15:37:07.648 16057 16073 D EGL_emulation: app_time_stats: avg=16.49ms min=13.74ms max=19.29ms count=61
+09-11 15:37:08.650 16057 16073 D EGL_emulation: app_time_stats: avg=16.84ms min=13.67ms max=31.95ms count=59
+09-11 15:37:09.650 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=13.85ms max=20.02ms count=60
+09-11 15:37:10.667 16057 16073 D EGL_emulation: app_time_stats: avg=16.76ms min=14.34ms max=30.92ms count=60
+09-11 15:37:11.684 16057 16073 D EGL_emulation: app_time_stats: avg=16.75ms min=13.32ms max=33.05ms count=60
+09-11 15:37:12.700 16057 16073 D EGL_emulation: app_time_stats: avg=16.54ms min=14.40ms max=18.24ms count=61
+09-11 15:37:13.717 16057 16073 D EGL_emulation: app_time_stats: avg=16.84ms min=14.19ms max=32.25ms count=60
+09-11 15:37:14.733 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=12.39ms max=19.00ms count=61
+09-11 15:37:15.750 16057 16073 D EGL_emulation: app_time_stats: avg=16.81ms min=12.43ms max=32.30ms count=60
+09-11 15:37:16.752 16057 16073 D EGL_emulation: app_time_stats: avg=16.83ms min=14.52ms max=31.30ms count=59
+09-11 15:37:17.765 16057 16073 D EGL_emulation: app_time_stats: avg=16.42ms min=14.49ms max=18.52ms count=61
+09-11 15:37:18.765 16057 16073 D EGL_emulation: app_time_stats: avg=16.75ms min=14.64ms max=31.72ms count=59
+09-11 15:37:19.766 16057 16073 D EGL_emulation: app_time_stats: avg=16.57ms min=14.41ms max=19.68ms count=60
+09-11 15:37:20.437 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:20.782 16057 16073 D EGL_emulation: app_time_stats: avg=16.74ms min=8.91ms max=31.82ms count=60
+09-11 15:37:21.798 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=13.41ms max=30.64ms count=60
+09-11 15:37:22.799 16057 16073 D EGL_emulation: app_time_stats: avg=16.34ms min=13.26ms max=20.13ms count=60
+09-11 15:37:23.800 16057 16073 D EGL_emulation: app_time_stats: avg=16.59ms min=14.77ms max=32.04ms count=59
+09-11 15:37:24.815 16057 16073 D EGL_emulation: app_time_stats: avg=16.22ms min=12.32ms max=19.49ms count=61
+09-11 15:37:25.832 16057 16073 D EGL_emulation: app_time_stats: avg=16.40ms min=12.33ms max=30.75ms count=60
+09-11 15:37:26.848 16057 16073 D EGL_emulation: app_time_stats: avg=16.51ms min=12.47ms max=30.98ms count=60
+09-11 15:37:27.849 16057 16073 D EGL_emulation: app_time_stats: avg=16.40ms min=14.17ms max=18.69ms count=60
+09-11 15:37:28.865 16057 16073 D EGL_emulation: app_time_stats: avg=16.46ms min=12.81ms max=30.72ms count=60
+09-11 15:37:29.866 16057 16073 D EGL_emulation: app_time_stats: avg=16.28ms min=12.85ms max=18.98ms count=60
+09-11 15:37:30.866 16057 16073 D EGL_emulation: app_time_stats: avg=16.51ms min=12.43ms max=33.84ms count=59
+09-11 15:37:31.883 16057 16073 D EGL_emulation: app_time_stats: avg=16.20ms min=12.39ms max=17.98ms count=61
+09-11 15:37:32.900 16057 16073 D EGL_emulation: app_time_stats: avg=16.51ms min=13.70ms max=32.61ms count=60
+09-11 15:37:33.917 16057 16073 D EGL_emulation: app_time_stats: avg=16.59ms min=13.69ms max=33.24ms count=60
+09-11 15:37:34.932 16057 16073 D EGL_emulation: app_time_stats: avg=16.25ms min=13.44ms max=18.69ms count=61
+09-11 15:37:35.948 16057 16073 D EGL_emulation: app_time_stats: avg=16.57ms min=13.04ms max=31.50ms count=60
+09-11 15:37:36.966 16057 16073 D EGL_emulation: app_time_stats: avg=16.27ms min=12.67ms max=19.26ms count=61
+09-11 15:37:37.981 16057 16073 D EGL_emulation: app_time_stats: avg=16.39ms min=12.79ms max=31.35ms count=60
+09-11 15:37:38.982 16057 16073 D EGL_emulation: app_time_stats: avg=16.59ms min=13.24ms max=32.56ms count=59
+09-11 15:37:39.998 16057 16073 D EGL_emulation: app_time_stats: avg=16.24ms min=13.00ms max=18.49ms count=61
+09-11 15:37:40.999 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=12.40ms max=32.15ms count=59
+09-11 15:37:41.858 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:41.887 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:42.006 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:42.017 16057 16073 D EGL_emulation: app_time_stats: avg=16.25ms min=12.72ms max=20.72ms count=61
+09-11 15:37:42.046 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:50.267 16057 16073 D EGL_emulation: app_time_stats: avg=1649.80ms min=10.29ms max=8183.63ms count=5
+09-11 15:37:50.291 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:50.309 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:50.681 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:50.929 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:52.012 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:52.032 16057 16073 D EGL_emulation: app_time_stats: avg=45.14ms min=12.51ms max=1098.22ms count=39
+09-11 15:37:58.265 16057 16073 D EGL_emulation: app_time_stats: avg=6233.57ms min=6233.57ms max=6233.57ms count=1
+09-11 15:37:58.287 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.303 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.430 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.446 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.561 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.577 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.715 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.729 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.853 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.875 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:58.985 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.004 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.139 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.158 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.268 16057 16073 D EGL_emulation: app_time_stats: avg=22.12ms min=12.07ms max=134.03ms count=45
+09-11 15:37:59.272 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.291 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.418 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.437 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.553 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.571 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.684 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.704 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.834 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.853 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:37:59.970 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.000 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.118 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.140 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.251 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.273 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.283 16057 16073 D EGL_emulation: app_time_stats: avg=20.06ms min=9.80ms max=116.29ms count=50
+09-11 15:38:00.402 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.424 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.553 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.575 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.687 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.706 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.822 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.842 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.970 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:00.988 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.103 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.122 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.252 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.271 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.283 16057 16073 D EGL_emulation: app_time_stats: avg=16.86ms min=9.99ms max=49.55ms count=58
+09-11 15:38:01.387 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.407 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.521 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.542 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.568 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.665 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.684 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.800 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.822 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.952 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:01.971 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.086 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.108 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.218 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.237 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.283 16057 16073 D EGL_emulation: app_time_stats: avg=20.69ms min=11.88ms max=115.73ms count=48
+09-11 15:38:02.370 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.389 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.503 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.523 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.644 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.664 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.785 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.807 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.918 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:02.940 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.049 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.070 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.200 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.221 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.299 16057 16073 D EGL_emulation: app_time_stats: avg=17.98ms min=10.78ms max=67.83ms count=56
+09-11 15:38:03.334 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.354 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.485 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.508 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.617 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.638 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.756 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.775 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.889 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:03.909 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.037 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.057 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.169 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.188 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.319 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.333 16057 16073 D EGL_emulation: app_time_stats: avg=17.36ms min=11.49ms max=51.07ms count=59
+09-11 15:38:04.340 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:04.470 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:10.816 16057 16073 D EGL_emulation: app_time_stats: avg=720.15ms min=15.06ms max=6330.48ms count=9
+09-11 15:38:10.837 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:10.861 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:10.969 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:10.987 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.102 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.124 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.255 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.275 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.383 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.402 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.520 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:11.539 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:23.215 16057 16073 D EGL_emulation: app_time_stats: avg=302.27ms min=11.95ms max=11584.67ms count=41
+09-11 15:38:23.249 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:23.271 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:23.381 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:23.398 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:24.233 16057 16073 D EGL_emulation: app_time_stats: avg=16.61ms min=11.56ms max=38.77ms count=60
+09-11 15:38:25.233 16057 16073 D EGL_emulation: app_time_stats: avg=16.41ms min=11.93ms max=32.44ms count=59
+09-11 15:38:26.250 16057 16073 D EGL_emulation: app_time_stats: avg=16.17ms min=11.72ms max=20.92ms count=61
+09-11 15:38:27.264 16057 16073 D EGL_emulation: app_time_stats: avg=16.45ms min=12.65ms max=34.03ms count=60
+09-11 15:38:28.266 16057 16073 D EGL_emulation: app_time_stats: avg=16.23ms min=14.14ms max=19.06ms count=60
+09-11 15:38:29.282 16057 16073 D EGL_emulation: app_time_stats: avg=16.51ms min=14.44ms max=30.87ms count=60
+09-11 15:38:30.283 16057 16073 D EGL_emulation: app_time_stats: avg=16.58ms min=12.58ms max=32.18ms count=59
+09-11 15:38:31.283 16057 16073 D EGL_emulation: app_time_stats: avg=16.21ms min=14.04ms max=19.41ms count=60
+09-11 15:38:32.283 16057 16073 D EGL_emulation: app_time_stats: avg=16.49ms min=14.20ms max=33.26ms count=59
+09-11 15:38:33.300 16057 16073 D EGL_emulation: app_time_stats: avg=16.09ms min=14.07ms max=18.83ms count=61
+09-11 15:38:34.316 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=13.83ms max=32.61ms count=60
+09-11 15:38:35.332 16057 16073 D EGL_emulation: app_time_stats: avg=16.53ms min=13.50ms max=31.17ms count=60
+09-11 15:38:36.349 16057 16073 D EGL_emulation: app_time_stats: avg=16.45ms min=13.68ms max=20.17ms count=61
+09-11 15:38:37.367 16057 16073 D EGL_emulation: app_time_stats: avg=16.46ms min=13.40ms max=32.94ms count=60
+09-11 15:38:38.383 16057 16073 D EGL_emulation: app_time_stats: avg=16.16ms min=11.76ms max=19.55ms count=61
+09-11 15:38:39.398 16057 16073 D EGL_emulation: app_time_stats: avg=16.44ms min=12.50ms max=32.64ms count=60
+09-11 15:38:40.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.18ms min=13.45ms max=18.54ms count=60
+09-11 15:38:41.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.40ms min=14.01ms max=31.19ms count=59
+09-11 15:38:42.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.48ms min=13.91ms max=30.77ms count=59
+09-11 15:38:43.399 16057 16073 D EGL_emulation: app_time_stats: avg=16.17ms min=13.05ms max=18.10ms count=60
+09-11 15:38:44.405 16057 16073 D EGL_emulation: app_time_stats: avg=16.61ms min=13.03ms max=32.92ms count=59
+09-11 15:38:45.416 16057 16073 D EGL_emulation: app_time_stats: avg=16.17ms min=12.90ms max=19.83ms count=61
+09-11 15:38:46.431 16057 16073 D EGL_emulation: app_time_stats: avg=16.47ms min=12.61ms max=33.07ms count=60
+09-11 15:38:47.432 16057 16073 D EGL_emulation: app_time_stats: avg=16.51ms min=13.12ms max=31.96ms count=59
+09-11 15:38:48.449 16057 16073 D EGL_emulation: app_time_stats: avg=16.32ms min=14.71ms max=18.01ms count=61
+09-11 15:38:49.449 16057 16073 D EGL_emulation: app_time_stats: avg=16.66ms min=14.62ms max=32.55ms count=59
+09-11 15:38:50.466 16057 16073 D EGL_emulation: app_time_stats: avg=16.28ms min=12.91ms max=18.61ms count=61
+09-11 15:38:51.483 16057 16073 D EGL_emulation: app_time_stats: avg=16.71ms min=13.66ms max=31.49ms count=60
+09-11 15:38:52.039 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.061 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.155 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.177 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.200 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.317 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.338 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.450 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.472 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.501 16057 16073 D EGL_emulation: app_time_stats: avg=16.36ms min=10.71ms max=21.78ms count=61
+09-11 15:38:52.584 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.604 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.737 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.756 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.869 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:52.888 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:53.018 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:53.037 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:53.154 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+09-11 15:38:53.187 16057 16099 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.

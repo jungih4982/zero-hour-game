@@ -1,0 +1,13 @@
+{
+  "before": "before-f04-result.json",
+  "after": "verified-f04-result.json",
+  "sameEngineStateBeforeAfter": true,
+  "scene": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE",
+  "loop": 2,
+  "time": 22,
+  "yujinWary": true,
+  "memoryDescriptions": [
+    "정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.",
+    "몸과 전화는 첫 통화 때로 돌아왔지만 아날로그 시계의 금은 그대로 남았다."
+  ]
+}

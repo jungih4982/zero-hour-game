@@ -1,0 +1,62 @@
+diff --git a/scripts/test-choice-presentation.ts b/scripts/test-choice-presentation.ts
+index 2e59d8b..9829e1f 100644
+--- a/scripts/test-choice-presentation.ts
++++ b/scripts/test-choice-presentation.ts
+@@ -1,4 +1,5 @@
+ import { prologueScenes } from '../src/content/prologue';
++import './test-foreknowledge-history';
+ import {
+   getChoiceGroupPresentation,
+   getChoicePresentation,
+diff --git a/src/gameplay/choicePresentation.ts b/src/gameplay/choicePresentation.ts
+index 115e617..569200b 100644
+--- a/src/gameplay/choicePresentation.ts
++++ b/src/gameplay/choicePresentation.ts
+@@ -1,4 +1,5 @@
+ import type { NarrativeChoice } from '../engine';
++import { blackoutMemory } from '../content/prologue';
+ 
+ export type ChoiceOutcomeTone = 'memory' | 'evidence' | 'risk' | 'route';
+ 
+@@ -11,6 +12,7 @@ export type ChoiceOutcomeCue = {
+ 
+ export type ForeknowledgeIntervention = {
+   known: string;
++  knownKind?: 'fact' | 'outcome';
+   changed: string;
+   consequence: string;
+ };
+@@ -139,7 +141,8 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
+       tone: 'risk',
+     },
+     intervention: {
+-      known: '유진에게 휴대전화의 모순만 제한적으로 알렸다',
++      known: blackoutMemory.description,
++      knownKind: 'fact',
+       changed: '유진의 다음 말과 자정 정전을 먼저 말했다',
+       consequence: '정보는 증명했지만 유진의 경계가 상승했다.',
+     },
+diff --git a/src/ui/NarrativePlayer.tsx b/src/ui/NarrativePlayer.tsx
+index 72c5dce..c1ed5dc 100644
+--- a/src/ui/NarrativePlayer.tsx
++++ b/src/ui/NarrativePlayer.tsx
+@@ -1566,8 +1566,17 @@ export function NarrativePlayer() {
+                 <View style={styles.interventionRow}>
+                   <View style={[styles.interventionNode, styles.interventionNodeKnown]} />
+                   <View style={styles.interventionCopy}>
+-                    <Text style={styles.interventionLabel}>이전에 확인한 결말</Text>
+-                    <Text style={[styles.interventionText, tabletUi && styles.interventionTextTablet, styles.interventionKnownText]}>
++                    <Text style={styles.interventionLabel}>
++                      {foreknowledgeIntervention.knownKind === 'fact' ? '이전에 확인한 사실' : '이전에 확인한 결말'}
++                    </Text>
++                    <Text
++                      textBreakStrategy={foreknowledgeIntervention.knownKind === 'fact' ? 'balanced' : 'highQuality'}
++                      style={[
++                        styles.interventionText,
++                        tabletUi && styles.interventionTextTablet,
++                        foreknowledgeIntervention.knownKind !== 'fact' && styles.interventionKnownText,
++                      ]}
++                    >
+                       {foreknowledgeIntervention.known}
+                     </Text>
+                   </View>

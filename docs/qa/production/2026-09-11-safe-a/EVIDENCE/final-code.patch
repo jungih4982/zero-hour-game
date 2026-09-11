@@ -1,0 +1,149 @@
+diff --git a/scripts/test-choice-presentation.ts b/scripts/test-choice-presentation.ts
+index 2e59d8b..9829e1f 100644
+--- a/scripts/test-choice-presentation.ts
++++ b/scripts/test-choice-presentation.ts
+@@ -1,4 +1,5 @@
+ import { prologueScenes } from '../src/content/prologue';
++import './test-foreknowledge-history';
+ import {
+   getChoiceGroupPresentation,
+   getChoicePresentation,
+diff --git a/src/gameplay/choicePresentation.ts b/src/gameplay/choicePresentation.ts
+index 115e617..569200b 100644
+--- a/src/gameplay/choicePresentation.ts
++++ b/src/gameplay/choicePresentation.ts
+@@ -1,4 +1,5 @@
+ import type { NarrativeChoice } from '../engine';
++import { blackoutMemory } from '../content/prologue';
+ 
+ export type ChoiceOutcomeTone = 'memory' | 'evidence' | 'risk' | 'route';
+ 
+@@ -11,6 +12,7 @@ export type ChoiceOutcomeCue = {
+ 
+ export type ForeknowledgeIntervention = {
+   known: string;
++  knownKind?: 'fact' | 'outcome';
+   changed: string;
+   consequence: string;
+ };
+@@ -139,7 +141,8 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
+       tone: 'risk',
+     },
+     intervention: {
+-      known: '유진에게 휴대전화의 모순만 제한적으로 알렸다',
++      known: blackoutMemory.description,
++      knownKind: 'fact',
+       changed: '유진의 다음 말과 자정 정전을 먼저 말했다',
+       consequence: '정보는 증명했지만 유진의 경계가 상승했다.',
+     },
+diff --git a/src/ui/NarrativePlayer.tsx b/src/ui/NarrativePlayer.tsx
+index 72c5dce..c1ed5dc 100644
+--- a/src/ui/NarrativePlayer.tsx
++++ b/src/ui/NarrativePlayer.tsx
+@@ -1566,8 +1566,17 @@ export function NarrativePlayer() {
+                 <View style={styles.interventionRow}>
+                   <View style={[styles.interventionNode, styles.interventionNodeKnown]} />
+                   <View style={styles.interventionCopy}>
+-                    <Text style={styles.interventionLabel}>이전에 확인한 결말</Text>
+-                    <Text style={[styles.interventionText, tabletUi && styles.interventionTextTablet, styles.interventionKnownText]}>
++                    <Text style={styles.interventionLabel}>
++                      {foreknowledgeIntervention.knownKind === 'fact' ? '이전에 확인한 사실' : '이전에 확인한 결말'}
++                    </Text>
++                    <Text
++                      textBreakStrategy={foreknowledgeIntervention.knownKind === 'fact' ? 'balanced' : 'highQuality'}
++                      style={[
++                        styles.interventionText,
++                        tabletUi && styles.interventionTextTablet,
++                        foreknowledgeIntervention.knownKind !== 'fact' && styles.interventionKnownText,
++                      ]}
++                    >
+                       {foreknowledgeIntervention.known}
+                     </Text>
+                   </View>
+diff --git a/scripts/test-foreknowledge-history.ts b/scripts/test-foreknowledge-history.ts
+new file mode 100644
+--- /dev/null
++++ b/scripts/test-foreknowledge-history.ts
+@@ -0,0 +1,82 @@
++import assert from 'node:assert/strict';
++import {
++  blackoutMemory, prologueScenes, SCENE_CH00_ENTRANCE, LOCATION_MOUNTAIN_ROAD,
++  SCENE_LOOP2_RESET_AWAKENING, SCENE_LOOP2_YUJIN_MINIMAL,
++  MEMORY_BLACKOUT_0000, FLAG_YUJIN_WARY,
++} from '../src/content/prologue';
++import { applyEffects, getAvailableChoices, resetLoop, LOOP_START_TIME } from '../src/engine';
++import type { NarrativeEngineState } from '../src/engine';
++import { investigationFlag, sceneInvestigations } from '../src/gameplay/investigation';
++import { getChoicePresentation } from '../src/gameplay/choicePresentation';
++
++function choose(state: NarrativeEngineState, id: string): NarrativeEngineState {
++  const choice = getAvailableChoices(prologueScenes[state.volatile.currentSceneId], state)
++    .find((entry) => entry.id === id);
++  assert(choice, `${id} must be reachable through normal conditions`);
++  const moved = applyEffects(state, choice.effects);
++  const entered = applyEffects(moved, prologueScenes[moved.volatile.currentSceneId].onEnter ?? []);
++  return { ...entered, volatile: { ...entered.volatile,
++    visitedSceneIds: [...entered.volatile.visitedSceneIds, entered.volatile.currentSceneId],
++  } };
++}
++
++let cases = 0;
++for (const messageChoice of ['PRESERVE_MESSAGE_SEQUENCE', 'CONTINUE_TO_BAEKYA']) {
++  for (const arrivalChoice of ['DO_NOT_EXPLAIN_LOOP_YET', 'TEST_MESSAGE_ANOMALY']) {
++    let state: NarrativeEngineState = {
++      persistent: { loopCount: 1, clueIds: [], deductionIds: [], memories: [], deathIntel: [], deathRecords: [], flags: {} },
++      volatile: { time: LOOP_START_TIME, currentSceneId: SCENE_CH00_ENTRANCE,
++        currentLocationId: LOCATION_MOUNTAIN_ROAD, visitedSceneIds: [SCENE_CH00_ENTRANCE], itemIds: [], flags: {} },
++    };
++    for (const id of [
++      'KEEP_SEOYUN_TALKING', 'ASK_ABOUT_OTHER_CALLS', messageChoice,
++      'ENTER_HOSPITAL_GROUNDS', 'APPROACH_RECEPTION', 'WAIT_FOR_SEARCH_RESULT',
++      'QUESTION_THE_DENIAL', 'READ_SEOYUN_WARNING', 'GO_TO_THIRD_FLOOR',
++      'ASK_NURSE_ABOUT_302', 'ENTER_ROOM_302_LOOP1', 'CHECK_WRISTBAND',
++      'LEAVE_WRISTBAND_AND_REPLY', 'LOOK_FOR_EMPLOYEE_DOOR',
++      'STAY_UNTIL_BLACKOUT', 'MOVE_TOWARD_UNLOCKED_DOOR',
++    ]) {
++      if (id === 'CHECK_WRISTBAND') {
++        const investigation = sceneInvestigations[state.volatile.currentSceneId];
++        for (const hotspotId of ['recent-use-traces', 'torn-wristband']) {
++          const hotspot = investigation.hotspots.find((entry) => entry.id === hotspotId)!;
++          state = applyEffects(state, [...hotspot.effects, { type: 'setFlag',
++            flag: investigationFlag(state.volatile.currentSceneId, hotspotId), value: true, scope: 'loop' }]);
++        }
++      }
++      state = choose(state, id);
++    }
++    assert(state.volatile.deathId, 'the player must actually reach the first death');
++    state = resetLoop(state, SCENE_LOOP2_RESET_AWAKENING, LOCATION_MOUNTAIN_ROAD);
++    for (const id of ['RECOGNIZE_RESET', 'CONTINUE_AFTER_TITLE']) state = choose(state, id);
++    if (messageChoice === 'CONTINUE_TO_BAEKYA' && arrivalChoice === 'TEST_MESSAGE_ANOMALY') {
++      assert(!getAvailableChoices(prologueScenes[state.volatile.currentSceneId], state)
++        .some((entry) => entry.id === arrivalChoice), 'unrecorded message order cannot unlock prediction');
++      continue;
++    }
++    for (const id of [arrivalChoice,
++      ...(arrivalChoice === 'TEST_MESSAGE_ANOMALY' ? ['LEAVE_AFTER_MESSAGE_TEST'] : []),
++      'TAKE_FIRST_PHONE', 'ANSWER_ON_OWN_PHONE']) state = choose(state, id);
++
++    assert(!state.volatile.visitedSceneIds.includes(SCENE_LOOP2_YUJIN_MINIMAL),
++      'fresh disclosure must not have experienced the alternative minimal-disclosure scene');
++    const scene = prologueScenes[state.volatile.currentSceneId];
++    const reveal = getAvailableChoices(scene, state).find((entry) => entry.id === 'REVEAL_EXACT_FOREKNOWLEDGE')!;
++    assert(reveal);
++    const remembered = state.persistent.memories.find((entry) => entry.id === MEMORY_BLACKOUT_0000);
++    assert(remembered);
++    assert.equal(remembered.description, blackoutMemory.description);
++    assert.equal(getChoicePresentation(reveal).intervention?.known, remembered.description,
++      'F04: the previous outcome must come from an acquired memory, not an unplayed alternative');
++    assert.equal(getChoicePresentation(reveal).intervention?.knownKind, 'fact',
++      'the recurring blackout remains a fact, not a canceled outcome');
++
++    const withoutMemory = { ...state, persistent: { ...state.persistent, memories: [] } };
++    assert(!getAvailableChoices(scene, withoutMemory).some((entry) => entry.id === reveal.id),
++      'disclosure must remain unavailable without the memory supporting its feedback');
++    assert.equal(choose(state, reveal.id).volatile.flags[FLAG_YUJIN_WARY], true);
++    assert.notEqual(choose(state, 'TELL_YUJIN_ONLY_PHONE_FACT').volatile.flags[FLAG_YUJIN_WARY], true);
++    cases += 1;
++  }
++}
++console.log(`Foreknowledge history: ${cases} fresh routes passed; acquired memory, missing-memory gate, and disclosure consequences.`);

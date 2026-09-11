@@ -1,0 +1,9 @@
+ M assets/ASSET_MANIFEST.json
+ M scripts/test-choice-presentation.ts
+ M src/gameplay/choicePresentation.ts
+ M src/ui/FieldKit.tsx
+ M src/ui/NarrativePlayer.tsx
+?? assets/characters/minseo/IDENTITY_LOCK_2026-09-12.md
+?? assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png
+?? docs/qa/
+?? scripts/test-foreknowledge-history.ts

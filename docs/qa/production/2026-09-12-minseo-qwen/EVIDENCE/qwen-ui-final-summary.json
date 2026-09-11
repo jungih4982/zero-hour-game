@@ -1,0 +1,9 @@
+{
+  "jobId": "611e4bb1-3fb6-456e-aac7-939bfd73e96f",
+  "status": "success",
+  "uiObservedDurationSeconds": 41.94,
+  "assetDecision": "study only; not integrated",
+  "input": "MINSEO_APPROVED_A_RGBA_20260912_00001_.png [output]",
+  "inputRGBEqualsOriginalA": true,
+  "outputSHA256": "5999866677ff68d3c8f5b81bb9d898898e0c3b23306c835626ff8d9da70debde"
+}

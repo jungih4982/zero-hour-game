@@ -1,0 +1,6 @@
+
+Algorithm : SHA256
+Hash      : 72BED25B0643EA56A1CEC54FF93F0FCE9CE0E5D1FA935577F748AA8A15405F6C
+Path      : C:\Dev\zero-hour-game\android\app\build\outputs\apk\debug\app-debug.apk
+
+

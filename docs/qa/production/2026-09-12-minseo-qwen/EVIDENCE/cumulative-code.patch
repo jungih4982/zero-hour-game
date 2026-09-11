@@ -1,0 +1,114 @@
+diff --git a/assets/ASSET_MANIFEST.json b/assets/ASSET_MANIFEST.json
+index d99fdb6..5c12373 100644
+--- a/assets/ASSET_MANIFEST.json
++++ b/assets/ASSET_MANIFEST.json
+@@ -1,6 +1,6 @@
+ {
+   "schemaVersion": 2,
+-  "updatedAt": "2026-09-02",
++  "updatedAt": "2026-09-12",
+   "verticalSlice": {
+     "integrated": [
+       "backgrounds/exterior/BG_Hospital_Exterior_Arrival_v01.png",
+@@ -25,7 +25,7 @@
+       "characters/taejun/sprites/CHAR_Taejun_Confrontational_Full_v01.png",
+       "characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
+       "characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png",
+-      "characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png",
++      "characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png",
+       "ui/ZH_UI_Mnemosyne_FieldBoard_v001.png",
+       "app/ZERO_HOUR_AppIcon_v01.png",
+       "app/icon.png",
+@@ -66,7 +66,7 @@
+     "The user-facing location term is 복도 끝 직원용 문; the rejected Korean wording must not be reintroduced.",
+     "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06.",
+     "The fullscreen field record uses a Midjourney-generated MNEMOSYNE evidence-board layer beneath real route, clue, deduction, and item controls; generated lettering is never used as interface copy.",
+-    "Minseo's 06-card confrontation sprite was regenerated from her locked face and uniform references in a more cinematic semi-realistic render, then extracted from a chroma field for a clean transparent scene layer.",
++    "Minseo's clinical scene and field-record sprite uses the September 12 selected Midjourney candidate A with native ComfyUI BiRefNet alpha. Its RGB artwork is unchanged from A. The user approved the changed art direction and delegated final selection; see characters/minseo/IDENTITY_LOCK_2026-09-12.md. The older Clinical_Full_v02 is preserved but no longer integrated because of style mismatch and missing coat alpha. The Qwen Image 2512 refinement study was rejected for eye and lip drift, and no SDXL generation was used in this batch.",
+     "The 06-card evidence insert uses Midjourney scene lighting with a deterministic local number overlay, so the canonical clue remains exact rather than relying on generated lettering.",
+     "The title screen uses portrait-specific Baekya Medical Center key art with slow camera drift and restrained cyan luminance breathing; game title and menu text remain native UI."
+   ]
+diff --git a/scripts/test-choice-presentation.ts b/scripts/test-choice-presentation.ts
+index 2e59d8b..9829e1f 100644
+--- a/scripts/test-choice-presentation.ts
++++ b/scripts/test-choice-presentation.ts
+@@ -1,4 +1,5 @@
+ import { prologueScenes } from '../src/content/prologue';
++import './test-foreknowledge-history';
+ import {
+   getChoiceGroupPresentation,
+   getChoicePresentation,
+diff --git a/src/gameplay/choicePresentation.ts b/src/gameplay/choicePresentation.ts
+index 115e617..569200b 100644
+--- a/src/gameplay/choicePresentation.ts
++++ b/src/gameplay/choicePresentation.ts
+@@ -1,4 +1,5 @@
+ import type { NarrativeChoice } from '../engine';
++import { blackoutMemory } from '../content/prologue';
+ 
+ export type ChoiceOutcomeTone = 'memory' | 'evidence' | 'risk' | 'route';
+ 
+@@ -11,6 +12,7 @@ export type ChoiceOutcomeCue = {
+ 
+ export type ForeknowledgeIntervention = {
+   known: string;
++  knownKind?: 'fact' | 'outcome';
+   changed: string;
+   consequence: string;
+ };
+@@ -139,7 +141,8 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
+       tone: 'risk',
+     },
+     intervention: {
+-      known: '유진에게 휴대전화의 모순만 제한적으로 알렸다',
++      known: blackoutMemory.description,
++      knownKind: 'fact',
+       changed: '유진의 다음 말과 자정 정전을 먼저 말했다',
+       consequence: '정보는 증명했지만 유진의 경계가 상승했다.',
+     },
+diff --git a/src/ui/FieldKit.tsx b/src/ui/FieldKit.tsx
+index 2de416e..289d490 100644
+--- a/src/ui/FieldKit.tsx
++++ b/src/ui/FieldKit.tsx
+@@ -43,7 +43,7 @@ const pictures = {
+   yujin: require('../../assets/characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png'),
+   taejun: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Watchful_Full_v01.png'),
+   sea: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
+-  minseo: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png'),
++  minseo: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png'),
+ };
+ 
+ type PersonEntry = PictureCopy & {
+diff --git a/src/ui/NarrativePlayer.tsx b/src/ui/NarrativePlayer.tsx
+index 72c5dce..49df5d3 100644
+--- a/src/ui/NarrativePlayer.tsx
++++ b/src/ui/NarrativePlayer.tsx
+@@ -175,7 +175,7 @@ const characterSprites = {
+   taejunConfrontational: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Confrontational_Full_v01.png'),
+   seaWary: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
+   seaConfused: require('../../assets/characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png'),
+-  minseoClinical: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png'),
++  minseoClinical: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png'),
+ };
+ 
+ type CharacterSpeaker = Extract<SpeakerId, 'seoyun' | 'yujin' | 'taejun' | 'sea' | 'minseo'>;
+@@ -1566,8 +1566,17 @@ export function NarrativePlayer() {
+                 <View style={styles.interventionRow}>
+                   <View style={[styles.interventionNode, styles.interventionNodeKnown]} />
+                   <View style={styles.interventionCopy}>
+-                    <Text style={styles.interventionLabel}>이전에 확인한 결말</Text>
+-                    <Text style={[styles.interventionText, tabletUi && styles.interventionTextTablet, styles.interventionKnownText]}>
++                    <Text style={styles.interventionLabel}>
++                      {foreknowledgeIntervention.knownKind === 'fact' ? '이전에 확인한 사실' : '이전에 확인한 결말'}
++                    </Text>
++                    <Text
++                      textBreakStrategy={foreknowledgeIntervention.knownKind === 'fact' ? 'balanced' : 'highQuality'}
++                      style={[
++                        styles.interventionText,
++                        tabletUi && styles.interventionTextTablet,
++                        foreknowledgeIntervention.knownKind !== 'fact' && styles.interventionKnownText,
++                      ]}
++                    >
+                       {foreknowledgeIntervention.known}
+                     </Text>
+                   </View>

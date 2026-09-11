@@ -1,0 +1,1 @@
+{"checkpoint": "resume-final", "sha256": "acd8c3301e408462dd1ce3379877e35284d1957a6ef6f3fb5a4676cb07f1a033", "scene": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE", "time": 22, "loop": 2, "preferences": {"state": {"dialogueSpeed": "standard", "lastSceneId": "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE", "lastBeatIndex": 8, "seenTutorialGuideIds": ["dialogue", "time", "records"]}, "version": 0}}

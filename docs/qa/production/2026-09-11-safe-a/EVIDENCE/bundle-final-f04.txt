@@ -1,0 +1,7 @@
+      textBreakStrategy: true,
+      textBreakStrategy: true,
+        textBreakStrategy: props.textBreakStrategy
+                    children: foreknowledgeIntervention.knownKind === 'fact' ? '이전에 확인한 사실' : '이전에 확인한 결말'
+                    textBreakStrategy: "balanced",
+        known: _contentPrologue.blackoutMemory.description,
+        knownKind: 'fact',

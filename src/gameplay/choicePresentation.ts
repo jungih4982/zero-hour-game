@@ -1,4 +1,5 @@
 import type { NarrativeChoice } from '../engine';
+import { blackoutMemory } from '../content/prologue';
 
 export type ChoiceOutcomeTone = 'memory' | 'evidence' | 'risk' | 'route';
 
@@ -11,6 +12,7 @@ export type ChoiceOutcomeCue = {
 
 export type ForeknowledgeIntervention = {
   known: string;
+  knownKind?: 'fact' | 'outcome';
   changed: string;
   consequence: string;
 };
@@ -139,7 +141,8 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
       tone: 'risk',
     },
     intervention: {
-      known: '유진에게 휴대전화의 모순만 제한적으로 알렸다',
+      known: blackoutMemory.description,
+      knownKind: 'fact',
       changed: '유진의 다음 말과 자정 정전을 먼저 말했다',
       consequence: '정보는 증명했지만 유진의 경계가 상승했다.',
     },

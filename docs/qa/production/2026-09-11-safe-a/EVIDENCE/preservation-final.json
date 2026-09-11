@@ -1,0 +1,25 @@
+{
+  "verifiedAt": "2026-09-11T23:36:55.228793+09:00",
+  "head": "2f6e21a8eac8829bf216fdc177abb5b8b512304d",
+  "branch": "master",
+  "stagedFiles": [],
+  "baselineTrackedCount": 228,
+  "unchangedTrackedCount": 225,
+  "expectedModifiedTrackedFiles": [
+    "scripts/test-choice-presentation.ts",
+    "src/gameplay/choicePresentation.ts",
+    "src/ui/NarrativePlayer.tsx"
+  ],
+  "actualModifiedTrackedFiles": [
+    "scripts/test-choice-presentation.ts",
+    "src/gameplay/choicePresentation.ts",
+    "src/ui/NarrativePlayer.tsx"
+  ],
+  "unexpectedTrackedChanges": [],
+  "newTestFile": "scripts/test-foreknowledge-history.ts",
+  "priorArtifactCount": 101,
+  "priorArtifactMismatches": [],
+  "diffCheckExit": 0,
+  "pass": true,
+  "scope": "Baseline tracked content and prior manifest entries; ignored runtime caches are outside this preservation comparison."
+}

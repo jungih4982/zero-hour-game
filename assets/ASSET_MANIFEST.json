@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-02",
+  "updatedAt": "2026-09-12",
   "verticalSlice": {
     "integrated": [
       "backgrounds/exterior/BG_Hospital_Exterior_Arrival_v01.png",
@@ -25,7 +25,7 @@
       "characters/taejun/sprites/CHAR_Taejun_Confrontational_Full_v01.png",
       "characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png",
       "characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png",
-      "characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png",
+      "characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png",
       "ui/ZH_UI_Mnemosyne_FieldBoard_v001.png",
       "app/ZERO_HOUR_AppIcon_v01.png",
       "app/icon.png",
@@ -66,7 +66,7 @@
     "The user-facing location term is 복도 끝 직원용 문; the rejected Korean wording must not be reintroduced.",
     "The number 06 is a card and wristband clue in the canonical dialogue. It does not establish a room named Observation Room 06.",
     "The fullscreen field record uses a Midjourney-generated MNEMOSYNE evidence-board layer beneath real route, clue, deduction, and item controls; generated lettering is never used as interface copy.",
-    "Minseo's 06-card confrontation sprite was regenerated from her locked face and uniform references in a more cinematic semi-realistic render, then extracted from a chroma field for a clean transparent scene layer.",
+    "Minseo's clinical scene and field-record sprite uses the September 12 selected Midjourney candidate A with native ComfyUI BiRefNet alpha. Its RGB artwork is unchanged from A. The user approved the changed art direction and delegated final selection; see characters/minseo/IDENTITY_LOCK_2026-09-12.md. The older Clinical_Full_v02 is preserved but no longer integrated because of style mismatch and missing coat alpha. The Qwen Image 2512 refinement study was rejected for eye and lip drift, and no SDXL generation was used in this batch.",
     "The 06-card evidence insert uses Midjourney scene lighting with a deterministic local number overlay, so the canonical clue remains exact rather than relying on generated lettering.",
     "The title screen uses portrait-specific Baekya Medical Center key art with slow camera drift and restrained cyan luminance breathing; game title and menu text remain native UI."
   ]

@@ -1,0 +1,865 @@
+{
+  "611e4bb1-3fb6-456e-aac7-939bfd73e96f": {
+    "prompt": [
+      8,
+      "611e4bb1-3fb6-456e-aac7-939bfd73e96f",
+      {
+        "1": {
+          "inputs": {
+            "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "확산 모델 로드"
+          }
+        },
+        "2": {
+          "inputs": {
+            "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "type": "qwen_image",
+            "device": "default"
+          },
+          "class_type": "CLIPLoader",
+          "_meta": {
+            "title": "CLIP 로드"
+          }
+        },
+        "3": {
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "VAE 로드"
+          }
+        },
+        "4": {
+          "inputs": {
+            "shift": 3.1,
+            "model": [
+              "1",
+              0
+            ]
+          },
+          "class_type": "ModelSamplingAuraFlow",
+          "_meta": {
+            "title": "모델 샘플링 (AuraFlow)"
+          }
+        },
+        "5": {
+          "inputs": {
+            "strength": 1.0,
+            "pre_cfg": false,
+            "model": [
+              "4",
+              0
+            ]
+          },
+          "class_type": "CFGNorm",
+          "_meta": {
+            "title": "CFGNorm"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "Clinical noir Korean webtoon visual novel character sprite, single adult Korean woman doctor. Keep the input composition, face proportions, narrow almond eyes, long straight side-parted black hair, visible ear, reserved clinical expression, white opaque long doctor coat over charcoal gray V-neck scrubs, drawstring waist, one hand in the coat pocket and the other relaxed. Head to mid thighs. Fine restrained black linework, matte muted colors, subtle two-tone shadows on skin and cloth. Plain flat medium gray background. The coat is solid opaque white cloth including its lower panels. No accessories, no badge, no stethoscope, no text, no change of pose or outfit.",
+            "clip": [
+              "2",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP 텍스트 인코딩 (프롬프트)"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "photograph, photorealistic, glossy skin, plastic, 3d render, oversized eyes, child, chibi, jewelry, wristwatch, stethoscope, badge, text, watermark, new clothing, duplicate person, hospital background",
+            "clip": [
+              "2",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP 텍스트 인코딩 (프롬프트)"
+          }
+        },
+        "8": {
+          "inputs": {
+            "image": "MINSEO_APPROVED_A_RGBA_20260912_00001_.png [output]"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "이미지 로드"
+          }
+        },
+        "9": {
+          "inputs": {
+            "pixels": [
+              "8",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          },
+          "class_type": "VAEEncode",
+          "_meta": {
+            "title": "VAE 인코드"
+          }
+        },
+        "10": {
+          "inputs": {
+            "seed": 2026091201,
+            "steps": 20,
+            "cfg": 4.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 0.2,
+            "model": [
+              "5",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "9",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "KSampler"
+          }
+        },
+        "11": {
+          "inputs": {
+            "samples": [
+              "10",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE 디코드"
+          }
+        },
+        "12": {
+          "inputs": {
+            "filename_prefix": "ZERO_HOUR/MINSEO_QWEN_2512_REFINEMENT_20260912",
+            "images": [
+              "11",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "이미지 저장"
+          }
+        }
+      },
+      {
+        "comfy_usage_source": "comfyui-frontend",
+        "extra_pnginfo": {
+          "workflow": {
+            "id": "d18c53ed-c329-43cf-a7f7-bd10dde981b3",
+            "revision": 0,
+            "last_node_id": 12,
+            "last_link_id": 13,
+            "nodes": [
+              {
+                "id": 1,
+                "type": "UNETLoader",
+                "pos": [
+                  0,
+                  0
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 0,
+                "mode": 0,
+                "inputs": [],
+                "outputs": [
+                  {
+                    "name": "MODEL",
+                    "type": "MODEL",
+                    "links": [
+                      1
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "UNETLoader"
+                },
+                "widgets_values": [
+                  "qwen_image_2512_fp8_e4m3fn.safetensors",
+                  "default"
+                ],
+                "widgets_values_named": {
+                  "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+                  "weight_dtype": "default"
+                }
+              },
+              {
+                "id": 2,
+                "type": "CLIPLoader",
+                "pos": [
+                  350,
+                  0
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 1,
+                "mode": 0,
+                "inputs": [],
+                "outputs": [
+                  {
+                    "name": "CLIP",
+                    "type": "CLIP",
+                    "links": [
+                      3,
+                      4
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "CLIPLoader"
+                },
+                "widgets_values": [
+                  "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+                  "qwen_image",
+                  "default"
+                ],
+                "widgets_values_named": {
+                  "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+                  "type": "qwen_image",
+                  "device": "default"
+                }
+              },
+              {
+                "id": 3,
+                "type": "VAELoader",
+                "pos": [
+                  700,
+                  0
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 2,
+                "mode": 0,
+                "inputs": [],
+                "outputs": [
+                  {
+                    "name": "VAE",
+                    "type": "VAE",
+                    "links": [
+                      6,
+                      12
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "VAELoader"
+                },
+                "widgets_values": [
+                  "qwen_image_vae.safetensors"
+                ],
+                "widgets_values_named": {
+                  "vae_name": "qwen_image_vae.safetensors"
+                }
+              },
+              {
+                "id": 4,
+                "type": "ModelSamplingAuraFlow",
+                "pos": [
+                  1050,
+                  0
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 4,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "model",
+                    "type": "MODEL",
+                    "link": 1
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "MODEL",
+                    "type": "MODEL",
+                    "links": [
+                      2
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "ModelSamplingAuraFlow"
+                },
+                "widgets_values": [
+                  3.1
+                ],
+                "widgets_values_named": {
+                  "shift": 3.1
+                }
+              },
+              {
+                "id": 5,
+                "type": "CFGNorm",
+                "pos": [
+                  0,
+                  430
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 8,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "model",
+                    "type": "MODEL",
+                    "link": 2
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "patched_model",
+                    "type": "MODEL",
+                    "links": [
+                      7
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "CFGNorm"
+                },
+                "widgets_values": [
+                  1,
+                  false
+                ],
+                "widgets_values_named": {
+                  "strength": 1,
+                  "pre_cfg": false
+                }
+              },
+              {
+                "id": 6,
+                "type": "CLIPTextEncode",
+                "pos": [
+                  350,
+                  430
+                ],
+                "size": [
+                  320,
+                  360
+                ],
+                "flags": {},
+                "order": 5,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": 3
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                      8
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "CLIPTextEncode"
+                },
+                "widgets_values": [
+                  "Clinical noir Korean webtoon visual novel character sprite, single adult Korean woman doctor. Keep the input composition, face proportions, narrow almond eyes, long straight side-parted black hair, visible ear, reserved clinical expression, white opaque long doctor coat over charcoal gray V-neck scrubs, drawstring waist, one hand in the coat pocket and the other relaxed. Head to mid thighs. Fine restrained black linework, matte muted colors, subtle two-tone shadows on skin and cloth. Plain flat medium gray background. The coat is solid opaque white cloth including its lower panels. No accessories, no badge, no stethoscope, no text, no change of pose or outfit."
+                ],
+                "widgets_values_named": {
+                  "text": "Clinical noir Korean webtoon visual novel character sprite, single adult Korean woman doctor. Keep the input composition, face proportions, narrow almond eyes, long straight side-parted black hair, visible ear, reserved clinical expression, white opaque long doctor coat over charcoal gray V-neck scrubs, drawstring waist, one hand in the coat pocket and the other relaxed. Head to mid thighs. Fine restrained black linework, matte muted colors, subtle two-tone shadows on skin and cloth. Plain flat medium gray background. The coat is solid opaque white cloth including its lower panels. No accessories, no badge, no stethoscope, no text, no change of pose or outfit."
+                }
+              },
+              {
+                "id": 7,
+                "type": "CLIPTextEncode",
+                "pos": [
+                  700,
+                  430
+                ],
+                "size": [
+                  320,
+                  360
+                ],
+                "flags": {},
+                "order": 6,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": 4
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                      9
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "CLIPTextEncode"
+                },
+                "widgets_values": [
+                  "photograph, photorealistic, glossy skin, plastic, 3d render, oversized eyes, child, chibi, jewelry, wristwatch, stethoscope, badge, text, watermark, new clothing, duplicate person, hospital background"
+                ],
+                "widgets_values_named": {
+                  "text": "photograph, photorealistic, glossy skin, plastic, 3d render, oversized eyes, child, chibi, jewelry, wristwatch, stethoscope, badge, text, watermark, new clothing, duplicate person, hospital background"
+                }
+              },
+              {
+                "id": 9,
+                "type": "VAEEncode",
+                "pos": [
+                  0,
+                  860
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 7,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "pixels",
+                    "type": "IMAGE",
+                    "link": 5
+                  },
+                  {
+                    "name": "vae",
+                    "type": "VAE",
+                    "link": 6
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                      10
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "VAEEncode"
+                }
+              },
+              {
+                "id": 10,
+                "type": "KSampler",
+                "pos": [
+                  350,
+                  860
+                ],
+                "size": [
+                  320,
+                  262
+                ],
+                "flags": {},
+                "order": 9,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "model",
+                    "type": "MODEL",
+                    "link": 7
+                  },
+                  {
+                    "name": "positive",
+                    "type": "CONDITIONING",
+                    "link": 8
+                  },
+                  {
+                    "name": "negative",
+                    "type": "CONDITIONING",
+                    "link": 9
+                  },
+                  {
+                    "name": "latent_image",
+                    "type": "LATENT",
+                    "link": 10
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                      11
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "KSampler"
+                },
+                "widgets_values": [
+                  2026091201,
+                  "fixed",
+                  20,
+                  4,
+                  "euler",
+                  "simple",
+                  0.2
+                ],
+                "widgets_values_named": {
+                  "seed": 2026091201,
+                  "control_after_generate": "fixed",
+                  "steps": 20,
+                  "cfg": 4,
+                  "sampler_name": "euler",
+                  "scheduler": "simple",
+                  "denoise": 0.2
+                }
+              },
+              {
+                "id": 11,
+                "type": "VAEDecode",
+                "pos": [
+                  700,
+                  860
+                ],
+                "size": [
+                  320,
+                  230
+                ],
+                "flags": {},
+                "order": 10,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "samples",
+                    "type": "LATENT",
+                    "link": 11
+                  },
+                  {
+                    "name": "vae",
+                    "type": "VAE",
+                    "link": 12
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                      13
+                    ]
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "VAEDecode"
+                }
+              },
+              {
+                "id": 12,
+                "type": "SaveImage",
+                "pos": [
+                  1050,
+                  860
+                ],
+                "size": [
+                  320,
+                  360
+                ],
+                "flags": {},
+                "order": 11,
+                "mode": 0,
+                "inputs": [
+                  {
+                    "name": "images",
+                    "type": "IMAGE",
+                    "link": 13
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "images",
+                    "type": "IMAGE",
+                    "links": []
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "SaveImage"
+                },
+                "widgets_values": [
+                  "ZERO_HOUR/MINSEO_QWEN_2512_REFINEMENT_20260912"
+                ],
+                "widgets_values_named": {
+                  "filename_prefix": "ZERO_HOUR/MINSEO_QWEN_2512_REFINEMENT_20260912"
+                }
+              },
+              {
+                "id": 8,
+                "type": "LoadImage",
+                "pos": [
+                  1050,
+                  430
+                ],
+                "size": [
+                  320,
+                  360
+                ],
+                "flags": {},
+                "order": 3,
+                "mode": 0,
+                "inputs": [],
+                "outputs": [
+                  {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                      5
+                    ]
+                  },
+                  {
+                    "name": "MASK",
+                    "type": "MASK",
+                    "links": []
+                  }
+                ],
+                "properties": {
+                  "Node name for S&R": "LoadImage"
+                },
+                "widgets_values": [
+                  "MINSEO_APPROVED_A_RGBA_20260912_00001_.png [output]",
+                  "image"
+                ],
+                "widgets_values_named": {
+                  "image": "MINSEO_APPROVED_A_RGBA_20260912_00001_.png [output]",
+                  "upload": "image"
+                }
+              }
+            ],
+            "links": [
+              [
+                1,
+                1,
+                0,
+                4,
+                0,
+                "MODEL"
+              ],
+              [
+                2,
+                4,
+                0,
+                5,
+                0,
+                "MODEL"
+              ],
+              [
+                3,
+                2,
+                0,
+                6,
+                0,
+                "CLIP"
+              ],
+              [
+                4,
+                2,
+                0,
+                7,
+                0,
+                "CLIP"
+              ],
+              [
+                5,
+                8,
+                0,
+                9,
+                0,
+                "IMAGE"
+              ],
+              [
+                6,
+                3,
+                0,
+                9,
+                1,
+                "VAE"
+              ],
+              [
+                7,
+                5,
+                0,
+                10,
+                0,
+                "MODEL"
+              ],
+              [
+                8,
+                6,
+                0,
+                10,
+                1,
+                "CONDITIONING"
+              ],
+              [
+                9,
+                7,
+                0,
+                10,
+                2,
+                "CONDITIONING"
+              ],
+              [
+                10,
+                9,
+                0,
+                10,
+                3,
+                "LATENT"
+              ],
+              [
+                11,
+                10,
+                0,
+                11,
+                0,
+                "LATENT"
+              ],
+              [
+                12,
+                3,
+                0,
+                11,
+                1,
+                "VAE"
+              ],
+              [
+                13,
+                11,
+                0,
+                12,
+                0,
+                "IMAGE"
+              ]
+            ],
+            "groups": [],
+            "config": {},
+            "extra": {
+              "ds": {
+                "scale": 0.7,
+                "offset": [
+                  70,
+                  70
+                ]
+              },
+              "frontendVersion": "1.49.6"
+            },
+            "version": 0.4
+          }
+        },
+        "client_id": "edf075a2169a4319827ed877ded2d542",
+        "create_time": 1789141803441
+      },
+      [
+        "12"
+      ]
+    ],
+    "outputs": {
+      "12": {
+        "images": [
+          {
+            "filename": "MINSEO_QWEN_2512_REFINEMENT_20260912_00003_.png",
+            "subfolder": "ZERO_HOUR",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "611e4bb1-3fb6-456e-aac7-939bfd73e96f",
+            "timestamp": 1789141803443
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "prompt_id": "611e4bb1-3fb6-456e-aac7-939bfd73e96f",
+            "timestamp": 1789141803445
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "611e4bb1-3fb6-456e-aac7-939bfd73e96f",
+            "timestamp": 1789141845380
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "12": {
+        "node_id": "12",
+        "display_node": "12",
+        "parent_node": null,
+        "real_node_id": "12"
+      }
+    }
+  }
+}

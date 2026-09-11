@@ -1,0 +1,13 @@
+{
+  "appLogErrorLines": [],
+  "crashBufferMentionsGamePackage": false,
+  "otherCrashProcesses": [
+    "com.android.systemui",
+    "com.google.android.as",
+    "com.google.android.gms",
+    "com.google.android.gms.persistent",
+    "com.google.android.googlequicksearchbox:search",
+    "system_server"
+  ],
+  "scope": "Targeted app log only; OS/GMS crashes exist, so this is not an overall stability pass."
+}

@@ -1,0 +1,38 @@
+{
+  "head": "2f6e21a8eac8829bf216fdc177abb5b8b512304d",
+  "branch": "master",
+  "staged": [],
+  "priorCode": {
+    "count": 229,
+    "differences": [
+      {
+        "path": "assets/ASSET_MANIFEST.json",
+        "expected": "0a8cd91fdfb6edc6282d46e3d06f42faaa8653f233d11db39257112759291b74",
+        "actual": "82821efadf679549a6311c98572256dce98a1504b4f0c9dee3fce0e6af0978c8"
+      },
+      {
+        "path": "src/ui/FieldKit.tsx",
+        "expected": "058d5d60224dc568e98b0046e30282e56dc0e6aca8d2508e57d4e74395b2f017",
+        "actual": "9a826df37741f4afb8840fd6e4e0c6a27f7edea61b3dd6a34e05c511cfe3e061"
+      },
+      {
+        "path": "src/ui/NarrativePlayer.tsx",
+        "expected": "8b54369344853bb4dd7a5d15c8a306fa96a88fc75a35530ca58268dcc8e8a351",
+        "actual": "6d5e0bc8c69cff8a5f8843cf0f1d3d139d7110fa5e5e1104c321b49fed695e43"
+      }
+    ]
+  },
+  "priorBatchArtifacts": {
+    "count": 164,
+    "differences": []
+  },
+  "phase0Artifacts": {
+    "count": 101,
+    "differences": []
+  },
+  "existingComfyWorkflows": {
+    "count": 3,
+    "differences": []
+  },
+  "previousF04FilesPreserved": true
+}

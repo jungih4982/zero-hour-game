@@ -1,0 +1,65 @@
+{
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 1,
+          "clueIds": [
+            "CLUE_WATCH_GIFT",
+            "CLUE_B1_MAP",
+            "CLUE_YUJIN_KNOWN",
+            "CLUE_302_OCCUPIED",
+            "CLUE_WRISTBAND_DOB"
+          ],
+          "deductionIds": [],
+          "memories": [],
+          "deathIntel": [],
+          "deathRecords": [],
+          "flags": {}
+        },
+        "volatile": {
+          "time": 71,
+          "currentSceneId": "SCENE_ACT3_MAP_AND_TAEJUN",
+          "currentLocationId": "1F_STAFF_DOOR",
+          "visitedSceneIds": [
+            "SCENE_ACT0_DRIVE",
+            "SCENE_ACT0_WATCH_CALL",
+            "SCENE_ACT0_MESSAGES",
+            "SCENE_ACT0_LAST_CALL",
+            "SCENE_ACT0_ARRIVAL",
+            "SCENE_ACT1_YUJIN_FIRST",
+            "SCENE_ACT1_YUJIN_SEARCH",
+            "SCENE_ACT1_YUJIN_DENIAL",
+            "SCENE_ACT1_YUJIN_WARNING",
+            "SCENE_ACT2_THIRD_FLOOR",
+            "SCENE_ACT2_NURSE_AT_302",
+            "SCENE_ACT2_ROOM_CONTRADICTION",
+            "SCENE_ACT2_WRISTBAND",
+            "SCENE_ACT2_REMOTE_KNOWLEDGE",
+            "SCENE_ACT3_MAP_AND_TAEJUN"
+          ],
+          "itemIds": [],
+          "flags": {
+            "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+            "ROOM_302_WRISTBAND_FOUND": true,
+            "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+          }
+        }
+      }
+    },
+    "version": 4
+  },
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "lastBeatIndex": 8,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  }
+}

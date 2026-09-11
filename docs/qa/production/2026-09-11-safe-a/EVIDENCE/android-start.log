@@ -1,0 +1,1359 @@
+--------- beginning of main
+09-11 13:47:24.066  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.dex: File /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex does not exist.
+09-11 13:47:24.066  5287  5297 I artd    : GetBestInfo checking odex next to the dex file (/data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.odex)
+09-11 13:47:24.066  5287  5297 I artd    : Loading /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.odex with executable: 0
+09-11 13:47:24.066  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.odex: Failed to open oat filename for reading: No such file or directory
+09-11 13:47:24.066  5287  5297 I artd    : GetBestInfo checking vdex in dalvik-cache (/data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex)
+09-11 13:47:24.066  5287  5297 I artd    : unable to open vdex file /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex does not exist.
+09-11 13:47:24.066  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@user@0@com.google.android.gms@app_dg_cache@EC7C859F3FC767BB82D82EE06B046D25E8EB9283@the.apk@classes.vdex does not exist.
+09-11 13:47:24.066  5287  5297 I artd    : GetBestInfo checking vdex next to the dex file (/data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.vdex)
+09-11 13:47:24.066  5287  5297 I artd    : Successfully loaded /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.vdex with executable: 0
+09-11 13:47:24.066  5287  5297 I artd    : Image checksum test skipped for vdex file /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.vdex
+09-11 13:47:24.066  5287  5297 I artd    : /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/oat/x86_64/the.vdex is kOatUpToDate with filter verify
+09-11 13:47:24.067  5287  5297 I artd    : Dex parent of /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.apk is not writable: Permission denied
+09-11 13:47:24.067  5287  5297 I artd    : GetBestInfo checking odex in dalvik-cache (/data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.dex)
+09-11 13:47:24.067  5287  5297 I artd    : Loading /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.dex with executable: 0
+09-11 13:47:24.068  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.dex: File /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : GetBestInfo checking odex next to the dex file (/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.odex)
+09-11 13:47:24.068  5287  5297 I artd    : Loading /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.odex with executable: 0
+09-11 13:47:24.068  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.odex: File /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : GetBestInfo checking vdex in dalvik-cache (/data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex)
+09-11 13:47:24.068  5287  5297 I artd    : unable to open vdex file /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex: File /data/dalvik-cache/x86_64/data@user_de@0@com.google.android.gms@app_chimera@m@00000007@MeasurementDynamite.apk@classes.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : GetBestInfo checking vdex next to the dex file (/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex)
+09-11 13:47:24.068  5287  5297 I artd    : unable to open vdex file /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex: File /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex: File /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/oat/x86_64/MeasurementDynamite.vdex does not exist.
+09-11 13:47:24.068  5287  5297 I artd    : GetBestInfo checking dm (/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm)
+09-11 13:47:24.068  5287  5297 W ziparchive: Unable to open '/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm': No such file or directory
+09-11 13:47:24.069  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm: I/O error
+09-11 13:47:24.069  5287  5297 I artd    : GetBestInfo checking dm (/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm)
+09-11 13:47:24.069  5287  5297 W ziparchive: Unable to open '/data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm': No such file or directory
+09-11 13:47:24.069  5287  5297 I artd    : OatFileAssistant test for existing oat file /data/user_de/0/com.google.android.gms/app_chimera/m/00000007/MeasurementDynamite.dm: I/O error
+09-11 13:47:24.069  5287  5297 I artd    : GetBestInfo no usable artifacts
+09-11 13:47:24.081  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 18668238/138969976
+09-11 13:47:24.086  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT22.221S
+09-11 13:47:24.090   385   385 I Zygote  : Entering forkRepeatedly native zygote loop
+09-11 13:47:24.102   385   385 D Zygote  : Forked child process 8680
+--------- beginning of system
+09-11 13:47:24.103   589   624 W ActivityManager: Slow operation: 51ms so far, now at startProcess: returned from zygote!
+09-11 13:47:24.104   589   624 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating battery stats
+09-11 13:47:24.105   589   624 W ActivityManager: Slow operation: 52ms so far, now at startProcess: building log message
+09-11 13:47:24.105   589   624 I ActivityManager: Start proc 8680:com.google.android.settings.intelligence/u0a141 for service {com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.sliceindexing.impl.SliceIndexUpdateJobService}
+09-11 13:47:24.105   589   624 W ActivityManager: Slow operation: 52ms so far, now at startProcess: starting to update pids map
+09-11 13:47:24.105   589   624 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating pids map
+09-11 13:47:24.109  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:24.109  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:24.110   589   705 D CompatChangeReporter: Compat change id reported: 271850009; UID 10142; state: ENABLED
+09-11 13:47:24.120  6771  6771 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.notifications.registration.service.NotificationsRegistrationTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-11 13:47:24.120  6771  6771 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.notifications.registration.service.NotificationsRegistrationTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-11 13:47:24.127  8680  8680 I gs.intelligence: Using CollectorTypeCMC GC.
+09-11 13:47:24.128  8680  8680 W gs.intelligence: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:24.128  8680  8680 W gs.intelligence: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:24.133  8680  8680 E gs.intelligence: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:24.134  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:24.135  8680  8680 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:24.154  8680  8680 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+09-11 13:47:24.159  8680  8680 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+09-11 13:47:24.159  8680  8680 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+09-11 13:47:24.160  5085  5366 I PhenotypeBackgroundRecv: Successfully updated snapshot for com.google.android.libraries.subscriptions#com.google.android.googlequicksearchbox
+09-11 13:47:24.167   589   589 W Looper  : Slow dispatch took 156ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ServiceDispatcher$RunConnection@7d6b6bd m=0
+09-11 13:47:24.168  8680  8680 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-x86_64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so
+09-11 13:47:24.168  8680  8680 D nativeloader: Configuring product-clns-7 for unbundled product apk /product/priv-app/SettingsIntelligenceGooglePrebuilt/SettingsIntelligenceGooglePrebuilt.apk. target_sdk_version=35, uses_libraries=, library_path=/product/priv-app/SettingsIntelligenceGooglePrebuilt/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.settings.intelligence:/product/lib64:/system/product/lib64
+09-11 13:47:24.170  8680  8680 D nativeloader: InitVndkspLibrariesProduct: VNDK is deprecated with product
+09-11 13:47:24.170  7938  7938 I Finsky:background: [2] acnz.onStartJob(127): SCH: job service start with id 10012.
+09-11 13:47:24.170  1405  1405 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.instantapps.START pkg=com.google.android.gms }
+09-11 13:47:24.170  1405  1405 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.instantapps.START pkg=com.google.android.gms }
+09-11 13:47:24.176  7938  8448 I Finsky:background: [72] ovi.d(6): CronetDownloader: onRedirectReceived
+09-11 13:47:24.178  7938  7993 I Finsky:background: [50] kyv.a(420): SCH: Satisfied jobs for 10012 are: 40-9998
+09-11 13:47:24.199  8680  8680 D CompatChangeReporter: Compat change id reported: 202956589; UID 10141; state: ENABLED
+09-11 13:47:24.209  5085  5085 I PhenotypeBackgroundRecv: Skipping com.google.android.apps.search.transcription.device#com.google.android.googlequicksearchbox which doesn't use ProcessStable flags.
+09-11 13:47:24.220  8680  8680 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:24.221  8680  8680 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:24.221  8680  8680 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:24.221  8680  8680 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:24.221  8680  8680 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:24.242  6771  6771 I GmsCoreXrpcWrapper: (REDACTED) Returning a channel provider with trafficStatsTag=%d trafficStatsUid=%d
+09-11 13:47:24.294  1405  2068 E czvx    : Phenotype API error. Event: # fozr@98c0fe85, EventCode: COMMIT_CONFIG [CONTEXT service_id=51 ]
+09-11 13:47:24.294  1405  2068 E czvx    : czue: 29501: Stale snapshot for com.google.android.gms.notificationsregistration#com.google.android.gms(change count changed - expected 1  but was 0)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at czwc.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):507)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at czwb.i(:com.google.android.gms@242335041@24.23.35 (190800-646585959):3)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at czvx.h(:com.google.android.gms@242335041@24.23.35 (190800-646585959):18)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at czvx.f(:com.google.android.gms@242335041@24.23.35 (190800-646585959):11)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at boey.hj(:com.google.android.gms@242335041@24.23.35 (190800-646585959):1)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at bofh.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):97)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at emsz.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at angs.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):50)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at angs.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):97)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at anmg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:24.294  1405  2068 E czvx    : 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: operation=CommitToConfigurationOperationCall, opStatusCode=29501 [CONTEXT service_id=51 ]
+09-11 13:47:24.294  1405  2068 W AsyncOperation: OperationException[Status{statusCode=Stale snapshot for com.google.android.gms.notificationsregistration#com.google.android.gms(change count changed - expected 1  but was 0), resolution=null}]
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at czvx.h(:com.google.android.gms@242335041@24.23.35 (190800-646585959):48)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at czvx.f(:com.google.android.gms@242335041@24.23.35 (190800-646585959):11)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at boey.hj(:com.google.android.gms@242335041@24.23.35 (190800-646585959):1)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at bofh.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):97)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at emsz.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at angs.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):50)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at angs.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):97)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at anmg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:24.294  1405  2068 W AsyncOperation: 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:24.294  1405  2721 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-11 13:47:24.295  6771  7008 W MobStoreFlagStore: Failed to commit due to stale snapshot for com.google.android.gms.notificationsregistration#com.google.android.gms. Experiments may be delayed til next app start. Error code: 29501. Triggering flag update.
+09-11 13:47:24.304   589  1156 D OomAdjuster: Not killing cached processes
+09-11 13:47:24.304   589   713 I RescueParty: Starting to observe: [android], updated namespace: app_hibernation
+09-11 13:47:24.305   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:24.305   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android]
+09-11 13:47:24.305   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:24.305   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:24.305   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:24.308   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:24.308   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:24.309  5085  5369 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+09-11 13:47:24.309   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:24.313  5085  5085 I PhenotypeBackgroundRecv: Skipping com.google.android.apps.search.assistant.device#com.google.android.googlequicksearchbox which doesn't use ProcessStable flags.
+09-11 13:47:24.334   589   589 D AppHibernationService: App hibernation changed to enabled=true
+09-11 13:47:24.334   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:24.335   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:24.335   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:24.335   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:24.335   589  2539 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:24.335   589  2539 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:24.336   589  2539 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:24.336   589  2539 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:24.336   589  2539 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:24.338   589  2539 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:24.340  8461  8468 W t_app_installer: Missing inline cache for java.lang.Object ajuv.apply(java.lang.Object)
+09-11 13:47:24.340  8461  8468 W t_app_installer: Missing inline cache for java.lang.Object ajuv.apply(java.lang.Object)
+09-11 13:47:24.340  8461  8468 W t_app_installer: Missing inline cache for java.lang.Object ajuv.apply(java.lang.Object)
+09-11 13:47:24.340  8461  8468 W t_app_installer: Missing inline cache for java.lang.Object ajuv.apply(java.lang.Object)
+09-11 13:47:24.341  8461  8468 W t_app_installer: Missing inline cache for java.lang.Object ajuv.apply(java.lang.Object)
+09-11 13:47:24.354  1405  7908 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-11 13:47:24.357  5085  5366 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+09-11 13:47:24.362  5085  5085 I PhenotypeBackgroundRecv: Skipping com.google.android.libraries.search.googleapp.user#com.google.android.googlequicksearchbox which doesn't use ProcessStable flags.
+09-11 13:47:24.363  8461  8700 D PhenotypeUpdateService: Registering with Phenotype
+09-11 13:47:24.375   589  1309 W JobInfo : Job 'com.android.vending/com.google.android.finsky.instantapps.PhenotypeUpdateService#174406261' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.379  8461  8703 I Finsky:instant_app_inst: [56] AppPreloadHygieneService.b(20): AppPreloadHygieneService disabled
+09-11 13:47:24.400   589  2539 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@bb09c4f1 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener lje@43f0dde for download
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener adbn@aaf50cd for download
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@a6ff2b4 for download
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener orj@60a8c95 for download
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@665d86a for download
+09-11 13:47:24.439  7930  7930 I Finsky  : [2] owm.b(109): DSC::L: Updating listeners of <10:RUNNING:0%[0%]>
+09-11 13:47:24.445  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <10:RUNNING:0%[0%]>
+09-11 13:47:24.448  7569  7576 I .android.as.oss: Background concurrent mark compact GC freed 4256KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 7200KB/14MB, paused 12.654ms,22.024ms total 296.140ms
+09-11 13:47:24.449  5085  5369 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+09-11 13:47:24.449  8461  8706 I Finsky:instant_app_inst: [57] sxk.c(113): No eligible accounts. Bail out.
+09-11 13:47:24.451  8461  8702 I Finsky:instant_app_inst: [55] ArchivePrefetchService.b(82): InstantApps account missing, skip sync.
+09-11 13:47:24.457  5085  5085 I PhenotypeBackgroundRecv: Skipping com.google.android.apps.search.assistant.mobile.user#com.google.android.googlequicksearchbox which doesn't use ProcessStable flags.
+09-11 13:47:24.467  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <10:RUNNING:0%[0%]>
+09-11 13:47:24.469  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener lje@43f0dde for download
+09-11 13:47:24.469  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener adbn@aaf50cd for download
+09-11 13:47:24.469  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@a6ff2b4 for download
+09-11 13:47:24.470  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener orj@60a8c95 for download
+09-11 13:47:24.470  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@665d86a for download
+09-11 13:47:24.470  7930  7930 I Finsky  : [2] owm.b(109): DSC::L: Updating listeners of <10:RUNNING:0%[0%]>
+09-11 13:47:24.482  1405  7908 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-11 13:47:24.485  1405  7908 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-11 13:47:24.529  5085  5366 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+09-11 13:47:24.531   385   385 D Zygote  : Forked child process 8707
+09-11 13:47:24.531  2034  8710 I adbd    : host-21: read thread spawning
+09-11 13:47:24.531  2034  2034 I adbd    : host-21: already offline
+09-11 13:47:24.531  2034  2034 I adbd    : Calling send_auth_request...
+09-11 13:47:24.533  2034  8711 I adbd    : host-21: write thread spawning
+09-11 13:47:24.534   589   624 W ActivityManager: Slow operation: 134ms so far, now at startProcess: returned from zygote!
+09-11 13:47:24.534   589   624 W ActivityManager: Slow operation: 134ms so far, now at startProcess: done updating battery stats
+09-11 13:47:24.534   589   624 W ActivityManager: Slow operation: 134ms so far, now at startProcess: building log message
+09-11 13:47:24.534   589   624 I ActivityManager: Start proc 8707:com.google.android.partnersetup/u0a137 for service {com.google.android.partnersetup/com.google.android.partnersetup.AppHidingJobService}
+09-11 13:47:24.534   589   624 W ActivityManager: Slow operation: 134ms so far, now at startProcess: starting to update pids map
+09-11 13:47:24.534   589   624 W ActivityManager: Slow operation: 134ms so far, now at startProcess: done updating pids map
+09-11 13:47:24.536  8707  8707 I id.partnersetup: Using CollectorTypeCMC GC.
+09-11 13:47:24.537  8707  8707 W id.partnersetup: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:24.537  8707  8707 W id.partnersetup: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:24.538  5085  5085 I PhenotypeBackgroundRecv: Skipping com.google.android.googlequicksearchbox which doesn't use ProcessStable flags.
+09-11 13:47:24.538  2034  2034 I adbd    : adbd_auth: loading keys from /data/misc/adb/adb_keys
+09-11 13:47:24.539  8707  8707 E id.partnersetup: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:24.540  8680  8680 W BatterySettingsContentProvider: create content provider from null
+09-11 13:47:24.541  8707  8707 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:24.547  2034  2034 I adbd    : adb client authorized
+09-11 13:47:24.570  8707  8707 D CompatChangeReporter: Compat change id reported: 242716250; UID 10137; state: ENABLED
+09-11 13:47:24.579  5085  5085 W JobInfo : Job 'com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService#-43' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.588   589   609 W JobInfo : Job 'com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService#-43' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.590  8707  8707 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+09-11 13:47:24.590  8680  8680 W PrimesLoggerHolder: Primes not initialized, returning default (no-op) Primes instance which will ignore all calls. Please call Primes.initialize(...) before using any Primes API.
+09-11 13:47:24.593  8707  8707 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-x86_64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so
+09-11 13:47:24.594  8707  8707 D nativeloader: Configuring product-clns-7 for unbundled product apk /product/priv-app/PartnerSetupPrebuilt/PartnerSetupPrebuilt.apk. target_sdk_version=34, uses_libraries=, library_path=/product/priv-app/PartnerSetupPrebuilt/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.partnersetup:/product/lib64:/system/product/lib64
+09-11 13:47:24.596  8707  8707 D nativeloader: InitVndkspLibrariesProduct: VNDK is deprecated with product
+09-11 13:47:24.606  8707  8707 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:24.606  8707  8707 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:24.606  8707  8707 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:24.606  8707  8707 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:24.606  8707  8707 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:24.627   589  1035 D NetworkStatsObservers: Unregistering RequestInfo from pid/uid:589/1000(android) for DataUsageRequest [ requestId=9, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3552846 ] accessLevel:3
+09-11 13:47:24.628   589   944 D NetworkStatsObservers: Registering observer for RequestInfo from pid/uid:589/1000(android) for DataUsageRequest [ requestId=10, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3550334 ] accessLevel:3
+09-11 13:47:24.635  8461  8700 I Finsky:instant_app_inst: [54] InstantAppHygieneService.a(141): Scheduling job with period 86400000ms
+09-11 13:47:24.636   589   953 D ConnectivityService: reportNetworkConnectivity(100, false) by 10145
+09-11 13:47:24.637  1158  2617 D NetworkMonitor/100: Forcing reevaluation for UID 10145. Dns signal count: 0
+09-11 13:47:24.639  8707  8707 D CompatChangeReporter: Compat change id reported: 253665015; UID 10137; state: ENABLED
+09-11 13:47:24.644  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:24.652  6771  6771 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.checkin.START pkg=com.google.android.gms }
+09-11 13:47:24.652  6771  6771 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.checkin.START pkg=com.google.android.gms }
+09-11 13:47:24.654  6771  6925 I Checkin : [CheckinApiChimeraService] onGetService
+09-11 13:47:24.655  8707  8707 W JobInfo : Job 'com.google.android.partnersetup/.PhenotypeJobService#1' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.655   589  2539 D CompatChangeReporter: Compat change id reported: 253665015; UID 10137; state: ENABLED
+09-11 13:47:24.655   589  2539 W JobInfo : Job 'com.google.android.partnersetup/.PhenotypeJobService#1' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.668  1158  8762 D TrafficStats: tagSocket(91) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.668  1158  8763 D TrafficStats: tagSocket(107) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.669  1158  8762 D TrafficStats: tagSocket(91) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.670  8680  8680 D CompatChangeReporter: Compat change id reported: 311402873; UID 10141; state: ENABLED
+09-11 13:47:24.671  1158  8763 D TrafficStats: tagSocket(107) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.673  8680  8680 D CompatChangeReporter: Compat change id reported: 323349338; UID 10141; state: ENABLED
+09-11 13:47:24.673  8680  8680 W JobInfo : Job 'com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService#1728' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.675   589  2539 D CompatChangeReporter: Compat change id reported: 311402873; UID 10141; state: ENABLED
+09-11 13:47:24.675   589  2539 D CompatChangeReporter: Compat change id reported: 323349338; UID 10141; state: ENABLED
+09-11 13:47:24.675   589  2539 W JobInfo : Job 'com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService#1728' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.677  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.681  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.683  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.684  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.685  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.685  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.688  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.689  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.690  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.690  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.693  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.694   589   713 I RescueParty: Starting to observe: [android, com.android.systemui], updated namespace: window_manager
+09-11 13:47:24.694  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.694   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:24.694  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.695   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android, com.android.systemui]
+09-11 13:47:24.695   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:24.695   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:24.695   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:24.696  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.698  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.700  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.702  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.702  1158  8762 D NetworkMonitor/100: PROBE_DNS www.google.com 34ms OK 142.251.152.119,142.251.150.119,142.251.154.119,142.251.156.119,142.251.153.119,142.251.157.119,142.251.151.119,142.251.155.119,2001:4860:4829:7700::,2001:4860:4826:7700::,2001:4860:482b:7700::,2001:4860:482c:7700::,2001:4860:482d:7700::,2001:4860:4828:7700::,2001:4860:482a:7700::,2001:4860:4827:7700::
+09-11 13:47:24.702  1158  1158 D TrafficStats: tagSocket(91) with statsTag=0xffffffff, statsUid=-1
+09-11 13:47:24.706  1158  8763 D NetworkMonitor/100: PROBE_DNS connectivitycheck.gstatic.com 37ms OK 172.217.211.94,2404:6800:400a:1002::5e
+09-11 13:47:24.720   589  2810 W JobInfo : Job 'com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService#1728' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.721   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:24.721   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:24.722   589  2810 W JobInfo : Job 'com.google.android.settings.intelligence/.modules.routines.impl.RoutinesJobIntentService#1728' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:24.725  1158  8763 D TrafficStats: tagSocket(106) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.726   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:24.728  1158  8762 D TrafficStats: tagSocket(91) with statsTag=0xffffff81, statsUid=-1
+09-11 13:47:24.773   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:24.773   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:24.786   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:24.786   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:24.786   589  1309 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:24.786   589  1309 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:24.786   589  1309 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:24.787   589  1309 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:24.787   589  1309 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:24.792   589  1309 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:24.793   589   609 D CompatChangeReporter: Compat change id reported: 151861875; UID 1000; state: ENABLED
+09-11 13:47:24.798  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:24.804   385   385 D Zygote  : Forked child process 8785
+09-11 13:47:24.807  8785  8785 I ndroid.settings: Using CollectorTypeCMC GC.
+09-11 13:47:24.808  8785  8785 W ndroid.settings: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:24.808  8785  8785 W ndroid.settings: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:24.809  8785  8785 E ndroid.settings: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:24.813   589   624 I ActivityManager: Start proc 8785:com.android.settings/1000 for content provider {com.android.settings/com.android.settings.slices.SettingsSliceProvider}
+09-11 13:47:24.818  8785  8785 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:24.828  1158  8763 D NetworkMonitor/100: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=108ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Fri, 11 Sep 2026 13:47:22 GMT], X-Android-Received-Millis=[1789134444827], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1789134444777]}
+09-11 13:47:24.844   589  2532 D CompatChangeReporter: Compat change id reported: 271850009; UID 10189; state: ENABLED
+09-11 13:47:24.847   589  2532 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@13c5c53d does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+09-11 13:47:24.854   385   385 D Zygote  : Forked child process 8797
+09-11 13:47:24.856   589   624 I ActivityManager: Start proc 8797:com.google.android.rkpdapp/u0a189 for service {com.google.android.rkpdapp/androidx.work.impl.background.systemjob.SystemJobService}
+09-11 13:47:24.856  8785  8785 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+09-11 13:47:24.857  8785  8785 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+09-11 13:47:24.857  8785  8785 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+09-11 13:47:24.870  8785  8785 D nativeloader: Configuring clns-shared-7 for other apk /system_ext/priv-app/SettingsGoogle/SettingsGoogle.apk. target_sdk_version=35, uses_libraries=, library_path=/system_ext/priv-app/SettingsGoogle/lib/x86_64:/system_ext/priv-app/SettingsGoogle/SettingsGoogle.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.android.settings:/system_ext/priv-app/SettingsGoogle:/system/lib64:/system_ext/lib64
+09-11 13:47:24.870  8797  8797 I android.rkpdapp: Using CollectorTypeCMC GC.
+09-11 13:47:24.871  8797  8797 W android.rkpdapp: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:24.871  8797  8797 W android.rkpdapp: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:24.872  8797  8797 E android.rkpdapp: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:24.873  8797  8797 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:24.876   589   603 I system_server: Background concurrent mark compact GC freed 26MB AllocSpace bytes, 30(960KB) LOS objects, 47% free, 26MB/50MB, paused 8.164ms,11.280ms total 900.096ms
+09-11 13:47:24.886  8785  8785 D CompatChangeReporter: Compat change id reported: 202956589; UID 1000; state: ENABLED
+09-11 13:47:24.893  8785  8785 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:24.893  8785  8785 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:24.893  8785  8785 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:24.893  8785  8785 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:24.893  8785  8785 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:24.902  8797  8797 D CompatChangeReporter: Compat change id reported: 242716250; UID 10189; state: ENABLED
+09-11 13:47:24.902   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk' with 1 weak references
+09-11 13:47:24.904   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/CalendarGooglePrebuilt/CalendarGooglePrebuilt.apk' with 1 weak references
+09-11 13:47:24.906   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /system/priv-app/InputDevices/InputDevices.apk' with 1 weak references
+09-11 13:47:24.906   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/LatinIMEGooglePrebuilt/LatinIMEGooglePrebuilt.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/app/AccessibilityMenu/AccessibilityMenu.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '/product/overlay/AccessibilityMenu__sdk_gphone16k_x86_64__auto_generated_rro_product.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/DevicePersonalizationPrebuiltPixel2021-aiai_20240329.00_RC16/DevicePersonalizationPrebuiltPixel2021-aiai_20240329.00_RC16.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+09-11 13:47:24.907   589   605 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/Velvet/Velvet.apk' with 1 weak references
+09-11 13:47:24.930  8785  8785 V BatteryUsageContentProvider: initialize provider
+09-11 13:47:24.936  6771  6771 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.auth.service.START pkg=com.google.android.gms }
+09-11 13:47:24.936  6771  6771 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.auth.service.START pkg=com.google.android.gms }
+09-11 13:47:24.938  1158  8762 D NetworkMonitor/100: PROBE_HTTPS https://www.google.com/generate_204 time=219ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Fri, 11 Sep 2026 13:47:22 GMT], X-Android-Received-Millis=[1789134444936], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1789134444855]}
+09-11 13:47:24.944  1158  8761 D NetworkMonitor/100: isCaptivePortal: isSuccessful()=true isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=276ms
+09-11 13:47:24.950  8797  8797 D nativeloader: Configuring clns-shared-7 for other apk /apex/com.android.rkpd/priv-app/rkpdapp.google@AE3A.240806.041/rkpdapp.google.apk. target_sdk_version=34, uses_libraries=, library_path=/apex/com.android.rkpd/priv-app/rkpdapp.google@AE3A.240806.041/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.rkpdapp:/apex/com.android.rkpd/priv-app/rkpdapp.google@AE3A.240806.041:/system/lib64:/system_ext/lib64
+09-11 13:47:24.952  8797  8797 D nativeloader: InitApexLibraries:
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_adservices: libhpke_jni.so:libtflite_support_classifiers_native.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_appsearch: libicing.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_art: libartservice.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_btservices: libbluetooth_jni.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_conscrypt: libjavacrypto.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_extservices: libtflite_support_classifiers_native.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_mediaprovider: libpdfclient.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_nfcservices: libnfc_nci_jni.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_ondevicepersonalization: libfcp_cpp_dep_jni.so:libfcp_hpke_jni.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_os_statsd: libstats_jni.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_tethering: libandroid_net_connectivity_com_android_net_module_util_jni.so:libcrypto.so:libframework-connectivity-jni.so:libframework-connectivity-tiramisu-jni.so:libmainlinecronet.121.0.6167.71.so:libservice-connectivity.so:libservice-thread-jni.so:libssl.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_uwb: libuwb_uci_jni_rust.so
+09-11 13:47:24.952  8797  8797 D nativeloader:   com_android_virt: libvirtualizationservice_jni.so:libvirtualmachine_jni.so
+09-11 13:47:24.954   589   953 D ConnectivityService: [100 WIFI] validation passed
+09-11 13:47:24.974  8797  8797 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:24.974  8797  8797 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:24.974  8797  8797 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:24.974  8797  8797 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:24.974  8797  8797 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:24.979  8785  8785 D SpaSearchProvider: onCreate
+09-11 13:47:24.980  8797  8797 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+09-11 13:47:24.988  8785  8785 D BatteryStateDatabase: initialize battery states database
+09-11 13:47:24.989  8785  8785 W BatteryUsageContentProvider: create content provider from null
+09-11 13:47:24.995  8785  8785 D SettingsSliceProvider: init
+09-11 13:47:24.995  8785  8785 D SettingsSliceProvider: onCreateSliceProvider
+09-11 13:47:24.995  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.006  8785  8785 D SpaEnvironment: reset
+09-11 13:47:25.006  8797  8797 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
+09-11 13:47:25.007  8797  8797 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+09-11 13:47:25.011  8797  8813 D WM-ForceStopRunnable: The default process name was not specified.
+09-11 13:47:25.011  8797  8813 D WM-ForceStopRunnable: Performing cleanup operations.
+09-11 13:47:25.011  1405  2071 W GLSUser : [DeviceKeyStore] Cannot load key: Device key file not found.
+09-11 13:47:25.026   589   705 W JobServiceContext: Sending onNetworkChanged for a job that isn't started. JobStatus{d625f80 androidx.work.systemjobscheduler:u0a189/2 @androidx.work.systemjobscheduler@com.google.android.rkpdapp/androidx.work.impl.background.systemjob.SystemJobService u=0 s=10189 TIME=-1s689ms:none NET READY}
+09-11 13:47:25.037   385   385 D Zygote  : Forked child process 8814
+09-11 13:47:25.038   589   624 I ActivityManager: Start proc 8814:com.google.android.gms.unstable/u0a144 for service {com.google.android.gms/com.google.android.gms.droidguard.DroidGuardService}
+09-11 13:47:25.039  8797  8797 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a, generation=0)
+09-11 13:47:25.052  8814  8814 I id.gms.unstable: Using CollectorTypeCMC GC.
+09-11 13:47:25.053  8814  8814 W id.gms.unstable: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:25.053  8814  8814 W id.gms.unstable: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:25.054  8814  8814 E id.gms.unstable: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:25.056  8814  8814 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:25.064  8797  8825 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a, generation=0)
+09-11 13:47:25.067  8797  8823 D CompatChangeReporter: Compat change id reported: 263076149; UID 10189; state: ENABLED
+09-11 13:47:25.070  8814  8814 D CompatChangeReporter: Compat change id reported: 242716250; UID 10144; state: ENABLED
+09-11 13:47:25.072  8814  8814 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+09-11 13:47:25.073  8797  8797 D WM-WorkerWrapper: Starting work for com.android.rkpdapp.provisioner.WidevineProvisioner
+09-11 13:47:25.078  8814  8814 D nativeloader: Configuring clns-7 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+09-11 13:47:25.079  8814  8814 D nativeloader: Configuring clns-8 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+09-11 13:47:25.079  8814  8814 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+09-11 13:47:25.079  8814  8814 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+09-11 13:47:25.083  8814  8814 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-x86_64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so
+09-11 13:47:25.083  8814  8814 D nativeloader: Configuring product-clns-9 for unbundled product apk /product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk. target_sdk_version=34, uses_libraries=, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms:/product/lib64:/system/product/lib64
+09-11 13:47:25.083  8814  8814 D nativeloader: InitVndkspLibrariesProduct: VNDK is deprecated with product
+09-11 13:47:25.084  8797  8823 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemalarm.RescheduleReceiver
+09-11 13:47:25.108  8814  8814 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:25.108  8814  8814 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:25.108  8814  8814 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:25.108  8814  8814 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:25.108  8814  8814 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:25.120  8797  8827 I DrmHalHidl: No hidl drm factories found
+09-11 13:47:25.122   170   170 I hwservicemanager: getTransport: Cannot find entry android.hardware.drm@1.0::IDrmFactory/default in either framework or device VINTF manifest.
+09-11 13:47:25.122  8797  8827 E DrmHalHidl: Failed to find passthrough drm factories
+09-11 13:47:25.124  8814  8814 I LoadedApk: No resource references to update in package com.google.android.gms
+09-11 13:47:25.124  7929  7929 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification android.hardware.drm.IDrmFactory/clearkey has clients: 1
+09-11 13:47:25.124  8797  8827 I DrmUtils: found IDrmFactory. Instance name:[android.hardware.drm.IDrmFactory/clearkey]
+09-11 13:47:25.127  8797  8827 I DrmUtils: found IDrmFactory. Instance name:[android.hardware.drm.IDrmFactory/widevine]
+09-11 13:47:25.149   589   713 I RescueParty: Starting to observe: [com.google.android.bluetooth], updated namespace: bluetooth
+09-11 13:47:25.151  8814  8814 I GmsApplication: Using GservicesReaderQueryDelegate
+09-11 13:47:25.152  8785  8795 D SlicesDatabaseHelper: Created databases
+09-11 13:47:25.158   432   432 I WVCdm   : [cdm_engine.cpp(1092):IsSecurityLevelSupported] level = L1
+09-11 13:47:25.160   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:25.160   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [com.google.android.bluetooth]
+09-11 13:47:25.160   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:25.160   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:25.160   589   589 I PackageWatchdog: Syncing health check requests for packages: {com.google.android.bluetooth}
+09-11 13:47:25.161   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.161   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.161  8814  8814 W SQLiteCompatibilityWalFlags: Cannot read global setting sqlite_compatibility_wal_flags - Application state not available
+09-11 13:47:25.163   432   432 I WVCdm   : [file_utils.cpp(38):Exists] stat failed: ENOENT
+09-11 13:47:25.163   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.163   432  8835 I WVCdm   : [(0):] Level3 Library 33100 May 14 2024 19:04:42
+09-11 13:47:25.164   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(833):Initialize] Level 3 Build Info (v18): {"soc_vendor":"L3_33100","soc_model":"X86 64 bit","ta_ver":"18.1.0+May 14 2024_19:04:42_","uses_opk":false,"tee_os":"none","tee_os_ver":"0.0.0","form_factor":"L3","implementer":"Widevine","fused":false}
+09-11 13:47:25.186   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(848):Initialize] L3 Initialized. Trying L1.
+09-11 13:47:25.187   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(861):Initialize] Could not load oemcrypto from path liboemcrypto.so.  dlopen failed: library "liboemcrypto.so" not found
+09-11 13:47:25.187   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(865):Initialize] Could not load oemcrypto. Falling back to L3.
+09-11 13:47:25.187   432   432 E WVCdm   : [oemcrypto_adapter_dynamic.cpp(1336):ValidateOrInstallL1KeyboxOrCert] L1 not initialized. Falling back to L3
+09-11 13:47:25.187   432   432 I WVCdm   : [file_utils.cpp(38):Exists] stat failed: ENOENT
+09-11 13:47:25.187   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(1541):OEMCrypto_InitializeAndCheckKeybox] Keybox error: 25. Falling back to L3.
+09-11 13:47:25.187   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(897):Level1Terminate] L1 Terminate not needed
+09-11 13:47:25.188   432   432 D WVCdm   : [crypto_session.cpp(434):CacheVersion] OEMCrypto version (default security level): 18.3
+09-11 13:47:25.188   432   432 D WVCdm   : [crypto_session.cpp(443):CacheVersion] OEMCrypto version (L3 security level): 18.3
+09-11 13:47:25.189  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.196   432   432 I WVCdm   : [(0):] L3 Terminate.
+09-11 13:47:25.197  8785  8795 D SlicesDatabaseHelper: Created databases
+09-11 13:47:25.199   432   432 I WVCdm-DrmFactory: [app][com.google.android.rkpdapp] calling virtual ::ndk::ScopedAStatus wvdrm::hardware::drm::widevine::WVDrmFactory::createDrmPlugin(const Uuid &, const string &, std::shared_ptr< ::aidl::android::hardware::drm::IDrmPlugin> *)
+09-11 13:47:25.199   432   432 D WVCdm   : Instantiating CDM metrics queue
+09-11 13:47:25.199   432   432 D WVCdm   : Instantiating CDM.
+09-11 13:47:25.200   432   432 D WVCdm   : [cdm_engine.cpp(583):QueryStatus] security_level = Default, query_token = WidevineCdmVersion
+09-11 13:47:25.200   432   432 I WVCdm   : [file_utils.cpp(38):Exists] stat failed: ENOENT
+09-11 13:47:25.201   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(833):Initialize] Level 3 Build Info (v18): {"soc_vendor":"L3_33100","soc_model":"X86 64 bit","ta_ver":"18.1.0+May 14 2024_19:04:42_","uses_opk":false,"tee_os":"none","tee_os_ver":"0.0.0","form_factor":"L3","implementer":"Widevine","fused":false}
+09-11 13:47:25.201   432  8838 I WVCdm   : [(0):] Level3 Library 33100 May 14 2024 19:04:42
+09-11 13:47:25.204   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(848):Initialize] L3 Initialized. Trying L1.
+09-11 13:47:25.204   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(861):Initialize] Could not load oemcrypto from path liboemcrypto.so.  dlopen failed: library "liboemcrypto.so" not found
+09-11 13:47:25.204   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(865):Initialize] Could not load oemcrypto. Falling back to L3.
+09-11 13:47:25.205   432   432 E WVCdm   : [oemcrypto_adapter_dynamic.cpp(1336):ValidateOrInstallL1KeyboxOrCert] L1 not initialized. Falling back to L3
+09-11 13:47:25.206   432   432 I WVCdm   : [file_utils.cpp(38):Exists] stat failed: ENOENT
+09-11 13:47:25.207   432   432 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(1541):OEMCrypto_InitializeAndCheckKeybox] Keybox error: 25. Falling back to L3.
+09-11 13:47:25.207   432   432 I WVCdm   : [oemcrypto_adapter_dynamic.cpp(897):Level1Terminate] L1 Terminate not needed
+09-11 13:47:25.207   432   432 D WVCdm   : [crypto_session.cpp(434):CacheVersion] OEMCrypto version (default security level): 18.3
+09-11 13:47:25.207   432   432 D WVCdm   : [crypto_session.cpp(443):CacheVersion] OEMCrypto version (L3 security level): 18.3
+09-11 13:47:25.209   432   432 D WVCdm   : [cdm_engine.cpp(583):QueryStatus] security_level = Default, query_token = ProvisioningModel
+09-11 13:47:25.212  8797  8827 I RkpdWidevine: Not a WV provisioning 4.0 device. No provisioning required.
+09-11 13:47:25.215   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.216   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.216   589   589 I PackageWatchdog: Syncing health check requests for packages: {com.google.android.bluetooth}
+09-11 13:47:25.216   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.219   589  1309 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.219   589  1309 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.219   589  1309 I PackageWatchdog: Updated health check state for package com.google.android.bluetooth: INACTIVE -> PASSED
+09-11 13:47:25.219   589  1309 I PackageWatchdog: Syncing state, reason: updated health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.219   589  1309 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.219   589  1309 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.219   589  1309 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.220   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.222   589  1309 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.222   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.223   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.223  8797  8813 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a, tags={ com.android.rkpdapp.provisioner.WidevineProvisioner,WidevineProvisioner } ]
+09-11 13:47:25.224   432   432 I WVCdm   : [(0):] L3 Terminate.
+09-11 13:47:25.224  8797  8797 D WM-Processor: Processor 3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a executed; reschedule = false
+09-11 13:47:25.224  8797  8797 D WM-SystemJobService: 3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a executed on JobScheduler
+09-11 13:47:25.226   488   972 D statsd_drm: statsd_mediadrm skipping empty entry
+09-11 13:47:25.226   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.227  8814  8814 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
+09-11 13:47:25.227  8814  8814 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+09-11 13:47:25.227  8814  8814 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+09-11 13:47:25.237   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.237   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.238   488  8841 W s       : AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. This might not be intended. AIBinder_DeathRecipient_setOnUnlinked should be called first.
+09-11 13:47:25.251  8814  8814 D nativeloader: Load /product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using ns product-clns-9 from class loader (caller=/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!classes3.dex): ok
+09-11 13:47:25.251  8814  8814 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 305 native methods...
+09-11 13:47:25.269  8814  8814 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+09-11 13:47:25.291   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.291   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.291  8814  8848 I Watchcat: Started
+09-11 13:47:25.292  8814  8848 I GMS_MM_Logger: (REDACTED) Start time: %s
+09-11 13:47:25.292  8814  8848 I GMS_MM_Logger: Started.
+09-11 13:47:25.294   589  1277 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.294   589  1277 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.295   589  1277 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.295  8814  8814 W ebcf    : Primes not initialized, returning default (no-op) Primes instance which will ignore all calls. Please call Primes.initialize(...) before using any Primes API.
+09-11 13:47:25.296  8797  8813 D WM-GreedyScheduler: Cancelling work ID 3991c0d5-cb2e-4aa6-bdd5-82e86413ed5a
+09-11 13:47:25.296   589  2669 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.296   589  2669 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.297   589  2669 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.298  8461  8700 D PhenotypeUpdateService: Registering with Phenotype
+09-11 13:47:25.305   589  1277 D CompatChangeReporter: Compat change id reported: 261072174; UID 10137; state: ENABLED
+09-11 13:47:25.317  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.320  8814  8824 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:7 and remote module com.google.android.gms.googlecertificates:7
+09-11 13:47:25.320  8814  8824 I DynamiteModule: Selected local version of com.google.android.gms.googlecertificates
+09-11 13:47:25.322  8814  8853 I ebvk$a  : (REDACTED) Unable to retrieve flag snapshot for %s, using defaults.
+09-11 13:47:25.337   589   713 I RescueParty: Starting to observe: [android, com.android.systemui], updated namespace: latency_tracker
+09-11 13:47:25.338  7569  7576 I .android.as.oss: Background concurrent mark compact GC freed 10MB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3200KB/6401KB, paused 25.323ms,1.726ms total 56.715ms
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.accessibility.VibrationMainSwitchPreferenceController
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: Caused by: java.lang.reflect.InvocationTargetException
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:143)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: Caused by: java.lang.RuntimeException: Can't create handler inside thread Thread[binder:8785_2,5,main] that has not called Looper.prepare()
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:228)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:195)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	at com.android.settings.accessibility.VibrationMainSwitchPreferenceController.<init>(VibrationMainSwitchPreferenceController.java:52)
+09-11 13:47:25.338  8785  8795 W SliceDataConverter: 	... 22 more
+09-11 13:47:25.338  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:25.343  8814  8824 D nativeloader: Configuring clns-10 for other apk . target_sdk_version=34, uses_libraries=ALL, library_path=, permitted_path=/data:/mnt/expand
+09-11 13:47:25.343  8814  8824 D nativeloader: Load /data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/the.apk!/libdFC227197A3B1.so using isolated ns clns-10 (caller=/data/user/0/com.google.android.gms/app_dg_cache/EC7C859F3FC767BB82D82EE06B046D25E8EB9283/the.apk): ok
+09-11 13:47:25.353   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:25.354   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android, com.android.systemui]
+09-11 13:47:25.354   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:25.354   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:25.354   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.362  8814  8824 D TrafficStats: tagSocket(99) with statsTag=0x1809, statsUid=-1
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.development.DevelopmentMemtagFooterPreferenceController
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: Caused by: java.lang.ClassNotFoundException: com.android.settings.development.DevelopmentMemtagFooterPreferenceController
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at java.lang.Class.classForName(Native Method)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at java.lang.Class.forName(Class.java:607)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at java.lang.Class.forName(Class.java:512)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:139)
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: Caused by: java.lang.ClassNotFoundException: com.android.settings.development.DevelopmentMemtagFooterPreferenceController
+09-11 13:47:25.371  8785  8795 W SliceDataConverter: 	... 23 more
+09-11 13:47:25.371  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:25.372  8707  8769 I GooglePartnerSetup: Registered with Phenotype
+09-11 13:47:25.372  8707  8769 W JobInfo : Job 'com.google.android.partnersetup/.PhenotypeJobService#2' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:25.372   589  2669 W JobInfo : Job 'com.google.android.partnersetup/.PhenotypeJobService#2' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+09-11 13:47:25.382  8785  8795 D CompatChangeReporter: Compat change id reported: 330583731; UID 1000; state: ENABLED
+09-11 13:47:25.409   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.409   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.422   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.423   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.423   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.423   589   589 I ExplicitHealthCheckController: Not binding to service, service already connecting
+09-11 13:47:25.427  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.438   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.438   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.438   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.438   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.441  8785  8795 D LocalBluetoothProfileManager: LocalBluetoothProfileManager construction complete
+09-11 13:47:25.442   589   609 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.442   589   609 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.442   589   609 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.442   589   609 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.442   589   609 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.443   589   609 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.443  8785  8795 D LocalBluetoothProfileManager: Adding local A2DP profile
+09-11 13:47:25.445  8785  8795 D LocalBluetoothProfileManager: Adding local HEADSET profile
+09-11 13:47:25.445   589   713 I RescueParty: Starting to observe: [android], updated namespace: battery_saver
+09-11 13:47:25.447  8785  8785 D BluetoothAdapter: A2DP connected
+09-11 13:47:25.449  8785  8795 D LocalBluetoothProfileManager: Adding local MAP profile
+09-11 13:47:25.449  8785  8795 D BluetoothMap: Create BluetoothMap proxy object
+09-11 13:47:25.449  8785  8795 D LocalBluetoothProfileManager: Adding local OPP profile
+09-11 13:47:25.449   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:25.449   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android]
+09-11 13:47:25.449   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:25.450   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:25.450   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.450   589   589 E DeviceConfig: Parsing int failed for location_mode
+09-11 13:47:25.450  8785  8795 D LocalBluetoothProfileManager: Adding local Hearing Aid profile
+09-11 13:47:25.452  8785  8785 D BluetoothAdapter: HEADSET connected
+09-11 13:47:25.453   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.453   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.454  8785  8795 D LocalBluetoothProfileManager: Adding local HID_HOST profile
+09-11 13:47:25.454  8785  8795 D LocalBluetoothProfileManager: Adding local HID_DEVICE profile
+09-11 13:47:25.454   589   623 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@ca656288 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+09-11 13:47:25.454  8785  8795 D LocalBluetoothProfileManager: Adding local PAN profile
+09-11 13:47:25.454  8785  8795 D LocalBluetoothProfileManager: Adding local PBAP profile
+09-11 13:47:25.456   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.456  1208  1230 I AdapterProperties: getBondedDevices: length=0
+09-11 13:47:25.461   385   385 D Zygote  : Forked child process 8858
+09-11 13:47:25.464   589   624 I ActivityManager: Start proc 8858:com.android.chrome/u0a146 for broadcast {com.android.chrome/com.google.android.apps.chrome.rlz.RevenueStatsConfigurationUpdateReceiver}
+09-11 13:47:25.467   589   995 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 (has extras) }
+09-11 13:47:25.467   589   995 D ShortcutService: changing package: com.android.vending userId0
+09-11 13:47:25.467   589   995 D ShortcutService: handlePackageChanged: com.android.vending user=0
+09-11 13:47:25.467   589   995 D ShortcutService: rescanPackageIfNeeded 0@com.android.vending, forceRescan=true , isNewApp=false
+09-11 13:47:25.472   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.472   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.473   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.473   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.473  1229  1229 D CarrierSvcBindHelper: onPackageModified: com.android.vending
+09-11 13:47:25.473  1229  1229 D CarrierSvcBindHelper: No carrier app for: 0
+09-11 13:47:25.482  8785  8785 D BluetoothAdapter: MAP connected
+09-11 13:47:25.482  8785  8785 D BluetoothMap: getConnectedDevices()
+09-11 13:47:25.483   589  1277 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.483   589  1277 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.483   589  1277 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.485   589  2669 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.485   589  2669 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.486  1036  1036 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+09-11 13:47:25.487  8858  8858 I .android.chrome: Using CollectorTypeCMC GC.
+09-11 13:47:25.487  8858  8858 W .android.chrome: Unexpected CPU variant for x86: x86_64.
+09-11 13:47:25.487  8858  8858 W .android.chrome: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+09-11 13:47:25.488  8858  8858 E .android.chrome: Not starting debugger since process cannot load the jdwp agent.
+09-11 13:47:25.497  6771  8429 I Checkin : [CheckinApiChimeraService] onGetService
+09-11 13:47:25.498   589  2669 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.498  8785  8785 D BluetoothAdapter: HEARING_AID connected
+09-11 13:47:25.505  8213  8223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10142
+09-11 13:47:25.505   589   715 I RoleService: Granting default roles...
+09-11 13:47:25.506  8785  8785 D BluetoothAdapter: HID_HOST connected
+09-11 13:47:25.506  1229  1229 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+09-11 13:47:25.507   589  1277 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10140, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.508  8858  8858 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-11 13:47:25.509   589   713 I RescueParty: Starting to observe: [android], updated namespace: constrain_display_apis
+09-11 13:47:25.510   589  1174 W Role    : Default holder doesn't have required signing certificate: com.google.android.retaildemo:6547c73dee150c103980bfdffe55cc9a011d785dd694a5f99afd8205bcaf1f80
+09-11 13:47:25.510   589  1174 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+09-11 13:47:25.511   589  1174 W Role    : Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+09-11 13:47:25.513  8785  8785 D BluetoothAdapter: HID_DEVICE connected
+09-11 13:47:25.514   589  1174 W Role    : Cannot get ApplicationInfo for default holder: com.google.android.apps.photos
+09-11 13:47:25.514  8785  8785 D BluetoothAdapter: PAN connected
+09-11 13:47:25.515  8785  8785 D BluetoothAdapter: PBAP connected
+09-11 13:47:25.542   589  1174 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.WALLET
+09-11 13:47:25.542  1229  1229 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+09-11 13:47:25.543   589  2539 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.543   589  2539 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.543   589  2539 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.544   589  2539 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.544   589  2539 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+09-11 13:47:25.547  1229  1755 D ImsResolver: maybeAddedImsService, packageName: com.android.vending
+09-11 13:47:25.549   589  1174 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.devicelockcontroller, role: android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER
+09-11 13:47:25.557  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.571  8858  8858 D CompatChangeReporter: Compat change id reported: 242716250; UID 10146; state: ENABLED
+09-11 13:47:25.568  8814  8814 W binder:8814_2: type=1400 audit(0.0:63): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=314 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-11 13:47:25.573  8814  8824 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+09-11 13:47:25.568  8814  8814 W binder:8814_2: type=1400 audit(0.0:64): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=59 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-11 13:47:25.576  8814  8824 W libc    : Access denied finding property "service.adb.tls.port"
+09-11 13:47:25.580  8785  8795 D CompatChangeReporter: Compat change id reported: 303742236; UID 1000; state: ENABLED
+09-11 13:47:25.587   589  1277 D FileUtils: Rounded bytes from 2592714752 to 4000000000
+09-11 13:47:25.598  8858  8858 W ziparchive: Unable to open '/data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.dm': No such file or directory
+09-11 13:47:25.599  8858  8858 W ziparchive: Unable to open '/data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.dm': No such file or directory
+09-11 13:47:25.599  8858  8858 W .android.chrome: Entry not found
+09-11 13:47:25.600  8785  8795 D CustomizableLockScreenUtils: is_custom_lock_screen_quick_affordances_feature_enabled=1
+09-11 13:47:25.606   589   995 E system_server: No package ID 7f found for resource ID 0x7f0803f6.
+09-11 13:47:25.606   589   995 E system_server: No package ID 7f found for resource ID 0x7f1408a4.
+09-11 13:47:25.606   589   995 D ShortcutService: Package com.android.vending has 1 manifest shortcut(s), and 0 share target(s)
+09-11 13:47:25.606   589   995 D ShortcutService: Package com.android.vending updated, version 84132530 -> 84132530
+09-11 13:47:25.606   589   995 D ShortcutService: Package com.android.vending: publishing manifest shortcuts
+09-11 13:47:25.608  8858  8858 D nativeloader: Configuring clns-7 for other apk /data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/lib/x86_64:/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk!/lib/x86_64:/data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.chrome
+09-11 13:47:25.609  8785  8795 D CustomizableLockScreenUtils: is_custom_lock_screen_quick_affordances_feature_enabled=1
+09-11 13:47:25.618  8461  8700 D PhenotypeUpdateService: Updating Phenotype configs
+09-11 13:47:25.624   589   622 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-11 13:47:25.626   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:25.627  7389  7442 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[com.android.vending]
+09-11 13:47:25.627   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android]
+09-11 13:47:25.627   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:25.628   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.632  8785  8795 D CustomizableLockScreenUtils: is_custom_lock_screen_quick_affordances_feature_enabled=1
+09-11 13:47:25.635  7375  7375 I AiAiEcho: AppFetcherImpl onPackageChanged com.android.vending.
+09-11 13:47:25.640  8858  8858 D nativeloader: Configuring clns-8 for other apk /data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/lib/x86_64:/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk!/lib/x86_64:/data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.chrome
+09-11 13:47:25.640  1405  2071 W GmsUrlRequestImpl: Content-Type header is overwritten.
+09-11 13:47:25.644  1405  2432 D TrafficStats: tagSocket(154) with statsTag=0x401, statsUid=10144
+09-11 13:47:25.644   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.644   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.646   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.648   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.649   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.649   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.649   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.650   589   609 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.650   589   609 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.651   589   609 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.653  7375  7757 I AiAiEcho: AppIndexer Package:[com.android.vending] UserProfile:[0] Enabled:[true].
+09-11 13:47:25.653  7375  7757 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.android.vending], userId:[0], reason:[package is updated.].
+09-11 13:47:25.656   589  2705 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.656   589  2705 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.657   589  2669 D CompatChangeReporter: Compat change id reported: 311208629; UID 10141; state: ENABLED
+09-11 13:47:25.661  7389  7389 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+09-11 13:47:25.664   589  2705 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.683  8858  8858 V GraphicsEnvironment: Currently set values for:
+09-11 13:47:25.683  8858  8858 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-11 13:47:25.683  8858  8858 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-11 13:47:25.683  8858  8858 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+09-11 13:47:25.683  8858  8858 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-11 13:47:25.683  8785  8795 D MobileNetworkDatabase: createDatabase.
+09-11 13:47:25.687  8785  8795 W SettingsMetricsFeature: action(Pair<Integer, Object>... taggedData) is deprecated, Use action(int, int, int, String, int) instead.
+09-11 13:47:25.688  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:25.688  7389  7432 D EGL_emulation: app_time_stats: avg=3364.59ms min=3364.59ms max=3364.59ms count=1
+09-11 13:47:25.692  8858  8858 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+09-11 13:47:25.706  8858  8858 I cr_SplitCompatApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=true processName=com.android.chrome isIsolated=false
+09-11 13:47:25.721   589   995 D ShortcutService: Saving package item com.android.vending to /data/system_ce/0/shortcut_service/packages/com.android.vending.xml
+09-11 13:47:25.726  8785  8795 W SliceData: Highlight menu key res is empty: com.android.settings.deviceinfo.hardwareinfo.DeviceModelPreferenceController
+09-11 13:47:25.732  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <4:RUNNING:100%[100%]>
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener lje@43f0dde for download
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener adbn@aaf50cd for download
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@a6ff2b4 for download
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener orj@60a8c95 for download
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@665d86a for download
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] owm.b(109): DSC::L: Updating listeners of <4:RUNNING:100%[100%]>
+09-11 13:47:25.734  7930  7930 I Finsky  : [2] bera.B(45): RM: receive resource status onProgress CronetDynamite_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 2, 192, size: 15836717/15836717
+09-11 13:47:25.735  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(4)
+09-11 13:47:25.736  7938  8057 I Finsky:background: [56] otc.i(13): DS: getDownload(request_id=4)
+09-11 13:47:25.736  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=4, files_to_download=[CronetDynamite_installtime(size:15836717)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=15836717, total_bytes=15836717, retry[count=0, next_retry=n/a])
+09-11 13:47:25.738  7930  7930 I Finsky  : [2] acnz.onStartJob(127): SCH: job service start with id 9252.
+09-11 13:47:25.740  7930  7933 W android.vending: Missing inline cache for java.lang.Object acmu.apply(java.lang.Object)
+09-11 13:47:25.740  7930  7933 W android.vending: Missing inline cache for java.lang.Object acmu.apply(java.lang.Object)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: Could not parse manufactured year from serial.
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: java.lang.NumberFormatException: For input string: "E"
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at java.lang.Integer.parseInt(Integer.java:790)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at java.lang.Integer.valueOf(Integer.java:1121)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.google.android.settings.hardwareinfo.HardwareInfoFeatureProviderGoogleImpl.getManufacturedYear(HardwareInfoFeatureProviderGoogleImpl.kt:24)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.deviceinfo.hardwareinfo.ManufacturedYearPreferenceController.<init>(ManufacturedYearPreferenceController.kt:26)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:143)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:25.742  8785  8795 E HardwareInfoFeatureProviderImpl: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:25.748  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 20842569/138969976
+09-11 13:47:25.749  7930  8015 I Finsky  : [67] kyv.a(420): SCH: Satisfied jobs for 9252 are: 3-3, 28--559038737
+09-11 13:47:25.751  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT23.886S
+09-11 13:47:25.751  7930  8056 I Finsky  : [83] abjb.accept(167): SCH: Job 28--559038737 starting
+09-11 13:47:25.754  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <4:SUCCEEDED>
+09-11 13:47:25.765   589   622 D ShortcutService: Getting shortcuts for launcher= com.google.android.apps.nexuslauncheruser=0 pkg=com.android.vending
+09-11 13:47:25.765   589   622 D ShortcutService: Getting shortcuts for launcher= com.android.systemuiuser=0 pkg=com.android.vending
+09-11 13:47:25.765   589   622 D ShortcutService: Getting shortcuts for launcher= com.google.android.asuser=0 pkg=com.android.vending
+09-11 13:47:25.769  8785  8795 I ActiveUnlockStatusUtils: authority not set
+09-11 13:47:25.770  7930  7930 I Finsky  : [2] DownloadServiceReceiver.b(93): DSR: Download completion broadcast received by main process
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener lje@43f0dde for download <4:SUCCEEDED>
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener adbn@aaf50cd for download <4:SUCCEEDED>
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener ori@a6ff2b4 for download <4:SUCCEEDED>
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener orj@60a8c95 for download <4:SUCCEEDED>
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener ori@665d86a for download <4:SUCCEEDED>
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess CronetDynamite_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 15836717/15836717
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess CronetDynamite_installtime.dm reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 24875/24875
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess DynamiteLoader_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 193797/193797
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess DynamiteLoader_installtime.dm reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 12529/12529
+09-11 13:47:25.771  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess DynamiteModulesA_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 1155127/1155127
+09-11 13:47:25.772  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess DynamiteModulesA_installtime.dm reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 37105/37105
+09-11 13:47:25.773  8785  8795 I ActiveUnlockStatusUtils: authority not set
+09-11 13:47:25.773  8785  8795 I ActiveUnlockStatusUtils: authority not set
+09-11 13:47:25.784  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(4)
+09-11 13:47:25.795  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(5)
+09-11 13:47:25.796  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:25.796  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:25.796  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(6)
+09-11 13:47:25.796  7938  8098 I Finsky:background: [66] otc.i(13): DS: getDownload(request_id=5)
+09-11 13:47:25.796  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(7)
+09-11 13:47:25.796  7938  8094 I Finsky:background: [64] otc.i(13): DS: getDownload(request_id=4)
+09-11 13:47:25.797  7938  8057 I Finsky:background: [56] otc.i(13): DS: getDownload(request_id=6)
+09-11 13:47:25.798  7938  8094 I Finsky:background: [64] otc.i(13): DS: getDownload(request_id=7)
+09-11 13:47:25.799  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=5, files_to_download=[CronetDynamite_installtime.dm(size:24875)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=24875, total_bytes=24875, retry[count=0, next_retry=n/a])
+09-11 13:47:25.800  7930  7970 I Finsky  : [43] auws.J(11): DSC: getDownload(8)
+09-11 13:47:25.801  7930  7970 I Finsky  : [43] auws.J(11): DSC: getDownload(9)
+09-11 13:47:25.804  7938  8098 I Finsky:background: [66] otc.i(13): DS: getDownload(request_id=8)
+09-11 13:47:25.807  7938  8057 I Finsky:background: [56] otc.i(13): DS: getDownload(request_id=9)
+09-11 13:47:25.811  8785  8795 D ch_callQuality: isDeviceSupport: falsemIsChecked: true
+09-11 13:47:25.811  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=4, files_to_download=[CronetDynamite_installtime(size:15836717)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=15836717, total_bytes=15836717, retry[count=0, next_retry=n/a])
+09-11 13:47:25.811  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:25.811  8785  8795 D ch_d2d  : isDeviceSupport: falsemIsChecked: false
+09-11 13:47:25.811  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=6, files_to_download=[DynamiteLoader_installtime(size:193797)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=193797, total_bytes=193797, retry[count=0, next_retry=n/a])
+09-11 13:47:25.812  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=7, files_to_download=[DynamiteLoader_installtime.dm(size:12529)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=12529, total_bytes=12529, retry[count=0, next_retry=n/a])
+09-11 13:47:25.812  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=8, files_to_download=[DynamiteModulesA_installtime(size:1155127)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=1155127, total_bytes=1155127, retry[count=0, next_retry=n/a])
+09-11 13:47:25.813  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=9, files_to_download=[DynamiteModulesA_installtime.dm(size:37105)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=37105, total_bytes=37105, retry[count=0, next_retry=n/a])
+09-11 13:47:25.816  7930  8069 I Finsky  : [88] ndo.run(223): DU: Stored data usage stats for package com.google.android.gms; completed bytes: 15836717.
+09-11 13:47:25.824  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 5199649/138969976
+09-11 13:47:25.824  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 5199649/138969976
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.accessibility.VibrationMainSwitchPreferenceController
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: Caused by: java.lang.reflect.InvocationTargetException
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:143)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: Caused by: java.lang.RuntimeException: Can't create handler inside thread Thread[binder:8785_2,5,main] that has not called Looper.prepare()
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:228)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:195)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	at com.android.settings.accessibility.VibrationMainSwitchPreferenceController.<init>(VibrationMainSwitchPreferenceController.java:52)
+09-11 13:47:25.828  8785  8795 W SliceDataConverter: 	... 22 more
+09-11 13:47:25.829  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:25.830  7930  8008 I Finsky  : [60] ajnm.apply(100): [PLUS] Adding payload
+09-11 13:47:25.831  7930  8008 I Finsky  : [60] alpz.G(106): [PLUS] Triggering sync due to NOW urgency payload
+09-11 13:47:25.831  7930  8008 I Finsky  : [60] ajsn.a(11): [PLUS] Syncing for users with urgency above: NOW
+09-11 13:47:25.833  7930  8008 I Finsky  : [60] ajnr.a(1201): [PLUS] Syncing 0 train(s)
+09-11 13:47:25.833  7930  8008 I Finsky  : [60] adwf.a(232): [PLUS] Sync complete, number synced: 0, number failed: 0
+09-11 13:47:25.834  7930  8001 I Finsky  : [56] kjg.b(1083): [SIM] Successfully refreshed carrier properties.
+09-11 13:47:25.834  7930  8001 I Finsky  : [56] acmj.q(79): SCH: jobFinished: 28--559038737. TimeElapsed: 83ms.
+09-11 13:47:25.845  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT23.98S
+09-11 13:47:25.847  8858  8875 I cr_LibraryLoader: Loading monochrome_64 from within /data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk
+09-11 13:47:25.850  1405  2072 I FontLog : (REDACTED) Received query %s, URI %s
+09-11 13:47:25.851  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 21036366/138969976
+09-11 13:47:25.851  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 21036366/138969976
+09-11 13:47:25.852  1405  2072 I FontLog : (REDACTED) Query [%s] resolved to %s
+09-11 13:47:25.852  1405  2072 I FontLog : (REDACTED) Font PFD returned from cache for %s
+09-11 13:47:25.852  1405  2072 I FontLog : (REDACTED) Fetch %s end status %s
+09-11 13:47:25.854  7930  8001 I Finsky  : [56] abdj.a(2120): RF: starting postprocessing for DynamiteLoader_installtime
+09-11 13:47:25.854  7930  8001 I Finsky  : [56] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.858  8785  8795 W SliceData: Highlight menu key res is empty: com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController
+09-11 13:47:25.864   589  1277 D CompatChangeReporter: Compat change id reported: 161145287; UID 10146; state: ENABLED
+09-11 13:47:25.866  8858  8875 D nativeloader: Load /data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk!/lib/x86_64/libchromium_android_linker.so using ns clns-8 from class loader (caller=/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk): ok
+09-11 13:47:25.866  8858  8875 I cr_Linker: loadLibraryImplLocked: monochrome_64, relroMode=1
+09-11 13:47:25.867  1405  2072 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+09-11 13:47:25.872  7930  8011 I Finsky  : [63] abdj.a(2120): RF: starting postprocessing for CronetDynamite_installtime
+09-11 13:47:25.872  7930  8011 I Finsky  : [63] abdj.a(2120): RF: starting postprocessing for DynamiteLoader_installtime.dm
+09-11 13:47:25.872  7930  8011 I Finsky  : [63] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.872  7930  8011 I Finsky  : [63] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.873  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 21048895/138969976
+09-11 13:47:25.874   589   713 I RescueParty: Starting to observe: [android], updated namespace: backup_and_restore
+09-11 13:47:25.875  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 21048895/138969976
+09-11 13:47:25.875  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22204022/138969976
+09-11 13:47:25.875  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22204022/138969976
+09-11 13:47:25.878  7930  8011 I Finsky  : [63] abdj.a(2120): RF: starting postprocessing for DynamiteModulesA_installtime
+09-11 13:47:25.879  7930  8008 I Finsky  : [60] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.879  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22241127/138969976
+09-11 13:47:25.881   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:25.881  1405  2072 I FontLog : (REDACTED) Received query %s, URI %s
+09-11 13:47:25.881  1405  2072 I FontLog : (REDACTED) Query [%s] resolved to %s
+09-11 13:47:25.881   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android]
+09-11 13:47:25.881   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:25.881   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:25.881   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:25.882  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22241127/138969976
+09-11 13:47:25.882  1405  2071 W GLSUser : [AppCertManager] Exception while requesting key: 
+09-11 13:47:25.882  1405  2071 W GLSUser : java.util.concurrent.ExecutionException: bpcw: Parse Proto Exception with response code 400
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at etvr.s(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at etvr.get(:com.google.android.gms@242335041@24.23.35 (190800-646585959):10)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at yfw.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):477)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at yfu.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):70)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at yfu.hf(:com.google.android.gms@242335041@24.23.35 (190800-646585959):16)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at oxh.onTransact(:com.google.android.gms@242335041@24.23.35 (190800-646585959):96)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at android.os.Binder.transact(Binder.java:1345)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bjld.onTransact(:com.google.android.gms@242335041@24.23.35 (190800-646585959):18)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at android.os.Binder.transact(Binder.java:1345)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bbqp.onTransact(:com.google.android.gms@242335041@24.23.35 (190800-646585959):147)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:25.882  1405  2071 W GLSUser : Caused by: bpcw: Parse Proto Exception with response code 400
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bpdw.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):80)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bpgb.e(:com.google.android.gms@242335041@24.23.35 (190800-646585959):17)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bpgp.onSucceeded(:com.google.android.gms@242335041@24.23.35 (190800-646585959):7)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at m.mw.onSucceeded(:com.google.android.gms.dynamite_cronetdynamite@242335041@24.23.35 (190800-0):3)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at m.lt.run(:com.google.android.gms.dynamite_cronetdynamite@242335041@24.23.35 (190800-0):25)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at angs.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):50)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at angs.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):76)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at anmg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:25.882  1405  2071 W GLSUser : Caused by: fkhe: Protocol message contained an invalid tag (zero).
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkea.k(:com.google.android.gms@242335041@24.23.35 (190800-646585959):39)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkid.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):309)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkid.i(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkgi.fe(:com.google.android.gms@242335041@24.23.35 (190800-646585959):25)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkgc.g(:com.google.android.gms@242335041@24.23.35 (190800-646585959):3)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkdw.e(:com.google.android.gms@242335041@24.23.35 (190800-646585959):1)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkdw.d(:com.google.android.gms@242335041@24.23.35 (190800-646585959):3)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at fkdw.p(:com.google.android.gms@242335041@24.23.35 (190800-646585959):1)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bpdw.g(:com.google.android.gms@242335041@24.23.35 (190800-646585959):68)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	at bpdw.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):11)
+09-11 13:47:25.882  1405  2071 W GLSUser : 	... 10 more
+09-11 13:47:25.883  1405  2071 W GLSUser : [DeviceKeyStore] Cannot load key: Device key file not found.
+09-11 13:47:25.888  7930  8001 I Finsky  : [56] abdj.a(2120): RF: starting postprocessing for DynamiteModulesA_installtime.dm
+09-11 13:47:25.888  7930  8001 I Finsky  : [56] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.890  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22266002/138969976
+09-11 13:47:25.890  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 22266002/138969976
+09-11 13:47:25.890  7569  7576 I .android.as.oss: Background concurrent mark compact GC freed 2800KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 4208KB/8417KB, paused 558us,406us total 115.376ms
+09-11 13:47:25.896  1405  2072 I FontLog : (REDACTED) Font PFD returned from cache for %s
+09-11 13:47:25.896  1405  2072 I FontLog : (REDACTED) Fetch %s end status %s
+09-11 13:47:25.901   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.901   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.902  6771  7008 I ebvk$a  : (REDACTED) Unable to retrieve flag snapshot for %s, using defaults.
+09-11 13:47:25.903   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:25.903   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.903   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:25.903   589   589 I ExplicitHealthCheckController: Not binding to service, service already connecting
+09-11 13:47:25.914  7930  8011 I Finsky  : [63] abdj.a(2120): RF: starting postprocessing for CronetDynamite_installtime.dm
+09-11 13:47:25.914  7930  8011 I Finsky  : [63] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:25.919  8785  8795 D CompatChangeReporter: Compat change id reported: 291868760; UID 1000; state: ENABLED
+09-11 13:47:25.920  7938  8532 I Finsky:background: [73] ovi.d(6): CronetDownloader: onRedirectReceived
+09-11 13:47:25.928  7375  7542 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_display_daltonizer_saturation_level
+09-11 13:47:25.929   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:25.929   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:25.929   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:25.929   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:25.935   589  2810 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.935   589  2810 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:25.935   589  2810 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:25.935  7375  7462 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+09-11 13:47:25.935  7375  7462 I AiAiEcho: EchoTargets: 
+09-11 13:47:25.935  7375  7462 I AiAiEcho: Filtered by AiAi flag check: 
+09-11 13:47:25.935  7375  7462 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+09-11 13:47:25.935  7375  7462 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+09-11 13:47:25.936   589  2810 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:25.936   589  2810 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:25.936   589  2810 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:25.937  7375  7462 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+09-11 13:47:25.942  7375  7462 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+09-11 13:47:25.942  7375  7462 I AiAiEcho: EchoTargets: 
+09-11 13:47:25.942  7375  7462 I AiAiEcho: Filtered by AiAi flag check: 
+09-11 13:47:25.942  7375  7462 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+09-11 13:47:25.942  7375  7462 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+09-11 13:47:25.942  7375  7462 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+09-11 13:47:25.942  7375  7462 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+09-11 13:47:25.943  7375  7462 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+09-11 13:47:25.943  1036  1036 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+09-11 13:47:25.945  7389  7389 D SsBaseTemplateCard: No text view can be set up
+09-11 13:47:25.945  7389  7389 D SsBaseTemplateCard: Passed-in item info is null
+09-11 13:47:25.945  7389  7389 D SsBaseTemplateCard: Passed-in item info is null
+09-11 13:47:25.945  7389  7389 D SsBaseTemplateCard: Passed-in item info is null
+09-11 13:47:25.945  7389  7389 I SsBaseTemplateCard: Secondary card pane is null
+09-11 13:47:25.948  1405  2072 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+09-11 13:47:25.964  1405  2072 I FontLog : (REDACTED) Received query %s, URI %s
+09-11 13:47:25.967  1405  2072 I FontLog : (REDACTED) Query [%s] resolved to %s
+09-11 13:47:25.970  1405  2072 I FontLog : (REDACTED) Font PFD returned from cache for %s
+09-11 13:47:25.971  1405  2072 I FontLog : (REDACTED) Fetch %s end status %s
+09-11 13:47:25.983  1405  2072 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+09-11 13:47:25.988  1405  8505 W FontLog : Error updating last accessed time for {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false}. [CONTEXT service_id=132 ]
+09-11 13:47:25.988  1405  8505 W FontLog : java.lang.IllegalStateException: attempt to re-open an already-closed object: SQLiteDatabase: /data/user/0/com.google.android.gms/databases/metadata.db
+09-11 13:47:25.988  1405  8505 W FontLog : 	at android.database.sqlite.SQLiteClosable.acquireReference(SQLiteClosable.java:59)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at android.database.sqlite.SQLiteDatabase.executeSql(SQLiteDatabase.java:2189)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at android.database.sqlite.SQLiteDatabase.execSQL(SQLiteDatabase.java:2183)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at bbkg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):57)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at angs.c(:com.google.android.gms@242335041@24.23.35 (190800-646585959):50)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at angs.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):76)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at anmg.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:25.988  1405  8505 W FontLog : 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:26.017  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.017  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.018  8858  8875 D nativeloader: Load /data/app/~~Ow0e2wp7koJaAxfYoaskEw==/com.google.android.trichromelibrary_636771938-SHOStHlafh-Jywz-yw6A1A==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using ns clns-8 from class loader (caller=/data/app/~~lxEPZCRU3hrB6T1HrotElw==/com.android.chrome--sWGhoSHaVTVrGGmUk2ugw==/Chrome.apk): ok
+09-11 13:47:26.026  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.031  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.032  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.167S
+09-11 13:47:26.055  1405  1415 I .gms.persistent: Background concurrent mark compact GC freed 16MB AllocSpace bytes, 20(816KB) LOS objects, 50% free, 16MB/33MB, paused 4.802ms,1.497ms total 193.388ms
+09-11 13:47:26.058  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.193S
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.applications.credentials.CredentialManagerPreferenceController
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: Caused by: java.lang.reflect.InvocationTargetException
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:143)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: Caused by: java.lang.RuntimeException: Can't create handler inside thread Thread[binder:8785_2,5,main] that has not called Looper.prepare()
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:228)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:130)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	at com.android.settings.applications.credentials.CredentialManagerPreferenceController.<init>(CredentialManagerPreferenceController.java:110)
+09-11 13:47:26.059  8785  8795 W SliceDataConverter: 	... 22 more
+09-11 13:47:26.059  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:26.061  8858  8875 I cr_LibraryLoader: Successfully loaded native library
+09-11 13:47:26.066  1405  1419 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+09-11 13:47:26.067  1405  1419 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/Phonesky/Phonesky.apk' with 1 weak references
+09-11 13:47:26.068  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.069  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.070  8858  8875 I cr_CachingUmaRecorder: Flushed 19 samples from 18 histograms, 0 samples were dropped.
+09-11 13:47:26.074  1405  1419 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/PartnerSetupPrebuilt/PartnerSetupPrebuilt.apk' with 1 weak references
+09-11 13:47:26.088  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.221S
+09-11 13:47:26.089  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.090  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.117  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.117  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.125  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.134  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.268S
+09-11 13:47:26.134  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.134  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.134  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.applications.appinfo.ManageAppLocalePreferenceController
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: Caused by: java.lang.ClassNotFoundException: com.android.settings.applications.appinfo.ManageAppLocalePreferenceController
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at java.lang.Class.classForName(Native Method)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at java.lang.Class.forName(Class.java:607)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at java.lang.Class.forName(Class.java:512)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:139)
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: Caused by: java.lang.ClassNotFoundException: com.android.settings.applications.appinfo.ManageAppLocalePreferenceController
+09-11 13:47:26.134  8785  8795 W SliceDataConverter: 	... 23 more
+09-11 13:47:26.134  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:26.155  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.162  8461  8700 D PhenotypeUpdateService: Registering with Phenotype
+09-11 13:47:26.171  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.171  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.178  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.313S
+09-11 13:47:26.182  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.186  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.196  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.196  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.202  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.208  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.343S
+09-11 13:47:26.213  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.214  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.214  8785  8789 W ndroid.settings: Missing inline cache for java.util.List com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(int, java.lang.String)
+09-11 13:47:26.226  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.238  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.240  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.374S
+09-11 13:47:26.242  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.242  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.244  8785  8795 D RTTSettingsCtr: init controller
+09-11 13:47:26.264  6771  7091 D TrafficStats: tagSocket(5) with statsTag=0x2c010301, statsUid=-1
+09-11 13:47:26.266  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.274  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.274  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.275  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.41S
+09-11 13:47:26.280  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.282  5085  5615 W A       : (REDACTED) [%s] response code: %d
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.android.settings.fuelgauge.batteryusage.BatteryChartPreferenceController
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: Caused by: java.lang.NoSuchMethodException: com.android.settings.fuelgauge.batteryusage.BatteryChartPreferenceController.<init> [class android.content.Context, class java.lang.String]
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at java.lang.Class.getConstructor0(Class.java:3395)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at java.lang.Class.getConstructor(Class.java:2487)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:141)
+09-11 13:47:26.315  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:26.317  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:26.324  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.325  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.328  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.461S
+09-11 13:47:26.329  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.342  8785  8795 E ScreenResolutionController: No support
+09-11 13:47:26.343  8785  8795 D RefreshRatePrefCtr: DEFAULT_REFRESH_RATE : 60.0 mPeakRefreshRate : 60.0
+09-11 13:47:26.353   589   713 I RescueParty: Starting to observe: [android, com.google.android.networkstack], updated namespace: tethering
+09-11 13:47:26.354  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.354  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.356  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.491S
+09-11 13:47:26.358  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.369   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:26.369   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [android, com.google.android.networkstack]
+09-11 13:47:26.369   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:26.369   589   622 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+09-11 13:47:26.369   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:26.369   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:26.370  7569  7576 I .android.as.oss: Background concurrent mark compact GC freed 5632KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3152KB/6305KB, paused 28.812ms,24.751ms total 188.670ms
+09-11 13:47:26.372  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.372  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.375  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.51S
+09-11 13:47:26.380   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:26.383   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:26.386  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.388   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:26.389   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:26.389   589   589 I ExplicitHealthCheckController: Not binding to service, service already connecting
+09-11 13:47:26.389   589  2810 D CompatChangeReporter: Compat change id reported: 297989574; UID 1000; state: ENABLED
+09-11 13:47:26.395   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:26.396   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:26.396   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:26.396   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:26.402   589  2539 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.402   589  2539 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.402   589  2539 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:26.406   589  2539 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:26.406   589  2539 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:26.410  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.410  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.411  8785  8795 I TetheringManager: registerTetheringEventCallback:com.android.settings
+09-11 13:47:26.412   589  2539 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:26.424  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.433  8785  8795 I BluetoothAutoOnPrefCtlr: getAvailabilityStatus() isSupported: false
+09-11 13:47:26.457  8785  8795 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+09-11 13:47:26.465  8785  8795 I MediaRouter: Skip setBluetoothA2dpOn(): types=8388615, isPlaybackActive()=false, BT route=null
+09-11 13:47:26.469  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <10:RUNNING:89%[89%]>
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener lje@43f0dde for download
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener adbn@aaf50cd for download
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@a6ff2b4 for download
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener orj@60a8c95 for download
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@665d86a for download
+09-11 13:47:26.475  7930  7930 I Finsky  : [2] owm.b(109): DSC::L: Updating listeners of <10:RUNNING:89%[89%]>
+09-11 13:47:26.476  7930  7930 I Finsky  : [2] bera.C(45): RM: receive resource status onStart DynamiteModulesC_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 2, 192, size: 2196110/2452815
+09-11 13:47:26.476  7930  7930 I Finsky  : [2] bera.B(45): RM: receive resource status onProgress DynamiteModulesC_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 2, 192, size: 2196110/2452815
+09-11 13:47:26.478  7930  7969 I Finsky  : [42] auws.J(11): DSC: getDownload(10)
+09-11 13:47:26.479  7938  8057 I Finsky:background: [56] otc.i(13): DS: getDownload(request_id=10)
+09-11 13:47:26.480  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=10, files_to_download=[DynamiteModulesC_installtime(size:2452815)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=2196110, total_bytes=2452815, retry[count=0, next_retry=n/a])
+09-11 13:47:26.480  7930  7973 I Finsky  : [44] auws.J(11): DSC: getDownload(10)
+09-11 13:47:26.481  7938  8057 I Finsky:background: [56] otc.i(13): DS: getDownload(request_id=10)
+09-11 13:47:26.482  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=10, files_to_download=[DynamiteModulesC_installtime(size:2452815)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=2196110, total_bytes=2452815, retry[count=0, next_retry=n/a])
+09-11 13:47:26.504  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 24462112/138969976
+09-11 13:47:26.510  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 24462112/138969976
+09-11 13:47:26.511  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.646S
+09-11 13:47:26.511   589  2669 I MR2ServiceImpl: registerManager | callerUid: 1000, callerPid: 8785, callerPackage: com.android.settings, targetPackageName: com.android.settings, targetUserId: UserHandle{0}, hasMediaRoutingControl: true
+09-11 13:47:26.519  1779  1779 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-11 13:47:26.522  7930  8008 I Finsky  : [60] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.522  7930  8011 I Finsky  : [63] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.522  7930  8011 I Finsky  : [63] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.523  7930  7990 I Finsky  : [52] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.524   589  2539 I MR2ServiceImpl: registerManager | callerUid: 1000, callerPid: 8785, callerPackage: com.android.settings, targetPackageName: null, targetUserId: UserHandle{0}, hasMediaRoutingControl: true
+09-11 13:47:26.527  7930  8008 I Finsky  : [60] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.530  7930  8001 I Finsky  : [56] zto.a(1147): RF::PP-Verify: starting to verify for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000].
+09-11 13:47:26.533  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.533  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.546  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.547  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.682S
+09-11 13:47:26.557  7930  8011 I Finsky  : [63] abfw.w(9): RM: remove resources for request 2592e854-25e2-428e-90c0-c603d073321a
+09-11 13:47:26.561  7930  7973 I Finsky  : [44] auws.M(11): DSC: remove(4)
+09-11 13:47:26.562  7938  8057 I Finsky:background: [56] otc.k(13): DS: remove(request_id=4)
+09-11 13:47:26.575   589  2539 I MR2ServiceImpl: updateScanningState | manager: 2, ownerPackageName: com.android.settings, targetPackageName: com.android.settings, scanningState: SCREEN_ON_ONLY
+09-11 13:47:26.576   589   987 I MR2ServiceImpl: Updating composite discovery preference | preference: RouteDiscoveryRequest{ preferredFeatures={}, activeScan=false }, active routers: []
+09-11 13:47:26.585  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.586  7930  8008 I Finsky  : [60] abfw.w(9): RM: remove resources for request 3ec3cbfc-e234-4666-a3f4-33891c7421f6
+09-11 13:47:26.586  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.587  7930  7970 I Finsky  : [43] auws.M(11): DSC: remove(8)
+09-11 13:47:26.588  7938  8098 I Finsky:background: [66] otc.k(13): DS: remove(request_id=8)
+09-11 13:47:26.589  8785  8795 I CameraManagerGlobal: Connecting to camera service
+09-11 13:47:26.599  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.605  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=4, files_to_download=[CronetDynamite_installtime(size:15836717)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=15836717, total_bytes=15836717, retry[count=0, next_retry=n/a])
+09-11 13:47:26.618  7930  8001 I Finsky  : [56] abfw.w(9): RM: remove resources for request 3726489d-0fd0-43c4-9344-d204d33f3130
+09-11 13:47:26.621  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=8, files_to_download=[DynamiteModulesA_installtime(size:1155127)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=1155127, total_bytes=1155127, retry[count=0, next_retry=n/a])
+09-11 13:47:26.621  7930  7969 I Finsky  : [42] auws.M(11): DSC: remove(7)
+09-11 13:47:26.621  7938  8057 I Finsky:background: [56] otc.k(13): DS: remove(request_id=7)
+09-11 13:47:26.625  7930  7990 I Finsky  : [52] abfw.w(9): RM: remove resources for request d5561045-a689-4f57-9ae8-5011fd784655
+09-11 13:47:26.635  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=7, files_to_download=[DynamiteLoader_installtime.dm(size:12529)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=12529, total_bytes=12529, retry[count=0, next_retry=n/a])
+09-11 13:47:26.636  7930  7973 I Finsky  : [44] auws.M(11): DSC: remove(9)
+09-11 13:47:26.640  7938  8057 I Finsky:background: [56] otc.k(13): DS: remove(request_id=9)
+09-11 13:47:26.640  7930  8008 I Finsky  : [60] abfw.w(9): RM: remove resources for request 1df66a81-3ebb-4a32-95b2-0a62c388f29c
+09-11 13:47:26.650  7930  7990 I Finsky  : [52] abfw.w(9): RM: remove resources for request e831605e-8ee0-4b97-8b8f-079494365445
+09-11 13:47:26.651  7930  7970 I Finsky  : [43] auws.M(11): DSC: remove(6)
+09-11 13:47:26.651  7930  7973 I Finsky  : [44] auws.M(11): DSC: remove(5)
+09-11 13:47:26.652  7938  8098 I Finsky:background: [66] otc.k(13): DS: remove(request_id=6)
+09-11 13:47:26.653  7938  8094 I Finsky:background: [64] otc.k(13): DS: remove(request_id=5)
+09-11 13:47:26.658   589   713 I RescueParty: Starting to observe: [com.google.android.apps.wallpaper], updated namespace: wallpaper_content
+09-11 13:47:26.658   589   622 I PackageWatchdog: Syncing state, reason: observing new packages
+09-11 13:47:26.660  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=9, files_to_download=[DynamiteModulesA_installtime.dm(size:37105)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=37105, total_bytes=37105, retry[count=0, next_retry=n/a])
+09-11 13:47:26.660   589   622 D PackageWatchdog: rescue-party-observer added the following packages to monitor [com.google.android.apps.wallpaper]
+09-11 13:47:26.660   589   589 I PackageWatchdog: Syncing health check requests for packages: {com.google.android.apps.wallpaper}
+09-11 13:47:26.660   589   589 I ExplicitHealthCheckController: Service not ready to get health check supported packages. Binding...
+09-11 13:47:26.660   589   622 I PackageWatchdog: Syncing state, reason: updated observers
+09-11 13:47:26.660   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:26.661   589   589 I ExplicitHealthCheckController: Explicit health check service is bound
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: Get slice data from XML failed 
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: java.lang.IllegalStateException: Invalid preference controller: com.google.android.settings.accessibility.AdaptiveVibrationTogglePreferenceController
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:146)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceBuilderUtils.getPreferenceController(SliceBuilderUtils.java:367)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromXML(SliceDataConverter.java:192)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceDataFromProvider(SliceDataConverter.java:147)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SliceDataConverter.getSliceData(SliceDataConverter.java:117)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.getSliceData(SlicesIndexer.java:94)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesIndexer.indexSliceData(SlicesIndexer.java:75)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesFeatureProviderImpl.indexSliceData(SlicesFeatureProviderImpl.java:63)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.verifyIndexing(SlicesDatabaseAccessor.java:197)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceUris(SlicesDatabaseAccessor.java:97)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.slices.SettingsSliceProvider.onGetSliceDescendants(SettingsSliceProvider.java:346)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.onGetSliceDescendants(SliceProviderWrapperContainer.java:166)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.handleGetDescendants(SliceProvider.java:421)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.app.slice.SliceProvider.call(SliceProvider.java:402)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at androidx.slice.compat.SliceProviderWrapperContainer$SliceProviderWrapper.call(SliceProviderWrapperContainer.java:123)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider.call(ContentProvider.java:2704)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.content.ContentProvider$Transport.call(ContentProvider.java:633)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:307)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransactInternal(Binder.java:1500)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.os.Binder.execTransact(Binder.java:1444)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: Caused by: java.lang.reflect.InvocationTargetException
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.android.settings.core.BasePreferenceController.createInstance(BasePreferenceController.java:143)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	... 19 more
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: Caused by: java.lang.RuntimeException: Can't create handler inside thread Thread[binder:8785_2,5,main] that has not called Looper.prepare()
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:228)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at android.os.Handler.<init>(Handler.java:195)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.google.android.settings.accessibility.AdaptiveVibrationTogglePreferenceController.<init>(AdaptiveVibrationTogglePreferenceController.java:88)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	at com.google.android.settings.accessibility.AdaptiveVibrationTogglePreferenceController.<init>(AdaptiveVibrationTogglePreferenceController.java:76)
+09-11 13:47:26.671  8785  8795 W SliceDataConverter: 	... 22 more
+09-11 13:47:26.671  8785  8795 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+09-11 13:47:26.671   589   589 I ExplicitHealthCheckController: Explicit health check service is connected ComponentInfo{com.google.android.ext.services/android.ext.services.watchdog.ExplicitHealthCheckServiceImpl}
+09-11 13:47:26.671   589   589 I ExplicitHealthCheckController: Service initialized, syncing requests
+09-11 13:47:26.672   589   589 I PackageWatchdog: Syncing health check requests for packages: {com.google.android.apps.wallpaper}
+09-11 13:47:26.672   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:26.676   589  1277 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.676   589  1277 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.676   589  1277 I PackageWatchdog: Updated health check state for package com.google.android.apps.wallpaper: INACTIVE -> PASSED
+09-11 13:47:26.676   589  1277 I PackageWatchdog: Syncing state, reason: updated health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.676   589   589 I PackageWatchdog: Syncing health check requests for packages: {}
+09-11 13:47:26.676   589   589 D ExplicitHealthCheckController: Getting health check supported packages
+09-11 13:47:26.677   589  1277 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:26.677   589  1277 I ExplicitHealthCheckController: Explicit health check supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.677   589  1277 D PackageWatchdog: Received supported packages [PackageConfig{com.google.android.networkstack, 86400000}]
+09-11 13:47:26.677   589  1277 D ExplicitHealthCheckController: Getting health check requested packages
+09-11 13:47:26.678   589  2532 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:26.678   589  2532 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:26.678   589  2539 I ExplicitHealthCheckController: Explicit health check requested packages []
+09-11 13:47:26.678   589   622 I PackageWatchdog: Saving observer state to file
+09-11 13:47:26.680  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=6, files_to_download=[DynamiteLoader_installtime(size:193797)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=193797, total_bytes=193797, retry[count=0, next_retry=n/a])
+09-11 13:47:26.684   589  2532 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:26.684   589  2539 I ExplicitHealthCheckController: No more health check requests, unbinding...
+09-11 13:47:26.684   589  2539 I ExplicitHealthCheckController: Explicit health check service is unbound
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: Update for unknown DeviceConfig package com.google.android.gms.esim [CONTEXT service_id=204 ]
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: daaf: No package exists for config package: com.google.android.gms.esim
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):233)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):29)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):207)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):2)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at ajom.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at pkf.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):70)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at pke.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):152)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at emsz.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:26.691  1405  8674 W PlatformConfigurator: 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:26.694  7938  8006 I Finsky:background: [55] otc.h(316): DS: onRemove(request_id=5, files_to_download=[CronetDynamite_installtime.dm(size:24875)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=24875, total_bytes=24875, retry[count=0, next_retry=n/a])
+09-11 13:47:26.696  8785  8795 W SliceData: Highlight menu key res is empty: com.android.settings.accessibility.AccessibilitySlicePreferenceController
+09-11 13:47:26.696  8785  8795 W SliceData: Highlight menu key res is empty: com.android.settings.accessibility.AccessibilitySlicePreferenceController
+09-11 13:47:26.726  8785  8795 D SlicesIndexer: Indexing slices database took: 1531
+09-11 13:47:26.734  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <10:RUNNING:100%[100%]>
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener lje@43f0dde for download
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener adbn@aaf50cd for download
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@a6ff2b4 for download
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener orj@60a8c95 for download
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] ota.accept(192): DSC::L: Updating listener ori@665d86a for download
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] owm.b(109): DSC::L: Updating listeners of <10:RUNNING:100%[100%]>
+09-11 13:47:26.734  7930  7930 I Finsky  : [2] bera.B(45): RM: receive resource status onProgress DynamiteModulesC_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 2, 192, size: 2452815/2452815
+09-11 13:47:26.735  7930  7969 I Finsky  : [42] auws.J(11): DSC: getDownload(10)
+09-11 13:47:26.736  7938  8098 I Finsky:background: [66] otc.i(13): DS: getDownload(request_id=10)
+09-11 13:47:26.736  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=10, files_to_download=[DynamiteModulesC_installtime(size:2452815)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=2452815, total_bytes=2452815, retry[count=0, next_retry=n/a])
+09-11 13:47:26.744  1405  8529 I PTCommittedOperation: Receive new configuration for com.google.android.gms
+09-11 13:47:26.744  1405  8529 I PTCommittedOperation: Running Fixer Framework for com.google.android.gms
+09-11 13:47:26.748  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 24718817/138969976
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: Update for unknown DeviceConfig package com.google.android.gms [CONTEXT service_id=204 ]
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: daaf: No package exists for config package: com.google.android.gms
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.b(:com.google.android.gms@242335041@24.23.35 (190800-646585959):233)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.a(:com.google.android.gms@242335041@24.23.35 (190800-646585959):29)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):207)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):2)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at ajom.onHandleIntent(:com.google.android.gms@242335041@24.23.35 (190800-646585959):8)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at pkf.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):70)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at pke.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):152)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at emsz.run(:com.google.android.gms@242335041@24.23.35 (190800-646585959):21)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-11 13:47:26.750  1405  8674 W PlatformConfigurator: 	at java.lang.Thread.run(Thread.java:1012)
+09-11 13:47:26.750  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.885S
+09-11 13:47:26.763  8785  8795 D SettingsSliceProvider: Allowlisting 12 uris to 3 pkgs.
+09-11 13:47:26.768  7930  7930 I Finsky  : [2] oxi.s(174): DL: Data loader session turned off due to Incremental install not requested: com.google.android.gms
+09-11 13:47:26.769  7930  7930 I Finsky  : [2] aafp.jN(55): PIM: Ignore install package event for: com.google.android.gms, isid: 9TtwofnpRRmQVyFU38-HRA
+09-11 13:47:26.776  7930  7930 I Finsky  : [2] adnb.apply(111): IQ::HLD: ongoing installs that pauseAppUpdates callers must wait for: [[Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA]]
+09-11 13:47:26.777  7938  8006 I Finsky:background: [55] rpb.i(30): DS::IDC: updateWith: <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] DownloadServiceReceiver.b(93): DSR: Download completion broadcast received by main process
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener lje@43f0dde for download <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener adbn@aaf50cd for download <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener ori@a6ff2b4 for download <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener orj@60a8c95 for download <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] owm.c(121): DSC::L: Updating listener ori@665d86a for download <10:SUCCEEDED>
+09-11 13:47:26.778  7930  7930 I Finsky  : [2] bera.D(45): RM: receive resource status onSuccess DynamiteModulesC_installtime reason: rapid_auto_update isid: 9TtwofnpRRmQVyFU38-HRA, 3, 200, size: 2452815/2452815
+09-11 13:47:26.779  7930  7970 I Finsky  : [43] auws.J(11): DSC: getDownload(10)
+09-11 13:47:26.780  7938  8098 I Finsky:background: [66] otc.i(13): DS: getDownload(request_id=10)
+09-11 13:47:26.780  7938  8006 I Finsky:background: [55] otc.h(316): DS: onGetDownload(request_id=10, files_to_download=[DynamiteModulesC_installtime(size:2452815)], context[group_id=com.google.android.gms:9TtwofnpRRmQVyFU38-HRA], display_data[invisible=true, title=Updating Play support libraries…], network_restrictions=ANY_NETWORK status=succeeded, bytes_downloaded=2452815, total_bytes=2452815, retry[count=0, next_retry=n/a])
+09-11 13:47:26.788  7930  8069 I Finsky  : [88] ndo.run(223): DU: Stored data usage stats for package com.google.android.gms; completed bytes: 2452815.
+09-11 13:47:26.790  7930  8001 I Finsky  : [56] abdj.a(2120): RF: starting postprocessing for DynamiteModulesC_installtime
+09-11 13:47:26.791  7930  8001 I Finsky  : [56] zto.a(1235): RF::PP-Copy: starting to copy for com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] [tid: 1000000000]
+09-11 13:47:26.796  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 24718817/138969976
+09-11 13:47:26.796  7930  8115 I Finsky  : [97] kiz.accept(70): IV2: onTaskProgress com.google.android.gms[iid:0] [isid:9TtwofnpRRmQVyFU38-HRA] status:4, size: 24718817/138969976
+09-11 13:47:26.806  7930  8120 I Finsky  : [100] sqc.M(33): IQ: Notifying installation update. [Package:com.google.android.gms, isid:9TtwofnpRRmQVyFU38-HRA], status=DOWNLOADING, status_code=0, reason=rapid_auto_update, tsc=PT24.941S
+09-11 13:47:26.822  6771  7091 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@1602fa1

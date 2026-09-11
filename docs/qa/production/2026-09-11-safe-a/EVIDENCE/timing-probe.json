@@ -1,0 +1,1047 @@
+{
+  "method": "Pure simulation, not GUI. Existing conditions, all available investigations, minimal disclosure, security custody.",
+  "current": [
+    {
+      "scene": "SCENE_ACT0_DRIVE",
+      "choice": "KEEP_SEOYUN_TALKING",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_ACT0_WATCH_CALL",
+      "after": 4,
+      "afterClock": "21:27",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_WATCH_CALL",
+      "choice": "ASK_ABOUT_OTHER_CALLS",
+      "before": 4,
+      "beforeClock": "21:27",
+      "nextScene": "SCENE_ACT0_MESSAGES",
+      "after": 9,
+      "afterClock": "21:32",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_MESSAGES",
+      "choice": "PRESERVE_MESSAGE_SEQUENCE",
+      "before": 9,
+      "beforeClock": "21:32",
+      "nextScene": "SCENE_ACT0_LAST_CALL",
+      "after": 17,
+      "afterClock": "21:40",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_LAST_CALL",
+      "choice": "ENTER_HOSPITAL_GROUNDS",
+      "before": 17,
+      "beforeClock": "21:40",
+      "nextScene": "SCENE_ACT0_ARRIVAL",
+      "after": 25,
+      "afterClock": "21:48",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_ARRIVAL",
+      "choice": "APPROACH_RECEPTION",
+      "before": 25,
+      "beforeClock": "21:48",
+      "nextScene": "SCENE_ACT1_YUJIN_FIRST",
+      "after": 28,
+      "afterClock": "21:51",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_FIRST",
+      "choice": "WAIT_FOR_SEARCH_RESULT",
+      "before": 28,
+      "beforeClock": "21:51",
+      "nextScene": "SCENE_ACT1_YUJIN_SEARCH",
+      "after": 32,
+      "afterClock": "21:55",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_SEARCH",
+      "choice": "QUESTION_THE_DENIAL",
+      "before": 32,
+      "beforeClock": "21:55",
+      "nextScene": "SCENE_ACT1_YUJIN_DENIAL",
+      "after": 36,
+      "afterClock": "21:59",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_DENIAL",
+      "choice": "READ_SEOYUN_WARNING",
+      "before": 36,
+      "beforeClock": "21:59",
+      "nextScene": "SCENE_ACT1_YUJIN_WARNING",
+      "after": 39,
+      "afterClock": "22:02",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_WARNING",
+      "choice": "GO_TO_THIRD_FLOOR",
+      "before": 39,
+      "beforeClock": "22:02",
+      "nextScene": "SCENE_ACT2_THIRD_FLOOR",
+      "after": 45,
+      "afterClock": "22:08",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_THIRD_FLOOR",
+      "choice": "ASK_NURSE_ABOUT_302",
+      "before": 45,
+      "beforeClock": "22:08",
+      "nextScene": "SCENE_ACT2_NURSE_AT_302",
+      "after": 49,
+      "afterClock": "22:12",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_NURSE_AT_302",
+      "choice": "ENTER_ROOM_302_LOOP1",
+      "before": 49,
+      "beforeClock": "22:12",
+      "nextScene": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "after": 54,
+      "afterClock": "22:17",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "choice": "CHECK_WRISTBAND",
+      "before": 54,
+      "beforeClock": "22:17",
+      "nextScene": "SCENE_ACT2_WRISTBAND",
+      "after": 63,
+      "afterClock": "22:26",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_WRISTBAND",
+      "choice": "LEAVE_WRISTBAND_AND_REPLY",
+      "before": 63,
+      "beforeClock": "22:26",
+      "nextScene": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "after": 67,
+      "afterClock": "22:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "choice": "LOOK_FOR_EMPLOYEE_DOOR",
+      "before": 67,
+      "beforeClock": "22:30",
+      "nextScene": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "after": 75,
+      "afterClock": "22:38",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "choice": "STAY_UNTIL_BLACKOUT",
+      "before": 75,
+      "beforeClock": "22:38",
+      "nextScene": "SCENE_ACT3_BLACKOUT",
+      "after": 84,
+      "afterClock": "22:47",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT3_BLACKOUT",
+      "choice": "MOVE_TOWARD_UNLOCKED_DOOR",
+      "before": 84,
+      "beforeClock": "22:47",
+      "nextScene": "SCENE_FIRST_DEATH",
+      "after": 84,
+      "afterClock": "22:47",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_RESET_AWAKENING",
+      "choice": "RECOGNIZE_RESET",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_VERTICAL_SLICE_TITLE",
+      "after": 1,
+      "afterClock": "21:24",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_TITLE",
+      "choice": "CONTINUE_AFTER_TITLE",
+      "before": 1,
+      "beforeClock": "21:24",
+      "nextScene": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "after": 2,
+      "afterClock": "21:25",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "choice": "DO_NOT_EXPLAIN_LOOP_YET",
+      "before": 2,
+      "beforeClock": "21:25",
+      "nextScene": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "after": 10,
+      "afterClock": "21:33",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "choice": "TAKE_FIRST_PHONE",
+      "before": 10,
+      "beforeClock": "21:33",
+      "nextScene": "SCENE_LOOP2_FIRST_PHONE",
+      "after": 14,
+      "afterClock": "21:37",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_PHONE",
+      "choice": "ANSWER_ON_OWN_PHONE",
+      "before": 14,
+      "beforeClock": "21:37",
+      "nextScene": "SCENE_LOOP2_PHONE_PARADOX",
+      "after": 18,
+      "afterClock": "21:41",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_PHONE_PARADOX",
+      "choice": "TELL_YUJIN_ONLY_PHONE_FACT",
+      "before": 18,
+      "beforeClock": "21:41",
+      "nextScene": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "after": 22,
+      "afterClock": "21:45",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "choice": "GO_TO_STAFF_DOOR_QUIETLY",
+      "before": 22,
+      "beforeClock": "21:45",
+      "nextScene": "SCENE_LOOP2_STAFF_DOOR",
+      "after": 30,
+      "afterClock": "21:53",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_STAFF_DOOR",
+      "choice": "WAIT_FOR_KNOWN_BLACKOUT",
+      "before": 30,
+      "beforeClock": "21:53",
+      "nextScene": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "after": 35,
+      "afterClock": "21:58",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "choice": "ENTER_B1",
+      "before": 35,
+      "beforeClock": "21:58",
+      "nextScene": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "after": 37,
+      "afterClock": "22:00",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "choice": "ASK_SEA_ABOUT_SEOYUN",
+      "before": 37,
+      "beforeClock": "22:00",
+      "nextScene": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "after": 45,
+      "afterClock": "22:08",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "choice": "FACE_TAEJUN_IN_B1",
+      "before": 45,
+      "beforeClock": "22:08",
+      "nextScene": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "after": 48,
+      "afterClock": "22:11",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "choice": "RETURN_UPSTAIRS_WITH_TAEJUN",
+      "before": 48,
+      "beforeClock": "22:11",
+      "nextScene": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "after": 53,
+      "afterClock": "22:16",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "choice": "RETURN_TO_302_FOR_SECOND_PHONE",
+      "before": 53,
+      "beforeClock": "22:16",
+      "nextScene": "SCENE_LOOP2_RETURN_302",
+      "after": 59,
+      "afterClock": "22:22",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_RETURN_302",
+      "choice": "CALL_BOTH_SEOYUN_PHONES",
+      "before": 59,
+      "beforeClock": "22:22",
+      "nextScene": "SCENE_LOOP2_SECOND_PHONE",
+      "after": 63,
+      "afterClock": "22:26",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SECOND_PHONE",
+      "choice": "KEEP_SECOND_PHONE",
+      "before": 63,
+      "beforeClock": "22:26",
+      "nextScene": "SCENE_VERTICAL_SLICE_END",
+      "after": 65,
+      "afterClock": "22:28",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_END",
+      "choice": "ASK_TAEJUN_ABOUT_CCTV",
+      "before": 65,
+      "beforeClock": "22:28",
+      "nextScene": "SCENE_LOOP2_CCTV_GAP",
+      "after": 68,
+      "afterClock": "22:31",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_CCTV_GAP",
+      "choice": "SHOW_SECOND_PHONE_TO_TAEJUN",
+      "before": 68,
+      "beforeClock": "22:31",
+      "nextScene": "SCENE_LOOP2_06_CARD",
+      "after": 70,
+      "afterClock": "22:33",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_06_CARD",
+      "choice": "COMPARE_06_WITH_WRISTBAND",
+      "before": 70,
+      "beforeClock": "22:33",
+      "nextScene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "after": 72,
+      "afterClock": "22:35",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "choice": "KEEP_MINSEO_WARNING_PRIVATE",
+      "before": 72,
+      "beforeClock": "22:35",
+      "nextScene": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "after": 75,
+      "afterClock": "22:38",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "choice": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+      "before": 75,
+      "beforeClock": "22:38",
+      "nextScene": "SCENE_LOOP2_TAEJUN_MAP",
+      "after": 81,
+      "afterClock": "22:44",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_MAP",
+      "choice": "SEND_OLD_MAP_TO_SEOYUN",
+      "before": 81,
+      "beforeClock": "22:44",
+      "nextScene": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "after": 83,
+      "afterClock": "22:46",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "choice": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+      "before": 83,
+      "beforeClock": "22:46",
+      "nextScene": "SCENE_CHAPTER02_END",
+      "after": 84,
+      "afterClock": "22:47",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CHAPTER02_END",
+      "choice": "BEGIN_CHAPTER_3",
+      "before": 84,
+      "beforeClock": "22:47",
+      "nextScene": "SCENE_CH3_BAND_REQUEST",
+      "after": 184,
+      "afterClock": "00:27",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_BAND_REQUEST",
+      "choice": "CH3_BAND_SHOW_TAEJUN",
+      "before": 184,
+      "beforeClock": "00:27",
+      "nextScene": "SCENE_CH3_BAND_TAEJUN",
+      "after": 187,
+      "afterClock": "00:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_BAND_TAEJUN",
+      "choice": "CH3_ASK_SAME_QUESTION_T",
+      "before": 187,
+      "beforeClock": "00:30",
+      "nextScene": "SCENE_CH3_THREE_TESTIMONIES",
+      "after": 187,
+      "afterClock": "00:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_THREE_TESTIMONIES",
+      "choice": "CH3_USE_SPACE_DEDUCTION",
+      "before": 187,
+      "beforeClock": "00:30",
+      "nextScene": "SCENE_CH3_MINSEO_QUESTION",
+      "after": 188,
+      "afterClock": "00:31",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_QUESTION",
+      "choice": "CH3_SHOW_WATCH_ONLY",
+      "before": 188,
+      "beforeClock": "00:31",
+      "nextScene": "SCENE_CH3_MINSEO_WATCH",
+      "after": 191,
+      "afterClock": "00:34",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_WATCH",
+      "choice": "CH3_FIND_MISSING_CARD_W",
+      "before": 191,
+      "beforeClock": "00:34",
+      "nextScene": "SCENE_CH3_MISSING_CARD",
+      "after": 193,
+      "afterClock": "00:36",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_CARD",
+      "choice": "CH3_CALL_MISSING_WORKER",
+      "before": 193,
+      "beforeClock": "00:36",
+      "nextScene": "SCENE_CH3_MISSING_WORKER",
+      "after": 196,
+      "afterClock": "00:39",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_WORKER",
+      "choice": "CH3_ENTER_B1_WITH_TAEJUN",
+      "before": 196,
+      "beforeClock": "00:39",
+      "nextScene": "SCENE_CH3_APPROACH_TAEJUN",
+      "after": 206,
+      "afterClock": "00:49",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_APPROACH_TAEJUN",
+      "choice": "CH3_OPEN_TRANSFER_T",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_TRANSFER_TAEJUN",
+      "after": 206,
+      "afterClock": "00:49",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_TRANSFER_TAEJUN",
+      "choice": "CH3_READ_LEDGER_T",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_0106_TAEJUN",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_0106_TAEJUN",
+      "choice": "CH3_LAST_CHECK_CARD_T",
+      "before": 223,
+      "beforeClock": "01:06",
+      "nextScene": "SCENE_CH3_LAST_CARD",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_LAST_CARD",
+      "choice": "CH3_DIE_AFTER_CARD_T",
+      "before": 223,
+      "beforeClock": "01:06",
+      "nextScene": "SCENE_CH3_DEATH_TAEJUN",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_RESET_2123",
+      "choice": "USE_MEMORY_0106_SEAL",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_CH4_OPENING",
+      "after": 0,
+      "afterClock": "21:23",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH4_OPENING",
+      "choice": "CH4_SET_LOOP_GOAL",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_CH4_MILESTONE_A_END",
+      "after": 0,
+      "afterClock": "21:23",
+      "backwardsWithoutReset": false
+    }
+  ],
+  "hypotheticalMidnightAnchorsOnly": [
+    {
+      "scene": "SCENE_ACT0_DRIVE",
+      "choice": "KEEP_SEOYUN_TALKING",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_ACT0_WATCH_CALL",
+      "after": 4,
+      "afterClock": "21:27",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_WATCH_CALL",
+      "choice": "ASK_ABOUT_OTHER_CALLS",
+      "before": 4,
+      "beforeClock": "21:27",
+      "nextScene": "SCENE_ACT0_MESSAGES",
+      "after": 9,
+      "afterClock": "21:32",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_MESSAGES",
+      "choice": "PRESERVE_MESSAGE_SEQUENCE",
+      "before": 9,
+      "beforeClock": "21:32",
+      "nextScene": "SCENE_ACT0_LAST_CALL",
+      "after": 17,
+      "afterClock": "21:40",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_LAST_CALL",
+      "choice": "ENTER_HOSPITAL_GROUNDS",
+      "before": 17,
+      "beforeClock": "21:40",
+      "nextScene": "SCENE_ACT0_ARRIVAL",
+      "after": 25,
+      "afterClock": "21:48",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT0_ARRIVAL",
+      "choice": "APPROACH_RECEPTION",
+      "before": 25,
+      "beforeClock": "21:48",
+      "nextScene": "SCENE_ACT1_YUJIN_FIRST",
+      "after": 28,
+      "afterClock": "21:51",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_FIRST",
+      "choice": "WAIT_FOR_SEARCH_RESULT",
+      "before": 28,
+      "beforeClock": "21:51",
+      "nextScene": "SCENE_ACT1_YUJIN_SEARCH",
+      "after": 32,
+      "afterClock": "21:55",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_SEARCH",
+      "choice": "QUESTION_THE_DENIAL",
+      "before": 32,
+      "beforeClock": "21:55",
+      "nextScene": "SCENE_ACT1_YUJIN_DENIAL",
+      "after": 36,
+      "afterClock": "21:59",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_DENIAL",
+      "choice": "READ_SEOYUN_WARNING",
+      "before": 36,
+      "beforeClock": "21:59",
+      "nextScene": "SCENE_ACT1_YUJIN_WARNING",
+      "after": 39,
+      "afterClock": "22:02",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT1_YUJIN_WARNING",
+      "choice": "GO_TO_THIRD_FLOOR",
+      "before": 39,
+      "beforeClock": "22:02",
+      "nextScene": "SCENE_ACT2_THIRD_FLOOR",
+      "after": 45,
+      "afterClock": "22:08",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_THIRD_FLOOR",
+      "choice": "ASK_NURSE_ABOUT_302",
+      "before": 45,
+      "beforeClock": "22:08",
+      "nextScene": "SCENE_ACT2_NURSE_AT_302",
+      "after": 49,
+      "afterClock": "22:12",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_NURSE_AT_302",
+      "choice": "ENTER_ROOM_302_LOOP1",
+      "before": 49,
+      "beforeClock": "22:12",
+      "nextScene": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "after": 54,
+      "afterClock": "22:17",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_ROOM_CONTRADICTION",
+      "choice": "CHECK_WRISTBAND",
+      "before": 54,
+      "beforeClock": "22:17",
+      "nextScene": "SCENE_ACT2_WRISTBAND",
+      "after": 63,
+      "afterClock": "22:26",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_WRISTBAND",
+      "choice": "LEAVE_WRISTBAND_AND_REPLY",
+      "before": 63,
+      "beforeClock": "22:26",
+      "nextScene": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "after": 67,
+      "afterClock": "22:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+      "choice": "LOOK_FOR_EMPLOYEE_DOOR",
+      "before": 67,
+      "beforeClock": "22:30",
+      "nextScene": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "after": 75,
+      "afterClock": "22:38",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT3_MAP_AND_TAEJUN",
+      "choice": "STAY_UNTIL_BLACKOUT",
+      "before": 75,
+      "beforeClock": "22:38",
+      "nextScene": "SCENE_ACT3_BLACKOUT",
+      "after": 157,
+      "afterClock": "00:00",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_ACT3_BLACKOUT",
+      "choice": "MOVE_TOWARD_UNLOCKED_DOOR",
+      "before": 157,
+      "beforeClock": "00:00",
+      "nextScene": "SCENE_FIRST_DEATH",
+      "after": 157,
+      "afterClock": "00:00",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_RESET_AWAKENING",
+      "choice": "RECOGNIZE_RESET",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_VERTICAL_SLICE_TITLE",
+      "after": 1,
+      "afterClock": "21:24",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_TITLE",
+      "choice": "CONTINUE_AFTER_TITLE",
+      "before": 1,
+      "beforeClock": "21:24",
+      "nextScene": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "after": 2,
+      "afterClock": "21:25",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_CALL_TEST",
+      "choice": "DO_NOT_EXPLAIN_LOOP_YET",
+      "before": 2,
+      "beforeClock": "21:25",
+      "nextScene": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "after": 10,
+      "afterClock": "21:33",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_EARLY_ARRIVAL",
+      "choice": "TAKE_FIRST_PHONE",
+      "before": 10,
+      "beforeClock": "21:33",
+      "nextScene": "SCENE_LOOP2_FIRST_PHONE",
+      "after": 14,
+      "afterClock": "21:37",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_FIRST_PHONE",
+      "choice": "ANSWER_ON_OWN_PHONE",
+      "before": 14,
+      "beforeClock": "21:37",
+      "nextScene": "SCENE_LOOP2_PHONE_PARADOX",
+      "after": 18,
+      "afterClock": "21:41",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_PHONE_PARADOX",
+      "choice": "TELL_YUJIN_ONLY_PHONE_FACT",
+      "before": 18,
+      "beforeClock": "21:41",
+      "nextScene": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "after": 22,
+      "afterClock": "21:45",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_YUJIN_MINIMAL",
+      "choice": "GO_TO_STAFF_DOOR_QUIETLY",
+      "before": 22,
+      "beforeClock": "21:45",
+      "nextScene": "SCENE_LOOP2_STAFF_DOOR",
+      "after": 30,
+      "afterClock": "21:53",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_STAFF_DOOR",
+      "choice": "WAIT_FOR_KNOWN_BLACKOUT",
+      "before": 30,
+      "beforeClock": "21:53",
+      "nextScene": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "after": 157,
+      "afterClock": "00:00",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+      "choice": "ENTER_B1",
+      "before": 157,
+      "beforeClock": "00:00",
+      "nextScene": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "after": 159,
+      "afterClock": "00:02",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+      "choice": "ASK_SEA_ABOUT_SEOYUN",
+      "before": 159,
+      "beforeClock": "00:02",
+      "nextScene": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "after": 167,
+      "afterClock": "00:10",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEA_FIRST_MEETING",
+      "choice": "FACE_TAEJUN_IN_B1",
+      "before": 167,
+      "beforeClock": "00:10",
+      "nextScene": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "after": 170,
+      "afterClock": "00:13",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_REJECTION",
+      "choice": "RETURN_UPSTAIRS_WITH_TAEJUN",
+      "before": 170,
+      "beforeClock": "00:13",
+      "nextScene": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "after": 175,
+      "afterClock": "00:18",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_RECHECK",
+      "choice": "RETURN_TO_302_FOR_SECOND_PHONE",
+      "before": 175,
+      "beforeClock": "00:18",
+      "nextScene": "SCENE_LOOP2_RETURN_302",
+      "after": 181,
+      "afterClock": "00:24",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_RETURN_302",
+      "choice": "CALL_BOTH_SEOYUN_PHONES",
+      "before": 181,
+      "beforeClock": "00:24",
+      "nextScene": "SCENE_LOOP2_SECOND_PHONE",
+      "after": 185,
+      "afterClock": "00:28",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SECOND_PHONE",
+      "choice": "KEEP_SECOND_PHONE",
+      "before": 185,
+      "beforeClock": "00:28",
+      "nextScene": "SCENE_VERTICAL_SLICE_END",
+      "after": 187,
+      "afterClock": "00:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_VERTICAL_SLICE_END",
+      "choice": "ASK_TAEJUN_ABOUT_CCTV",
+      "before": 187,
+      "beforeClock": "00:30",
+      "nextScene": "SCENE_LOOP2_CCTV_GAP",
+      "after": 190,
+      "afterClock": "00:33",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_CCTV_GAP",
+      "choice": "SHOW_SECOND_PHONE_TO_TAEJUN",
+      "before": 190,
+      "beforeClock": "00:33",
+      "nextScene": "SCENE_LOOP2_06_CARD",
+      "after": 192,
+      "afterClock": "00:35",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_06_CARD",
+      "choice": "COMPARE_06_WITH_WRISTBAND",
+      "before": 192,
+      "beforeClock": "00:35",
+      "nextScene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "after": 194,
+      "afterClock": "00:37",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "choice": "KEEP_MINSEO_WARNING_PRIVATE",
+      "before": 194,
+      "beforeClock": "00:37",
+      "nextScene": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "after": 197,
+      "afterClock": "00:40",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "choice": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+      "before": 197,
+      "beforeClock": "00:40",
+      "nextScene": "SCENE_LOOP2_TAEJUN_MAP",
+      "after": 203,
+      "afterClock": "00:46",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_TAEJUN_MAP",
+      "choice": "SEND_OLD_MAP_TO_SEOYUN",
+      "before": 203,
+      "beforeClock": "00:46",
+      "nextScene": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "after": 205,
+      "afterClock": "00:48",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_LOOP2_SEOYUN_NEW_RULE",
+      "choice": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+      "before": 205,
+      "beforeClock": "00:48",
+      "nextScene": "SCENE_CHAPTER02_END",
+      "after": 206,
+      "afterClock": "00:49",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CHAPTER02_END",
+      "choice": "BEGIN_CHAPTER_3",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_BAND_REQUEST",
+      "after": 184,
+      "afterClock": "00:27",
+      "backwardsWithoutReset": true
+    },
+    {
+      "scene": "SCENE_CH3_BAND_REQUEST",
+      "choice": "CH3_BAND_SHOW_TAEJUN",
+      "before": 184,
+      "beforeClock": "00:27",
+      "nextScene": "SCENE_CH3_BAND_TAEJUN",
+      "after": 187,
+      "afterClock": "00:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_BAND_TAEJUN",
+      "choice": "CH3_ASK_SAME_QUESTION_T",
+      "before": 187,
+      "beforeClock": "00:30",
+      "nextScene": "SCENE_CH3_THREE_TESTIMONIES",
+      "after": 187,
+      "afterClock": "00:30",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_THREE_TESTIMONIES",
+      "choice": "CH3_USE_SPACE_DEDUCTION",
+      "before": 187,
+      "beforeClock": "00:30",
+      "nextScene": "SCENE_CH3_MINSEO_QUESTION",
+      "after": 188,
+      "afterClock": "00:31",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_QUESTION",
+      "choice": "CH3_SHOW_WATCH_ONLY",
+      "before": 188,
+      "beforeClock": "00:31",
+      "nextScene": "SCENE_CH3_MINSEO_WATCH",
+      "after": 191,
+      "afterClock": "00:34",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MINSEO_WATCH",
+      "choice": "CH3_FIND_MISSING_CARD_W",
+      "before": 191,
+      "beforeClock": "00:34",
+      "nextScene": "SCENE_CH3_MISSING_CARD",
+      "after": 193,
+      "afterClock": "00:36",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_CARD",
+      "choice": "CH3_CALL_MISSING_WORKER",
+      "before": 193,
+      "beforeClock": "00:36",
+      "nextScene": "SCENE_CH3_MISSING_WORKER",
+      "after": 196,
+      "afterClock": "00:39",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_MISSING_WORKER",
+      "choice": "CH3_ENTER_B1_WITH_TAEJUN",
+      "before": 196,
+      "beforeClock": "00:39",
+      "nextScene": "SCENE_CH3_APPROACH_TAEJUN",
+      "after": 206,
+      "afterClock": "00:49",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_APPROACH_TAEJUN",
+      "choice": "CH3_OPEN_TRANSFER_T",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_TRANSFER_TAEJUN",
+      "after": 206,
+      "afterClock": "00:49",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_TRANSFER_TAEJUN",
+      "choice": "CH3_READ_LEDGER_T",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_0106_TAEJUN",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_0106_TAEJUN",
+      "choice": "CH3_LAST_CHECK_CARD_T",
+      "before": 223,
+      "beforeClock": "01:06",
+      "nextScene": "SCENE_CH3_LAST_CARD",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_LAST_CARD",
+      "choice": "CH3_DIE_AFTER_CARD_T",
+      "before": 223,
+      "beforeClock": "01:06",
+      "nextScene": "SCENE_CH3_DEATH_TAEJUN",
+      "after": 223,
+      "afterClock": "01:06",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH3_RESET_2123",
+      "choice": "USE_MEMORY_0106_SEAL",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_CH4_OPENING",
+      "after": 0,
+      "afterClock": "21:23",
+      "backwardsWithoutReset": false
+    },
+    {
+      "scene": "SCENE_CH4_OPENING",
+      "choice": "CH4_SET_LOOP_GOAL",
+      "before": 0,
+      "beforeClock": "21:23",
+      "nextScene": "SCENE_CH4_MILESTONE_A_END",
+      "after": 0,
+      "afterClock": "21:23",
+      "backwardsWithoutReset": false
+    }
+  ]
+}

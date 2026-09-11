@@ -1,0 +1,1 @@
+{"checkpoint": "before-f04-choice", "sha256": "4e7386cfa9546f50f05f1249735e5b7f69c6d09bd30d75498a95ceefb808e8be", "scene": "SCENE_LOOP2_PHONE_PARADOX", "time": 18, "loop": 2, "preferences": {"state": {"dialogueSpeed": "standard", "lastSceneId": "SCENE_LOOP2_PHONE_PARADOX", "lastBeatIndex": 9, "seenTutorialGuideIds": ["dialogue", "time", "records"]}, "version": 0}}

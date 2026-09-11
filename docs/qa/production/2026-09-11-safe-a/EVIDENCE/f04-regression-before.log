@@ -1,0 +1,27 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: F04: the previous outcome must come from an acquired memory, not an unplayed alternative
++ actual - expected
+
++ '유진에게 휴대전화의 모순만 제한적으로 알렸다'
+- '정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.'
+    at assert (C:\Dev\zero-hour-game\scripts\test-foreknowledge-history.ts:63:12)
+    at Object.<anonymous> (C:\Dev\zero-hour-game\scripts\test-foreknowledge-history.ts:74:134)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Object.transformer (C:\Dev\zero-hour-game\node_modules\tsx\dist\register-C557imBs.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at cjsLoader (node:internal/modules/esm/translators:298:15)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:263:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:540:24) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '유진에게 휴대전화의 모순만 제한적으로 알렸다',
+  expected: '정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.4

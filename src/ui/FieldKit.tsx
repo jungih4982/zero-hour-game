@@ -43,7 +43,7 @@ const pictures = {
   yujin: require('../../assets/characters/yujin/sprites/CHAR_Yujin_Guarded_Full_v01.png'),
   taejun: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Watchful_Full_v01.png'),
   sea: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
-  minseo: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png'),
+  minseo: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png'),
 };
 
 type PersonEntry = PictureCopy & {

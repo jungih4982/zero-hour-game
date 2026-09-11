@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-09-12T00:58:12.1491184+09:00",
+  "metroStopped": true,
+  "isolatedEmulatorStopped": true,
+  "emulatorResponse": "OK: killing emulator, bye bye\r\n\r\nOK",
+  "devicesAfter": "List of devices attached\r\nemulator-5580\toffline",
+  "existingComfyServerStillRunning": true,
+  "userChromeAndOriginalAVD": "Not stopped or modified during cleanup.",
+  "savePreserved": true
+}

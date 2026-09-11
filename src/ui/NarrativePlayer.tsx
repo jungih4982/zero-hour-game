@@ -175,7 +175,7 @@ const characterSprites = {
   taejunConfrontational: require('../../assets/characters/taejun/sprites/CHAR_Taejun_Confrontational_Full_v01.png'),
   seaWary: require('../../assets/characters/sea/sprites/CHAR_Sea_Wary_Full_v01.png'),
   seaConfused: require('../../assets/characters/sea/sprites/CHAR_Sea_Confused_Full_v03.png'),
-  minseoClinical: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_Full_v02.png'),
+  minseoClinical: require('../../assets/characters/minseo/sprites/CHAR_Minseo_Clinical_ThreeQuarter_v03.png'),
 };
 
 type CharacterSpeaker = Extract<SpeakerId, 'seoyun' | 'yujin' | 'taejun' | 'sea' | 'minseo'>;
@@ -1566,8 +1566,17 @@ export function NarrativePlayer() {
                 <View style={styles.interventionRow}>
                   <View style={[styles.interventionNode, styles.interventionNodeKnown]} />
                   <View style={styles.interventionCopy}>
-                    <Text style={styles.interventionLabel}>이전에 확인한 결말</Text>
-                    <Text style={[styles.interventionText, tabletUi && styles.interventionTextTablet, styles.interventionKnownText]}>
+                    <Text style={styles.interventionLabel}>
+                      {foreknowledgeIntervention.knownKind === 'fact' ? '이전에 확인한 사실' : '이전에 확인한 결말'}
+                    </Text>
+                    <Text
+                      textBreakStrategy={foreknowledgeIntervention.knownKind === 'fact' ? 'balanced' : 'highQuality'}
+                      style={[
+                        styles.interventionText,
+                        tabletUi && styles.interventionTextTablet,
+                        foreknowledgeIntervention.knownKind !== 'fact' && styles.interventionKnownText,
+                      ]}
+                    >
                       {foreknowledgeIntervention.known}
                     </Text>
                   </View>

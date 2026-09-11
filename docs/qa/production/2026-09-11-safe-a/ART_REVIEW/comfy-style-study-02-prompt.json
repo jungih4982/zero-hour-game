@@ -1,0 +1,110 @@
+{
+  "9": {
+    "inputs": {
+      "seed": 138915317920940,
+      "steps": 25,
+      "cfg": 6.0,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1.0,
+      "model": [
+        "15",
+        0
+      ],
+      "positive": [
+        "10",
+        0
+      ],
+      "negative": [
+        "11",
+        0
+      ],
+      "latent_image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "Full color Korean medical thriller webtoon illustration, clean fine black ink contours and two-tone cel shadows. Single adult Korean woman doctor, long straight side parted black hair, dark almond eyes, long oval face, reserved expression. White opaque doctor coat over charcoal gray V-neck scrubs with drawstring waist, one hand in coat pocket, other hand relaxed. Natural muted peach skin color, charcoal black hair, white coat, gray blue scrubs. Head to mid thighs standing pose, isolated on plain flat medium gray background. Matte drawn colors, consistent fine linework on face and clothes, no gradients.",
+      "clip": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "긍정 프롬프트"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": "monochrome, grayscale, black and white, hospital background, furniture, stethoscope, badge, jewelry, text, watermark, logo, extra fingers, deformed hands, child, chibi, anime eyes, photorealistic, 3D, shiny plastic skin, gradients, glamour makeup",
+      "clip": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "부정 프롬프트"
+    }
+  },
+  "12": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "빈 잠재 이미지"
+    }
+  },
+  "13": {
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "15",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE 디코드"
+    }
+  },
+  "14": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {
+      "title": "이미지 저장 (고급)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "ckpt_name": "sd_xl_base_1.0.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "체크포인트 로드"
+    }
+  }
+}

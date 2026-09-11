@@ -1,0 +1,15 @@
+{
+  "currentBackwards": [],
+  "anchorOnlyBackwards": [
+    {
+      "scene": "SCENE_CHAPTER02_END",
+      "choice": "BEGIN_CHAPTER_3",
+      "before": 206,
+      "beforeClock": "00:49",
+      "nextScene": "SCENE_CH3_BAND_REQUEST",
+      "after": 184,
+      "afterClock": "00:27",
+      "backwardsWithoutReset": true
+    }
+  ]
+}

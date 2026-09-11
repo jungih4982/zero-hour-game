@@ -1,0 +1,38 @@
+{
+  "minseo-speaking": {
+    "sameLogicalSave": true,
+    "scene": "SCENE_LOOP2_06_CARD",
+    "preferences": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_LOOP2_06_CARD",
+      "lastBeatIndex": 9,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "screenshots": [
+      "035-before-minseo-speaking.png",
+      "049-after-minseo-speaking.png"
+    ]
+  },
+  "minseo-solo": {
+    "sameLogicalSave": true,
+    "scene": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+    "preferences": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+      "lastBeatIndex": 27,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "screenshots": [
+      "044-before-minseo-solo.png",
+      "058-after-minseo-solo.png"
+    ]
+  }
+}

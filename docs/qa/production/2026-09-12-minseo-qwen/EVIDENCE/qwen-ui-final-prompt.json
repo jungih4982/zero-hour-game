@@ -1,0 +1,172 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "확산 모델 로드"
+    }
+  },
+  "2": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "CLIP 로드"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE 로드"
+    }
+  },
+  "4": {
+    "inputs": {
+      "shift": 3.1,
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "모델 샘플링 (AuraFlow)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "strength": 1.0,
+      "pre_cfg": false,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CFGNorm",
+    "_meta": {
+      "title": "CFGNorm"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "Clinical noir Korean webtoon visual novel character sprite, single adult Korean woman doctor. Keep the input composition, face proportions, narrow almond eyes, long straight side-parted black hair, visible ear, reserved clinical expression, white opaque long doctor coat over charcoal gray V-neck scrubs, drawstring waist, one hand in the coat pocket and the other relaxed. Head to mid thighs. Fine restrained black linework, matte muted colors, subtle two-tone shadows on skin and cloth. Plain flat medium gray background. The coat is solid opaque white cloth including its lower panels. No accessories, no badge, no stethoscope, no text, no change of pose or outfit.",
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP 텍스트 인코딩 (프롬프트)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "photograph, photorealistic, glossy skin, plastic, 3d render, oversized eyes, child, chibi, jewelry, wristwatch, stethoscope, badge, text, watermark, new clothing, duplicate person, hospital background",
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP 텍스트 인코딩 (프롬프트)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "image": "MINSEO_APPROVED_A_RGBA_20260912_00001_.png [output]"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    },
+    "is_changed": [
+      "0cfdcb8098ffb45151a6287409e68d61948d3b180a05837bed49f65f5f6f0b77"
+    ]
+  },
+  "9": {
+    "inputs": {
+      "pixels": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "10": {
+    "inputs": {
+      "seed": 2026091201,
+      "steps": 20,
+      "cfg": 4.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.2,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE 디코드"
+    }
+  },
+  "12": {
+    "inputs": {
+      "filename_prefix": "ZERO_HOUR/MINSEO_QWEN_2512_REFINEMENT_20260912",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  }
+}

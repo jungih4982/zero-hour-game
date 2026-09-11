@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-09-12T00:58:10.5032517+09:00",
+  "appPackage": "com.jungih4982.zerohourgame",
+  "serial": "emulator-5580",
+  "display": "Physical size: 1080x2400",
+  "density": "Physical density: 420",
+  "fontScale": "1.0",
+  "appPidBeforeCleanup": "16057",
+  "apkSHA256": "72BED25B0643EA56A1CEC54FF93F0FCE9CE0E5D1FA935577F748AA8A15405F6C",
+  "metroProcess": {
+    "ProcessId": 16888,
+    "ParentProcessId": 6800,
+    "CommandLine": "\"C:\\Users\\hjg\\AppData\\Local\\fnm_multishells\\2868_1789124398819\\node.exe\" node_modules/expo/bin/cli start --localhost --port 8081"
+  },
+  "metroParent": {
+    "ProcessId": 6800,
+    "ParentProcessId": 12944,
+    "CommandLine": "\"C:\\Users\\hjg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\" -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n$env:CI='1'\nnode node_modules/expo/bin/cli start --localhost --port 8081 *> 'docs/qa/production/2026-09-12-minseo-qwen/EVIDENCE/metro-after.log'\""
+  },
+  "emulatorProcess": {
+    "ProcessId": 35836,
+    "CommandLine": "C:\\Users\\hjg\\AppData\\Local\\Android\\Sdk\\emulator\\qemu\\windows-x86_64\\qemu-system-x86_64.exe -avd MAIN_ANDROID_API35 -read-only -no-snapshot -data C:\\Dev\\zero-hour-game\\.expo\\minseo-qwen-20260912\\userdata.img -initdata C:\\Users\\hjg\\.android\\avd\\MAIN_ANDROID_API35.avd\\userdata-qemu.img -no-cache -no-boot-anim -port 5580"
+  },
+  "resumeSaveSHA256": "4242A01388A4B557B5EA1BC361C40D4961C66E34872D91771DB6149CF4C0501E"
+}
