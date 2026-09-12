@@ -1,0 +1,34 @@
+Starting project at C:\Dev\zero-hour-game
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| (node:19608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:17880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:8632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:22248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:21012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:27632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 2248ms node_modules\expo\AppEntry.js (2673 modules)
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 735ms node_modules\expo\AppEntry.js (2656 modules)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":176}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":177}
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 35ms node_modules\expo\AppEntry.js (1 module)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":158}

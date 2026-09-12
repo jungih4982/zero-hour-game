@@ -1,0 +1,61 @@
+{
+  "sqlite": "C:\\Dev\\zero-hour-game\\docs\\qa\\production\\2026-09-12-loop3-ch4-state-ui\\EVIDENCE\\final-resume.sqlite",
+  "sha256": "6cfe635ec4cb537cc9224fc82b7725815ab1712530b97a70f7d6a000c9326944",
+  "jsonSha256": "237cdf60a72ba5681c4ad2f9f50fc892f140d942b1c2ea6ef4072f1319666dc9",
+  "head": "f67c6324fdc569857a8bc4e08f07ec3476446ce3",
+  "branch": "master",
+  "saveVersion": 6,
+  "scene": "SCENE_CH4_T_03",
+  "location": "1F_LOBBY",
+  "loop": 3,
+  "offset": 53,
+  "displayTime": "22:16",
+  "clock": {
+    "contractVersion": 1,
+    "schedule": [
+      {
+        "id": "blackout",
+        "time": 157
+      },
+      {
+        "id": "seal0106",
+        "time": 223
+      }
+    ],
+    "events": {}
+  },
+  "items": [
+    "B2_SECURITY_KEY"
+  ],
+  "persistentFlags": {
+    "BAND_CUSTODY_YUJIN": true,
+    "TRUST_YUJIN_PROGRESS": 1,
+    "MINSEO_SAW_WATCH": true,
+    "TRUST_TAEJUN": true
+  },
+  "loopFlags": {
+    "FLAG_0106_AVOIDANCE_PLANNED": true,
+    "CH4_MAIN_ROUTE": "taejun",
+    "CH4_TAEJUN_COOPERATING": true,
+    "CH4_WORKER_TRANSFER_CANCELED": true
+  },
+  "preferences": {
+    "dialogueSpeed": "standard",
+    "lastSceneId": "SCENE_CH4_T_03",
+    "lastBeatIndex": 6,
+    "seenTutorialGuideIds": [
+      "dialogue",
+      "time",
+      "records"
+    ]
+  },
+  "counts": {
+    "memories": 3,
+    "clueIds": 20,
+    "deductionIds": 4
+  },
+  "firstInput": "확보한 기록을 확인한다.",
+  "nextPlayableChoice": null,
+  "boundary": "T-03 다음 보조 조사/B2 미구현. 정식 엔딩 아님.",
+  "provenance": "Final Metro 04 fresh normal UI: first night band left, two resets, Loop2 unmarked door and linen (no cart), all map investigations, CH3 Yujin custody/watch/all five/radio, Loop3 memory, CH4 Taejun. Cold resume then byte-copy branch return. Parsed saves identical."
+}

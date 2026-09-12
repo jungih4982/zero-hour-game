@@ -1,0 +1,41 @@
+--------- beginning of main
+09-12 11:39:51.231 14593 14634 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:42:45.265 14593 14634 I ReactNativeJS: Running "main" with {"rootTag":11,"initialProps":{},"fabric":true}
+09-12 11:45:15.915 15092 15136 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:50:43.000 15092 15136 I ReactNativeJS: Running "main" with {"rootTag":11,"initialProps":{},"fabric":true}
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: Cannot connect to Metro.
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: 
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: Try the following to fix the issue:
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: - Ensure that Metro is running and available on the same network
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: - Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: - If you're on a physical device connected to the same machine, run 'adb reverse tcp:8081 tcp:8081' to forward requests from your device
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: - If your device is on the same Wi-Fi network, set 'Debug server host & port for device' in 'Dev settings' to your machine's IP address and the port of the local dev server - e.g. 10.0.1.1:8081
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: 
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: URL: 10.0.2.2:8081
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: 
+09-12 11:52:30.166 15092 15136 W ReactNativeJS: Error: undefined
+09-12 11:53:35.822 15820 15863 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:53:36.101 15820 15863 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":176}'
+09-12 11:54:46.977 15820 15863 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":177}'
+09-12 11:55:34.972 15983 16024 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:55:35.270 15983 16024 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":158}'
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: Cannot connect to Metro.
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: 
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: Try the following to fix the issue:
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: - Ensure that Metro is running and available on the same network
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: - Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: - If you're on a physical device connected to the same machine, run 'adb reverse tcp:8081 tcp:8081' to forward requests from your device
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: - If your device is on the same Wi-Fi network, set 'Debug server host & port for device' in 'Dev settings' to your machine's IP address and the port of the local dev server - e.g. 10.0.1.1:8081
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: 
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: URL: 10.0.2.2:8081
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: 
+09-12 11:57:16.631 15983 16024 W ReactNativeJS: Error: undefined
+09-12 11:59:19.783 16205 16245 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:59:20.079 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":158}'
+09-12 11:59:56.671 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":160}'
+09-12 12:00:22.388 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":162}'
+09-12 12:01:28.847 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}'
+09-12 12:01:54.029 16205 16245 I ReactNativeJS: Running "main" with {"rootTag":11,"initialProps":{},"fabric":true}
+09-12 12:01:54.081 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}'
+09-12 12:01:54.221 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":24,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}'
+09-12 12:01:54.309 16205 16245 I ReactNativeJS: '[ZH_LAYOUT_QA]', '{"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}'

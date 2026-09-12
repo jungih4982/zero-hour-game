@@ -10,6 +10,6 @@ export function getAvailableChoices(
   state: NarrativeEngineState,
 ): readonly NarrativeChoice[] {
   return scene.choices.filter((choice) =>
-    evaluateConditions(choice.conditions, state),
+    !choice.unavailableReason && evaluateConditions(choice.conditions, state),
   );
 }

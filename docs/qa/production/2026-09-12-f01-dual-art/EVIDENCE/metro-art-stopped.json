@@ -1,0 +1,4 @@
+{
+  "ProcessId": 9732,
+  "CommandLine": "\"C:\\Users\\hjg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" node_modules/expo/bin/cli start --localhost --port 8081"
+}

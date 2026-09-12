@@ -1,0 +1,114 @@
+
+> zero-hour-game@1.0.0 test:layout
+> tsx scripts/test-responsive-layout.ts
+
+[
+  {
+    "device": "compact phone",
+    "viewport": "360×740",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 318.2,
+    "dialogWidth": 360,
+    "dialogMaxHeight": 421.8,
+    "horizontalGutter": 12,
+    "spriteWidth": 165.6,
+    "spriteHeight": 248.39999999999998
+  },
+  {
+    "device": "modern phone",
+    "viewport": "390×844",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 360,
+    "dialogWidth": 390,
+    "dialogMaxHeight": 484,
+    "horizontalGutter": 12,
+    "spriteWidth": 179.4,
+    "spriteHeight": 269.1
+  },
+  {
+    "device": "large phone",
+    "viewport": "430×932",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 360,
+    "dialogWidth": 430,
+    "dialogMaxHeight": 572,
+    "horizontalGutter": 12,
+    "spriteWidth": 190,
+    "spriteHeight": 285
+  },
+  {
+    "device": "tablet portrait",
+    "viewport": "768×1024",
+    "mode": "tablet",
+    "overlayDialogue": false,
+    "stageHeight": 471.04,
+    "dialogWidth": 768,
+    "dialogMaxHeight": 552.96,
+    "horizontalGutter": 26,
+    "spriteWidth": 284.6933333333333,
+    "spriteHeight": 427.03999999999996
+  },
+  {
+    "device": "iPad Air 11 portrait",
+    "viewport": "820×1180",
+    "mode": "tablet",
+    "overlayDialogue": false,
+    "stageHeight": 520,
+    "dialogWidth": 820,
+    "dialogMaxHeight": 660,
+    "horizontalGutter": 26,
+    "spriteWidth": 300,
+    "spriteHeight": 450
+  },
+  {
+    "device": "phone landscape",
+    "viewport": "844×390",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 390,
+    "dialogWidth": 489.52,
+    "dialogMaxHeight": 319.79999999999995,
+    "horizontalGutter": 37.98,
+    "spriteWidth": 223.6,
+    "spriteHeight": 335.4
+  },
+  {
+    "device": "iPad Air 11 landscape",
+    "viewport": "1180×820",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 820,
+    "dialogWidth": 637.2,
+    "dialogMaxHeight": 557.6,
+    "horizontalGutter": 53.1,
+    "spriteWidth": 401.20000000000005,
+    "spriteHeight": 601.8000000000001
+  },
+  {
+    "device": "iPad Pro 13 landscape",
+    "viewport": "1366×1024",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 1024,
+    "dialogWidth": 737.6400000000001,
+    "dialogMaxHeight": 696.32,
+    "horizontalGutter": 61.47,
+    "spriteWidth": 464.44000000000005,
+    "spriteHeight": 696.6600000000001
+  },
+  {
+    "device": "desktop",
+    "viewport": "1440×900",
+    "mode": "desktop",
+    "overlayDialogue": true,
+    "stageHeight": 900,
+    "dialogWidth": 806.4000000000001,
+    "dialogMaxHeight": 648,
+    "horizontalGutter": 64.8,
+    "spriteWidth": 460.8,
+    "spriteHeight": 691.2
+  }
+]

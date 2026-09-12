@@ -1,0 +1,112 @@
+[
+  {
+    "choice": "ASK_ABOUT_OTHER_CALLS",
+    "before": 5,
+    "after": 32
+  },
+  {
+    "choice": "DO_NOT_EXPLAIN_LOOP_YET",
+    "before": 8,
+    "after": 40
+  },
+  {
+    "choice": "TEST_MESSAGE_ANOMALY",
+    "before": 11,
+    "after": 34
+  },
+  {
+    "choice": "LEAVE_AFTER_MESSAGE_TEST",
+    "before": 0,
+    "after": 9
+  },
+  {
+    "choice": "ENTER_B1",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "ASK_SEA_ABOUT_SEOYUN",
+    "before": 4,
+    "after": 1
+  },
+  {
+    "choice": "USE_B1_TRANSFER_ROUTE",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "FACE_TAEJUN_IN_B1",
+    "before": 3,
+    "after": 1
+  },
+  {
+    "choice": "RETURN_UPSTAIRS_WITH_TAEJUN",
+    "before": 5,
+    "after": 1
+  },
+  {
+    "choice": "RETURN_TO_302_FOR_SECOND_PHONE",
+    "before": 6,
+    "after": 2
+  },
+  {
+    "choice": "CALL_BOTH_SEOYUN_PHONES",
+    "before": 4,
+    "after": 1
+  },
+  {
+    "choice": "KEEP_SECOND_PHONE",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "ASK_TAEJUN_ABOUT_CCTV",
+    "before": 3,
+    "after": 1
+  },
+  {
+    "choice": "SHOW_SECOND_PHONE_TO_TAEJUN",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "PRESS_TAEJUN_ON_CCTV_GAP",
+    "before": 4,
+    "after": 2
+  },
+  {
+    "choice": "COMPARE_06_WITH_WRISTBAND",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "ASK_WHERE_06_CARD_WAS_FOUND",
+    "before": 4,
+    "after": 2
+  },
+  {
+    "choice": "KEEP_MINSEO_WARNING_PRIVATE",
+    "before": 3,
+    "after": 2
+  },
+  {
+    "choice": "TELL_MINSEO_ONLY_WALL_CLUE",
+    "before": 5,
+    "after": 3
+  },
+  {
+    "choice": "LINK_CCTV_GAP_TO_OLD_PASSAGE",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "SEND_OLD_MAP_TO_SEOYUN",
+    "before": 2,
+    "after": 1
+  },
+  {
+    "choice": "ACCEPT_INDEPENDENT_SEARCH_RULE",
+    "before": 1,
+    "after": 1
+  }
+]

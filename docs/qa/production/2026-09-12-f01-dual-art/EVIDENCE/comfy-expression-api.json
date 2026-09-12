@@ -1,0 +1,240 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "ModelSamplingAuraFlow",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "shift": 3.1
+    }
+  },
+  "5": {
+    "class_type": "CFGNorm",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "strength": 1.0,
+      "pre_cfg": false
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "text": "Clinical noir Korean webtoon visual novel character sprite of the same adult Korean woman doctor in the input image. Preserve exactly the same narrow black eyes, long face, lip shape, apparent age, long side-parted black hair, exposed ear, matte skin, black linework, white opaque doctor coat and charcoal V-neck scrubs, waist drawstring and pose, head to mid thighs. Expression purpose: she asks a careful clinical question about a possible head injury in CH3, restrained concentration, a very slight inward tension of the eyebrows, no anger, no sadness, no smile, lips and eyes remain the same shape. Flat gray backdrop. No new accessories or objects. Same illustration style and proportions."
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "text": "photograph, photorealistic, glossy skin, plastic, 3d render, oversized eyes, child, chibi, jewelry, wristwatch, stethoscope, badge, text, watermark, new clothing, duplicate person, hospital background"
+    }
+  },
+  "8": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ZERO_HOUR_F01_Minseo_v03_20260912.png"
+    }
+  },
+  "9": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "seed": 2026091219,
+      "steps": 20,
+      "cfg": 4.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "9",
+        0
+      ],
+      "denoise": 0.25
+    }
+  },
+  "11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "ZERO_HOUR/F01_MINSEO_QWEN_2512_RAW_20260912"
+    }
+  },
+  "20": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 896,
+      "height": 1344
+    }
+  },
+  "21": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 145,
+      "height": 55
+    }
+  },
+  "22": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "21",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "23": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "20",
+        0
+      ],
+      "source": [
+        "22",
+        0
+      ],
+      "x": 310,
+      "y": 182,
+      "operation": "add"
+    }
+  },
+  "24": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "8",
+        0
+      ],
+      "source": [
+        "11",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "23",
+        0
+      ]
+    }
+  },
+  "25": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ],
+      "alpha": [
+        "8",
+        1
+      ]
+    }
+  },
+  "26": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "25",
+        0
+      ],
+      "filename_prefix": "ZERO_HOUR/F01_MINSEO_QWEN_2512_FOCUSED_20260912"
+    }
+  },
+  "27": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "23",
+        0
+      ]
+    }
+  },
+  "28": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "27",
+        0
+      ],
+      "filename_prefix": "ZERO_HOUR/F01_MINSEO_BROW_MASK_20260912"
+    }
+  }
+}

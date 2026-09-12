@@ -20,6 +20,8 @@ export type NarrativeScene = {
 export type NarrativeChoice = {
   id: string;
   text: string;
+  /** Visible production boundary. Not a player knowledge requirement. */
+  unavailableReason?: string;
   kind: 'standard' | 'foreknowledge' | 'evidence';
   conditions?: readonly ChoiceCondition[];
   effects: readonly NarrativeEffect[];
@@ -50,6 +52,7 @@ export type NarrativeEffect =
   | { type: 'removeItem'; itemId: ItemId }
   | { type: 'gainDeathIntel'; intel: DeathIntel }
   | { type: 'advanceTime'; minutes: number }
+  | { type: 'waitUntil'; time: GameTime }
   | { type: 'setTime'; time: GameTime }
   | { type: 'moveLocation'; locationId: LocationId }
   | {
@@ -91,6 +94,8 @@ export type MemoryRecord = {
 
 export type KnowledgePayoff = {
   predictsEvent: string;
+  eventTime?: GameTime;
+  /** Optional action window; absent means learned knowledge has no lower time gate. */
   usableFrom?: GameTime;
   usableUntil?: GameTime;
   changes: readonly (
@@ -127,6 +132,12 @@ export type LoopPersistentState = {
 /** State discarded and recreated at the beginning of every loop. */
 export type LoopVolatileState = {
   time: GameTime;
+  clock?: {
+    /** Zero identifies an unretimed legacy save; a real reset starts the current contract. */
+    contractVersion: number;
+    schedule: readonly { id: string; time: GameTime }[];
+    events: Readonly<Record<string, GameTime | 'legacy'>>;
+  };
   currentSceneId: SceneId;
   currentLocationId: LocationId;
   visitedSceneIds: readonly SceneId[];

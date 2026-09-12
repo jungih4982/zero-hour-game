@@ -1,0 +1,6 @@
+109745:              children: ((_engineState$volatile = engineState.volatile.clock) == null ? void 0 : _engineState$volatile.contractVersion) === 0 ? '이전 저장 시각' : '사건 시각'
+241704:      fitHotspotsToStage: true,
+242765:  var operationsCorridorInvestigation = {
+242767:    fitHotspotsToStage: true,
+242820:    fitHotspotsToStage: true,
+242868:  var sceneInvestigations = Object.assign((0, _defineProperty.default)((0, _defineProperty.default)((0, _defineProperty.default)({}, room302Investigation.sceneId, room302Investigation), operationsCorridorInvestigation.sceneId, operationsCorridorInvestigation), oldMapInvestigation.sceneId, oldMapInvestigation), _contentChapter.chapter3Investigations);

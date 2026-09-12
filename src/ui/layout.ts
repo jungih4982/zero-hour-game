@@ -58,6 +58,22 @@ export function getTitleBackgroundMotion(tabletLandscape: boolean): TitleBackgro
     : { scale: [1.04, 1.055], translateX: [0, -5] };
 }
 
+/** Project an object from the actual cover crop, then keep its touch target above dialogue. */
+export function getArtInvestigationTarget({ anchor, offsetX = 0, placement, viewportWidth, viewportHeight,
+  dialogueHeight, dialogueWidth, dialogueRight, sideDialogue, safeTop,
+}: { anchor: {x:number;y:number}; offsetX?:number; placement: CoverPlacement; viewportWidth:number;
+  viewportHeight:number; dialogueHeight:number; dialogueWidth:number; dialogueRight:number;
+  sideDialogue:boolean; safeTop:number;
+}) {
+  const object = { x: placement.left + placement.width * anchor.x,
+    y: placement.top + placement.height * anchor.y };
+  const right = sideDialogue ? viewportWidth-dialogueWidth-dialogueRight : viewportWidth;
+  const bottom = sideDialogue ? viewportHeight-24 : viewportHeight-dialogueHeight;
+  const top = Math.max(100,safeTop+72);
+  return { object, left: clamp(object.x+offsetX-28,12,Math.max(12,right-68)),
+    top: clamp(object.y-28,top,Math.max(top,bottom-84)) };
+}
+
 export function getCoverPlacement({
   viewportWidth,
   viewportHeight,

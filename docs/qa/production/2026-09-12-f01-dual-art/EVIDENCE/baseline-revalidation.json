@@ -1,0 +1,18 @@
+{
+  "head": "f67c6324fdc569857a8bc4e08f07ec3476446ce3",
+  "branch": "master",
+  "checks": [
+    {
+      "manifest": "docs/qa/production/2026-09-12-minseo-qwen/EVIDENCE/code-sha256-final.csv",
+      "count": 231,
+      "mismatches": []
+    },
+    {
+      "manifest": "docs/qa/production/2026-09-12-minseo-qwen/artifact-manifest.csv",
+      "count": 149,
+      "mismatches": []
+    }
+  ],
+  "untrackedInstructionSHA256": "1078e7097b82b7716648be44ffa7625949ff669a118d24a6e993a537bd5a866a",
+  "priorSaveSHA256": "4242a01388a4b557b5ea1bc361c40d4961c66e34872d91771db6149cf4c0501e"
+}

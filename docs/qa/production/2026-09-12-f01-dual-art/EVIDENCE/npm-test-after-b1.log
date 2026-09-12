@@ -1,0 +1,215 @@
+
+> zero-hour-game@1.0.0 test
+> npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:characters && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation && npm run test:onboarding && npm run test:chapter3 && npm run test:time
+
+
+> zero-hour-game@1.0.0 typecheck
+> tsc --noEmit
+
+
+> zero-hour-game@1.0.0 test:dialogue
+> tsx scripts/verify-dialogue-source.ts
+
+Canonical source and implemented chapter dialogue verified.
+
+> zero-hour-game@1.0.0 test:beats
+> tsx scripts/test-dialogue-beats.ts
+
+대사 비트 검증 완료: 70개 장면, 63개 화자 맵, 원문 100% 보존
+
+> zero-hour-game@1.0.0 test:characters
+> tsx scripts/test-character-presentation.ts
+
+Character presentation regression passed.
+
+> zero-hour-game@1.0.0 test:narrative
+> tsx scripts/run-narrative-simulation.ts
+
+ZERO HOUR narrative simulation passed.
+{
+  "loop1SceneCount": 17,
+  "loop2SceneCount": 15,
+  "retainedMemoryCount": 2,
+  "firstDeathRecorded": true,
+  "titleAppearsAfterReset": true,
+  "yujinForeknowledgeBackfires": true,
+  "b1RouteUnlocked": true,
+  "firstDeathAvoided": true,
+  "twoPhoneParadoxReached": true,
+  "verticalSliceCompleted": true
+}
+
+> zero-hour-game@1.0.0 test:duration
+> tsx scripts/measure-vertical-slice.ts
+
+{
+  "route": "canonical ACT 0–3, reset/title, first phone → B1 → 302 recheck → second phone",
+  "sceneCount": 33,
+  "choiceCount": 31,
+  "visibleCharacters": 7837,
+  "assumptions": {
+    "koreanCharactersPerMinute": 210,
+    "sceneOrientationSeconds": 7,
+    "choiceDecisionSeconds": 6
+  },
+  "estimatedMinutes": 44,
+  "targetMinutes": "30–45",
+  "meetsTarget": true
+}
+
+> zero-hour-game@1.0.0 test:layout
+> tsx scripts/test-responsive-layout.ts
+
+[
+  {
+    "device": "compact phone",
+    "viewport": "360×740",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 318.2,
+    "dialogWidth": 360,
+    "dialogMaxHeight": 421.8,
+    "horizontalGutter": 12,
+    "spriteWidth": 165.6,
+    "spriteHeight": 248.39999999999998
+  },
+  {
+    "device": "modern phone",
+    "viewport": "390×844",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 360,
+    "dialogWidth": 390,
+    "dialogMaxHeight": 484,
+    "horizontalGutter": 12,
+    "spriteWidth": 179.4,
+    "spriteHeight": 269.1
+  },
+  {
+    "device": "large phone",
+    "viewport": "430×932",
+    "mode": "phone",
+    "overlayDialogue": false,
+    "stageHeight": 360,
+    "dialogWidth": 430,
+    "dialogMaxHeight": 572,
+    "horizontalGutter": 12,
+    "spriteWidth": 190,
+    "spriteHeight": 285
+  },
+  {
+    "device": "tablet portrait",
+    "viewport": "768×1024",
+    "mode": "tablet",
+    "overlayDialogue": false,
+    "stageHeight": 471.04,
+    "dialogWidth": 768,
+    "dialogMaxHeight": 552.96,
+    "horizontalGutter": 26,
+    "spriteWidth": 284.6933333333333,
+    "spriteHeight": 427.03999999999996
+  },
+  {
+    "device": "iPad Air 11 portrait",
+    "viewport": "820×1180",
+    "mode": "tablet",
+    "overlayDialogue": false,
+    "stageHeight": 520,
+    "dialogWidth": 820,
+    "dialogMaxHeight": 660,
+    "horizontalGutter": 26,
+    "spriteWidth": 300,
+    "spriteHeight": 450
+  },
+  {
+    "device": "phone landscape",
+    "viewport": "844×390",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 390,
+    "dialogWidth": 489.52,
+    "dialogMaxHeight": 319.79999999999995,
+    "horizontalGutter": 37.98,
+    "spriteWidth": 223.6,
+    "spriteHeight": 335.4
+  },
+  {
+    "device": "iPad Air 11 landscape",
+    "viewport": "1180×820",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 820,
+    "dialogWidth": 637.2,
+    "dialogMaxHeight": 557.6,
+    "horizontalGutter": 53.1,
+    "spriteWidth": 401.20000000000005,
+    "spriteHeight": 601.8000000000001
+  },
+  {
+    "device": "iPad Pro 13 landscape",
+    "viewport": "1366×1024",
+    "mode": "landscape",
+    "overlayDialogue": true,
+    "stageHeight": 1024,
+    "dialogWidth": 737.6400000000001,
+    "dialogMaxHeight": 696.32,
+    "horizontalGutter": 61.47,
+    "spriteWidth": 464.44000000000005,
+    "spriteHeight": 696.6600000000001
+  },
+  {
+    "device": "desktop",
+    "viewport": "1440×900",
+    "mode": "desktop",
+    "overlayDialogue": true,
+    "stageHeight": 900,
+    "dialogWidth": 806.4000000000001,
+    "dialogMaxHeight": 648,
+    "horizontalGutter": 64.8,
+    "spriteWidth": 460.8,
+    "spriteHeight": 691.2
+  }
+]
+
+> zero-hour-game@1.0.0 test:input
+> tsx scripts/test-narrative-input.ts
+
+Narrative input lifecycle regression passed.
+
+> zero-hour-game@1.0.0 test:investigation
+> tsx scripts/test-investigation.ts
+
+302 search, B1 trade-off, and old-map investigation passed.
+
+> zero-hour-game@1.0.0 test:deductions
+> tsx scripts/test-deductions.ts
+
+Phone duplication, 06 identity, and hidden-route deductions passed.
+
+> zero-hour-game@1.0.0 test:death-memory
+> tsx scripts/test-death-memory.ts
+
+Death-memory reconstruction regression passed.
+
+> zero-hour-game@1.0.0 test:choice-presentation
+> tsx scripts/test-choice-presentation.ts
+
+Foreknowledge history: 3 fresh routes passed; acquired memory, missing-memory gate, and disclosure consequences.
+Choice presentation regression passed.
+
+> zero-hour-game@1.0.0 test:onboarding
+> tsx scripts/test-onboarding.ts
+
+Onboarding and incident-clock checks passed.
+
+> zero-hour-game@1.0.0 test:chapter3
+> tsx scripts/verify-chapter3-source.ts && tsx scripts/test-chapter3.ts
+
+CH3 canonical dialogue verified: 93 source lines, no production metadata.
+CH3 198 routes passed: custody, disclosure, inspection pairs/all, exclusive evidence, 01:06, and Loop 3 memory use.
+
+> zero-hour-game@1.0.0 test:time
+> tsx scripts/test-time-contract.ts && tsx scripts/test-foreknowledge-history.ts
+
+Time contract PASS: 10592 reachable states, 1920 equivalent CH2 end states, 12 branch groups; boundaries, early memory, legacy saves, reset and no rewinds.
+Foreknowledge history: 3 fresh routes passed; acquired memory, missing-memory gate, and disclosure consequences.

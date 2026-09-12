@@ -1,0 +1,1141 @@
+diff --git a/docs/qa/README.md b/docs/qa/README.md
+index 4ba2d76..bb05df3 100644
+--- a/docs/qa/README.md
++++ b/docs/qa/README.md
+@@ -1,10 +1,21 @@
+ # ZERO HOUR 검증 기록
+ 
+-최신 제작 결과는 [2026-09-12 민서 Clinical v03 / Qwen 2512 배치](production/2026-09-12-minseo-qwen/BATCH_REPORT.md)다. 사용자의 방향 수용과 자율 선택 위임에 따라 후보 A의 RGB를 보존한 투명 스프라이트를 적용했고 Android 동일 저장·장면·입력으로 전후 검증했다. Qwen 2512 생성과 Chrome 실행을 검증했으며 얼굴이 달라진 연구안은 통합하지 않았다. SDXL은 이번 생성에 사용하지 않았다.
++최신 제작 결과는 [2026-09-12 Loop3→CH4·기억/소지품·조사 UI 배치](production/2026-09-12-loop3-ch4-state-ui/BATCH_REPORT.md)다. 기억 사건 시각과 선행 사용을 분리하고 저장 v6 호환, 현재/과거 손목밴드 보관 구분, B1 물체 연결선·조사 라벨을 구현했다. 최종 번들 새 게임 정상 UI로 두 번 리셋한 뒤 CH4 태준 T-03까지 진행하고 앱 종료/이어하기를 확인했다. 세아 S-01은 별도 복제 분기로 확인했다. CH4 전체, 손목밴드 재획득, 유진 라벨 사전 지식, 세아 지도 사진은 미완료다. 이번 신규 아트 생성/채택은 없으며 Clinical v03과 175% 구도를 유지했다.
+ 
+-- [최신 재개점과 다음 시간 계약 배치](production/2026-09-12-minseo-qwen/NEXT_BATCH.md)
+-- [민서 채택본·Qwen 연구안·전후 비교](production/2026-09-12-minseo-qwen/ART_REVIEW/REVIEW.md)
+-- [이번 실제 GUI 범위](production/2026-09-12-minseo-qwen/EVIDENCE/GUI_PLAY_LOG.md)
++- [최신 정확한 저장·해시·다음 첫 입력](production/2026-09-12-loop3-ch4-state-ui/NEXT_BATCH.md)
++- [이번 실제 GUI 조건·연속 플레이·복제 분기 구분](production/2026-09-12-loop3-ch4-state-ui/GUI_VERIFICATION.md)
++- [기억/소지품 계약과 실제 시간 장부](production/2026-09-12-loop3-ch4-state-ui/STATE_CONTRACT.md)
++- [남은 원문 비교·최소 권고안](production/2026-09-12-loop3-ch4-state-ui/CREATIVE_DECISIONS.md)
++- [민서 화면 확인·현재 ComfyUI·수동 MJ 작업](production/2026-09-12-loop3-ch4-state-ui/MIDJOURNEY_JOBS.md)
++
++이전 [F01 시간 계약·조사 입력·민서 구도 배치](production/2026-09-12-f01-dual-art/BATCH_REPORT.md)는 보존한다. 해당 배치에서 새 게임 정상 UI로 첫 밤·첫 리셋·최대 CH2 조사·CH3 01:06 사망·Loop3 21:23까지 진행했다. 시간 역행 제거와 구버전 저장 구분, 옛 지도/B1 카트 입력, 민서 v03 단독 프레이밍을 수정했다. 당시 Qwen2512 표정 연구는 정체성 미달로 미채택이었다.
++
++- [이전 F01 저장·재개 기록 — 보존본](production/2026-09-12-f01-dual-art/NEXT_BATCH.md)
++- [시간 장부·반례·구현 비용](production/2026-09-12-f01-dual-art/TIME_CONTRACT.md)
++- [민서 구도·Qwen 표정 비교](production/2026-09-12-f01-dual-art/ART_REVIEW/REVIEW.md)
++- [이전 F01 실제 GUI 범위 — 보존본](production/2026-09-12-f01-dual-art/EVIDENCE/GUI_PLAY_LOG.md)
++- [이전 F01 원문 판단 비교안 — 보존본](production/2026-09-12-f01-dual-art/CREATIVE_DECISIONS.md)
++- [이전 민서 Clinical v03 통합 배치 — 보존본](production/2026-09-12-minseo-qwen/BATCH_REPORT.md)
+ - [이전 안전 제작 배치 A — F04 보존본](production/2026-09-11-safe-a/BATCH_REPORT.md)
+ - [원래 PHASE 0 전면 감사 — 보존본](full-audit/2026-09-11-phase0/AUDIT_REPORT.md)
+ 
+diff --git a/package.json b/package.json
+index 6e7a793..f2213af 100644
+--- a/package.json
++++ b/package.json
+@@ -21,7 +21,9 @@
+     "test:characters": "tsx scripts/test-character-presentation.ts",
+     "test:onboarding": "tsx scripts/test-onboarding.ts",
+     "test:chapter3": "tsx scripts/verify-chapter3-source.ts && tsx scripts/test-chapter3.ts",
+-    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:characters && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation && npm run test:onboarding && npm run test:chapter3"
++    "test:time": "tsx scripts/test-time-contract.ts && tsx scripts/test-foreknowledge-history.ts",
++    "test:loop3": "tsx scripts/test-loop3-state.ts && tsx scripts/test-chapter4.ts",
++    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:characters && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation && npm run test:onboarding && npm run test:chapter3 && npm run test:time && npm run test:loop3"
+   },
+   "dependencies": {
+     "@react-native-async-storage/async-storage": "2.2.0",
+diff --git a/scripts/test-responsive-layout.ts b/scripts/test-responsive-layout.ts
+index 35920df..7d7ae1e 100644
+--- a/scripts/test-responsive-layout.ts
++++ b/scripts/test-responsive-layout.ts
+@@ -4,9 +4,29 @@ import {
+   getGameLayout,
+   getTitleBackgroundMotion,
+   getInvestigationHotspotPosition,
++  getArtInvestigationTarget,
+ } from '../src/ui/layout';
++import { sceneInvestigations } from '../src/gameplay/investigation';
++import assert from 'node:assert/strict';
+ import { chapter3Investigations, SCENE_CH3_TRANSFER_YUJIN } from '../src/content/chapter3';
+ 
++for (const height of [2400/2.625,1920/2.625]) {
++  const width=1080/2.625;
++  const placement=getCoverPlacement({viewportWidth:width,viewportHeight:height,imageWidth:816,imageHeight:1456,focalX:0.5,focalY:0.55});
++  const targets=sceneInvestigations.SCENE_LOOP2_OPERATIONS_CORRIDOR.hotspots.map(h=>
++    getArtInvestigationTarget({anchor:h.artAnchor!,offsetX:h.artTargetOffsetX,placement,
++      viewportWidth:width,viewportHeight:height,dialogueHeight:height*0.45,
++      dialogueWidth:width,dialogueRight:16,sideDialogue:false,safeTop:40.38}));
++  for(const t of targets) {
++    assert(t.left>=12 && t.left+56<=width-12);
++    assert(t.top>=112 && t.top+80<=height*0.55,'circle and object caption stay above dialogue');
++  }
++  for(let a=0;a<targets.length;a++) for(let b=a+1;b<targets.length;b++) {
++    assert(Math.hypot(targets[a].left-targets[b].left,targets[a].top-targets[b].top)>=60,
++      'short-screen B1 targets must not overlap after clamping');
++  }
++}
++
+ const devices = [
+   { name: 'compact phone', width: 360, height: 740, expected: 'phone' },
+   { name: 'modern phone', width: 390, height: 844, expected: 'phone' },
+diff --git a/src/content/chapter3.ts b/src/content/chapter3.ts
+index dc6ca27..2b203dc 100644
+--- a/src/content/chapter3.ts
++++ b/src/content/chapter3.ts
+@@ -1,3 +1,4 @@
++import { SECOND_DEATH_TIME } from './timeContract';
+ import type {
+   ChoiceCondition,
+   ClueId,
+@@ -133,7 +134,8 @@ export const seal0106Memory: MemoryRecord = {
+   relatedClueIds: [CLUE_0106_HIDDEN_STAIR],
+   payoff: {
+     predictsEvent: '01:06 B1 문서 이송실 자동 밀폐',
+-    usableFrom: 210 as GameTime,
++    // Learned knowledge can guide planning immediately; the event itself is later.
++    eventTime: SECOND_DEATH_TIME,
+     usableUntil: 223 as GameTime,
+     changes: ['riskAvoided', 'routeUnlocked', 'eventPreempted', 'npcBehaviorChanged'],
+     avoidsRisk: SECOND_DEATH_ID,
+@@ -267,7 +269,6 @@ const minimumTransferChecks = (sceneId: SceneId): ChoiceCondition => ({
+ });
+ 
+ const enter0106 = [
+-  { type: 'setTime', time: 223 as GameTime },
+   { type: 'gainClue', clueId: CLUE_0106_LEDGER },
+ ] as const;
+ 
+@@ -366,7 +367,6 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
+         ],
+       }),
+     ],
+-    onEnter: [{ type: 'setTime', time: 184 as GameTime }],
+   },
+ 
+   [SCENE_CH3_BAND_YUJIN]: {
+@@ -632,14 +632,14 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
+       }),
+       to('CH3_ENTER_B1_WITH_YUJIN', '봉인한 손목밴드와 함께 유진과 내려간다.', SCENE_CH3_APPROACH_YUJIN, 10, {
+         kind: 'evidence',
+-        conditions: [{ type: 'flagEquals', flag: FLAG_BAND_CUSTODY_YUJIN, value: true }],
++        conditions: [{ type: 'flagEquals', flag: 'CH3_BAND_OWNER', value: 'yujin' }],
+         locationId: LOCATION_B1_DOCUMENT_TRANSFER,
+         effects: [{ type: 'setFlag', flag: FLAG_CH3_COMPANION, value: 'yujin', scope: 'loop' }],
+       }),
+       to('CH3_ENTER_B1_SOLO', '화물 승강기의 카트 바퀴 자국을 따라 혼자 내려간다.', SCENE_CH3_APPROACH_SOLO, 6, {
+         conditions: [
+           { type: 'flagNotEquals', flag: FLAG_TAEJUN_SAW_PHONE, value: true },
+-          { type: 'flagNotEquals', flag: FLAG_BAND_CUSTODY_YUJIN, value: true },
++          { type: 'flagNotEquals', flag: 'CH3_BAND_OWNER', value: 'yujin' },
+         ],
+         locationId: LOCATION_B1_DOCUMENT_TRANSFER,
+         effects: [{ type: 'setFlag', flag: FLAG_CH3_COMPANION, value: 'solo', scope: 'loop' }],
+@@ -695,7 +695,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
+ 대답은 없었다.
+ 
+ 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
+-    choices: [to('CH3_READ_LEDGER_T', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_TAEJUN, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_TAEJUN)] })],
++    choices: [to('CH3_READ_LEDGER_T', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_TAEJUN, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_TAEJUN)] })],
+   },
+ 
+   [SCENE_CH3_TRANSFER_YUJIN]: {
+@@ -715,7 +715,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
+ 대답은 없었다.
+ 
+ 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
+-    choices: [to('CH3_READ_LEDGER_Y', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_YUJIN, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_YUJIN)] })],
++    choices: [to('CH3_READ_LEDGER_Y', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_YUJIN, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_YUJIN)] })],
+   },
+ 
+   [SCENE_CH3_TRANSFER_SOLO]: {
+@@ -735,7 +735,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
+ 대답은 없었다.
+ 
+ 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
+-    choices: [to('CH3_READ_LEDGER_S', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_SOLO, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_SOLO)] })],
++    choices: [to('CH3_READ_LEDGER_S', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_SOLO, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_SOLO)] })],
+   },
+ 
+   [SCENE_CH3_0106_TAEJUN]: {
+diff --git a/src/content/prologue.ts b/src/content/prologue.ts
+index 173e8f7..7625b0a 100644
+--- a/src/content/prologue.ts
++++ b/src/content/prologue.ts
+@@ -1,3 +1,4 @@
++import { BLACKOUT_TIME } from './timeContract';
+ import type {
+   ChoiceCondition,
+   ClueId,
+@@ -143,8 +144,9 @@ export const blackoutMemory: MemoryRecord = {
+   sourceSceneId: SCENE_FIRST_DEATH,
+   payoff: {
+     predictsEvent: '자정 정전과 직원용 문 잠금 해제',
+-    usableFrom: 70 as GameTime,
+-    usableUntil: 120 as GameTime,
++    usableFrom: 0 as GameTime,
++    usableUntil: BLACKOUT_TIME,
++    eventTime: BLACKOUT_TIME,
+     changes: ['riskAvoided', 'routeUnlocked', 'eventPreempted'],
+     avoidsRisk: FIRST_DEATH_ID,
+     unlocksLocationId: LOCATION_B1_OPERATIONS_CORRIDOR,
+@@ -160,7 +162,6 @@ export const resetWatchMemory: MemoryRecord = {
+   payoff: {
+     predictsEvent: '서윤의 첫 통화가 같은 말과 같은 잡음으로 반복됨',
+     changes: ['informationCombined', 'timeSaved'],
+-    timeSavedMinutes: 8,
+   },
+ };
+ 
+@@ -278,7 +279,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 신호가 바뀌었다. 시계 이야기는 그것으로 끝났다.`,
+     choices: [
+-      to('ASK_ABOUT_OTHER_CALLS', '서윤이 보낸 주소를 확인하며 통화를 이어간다.', SCENE_ACT0_MESSAGES, 5, {
++      to('ASK_ABOUT_OTHER_CALLS', '서윤이 보낸 주소를 확인하며 통화를 이어간다.', SCENE_ACT0_MESSAGES, 32, {
+         effects: [{ type: 'gainClue', clueId: CLUE_WATCH_GIFT }],
+       }),
+     ],
+@@ -705,7 +706,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 태준의 표정은 변하지 않았다. 다만 무전을 잡은 손이 멈췄다.
+ 
+ 천장 조명이 한 번 어두워졌다 돌아왔다. 손목의 초침은 정상적으로 움직이고 있었다.`,
+-    choices: [to('STAY_UNTIL_BLACKOUT', '로비 쪽으로 물러나되 문이 보이는 곳에 남는다.', SCENE_BLACKOUT_0000, 9)],
++    choices: [to('STAY_UNTIL_BLACKOUT', '로비 쪽으로 물러나되 문이 보이는 곳에 남는다.', SCENE_BLACKOUT_0000, 0, { effects: [{ type: 'waitUntil', time: BLACKOUT_TIME }] })],
+   },
+ 
+   [SCENE_BLACKOUT_0000]: {
+@@ -871,7 +872,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+         'TEST_MESSAGE_ANOMALY',
+         '[기억] 아직 오지 않은 두 문자의 순서를 먼저 말한다.',
+         SCENE_LOOP2_MESSAGE_TEST,
+-        11,
++        34,
+         {
+           kind: 'foreknowledge',
+           conditions: [{ type: 'hasClue', clueId: CLUE_CONTRADICTORY_MESSAGES }],
+@@ -883,7 +884,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+           }],
+         },
+       ),
+-      to('DO_NOT_EXPLAIN_LOOP_YET', '설명하지 않고 더 빨리 병원으로 향한다.', SCENE_LOOP2_EARLY_ARRIVAL, 8, {
++      to('DO_NOT_EXPLAIN_LOOP_YET', '설명하지 않고 더 빨리 병원으로 향한다.', SCENE_LOOP2_EARLY_ARRIVAL, 40, {
+         kind: 'foreknowledge',
+         conditions: [{ type: 'hasMemory', memoryId: MEMORY_RESET_WATCH }],
+         locationId: LOCATION_HOSPITAL_EXTERIOR,
+@@ -931,7 +932,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+         'LEAVE_AFTER_MESSAGE_TEST',
+         '확인된 모순을 기록하고 백야의료원으로 향한다.',
+         SCENE_LOOP2_EARLY_ARRIVAL,
+-        0,
++        9,
+       ),
+     ],
+   },
+@@ -1122,7 +1123,8 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 로비 쪽에서 태준이 유진에게 무언가 묻는 소리가 났다. 대답은 들리지 않았다.`,
+     choices: [
+-      to('WAIT_FOR_KNOWN_BLACKOUT', '[기억] 전자 잠금이 풀리는 순간을 기다린다.', SCENE_LOOP2_BLACKOUT_INTERVENTION, 5, {
++      to('WAIT_FOR_KNOWN_BLACKOUT', '[기억] 전자 잠금이 풀리는 순간을 기다린다.', SCENE_LOOP2_BLACKOUT_INTERVENTION, 0, {
++        effects: [{ type: 'waitUntil', time: BLACKOUT_TIME }],
+         kind: 'foreknowledge',
+         conditions: knowsBlackout,
+       }),
+@@ -1149,7 +1151,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 비상등이 뒤늦게 켜졌다. 계단은 아래로 한 층만 이어졌다.`,
+     choices: [
+-      to('ENTER_B1', '지하 1층으로 내려간다.', SCENE_LOOP2_OPERATIONS_CORRIDOR, 2, {
++      to('ENTER_B1', '지하 1층으로 내려간다.', SCENE_LOOP2_OPERATIONS_CORRIDOR, 1, {
+         locationId: LOCATION_B1_OPERATIONS_CORRIDOR,
+         effects: [{ type: 'setFlag', flag: FLAG_FIRST_DEATH_AVOIDED, value: true, scope: 'loop' }],
+       }),
+@@ -1170,7 +1172,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 멀리서 손전등 빛이 한 번 복도를 훑고 사라졌다. 누군가 돌아오기 전에 움직여야 했다.`,
+     choices: [
+-      to('ASK_SEA_ABOUT_SEOYUN', '린넨실 안의 여자에게 서윤을 아는지 묻는다.', SCENE_LOOP2_SEA_FIRST_MEETING, 4, {
++      to('ASK_SEA_ABOUT_SEOYUN', '린넨실 안의 여자에게 서윤을 아는지 묻는다.', SCENE_LOOP2_SEA_FIRST_MEETING, 1, {
+         conditions: [
+           { type: 'flagEquals', flag: B1_LINEN_ROOM_FOUND_FLAG, value: true },
+         ],
+@@ -1204,14 +1206,14 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ "거기 누구예요?"`,
+     choices: [
+-      to('USE_B1_TRANSFER_ROUTE', '카트 바퀴 자국이 이어지는 반대편 계단으로 빠져나간다.', SCENE_LOOP2_SEOYUN_RECHECK, 2, {
++      to('USE_B1_TRANSFER_ROUTE', '카트 바퀴 자국이 이어지는 반대편 계단으로 빠져나간다.', SCENE_LOOP2_SEOYUN_RECHECK, 1, {
+         conditions: [
+           { type: 'hasClue', clueId: CLUE_B1_TRANSFER_TRACKS },
+         ],
+         locationId: LOCATION_1F_LOBBY,
+         effects: [{ type: 'gainClue', clueId: CLUE_SEA_KNOWS }],
+       }),
+-      to('FACE_TAEJUN_IN_B1', '도망치지 않고 빛 쪽을 본다.', SCENE_LOOP2_TAEJUN_REJECTION, 3, {
++      to('FACE_TAEJUN_IN_B1', '도망치지 않고 빛 쪽을 본다.', SCENE_LOOP2_TAEJUN_REJECTION, 1, {
+         effects: [{ type: 'gainClue', clueId: CLUE_SEA_KNOWS }],
+       }),
+     ],
+@@ -1243,7 +1245,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 태준은 CCTV를 보여 주지도, 사정을 들어 주지도 않았다. 손전등을 내 등 뒤에 둔 채 먼저 계단을 오르게 했다.`,
+     choices: [
+-      to('RETURN_UPSTAIRS_WITH_TAEJUN', '서윤을 찾기 위해 일단 위층으로 돌아간다.', SCENE_LOOP2_SEOYUN_RECHECK, 5, {
++      to('RETURN_UPSTAIRS_WITH_TAEJUN', '서윤을 찾기 위해 일단 위층으로 돌아간다.', SCENE_LOOP2_SEOYUN_RECHECK, 1, {
+         locationId: LOCATION_1F_LOBBY,
+       }),
+     ],
+@@ -1291,7 +1293,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 통화가 끊겼다.`,
+     choices: [
+-      to('RETURN_TO_302_FOR_SECOND_PHONE', '태준이 유진과 이야기하는 틈에 3층으로 돌아간다.', SCENE_LOOP2_RETURN_302, 6, {
++      to('RETURN_TO_302_FOR_SECOND_PHONE', '태준이 유진과 이야기하는 틈에 3층으로 돌아간다.', SCENE_LOOP2_RETURN_302, 2, {
+         locationId: LOCATION_ROOM_302,
+       }),
+     ],
+@@ -1318,7 +1320,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 첫 번째 휴대전화의 사진과 번갈아 비교했다. 단순히 같은 제품이 아니었다.
+ 
+ 서윤이의 휴대전화가 한 대 더 있었다.`,
+-    choices: [to('CALL_BOTH_SEOYUN_PHONES', '찾은 전화와 통화 중인 전화가 동시에 존재하는지 확인한다.', SCENE_LOOP2_SECOND_PHONE, 4)],
++    choices: [to('CALL_BOTH_SEOYUN_PHONES', '찾은 전화와 통화 중인 전화가 동시에 존재하는지 확인한다.', SCENE_LOOP2_SECOND_PHONE, 1)],
+   },
+ 
+   [SCENE_LOOP2_SECOND_PHONE]: {
+@@ -1353,7 +1355,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 문밖의 벨소리가 멈췄다. 손에 든 휴대전화는 계속 울리고 있었다.`,
+     choices: [
+-      to('KEEP_SECOND_PHONE', '두 번째 전화를 챙기고 서윤의 다음 말을 기다린다.', SCENE_VERTICAL_SLICE_END, 2, {
++      to('KEEP_SECOND_PHONE', '두 번째 전화를 챙기고 서윤의 다음 말을 기다린다.', SCENE_VERTICAL_SLICE_END, 1, {
+         effects: [
+           { type: 'gainClue', clueId: CLUE_SECOND_PHONE },
+           { type: 'gainItem', itemId: ITEM_SECOND_PHONE },
+@@ -1384,7 +1386,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 그리고 서윤이가 마지막으로 남긴 경고의 이유는 아직 듣지 못했다.`,
+     choices: [
+-      to('ASK_TAEJUN_ABOUT_CCTV', '보안실에서 돌아온 태준에게 CCTV의 빈 구간을 묻는다.', SCENE_LOOP2_CCTV_GAP, 3, {
++      to('ASK_TAEJUN_ABOUT_CCTV', '보안실에서 돌아온 태준에게 CCTV의 빈 구간을 묻는다.', SCENE_LOOP2_CCTV_GAP, 1, {
+         locationId: LOCATION_1F_LOBBY,
+       }),
+     ],
+@@ -1422,7 +1424,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 태준은 더 설명하지 않았다. 친절한 조사 파트너가 아니라, 아직 병원 보안팀 직원이었다.`,
+     choices: [
+-      to('SHOW_SECOND_PHONE_TO_TAEJUN', '[증거] 똑같은 두 번째 휴대전화를 보여준다.', SCENE_LOOP2_06_CARD, 2, {
++      to('SHOW_SECOND_PHONE_TO_TAEJUN', '[증거] 똑같은 두 번째 휴대전화를 보여준다.', SCENE_LOOP2_06_CARD, 1, {
+         kind: 'evidence',
+         conditions: [{ type: 'hasItem', itemId: ITEM_SECOND_PHONE }],
+         effects: [
+@@ -1430,7 +1432,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+           { type: 'setFlag', flag: FLAG_TAEJUN_SAW_PHONE, value: true, scope: 'loop' },
+         ],
+       }),
+-      to('PRESS_TAEJUN_ON_CCTV_GAP', '끊긴 1분의 원인부터 확인해 달라고 요구한다.', SCENE_LOOP2_06_CARD, 4, {
++      to('PRESS_TAEJUN_ON_CCTV_GAP', '끊긴 1분의 원인부터 확인해 달라고 요구한다.', SCENE_LOOP2_06_CARD, 2, {
+         effects: [{ type: 'gainClue', clueId: CLUE_CCTV_GAP }],
+       }),
+     ],
+@@ -1462,12 +1464,12 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 카드의 06을 다시 봤다. 첫 번째 밤, 찢어진 손목밴드 끝에도 같은 숫자가 남아 있었다.`,
+     choices: [
+-      to('COMPARE_06_WITH_WRISTBAND', '[기억] 첫 번째 밤에 본 손목밴드의 06과 대조한다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 2, {
++      to('COMPARE_06_WITH_WRISTBAND', '[기억] 첫 번째 밤에 본 손목밴드의 06과 대조한다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 1, {
+         kind: 'foreknowledge',
+         conditions: [{ type: 'hasClue', clueId: CLUE_WRISTBAND_DOB }],
+         effects: [{ type: 'gainClue', clueId: CLUE_06_CARD }],
+       }),
+-      to('ASK_WHERE_06_CARD_WAS_FOUND', '카드가 발견된 정확한 위치만 묻는다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 4, {
++      to('ASK_WHERE_06_CARD_WAS_FOUND', '카드가 발견된 정확한 위치만 묻는다.', SCENE_LOOP2_SEOYUN_UNCERTAIN, 2, {
+         effects: [{ type: 'gainClue', clueId: CLUE_06_CARD }],
+       }),
+     ],
+@@ -1543,11 +1545,11 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 민서는 내가 경계하는 걸 눈치챘지만 억지로 더 묻지 않았다. 둘은 아직 같은 편이 아니었다.`,
+     choices: [
+-      to('KEEP_MINSEO_WARNING_PRIVATE', '마지막 통화 내용은 숨기고 직접 302호의 벽을 확인한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 3, {
++      to('KEEP_MINSEO_WARNING_PRIVATE', '마지막 통화 내용은 숨기고 직접 302호의 벽을 확인한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 2, {
+         locationId: LOCATION_3F_CORRIDOR,
+         effects: [{ type: 'setFlag', flag: FLAG_MINSEO_MEMORY_WARNING_KEPT, value: true, scope: 'loop' }],
+       }),
+-      to('TELL_MINSEO_ONLY_WALL_CLUE', '민서에게 302호 벽을 확인해야 한다는 말만 전한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 5, {
++      to('TELL_MINSEO_ONLY_WALL_CLUE', '민서에게 302호 벽을 확인해야 한다는 말만 전한다.', SCENE_LOOP2_OLD_MAP_SEARCH, 3, {
+         locationId: LOCATION_3F_CORRIDOR,
+       }),
+     ],
+@@ -1567,7 +1569,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 의자와 정수기 사이, 오래된 화재 대피 안내도가 눈에 들어왔다.`,
+     choices: [
+-      to('LINK_CCTV_GAP_TO_OLD_PASSAGE', '[추론] CCTV가 비는 1분과 폐쇄된 통로를 연결한다.', SCENE_LOOP2_TAEJUN_MAP, 2, {
++      to('LINK_CCTV_GAP_TO_OLD_PASSAGE', '[추론] CCTV가 비는 1분과 폐쇄된 통로를 연결한다.', SCENE_LOOP2_TAEJUN_MAP, 1, {
+         kind: 'foreknowledge',
+         conditions: [
+           { type: 'hasDeduction', deductionId: DEDUCTION_302_HIDDEN_ROUTE },
+@@ -1609,7 +1611,7 @@ export const prologueScenes: Readonly<Record<string, NarrativeScene>> = {
+ 
+ 명백하게 대화를 끝내려는 태도였다. 더 캐묻지 않고 엘리베이터에 탔다.`,
+     choices: [
+-      to('SEND_OLD_MAP_TO_SEOYUN', '내려가는 동안 안내도 사진을 서윤에게 보낸다.', SCENE_LOOP2_SEOYUN_NEW_RULE, 2, {
++      to('SEND_OLD_MAP_TO_SEOYUN', '내려가는 동안 안내도 사진을 서윤에게 보낸다.', SCENE_LOOP2_SEOYUN_NEW_RULE, 1, {
+         locationId: LOCATION_1F_LOBBY,
+       }),
+     ],
+diff --git a/src/content/story.ts b/src/content/story.ts
+index 4b1ae71..a3cfe58 100644
+--- a/src/content/story.ts
++++ b/src/content/story.ts
+@@ -1,3 +1,5 @@
++import { CHAPTER3_START_TIME } from './timeContract';
++import { chapter4RouteChoices, chapter4Scenes } from './chapter4';
+ import type { LocationId, NarrativeEngineState, NarrativeScene, SceneId } from '../engine';
+ import {
+   SCENE_CH3_BAND_REQUEST,
+@@ -21,10 +23,15 @@ export const storyScenes: Readonly<Record<string, NarrativeScene>> = {
+       id: 'BEGIN_CHAPTER_3',
+       text: '세 사람에게 같은 질문을 시작한다.',
+       kind: 'standard',
+-      effects: [{ type: 'jumpScene', sceneId: SCENE_CH3_BAND_REQUEST }],
++      effects: [{ type: 'waitUntil', time: CHAPTER3_START_TIME }, { type: 'jumpScene', sceneId: SCENE_CH3_BAND_REQUEST }],
+     }],
+   },
+   ...chapter3Scenes,
++  SCENE_CH4_MILESTONE_A_END: {
++    ...chapter3Scenes.SCENE_CH4_MILESTONE_A_END,
++    choices: chapter4RouteChoices,
++  },
++  ...chapter4Scenes,
+ };
+ 
+ export type LoopResetTarget = {
+diff --git a/src/engine/choices.ts b/src/engine/choices.ts
+index e1de7f3..a6ef468 100644
+--- a/src/engine/choices.ts
++++ b/src/engine/choices.ts
+@@ -10,6 +10,6 @@ export function getAvailableChoices(
+   state: NarrativeEngineState,
+ ): readonly NarrativeChoice[] {
+   return scene.choices.filter((choice) =>
+-    evaluateConditions(choice.conditions, state),
++    !choice.unavailableReason && evaluateConditions(choice.conditions, state),
+   );
+ }
+diff --git a/src/engine/effects.ts b/src/engine/effects.ts
+index d27782c..e67ff21 100644
+--- a/src/engine/effects.ts
++++ b/src/engine/effects.ts
+@@ -5,6 +5,7 @@ import type {
+   NarrativeEffect,
+   NarrativeEngineState,
+ } from './types';
++import { advanceClock, elapsedUntil } from './time';
+ 
+ function appendUnique<T>(values: readonly T[], value: T): readonly T[] {
+   return values.includes(value) ? values : [...values, value];
+@@ -92,13 +93,9 @@ export function applyEffect(
+     case 'gainDeathIntel':
+       return addDeathIntel(state, effect.intel);
+     case 'advanceTime':
+-      return {
+-        ...state,
+-        volatile: {
+-          ...state.volatile,
+-          time: (state.volatile.time + effect.minutes) as GameTime,
+-        },
+-      };
++      return advanceClock(state, effect.minutes);
++    case 'waitUntil':
++      return advanceClock(state, elapsedUntil(state.volatile.time, effect.time));
+     case 'setTime':
+       return {
+         ...state,
+diff --git a/src/engine/loop.ts b/src/engine/loop.ts
+index 0fac675..d97c78a 100644
+--- a/src/engine/loop.ts
++++ b/src/engine/loop.ts
+@@ -19,6 +19,7 @@ export function resetLoop(
+     },
+     volatile: {
+       time: LOOP_START_TIME,
++      ...(state.volatile.clock ? { clock: { ...state.volatile.clock, contractVersion: 1, events: {} } } : {}),
+       currentSceneId: startSceneId,
+       currentLocationId: startLocationId,
+       visitedSceneIds: [],
+diff --git a/src/engine/types.ts b/src/engine/types.ts
+index d1d4616..3506c80 100644
+--- a/src/engine/types.ts
++++ b/src/engine/types.ts
+@@ -20,6 +20,8 @@ export type NarrativeScene = {
+ export type NarrativeChoice = {
+   id: string;
+   text: string;
++  /** Visible production boundary. Not a player knowledge requirement. */
++  unavailableReason?: string;
+   kind: 'standard' | 'foreknowledge' | 'evidence';
+   conditions?: readonly ChoiceCondition[];
+   effects: readonly NarrativeEffect[];
+@@ -50,6 +52,7 @@ export type NarrativeEffect =
+   | { type: 'removeItem'; itemId: ItemId }
+   | { type: 'gainDeathIntel'; intel: DeathIntel }
+   | { type: 'advanceTime'; minutes: number }
++  | { type: 'waitUntil'; time: GameTime }
+   | { type: 'setTime'; time: GameTime }
+   | { type: 'moveLocation'; locationId: LocationId }
+   | {
+@@ -91,6 +94,8 @@ export type MemoryRecord = {
+ 
+ export type KnowledgePayoff = {
+   predictsEvent: string;
++  eventTime?: GameTime;
++  /** Optional action window; absent means learned knowledge has no lower time gate. */
+   usableFrom?: GameTime;
+   usableUntil?: GameTime;
+   changes: readonly (
+@@ -127,6 +132,12 @@ export type LoopPersistentState = {
+ /** State discarded and recreated at the beginning of every loop. */
+ export type LoopVolatileState = {
+   time: GameTime;
++  clock?: {
++    /** Zero identifies an unretimed legacy save; a real reset starts the current contract. */
++    contractVersion: number;
++    schedule: readonly { id: string; time: GameTime }[];
++    events: Readonly<Record<string, GameTime | 'legacy'>>;
++  };
+   currentSceneId: SceneId;
+   currentLocationId: LocationId;
+   visitedSceneIds: readonly SceneId[];
+diff --git a/src/gameplay/choicePresentation.ts b/src/gameplay/choicePresentation.ts
+index 569200b..ee7af2c 100644
+--- a/src/gameplay/choicePresentation.ts
++++ b/src/gameplay/choicePresentation.ts
+@@ -29,6 +29,8 @@ export type ChoiceGroupPresentation = {
+ };
+ 
+ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
++  CH4_ROUTE_TAEJUN: { meta: '이동 50분 · 위험을 먼저 알린다' },
++  CH4_ROUTE_SEA: { meta: '이동 50분 · 자정까지 대기' },
+   CH3_BAND_TO_YUJIN: { meta: '사진 보존 · 원본은 유진 보관', outcome: { eyebrow: '보관 경로', title: '유진이 봉인 봉투를 보관한다', detail: '원본을 다시 확인하려면 유진의 협조가 필요하다.', tone: 'evidence' } },
+   CH3_BAND_SHOW_TAEJUN: { meta: '보안 촬영 · 원본 회수', outcome: { eyebrow: '시각 기록', title: '태준이 원본을 확인했다', detail: '보안 기록에 소지 시각이 남고 원본은 돌려받는다.', tone: 'evidence' } },
+   CH3_BAND_KEEP_ORIGINAL: { meta: '원본 유지 · 유진의 경계', outcome: { eyebrow: '보관 경로', title: '원본은 직접 보관한다', detail: '직접 대조할 수 있지만 유진의 협조는 얻지 못했다.', tone: 'risk' } },
+@@ -86,14 +88,14 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
+     meta: '시간 단축  ·  먼저 도착',
+     outcome: {
+       eyebrow: '시간 선점',
+-      title: '첫 번째 밤보다 8분 앞섰다',
++      title: '첫 번째 밤보다 먼저 도착했다',
+       detail: '설명 대신 사건이 벌어질 장소로 향한다.',
+       tone: 'route',
+     },
+     intervention: {
+       known: '통화로 상황을 설명하는 동안 도착이 늦어졌다',
+       changed: '설명을 보류하고 병원으로 바로 향한다',
+-      consequence: '검증을 미룬 대신 첫 번째 밤보다 8분을 확보했다.',
++      consequence: '검증을 미룬 대신 첫 번째 밤보다 먼저 도착했다.',
+     },
+   },
+   TEST_MESSAGE_ANOMALY: {
+diff --git a/src/gameplay/gameClock.ts b/src/gameplay/gameClock.ts
+index 3eac21e..0c21106 100644
+--- a/src/gameplay/gameClock.ts
++++ b/src/gameplay/gameClock.ts
+@@ -1,4 +1,5 @@
+ import type { NarrativeEffect } from '../engine';
++import { elapsedUntil } from '../engine/time';
+ 
+ export const INCIDENT_START_HOUR = 21;
+ export const INCIDENT_START_MINUTE = 23;
+@@ -20,6 +21,7 @@ export function getIncidentClockProgress(timeOffsetMinutes: number): number {
+ export function getActionTimeCost(effects: readonly NarrativeEffect[], currentTime = 0): number {
+   const nextTime = effects.reduce((time, effect) => {
+     if (effect.type === 'advanceTime') return time + effect.minutes;
++    if (effect.type === 'waitUntil') return time + elapsedUntil(time, effect.time);
+     if (effect.type === 'setTime') return effect.time;
+     return time;
+   }, currentTime);
+diff --git a/src/gameplay/investigation.ts b/src/gameplay/investigation.ts
+index 20e8322..52baa34 100644
+--- a/src/gameplay/investigation.ts
++++ b/src/gameplay/investigation.ts
+@@ -18,6 +18,10 @@ export type InvestigationHotspot = {
+   id: string;
+   label: string;
+   shortLabel: string;
++  /** Visible object only; never the clue or deduction discovered by inspecting. */
++  targetLabel?: string;
++  artAnchor?: { x: number; y: number };
++  artTargetOffsetX?: number;
+   discovery: string;
+   x: number;
+   y: number;
+@@ -82,11 +86,15 @@ const room302Investigation: SceneInvestigation = {
+ 
+ const operationsCorridorInvestigation: SceneInvestigation = {
+   sceneId: 'SCENE_LOOP2_OPERATIONS_CORRIDOR' as SceneId,
++  fitHotspotsToStage: true,
+   prompt: '손전등 빛이 돌아오기 전에 복도를 살핀다.',
+   optionalInspectionLimit: 1,
+   hotspots: [
+     {
+       id: 'unmarked-doors',
++      targetLabel: '문',
++      artAnchor: { x: 0.23, y: 0.45 },
++      artTargetOffsetX: 24,
+       label: '표찰을 떼어 낸 문',
+       shortLabel: '문',
+       discovery: '떼어 낸 표찰 아래에 관찰창을 막은 나사 자국이 남아 있다.',
+@@ -100,6 +108,9 @@ const operationsCorridorInvestigation: SceneInvestigation = {
+     },
+     {
+       id: 'linen-carts',
++      targetLabel: '카트',
++      artAnchor: { x: 0.30, y: 0.58 },
++      artTargetOffsetX: -84,
+       label: '벽에 세워 둔 린넨 카트',
+       shortLabel: '흔적',
+       discovery: '젖은 바퀴 자국이 복도 끝이 아니라 열린 린넨실 쪽으로 꺾여 있다.',
+@@ -113,6 +124,8 @@ const operationsCorridorInvestigation: SceneInvestigation = {
+     },
+     {
+       id: 'linen-room',
++      targetLabel: '열린 문',
++      artAnchor: { x: 0.57, y: 0.49 },
+       label: '반쯤 열린 린넨실',
+       shortLabel: '소리',
+       discovery: '문 안에서 억눌린 숨소리가 들렸다. 환자복을 입은 여자가 숨어 있다.',
+@@ -128,10 +141,12 @@ const operationsCorridorInvestigation: SceneInvestigation = {
+ 
+ const oldMapInvestigation: SceneInvestigation = {
+   sceneId: 'SCENE_LOOP2_OLD_MAP_SEARCH' as SceneId,
++  fitHotspotsToStage: true,
+   prompt: '태준이 올라오기 전에 현재 구조와 오래된 안내도를 대조한다.',
+   hotspots: [
+     {
+       id: 'map-date',
++      targetLabel: '하단 표기',
+       label: '안내도 제작 연도',
+       shortLabel: '연도',
+       discovery: '안내도는 현재 병동이 정비되기 전 제작됐다. 폐기되지 않은 채 대기 공간 벽에 남아 있다.',
+@@ -141,6 +156,7 @@ const oldMapInvestigation: SceneInvestigation = {
+     },
+     {
+       id: 'room-302-outline',
++      targetLabel: '도면',
+       label: '302호 뒤의 빈 공간',
+       shortLabel: '구조',
+       discovery: '302호 뒤쪽에 병실이 아닌 좁고 긴 공간이 표시돼 있다. 반대쪽 끝은 간호사실 뒤편과 이어진다.',
+@@ -155,6 +171,7 @@ const oldMapInvestigation: SceneInvestigation = {
+     },
+     {
+       id: 'current-wall',
++      targetLabel: '벽',
+       label: '현재 병동의 막힌 벽',
+       shortLabel: '현재',
+       discovery: '출입문 유리 너머로 보이는 벽면에는 문도 복도도 없다. 안내도의 공간은 현재 구조에서 완전히 지워져 있다.',
+diff --git a/src/store/useNarrativeStore.ts b/src/store/useNarrativeStore.ts
+index 3f358db..9ab77c2 100644
+--- a/src/store/useNarrativeStore.ts
++++ b/src/store/useNarrativeStore.ts
+@@ -1,3 +1,5 @@
++import { createTimeContract } from '../content/timeContract';
++import { migrateSavedNarrativeState, SAVE_VERSION } from './narrativeSave';
+ import AsyncStorage from '@react-native-async-storage/async-storage';
+ import { create } from 'zustand';
+ import { createJSONStorage, persist } from 'zustand/middleware';
+@@ -13,7 +15,7 @@ import {
+   getAvailableChoices,
+   resetLoop,
+ } from '../engine';
+-import type { DeductionId, LocationId, NarrativeEngineState, SceneId } from '../engine';
++import type { DeductionId, NarrativeEngineState, SceneId } from '../engine';
+ import { canFormDeduction, deductions } from '../gameplay/deductions';
+ import {
+   canInspectHotspot,
+@@ -22,51 +24,6 @@ import {
+   sceneInvestigations,
+ } from '../gameplay/investigation';
+ 
+-const SAVE_VERSION = 4;
+-
+-const LEGACY_OPERATIONS_SCENE = 'SCENE_LOOP2_SERVICE_CORRIDOR' as SceneId;
+-const LEGACY_OPERATIONS_LOCATION = 'B1_SERVICE_CORRIDOR' as LocationId;
+-
+-function migrateVersion3OperationsNames(
+-  saved: NarrativeEngineState,
+-): NarrativeEngineState {
+-  const currentSceneId =
+-    saved.volatile.currentSceneId === LEGACY_OPERATIONS_SCENE
+-      ? ('SCENE_LOOP2_OPERATIONS_CORRIDOR' as SceneId)
+-      : saved.volatile.currentSceneId;
+-  const currentLocationId =
+-    saved.volatile.currentLocationId === LEGACY_OPERATIONS_LOCATION
+-      ? ('B1_OPERATIONS_CORRIDOR' as LocationId)
+-      : saved.volatile.currentLocationId;
+-
+-  return {
+-    persistent: {
+-      ...saved.persistent,
+-      memories: saved.persistent.memories.map((memory) =>
+-        memory.payoff?.unlocksLocationId === LEGACY_OPERATIONS_LOCATION
+-          ? {
+-              ...memory,
+-              payoff: {
+-                ...memory.payoff,
+-                unlocksLocationId: 'B1_OPERATIONS_CORRIDOR' as LocationId,
+-              },
+-            }
+-          : memory,
+-      ),
+-    },
+-    volatile: {
+-      ...saved.volatile,
+-      currentSceneId,
+-      currentLocationId,
+-      visitedSceneIds: saved.volatile.visitedSceneIds.map((sceneId) =>
+-        sceneId === LEGACY_OPERATIONS_SCENE
+-          ? ('SCENE_LOOP2_OPERATIONS_CORRIDOR' as SceneId)
+-          : sceneId,
+-      ),
+-    },
+-  };
+-}
+-
+ export function createInitialNarrativeState(): NarrativeEngineState {
+   if (isChapter3Qa) return createChapter3Checkpoint();
+   return {
+@@ -81,6 +38,7 @@ export function createInitialNarrativeState(): NarrativeEngineState {
+     },
+     volatile: {
+       time: LOOP_START_TIME,
++      clock: createTimeContract(),
+       currentSceneId: SCENE_CH00_ENTRANCE,
+       currentLocationId: LOCATION_MOUNTAIN_ROAD,
+       visitedSceneIds: [SCENE_CH00_ENTRANCE],
+@@ -117,25 +75,7 @@ export function migrateNarrativeState(
+   persisted: unknown,
+   storedVersion: number,
+ ): NarrativeEngineState {
+-  const candidate = persisted as Partial<NarrativeStore> | undefined;
+-  const saved = candidate?.engineState;
+-  if (!saved?.persistent || !saved.volatile) {
+-    return createInitialNarrativeState();
+-  }
+-  if (storedVersion === 3) {
+-    const migrated = migrateVersion3OperationsNames(saved);
+-    if (storyScenes[migrated.volatile.currentSceneId]) return migrated;
+-  }
+-  if (
+-    storedVersion >= SAVE_VERSION &&
+-    storyScenes[saved.volatile.currentSceneId]
+-  ) {
+-    return saved;
+-  }
+-
+-  // v3 changes the canonical opening, reset anchor, and every story scene id.
+-  // Older saves cannot be mapped without inventing narrative state.
+-  return createInitialNarrativeState();
++  return migrateSavedNarrativeState(persisted, storedVersion) ?? createInitialNarrativeState();
+ }
+ 
+ export const useNarrativeStore = create<NarrativeStore>()(
+@@ -199,6 +139,7 @@ export const useNarrativeStore = create<NarrativeStore>()(
+         }),
+       beginNextLoop: () =>
+         set(({ engineState }) => {
++          if (!engineState.volatile.deathId) return { engineState };
+           const target = getLoopResetTarget(engineState);
+           const reset = resetLoop(engineState, target.sceneId, target.locationId);
+           const entered = applyEffects(reset, storyScenes[target.sceneId].onEnter ?? []);
+diff --git a/src/ui/FieldKit.tsx b/src/ui/FieldKit.tsx
+index 289d490..d90e7b4 100644
+--- a/src/ui/FieldKit.tsx
++++ b/src/ui/FieldKit.tsx
+@@ -22,6 +22,7 @@ import {
+ import type { ClueId, DeductionId, LocationId, NarrativeEngineState } from '../engine';
+ import { canFormDeduction, deductions, isCorrectDeductionConnection } from '../gameplay/deductions';
+ import { formatIncidentTime } from '../gameplay/gameClock';
++import { describeBandState, transferRoomDetail } from '../gameplay/fieldKnowledge';
+ 
+ export type FieldKitTab = 'map' | 'people' | 'evidence' | 'deduction' | 'items';
+ type PictureCopy = { title: string; detail: string; image: ImageSourcePropType };
+@@ -127,6 +128,9 @@ const locations: readonly LocationEntry[] = [
+ ];
+ 
+ const clueCopy: Readonly<Record<string, PictureCopy>> = {
++  CCTV_ORIGINAL_GAP: { title: '58초의 영상 공백', detail: '태준과 함께 측정했다. 정전 전에 카메라 신호가 끊겼다가 58초 뒤 돌아왔다.', image: pictures.corridor },
++  DOUBLE_LABEL: { title: '겹쳐 출력된 두 라벨', detail: '같은 이름과 입실 시각이지만 바코드가 다르고, 출력 이력은 한 번뿐이었다.', image: pictures.lobby },
++  B1_MANUAL_AIR_VALVE: { title: '수동 산소 밸브 위치', detail: '유진이 그려 준 B1 수동 밸브 위치.', image: pictures.b1 },
+   CLUE_WATCH_GIFT: { title: '오래된 손목시계', detail: '서윤이 선물한 시계. 시간은 정확했다.', image: pictures.death },
+   CLUE_CONTRADICTORY_MESSAGES: { title: '서로 부정하는 문자', detail: '같은 대화창에서 오지 말라는 문자와 그 문자를 믿지 말라는 문자가 차례로 도착했다.', image: pictures.road },
+   CLUE_YUJIN_KNOWN: { title: '먼저 나온 이름', detail: '서윤은 듣지 못했어야 할 유진의 이름을 알고 있었다.', image: pictures.corridor },
+@@ -152,6 +156,7 @@ const clueCopy: Readonly<Record<string, PictureCopy>> = {
+ };
+ 
+ const itemCopy: Readonly<Record<string, PictureCopy>> = {
++  B2_SECURITY_KEY: { title: 'B2 보안 열쇠', detail: '이번 밤 태준의 협조로 확보했다. 죽음 뒤에는 이 밤에 남는다.', image: pictures.b1 },
+   ITEM_WRISTBAND_ORIGINAL: { title: '손목밴드 원본', detail: '이번 밤에 302호에서 가져온 찢어진 밴드. 죽음 뒤에는 이 밤에 남는다.', image: pictures.room302 },
+   ITEM_FIRST_PHONE_PHOTO: { title: '봉투 속 전화 사진', detail: '오른쪽 아래의 흠집까지 서윤의 전화와 일치한다.', image: pictures.seoyun },
+   ITEM_SECOND_PHONE: { title: '침대 아래의 휴대전화', detail: '첫 번째 전화와 같은 흠집이 있고 동시에 울린다.', image: pictures.room302 },
+@@ -230,7 +235,7 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
+         <View style={[styles.console, tablet && styles.consoleTablet, { paddingTop: Math.max(topInset, 14), paddingBottom: Math.max(bottomInset, 10) }]}>
+           <View style={styles.header}>
+             <View style={styles.brandBlock}>
+-              <Text style={styles.systemLabel}>MNEMOSYNE // FIELD LINK</Text>
++              <Text style={styles.systemLabel}>현장 기록</Text>
+               <Text style={styles.title}>백야의료원</Text>
+               <View style={styles.liveRow}><View style={styles.liveDot} /><Text style={styles.liveText}>{tabs.find((tab) => tab.id === activeTab)?.label} 기록 동기화 중</Text></View>
+             </View>
+@@ -249,7 +254,7 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
+               <SectionHeading title="현재 위치" count={`${visitedLocations.length}곳 확인`} />
+               <ImageBackground source={selectedLocation.image} resizeMode="cover" style={styles.locationHero} imageStyle={styles.roundedImage}>
+                 <View style={styles.locationHeroShade} /><View style={styles.locationReticle}><View style={styles.reticleCore} /></View>
+-                <View style={styles.locationCopy}><Text style={styles.locationFloor}>{selectedLocation.floor}</Text><Text style={styles.locationName}>{selectedLocation.name}</Text><Text style={styles.locationDetail}>{selectedLocation.detail}</Text></View>
++                <View style={styles.locationCopy}><Text style={styles.locationFloor}>{selectedLocation.floor}</Text><Text style={styles.locationName}>{selectedLocation.name}</Text><Text style={styles.locationDetail}>{selectedLocation.id === 'B1_DOCUMENT_TRANSFER' ? transferRoomDetail(state) : selectedLocation.detail}</Text></View>
+                 {selectedLocation.id === state.volatile.currentLocationId ? <View style={styles.currentTag}><Text style={styles.currentTagText}>현재</Text></View> : null}
+               </ImageBackground>
+               <SectionHeading title="확인한 동선" count="TOUCH TO TRACE" />
+@@ -312,11 +317,12 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
+                 const copy = clueCopy[clueId] ?? { title: '확인되지 않은 단서', detail: String(clueId), image: fieldBoard };
+                 return <View key={clueId} style={styles.evidenceCard}><Image source={copy.image} resizeMode="cover" style={styles.evidenceImage} /><View style={styles.evidenceImageShade} /><View style={styles.evidenceNumber}><Text style={styles.evidenceNumberText}>{String(index + 1).padStart(2, '0')}</Text></View><View style={styles.evidenceCopy}><Text numberOfLines={1} style={styles.evidenceTitle}>{copy.title}</Text><Text numberOfLines={2} style={styles.evidenceDetail}>{copy.detail}</Text></View></View>;
+               })}</View>}
+-              {state.persistent.memories.length > 0 ? <><SectionHeading title="죽어도 남은 기억" count={state.persistent.memories.length} /><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.memoryRail}>{state.persistent.memories.map((memory) => <ImageBackground key={memory.id} source={pictures.death} resizeMode="cover" style={styles.memoryCard} imageStyle={styles.roundedImage}><View style={styles.memoryCardShade} /><Text style={styles.memoryGlyph}>◈</Text><Text numberOfLines={1} style={styles.memoryTitle}>{memory.title}</Text><Text numberOfLines={2} style={styles.memoryDetail}>{memory.description}</Text></ImageBackground>)}</ScrollView></> : null}
++              {state.persistent.memories.length > 0 ? <><SectionHeading title="죽어도 남은 기억" count={state.persistent.memories.length} /><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.memoryRail}>{state.persistent.memories.map((memory) => <ImageBackground key={memory.id} source={pictures.death} resizeMode="cover" style={styles.memoryCard} imageStyle={styles.roundedImage}><View style={styles.memoryCardShade} /><Text style={styles.memoryGlyph}>◈</Text><Text style={styles.memoryTitle}>{memory.title}</Text><Text style={styles.memoryDetail}>{memory.description}</Text>{memory.payoff?.eventTime !== undefined ? <Text style={styles.memoryDetail}>사건 {formatIncidentTime(memory.payoff.eventTime)} · 기억은 미리 활용할 수 있다.</Text> : null}</ImageBackground>)}</ScrollView></> : null}
+             </View> : null}
+ 
+             {activeTab === 'items' ? <View>
+               <SectionHeading title="현재 소지품" count={state.volatile.itemIds.length} />
++              {describeBandState(state) ? <Text style={styles.locationDetail}>{describeBandState(state)}</Text> : null}
+               {state.volatile.itemIds.length === 0 ? <EmptyState>지금 사용할 수 있는 물건이 없다.</EmptyState> : state.volatile.itemIds.map((itemId, index) => {
+                 const copy = itemCopy[itemId] ?? { title: '확인되지 않은 물건', detail: String(itemId), image: fieldBoard };
+                 return <ImageBackground key={itemId} source={copy.image} resizeMode="cover" style={styles.itemCard} imageStyle={styles.roundedImage}><View style={styles.itemCardShade} /><View style={styles.itemIndex}><Text style={styles.itemIndexText}>{String(index + 1).padStart(2, '0')}</Text></View><View style={styles.itemCopy}><Text style={styles.itemKind}>PHYSICAL EVIDENCE</Text><Text style={styles.itemTitle}>{copy.title}</Text><Text style={styles.itemDetail}>{copy.detail}</Text></View></ImageBackground>;
+@@ -391,7 +397,7 @@ const styles = StyleSheet.create({
+   personDetail: { color: '#8998a5', fontSize: 9, lineHeight: 14, marginTop: 5 },
+   personDetailTablet: { fontSize: 11, lineHeight: 17 },
+   evidenceGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 9 }, evidenceCard: { width: '48.7%', height: 190, borderRadius: 13, overflow: 'hidden', backgroundColor: '#0b1119', borderWidth: 1, borderColor: 'rgba(131,156,179,0.2)' }, evidenceImage: { width: '100%', height: 116 }, evidenceImageShade: { position: 'absolute', top: 62, left: 0, right: 0, height: 72, backgroundColor: 'rgba(5,10,16,0.46)' }, evidenceNumber: { position: 'absolute', top: 9, left: 9, width: 28, height: 24, borderRadius: 6, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(3,8,13,0.78)' }, evidenceNumberText: { color: '#c5d4df', fontSize: 8, fontWeight: '900' }, evidenceCopy: { flex: 1, padding: 10, paddingTop: 8 }, evidenceTitle: { color: '#e9eef3', fontSize: 12, fontWeight: '800' }, evidenceDetail: { color: '#7f8e9d', fontSize: 8, lineHeight: 12, marginTop: 4 },
+-  memoryRail: { gap: 9, paddingRight: 10 }, memoryCard: { width: 230, height: 128, borderRadius: 13, overflow: 'hidden', padding: 13, justifyContent: 'flex-end', borderWidth: 1, borderColor: 'rgba(172,140,224,0.36)' }, memoryCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(27,15,43,0.64)' }, memoryGlyph: { position: 'absolute', top: 12, right: 13, color: '#bda0ec', fontSize: 18 }, memoryTitle: { color: '#ebdfff', fontSize: 13, fontWeight: '800' }, memoryDetail: { color: '#a999bb', fontSize: 9, lineHeight: 13, marginTop: 4 },
++  memoryRail: { gap: 9, paddingRight: 10 }, memoryCard: { width: 230, minHeight: 128, borderRadius: 13, overflow: 'hidden', padding: 13, paddingTop: 36, justifyContent: 'flex-end', borderWidth: 1, borderColor: 'rgba(172,140,224,0.36)' }, memoryCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(27,15,43,0.64)' }, memoryGlyph: { position: 'absolute', top: 12, right: 13, color: '#bda0ec', fontSize: 18 }, memoryTitle: { color: '#ebdfff', fontSize: 13, fontWeight: '800' }, memoryDetail: { color: '#a999bb', fontSize: 10, lineHeight: 15, marginTop: 4 },
+   itemCard: { height: 182, marginBottom: 10, borderRadius: 15, overflow: 'hidden', flexDirection: 'row', alignItems: 'flex-end', padding: 15, borderWidth: 1, borderColor: 'rgba(139,165,187,0.28)' }, itemCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(3,8,13,0.5)' }, itemIndex: { width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(8,15,22,0.82)', borderWidth: 1, borderColor: 'rgba(163,188,207,0.35)' }, itemIndexText: { color: '#dae6ef', fontSize: 9, fontWeight: '900' }, itemCopy: { flex: 1, marginLeft: 12, padding: 10, borderRadius: 10, backgroundColor: 'rgba(5,10,16,0.74)' }, itemKind: { color: '#758da0', fontSize: 6, fontWeight: '900', letterSpacing: 1.2 }, itemTitle: { color: '#eef3f6', fontSize: 15, fontWeight: '800', marginTop: 3 }, itemDetail: { color: '#94a3af', fontSize: 9, lineHeight: 14, marginTop: 4 },
+   deductionCard: { marginBottom: 12, borderRadius: 15, overflow: 'hidden', padding: 15, borderWidth: 1, borderColor: 'rgba(159,126,212,0.34)' }, deductionShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(8,7,16,0.8)' }, deductionHeader: { flexDirection: 'row', alignItems: 'center', gap: 10 }, deductionSeal: { width: 42, height: 42, borderRadius: 21, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(116,81,166,0.18)', borderWidth: 1, borderColor: 'rgba(176,142,225,0.32)' }, deductionSealFormed: { backgroundColor: 'rgba(142,100,198,0.3)', borderColor: 'rgba(213,190,246,0.56)' }, deductionHeaderCopy: { flex: 1 }, deductionState: { color: '#8674a7', fontSize: 6, fontWeight: '900', letterSpacing: 1.15 }, deductionTitle: { color: '#eee8f6', fontSize: 16, fontWeight: '800', marginTop: 2 }, deductionProgress: { color: '#baa1e6', fontSize: 11, fontWeight: '900' }, deductionDescription: { color: '#92909d', fontSize: 10, lineHeight: 16, marginTop: 11 },
+   formedConnection: { flexDirection: 'row', alignItems: 'center', marginTop: 14 }, factNode: { flex: 1, minHeight: 94, padding: 11, justifyContent: 'center', borderRadius: 10, backgroundColor: 'rgba(73,99,122,0.2)', borderWidth: 1, borderColor: 'rgba(116,142,165,0.2)' }, factNodeMemory: { backgroundColor: 'rgba(104,72,148,0.24)', borderColor: 'rgba(166,132,214,0.28)' }, factLabel: { color: '#8b7aa9', fontSize: 7, fontWeight: '900' }, factText: { color: '#d6dce3', fontSize: 10, lineHeight: 15, fontWeight: '700', marginTop: 5 }, connectionLine: { width: 24, height: 1, backgroundColor: 'rgba(190,155,235,0.5)', alignItems: 'center', justifyContent: 'center' }, connectionPulse: { width: 5, height: 5, borderRadius: 3, backgroundColor: '#c4a8ec' }, conclusion: { marginTop: 12, padding: 12, borderRadius: 10, backgroundColor: 'rgba(119,82,169,0.22)', borderLeftWidth: 2, borderLeftColor: '#a887d5' }, conclusionLabel: { color: '#af91da', fontSize: 7, fontWeight: '900' }, conclusionText: { color: '#e4daef', fontSize: 11, lineHeight: 17, marginTop: 4 },
+diff --git a/src/ui/NarrativePlayer.tsx b/src/ui/NarrativePlayer.tsx
+index 49df5d3..5dd4aef 100644
+--- a/src/ui/NarrativePlayer.tsx
++++ b/src/ui/NarrativePlayer.tsx
+@@ -25,7 +25,7 @@ import {
+   RotateCcw,
+   Search,
+ } from 'lucide-react-native';
+-import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
++import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from 'react-native-svg';
+ import { TypewriterText } from '../../components/TypewriterText';
+ import {
+   SCENE_ACT0_ARRIVAL,
+@@ -81,6 +81,7 @@ import {
+   SCENE_CH4_OPENING,
+ } from '../content/chapter3';
+ import { storyScenes } from '../content/story';
++import { chapter4ProductionStops } from '../content/chapter4';
+ import { getAvailableChoices } from '../engine';
+ import type { NarrativeScene } from '../engine';
+ import { useNarrativeStore } from '../store/useNarrativeStore';
+@@ -132,6 +133,7 @@ import {
+ import {
+   getCharacterStageAnchors,
+   getCoverPlacement,
++  getArtInvestigationTarget,
+   getGameLayout,
+   getInvestigationHotspotPosition,
+ } from './layout';
+@@ -215,7 +217,7 @@ type CharacterVisual = {
+   source: ImageSourcePropType;
+   name: string;
+   expression: 'neutral' | 'tense' | 'frightened' | 'guarded' | 'alarmed' | 'wary' | 'confused' | 'watchful' | 'cold' | 'clinical';
+-  crop: 'bust' | 'full';
++  crop: 'bust' | 'full' | 'threeQuarter';
+   scale?: number;
+   offsetY?: number;
+ };
+@@ -272,7 +274,7 @@ const defaultCharacterVisuals: Readonly<
+     source: characterSprites.minseoClinical,
+     name: '차민서',
+     expression: 'clinical',
+-    crop: 'full',
++    crop: 'threeQuarter',
+     scale: 1.02,
+   },
+ };
+@@ -570,7 +572,8 @@ function getBackground(scene: NarrativeScene, portrait = false): ImageSourceProp
+     return backgrounds.evacuationMap;
+   }
+   if (scene.locationId === '1F_STAFF_DOOR') {
+-    return isWatchStopped(scene) ? backgrounds.staffDoorBlackout : backgrounds.staffDoor;
++    return isWatchStopped(scene) || scene.id === 'SCENE_CH4_S_01'
++      ? backgrounds.staffDoorBlackout : backgrounds.staffDoor;
+   }
+   if (scene.locationId === 'ROOM_302') {
+     return cleared302SceneIds.has(scene.id)
+@@ -660,7 +663,9 @@ function CharacterSprite({
+   choiceMode: boolean;
+ }) {
+   const scale = character.scale ?? 1;
+-  const cropFullbodyToPortrait = portrait && character.crop === 'full';
++  const cropFullbodyToPortrait = portrait && character.crop !== 'bust';
++  // v03 ends at the thighs; the full-body zoom otherwise makes her face much larger.
++  const threeQuarterPortrait = cropFullbodyToPortrait && character.crop === 'threeQuarter' && !duo;
+   const illumination = useRef(new Animated.Value(active ? 1 : 0)).current;
+   const entranceOpacity = useRef(new Animated.Value(0)).current;
+   const expressionMotion = useRef(new Animated.Value(0)).current;
+@@ -762,6 +767,7 @@ function CharacterSprite({
+           style={[
+             styles.characterShadow,
+             cropFullbodyToPortrait && styles.characterPortraitFull,
++            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
+             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
+             stopped && styles.characterShadowStopped,
+             !active && styles.characterShadowInactive,
+@@ -774,6 +780,7 @@ function CharacterSprite({
+           style={[
+             styles.characterImage,
+             cropFullbodyToPortrait && styles.characterPortraitFull,
++            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
+             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
+             { opacity: visibleCharacterOpacity },
+           ]}
+@@ -784,6 +791,7 @@ function CharacterSprite({
+           style={[
+             styles.characterDimmer,
+             cropFullbodyToPortrait && styles.characterPortraitFull,
++            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
+             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
+             { opacity: dimmerOpacity },
+           ]}
+@@ -928,7 +936,7 @@ function SceneBackground({
+ }
+ 
+ export function NarrativePlayer() {
+-  const { width, height } = useWindowDimensions();
++  const { width, height, fontScale } = useWindowDimensions();
+   const insets = useSafeAreaInsets();
+   const viewportWidth = Math.max(1, width);
+   const viewportHeight = Math.max(1, height);
+@@ -981,7 +989,8 @@ export function NarrativePlayer() {
+     )),
+     [engineState.volatile.visitedSceneIds],
+   );
+-  const choices = getAvailableChoices(scene, engineState);
++  const availableChoices = getAvailableChoices(scene, engineState);
++  const choices = scene.choices.filter(choice => choice.unavailableReason || availableChoices.includes(choice));
+   const investigation = sceneInvestigations[scene.id];
+   const sideDialogue = layout.overlayDialogue
+     && (tabletSized || investigation?.fitHotspotsToStage === true);
+@@ -1044,7 +1053,8 @@ export function NarrativePlayer() {
+   );
+   const deathMemoryComplete = isDeathMemoryComplete(deathMemoryState, deathMemorySequence);
+   const isTitle = scene.id === SCENE_VERTICAL_SLICE_TITLE;
+-  const isComplete = scene.id === SCENE_CH4_MILESTONE_A_END;
++  const isProductionStop = chapter4ProductionStops.includes(scene.id);
++  const isComplete = isProductionStop && inputState.phase === 'ready' && isLastBeat;
+   const stopped = isWatchStopped(scene);
+   const hasPersistentMemory = engineState.persistent.memories.length > 0;
+   const fieldRecordCount = engineState.persistent.clueIds.length
+@@ -1271,6 +1281,13 @@ export function NarrativePlayer() {
+     insets.right + 16,
+   );
+   const dialogueDockRight = Math.max(insets.right + 16, layout.horizontalGutter);
++  useEffect(() => {
++    if (__DEV__ && process.env.EXPO_PUBLIC_LAYOUT_QA === '1') {
++      console.info('[ZH_LAYOUT_QA]', JSON.stringify({ scene: scene.id, width, height,
++        fontScale, insets, dialogueHeight,
++        sideDialogue, time: engineState.volatile.time }));
++    }
++  }, [scene.id, width, height, fontScale, insets, dialogueHeight, sideDialogue, engineState.volatile.time]);
+   const dialogueContentMaxWidth = tabletPortrait
+     ? Math.min(640, viewportWidth - dialogueSidePadding * 2)
+     : sideDialogue
+@@ -1353,7 +1370,7 @@ export function NarrativePlayer() {
+                   height={stagedSpriteHeight}
+                   stopped={stopped}
+                   active={active}
+-                  portrait={twoCharacterBeat || (portraitStage && stagedCharacter.crop === 'full')}
++                  portrait={twoCharacterBeat || (portraitStage && stagedCharacter.crop !== 'bust')}
+                   duo={twoCharacterBeat}
+                   mirrored={Boolean(twoCharacterBeat && duoCast?.mirrorLeft && index === 0)}
+                   choiceMode={sceneReady}
+@@ -1400,7 +1417,7 @@ export function NarrativePlayer() {
+             <View style={styles.incidentClockHeader}>
+               <Clock color="#b9cbd8" size={tabletUi ? 13 : 11} strokeWidth={1.8} />
+               <Text style={[styles.incidentClockLabel, tabletUi && styles.incidentClockLabelTablet]}>
+-                사건 시각
++                {engineState.volatile.clock?.contractVersion === 0 ? '이전 저장 시각' : '사건 시각'}
+               </Text>
+               {timeShiftCue !== undefined ? (
+                 <Text style={[styles.timeShiftText, tabletUi && styles.timeShiftTextTablet]}>
+@@ -1463,25 +1480,40 @@ export function NarrativePlayer() {
+               const inspected = isHotspotInspected(engineState, scene.id, hotspot.id);
+               const available = canInspectHotspot(engineState, investigation, hotspot);
+               const missed = !inspected && !available;
++              const asset = Image.resolveAssetSource(backgroundVisual.source);
++              const anchored = hotspot.artAnchor ? getArtInvestigationTarget({
++                anchor: hotspot.artAnchor, offsetX: hotspot.artTargetOffsetX, placement: getCoverPlacement({ viewportWidth, viewportHeight,
++                  imageWidth: asset.width, imageHeight: asset.height, focalX: backgroundVisual.focalX,
++                  focalY: backgroundVisual.focalY, zoom: backgroundVisual.zoom }),
++                viewportWidth, viewportHeight, dialogueHeight, dialogueWidth: layout.dialogWidth,
++                dialogueRight: dialogueDockRight, sideDialogue, safeTop: insets.top,
++              }) : undefined;
+               return (
++                <React.Fragment key={hotspot.id}>
++                {anchored && !missed ? <Svg pointerEvents="none" style={StyleSheet.absoluteFillObject}>
++                  <Line x1={anchored.left+28} y1={anchored.top+28}
++                    x2={anchored.object.x} y2={anchored.object.y}
++                    stroke="rgba(190,218,233,0.65)" strokeWidth={1} />
++                  <Circle cx={anchored.object.x} cy={anchored.object.y} r={3} fill="#d8eaf1" />
++                </Svg> : null}
+                 <Pressable
+                   accessibilityRole="button"
+                   accessibilityLabel={missed
+-                    ? `${hotspot.label} 조사 기회 종료`
+-                    : `${hotspot.label} 조사`}
++                    ? `${hotspot.targetLabel ?? hotspot.label} 조사 기회 종료`
++                    : `${hotspot.targetLabel ?? hotspot.label} 조사`}
+                   disabled={inspected || missed}
+                   key={hotspot.id}
+                   onPress={() => handleInspectHotspot(hotspot.id)}
+                   style={({ pressed }) => [
+                     styles.hotspot,
+-                    investigation.fitHotspotsToStage ? getInvestigationHotspotPosition({
++                    anchored ? { left: anchored.left, top: anchored.top } : (investigation.fitHotspotsToStage ? getInvestigationHotspotPosition({
+                       x: hotspot.x, y: hotspot.y, viewportWidth, viewportHeight,
+                       dialogueHeight, dialogueWidth: layout.dialogWidth,
+                       dialogueRight: dialogueDockRight, sideDialogue, safeTop: insets.top,
+                     }) : {
+                       left: viewportWidth * hotspot.x - 28,
+                       top: viewportHeight * hotspot.y - 28,
+-                    },
++                    }),
+                     inspected && styles.hotspotInspected,
+                     missed && styles.hotspotMissed,
+                     pressed && styles.hotspotPressed,
+@@ -1496,7 +1528,9 @@ export function NarrativePlayer() {
+                   <Text style={styles.hotspotLabel}>
+                     {missed ? '놓침' : inspected ? '확인' : `${index + 1}`}
+                   </Text>
++                  {hotspot.targetLabel ? <Text style={styles.hotspotTargetLabel}>{hotspot.targetLabel}</Text> : null}
+                 </Pressable>
++                </React.Fragment>
+               );
+             })
+           : null}
+@@ -1900,7 +1934,8 @@ export function NarrativePlayer() {
+                     return (
+                       <Pressable
+                         accessibilityRole="button"
+-                        accessibilityLabel={`${visibleChoiceText}${timeCost > 0 ? `, 사건 시각 ${timeCost}분 소요` : ''}`}
++                        accessibilityLabel={`${visibleChoiceText}${choice.unavailableReason ? `, ${choice.unavailableReason}` : timeCost > 0 ? `, 사건 시각 ${timeCost}분 소요` : ''}`}
++                        disabled={Boolean(choice.unavailableReason)}
+                         key={choice.id}
+                         onPress={() => {
+                           if (timeCost > 0) setTimeShiftCue(timeCost);
+@@ -1927,6 +1962,7 @@ export function NarrativePlayer() {
+                           continuation && styles.continuationButton,
+                           foreknowledge && styles.foreknowledgeButton,
+                           evidenceChoice && styles.evidenceChoiceButton,
++                          choice.unavailableReason ? { opacity: 0.5 } : null,
+                           pressed && styles.choiceButtonPressed,
+                         ]}
+                       >
+@@ -1941,9 +1977,9 @@ export function NarrativePlayer() {
+                           </Text>
+                           <View style={styles.choiceMetaRow}>
+                             <Text style={[styles.choiceMeta, tabletUi && styles.choiceMetaTablet, foreknowledge && styles.foreknowledgeMeta, evidenceChoice && styles.evidenceChoiceMeta]}>
+-                              {presentation.meta}
++                              {choice.unavailableReason ?? presentation.meta}
+                             </Text>
+-                            {timeCost > 0 ? (
++                            {timeCost > 0 && !choice.unavailableReason ? (
+                               <View style={[styles.choiceTimeBadge, tabletUi && styles.choiceTimeBadgeTablet]}>
+                                 <Clock color="#b7c9d8" size={tabletUi ? 12 : 10} strokeWidth={1.8} />
+                                 <Text style={[styles.choiceTimeText, tabletUi && styles.choiceTimeTextTablet]}>+{timeCost}분</Text>
+@@ -1961,8 +1997,8 @@ export function NarrativePlayer() {
+                   })}
+                   {isComplete ? (
+                     <View style={styles.endingSummary}>
+-                      <Text style={styles.endingEyebrow}>이번 밤에 확인한 것</Text>
+-                      <Text style={styles.endingFinding}>01:06 밀폐를 기억한 채 세 번째 밤을 시작했다. 다음에는 이송실 밖에서 맞은편 계단을 먼저 확인한다.</Text>
++                      <Text style={styles.endingEyebrow}>여기까지 저장되었습니다</Text>
++                      <Text style={styles.endingFinding}>이 경로의 다음 조사 구간은 제작 중입니다. 현재 선택과 기록은 이어하기에 남습니다.</Text>
+                       <View style={styles.endingStats}>
+                         {[
+                           ['반복', engineState.persistent.loopCount],
+@@ -2332,6 +2368,12 @@ const styles = StyleSheet.create({
+     width: '265%',
+     height: '265%',
+   },
++  characterPortraitThreeQuarter: {
++    top: '-2%',
++    left: '-37.5%',
++    width: '175%',
++    height: '175%',
++  },
+   hotspot: {
+     position: 'absolute',
+     zIndex: 22,
+@@ -2361,6 +2403,9 @@ const styles = StyleSheet.create({
+   hotspotMissed: { opacity: 0.34, borderColor: 'rgba(126, 77, 86, 0.42)' },
+   hotspotPressed: { transform: [{ scale: 0.94 }] },
+   hotspotLabel: { color: '#afc2d1', fontSize: 7, fontWeight: '900', marginTop: 1 },
++  hotspotTargetLabel: { position: 'absolute', top: 58, alignSelf: 'center', color: '#e1edf4',
++    fontSize: 11, fontWeight: '700', paddingHorizontal: 5, paddingVertical: 2,
++    borderRadius: 3, backgroundColor: 'rgba(3,10,16,0.88)' },
+   hotspotMissedMark: { color: '#9e6e78', fontSize: 17, lineHeight: 17, fontWeight: '500' },
+   choiceOutcomeCue: {
+     position: 'absolute',
+diff --git a/src/ui/dialogueBeats.ts b/src/ui/dialogueBeats.ts
+index 4be19ce..fb842b0 100644
+--- a/src/ui/dialogueBeats.ts
++++ b/src/ui/dialogueBeats.ts
+@@ -37,6 +37,7 @@ import {
+ } from '../content/prologue';
+ import type { NarrativeScene } from '../engine';
+ import { chapter3ParagraphSpeakers } from './chapter3Dialogue';
++import { chapter4ParagraphSpeakers } from '../content/chapter4';
+ 
+ export type SpeakerId =
+   | 'narrator'
+@@ -83,6 +84,7 @@ export const sceneParagraphSpeakers: Readonly<
+   Partial<Record<string, readonly SpeakerId[]>>
+ > = {
+   ...chapter3ParagraphSpeakers,
++  ...chapter4ParagraphSpeakers,
+   [SCENE_CH00_ENTRANCE]: beats(
+     'narrator', 'narrator', 'player', 'seoyun', 'player', 'seoyun', 'player',
+     'seoyun', 'player', 'narrator', 'seoyun', 'player', 'seoyun', 'player',
+diff --git a/src/ui/layout.ts b/src/ui/layout.ts
+index f7322d7..819b4a2 100644
+--- a/src/ui/layout.ts
++++ b/src/ui/layout.ts
+@@ -58,6 +58,22 @@ export function getTitleBackgroundMotion(tabletLandscape: boolean): TitleBackgro
+     : { scale: [1.04, 1.055], translateX: [0, -5] };
+ }
+ 
++/** Project an object from the actual cover crop, then keep its touch target above dialogue. */
++export function getArtInvestigationTarget({ anchor, offsetX = 0, placement, viewportWidth, viewportHeight,
++  dialogueHeight, dialogueWidth, dialogueRight, sideDialogue, safeTop,
++}: { anchor: {x:number;y:number}; offsetX?:number; placement: CoverPlacement; viewportWidth:number;
++  viewportHeight:number; dialogueHeight:number; dialogueWidth:number; dialogueRight:number;
++  sideDialogue:boolean; safeTop:number;
++}) {
++  const object = { x: placement.left + placement.width * anchor.x,
++    y: placement.top + placement.height * anchor.y };
++  const right = sideDialogue ? viewportWidth-dialogueWidth-dialogueRight : viewportWidth;
++  const bottom = sideDialogue ? viewportHeight-24 : viewportHeight-dialogueHeight;
++  const top = Math.max(100,safeTop+72);
++  return { object, left: clamp(object.x+offsetX-28,12,Math.max(12,right-68)),
++    top: clamp(object.y-28,top,Math.max(top,bottom-84)) };
++}
++
+ export function getCoverPlacement({
+   viewportWidth,
+   viewportHeight,

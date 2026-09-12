@@ -1,0 +1,171 @@
+{
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 3,
+          "clueIds": [
+            "CLUE_WATCH_GIFT",
+            "CLUE_CONTRADICTORY_MESSAGES",
+            "CLUE_B1_MAP",
+            "CLUE_YUJIN_KNOWN",
+            "CLUE_302_OCCUPIED",
+            "CLUE_WRISTBAND_DOB",
+            "CLUE_FIRST_PHONE",
+            "CLUE_B1_UNMARKED_ROOMS",
+            "CLUE_SEA_KNOWS",
+            "CLUE_SECOND_PHONE",
+            "CLUE_CCTV_GAP",
+            "CLUE_06_CARD",
+            "CLUE_OLD_302_PASSAGE",
+            "CLUE_TESTIMONY_YUJIN",
+            "CLUE_TESTIMONY_TAEJUN",
+            "CLUE_TESTIMONY_MINSEO",
+            "CLUE_0106_LEDGER",
+            "CLUE_0106_RADIO_RESPONSE",
+            "CLUE_0106_HIDDEN_STAIR"
+          ],
+          "deductionIds": [
+            "DEDUCTION_BLACKOUT_ROUTE",
+            "DEDUCTION_PHONE_DUPLICATION",
+            "DEDUCTION_302_HIDDEN_ROUTE",
+            "DEDUCTION_SPACE_NOT_ALIGNED"
+          ],
+          "memories": [
+            {
+              "id": "MEMORY_BLACKOUT_0000",
+              "title": "자정에 열린 문",
+              "description": "정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.",
+              "acquiredOnLoop": 1,
+              "sourceSceneId": "SCENE_FIRST_DEATH",
+              "payoff": {
+                "predictsEvent": "자정 정전과 직원용 문 잠금 해제",
+                "usableFrom": 0,
+                "usableUntil": 157,
+                "eventTime": 157,
+                "changes": [
+                  "riskAvoided",
+                  "routeUnlocked",
+                  "eventPreempted"
+                ],
+                "avoidsRisk": "DEATH_ZERO_HOUR_UNKNOWN",
+                "unlocksLocationId": "B1_OPERATIONS_CORRIDOR"
+              }
+            },
+            {
+              "id": "MEMORY_RESET_WATCH",
+              "title": "돌아온 균열",
+              "description": "몸과 전화는 첫 통화 때로 돌아왔지만 아날로그 시계의 금은 그대로 남았다.",
+              "acquiredOnLoop": 1,
+              "sourceSceneId": "SCENE_LOOP2_RESET_AWAKENING",
+              "payoff": {
+                "predictsEvent": "서윤의 첫 통화가 같은 말과 같은 잡음으로 반복됨",
+                "changes": [
+                  "informationCombined",
+                  "timeSaved"
+                ]
+              }
+            },
+            {
+              "id": "MEMORY_0106_SEAL",
+              "title": "한 시 육 분의 밀폐",
+              "description": "오전 1시 06분에는 B1 문서 이송실 안에 있지 않는다. 맞은편 벽 뒤의 B2 우회 계단을 먼저 연다.",
+              "acquiredOnLoop": 2,
+              "sourceSceneId": "SCENE_CH3_DEATH_YUJIN",
+              "relatedClueIds": [
+                "CLUE_0106_HIDDEN_STAIR"
+              ],
+              "payoff": {
+                "predictsEvent": "01:06 B1 문서 이송실 자동 밀폐",
+                "usableFrom": 210,
+                "usableUntil": 223,
+                "changes": [
+                  "riskAvoided",
+                  "routeUnlocked",
+                  "eventPreempted",
+                  "npcBehaviorChanged"
+                ],
+                "avoidsRisk": "DEATH_0106_TRANSFER_SEAL",
+                "unlocksLocationId": "B1_DOCUMENT_TRANSFER"
+              }
+            }
+          ],
+          "deathIntel": [
+            {
+              "memoryId": "MEMORY_BLACKOUT_0000",
+              "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+              "title": "ZERO HOUR",
+              "description": "누가 어떻게 죽였는지는 보이지 않았다. 자정에 불이 꺼지고 직원용 문이 열린다는 사실만 남았다."
+            },
+            {
+              "memoryId": "MEMORY_0106_SEAL",
+              "deathId": "DEATH_0106_TRANSFER_SEAL",
+              "title": "01:06",
+              "description": "B1 이송실이 밀폐되면 안에서 버틸 수 없다. 맞은편 벽 뒤에는 B2로 내려가는 우회 계단이 있다.",
+              "learnedClueIds": [
+                "CLUE_0106_HIDDEN_STAIR"
+              ]
+            }
+          ],
+          "deathRecords": [
+            {
+              "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+              "loopCount": 1,
+              "time": 157,
+              "sceneId": "SCENE_FIRST_DEATH"
+            },
+            {
+              "deathId": "DEATH_0106_TRANSFER_SEAL",
+              "loopCount": 2,
+              "time": 223,
+              "sceneId": "SCENE_CH3_DEATH_YUJIN"
+            }
+          ],
+          "flags": {
+            "BAND_CUSTODY_YUJIN": true,
+            "TRUST_YUJIN_PROGRESS": 1,
+            "MINSEO_SAW_WATCH": true
+          }
+        },
+        "volatile": {
+          "time": 0,
+          "clock": {
+            "contractVersion": 1,
+            "schedule": [
+              {
+                "id": "blackout",
+                "time": 157
+              },
+              {
+                "id": "seal0106",
+                "time": 223
+              }
+            ],
+            "events": {}
+          },
+          "currentSceneId": "SCENE_CH3_RESET_2123",
+          "currentLocationId": "CAR",
+          "visitedSceneIds": [
+            "SCENE_CH3_RESET_2123"
+          ],
+          "itemIds": [],
+          "flags": {}
+        }
+      }
+    },
+    "version": 5
+  },
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_CH3_RESET_2123",
+      "lastBeatIndex": 8,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  }
+}

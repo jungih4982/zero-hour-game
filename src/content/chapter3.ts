@@ -1,3 +1,4 @@
+import { SECOND_DEATH_TIME } from './timeContract';
 import type {
   ChoiceCondition,
   ClueId,
@@ -133,7 +134,8 @@ export const seal0106Memory: MemoryRecord = {
   relatedClueIds: [CLUE_0106_HIDDEN_STAIR],
   payoff: {
     predictsEvent: '01:06 B1 문서 이송실 자동 밀폐',
-    usableFrom: 210 as GameTime,
+    // Learned knowledge can guide planning immediately; the event itself is later.
+    eventTime: SECOND_DEATH_TIME,
     usableUntil: 223 as GameTime,
     changes: ['riskAvoided', 'routeUnlocked', 'eventPreempted', 'npcBehaviorChanged'],
     avoidsRisk: SECOND_DEATH_ID,
@@ -267,7 +269,6 @@ const minimumTransferChecks = (sceneId: SceneId): ChoiceCondition => ({
 });
 
 const enter0106 = [
-  { type: 'setTime', time: 223 as GameTime },
   { type: 'gainClue', clueId: CLUE_0106_LEDGER },
 ] as const;
 
@@ -366,7 +367,6 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
         ],
       }),
     ],
-    onEnter: [{ type: 'setTime', time: 184 as GameTime }],
   },
 
   [SCENE_CH3_BAND_YUJIN]: {
@@ -632,14 +632,14 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
       }),
       to('CH3_ENTER_B1_WITH_YUJIN', '봉인한 손목밴드와 함께 유진과 내려간다.', SCENE_CH3_APPROACH_YUJIN, 10, {
         kind: 'evidence',
-        conditions: [{ type: 'flagEquals', flag: FLAG_BAND_CUSTODY_YUJIN, value: true }],
+        conditions: [{ type: 'flagEquals', flag: 'CH3_BAND_OWNER', value: 'yujin' }],
         locationId: LOCATION_B1_DOCUMENT_TRANSFER,
         effects: [{ type: 'setFlag', flag: FLAG_CH3_COMPANION, value: 'yujin', scope: 'loop' }],
       }),
       to('CH3_ENTER_B1_SOLO', '화물 승강기의 카트 바퀴 자국을 따라 혼자 내려간다.', SCENE_CH3_APPROACH_SOLO, 6, {
         conditions: [
           { type: 'flagNotEquals', flag: FLAG_TAEJUN_SAW_PHONE, value: true },
-          { type: 'flagNotEquals', flag: FLAG_BAND_CUSTODY_YUJIN, value: true },
+          { type: 'flagNotEquals', flag: 'CH3_BAND_OWNER', value: 'yujin' },
         ],
         locationId: LOCATION_B1_DOCUMENT_TRANSFER,
         effects: [{ type: 'setFlag', flag: FLAG_CH3_COMPANION, value: 'solo', scope: 'loop' }],
@@ -695,7 +695,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
 대답은 없었다.
 
 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
-    choices: [to('CH3_READ_LEDGER_T', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_TAEJUN, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_TAEJUN)] })],
+    choices: [to('CH3_READ_LEDGER_T', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_TAEJUN, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_TAEJUN)] })],
   },
 
   [SCENE_CH3_TRANSFER_YUJIN]: {
@@ -715,7 +715,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
 대답은 없었다.
 
 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
-    choices: [to('CH3_READ_LEDGER_Y', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_YUJIN, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_YUJIN)] })],
+    choices: [to('CH3_READ_LEDGER_Y', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_YUJIN, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_YUJIN)] })],
   },
 
   [SCENE_CH3_TRANSFER_SOLO]: {
@@ -735,7 +735,7 @@ export const chapter3Scenes: Readonly<Record<string, NarrativeScene>> = {
 대답은 없었다.
 
 방 안쪽 선반에는 같은 크기의 봉투가 여섯 칸으로 나뉘어 있었다. 01부터 06까지. 앞의 다섯 칸은 비어 있었고 06 칸에만 오래된 접수 라벨이 붙어 있었다.`,
-    choices: [to('CH3_READ_LEDGER_S', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_SOLO, 0, { effects: [{ type: 'setTime', time: 223 as GameTime }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_SOLO)] })],
+    choices: [to('CH3_READ_LEDGER_S', '확인한 흔적을 장부와 대조한다.', SCENE_CH3_0106_SOLO, 0, { effects: [{ type: 'waitUntil', time: SECOND_DEATH_TIME }], conditions: [minimumTransferChecks(SCENE_CH3_TRANSFER_SOLO)] })],
   },
 
   [SCENE_CH3_0106_TAEJUN]: {

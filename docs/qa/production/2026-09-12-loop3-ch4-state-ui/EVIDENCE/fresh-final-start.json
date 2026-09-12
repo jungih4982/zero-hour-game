@@ -1,0 +1,55 @@
+{
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_CH4_S_01",
+      "lastBeatIndex": 10,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  },
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 1,
+          "clueIds": [],
+          "deductionIds": [],
+          "memories": [],
+          "deathIntel": [],
+          "deathRecords": [],
+          "flags": {}
+        },
+        "volatile": {
+          "time": 0,
+          "clock": {
+            "contractVersion": 1,
+            "schedule": [
+              {
+                "id": "blackout",
+                "time": 157
+              },
+              {
+                "id": "seal0106",
+                "time": 223
+              }
+            ],
+            "events": {}
+          },
+          "currentSceneId": "SCENE_ACT0_DRIVE",
+          "currentLocationId": "MOUNTAIN_ROAD",
+          "visitedSceneIds": [
+            "SCENE_ACT0_DRIVE"
+          ],
+          "itemIds": [],
+          "flags": {}
+        }
+      }
+    },
+    "version": 6
+  }
+}

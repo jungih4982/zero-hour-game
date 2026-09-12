@@ -25,7 +25,7 @@ import {
   RotateCcw,
   Search,
 } from 'lucide-react-native';
-import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from 'react-native-svg';
 import { TypewriterText } from '../../components/TypewriterText';
 import {
   SCENE_ACT0_ARRIVAL,
@@ -81,6 +81,7 @@ import {
   SCENE_CH4_OPENING,
 } from '../content/chapter3';
 import { storyScenes } from '../content/story';
+import { chapter4ProductionStops } from '../content/chapter4';
 import { getAvailableChoices } from '../engine';
 import type { NarrativeScene } from '../engine';
 import { useNarrativeStore } from '../store/useNarrativeStore';
@@ -132,6 +133,7 @@ import {
 import {
   getCharacterStageAnchors,
   getCoverPlacement,
+  getArtInvestigationTarget,
   getGameLayout,
   getInvestigationHotspotPosition,
 } from './layout';
@@ -215,7 +217,7 @@ type CharacterVisual = {
   source: ImageSourcePropType;
   name: string;
   expression: 'neutral' | 'tense' | 'frightened' | 'guarded' | 'alarmed' | 'wary' | 'confused' | 'watchful' | 'cold' | 'clinical';
-  crop: 'bust' | 'full';
+  crop: 'bust' | 'full' | 'threeQuarter';
   scale?: number;
   offsetY?: number;
 };
@@ -272,7 +274,7 @@ const defaultCharacterVisuals: Readonly<
     source: characterSprites.minseoClinical,
     name: '차민서',
     expression: 'clinical',
-    crop: 'full',
+    crop: 'threeQuarter',
     scale: 1.02,
   },
 };
@@ -570,7 +572,8 @@ function getBackground(scene: NarrativeScene, portrait = false): ImageSourceProp
     return backgrounds.evacuationMap;
   }
   if (scene.locationId === '1F_STAFF_DOOR') {
-    return isWatchStopped(scene) ? backgrounds.staffDoorBlackout : backgrounds.staffDoor;
+    return isWatchStopped(scene) || scene.id === 'SCENE_CH4_S_01'
+      ? backgrounds.staffDoorBlackout : backgrounds.staffDoor;
   }
   if (scene.locationId === 'ROOM_302') {
     return cleared302SceneIds.has(scene.id)
@@ -660,7 +663,9 @@ function CharacterSprite({
   choiceMode: boolean;
 }) {
   const scale = character.scale ?? 1;
-  const cropFullbodyToPortrait = portrait && character.crop === 'full';
+  const cropFullbodyToPortrait = portrait && character.crop !== 'bust';
+  // v03 ends at the thighs; the full-body zoom otherwise makes her face much larger.
+  const threeQuarterPortrait = cropFullbodyToPortrait && character.crop === 'threeQuarter' && !duo;
   const illumination = useRef(new Animated.Value(active ? 1 : 0)).current;
   const entranceOpacity = useRef(new Animated.Value(0)).current;
   const expressionMotion = useRef(new Animated.Value(0)).current;
@@ -762,6 +767,7 @@ function CharacterSprite({
           style={[
             styles.characterShadow,
             cropFullbodyToPortrait && styles.characterPortraitFull,
+            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
             stopped && styles.characterShadowStopped,
             !active && styles.characterShadowInactive,
@@ -774,6 +780,7 @@ function CharacterSprite({
           style={[
             styles.characterImage,
             cropFullbodyToPortrait && styles.characterPortraitFull,
+            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
             { opacity: visibleCharacterOpacity },
           ]}
@@ -784,6 +791,7 @@ function CharacterSprite({
           style={[
             styles.characterDimmer,
             cropFullbodyToPortrait && styles.characterPortraitFull,
+            threeQuarterPortrait && styles.characterPortraitThreeQuarter,
             cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull,
             { opacity: dimmerOpacity },
           ]}
@@ -928,7 +936,7 @@ function SceneBackground({
 }
 
 export function NarrativePlayer() {
-  const { width, height } = useWindowDimensions();
+  const { width, height, fontScale } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const viewportWidth = Math.max(1, width);
   const viewportHeight = Math.max(1, height);
@@ -981,7 +989,8 @@ export function NarrativePlayer() {
     )),
     [engineState.volatile.visitedSceneIds],
   );
-  const choices = getAvailableChoices(scene, engineState);
+  const availableChoices = getAvailableChoices(scene, engineState);
+  const choices = scene.choices.filter(choice => choice.unavailableReason || availableChoices.includes(choice));
   const investigation = sceneInvestigations[scene.id];
   const sideDialogue = layout.overlayDialogue
     && (tabletSized || investigation?.fitHotspotsToStage === true);
@@ -1044,7 +1053,8 @@ export function NarrativePlayer() {
   );
   const deathMemoryComplete = isDeathMemoryComplete(deathMemoryState, deathMemorySequence);
   const isTitle = scene.id === SCENE_VERTICAL_SLICE_TITLE;
-  const isComplete = scene.id === SCENE_CH4_MILESTONE_A_END;
+  const isProductionStop = chapter4ProductionStops.includes(scene.id);
+  const isComplete = isProductionStop && inputState.phase === 'ready' && isLastBeat;
   const stopped = isWatchStopped(scene);
   const hasPersistentMemory = engineState.persistent.memories.length > 0;
   const fieldRecordCount = engineState.persistent.clueIds.length
@@ -1271,6 +1281,13 @@ export function NarrativePlayer() {
     insets.right + 16,
   );
   const dialogueDockRight = Math.max(insets.right + 16, layout.horizontalGutter);
+  useEffect(() => {
+    if (__DEV__ && process.env.EXPO_PUBLIC_LAYOUT_QA === '1') {
+      console.info('[ZH_LAYOUT_QA]', JSON.stringify({ scene: scene.id, width, height,
+        fontScale, insets, dialogueHeight,
+        sideDialogue, time: engineState.volatile.time }));
+    }
+  }, [scene.id, width, height, fontScale, insets, dialogueHeight, sideDialogue, engineState.volatile.time]);
   const dialogueContentMaxWidth = tabletPortrait
     ? Math.min(640, viewportWidth - dialogueSidePadding * 2)
     : sideDialogue
@@ -1353,7 +1370,7 @@ export function NarrativePlayer() {
                   height={stagedSpriteHeight}
                   stopped={stopped}
                   active={active}
-                  portrait={twoCharacterBeat || (portraitStage && stagedCharacter.crop === 'full')}
+                  portrait={twoCharacterBeat || (portraitStage && stagedCharacter.crop !== 'bust')}
                   duo={twoCharacterBeat}
                   mirrored={Boolean(twoCharacterBeat && duoCast?.mirrorLeft && index === 0)}
                   choiceMode={sceneReady}
@@ -1400,7 +1417,7 @@ export function NarrativePlayer() {
             <View style={styles.incidentClockHeader}>
               <Clock color="#b9cbd8" size={tabletUi ? 13 : 11} strokeWidth={1.8} />
               <Text style={[styles.incidentClockLabel, tabletUi && styles.incidentClockLabelTablet]}>
-                사건 시각
+                {engineState.volatile.clock?.contractVersion === 0 ? '이전 저장 시각' : '사건 시각'}
               </Text>
               {timeShiftCue !== undefined ? (
                 <Text style={[styles.timeShiftText, tabletUi && styles.timeShiftTextTablet]}>
@@ -1463,25 +1480,40 @@ export function NarrativePlayer() {
               const inspected = isHotspotInspected(engineState, scene.id, hotspot.id);
               const available = canInspectHotspot(engineState, investigation, hotspot);
               const missed = !inspected && !available;
+              const asset = Image.resolveAssetSource(backgroundVisual.source);
+              const anchored = hotspot.artAnchor ? getArtInvestigationTarget({
+                anchor: hotspot.artAnchor, offsetX: hotspot.artTargetOffsetX, placement: getCoverPlacement({ viewportWidth, viewportHeight,
+                  imageWidth: asset.width, imageHeight: asset.height, focalX: backgroundVisual.focalX,
+                  focalY: backgroundVisual.focalY, zoom: backgroundVisual.zoom }),
+                viewportWidth, viewportHeight, dialogueHeight, dialogueWidth: layout.dialogWidth,
+                dialogueRight: dialogueDockRight, sideDialogue, safeTop: insets.top,
+              }) : undefined;
               return (
+                <React.Fragment key={hotspot.id}>
+                {anchored && !missed ? <Svg pointerEvents="none" style={StyleSheet.absoluteFillObject}>
+                  <Line x1={anchored.left+28} y1={anchored.top+28}
+                    x2={anchored.object.x} y2={anchored.object.y}
+                    stroke="rgba(190,218,233,0.65)" strokeWidth={1} />
+                  <Circle cx={anchored.object.x} cy={anchored.object.y} r={3} fill="#d8eaf1" />
+                </Svg> : null}
                 <Pressable
                   accessibilityRole="button"
                   accessibilityLabel={missed
-                    ? `${hotspot.label} 조사 기회 종료`
-                    : `${hotspot.label} 조사`}
+                    ? `${hotspot.targetLabel ?? hotspot.label} 조사 기회 종료`
+                    : `${hotspot.targetLabel ?? hotspot.label} 조사`}
                   disabled={inspected || missed}
                   key={hotspot.id}
                   onPress={() => handleInspectHotspot(hotspot.id)}
                   style={({ pressed }) => [
                     styles.hotspot,
-                    investigation.fitHotspotsToStage ? getInvestigationHotspotPosition({
+                    anchored ? { left: anchored.left, top: anchored.top } : (investigation.fitHotspotsToStage ? getInvestigationHotspotPosition({
                       x: hotspot.x, y: hotspot.y, viewportWidth, viewportHeight,
                       dialogueHeight, dialogueWidth: layout.dialogWidth,
                       dialogueRight: dialogueDockRight, sideDialogue, safeTop: insets.top,
                     }) : {
                       left: viewportWidth * hotspot.x - 28,
                       top: viewportHeight * hotspot.y - 28,
-                    },
+                    }),
                     inspected && styles.hotspotInspected,
                     missed && styles.hotspotMissed,
                     pressed && styles.hotspotPressed,
@@ -1496,7 +1528,9 @@ export function NarrativePlayer() {
                   <Text style={styles.hotspotLabel}>
                     {missed ? '놓침' : inspected ? '확인' : `${index + 1}`}
                   </Text>
+                  {hotspot.targetLabel ? <Text style={styles.hotspotTargetLabel}>{hotspot.targetLabel}</Text> : null}
                 </Pressable>
+                </React.Fragment>
               );
             })
           : null}
@@ -1900,7 +1934,8 @@ export function NarrativePlayer() {
                     return (
                       <Pressable
                         accessibilityRole="button"
-                        accessibilityLabel={`${visibleChoiceText}${timeCost > 0 ? `, 사건 시각 ${timeCost}분 소요` : ''}`}
+                        accessibilityLabel={`${visibleChoiceText}${choice.unavailableReason ? `, ${choice.unavailableReason}` : timeCost > 0 ? `, 사건 시각 ${timeCost}분 소요` : ''}`}
+                        disabled={Boolean(choice.unavailableReason)}
                         key={choice.id}
                         onPress={() => {
                           if (timeCost > 0) setTimeShiftCue(timeCost);
@@ -1927,6 +1962,7 @@ export function NarrativePlayer() {
                           continuation && styles.continuationButton,
                           foreknowledge && styles.foreknowledgeButton,
                           evidenceChoice && styles.evidenceChoiceButton,
+                          choice.unavailableReason ? { opacity: 0.5 } : null,
                           pressed && styles.choiceButtonPressed,
                         ]}
                       >
@@ -1941,9 +1977,9 @@ export function NarrativePlayer() {
                           </Text>
                           <View style={styles.choiceMetaRow}>
                             <Text style={[styles.choiceMeta, tabletUi && styles.choiceMetaTablet, foreknowledge && styles.foreknowledgeMeta, evidenceChoice && styles.evidenceChoiceMeta]}>
-                              {presentation.meta}
+                              {choice.unavailableReason ?? presentation.meta}
                             </Text>
-                            {timeCost > 0 ? (
+                            {timeCost > 0 && !choice.unavailableReason ? (
                               <View style={[styles.choiceTimeBadge, tabletUi && styles.choiceTimeBadgeTablet]}>
                                 <Clock color="#b7c9d8" size={tabletUi ? 12 : 10} strokeWidth={1.8} />
                                 <Text style={[styles.choiceTimeText, tabletUi && styles.choiceTimeTextTablet]}>+{timeCost}분</Text>
@@ -1961,8 +1997,8 @@ export function NarrativePlayer() {
                   })}
                   {isComplete ? (
                     <View style={styles.endingSummary}>
-                      <Text style={styles.endingEyebrow}>이번 밤에 확인한 것</Text>
-                      <Text style={styles.endingFinding}>01:06 밀폐를 기억한 채 세 번째 밤을 시작했다. 다음에는 이송실 밖에서 맞은편 계단을 먼저 확인한다.</Text>
+                      <Text style={styles.endingEyebrow}>여기까지 저장되었습니다</Text>
+                      <Text style={styles.endingFinding}>이 경로의 다음 조사 구간은 제작 중입니다. 현재 선택과 기록은 이어하기에 남습니다.</Text>
                       <View style={styles.endingStats}>
                         {[
                           ['반복', engineState.persistent.loopCount],
@@ -2332,6 +2368,12 @@ const styles = StyleSheet.create({
     width: '265%',
     height: '265%',
   },
+  characterPortraitThreeQuarter: {
+    top: '-2%',
+    left: '-37.5%',
+    width: '175%',
+    height: '175%',
+  },
   hotspot: {
     position: 'absolute',
     zIndex: 22,
@@ -2361,6 +2403,9 @@ const styles = StyleSheet.create({
   hotspotMissed: { opacity: 0.34, borderColor: 'rgba(126, 77, 86, 0.42)' },
   hotspotPressed: { transform: [{ scale: 0.94 }] },
   hotspotLabel: { color: '#afc2d1', fontSize: 7, fontWeight: '900', marginTop: 1 },
+  hotspotTargetLabel: { position: 'absolute', top: 58, alignSelf: 'center', color: '#e1edf4',
+    fontSize: 11, fontWeight: '700', paddingHorizontal: 5, paddingVertical: 2,
+    borderRadius: 3, backgroundColor: 'rgba(3,10,16,0.88)' },
   hotspotMissedMark: { color: '#9e6e78', fontSize: 17, lineHeight: 17, fontWeight: '500' },
   choiceOutcomeCue: {
     position: 'absolute',

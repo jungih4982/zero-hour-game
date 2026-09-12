@@ -1,0 +1,80 @@
+{
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_ACT2_WRISTBAND",
+      "lastBeatIndex": 10,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  },
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 1,
+          "clueIds": [
+            "CLUE_WATCH_GIFT",
+            "CLUE_CONTRADICTORY_MESSAGES",
+            "CLUE_B1_MAP",
+            "CLUE_YUJIN_KNOWN",
+            "CLUE_302_OCCUPIED",
+            "CLUE_WRISTBAND_DOB"
+          ],
+          "deductionIds": [],
+          "memories": [],
+          "deathIntel": [],
+          "deathRecords": [],
+          "flags": {}
+        },
+        "volatile": {
+          "time": 94,
+          "clock": {
+            "contractVersion": 1,
+            "schedule": [
+              {
+                "id": "blackout",
+                "time": 157
+              },
+              {
+                "id": "seal0106",
+                "time": 223
+              }
+            ],
+            "events": {}
+          },
+          "currentSceneId": "SCENE_ACT2_REMOTE_KNOWLEDGE",
+          "currentLocationId": "3F_CORRIDOR",
+          "visitedSceneIds": [
+            "SCENE_ACT0_DRIVE",
+            "SCENE_ACT0_WATCH_CALL",
+            "SCENE_ACT0_MESSAGES",
+            "SCENE_ACT0_LAST_CALL",
+            "SCENE_ACT0_ARRIVAL",
+            "SCENE_ACT1_YUJIN_FIRST",
+            "SCENE_ACT1_YUJIN_SEARCH",
+            "SCENE_ACT1_YUJIN_DENIAL",
+            "SCENE_ACT1_YUJIN_WARNING",
+            "SCENE_ACT2_THIRD_FLOOR",
+            "SCENE_ACT2_NURSE_AT_302",
+            "SCENE_ACT2_ROOM_CONTRADICTION",
+            "SCENE_ACT2_WRISTBAND",
+            "SCENE_ACT2_REMOTE_KNOWLEDGE"
+          ],
+          "itemIds": [],
+          "flags": {
+            "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:recent-use-traces": true,
+            "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:missing-phone": true,
+            "ROOM_302_WRISTBAND_FOUND": true,
+            "INVESTIGATED:SCENE_ACT2_ROOM_CONTRADICTION:torn-wristband": true
+          }
+        }
+      }
+    },
+    "version": 6
+  }
+}

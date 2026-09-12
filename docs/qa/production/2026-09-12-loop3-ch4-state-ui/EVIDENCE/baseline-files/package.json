@@ -1,0 +1,48 @@
+{
+  "name": "zero-hour-game",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test:narrative": "tsx scripts/run-narrative-simulation.ts",
+    "test:dialogue": "tsx scripts/verify-dialogue-source.ts",
+    "test:beats": "tsx scripts/test-dialogue-beats.ts",
+    "test:duration": "tsx scripts/measure-vertical-slice.ts",
+    "test:layout": "tsx scripts/test-responsive-layout.ts",
+    "test:input": "tsx scripts/test-narrative-input.ts",
+    "test:investigation": "tsx scripts/test-investigation.ts",
+    "test:deductions": "tsx scripts/test-deductions.ts",
+    "test:death-memory": "tsx scripts/test-death-memory.ts",
+    "test:choice-presentation": "tsx scripts/test-choice-presentation.ts",
+    "test:characters": "tsx scripts/test-character-presentation.ts",
+    "test:onboarding": "tsx scripts/test-onboarding.ts",
+    "test:chapter3": "tsx scripts/verify-chapter3-source.ts && tsx scripts/test-chapter3.ts",
+    "test:time": "tsx scripts/test-time-contract.ts && tsx scripts/test-foreknowledge-history.ts",
+    "test": "npm run typecheck && npm run test:dialogue && npm run test:beats && npm run test:characters && npm run test:narrative && npm run test:duration && npm run test:layout && npm run test:input && npm run test:investigation && npm run test:deductions && npm run test:death-memory && npm run test:choice-presentation && npm run test:onboarding && npm run test:chapter3 && npm run test:time"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "babel-preset-expo": "~54.0.10",
+    "expo": "~54.0.36",
+    "expo-av": "~16.0.8",
+    "expo-status-bar": "~3.0.9",
+    "lucide-react-native": "^1.32.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-svg": "15.12.1",
+    "react-native-web": "^0.21.0",
+    "zustand": "4.4.7"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.0",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}

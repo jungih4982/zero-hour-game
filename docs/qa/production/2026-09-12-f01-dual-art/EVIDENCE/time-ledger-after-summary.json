@@ -1,0 +1,68 @@
+{
+  "currentBackwards": [],
+  "anchorOnlyBackwards": [],
+  "currentStates": 10592,
+  "endStates": 1920,
+  "groups": {
+    "DO_NOT_EXPLAIN_LOOP_YET/TELL_YUJIN_ONLY_PHONE_FACT/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 384
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/TELL_YUJIN_ONLY_PHONE_FACT/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 128
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/REVEAL_EXACT_FOREKNOWLEDGE/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 384
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/REVEAL_EXACT_FOREKNOWLEDGE/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 128
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/DOCUMENT_PHONE_PARADOX/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 192
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/DOCUMENT_PHONE_PARADOX/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 64
+    },
+    "TEST_MESSAGE_ANOMALY/TELL_YUJIN_ONLY_PHONE_FACT/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 192
+    },
+    "TEST_MESSAGE_ANOMALY/TELL_YUJIN_ONLY_PHONE_FACT/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 64
+    },
+    "TEST_MESSAGE_ANOMALY/REVEAL_EXACT_FOREKNOWLEDGE/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 192
+    },
+    "TEST_MESSAGE_ANOMALY/REVEAL_EXACT_FOREKNOWLEDGE/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 64
+    },
+    "TEST_MESSAGE_ANOMALY/DOCUMENT_PHONE_PARADOX/taejun": {
+      "min": 177,
+      "max": 184,
+      "count": 96
+    },
+    "TEST_MESSAGE_ANOMALY/DOCUMENT_PHONE_PARADOX/cart": {
+      "min": 178,
+      "max": 183,
+      "count": 32
+    }
+  }
+}

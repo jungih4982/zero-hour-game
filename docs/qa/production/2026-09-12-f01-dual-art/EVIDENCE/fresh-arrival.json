@@ -1,0 +1,62 @@
+{
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 1,
+          "clueIds": [
+            "CLUE_WATCH_GIFT",
+            "CLUE_CONTRADICTORY_MESSAGES"
+          ],
+          "deductionIds": [],
+          "memories": [],
+          "deathIntel": [],
+          "deathRecords": [],
+          "flags": {}
+        },
+        "volatile": {
+          "time": 52,
+          "clock": {
+            "contractVersion": 1,
+            "schedule": [
+              {
+                "id": "blackout",
+                "time": 157
+              },
+              {
+                "id": "seal0106",
+                "time": 223
+              }
+            ],
+            "events": {}
+          },
+          "currentSceneId": "SCENE_ACT0_ARRIVAL",
+          "currentLocationId": "HOSPITAL_EXTERIOR",
+          "visitedSceneIds": [
+            "SCENE_ACT0_DRIVE",
+            "SCENE_ACT0_WATCH_CALL",
+            "SCENE_ACT0_MESSAGES",
+            "SCENE_ACT0_LAST_CALL",
+            "SCENE_ACT0_ARRIVAL"
+          ],
+          "itemIds": [],
+          "flags": {}
+        }
+      }
+    },
+    "version": 5
+  },
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_ACT0_ARRIVAL",
+      "lastBeatIndex": 8,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  }
+}

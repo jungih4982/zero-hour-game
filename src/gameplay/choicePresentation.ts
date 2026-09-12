@@ -29,6 +29,8 @@ export type ChoiceGroupPresentation = {
 };
 
 const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
+  CH4_ROUTE_TAEJUN: { meta: '이동 50분 · 위험을 먼저 알린다' },
+  CH4_ROUTE_SEA: { meta: '이동 50분 · 자정까지 대기' },
   CH3_BAND_TO_YUJIN: { meta: '사진 보존 · 원본은 유진 보관', outcome: { eyebrow: '보관 경로', title: '유진이 봉인 봉투를 보관한다', detail: '원본을 다시 확인하려면 유진의 협조가 필요하다.', tone: 'evidence' } },
   CH3_BAND_SHOW_TAEJUN: { meta: '보안 촬영 · 원본 회수', outcome: { eyebrow: '시각 기록', title: '태준이 원본을 확인했다', detail: '보안 기록에 소지 시각이 남고 원본은 돌려받는다.', tone: 'evidence' } },
   CH3_BAND_KEEP_ORIGINAL: { meta: '원본 유지 · 유진의 경계', outcome: { eyebrow: '보관 경로', title: '원본은 직접 보관한다', detail: '직접 대조할 수 있지만 유진의 협조는 얻지 못했다.', tone: 'risk' } },
@@ -86,14 +88,14 @@ const choicePresentations: Readonly<Record<string, ChoicePresentation>> = {
     meta: '시간 단축  ·  먼저 도착',
     outcome: {
       eyebrow: '시간 선점',
-      title: '첫 번째 밤보다 8분 앞섰다',
+      title: '첫 번째 밤보다 먼저 도착했다',
       detail: '설명 대신 사건이 벌어질 장소로 향한다.',
       tone: 'route',
     },
     intervention: {
       known: '통화로 상황을 설명하는 동안 도착이 늦어졌다',
       changed: '설명을 보류하고 병원으로 바로 향한다',
-      consequence: '검증을 미룬 대신 첫 번째 밤보다 8분을 확보했다.',
+      consequence: '검증을 미룬 대신 첫 번째 밤보다 먼저 도착했다.',
     },
   },
   TEST_MESSAGE_ANOMALY: {

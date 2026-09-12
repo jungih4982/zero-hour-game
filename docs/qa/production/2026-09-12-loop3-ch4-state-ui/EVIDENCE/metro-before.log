@@ -1,0 +1,12 @@
+Starting project at C:\Dev\zero-hour-game
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 675ms node_modules\expo\AppEntry.js (2673 modules)
+Android Bundled 404ms node_modules\expo\AppEntry.js (2532 modules)
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 39ms node_modules\expo\AppEntry.js (1 module)
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 39ms node_modules\expo\AppEntry.js (1 module)

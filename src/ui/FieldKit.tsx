@@ -22,6 +22,7 @@ import {
 import type { ClueId, DeductionId, LocationId, NarrativeEngineState } from '../engine';
 import { canFormDeduction, deductions, isCorrectDeductionConnection } from '../gameplay/deductions';
 import { formatIncidentTime } from '../gameplay/gameClock';
+import { describeBandState, transferRoomDetail } from '../gameplay/fieldKnowledge';
 
 export type FieldKitTab = 'map' | 'people' | 'evidence' | 'deduction' | 'items';
 type PictureCopy = { title: string; detail: string; image: ImageSourcePropType };
@@ -127,6 +128,9 @@ const locations: readonly LocationEntry[] = [
 ];
 
 const clueCopy: Readonly<Record<string, PictureCopy>> = {
+  CCTV_ORIGINAL_GAP: { title: '58초의 영상 공백', detail: '태준과 함께 측정했다. 정전 전에 카메라 신호가 끊겼다가 58초 뒤 돌아왔다.', image: pictures.corridor },
+  DOUBLE_LABEL: { title: '겹쳐 출력된 두 라벨', detail: '같은 이름과 입실 시각이지만 바코드가 다르고, 출력 이력은 한 번뿐이었다.', image: pictures.lobby },
+  B1_MANUAL_AIR_VALVE: { title: '수동 산소 밸브 위치', detail: '유진이 그려 준 B1 수동 밸브 위치.', image: pictures.b1 },
   CLUE_WATCH_GIFT: { title: '오래된 손목시계', detail: '서윤이 선물한 시계. 시간은 정확했다.', image: pictures.death },
   CLUE_CONTRADICTORY_MESSAGES: { title: '서로 부정하는 문자', detail: '같은 대화창에서 오지 말라는 문자와 그 문자를 믿지 말라는 문자가 차례로 도착했다.', image: pictures.road },
   CLUE_YUJIN_KNOWN: { title: '먼저 나온 이름', detail: '서윤은 듣지 못했어야 할 유진의 이름을 알고 있었다.', image: pictures.corridor },
@@ -152,6 +156,7 @@ const clueCopy: Readonly<Record<string, PictureCopy>> = {
 };
 
 const itemCopy: Readonly<Record<string, PictureCopy>> = {
+  B2_SECURITY_KEY: { title: 'B2 보안 열쇠', detail: '이번 밤 태준의 협조로 확보했다. 죽음 뒤에는 이 밤에 남는다.', image: pictures.b1 },
   ITEM_WRISTBAND_ORIGINAL: { title: '손목밴드 원본', detail: '이번 밤에 302호에서 가져온 찢어진 밴드. 죽음 뒤에는 이 밤에 남는다.', image: pictures.room302 },
   ITEM_FIRST_PHONE_PHOTO: { title: '봉투 속 전화 사진', detail: '오른쪽 아래의 흠집까지 서윤의 전화와 일치한다.', image: pictures.seoyun },
   ITEM_SECOND_PHONE: { title: '침대 아래의 휴대전화', detail: '첫 번째 전화와 같은 흠집이 있고 동시에 울린다.', image: pictures.room302 },
@@ -230,7 +235,7 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
         <View style={[styles.console, tablet && styles.consoleTablet, { paddingTop: Math.max(topInset, 14), paddingBottom: Math.max(bottomInset, 10) }]}>
           <View style={styles.header}>
             <View style={styles.brandBlock}>
-              <Text style={styles.systemLabel}>MNEMOSYNE // FIELD LINK</Text>
+              <Text style={styles.systemLabel}>현장 기록</Text>
               <Text style={styles.title}>백야의료원</Text>
               <View style={styles.liveRow}><View style={styles.liveDot} /><Text style={styles.liveText}>{tabs.find((tab) => tab.id === activeTab)?.label} 기록 동기화 중</Text></View>
             </View>
@@ -249,7 +254,7 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
               <SectionHeading title="현재 위치" count={`${visitedLocations.length}곳 확인`} />
               <ImageBackground source={selectedLocation.image} resizeMode="cover" style={styles.locationHero} imageStyle={styles.roundedImage}>
                 <View style={styles.locationHeroShade} /><View style={styles.locationReticle}><View style={styles.reticleCore} /></View>
-                <View style={styles.locationCopy}><Text style={styles.locationFloor}>{selectedLocation.floor}</Text><Text style={styles.locationName}>{selectedLocation.name}</Text><Text style={styles.locationDetail}>{selectedLocation.detail}</Text></View>
+                <View style={styles.locationCopy}><Text style={styles.locationFloor}>{selectedLocation.floor}</Text><Text style={styles.locationName}>{selectedLocation.name}</Text><Text style={styles.locationDetail}>{selectedLocation.id === 'B1_DOCUMENT_TRANSFER' ? transferRoomDetail(state) : selectedLocation.detail}</Text></View>
                 {selectedLocation.id === state.volatile.currentLocationId ? <View style={styles.currentTag}><Text style={styles.currentTagText}>현재</Text></View> : null}
               </ImageBackground>
               <SectionHeading title="확인한 동선" count="TOUCH TO TRACE" />
@@ -312,11 +317,12 @@ export function FieldKit({ state, visitedLocationIds, onClose, topInset, bottomI
                 const copy = clueCopy[clueId] ?? { title: '확인되지 않은 단서', detail: String(clueId), image: fieldBoard };
                 return <View key={clueId} style={styles.evidenceCard}><Image source={copy.image} resizeMode="cover" style={styles.evidenceImage} /><View style={styles.evidenceImageShade} /><View style={styles.evidenceNumber}><Text style={styles.evidenceNumberText}>{String(index + 1).padStart(2, '0')}</Text></View><View style={styles.evidenceCopy}><Text numberOfLines={1} style={styles.evidenceTitle}>{copy.title}</Text><Text numberOfLines={2} style={styles.evidenceDetail}>{copy.detail}</Text></View></View>;
               })}</View>}
-              {state.persistent.memories.length > 0 ? <><SectionHeading title="죽어도 남은 기억" count={state.persistent.memories.length} /><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.memoryRail}>{state.persistent.memories.map((memory) => <ImageBackground key={memory.id} source={pictures.death} resizeMode="cover" style={styles.memoryCard} imageStyle={styles.roundedImage}><View style={styles.memoryCardShade} /><Text style={styles.memoryGlyph}>◈</Text><Text numberOfLines={1} style={styles.memoryTitle}>{memory.title}</Text><Text numberOfLines={2} style={styles.memoryDetail}>{memory.description}</Text></ImageBackground>)}</ScrollView></> : null}
+              {state.persistent.memories.length > 0 ? <><SectionHeading title="죽어도 남은 기억" count={state.persistent.memories.length} /><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.memoryRail}>{state.persistent.memories.map((memory) => <ImageBackground key={memory.id} source={pictures.death} resizeMode="cover" style={styles.memoryCard} imageStyle={styles.roundedImage}><View style={styles.memoryCardShade} /><Text style={styles.memoryGlyph}>◈</Text><Text style={styles.memoryTitle}>{memory.title}</Text><Text style={styles.memoryDetail}>{memory.description}</Text>{memory.payoff?.eventTime !== undefined ? <Text style={styles.memoryDetail}>사건 {formatIncidentTime(memory.payoff.eventTime)} · 기억은 미리 활용할 수 있다.</Text> : null}</ImageBackground>)}</ScrollView></> : null}
             </View> : null}
 
             {activeTab === 'items' ? <View>
               <SectionHeading title="현재 소지품" count={state.volatile.itemIds.length} />
+              {describeBandState(state) ? <Text style={styles.locationDetail}>{describeBandState(state)}</Text> : null}
               {state.volatile.itemIds.length === 0 ? <EmptyState>지금 사용할 수 있는 물건이 없다.</EmptyState> : state.volatile.itemIds.map((itemId, index) => {
                 const copy = itemCopy[itemId] ?? { title: '확인되지 않은 물건', detail: String(itemId), image: fieldBoard };
                 return <ImageBackground key={itemId} source={copy.image} resizeMode="cover" style={styles.itemCard} imageStyle={styles.roundedImage}><View style={styles.itemCardShade} /><View style={styles.itemIndex}><Text style={styles.itemIndexText}>{String(index + 1).padStart(2, '0')}</Text></View><View style={styles.itemCopy}><Text style={styles.itemKind}>PHYSICAL EVIDENCE</Text><Text style={styles.itemTitle}>{copy.title}</Text><Text style={styles.itemDetail}>{copy.detail}</Text></View></ImageBackground>;
@@ -391,7 +397,7 @@ const styles = StyleSheet.create({
   personDetail: { color: '#8998a5', fontSize: 9, lineHeight: 14, marginTop: 5 },
   personDetailTablet: { fontSize: 11, lineHeight: 17 },
   evidenceGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 9 }, evidenceCard: { width: '48.7%', height: 190, borderRadius: 13, overflow: 'hidden', backgroundColor: '#0b1119', borderWidth: 1, borderColor: 'rgba(131,156,179,0.2)' }, evidenceImage: { width: '100%', height: 116 }, evidenceImageShade: { position: 'absolute', top: 62, left: 0, right: 0, height: 72, backgroundColor: 'rgba(5,10,16,0.46)' }, evidenceNumber: { position: 'absolute', top: 9, left: 9, width: 28, height: 24, borderRadius: 6, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(3,8,13,0.78)' }, evidenceNumberText: { color: '#c5d4df', fontSize: 8, fontWeight: '900' }, evidenceCopy: { flex: 1, padding: 10, paddingTop: 8 }, evidenceTitle: { color: '#e9eef3', fontSize: 12, fontWeight: '800' }, evidenceDetail: { color: '#7f8e9d', fontSize: 8, lineHeight: 12, marginTop: 4 },
-  memoryRail: { gap: 9, paddingRight: 10 }, memoryCard: { width: 230, height: 128, borderRadius: 13, overflow: 'hidden', padding: 13, justifyContent: 'flex-end', borderWidth: 1, borderColor: 'rgba(172,140,224,0.36)' }, memoryCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(27,15,43,0.64)' }, memoryGlyph: { position: 'absolute', top: 12, right: 13, color: '#bda0ec', fontSize: 18 }, memoryTitle: { color: '#ebdfff', fontSize: 13, fontWeight: '800' }, memoryDetail: { color: '#a999bb', fontSize: 9, lineHeight: 13, marginTop: 4 },
+  memoryRail: { gap: 9, paddingRight: 10 }, memoryCard: { width: 230, minHeight: 128, borderRadius: 13, overflow: 'hidden', padding: 13, paddingTop: 36, justifyContent: 'flex-end', borderWidth: 1, borderColor: 'rgba(172,140,224,0.36)' }, memoryCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(27,15,43,0.64)' }, memoryGlyph: { position: 'absolute', top: 12, right: 13, color: '#bda0ec', fontSize: 18 }, memoryTitle: { color: '#ebdfff', fontSize: 13, fontWeight: '800' }, memoryDetail: { color: '#a999bb', fontSize: 10, lineHeight: 15, marginTop: 4 },
   itemCard: { height: 182, marginBottom: 10, borderRadius: 15, overflow: 'hidden', flexDirection: 'row', alignItems: 'flex-end', padding: 15, borderWidth: 1, borderColor: 'rgba(139,165,187,0.28)' }, itemCardShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(3,8,13,0.5)' }, itemIndex: { width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(8,15,22,0.82)', borderWidth: 1, borderColor: 'rgba(163,188,207,0.35)' }, itemIndexText: { color: '#dae6ef', fontSize: 9, fontWeight: '900' }, itemCopy: { flex: 1, marginLeft: 12, padding: 10, borderRadius: 10, backgroundColor: 'rgba(5,10,16,0.74)' }, itemKind: { color: '#758da0', fontSize: 6, fontWeight: '900', letterSpacing: 1.2 }, itemTitle: { color: '#eef3f6', fontSize: 15, fontWeight: '800', marginTop: 3 }, itemDetail: { color: '#94a3af', fontSize: 9, lineHeight: 14, marginTop: 4 },
   deductionCard: { marginBottom: 12, borderRadius: 15, overflow: 'hidden', padding: 15, borderWidth: 1, borderColor: 'rgba(159,126,212,0.34)' }, deductionShade: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(8,7,16,0.8)' }, deductionHeader: { flexDirection: 'row', alignItems: 'center', gap: 10 }, deductionSeal: { width: 42, height: 42, borderRadius: 21, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(116,81,166,0.18)', borderWidth: 1, borderColor: 'rgba(176,142,225,0.32)' }, deductionSealFormed: { backgroundColor: 'rgba(142,100,198,0.3)', borderColor: 'rgba(213,190,246,0.56)' }, deductionHeaderCopy: { flex: 1 }, deductionState: { color: '#8674a7', fontSize: 6, fontWeight: '900', letterSpacing: 1.15 }, deductionTitle: { color: '#eee8f6', fontSize: 16, fontWeight: '800', marginTop: 2 }, deductionProgress: { color: '#baa1e6', fontSize: 11, fontWeight: '900' }, deductionDescription: { color: '#92909d', fontSize: 10, lineHeight: 16, marginTop: 11 },
   formedConnection: { flexDirection: 'row', alignItems: 'center', marginTop: 14 }, factNode: { flex: 1, minHeight: 94, padding: 11, justifyContent: 'center', borderRadius: 10, backgroundColor: 'rgba(73,99,122,0.2)', borderWidth: 1, borderColor: 'rgba(116,142,165,0.2)' }, factNodeMemory: { backgroundColor: 'rgba(104,72,148,0.24)', borderColor: 'rgba(166,132,214,0.28)' }, factLabel: { color: '#8b7aa9', fontSize: 7, fontWeight: '900' }, factText: { color: '#d6dce3', fontSize: 10, lineHeight: 15, fontWeight: '700', marginTop: 5 }, connectionLine: { width: 24, height: 1, backgroundColor: 'rgba(190,155,235,0.5)', alignItems: 'center', justifyContent: 'center' }, connectionPulse: { width: 5, height: 5, borderRadius: 3, backgroundColor: '#c4a8ec' }, conclusion: { marginTop: 12, padding: 12, borderRadius: 10, backgroundColor: 'rgba(119,82,169,0.22)', borderLeftWidth: 2, borderLeftColor: '#a887d5' }, conclusionLabel: { color: '#af91da', fontSize: 7, fontWeight: '900' }, conclusionText: { color: '#e4daef', fontSize: 11, lineHeight: 17, marginTop: 4 },

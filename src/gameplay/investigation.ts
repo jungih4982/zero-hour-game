@@ -18,6 +18,10 @@ export type InvestigationHotspot = {
   id: string;
   label: string;
   shortLabel: string;
+  /** Visible object only; never the clue or deduction discovered by inspecting. */
+  targetLabel?: string;
+  artAnchor?: { x: number; y: number };
+  artTargetOffsetX?: number;
   discovery: string;
   x: number;
   y: number;
@@ -82,11 +86,15 @@ const room302Investigation: SceneInvestigation = {
 
 const operationsCorridorInvestigation: SceneInvestigation = {
   sceneId: 'SCENE_LOOP2_OPERATIONS_CORRIDOR' as SceneId,
+  fitHotspotsToStage: true,
   prompt: '손전등 빛이 돌아오기 전에 복도를 살핀다.',
   optionalInspectionLimit: 1,
   hotspots: [
     {
       id: 'unmarked-doors',
+      targetLabel: '문',
+      artAnchor: { x: 0.23, y: 0.45 },
+      artTargetOffsetX: 24,
       label: '표찰을 떼어 낸 문',
       shortLabel: '문',
       discovery: '떼어 낸 표찰 아래에 관찰창을 막은 나사 자국이 남아 있다.',
@@ -100,6 +108,9 @@ const operationsCorridorInvestigation: SceneInvestigation = {
     },
     {
       id: 'linen-carts',
+      targetLabel: '카트',
+      artAnchor: { x: 0.30, y: 0.58 },
+      artTargetOffsetX: -84,
       label: '벽에 세워 둔 린넨 카트',
       shortLabel: '흔적',
       discovery: '젖은 바퀴 자국이 복도 끝이 아니라 열린 린넨실 쪽으로 꺾여 있다.',
@@ -113,6 +124,8 @@ const operationsCorridorInvestigation: SceneInvestigation = {
     },
     {
       id: 'linen-room',
+      targetLabel: '열린 문',
+      artAnchor: { x: 0.57, y: 0.49 },
       label: '반쯤 열린 린넨실',
       shortLabel: '소리',
       discovery: '문 안에서 억눌린 숨소리가 들렸다. 환자복을 입은 여자가 숨어 있다.',
@@ -128,10 +141,12 @@ const operationsCorridorInvestigation: SceneInvestigation = {
 
 const oldMapInvestigation: SceneInvestigation = {
   sceneId: 'SCENE_LOOP2_OLD_MAP_SEARCH' as SceneId,
+  fitHotspotsToStage: true,
   prompt: '태준이 올라오기 전에 현재 구조와 오래된 안내도를 대조한다.',
   hotspots: [
     {
       id: 'map-date',
+      targetLabel: '하단 표기',
       label: '안내도 제작 연도',
       shortLabel: '연도',
       discovery: '안내도는 현재 병동이 정비되기 전 제작됐다. 폐기되지 않은 채 대기 공간 벽에 남아 있다.',
@@ -141,6 +156,7 @@ const oldMapInvestigation: SceneInvestigation = {
     },
     {
       id: 'room-302-outline',
+      targetLabel: '도면',
       label: '302호 뒤의 빈 공간',
       shortLabel: '구조',
       discovery: '302호 뒤쪽에 병실이 아닌 좁고 긴 공간이 표시돼 있다. 반대쪽 끝은 간호사실 뒤편과 이어진다.',
@@ -155,6 +171,7 @@ const oldMapInvestigation: SceneInvestigation = {
     },
     {
       id: 'current-wall',
+      targetLabel: '벽',
       label: '현재 병동의 막힌 벽',
       shortLabel: '현재',
       discovery: '출입문 유리 너머로 보이는 벽면에는 문도 복도도 없다. 안내도의 공간은 현재 구조에서 완전히 지워져 있다.',

@@ -1,0 +1,15 @@
+{
+  "devices": [
+    "List of devices attached",
+    "emulator-5554          device product:sdk_gphone16k_x86_64 model:sdk_gphone16k_x86_64 device:emu64xa16k transport_id:1",
+    ""
+  ],
+  "listeners": {
+    "LocalAddress": "127.0.0.1",
+    "LocalPort": 8188,
+    "OwningProcess": 27680
+  },
+  "chromeProcessCount": 23,
+  "ownEmulatorStopped": true,
+  "at": "2026-09-12T22:36:16.8855579+09:00"
+}

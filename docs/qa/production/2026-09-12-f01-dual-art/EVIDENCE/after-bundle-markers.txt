@@ -1,0 +1,2 @@
+108518:    var threeQuarterPortrait = cropFullbodyToPortrait && character.crop === 'threeQuarter' && !duo;
+108597:          style: [styles.characterShadow, cropFullbodyToPortrait && styles.characterPortraitFull, threeQuarterPortrait && styles.characterPortraitThreeQuarter, cropFullbodyToPortrait && duo && styles.characterPortraitDuoFull, stopped && styles.characterShadowStopped, !active && styles.characterShadowInactive]

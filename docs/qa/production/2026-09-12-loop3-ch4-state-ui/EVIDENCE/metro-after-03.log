@@ -1,0 +1,14 @@
+Starting project at C:\Dev\zero-hour-game
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| (node:9776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 744ms node_modules\expo\AppEntry.js (2675 modules)
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 372ms node_modules\expo\AppEntry.js (2607 modules)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_CH3_RESET_2123","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":0}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_CH4_OPENING","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":0}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_CH4_MILESTONE_A_END","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":0}

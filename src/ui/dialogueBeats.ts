@@ -37,6 +37,7 @@ import {
 } from '../content/prologue';
 import type { NarrativeScene } from '../engine';
 import { chapter3ParagraphSpeakers } from './chapter3Dialogue';
+import { chapter4ParagraphSpeakers } from '../content/chapter4';
 
 export type SpeakerId =
   | 'narrator'
@@ -83,6 +84,7 @@ export const sceneParagraphSpeakers: Readonly<
   Partial<Record<string, readonly SpeakerId[]>>
 > = {
   ...chapter3ParagraphSpeakers,
+  ...chapter4ParagraphSpeakers,
   [SCENE_CH00_ENTRANCE]: beats(
     'narrator', 'narrator', 'player', 'seoyun', 'player', 'seoyun', 'player',
     'seoyun', 'player', 'narrator', 'seoyun', 'player', 'seoyun', 'player',

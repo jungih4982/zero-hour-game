@@ -4,8 +4,28 @@ import {
   getGameLayout,
   getTitleBackgroundMotion,
   getInvestigationHotspotPosition,
+  getArtInvestigationTarget,
 } from '../src/ui/layout';
+import { sceneInvestigations } from '../src/gameplay/investigation';
+import assert from 'node:assert/strict';
 import { chapter3Investigations, SCENE_CH3_TRANSFER_YUJIN } from '../src/content/chapter3';
+
+for (const height of [2400/2.625,1920/2.625]) {
+  const width=1080/2.625;
+  const placement=getCoverPlacement({viewportWidth:width,viewportHeight:height,imageWidth:816,imageHeight:1456,focalX:0.5,focalY:0.55});
+  const targets=sceneInvestigations.SCENE_LOOP2_OPERATIONS_CORRIDOR.hotspots.map(h=>
+    getArtInvestigationTarget({anchor:h.artAnchor!,offsetX:h.artTargetOffsetX,placement,
+      viewportWidth:width,viewportHeight:height,dialogueHeight:height*0.45,
+      dialogueWidth:width,dialogueRight:16,sideDialogue:false,safeTop:40.38}));
+  for(const t of targets) {
+    assert(t.left>=12 && t.left+56<=width-12);
+    assert(t.top>=112 && t.top+80<=height*0.55,'circle and object caption stay above dialogue');
+  }
+  for(let a=0;a<targets.length;a++) for(let b=a+1;b<targets.length;b++) {
+    assert(Math.hypot(targets[a].left-targets[b].left,targets[a].top-targets[b].top)>=60,
+      'short-screen B1 targets must not overlap after clamping');
+  }
+}
 
 const devices = [
   { name: 'compact phone', width: 360, height: 740, expected: 'phone' },

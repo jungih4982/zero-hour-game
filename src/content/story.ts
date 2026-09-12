@@ -1,3 +1,5 @@
+import { CHAPTER3_START_TIME } from './timeContract';
+import { chapter4RouteChoices, chapter4Scenes } from './chapter4';
 import type { LocationId, NarrativeEngineState, NarrativeScene, SceneId } from '../engine';
 import {
   SCENE_CH3_BAND_REQUEST,
@@ -21,10 +23,15 @@ export const storyScenes: Readonly<Record<string, NarrativeScene>> = {
       id: 'BEGIN_CHAPTER_3',
       text: '세 사람에게 같은 질문을 시작한다.',
       kind: 'standard',
-      effects: [{ type: 'jumpScene', sceneId: SCENE_CH3_BAND_REQUEST }],
+      effects: [{ type: 'waitUntil', time: CHAPTER3_START_TIME }, { type: 'jumpScene', sceneId: SCENE_CH3_BAND_REQUEST }],
     }],
   },
   ...chapter3Scenes,
+  SCENE_CH4_MILESTONE_A_END: {
+    ...chapter3Scenes.SCENE_CH4_MILESTONE_A_END,
+    choices: chapter4RouteChoices,
+  },
+  ...chapter4Scenes,
 };
 
 export type LoopResetTarget = {

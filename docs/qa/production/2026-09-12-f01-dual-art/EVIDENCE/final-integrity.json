@@ -1,0 +1,36 @@
+{
+  "checkedAtUTC": "2026-09-12T11:12:06.443517+00:00",
+  "head": "f67c6324fdc569857a8bc4e08f07ec3476446ce3",
+  "branch": "master",
+  "stagedPaths": [],
+  "baselineTrackedCount": 649,
+  "changedTrackedPaths": [
+    "docs/qa/README.md",
+    "package.json",
+    "src/content/chapter3.ts",
+    "src/content/prologue.ts",
+    "src/content/story.ts",
+    "src/engine/effects.ts",
+    "src/engine/loop.ts",
+    "src/engine/types.ts",
+    "src/gameplay/choicePresentation.ts",
+    "src/gameplay/gameClock.ts",
+    "src/gameplay/investigation.ts",
+    "src/store/useNarrativeStore.ts",
+    "src/ui/NarrativePlayer.tsx"
+  ],
+  "unchangedTrackedCount": 636,
+  "unexpectedChanges": [],
+  "originalInstructionPreserved": "ZERO_HOUR_CODEX_AUTONOMOUS_F01_DUAL_ART_2026-09-12.txt",
+  "priorSavePreservedSHA256": "4242a01388a4b557b5ea1bc361c40d4961c66e34872d91771db6149cf4c0501e",
+  "v03PreservedSHA256": "0cfdcb8098ffb45151a6287409e68d61948d3b180a05837bed49f65f5f6f0b77",
+  "primaryFinalSaveJSONIdentical": true,
+  "resumeFinalSHA256": "5d354749035da102daaf9b010e2a827b49f5d237551dbc326f9cce231d4def25",
+  "b1BeforeAfterStateSQLiteIdentical": true,
+  "cartAcquisitionAndQuotaVerified": true,
+  "primaryFinalKnowledgeCounts": {
+    "clueIds": 19,
+    "deductionIds": 4,
+    "memories": 3
+  }
+}

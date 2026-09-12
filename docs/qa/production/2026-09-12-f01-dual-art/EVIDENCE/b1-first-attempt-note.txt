@@ -1,0 +1,1 @@
+Filename fresh-b1-cart-and-linen records an attempted cart input, not confirmed cart acquisition. Actual save has unmarked-doors and linen-room only. First cart-center input did not change state. Do not count CLUE_B1_TRANSFER_TRACKS as acquired. Recheck on a separate clone of fresh-b1-investigation.sqlite.

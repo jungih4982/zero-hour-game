@@ -1,0 +1,152 @@
+{
+  "zero-hour-narrative-save": {
+    "state": {
+      "engineState": {
+        "persistent": {
+          "loopCount": 2,
+          "clueIds": [
+            "CLUE_WATCH_GIFT",
+            "CLUE_CONTRADICTORY_MESSAGES",
+            "CLUE_B1_MAP",
+            "CLUE_YUJIN_KNOWN",
+            "CLUE_302_OCCUPIED",
+            "CLUE_WRISTBAND_DOB",
+            "CLUE_FIRST_PHONE",
+            "CLUE_B1_UNMARKED_ROOMS",
+            "CLUE_SEA_KNOWS",
+            "CLUE_SECOND_PHONE",
+            "CLUE_CCTV_GAP",
+            "CLUE_06_CARD"
+          ],
+          "deductionIds": [
+            "DEDUCTION_BLACKOUT_ROUTE",
+            "DEDUCTION_PHONE_DUPLICATION"
+          ],
+          "memories": [
+            {
+              "id": "MEMORY_BLACKOUT_0000",
+              "title": "자정에 열린 문",
+              "description": "정전과 동시에 복도 끝 직원용 문의 전자 잠금이 풀린다.",
+              "acquiredOnLoop": 1,
+              "sourceSceneId": "SCENE_FIRST_DEATH",
+              "payoff": {
+                "predictsEvent": "자정 정전과 직원용 문 잠금 해제",
+                "usableFrom": 0,
+                "usableUntil": 157,
+                "eventTime": 157,
+                "changes": [
+                  "riskAvoided",
+                  "routeUnlocked",
+                  "eventPreempted"
+                ],
+                "avoidsRisk": "DEATH_ZERO_HOUR_UNKNOWN",
+                "unlocksLocationId": "B1_OPERATIONS_CORRIDOR"
+              }
+            },
+            {
+              "id": "MEMORY_RESET_WATCH",
+              "title": "돌아온 균열",
+              "description": "몸과 전화는 첫 통화 때로 돌아왔지만 아날로그 시계의 금은 그대로 남았다.",
+              "acquiredOnLoop": 1,
+              "sourceSceneId": "SCENE_LOOP2_RESET_AWAKENING",
+              "payoff": {
+                "predictsEvent": "서윤의 첫 통화가 같은 말과 같은 잡음으로 반복됨",
+                "changes": [
+                  "informationCombined",
+                  "timeSaved"
+                ]
+              }
+            }
+          ],
+          "deathIntel": [
+            {
+              "memoryId": "MEMORY_BLACKOUT_0000",
+              "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+              "title": "ZERO HOUR",
+              "description": "누가 어떻게 죽였는지는 보이지 않았다. 자정에 불이 꺼지고 직원용 문이 열린다는 사실만 남았다."
+            }
+          ],
+          "deathRecords": [
+            {
+              "deathId": "DEATH_ZERO_HOUR_UNKNOWN",
+              "loopCount": 1,
+              "time": 157,
+              "sceneId": "SCENE_FIRST_DEATH"
+            }
+          ],
+          "flags": {}
+        },
+        "volatile": {
+          "time": 176,
+          "clock": {
+            "contractVersion": 1,
+            "schedule": [
+              {
+                "id": "blackout",
+                "time": 157
+              },
+              {
+                "id": "seal0106",
+                "time": 223
+              }
+            ],
+            "events": {
+              "blackout": 157
+            }
+          },
+          "currentSceneId": "SCENE_LOOP2_OLD_MAP_SEARCH",
+          "currentLocationId": "3F_CORRIDOR",
+          "visitedSceneIds": [
+            "SCENE_LOOP2_RESET_AWAKENING",
+            "SCENE_VERTICAL_SLICE_TITLE",
+            "SCENE_LOOP2_FIRST_CALL_TEST",
+            "SCENE_LOOP2_MESSAGE_TEST",
+            "SCENE_LOOP2_EARLY_ARRIVAL",
+            "SCENE_LOOP2_FIRST_PHONE",
+            "SCENE_LOOP2_PHONE_PARADOX",
+            "SCENE_LOOP2_YUJIN_FOREKNOWLEDGE",
+            "SCENE_LOOP2_STAFF_DOOR",
+            "SCENE_LOOP2_BLACKOUT_INTERVENTION",
+            "SCENE_LOOP2_OPERATIONS_CORRIDOR",
+            "SCENE_LOOP2_SEA_FIRST_MEETING",
+            "SCENE_LOOP2_TAEJUN_REJECTION",
+            "SCENE_LOOP2_SEOYUN_RECHECK",
+            "SCENE_LOOP2_RETURN_302",
+            "SCENE_LOOP2_SECOND_PHONE",
+            "SCENE_VERTICAL_SLICE_END",
+            "SCENE_LOOP2_CCTV_GAP",
+            "SCENE_LOOP2_06_CARD",
+            "SCENE_LOOP2_SEOYUN_UNCERTAIN",
+            "SCENE_LOOP2_OLD_MAP_SEARCH"
+          ],
+          "itemIds": [
+            "ITEM_SECOND_PHONE"
+          ],
+          "flags": {
+            "FLAG_SEOYUN_MESSAGE_TESTED": true,
+            "FLAG_YUJIN_WARY": true,
+            "FLAG_FIRST_DEATH_AVOIDED": true,
+            "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:unmarked-doors": true,
+            "B1_LINEN_ROOM_FOUND": true,
+            "INVESTIGATED:SCENE_LOOP2_OPERATIONS_CORRIDOR:linen-room": true,
+            "FLAG_MINSEO_MEMORY_WARNING_KEPT": true
+          }
+        }
+      }
+    },
+    "version": 5
+  },
+  "zero-hour-game-preferences": {
+    "state": {
+      "dialogueSpeed": "standard",
+      "lastSceneId": "SCENE_LOOP2_OLD_MAP_SEARCH",
+      "lastBeatIndex": 4,
+      "seenTutorialGuideIds": [
+        "dialogue",
+        "time",
+        "records"
+      ]
+    },
+    "version": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "devices": [
+    "List of devices attached",
+    "emulator-5554          device product:sdk_gphone16k_x86_64 model:sdk_gphone16k_x86_64 device:emu64xa16k transport_id:1",
+    "emulator-5580          device product:sdk_gphone16k_x86_64 model:sdk_gphone16k_x86_64 device:emu64xa16k transport_id:23",
+    ""
+  ],
+  "listeners": {
+    "LocalAddress": "127.0.0.1",
+    "LocalPort": 8188,
+    "OwningProcess": 27680
+  },
+  "chromeProcessCount": 23,
+  "ownMetroSession": "17757 stopped with Ctrl-C",
+  "ownEmulator": "emulator-5580 emu kill",
+  "preserved": "emulator-5554, existing ComfyUI 8188 and Chrome",
+  "at": "2026-09-12T22:25:41.6008061+09:00"
+}

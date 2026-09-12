@@ -1,0 +1,22 @@
+{
+  "same_engine_state_except_added_legacy_clock_metadata": true,
+  "same_preferences_and_beat": true,
+  "scene": "SCENE_CH3_THREE_TESTIMONIES",
+  "offset": 187,
+  "clock_metadata": {
+    "contractVersion": 0,
+    "schedule": [
+      {
+        "id": "blackout",
+        "time": 157
+      },
+      {
+        "id": "seal0106",
+        "time": 223
+      }
+    ],
+    "events": {
+      "blackout": "legacy"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-09-12T20:11:08.650622+09:00",
+  "stoppedMetroPid": 11972,
+  "stoppedIsolatedQemuPid": 21148,
+  "stoppedIsolatedDevice": "emulator-5580",
+  "existingMainQemuAlive": true,
+  "existingComfyAlive": true,
+  "chromeTabs": "No tabs closed or workflows replaced",
+  "originalUserAVDReset": false,
+  "adbReverseUsed": false,
+  "devicesAfter": [
+    "List of devices attached",
+    "emulator-5554          device product:sdk_gphone16k_x86_64 model:sdk_gphone16k_x86_64 device:emu64xa16k transport_id:1",
+    ""
+  ],
+  "cleanupConfirmedAt": "2026-09-12T20:12:06.1200690+09:00",
+  "taskMetroExited": true,
+  "taskEmulatorExited": true
+}

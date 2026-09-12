@@ -1,0 +1,1476 @@
+{
+  "ModelMergeQwenImage": {
+    "input": {
+      "required": {
+        "model1": [
+          "MODEL"
+        ],
+        "model2": [
+          "MODEL"
+        ],
+        "pos_embeds.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "img_in.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "txt_norm.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "txt_in.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "time_text_embed.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.0.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.1.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.2.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.3.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.4.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.5.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.6.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.7.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.8.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.9.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.10.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.11.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.12.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.13.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.14.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.15.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.16.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.17.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.18.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.19.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.20.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.21.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.22.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.23.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.24.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.25.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.26.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.27.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.28.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.29.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.30.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.31.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.32.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.33.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.34.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.35.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.36.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.37.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.38.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.39.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.40.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.41.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.42.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.43.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.44.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.45.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.46.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.47.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.48.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.49.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.50.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.51.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.52.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.53.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.54.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.55.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.56.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.57.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.58.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "transformer_blocks.59.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ],
+        "proj_out.": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01
+          }
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "model1",
+        "model2",
+        "pos_embeds.",
+        "img_in.",
+        "txt_norm.",
+        "txt_in.",
+        "time_text_embed.",
+        "transformer_blocks.0.",
+        "transformer_blocks.1.",
+        "transformer_blocks.2.",
+        "transformer_blocks.3.",
+        "transformer_blocks.4.",
+        "transformer_blocks.5.",
+        "transformer_blocks.6.",
+        "transformer_blocks.7.",
+        "transformer_blocks.8.",
+        "transformer_blocks.9.",
+        "transformer_blocks.10.",
+        "transformer_blocks.11.",
+        "transformer_blocks.12.",
+        "transformer_blocks.13.",
+        "transformer_blocks.14.",
+        "transformer_blocks.15.",
+        "transformer_blocks.16.",
+        "transformer_blocks.17.",
+        "transformer_blocks.18.",
+        "transformer_blocks.19.",
+        "transformer_blocks.20.",
+        "transformer_blocks.21.",
+        "transformer_blocks.22.",
+        "transformer_blocks.23.",
+        "transformer_blocks.24.",
+        "transformer_blocks.25.",
+        "transformer_blocks.26.",
+        "transformer_blocks.27.",
+        "transformer_blocks.28.",
+        "transformer_blocks.29.",
+        "transformer_blocks.30.",
+        "transformer_blocks.31.",
+        "transformer_blocks.32.",
+        "transformer_blocks.33.",
+        "transformer_blocks.34.",
+        "transformer_blocks.35.",
+        "transformer_blocks.36.",
+        "transformer_blocks.37.",
+        "transformer_blocks.38.",
+        "transformer_blocks.39.",
+        "transformer_blocks.40.",
+        "transformer_blocks.41.",
+        "transformer_blocks.42.",
+        "transformer_blocks.43.",
+        "transformer_blocks.44.",
+        "transformer_blocks.45.",
+        "transformer_blocks.46.",
+        "transformer_blocks.47.",
+        "transformer_blocks.48.",
+        "transformer_blocks.49.",
+        "transformer_blocks.50.",
+        "transformer_blocks.51.",
+        "transformer_blocks.52.",
+        "transformer_blocks.53.",
+        "transformer_blocks.54.",
+        "transformer_blocks.55.",
+        "transformer_blocks.56.",
+        "transformer_blocks.57.",
+        "transformer_blocks.58.",
+        "transformer_blocks.59.",
+        "proj_out."
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "MODEL"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "MODEL"
+    ],
+    "name": "ModelMergeQwenImage",
+    "display_name": "ModelMergeQwenImage",
+    "description": "",
+    "python_module": "comfy_extras.nodes_model_merging_model_specific",
+    "category": "model/merging/model specific",
+    "output_node": false,
+    "has_intermediate_output": false,
+    "search_aliases": []
+  },
+  "TextEncodeQwenImageEdit": {
+    "input": {
+      "required": {
+        "clip": [
+          "CLIP",
+          {}
+        ],
+        "prompt": [
+          "STRING",
+          {
+            "multiline": true,
+            "dynamicPrompts": true
+          }
+        ]
+      },
+      "optional": {
+        "vae": [
+          "VAE",
+          {}
+        ],
+        "image": [
+          "IMAGE",
+          {}
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "clip",
+        "prompt"
+      ],
+      "optional": [
+        "vae",
+        "image"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "CONDITIONING"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "CONDITIONING"
+    ],
+    "output_tooltips": [
+      null
+    ],
+    "output_matchtypes": null,
+    "name": "TextEncodeQwenImageEdit",
+    "display_name": null,
+    "description": "",
+    "python_module": "comfy_extras.nodes_qwen",
+    "category": "model/conditioning/qwen image",
+    "output_node": false,
+    "deprecated": false,
+    "experimental": false,
+    "dev_only": false,
+    "api_node": false,
+    "price_badge": null,
+    "search_aliases": null,
+    "essentials_category": null,
+    "has_intermediate_output": false
+  },
+  "TextEncodeQwenImageEditPlus": {
+    "input": {
+      "required": {
+        "clip": [
+          "CLIP",
+          {}
+        ],
+        "prompt": [
+          "STRING",
+          {
+            "multiline": true,
+            "dynamicPrompts": true
+          }
+        ]
+      },
+      "optional": {
+        "vae": [
+          "VAE",
+          {}
+        ],
+        "image1": [
+          "IMAGE",
+          {}
+        ],
+        "image2": [
+          "IMAGE",
+          {}
+        ],
+        "image3": [
+          "IMAGE",
+          {}
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "clip",
+        "prompt"
+      ],
+      "optional": [
+        "vae",
+        "image1",
+        "image2",
+        "image3"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "CONDITIONING"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "CONDITIONING"
+    ],
+    "output_tooltips": [
+      null
+    ],
+    "output_matchtypes": null,
+    "name": "TextEncodeQwenImageEditPlus",
+    "display_name": null,
+    "description": "",
+    "python_module": "comfy_extras.nodes_qwen",
+    "category": "model/conditioning/qwen image",
+    "output_node": false,
+    "deprecated": false,
+    "experimental": false,
+    "dev_only": false,
+    "api_node": false,
+    "price_badge": null,
+    "search_aliases": null,
+    "essentials_category": null,
+    "has_intermediate_output": false
+  },
+  "EmptyQwenImageLayeredLatentImage": {
+    "input": {
+      "required": {
+        "width": [
+          "INT",
+          {
+            "default": 640,
+            "min": 16,
+            "max": 16384,
+            "step": 16
+          }
+        ],
+        "height": [
+          "INT",
+          {
+            "default": 640,
+            "min": 16,
+            "max": 16384,
+            "step": 16
+          }
+        ],
+        "layers": [
+          "INT",
+          {
+            "default": 3,
+            "min": 0,
+            "max": 16384,
+            "step": 1
+          }
+        ],
+        "batch_size": [
+          "INT",
+          {
+            "default": 1,
+            "min": 1,
+            "max": 4096
+          }
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "width",
+        "height",
+        "layers",
+        "batch_size"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "LATENT"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "LATENT"
+    ],
+    "output_tooltips": [
+      null
+    ],
+    "output_matchtypes": null,
+    "name": "EmptyQwenImageLayeredLatentImage",
+    "display_name": "Empty Qwen Image Layered Latent",
+    "description": "",
+    "python_module": "comfy_extras.nodes_qwen",
+    "category": "model/latent/qwen",
+    "output_node": false,
+    "deprecated": false,
+    "experimental": false,
+    "dev_only": false,
+    "api_node": false,
+    "price_badge": null,
+    "search_aliases": null,
+    "essentials_category": null,
+    "has_intermediate_output": false
+  },
+  "QwenImageDiffsynthControlnet": {
+    "input": {
+      "required": {
+        "model": [
+          "MODEL"
+        ],
+        "model_patch": [
+          "MODEL_PATCH"
+        ],
+        "vae": [
+          "VAE"
+        ],
+        "image": [
+          "IMAGE"
+        ],
+        "strength": [
+          "FLOAT",
+          {
+            "default": 1.0,
+            "min": -10.0,
+            "max": 10.0,
+            "step": 0.01
+          }
+        ]
+      },
+      "optional": {
+        "mask": [
+          "MASK"
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "model",
+        "model_patch",
+        "vae",
+        "image",
+        "strength"
+      ],
+      "optional": [
+        "mask"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "MODEL"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "MODEL"
+    ],
+    "name": "QwenImageDiffsynthControlnet",
+    "display_name": "Apply Qwen Image DiffSynth ControlNet",
+    "description": "",
+    "python_module": "comfy_extras.nodes_model_patch",
+    "category": "model/patch/qwen",
+    "output_node": false,
+    "has_intermediate_output": false,
+    "experimental": true,
+    "search_aliases": []
+  },
+  "QwenImageTextToImageApi": {
+    "input": {
+      "required": {
+        "model": [
+          "COMFY_DYNAMICCOMBO_V3",
+          {
+            "tooltip": "Model to use.",
+            "options": [
+              {
+                "key": "qwen-image-3.0-pro",
+                "inputs": {
+                  "required": {
+                    "prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Prompt describing the image. Supports English and Chinese.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "negative_prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Negative prompt describing what to avoid.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "width": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ],
+                    "height": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "key": "qwen-image-3.0",
+                "inputs": {
+                  "required": {
+                    "prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Prompt describing the image. Supports English and Chinese.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "negative_prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Negative prompt describing what to avoid.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "width": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ],
+                    "height": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "n": [
+          "INT",
+          {
+            "tooltip": "Number of images to generate, returned as a batch.",
+            "default": 1,
+            "min": 1,
+            "max": 6,
+            "display": "number"
+          }
+        ],
+        "seed": [
+          "INT",
+          {
+            "tooltip": "Seed to use for generation.",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647,
+            "step": 1,
+            "control_after_generate": true,
+            "display": "number"
+          }
+        ],
+        "prompt_extend": [
+          "BOOLEAN",
+          {
+            "tooltip": "Whether to enhance the prompt with AI assistance.",
+            "advanced": true,
+            "default": true
+          }
+        ],
+        "watermark": [
+          "BOOLEAN",
+          {
+            "tooltip": "Whether to add an AI-generated watermark to the result.",
+            "advanced": true,
+            "default": false
+          }
+        ]
+      },
+      "hidden": {
+        "auth_token_comfy_org": [
+          "AUTH_TOKEN_COMFY_ORG"
+        ],
+        "api_key_comfy_org": [
+          "API_KEY_COMFY_ORG"
+        ],
+        "unique_id": [
+          "UNIQUE_ID"
+        ],
+        "comfy_usage_source": [
+          "COMFY_USAGE_SOURCE"
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "model",
+        "n",
+        "seed",
+        "prompt_extend",
+        "watermark"
+      ],
+      "hidden": [
+        "auth_token_comfy_org",
+        "api_key_comfy_org",
+        "unique_id",
+        "comfy_usage_source"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "IMAGE"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "IMAGE"
+    ],
+    "output_tooltips": [
+      null
+    ],
+    "output_matchtypes": null,
+    "name": "QwenImageTextToImageApi",
+    "display_name": "Qwen Image 3 Text to Image",
+    "description": "Generates images from a text prompt using the Qwen-Image 3.0 models.",
+    "python_module": "comfy_api_nodes.nodes_qwen",
+    "category": "partner/image/Qwen",
+    "output_node": false,
+    "deprecated": false,
+    "experimental": false,
+    "dev_only": false,
+    "api_node": true,
+    "price_badge": {
+      "engine": "jsonata",
+      "depends_on": {
+        "widgets": [
+          {
+            "name": "model",
+            "type": "COMFY_DYNAMICCOMBO_V3"
+          },
+          {
+            "name": "model.width",
+            "type": "INT"
+          },
+          {
+            "name": "model.height",
+            "type": "INT"
+          },
+          {
+            "name": "n",
+            "type": "INT"
+          }
+        ],
+        "inputs": [],
+        "input_groups": []
+      },
+      "expr": "\n                (\n                  $isPro := widgets.model = \"qwen-image-3.0-pro\";\n                  $area := $lookup(widgets, \"model.width\") * $lookup(widgets, \"model.height\");\n                  $rate := $isPro ? ($area > 2250000 ? 0.10725 : 0.0572) : 0.0429;\n                  {\"type\":\"usd\",\"usd\": $rate * widgets.n}\n                )\n                "
+    },
+    "search_aliases": null,
+    "essentials_category": null,
+    "has_intermediate_output": false
+  },
+  "QwenImageEditApi": {
+    "input": {
+      "required": {
+        "model": [
+          "COMFY_DYNAMICCOMBO_V3",
+          {
+            "tooltip": "Model to use.",
+            "options": [
+              {
+                "key": "qwen-image-3.0-pro",
+                "inputs": {
+                  "required": {
+                    "images": [
+                      "COMFY_AUTOGROW_V3",
+                      {
+                        "tooltip": "1-3 reference images. Refer to them in the prompt as @Image1, @Image2, @Image3, numbered in input order; a batched input counts once per image.",
+                        "template": {
+                          "input": {
+                            "required": {
+                              "image": [
+                                "IMAGE",
+                                {}
+                              ]
+                            }
+                          },
+                          "names": [
+                            "image_1",
+                            "image_2",
+                            "image_3"
+                          ],
+                          "min": 1
+                        }
+                      }
+                    ],
+                    "prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Editing instructions. Supports English and Chinese, and @Image1-style references to the input images.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "negative_prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Negative prompt describing what to avoid.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "key": "qwen-image-3.0",
+                "inputs": {
+                  "required": {
+                    "images": [
+                      "COMFY_AUTOGROW_V3",
+                      {
+                        "tooltip": "1-3 reference images. Refer to them in the prompt as @Image1, @Image2, @Image3, numbered in input order; a batched input counts once per image.",
+                        "template": {
+                          "input": {
+                            "required": {
+                              "image": [
+                                "IMAGE",
+                                {}
+                              ]
+                            }
+                          },
+                          "names": [
+                            "image_1",
+                            "image_2",
+                            "image_3"
+                          ],
+                          "min": 1
+                        }
+                      }
+                    ],
+                    "prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Editing instructions. Supports English and Chinese, and @Image1-style references to the input images.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ],
+                    "negative_prompt": [
+                      "STRING",
+                      {
+                        "tooltip": "Negative prompt describing what to avoid.",
+                        "default": "",
+                        "multiline": true
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "size": [
+          "COMFY_DYNAMICCOMBO_V3",
+          {
+            "tooltip": "Output resolution. 'match input' reuses the first reference image's size, 'auto' lets the model pick a size with the same aspect ratio, 'custom' sets an explicit width and height.",
+            "options": [
+              {
+                "key": "match input",
+                "inputs": {
+                  "required": {}
+                }
+              },
+              {
+                "key": "auto",
+                "inputs": {
+                  "required": {}
+                }
+              },
+              {
+                "key": "custom",
+                "inputs": {
+                  "required": {
+                    "width": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ],
+                    "height": [
+                      "INT",
+                      {
+                        "tooltip": "The total pixel area must be between 512x512 and 2560x2560; any aspect ratio within that area works.",
+                        "default": 1024,
+                        "min": 256,
+                        "max": 2560,
+                        "step": 16
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "n": [
+          "INT",
+          {
+            "tooltip": "Number of images to generate, returned as a batch.",
+            "default": 1,
+            "min": 1,
+            "max": 6,
+            "display": "number"
+          }
+        ],
+        "seed": [
+          "INT",
+          {
+            "tooltip": "Seed to use for generation.",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647,
+            "step": 1,
+            "control_after_generate": true,
+            "display": "number"
+          }
+        ],
+        "prompt_extend": [
+          "BOOLEAN",
+          {
+            "tooltip": "Whether to enhance the prompt with AI assistance.",
+            "advanced": true,
+            "default": true
+          }
+        ],
+        "watermark": [
+          "BOOLEAN",
+          {
+            "tooltip": "Whether to add an AI-generated watermark to the result.",
+            "advanced": true,
+            "default": false
+          }
+        ]
+      },
+      "hidden": {
+        "auth_token_comfy_org": [
+          "AUTH_TOKEN_COMFY_ORG"
+        ],
+        "api_key_comfy_org": [
+          "API_KEY_COMFY_ORG"
+        ],
+        "unique_id": [
+          "UNIQUE_ID"
+        ],
+        "comfy_usage_source": [
+          "COMFY_USAGE_SOURCE"
+        ]
+      }
+    },
+    "input_order": {
+      "required": [
+        "model",
+        "size",
+        "n",
+        "seed",
+        "prompt_extend",
+        "watermark"
+      ],
+      "hidden": [
+        "auth_token_comfy_org",
+        "api_key_comfy_org",
+        "unique_id",
+        "comfy_usage_source"
+      ]
+    },
+    "is_input_list": false,
+    "output": [
+      "IMAGE"
+    ],
+    "output_is_list": [
+      false
+    ],
+    "output_name": [
+      "IMAGE"
+    ],
+    "output_tooltips": [
+      null
+    ],
+    "output_matchtypes": null,
+    "name": "QwenImageEditApi",
+    "display_name": "Qwen Image 3 Edit",
+    "description": "Edits or combines up to 3 reference images guided by a text prompt using the Qwen-Image 3.0 models.",
+    "python_module": "comfy_api_nodes.nodes_qwen",
+    "category": "partner/image/Qwen",
+    "output_node": false,
+    "deprecated": false,
+    "experimental": false,
+    "dev_only": false,
+    "api_node": true,
+    "price_badge": {
+      "engine": "jsonata",
+      "depends_on": {
+        "widgets": [
+          {
+            "name": "model",
+            "type": "COMFY_DYNAMICCOMBO_V3"
+          },
+          {
+            "name": "size",
+            "type": "COMFY_DYNAMICCOMBO_V3"
+          },
+          {
+            "name": "size.width",
+            "type": "INT"
+          },
+          {
+            "name": "size.height",
+            "type": "INT"
+          },
+          {
+            "name": "n",
+            "type": "INT"
+          }
+        ],
+        "inputs": [],
+        "input_groups": [
+          "model.images"
+        ]
+      },
+      "expr": "\n                (\n                  $isPro := widgets.model = \"qwen-image-3.0-pro\";\n                  $mode := widgets.size;\n                  $count := $max([$lookup(inputGroups, \"model.images\"), 1]);\n                  $inputCost := 0.00429 * $count;\n                  $area := $mode = \"custom\"\n                    ? $lookup(widgets, \"size.width\") * $lookup(widgets, \"size.height\") : 0;\n                  $customRate := $area > 2250000 ? 0.10725 : 0.0572;\n                  $isPro and $mode != \"custom\"\n                    ? {\"type\":\"range_usd\",\n                       \"min_usd\": 0.0572 * widgets.n + $inputCost,\n                       \"max_usd\": 0.10725 * widgets.n + $inputCost}\n                    : {\"type\":\"usd\",\n                       \"usd\": ($isPro ? $customRate : 0.0429) * widgets.n + $inputCost}\n                )\n                "
+    },
+    "search_aliases": null,
+    "essentials_category": null,
+    "has_intermediate_output": false
+  }
+}

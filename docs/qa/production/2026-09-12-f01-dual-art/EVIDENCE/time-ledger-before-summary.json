@@ -1,0 +1,89 @@
+{
+  "currentBackwards": [],
+  "anchorOnlyBackwards": [
+    {
+      "scene": "SCENE_CHAPTER02_END",
+      "action": "BEGIN_CHAPTER_3",
+      "before": 206,
+      "after": 184,
+      "nextScene": "SCENE_CH3_BAND_REQUEST",
+      "cost": 0,
+      "entryEffects": [
+        {
+          "type": "setTime",
+          "time": 184
+        }
+      ],
+      "conditions": [],
+      "beforeClock": "00:49",
+      "afterClock": "00:27",
+      "loop": 2,
+      "backwards": true
+    }
+  ],
+  "currentStates": 19141,
+  "endStates": 3456,
+  "groups": {
+    "DO_NOT_EXPLAIN_LOOP_YET/TELL_YUJIN_ONLY_PHONE_FACT/taejun": {
+      "min": 80,
+      "max": 90,
+      "count": 768
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/TELL_YUJIN_ONLY_PHONE_FACT/cart": {
+      "min": 76,
+      "max": 84,
+      "count": 256
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/REVEAL_EXACT_FOREKNOWLEDGE/taejun": {
+      "min": 80,
+      "max": 90,
+      "count": 768
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/REVEAL_EXACT_FOREKNOWLEDGE/cart": {
+      "min": 76,
+      "max": 84,
+      "count": 256
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/DOCUMENT_PHONE_PARADOX/taejun": {
+      "min": 78,
+      "max": 86,
+      "count": 192
+    },
+    "DO_NOT_EXPLAIN_LOOP_YET/DOCUMENT_PHONE_PARADOX/cart": {
+      "min": 74,
+      "max": 80,
+      "count": 64
+    },
+    "TEST_MESSAGE_ANOMALY/TELL_YUJIN_ONLY_PHONE_FACT/taejun": {
+      "min": 83,
+      "max": 93,
+      "count": 384
+    },
+    "TEST_MESSAGE_ANOMALY/TELL_YUJIN_ONLY_PHONE_FACT/cart": {
+      "min": 79,
+      "max": 87,
+      "count": 128
+    },
+    "TEST_MESSAGE_ANOMALY/REVEAL_EXACT_FOREKNOWLEDGE/taejun": {
+      "min": 83,
+      "max": 93,
+      "count": 384
+    },
+    "TEST_MESSAGE_ANOMALY/REVEAL_EXACT_FOREKNOWLEDGE/cart": {
+      "min": 79,
+      "max": 87,
+      "count": 128
+    },
+    "TEST_MESSAGE_ANOMALY/DOCUMENT_PHONE_PARADOX/taejun": {
+      "min": 81,
+      "max": 89,
+      "count": 96
+    },
+    "TEST_MESSAGE_ANOMALY/DOCUMENT_PHONE_PARADOX/cart": {
+      "min": 77,
+      "max": 83,
+      "count": 32
+    }
+  },
+  "midnightOnlyStates": 8501
+}

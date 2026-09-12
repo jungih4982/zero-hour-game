@@ -1,0 +1,16 @@
+--------- beginning of main
+09-12 10:59:50.844 13857 13900 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: Cannot connect to Metro.
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: 
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: Try the following to fix the issue:
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: - Ensure that Metro is running and available on the same network
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: - Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: - If you're on a physical device connected to the same machine, run 'adb reverse tcp:8081 tcp:8081' to forward requests from your device
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: - If your device is on the same Wi-Fi network, set 'Debug server host & port for device' in 'Dev settings' to your machine's IP address and the port of the local dev server - e.g. 10.0.1.1:8081
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: 
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: URL: 10.0.2.2:8081
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: 
+09-12 11:00:57.163 13857 13900 W ReactNativeJS: Error: undefined
+09-12 11:01:41.008 14047 14091 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:03:05.671 14299 14342 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+09-12 11:04:52.406 14474 14514 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}

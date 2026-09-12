@@ -1,0 +1,38 @@
+Starting project at C:\Dev\zero-hour-game
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| (node:36564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:32008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 1592ms node_modules\expo\AppEntry.js (2675 modules)
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 603ms node_modules\expo\AppEntry.js (2649 modules)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":158}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":160}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":162}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1.5,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":24,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_SEA_FIRST_MEETING","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":163}
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 45ms node_modules\expo\AppEntry.js (1 module)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":158}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":160}
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 33ms node_modules\expo\AppEntry.js (1 module)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":176}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":731.4285714285714,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":329.14285714285717,"sideDialogue":false,"time":177}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":40.380950927734375},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":177}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":177}
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 35ms node_modules\expo\AppEntry.js (1 module)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":158}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OPERATIONS_CORRIDOR","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":160}
+Android node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android Bundled 33ms node_modules\expo\AppEntry.js (1 module)
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":176}
+ INFO  [ZH_LAYOUT_QA] {"scene":"SCENE_LOOP2_OLD_MAP_SEARCH","width":411.42857142857144,"height":914.2857142857143,"fontScale":1,"insets":{"left":0,"bottom":0,"right":0,"top":50.28571319580078},"dialogueHeight":411.42857142857144,"sideDialogue":false,"time":177}
